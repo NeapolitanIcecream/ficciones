@@ -1,0 +1,302 @@
+\documentclass[11pt]{article}
+
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath}
+\usepackage{booktabs}
+\usepackage{enumitem}
+\usepackage{microtype}
+\usepackage{hyperref}
+\usepackage{xcolor}
+
+\hypersetup{
+  colorlinks=true,
+  linkcolor=blue!50!black,
+  citecolor=blue!50!black,
+  urlcolor=blue!50!black
+}
+
+\title{Epistemic Hygiene Arena: Evaluating Retrieval Agents in Polluted Synthetic Information Ecosystems}
+\author{Anonymous}
+\date{May 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+Retrieval-augmented generation is often treated as a remedy for language-model hallucination: when a model lacks reliable internal knowledge, it can retrieve external documents and ground its answer in those documents. This remedy assumes that the retrieved information ecosystem is itself healthy. We introduce Epistemic Hygiene Arena (EHA), a controllable synthetic benchmark for evaluating whether retrieval agents can preserve calibrated beliefs when the document ecosystem contains stale records, citation laundering, false consensus, mixed-source corruption, and generated lore. EHA generates fictional company investigation tasks with hidden ground truth, agent-visible documents, scorer-only contamination labels, and source-dependency graphs. We implement an MVP with 60 episodes, 756 documents, local BM25 retrieval, four prompt strategies, and automatic metrics for verdict accuracy, evidence validity, contaminated citation rate, independent evidence score, provenance recovery, calibration, and query-induced pollution. In a 240-call evaluation of \texttt{openai/gpt-4o-mini}, simple citation prompting did not improve factual performance over top-$k$ retrieval and had the worst accuracy (0.300) and calibration error (0.669). Source-independence and evidence-graph prompts improved provenance recovery (0.540 and 0.269 vs. 0.000 for top-$k$ and citation prompts) and reduced some generated-lore citation failures. However, all prompt-only strategies failed under retrieval flooding: when top-$k$ was dominated by same-upstream false-consensus documents, every strategy had a 1.0 wrong-answer rate for duplicate counts of 5 or more. These results support a narrower conclusion than the original design hypothesis: prompt-level epistemic hygiene improves diagnostics and some evidence-use behavior, but robust contaminated retrieval requires retrieval-stage or interaction-stage access to primary records, not only better final-answer instructions.
+\end{abstract}
+
+\section{Introduction}
+
+Retrieval-augmented generation (RAG) moves part of a language model's factual burden from parameters into an external information supply chain. This is useful when a system must answer questions about recent, private, or long-tail facts. It is also a new failure mode. If retrieved documents are stale, duplicated, forged, generated, mutually copied, or ranked by adversarial signals, a model can become more confidently wrong by citing bad evidence rather than hallucinating without evidence.
+
+This paper studies that failure mode as an information-hygiene problem. A reliable retrieval agent should not only answer from documents; it should ask whether documents are independent, current, primary, and claim-level supportive. It should distinguish evidence from repetition, detect citation chains that do not support the target claim, and abstain or request primary records when the retrieved context is polluted.
+
+We present Epistemic Hygiene Arena (EHA), a synthetic benchmark for this behavior. EHA does not use the live web. Instead, it generates a fictional organization, hidden facts, agent-visible documents, hidden contamination labels, and source-dependency graphs. Agents receive retrieved documents and must return a structured answer with verdict, confidence, supporting evidence, rejected evidence, source-independence notes, contamination notes, uncertainty, and optional dependency edges. The scorer evaluates both the answer and the evidence chain.
+
+The first implementation is intentionally small. It asks whether a minimal synthetic mini-web can produce measurable differences between ordinary top-$k$ RAG, naive citation prompting, source-independence prompting, and evidence-graph prompting. The answer is mixed. The benchmark surfaces several real failure modes, but it also shows that prompt-only defenses fail when retrieval itself excludes primary records. This negative result is useful: ``cite your sources'' and ``think about provenance'' are not substitutes for retrieval policies that preserve primary evidence.
+
+\paragraph{Contributions.}
+\begin{enumerate}[leftmargin=*]
+  \item We formalize a synthetic polluted-information benchmark with hidden truth, visible documents, contamination labels, and dependency graphs.
+  \item We implement a reproducible MVP with 60 fictional company investigation episodes and local BM25 retrieval.
+  \item We define automatic evidence-hygiene metrics beyond answer accuracy, including contaminated citation rate, independent evidence score, provenance recovery F1, and query-induced pollution score.
+  \item We report a 240-call evaluation showing that source-independence and evidence-graph prompts improve provenance behavior, but do not solve retrieval flooding.
+\end{enumerate}
+
+\section{Related Work}
+
+RAG combines parametric models with non-parametric retrieved memory to improve knowledge-intensive generation and provenance \cite{lewis2020rag}. Tool-using and reasoning-acting agents extend this pattern by interleaving reasoning with external observations \cite{schick2023toolformer,yao2022react}. EHA shares this assumption that models need external information, but treats the retrieved information ecosystem as an object of evaluation rather than a clean evidence source.
+
+Truthfulness and fact-verification benchmarks such as TruthfulQA and FEVER evaluate whether models reproduce false beliefs or verify claims against evidence \cite{lin2021truthfulqa,thorne2018fever}. EHA differs by making source dependence, stale evidence, false consensus, and generated lore part of the task structure. The target is not only whether the answer is correct, but whether the agent's evidence chain is epistemically healthy.
+
+RAG poisoning work shows that retrieval corpora are attack surfaces. PoisonedRAG and related benchmarks demonstrate that small numbers of malicious documents can redirect RAG answers \cite{zou2025poisonedrag,zhang2025benchmarking,zhang2025corrupt}. Work on generated content in retrieval ecosystems further suggests that machine-generated documents can affect what retrievers surface \cite{chen2024spiral}. EHA complements these attack-success studies by evaluating the agent behavior that follows exposure: whether the system cites contaminants, treats repetition as independence, tracks provenance, or abstains.
+
+Web-agent benchmarks such as WebArena focus on long-horizon interaction in realistic websites \cite{zhou2023webarena}. EHA is narrower and more controlled: it evaluates evidence hygiene rather than web task completion. It also builds on prior project sketches around terminal-impostor and causal-reality testing, but shifts the question from whether a tool environment is real to whether an information environment is epistemically trustworthy.
+
+\section{Benchmark Design}
+
+\subsection{Hidden World and Document Ecosystem}
+
+Each EHA episode starts from a hidden fact about a fictional company, Novalis Robotics. The generator then emits agent-visible documents and scorer-only metadata. Agent-visible documents include:
+\[
+d = (\texttt{doc\_id}, \texttt{title}, \texttt{source\_type}, \texttt{timestamp}, \texttt{body}, \texttt{visible\_citations}).
+\]
+Scorer-only metadata includes the target claim, stance, whether the document supports the gold verdict, contamination labels, upstream root, generated/stale flags, valid time, evidence quality, and retrieval rank boost. These hidden labels are never shown to the agent.
+
+The MVP contains six episode types. Table~\ref{tab:dataset} summarizes the distribution.
+
+\begin{table}[t]
+\centering
+\caption{EHA MVP dataset. Each episode has one investigation question, 12--18 visible documents, hidden gold labels, and a hidden dependency graph.}
+\label{tab:dataset}
+\begin{tabular}{lrl}
+\toprule
+Episode type & Count & Targeted failure mode \\
+\midrule
+Clean control & 10 & Non-adversarial retrieval sanity check \\
+False consensus & 15 & Same-upstream repetition mistaken for evidence \\
+Citation laundering & 10 & Citation chains that do not support the claim \\
+Temporal pollution & 10 & Stale documents used as current evidence \\
+Mixed-source corruption & 10 & Locally false claims inside plausible sources \\
+Halupedia trap & 5 & Generated lore and query-induced pollution \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Retrieval}
+
+The MVP does not use live search or external embeddings. It uses deterministic local BM25 retrieval over the synthetic corpus. Each strategy receives the same top-8 documents for an episode. Some false-consensus episodes apply a controlled rank boost to same-upstream pollutant documents, producing retrieval flooding. This lets us distinguish two conditions: cases where primary evidence remains in top-$k$, and cases where top-$k$ is dominated by repeated polluted documents.
+
+\subsection{Strategies}
+
+We compare four prompt strategies:
+\begin{description}[leftmargin=*]
+  \item[A0 Top-$k$ RAG.] A standard retrieval-augmented QA prompt using the top-8 documents.
+  \item[A1 Citation prompt.] A standard QA prompt that also asks for supporting document IDs.
+  \item[A2 Source-independence prompt.] A prompt that asks the model to assess whether sources are independent, current, primary, and claim-level supportive.
+  \item[A3 Evidence-graph prompt.] A prompt that asks for a small dependency graph and rejected evidence in addition to the verdict.
+\end{description}
+
+All strategies return the same JSON schema, including verdict, confidence, supporting evidence, rejected evidence, dependency edges, source-independence notes, contamination notes, uncertainty, and answer text. For A0 and A1, dependency edges are expected to be empty.
+
+\subsection{Metrics}
+
+EHA scores both conclusions and evidence use:
+\begin{itemize}[leftmargin=*]
+  \item \textbf{Verdict accuracy}: predicted verdict equals the hidden gold verdict.
+  \item \textbf{Evidence validity}: fraction of supporting citations that support the gold verdict.
+  \item \textbf{Contaminated citation rate (CCR)}: fraction of supporting citations that are contaminated, generated, or stale.
+  \item \textbf{Independent evidence score (IES)}: number of unique upstream roots among supporting citations divided by supporting citations.
+  \item \textbf{Provenance recovery F1}: F1 between predicted dependency edges and gold edges among retrieved/cited documents.
+  \item \textbf{Expected calibration error (ECE)}: five-bin calibration error over confidence and verdict correctness.
+  \item \textbf{Query-induced pollution score (QIPS)}: generated sources cited as independent evidence divided by generated sources exposed.
+\end{itemize}
+
+\section{Experimental Setup}
+
+We generated 60 episodes with seed 4242, yielding 756 visible documents and 321 gold dependency edges. We evaluated \texttt{openai/gpt-4o-mini} through an OpenAI-compatible endpoint using the official OpenAI Python SDK. The run used temperature 0, top-$k=8$, structured JSON output, and a maximum completion budget of 6000 tokens. The experiment produced 240 model calls: 60 episodes times four strategies. All prompts, responses, usage records, predictions, and reports were written to disk. The recorded API cost was 0.0733 USD.
+
+Before the full run, a 12-episode pilot was used as a gate. The pilot passed after the generator was adjusted to avoid self-disclosing contaminants and to make false-consensus retrieval flooding actually displace primary evidence. The final pilot achieved clean-control top-$k$ accuracy 1.0, four polluted false-consensus mistakes among A0/A1, and JSON parse success 1.0.
+
+\section{Results}
+
+\subsection{Overall Strategy Comparison}
+
+Table~\ref{tab:overall} reports aggregate metrics over all 60 episodes. Citation prompting underperformed top-$k$ RAG on verdict accuracy and calibration. Source-independence and evidence-graph prompting improved provenance-oriented metrics. Source-independence achieved the highest provenance recovery F1 (0.540) and high independent evidence score (0.983). Evidence-graph prompting had the lowest contaminated citation rate (0.200) and highest evidence validity (0.783). Raw verdict accuracy remained low across all strategies, reflecting difficult mixed and retrieval-flooded episodes.
+
+\begin{table}[t]
+\centering
+\caption{Overall results for \texttt{openai/gpt-4o-mini} on 60 EHA episodes. Higher is better except CCR and ECE.}
+\label{tab:overall}
+\begin{tabular}{lrrrrrr}
+\toprule
+Strategy & Acc. & EV & CCR $\downarrow$ & IES & PR-F1 & ECE $\downarrow$ \\
+\midrule
+Top-$k$ RAG & 0.433 & 0.733 & 0.267 & 0.777 & 0.000 & 0.523 \\
+Citation prompt & 0.300 & 0.721 & 0.279 & 0.769 & 0.000 & 0.669 \\
+Source independence & 0.433 & 0.750 & 0.233 & 0.983 & 0.540 & 0.502 \\
+Evidence graph & 0.417 & 0.783 & 0.200 & 0.983 & 0.269 & 0.488 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Citation Prompting Is Not Evidence Hygiene}
+
+Naive citation prompting was not a reliable defense. It reduced neither the false-consensus failure nor generated-lore citation. Its overall contaminated citation rate was slightly worse than top-$k$ RAG (0.279 vs. 0.267), and its verdict accuracy was lower (0.300 vs. 0.433). This supports the benchmark's premise that asking for citations is different from asking for independent, current, primary, claim-level evidence.
+
+\subsection{False Consensus Under Retrieval Flooding}
+
+Table~\ref{tab:falseconsensus} shows the clearest failure mode. When only one pollutant duplicate was present, all strategies answered correctly in the three sampled tasks. When duplicate count was 5 or higher, all strategies had a wrong-answer rate of 1.0. The reason is structural: in the rank-boosted false-consensus condition, top-$k$ is dominated by same-upstream pollutant documents, and primary records are absent or buried. Even evidence-graph prompting often identified shared dependencies but still accepted the repeated claim or failed to recover the correct refutation. This is a strong negative result for prompt-only defenses.
+
+\begin{table}[t]
+\centering
+\caption{False-consensus results by duplicate count. Wrong confidence is averaged over wrong answers.}
+\label{tab:falseconsensus}
+\begin{tabular}{llrrr}
+\toprule
+Strategy & Duplicates & $n$ & Wrong rate & Wrong conf. \\
+\midrule
+Top-$k$ RAG & 1 & 3 & 0.000 & 0.000 \\
+Top-$k$ RAG & 5 & 6 & 1.000 & 0.933 \\
+Top-$k$ RAG & 20 & 3 & 1.000 & 0.933 \\
+Top-$k$ RAG & 50 & 3 & 1.000 & 0.967 \\
+\midrule
+Citation prompt & 1 & 3 & 0.000 & 0.000 \\
+Citation prompt & 5 & 6 & 1.000 & 0.950 \\
+Citation prompt & 20 & 3 & 1.000 & 0.950 \\
+Citation prompt & 50 & 3 & 1.000 & 0.950 \\
+\midrule
+Source independence & 1 & 3 & 0.000 & 0.000 \\
+Source independence & 5 & 6 & 1.000 & 0.900 \\
+Source independence & 20 & 3 & 1.000 & 0.917 \\
+Source independence & 50 & 3 & 1.000 & 0.917 \\
+\midrule
+Evidence graph & 1 & 3 & 0.000 & 0.000 \\
+Evidence graph & 5 & 6 & 1.000 & 0.883 \\
+Evidence graph & 20 & 3 & 1.000 & 0.900 \\
+Evidence graph & 50 & 3 & 1.000 & 0.900 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Generated Lore and Temporal Pollution}
+
+The Halupedia-style trap produced a different pattern. Citation prompting achieved high verdict accuracy on four of five cases but cited generated sources as supporting evidence, yielding QIPS 1.0 and CCR 0.95. Evidence-graph prompting had lower verdict accuracy but reduced QIPS to 0.0 and CCR to 0.0 by rejecting generated or non-primary material. This illustrates why answer accuracy alone is insufficient: a model can reach the right abstention label while still citing polluted evidence.
+
+Temporal pollution showed the strongest benefit from source-independence prompting. It achieved 1.0 verdict accuracy on temporal episodes, compared with 0.8 for top-$k$ and 0.0 for citation prompting. This suggests that explicit source-time reasoning can help when the necessary current primary records remain in top-$k$.
+
+\section{Discussion}
+
+The experiment supports three lessons.
+
+\paragraph{First, citations are not hygiene.}
+Citation prompting can make answers look grounded without ensuring the cited material is primary, current, independent, or claim-level supportive. In this run, citation prompting was the weakest overall strategy.
+
+\paragraph{Second, provenance prompts help when evidence is present.}
+Source-independence and evidence-graph prompts improved provenance recovery, independent evidence scores, and rejection of some polluted sources. The temporal-pollution and generated-lore cases show useful behavioral differences that accuracy alone would hide.
+
+\paragraph{Third, retrieval flooding defeats prompt-only defenses.}
+When top-$k$ is saturated with same-upstream pollutants, final-answer prompts cannot reliably reconstruct missing primary records. This shifts the design implication: robust RAG systems need retrieval-time diversity, primary-record retrieval, citation tracing tools, or interaction policies that can request missing records. Prompt wording is not enough.
+
+\section{Limitations}
+
+This is an MVP benchmark, not a final measurement of all retrieval agents. It evaluates one main model and one synthetic domain. The generator is template-based, so some artifacts may be easier or harder than real documents. The retrieval-flooding condition is deliberately strong: in some false-consensus episodes, primary records are absent from top-$k$, making correct refutation nearly impossible without an interaction action such as \texttt{request\_primary\_record}. The scorer is automatic and claim-level, but natural-language explanations are not manually adjudicated. Finally, prompt strategies are only one defense family; stronger systems should modify retrieval, tracing, and interaction policies.
+
+\section{Ethics and Safety}
+
+EHA uses fictional organizations, fictional documents, and synthetic claims. It is designed to study evidence hygiene without spreading real misinformation or making claims about real institutions. The benchmark includes generated fake documents and citation-laundering patterns only inside a local synthetic corpus. Future releases should avoid packaging these generators as tools for producing real-world misinformation and should document that the artifacts are for defensive evaluation.
+
+\section{Conclusion}
+
+EHA turns polluted information ecosystems into a controlled benchmark for retrieval-agent evidence hygiene. The MVP shows that citation prompting is not enough, that source-independence and evidence-graph prompts improve several evidence-quality metrics, and that retrieval flooding remains a hard failure mode. The central implication is pragmatic: low-hallucination retrieval agents need more than citations and better final-answer prompts. They need retrieval and interaction mechanisms that preserve access to primary, independent, current evidence.
+
+\section*{Reproducibility}
+
+The implementation is in \texttt{eha-mvp/}. The main commands are:
+\begingroup
+\small
+\begin{verbatim}
+uv sync
+uv run eha-generate --episodes 60 --seed 4242 --out-dir data/generated
+uv run eha-run --data-dir data/generated --backend api \
+  --models openai/gpt-4o-mini \
+  --strategies topk_rag,citation_prompt,\
+source_independence_prompt,evidence_graph_prompt \
+  --out-dir results/runs/api-main-gpt4omini
+uv run eha-report --data-dir data/generated \
+  --run-dir results/runs/api-main-gpt4omini \
+  --out-dir results/reports-api-main-gpt4omini
+\end{verbatim}
+\endgroup
+
+\begin{thebibliography}{13}
+
+\bibitem{lewis2020rag}
+Patrick Lewis, Ethan Perez, Aleksandra Piktus, Fabio Petroni, Vladimir Karpukhin, Naman Goyal, Heinrich Kuettler, Mike Lewis, Wen-tau Yih, Tim Rocktaeschel, Sebastian Riedel, and Douwe Kiela.
+\newblock Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks.
+\newblock \emph{NeurIPS}, 2020.
+
+\bibitem{lin2021truthfulqa}
+Stephanie Lin, Jacob Hilton, and Owain Evans.
+\newblock TruthfulQA: Measuring How Models Mimic Human Falsehoods.
+\newblock arXiv:2109.07958, 2021.
+
+\bibitem{thorne2018fever}
+James Thorne, Andreas Vlachos, Christos Christodoulopoulos, and Arpit Mittal.
+\newblock FEVER: a Large-scale Dataset for Fact Extraction and Verification.
+\newblock \emph{NAACL-HLT}, 2018.
+
+\bibitem{zou2025poisonedrag}
+Wei Zou, Runpeng Geng, Binghui Wang, and Jinyuan Jia.
+\newblock PoisonedRAG: Knowledge Corruption Attacks to Retrieval-Augmented Generation of Large Language Models.
+\newblock \emph{USENIX Security}, 2025.
+
+\bibitem{zhang2025benchmarking}
+Baolei Zhang, Haoran Xin, Jiatong Li, Dongzhe Zhang, Minghong Fang, Zhuqing Liu, Lihai Nie, and Zheli Liu.
+\newblock Benchmarking Poisoning Attacks against Retrieval-Augmented Generation.
+\newblock arXiv:2505.18543, 2025.
+
+\bibitem{zhang2025corrupt}
+Baolei Zhang, Yuxi Chen, Zhuqing Liu, Lihai Nie, Tong Li, Zheli Liu, and Minghong Fang.
+\newblock Practical Poisoning Attacks against Retrieval-Augmented Generation.
+\newblock arXiv:2504.03957, 2025.
+
+\bibitem{chen2024spiral}
+Xiaoyang Chen, Ben He, Hongyu Lin, Xianpei Han, Tianshu Wang, Boxi Cao, Le Sun, and Yingfei Sun.
+\newblock Spiral of Silence: How is Large Language Model Killing Information Retrieval? A Case Study on Open Domain Question Answering.
+\newblock \emph{ACL}, 2024.
+
+\bibitem{zhou2023webarena}
+Shuyan Zhou, Frank F. Xu, Hao Zhu, Xuhui Zhou, Robert Lo, Abishek Sridhar, Xianyi Cheng, Tianyue Ou, Yonatan Bisk, Daniel Fried, Uri Alon, and Graham Neubig.
+\newblock WebArena: A Realistic Web Environment for Building Autonomous Agents.
+\newblock arXiv:2307.13854, 2023.
+
+\bibitem{schick2023toolformer}
+Timo Schick, Jane Dwivedi-Yu, Roberto Dessi, Roberta Raileanu, Maria Lomeli, Eric Hambro, Luke Zettlemoyer, Nicola Cancedda, and Thomas Scialom.
+\newblock Toolformer: Language Models Can Teach Themselves to Use Tools.
+\newblock arXiv:2302.04761, 2023.
+
+\bibitem{yao2022react}
+Shunyu Yao, Jeffrey Zhao, Dian Yu, Nan Du, Izhak Shafran, Karthik Narasimhan, and Yuan Cao.
+\newblock ReAct: Synergizing Reasoning and Acting in Language Models.
+\newblock arXiv:2210.03629, 2022.
+
+\bibitem{owasp2025misinformation}
+OWASP GenAI Security Project.
+\newblock LLM09:2025 Misinformation.
+\newblock 2025.
+
+\bibitem{bader2026halupedia}
+BaderBC.
+\newblock Halupedia: Encyclopedia that hallucinates articles on the fly.
+\newblock GitHub repository, 2026.
+
+\bibitem{zhang2025mirage}
+Weichen Zhang, Yiyou Sun, Pohao Huang, Jiayue Pu, Heyue Lin, and Dawn Song.
+\newblock MIRAGE-Bench: LLM Agent is Hallucinating and Where to Find Them.
+\newblock arXiv:2507.21017, 2025.
+
+\end{thebibliography}
+
+\end{document}

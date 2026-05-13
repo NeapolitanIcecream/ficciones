@@ -1,0 +1,44 @@
+[project]
+name = "eha-mvp"
+version = "0.1.0"
+description = "Epistemic Hygiene Arena MVP benchmark for polluted synthetic RAG ecosystems."
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "loguru>=0.7.3",
+    "openai>=2.11.0",
+    "pydantic>=2.12.0",
+    "rank-bm25>=0.2.2",
+    "rich>=14.0.0",
+    "typer>=0.20.0",
+]
+
+[dependency-groups]
+dev = [
+    "pytest>=9.0.0",
+]
+
+[project.scripts]
+eha-generate = "eha.generate_corpus:app"
+eha-run = "eha.run_eval:app"
+eha-report = "eha.report:app"
+eha-generate-v2 = "eha.phase2_generate:app"
+eha-phase2 = "eha.phase2_run:app"
+eha-report-v2 = "eha.phase2_report:app"
+eha-generate-2r = "eha.phase2r_generate:app"
+eha-phase2r = "eha.phase2r_run:app"
+eha-report-2r = "eha.phase2r_report:app"
+eha-generate-2s = "eha.phase2s_generate:app"
+eha-phase2s = "eha.phase2s_run:app"
+eha-report-2s = "eha.phase2s_report:app"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["eha"]
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
+testpaths = ["tests"]
