@@ -54,6 +54,7 @@ PREFLIGHT_SPECS: tuple[tuple[str, str, str], ...] = (
 )
 
 RETRIEVAL_METRIC_RETRIEVERS = ("bm25_top8", "primary_preserve_top8", "hygienic_combo_top8")
+CLAIM_FIRST_PROMPTS = {"claim_first_citation_v1", "claim_first_citation_v1_1"}
 
 
 def select_matrix_specs(*, preflight: bool, strategy_names: Sequence[str] | None = None) -> tuple[tuple[str, str, str], ...]:
@@ -67,6 +68,15 @@ def select_matrix_specs(*, preflight: bool, strategy_names: Sequence[str] | None
         available = ", ".join(spec[0] for spec in specs)
         raise ValueError(f"unknown Matrix strategy for this mode: {', '.join(unknown)}; available: {available}")
     return selected
+
+
+def apply_claim_first_prompt(
+    specs: Sequence[tuple[str, str, str]],
+    claim_first_prompt: str,
+) -> tuple[tuple[str, str, str], ...]:
+    if claim_first_prompt not in CLAIM_FIRST_PROMPTS:
+        raise ValueError(f"unknown claim-first prompt: {claim_first_prompt}")
+    return tuple((strategy, retriever, claim_first_prompt if prompt == "claim_first_citation_v1" else prompt) for strategy, retriever, prompt in specs)
 
 
 def filter_tasks_by_difficulties(tasks: Sequence[Task], difficulties: Sequence[str] | None = None) -> List[Task]:
@@ -108,7 +118,7 @@ def heuristic_matrix_prediction(
 
     fooled = False
     if task.difficulty == "L4" and retriever == "bm25_top8":
-        fooled = strategy in {"naive_bm25", "evidence_graph_v3_bm25"} or (prompt == "claim_first_citation_v1" and false_saturation >= 0.75)
+        fooled = strategy in {"naive_bm25", "evidence_graph_v3_bm25"} or (prompt in CLAIM_FIRST_PROMPTS and false_saturation >= 0.75)
     elif task.difficulty == "L3" and retriever == "bm25_top8":
         fooled = strategy in {"naive_bm25", "evidence_graph_v3_bm25"} and false_saturation >= 0.75
     elif task.difficulty == "L2" and strategy == "naive_bm25":
@@ -149,8 +159,8 @@ def heuristic_matrix_prediction(
 def build_messages(prompt: str, question: str, documents: Sequence[AgentDocument], tool_results: Sequence[Mapping[str, Any]]) -> tuple[List[Dict[str, str]], Mapping[str, Any], str]:
     if prompt == "simple_answer_v1":
         return build_simple_answer_messages(question, documents), matrix_prediction_json_schema(), "eha_matrix_prediction"
-    if prompt == "claim_first_citation_v1":
-        return build_claim_first_messages(question, documents), matrix_prediction_json_schema(), "eha_matrix_prediction"
+    if prompt in CLAIM_FIRST_PROMPTS:
+        return build_claim_first_messages(question, documents, version=prompt), matrix_prediction_json_schema(), "eha_matrix_prediction"
     if prompt == "evidence_graph_v3":
         return build_phase2r_messages(question, documents, tool_results), phase2r_prediction_json_schema(), "eha_phase2r_prediction"
     raise ValueError(f"unknown Matrix prompt: {prompt}")
@@ -233,9 +243,10 @@ def run_matrix_records(
     response_format: str,
     cost_guard: CostGuard,
     strategy_names: Sequence[str] | None = None,
+    claim_first_prompt: str = "claim_first_citation_v1",
 ) -> List[MatrixRunRecord]:
     runner = Phase2OpenAIJsonRunner(timeout_s=timeout_s, response_format=response_format) if backend == "api" else None
-    specs = select_matrix_specs(preflight=preflight, strategy_names=strategy_names)
+    specs = apply_claim_first_prompt(select_matrix_specs(preflight=preflight, strategy_names=strategy_names), claim_first_prompt)
     records: List[MatrixRunRecord] = []
     for model in models:
         for task in tasks:
@@ -294,6 +305,7 @@ def main(
     response_format: str = typer.Option("json_schema", help="json_schema, json_object, or none."),
     difficulties: str = typer.Option("", help="Optional comma-separated difficulty subset, for example L3,L4,L5."),
     strategies: str = typer.Option("", help="Optional comma-separated strategy subset, for example naive_bm25,primary_preserve,hygienic_combo."),
+    claim_first_prompt: str = typer.Option("claim_first_citation_v1", help="claim_first_citation_v1 or claim_first_citation_v1_1."),
     soft_cap_usd: float = typer.Option(75.0, help="Budget soft cap."),
     hard_cap_usd: float = typer.Option(200.0, help="Stop before projected spend exceeds this cap."),
     abort_cap_usd: float = typer.Option(300.0, help="Abort if actual spend exceeds this cap."),
@@ -308,7 +320,7 @@ def main(
     try:
         tasks = filter_tasks_by_difficulties(dataset["tasks"], split_csv(difficulties))
         selected_strategies = split_csv(strategies)
-        selected_specs = select_matrix_specs(preflight=preflight, strategy_names=selected_strategies)
+        selected_specs = apply_claim_first_prompt(select_matrix_specs(preflight=preflight, strategy_names=selected_strategies), claim_first_prompt)
     except ValueError as exc:
         raise typer.BadParameter(str(exc)) from exc
     docs_by_task_map = by_task(dataset["documents"])
@@ -334,6 +346,7 @@ def main(
             response_format=response_format,
             cost_guard=cost_guard,
             strategy_names=selected_strategies,
+            claim_first_prompt=claim_first_prompt,
         )
     except BudgetExceeded as exc:
         write_json(out_dir / "cost_report.json", {"aborted": True, "reason": str(exc), **cost_guard.report()})

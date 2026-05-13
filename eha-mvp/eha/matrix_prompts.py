@@ -66,7 +66,7 @@ def build_simple_answer_messages(question: str, documents: Sequence[AgentDocumen
     ]
 
 
-def build_claim_first_messages(question: str, documents: Sequence[AgentDocument]) -> List[Dict[str, str]]:
+def claim_first_rules(*, strict_support: bool = False) -> List[str]:
     rules = [
         "First decide whether current primary evidence directly supports, refutes, or is insufficient for the target claim.",
         "Prefer current primary sources over secondary summaries.",
@@ -75,6 +75,21 @@ def build_claim_first_messages(question: str, documents: Sequence[AgentDocument]
         "If no primary or current evidence supports the claim, use insufficient rather than overclaiming.",
         "Rejected or suspicious documents may appear in rejected_evidence, not supporting_evidence.",
     ]
+    if strict_support:
+        rules.extend(
+            [
+                "If claim_verdict is supported or refuted, supporting_evidence must contain at least one clean doc_id.",
+                "Do not output empty supporting_evidence for supported or refuted verdicts.",
+                "If no clean supporting doc_id is available, claim_verdict must be insufficient.",
+            ]
+        )
+    return rules
+
+
+def build_claim_first_messages(question: str, documents: Sequence[AgentDocument], *, version: str = "claim_first_citation_v1") -> List[Dict[str, str]]:
+    if version not in {"claim_first_citation_v1", "claim_first_citation_v1_1"}:
+        raise ValueError(f"unknown claim-first prompt version: {version}")
+    rules = claim_first_rules(strict_support=version == "claim_first_citation_v1_1")
     return [
         {
             "role": "developer",
@@ -87,7 +102,7 @@ def build_claim_first_messages(question: str, documents: Sequence[AgentDocument]
             "role": "user",
             "content": json.dumps(
                 {
-                    "task": "claim_first_citation_v1",
+                    "task": version,
                     "question": question,
                     "policy": rules,
                     "documents": docs_payload(documents),
