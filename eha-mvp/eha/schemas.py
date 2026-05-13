@@ -294,6 +294,40 @@ class Phase2SRunRecord(EhaModel):
     response_path: Optional[str] = None
 
 
+class MatrixPrediction(EhaModel):
+    claim_verdict: ClaimVerdict
+    confidence: float = Field(ge=0.0, le=1.0)
+    supporting_evidence: List[str] = Field(default_factory=list)
+    rejected_evidence: List[str] = Field(default_factory=list)
+    answer: str = ""
+    evidence_notes: str = ""
+
+    @field_validator("claim_verdict", mode="before")
+    @classmethod
+    def normalize_matrix_claim_verdict(cls, value: Any) -> Any:
+        if isinstance(value, str):
+            return value.strip().lower()
+        return value
+
+
+class MatrixRunRecord(EhaModel):
+    task_id: str
+    model: str
+    retriever: str
+    strategy: str
+    prompt: str
+    backend: str
+    initial_doc_ids: List[str]
+    final_doc_ids: List[str]
+    prediction: MatrixPrediction
+    parse_success: bool
+    parse_error: Optional[str] = None
+    usage: Dict[str, Any] = Field(default_factory=dict)
+    cost_usd: float = 0.0
+    prompt_path: Optional[str] = None
+    response_path: Optional[str] = None
+
+
 class UsageRecord(EhaModel):
     model: str
     prompt_tokens: int = 0
