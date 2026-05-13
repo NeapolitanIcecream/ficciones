@@ -4,6 +4,7 @@ from pathlib import Path
 
 from eha.matrix_generate import generate_matrix_dataset, write_matrix_dataset
 from eha.matrix_paper_pack import (
+    aggregate_prompt_hygiene,
     aggregate_l4_primary_recovery,
     prompt_hygiene_preflight_rows,
     score_records_with_mechanisms,
@@ -111,6 +112,7 @@ def test_prompt_hygiene_rows_compare_baseline_and_v1_1_on_same_subset(tmp_path: 
     assert {row["strategy"] for row in rows} == {"primary_preserve"}
     assert any(row["prompt_version"] == "claim_first_citation_v1_1" and row["has_required_supporting_evidence"] == 1.0 for row in rows)
     assert any(row["prompt_version"] == "claim_first_citation_v1" and row["has_required_supporting_evidence"] == 0.0 for row in rows)
+    assert "over_abstention_rate" in aggregate_prompt_hygiene(rows)[0]
 
 
 def test_l4_primary_recovery_aggregate_reports_rank_and_ignored_rate() -> None:

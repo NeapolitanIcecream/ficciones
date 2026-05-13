@@ -12,12 +12,12 @@ from rich.console import Console
 from .matrix_scoring import score_matrix_run
 from .matrix_v11 import (
     DEFAULT_V11_SEEDS,
-    aggregate_prompt_preflight,
     bootstrap_ci,
     combine_cost_reports,
     collect_multiseed_rows,
     load_matrix_records,
     mean,
+    summarize_with_ci,
 )
 from .report import markdown_table, write_csv
 from .scoring import unique
@@ -180,7 +180,11 @@ def prompt_hygiene_preflight_rows(
 
 
 def aggregate_prompt_hygiene(rows: Sequence[Mapping[str, Any]]) -> List[Dict[str, Any]]:
-    base = aggregate_prompt_preflight(rows)
+    base = summarize_with_ci(
+        rows,
+        ["prompt_version", "model", "strategy", "difficulty"],
+        ["escape_rate", "claim_accuracy", "contaminated_citation_rate", "generated_lore_overclaim_rate", "over_abstention_rate"],
+    )
     mechanism = {
         tuple(row[key] for key in ["prompt_version", "model", "strategy", "difficulty"]): row
         for row in summarize_plain(
@@ -280,6 +284,7 @@ def write_paper_pack_summary(
                 "claim_accuracy",
                 "contaminated_citation_rate",
                 "generated_lore_overclaim_rate",
+                "over_abstention_rate",
                 "has_required_supporting_evidence",
                 "clean_supporting_evidence",
                 "primary_in_context",
