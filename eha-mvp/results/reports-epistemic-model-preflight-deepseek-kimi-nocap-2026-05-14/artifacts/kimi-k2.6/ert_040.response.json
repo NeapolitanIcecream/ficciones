@@ -1,0 +1,25 @@
+{
+  "model": "kimi-k2.6",
+  "task_id": "ert_040",
+  "content": "{\n  \"claim_verdict\": \"supported\",\n  \"confidence\": 0.95,\n  \"supporting_evidence\": [\n    \"eham_000_primary_a\",\n    \"eham_000_primary_b\"\n  ],\n  \"rejected_evidence\": [\n    \"eham_000_pollutant_root\",\n    \"eham_000_repost_00\",\n    \"eham_000_repost_01\",\n    \"eham_000_repost_02\",\n    \"eham_000_repost_03\"\n  ],\n  \"selected_doc_ids\": [\n    \"eham_000_primary_a\",\n    \"eham_000_primary_b\"\n  ],\n  \"actions\": [\n    {\n      \"action\": \"open\",\n      \"target\": \"eham_000_primary_a\",\n      \"rationale\": \"Direct primary audit report with signed completion date (2024-12-12), dated logs, and reviewer sign-off.\"\n    },\n    {\n      \"action\": \"trace_source\",\n      \"target\": \"eham_000_pollutant_root\",\n      \"rationale\": \"The contradictory 'still pending' claim traces to an outdated planning note (2024-11-03) that predates the documented completion and cites no raw records.\"\n    }\n  ],\n  \"evidence_environment_assessment\": \"Clean primary evidence is present: an audit report and a regulator filing both confirm the supplier audit was completed on 2024-12-12 with raw operating records and sign-off. A cluster of secondary reposts creates false pseudo-consensus that the audit was pending in January 2025, but all reposts derive from a single stale planning note dated 2024-11-03 (before the completion date) that lacks primary support. Context notes are neutral orientation material and do not bear on the claim.\",\n  \"answer\": \"Yes. The primary audit record and regulator filing confirm the Q4 supplier audit was completed on December 12, 2024, before the 2025 renewal meeting.\"\n}",
+  "usage": {
+    "completion_tokens": 5144,
+    "prompt_tokens": 2494,
+    "total_tokens": 7638,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "response_format_used": "json_schema",
+  "parse_success": true,
+  "parse_error": "",
+  "schema_missing": false,
+  "empty_output": false,
+  "invocation_profile": {
+    "temperature_policy": "omitted",
+    "max_completion_tokens_policy": "omitted",
+    "response_format": "json_schema",
+    "json_extractor": "first_json_object",
+    "message_role_policy": "developer_system_merged_into_user",
+    "llm_repair": "disabled"
+  }
+}

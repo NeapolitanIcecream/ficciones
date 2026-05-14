@@ -1,0 +1,38 @@
+{
+  "task_count_per_model": 1,
+  "record_count": 1,
+  "models": [
+    "claude-opus-4-7"
+  ],
+  "invocation_profile": {
+    "temperature_policy": "omitted",
+    "max_completion_tokens_policy": "explicit:4096",
+    "response_format": "json_schema",
+    "json_extractor": "first_json_object",
+    "message_role_policy": "developer_system_merged_into_user",
+    "llm_repair": "disabled"
+  },
+  "sample_counts": {
+    "task_count": 1,
+    "family_counts": {
+      "packet_judgment": 1
+    },
+    "condition_counts": {
+      "clean": 1
+    },
+    "prompt_condition": "epistemic_hygiene_instruction"
+  },
+  "gates": {
+    "parse_success_min": 0.95,
+    "empty_output_required": 0,
+    "schema_missing_rate_max": 0.05,
+    "llm_repair": "disabled"
+  },
+  "artifacts": {
+    "predictions": "preflight_predictions.jsonl",
+    "rows": "preflight_rows.csv",
+    "summary": "preflight_summary.csv",
+    "cohort_decision": "cohort_decision.md",
+    "raw_calls": "artifacts/"
+  }
+}

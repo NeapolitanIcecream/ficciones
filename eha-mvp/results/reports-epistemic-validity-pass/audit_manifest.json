@@ -1,0 +1,48 @@
+{
+  "name": "EHA Validity Pass",
+  "task_content_changed": false,
+  "gold_labels_changed": false,
+  "api_calls_made": false,
+  "inputs": {
+    "task_dir": "data/epistemic-resilience-v1",
+    "run_dir": "results/runs/epistemic-resilience-v1-api-final",
+    "report_dir": "results/reports-epistemic-resilience-v1",
+    "heuristic_report_dir": "results/reports-epistemic-resilience-v1-heuristic"
+  },
+  "outputs": {
+    "parse_repair_audit_rows": 114,
+    "human_audit_sample_rows": 80,
+    "evidence_cleanliness_failure_rows": 125,
+    "heuristic_baseline_appendix_rows": 60,
+    "human_audit_completed_rows": 80,
+    "parse_repair_attempted_rows": 124
+  },
+  "human_audit_completed": true,
+  "human_audit_review_status": "no_issues",
+  "human_audit_scorer_agreement_counts": {
+    "yes": 25,
+    "no": 8,
+    "uncertain": 47
+  },
+  "parse_repair_status": "blocked_by_api_route",
+  "parse_repair_output_dir": "results/reports-epistemic-parse-repair-gpt5mini",
+  "parse_repair_blocker": "OpenAI-provider chat completion calls returned upstream 403 provider Terms of Service errors; repaired metrics remain unavailable.",
+  "human_audit_bucket_counts": {
+    "generated_lore": 20,
+    "false_consensus": 20,
+    "buried_primary": 20,
+    "active_verification": 20
+  },
+  "parse_failure_counts_by_model": {
+    "openai/gpt-5-mini": 124
+  },
+  "taxonomy_label_counts": {
+    "contaminated_support": 125,
+    "generated_lore_cited": 34,
+    "duplicate_upstream_treated_as_independent": 45,
+    "stale_evidence_cited": 25
+  },
+  "raw_response_available": false,
+  "repair_attempted": false,
+  "repair_blocker": "Final run persisted predictions and parse errors, but not raw unparsed response text."
+}

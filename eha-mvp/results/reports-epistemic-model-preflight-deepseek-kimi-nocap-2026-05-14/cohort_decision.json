@@ -1,0 +1,76 @@
+{
+  "decisions": [
+    {
+      "provider": "Anthropic",
+      "selected_model": "",
+      "primary_candidate": "claude-opus-4-7",
+      "fallback_model": "",
+      "status": "blocked",
+      "note": "Primary candidate did not pass structured-output preflight."
+    },
+    {
+      "provider": "DeepSeek",
+      "selected_model": "deepseek-v4-pro",
+      "primary_candidate": "deepseek-v4-pro",
+      "fallback_model": "",
+      "status": "selected",
+      "note": "Latest routable flagship passed structured-output preflight."
+    },
+    {
+      "provider": "Google",
+      "selected_model": "",
+      "primary_candidate": "gemini-3.1-pro-preview",
+      "fallback_model": "gemini-2.5-pro",
+      "status": "blocked",
+      "note": "Neither Google primary nor fallback passed structured-output preflight."
+    },
+    {
+      "provider": "Kimi",
+      "selected_model": "kimi-k2.6",
+      "primary_candidate": "kimi-k2.6",
+      "fallback_model": "",
+      "status": "selected",
+      "note": "Latest routable flagship passed structured-output preflight."
+    },
+    {
+      "provider": "OpenAI",
+      "selected_model": "",
+      "primary_candidate": "gpt-5.4",
+      "fallback_model": "",
+      "status": "blocked",
+      "note": "Primary candidate did not pass structured-output preflight."
+    }
+  ],
+  "summaries": [
+    {
+      "model": "deepseek-v4-pro",
+      "n": 20,
+      "parse_success_count": 20,
+      "parse_success_rate": 1.0,
+      "empty_output_count": 0,
+      "schema_missing_count": 0,
+      "schema_missing_rate": 0.0,
+      "structured_preflight_pass": true,
+      "response_format_used": "{\"json_object\": 20}",
+      "json_extractor_used": "{\"first_json_object\": 20}",
+      "temperature_policy": "omitted",
+      "max_completion_tokens_policy": "omitted",
+      "required_schema_fields": "claim_verdict,confidence,supporting_evidence,rejected_evidence,selected_doc_ids,actions,evidence_environment_assessment,answer"
+    },
+    {
+      "model": "kimi-k2.6",
+      "n": 20,
+      "parse_success_count": 20,
+      "parse_success_rate": 1.0,
+      "empty_output_count": 0,
+      "schema_missing_count": 0,
+      "schema_missing_rate": 0.0,
+      "structured_preflight_pass": true,
+      "response_format_used": "{\"json_schema\": 20}",
+      "json_extractor_used": "{\"first_json_object\": 20}",
+      "temperature_policy": "omitted",
+      "max_completion_tokens_policy": "omitted",
+      "required_schema_fields": "claim_verdict,confidence,supporting_evidence,rejected_evidence,selected_doc_ids,actions,evidence_environment_assessment,answer"
+    }
+  ]
+}

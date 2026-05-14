@@ -1,0 +1,53 @@
+{
+  "task_count_per_model": 20,
+  "record_count": 100,
+  "models": [
+    "claude-opus-4-7",
+    "deepseek-v4-pro",
+    "gemini-3.1-pro-preview",
+    "gpt-5.4",
+    "kimi-k2.6"
+  ],
+  "invocation_profile": {
+    "collection_mode": true,
+    "source_dirs": [
+      "results/reports-epistemic-model-preflight-frontier-process-2026-05-14",
+      "results/reports-epistemic-model-preflight-deepseek-kimi-nocap-2026-05-14"
+    ],
+    "per_record_invocation_profile": "preserved",
+    "llm_repair": "disabled"
+  },
+  "sample_counts": {
+    "task_count": 20,
+    "family_counts": {
+      "packet_judgment": 8,
+      "evidence_selection": 8,
+      "active_verification": 4
+    },
+    "condition_counts": {
+      "clean": 4,
+      "conflicting_evidence": 4,
+      "false_consensus": 4,
+      "buried_primary": 4,
+      "generated_lore": 4
+    },
+    "prompt_condition": "epistemic_hygiene_instruction"
+  },
+  "collection_sources": [
+    "results/reports-epistemic-model-preflight-frontier-process-2026-05-14",
+    "results/reports-epistemic-model-preflight-deepseek-kimi-nocap-2026-05-14"
+  ],
+  "gates": {
+    "parse_success_min": 0.95,
+    "empty_output_required": 0,
+    "schema_missing_rate_max": 0.05,
+    "llm_repair": "disabled"
+  },
+  "artifacts": {
+    "predictions": "preflight_predictions.jsonl",
+    "rows": "preflight_rows.csv",
+    "summary": "preflight_summary.csv",
+    "cohort_decision": "cohort_decision.md",
+    "raw_calls": "artifacts/"
+  }
+}

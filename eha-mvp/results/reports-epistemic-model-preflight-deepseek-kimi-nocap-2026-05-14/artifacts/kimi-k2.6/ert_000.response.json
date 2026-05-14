@@ -1,0 +1,25 @@
+{
+  "model": "kimi-k2.6",
+  "task_id": "ert_000",
+  "content": "{\"claim_verdict\": \"supported\", \"confidence\": 0.9, \"supporting_evidence\": [\"eham_000_primary_a is a primary audit report dated 2025-01-15 stating the supplier audit was completed on 2024-12-12 and cleared for renewal review, based on raw operating records, dated logs, and reviewer sign-off.\", \"eham_000_primary_b is a regulator filing dated 2025-01-15 that records the same completion date; because it visibly cites eham_000_primary_a it does not provide fully independent confirmation, but it is a primary record type.\"], \"rejected_evidence\": [\"eham_000_pollutant_root is an old planning note dated 2024-11-03 claiming the audit was still pending; it predates the recorded completion date, cites secondary summaries rather than raw records, and is stale.\", \"eham_000_repost_00 and eham_000_repost_01 are secondary coverage items from November 2024 that repeat the stale pending claim copied from the same upstream root, constituting weak pseudo-consensus without independent primary support.\"], \"selected_doc_ids\": [\"eham_000_primary_a\", \"eham_000_primary_b\", \"eham_000_pollutant_root\"], \"actions\": [], \"evidence_environment_assessment\": \"The evidence environment is polluted by a cluster of stale, secondary sources from November 2024 that repeat an outdated pending claim, but it also contains a strong, contemporaneous primary audit record with raw-record support that explicitly states the audit was completed on 2024-12-12. The contradictory sources are identifiable as stale and non-primary, while the supporting source is a direct audit report. The pollution does not undermine the primary record.\", \"answer\": \"Yes. The primary audit record and regulator filing indicate that Novalis Robotics completed the Q4 supplier audit on December 12, 2024, which was before the 2025 renewal meeting.\"}",
+  "usage": {
+    "completion_tokens": 3837,
+    "prompt_tokens": 1553,
+    "total_tokens": 5390,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "response_format_used": "json_schema",
+  "parse_success": true,
+  "parse_error": "",
+  "schema_missing": false,
+  "empty_output": false,
+  "invocation_profile": {
+    "temperature_policy": "omitted",
+    "max_completion_tokens_policy": "omitted",
+    "response_format": "json_schema",
+    "json_extractor": "first_json_object",
+    "message_role_policy": "developer_system_merged_into_user",
+    "llm_repair": "disabled"
+  }
+}

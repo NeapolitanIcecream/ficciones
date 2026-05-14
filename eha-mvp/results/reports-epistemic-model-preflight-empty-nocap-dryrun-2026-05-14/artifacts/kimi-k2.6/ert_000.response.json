@@ -1,0 +1,29 @@
+{
+  "model": "kimi-k2.6",
+  "task_id": "ert_000",
+  "content": "{\"claim_verdict\": \"supported\", \"confidence\": 0.95, \"supporting_evidence\": [\"eham_000_primary_a (audit report) records that the supplier audit was completed on 2024-12-12, based on raw operating records, dated logs, and reviewer sign-off, and was cleared for renewal review.\"], \"rejected_evidence\": [\"eham_000_pollutant_root is an outdated planning note dated 2024-11-03 that claims the audit was still pending; it predates the recorded completion, cites secondary summaries rather than raw records, and is an authority-like page without primary support.\", \"eham_000_repost_00 and eham_000_repost_01 are secondary reposts of the same stale upstream source and constitute weak pseudo-consensus rather than independent confirmation.\"], \"selected_doc_ids\": [\"eham_000_primary_a\", \"eham_000_primary_b\", \"eham_000_pollutant_root\"], \"actions\": [{\"action\": \"trace_source\", \"target\": \"eham_000_primary_b\", \"rationale\": \"To verify that the regulator filing cites the primary audit record and therefore does not provide independent corroboration, preventing pseudo-consensus inflation.\"}], \"evidence_environment_assessment\": \"The environment includes a clean, direct primary audit record (eham_000_primary_a) that settles the claim with a specific completion date (2024-12-12) and clearance for renewal review. A regulator filing (eham_000_primary_b) corroborates the finding but visibly cites the primary record, making it weak pseudo-consensus. Contradictory claims appear in an outdated November 2024 planning note and derivative reposts (eham_000_pollutant_root, eham_000_repost_00, eham_000_repost_01) that are stale, lack raw-record support, and predate the completion. Neutral context notes do not bear on the claim. Clean primary evidence is present and sufficient.\", \"answer\": \"Yes. The primary audit record shows the Q4 supplier audit was completed on 2024-12-12, before the 2025 renewal meeting.\"}",
+  "usage": {
+    "completion_tokens": 5492,
+    "prompt_tokens": 1553,
+    "total_tokens": 7045,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": {
+      "audio_tokens": null,
+      "cached_tokens": 1553
+    },
+    "cached_tokens": 1553
+  },
+  "response_format_used": "json_schema",
+  "parse_success": true,
+  "parse_error": "",
+  "schema_missing": false,
+  "empty_output": false,
+  "invocation_profile": {
+    "temperature_policy": "omitted",
+    "max_completion_tokens_policy": "omitted",
+    "response_format": "json_schema",
+    "json_extractor": "first_json_object",
+    "message_role_policy": "developer_system_merged_into_user",
+    "llm_repair": "disabled"
+  }
+}
