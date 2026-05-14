@@ -1,0 +1,180 @@
+{
+  "status": "pass",
+  "checks": [
+    {
+      "name": "task_manifest",
+      "status": "pass",
+      "details": {
+        "task_count": 100,
+        "family_counts": {
+          "packet_judgment": 40,
+          "evidence_selection": 40,
+          "active_verification": 20
+        },
+        "condition_counts": {
+          "clean": 20,
+          "conflicting_evidence": 20,
+          "false_consensus": 20,
+          "buried_primary": 20,
+          "generated_lore": 20
+        }
+      }
+    },
+    {
+      "name": "run_predictions",
+      "status": "pass",
+      "details": {
+        "prediction_count": 624,
+        "model_counts": {
+          "openai/gpt-4o-mini": 200,
+          "openai/gpt-5-mini": 200,
+          "openai/gpt-5.4-mini": 200,
+          "openai/gpt-5.5": 24
+        },
+        "prompt_conditions": [
+          "epistemic_hygiene_instruction",
+          "standard_answer"
+        ],
+        "run_manifest": {
+          "task_count": 100,
+          "record_count": 624,
+          "models": [
+            "openai/gpt-4o-mini",
+            "openai/gpt-5-mini",
+            "openai/gpt-5.4-mini",
+            "openai/gpt-5.5"
+          ],
+          "prompt_conditions": [
+            "standard_answer",
+            "epistemic_hygiene_instruction"
+          ],
+          "sample_model": "openai/gpt-5.5",
+          "sample_size": 12,
+          "sample_strategy": "family_and_condition_stratified",
+          "backend": "api",
+          "source_run_dirs": [
+            "results/runs/epistemic-resilience-v1-api",
+            "results/runs/epistemic-resilience-v1-api-gpt55-stratified"
+          ]
+        }
+      }
+    },
+    {
+      "name": "sample_model_condition_coverage",
+      "status": "pass",
+      "details": {
+        "record_count": 24,
+        "condition_counts": {
+          "clean": 6,
+          "conflicting_evidence": 6,
+          "false_consensus": 4,
+          "buried_primary": 4,
+          "generated_lore": 4
+        }
+      }
+    },
+    {
+      "name": "report_files",
+      "status": "pass",
+      "details": {
+        "missing": []
+      }
+    },
+    {
+      "name": "report_tables",
+      "status": "pass",
+      "details": {
+        "main_table_rows": 8,
+        "by_family_rows": 24,
+        "by_condition_rows": 40,
+        "scored_rows": 624,
+        "missing_main_columns": [],
+        "missing_scored_columns": []
+      }
+    },
+    {
+      "name": "report_manifest",
+      "status": "pass",
+      "details": {
+        "task_count": 100,
+        "prediction_count": 624,
+        "scored_rows": 624,
+        "main_table_rows": 8,
+        "by_family_rows": 24,
+        "by_condition_rows": 40,
+        "family_counts": {
+          "packet_judgment": 40,
+          "evidence_selection": 40,
+          "active_verification": 20
+        },
+        "condition_counts": {
+          "clean": 20,
+          "conflicting_evidence": 20,
+          "false_consensus": 20,
+          "buried_primary": 20,
+          "generated_lore": 20
+        }
+      }
+    },
+    {
+      "name": "cost_report",
+      "status": "pass",
+      "details": {
+        "aborted": false,
+        "spent_usd": 2.800352
+      }
+    },
+    {
+      "name": "pytest",
+      "status": "pass",
+      "details": {
+        "cmd": [
+          "uv",
+          "run",
+          "pytest"
+        ],
+        "returncode": 0
+      }
+    },
+    {
+      "name": "compileall",
+      "status": "pass",
+      "details": {
+        "cmd": [
+          "uv",
+          "run",
+          "python",
+          "-m",
+          "compileall",
+          "eha"
+        ],
+        "returncode": 0
+      }
+    }
+  ],
+  "commands": [
+    {
+      "cmd": [
+        "uv",
+        "run",
+        "pytest"
+      ],
+      "returncode": 0,
+      "stdout_tail": "============================= test session starts ==============================\nplatform darwin -- Python 3.14.0, pytest-9.0.3, pluggy-1.6.0\nrootdir: eha-mvp\nconfigfile: pyproject.toml\ntestpaths: tests\nplugins: anyio-4.13.0\ncollected 45 items\n\ntests/test_config.py ...                                                 [  6%]\ntests/test_cost_guard.py ...                                             [ 13%]\ntests/test_epistemic_resilience.py .....                                 [ 24%]\ntests/test_generation.py ...                                             [ 31%]\ntests/test_matrix_paper_pack.py ....                                     [ 40%]\ntests/test_matrix_v1.py .....                                            [ 51%]\ntests/test_matrix_v11.py ....                                            [ 60%]\ntests/test_phase2.py .....                                               [ 71%]\ntests/test_phase2r.py .....                                              [ 82%]\ntests/test_phase2s.py ....                                               [ 91%]\ntests/test_retrieval.py ..                                               [ 95%]\ntests/test_run_eval.py .                                                 [ 97%]\ntests/test_scoring.py .                                                  [100%]\n\n============================== 45 passed in 2.23s ==============================\n",
+      "stderr_tail": ""
+    },
+    {
+      "cmd": [
+        "uv",
+        "run",
+        "python",
+        "-m",
+        "compileall",
+        "eha"
+      ],
+      "returncode": 0,
+      "stdout_tail": "Listing 'eha'...\n",
+      "stderr_tail": ""
+    }
+  ]
+}
