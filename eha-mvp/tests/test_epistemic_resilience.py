@@ -124,3 +124,30 @@ def test_active_verification_scores_primary_and_contradiction_actions() -> None:
     assert row["primary_action_rate"] == 1.0
     assert row["contradiction_action_rate"] == 1.0
     assert row["epistemic_escape"] == 1.0
+
+
+def test_parse_failure_counts_as_operational_failure_even_when_fallback_verdict_matches() -> None:
+    task = next(task for task in build_epistemic_tasks(Path("data/matrix-v1")) if task.family == "packet_judgment" and task.condition == "generated_lore")
+    record = EpistemicRunRecord(
+        task_id=task.task_id,
+        family=task.family,
+        condition=task.condition,
+        model="api-model",
+        prompt_condition="standard_answer",
+        backend="api",
+        prediction=EpistemicPrediction(
+            claim_verdict=task.gold_verdict,
+            confidence=0.0,
+            evidence_environment_assessment="Response failed to parse.",
+            answer="Parse failure.",
+        ),
+        parse_success=False,
+        parse_error="Expecting value",
+    )
+
+    row = score_record(record, task)
+
+    assert row["parse_success"] == 0.0
+    assert row["epistemic_escape"] == 0.0
+    assert row["operational_epistemic_escape"] == 0.0
+    assert row["conditional_epistemic_escape"] == ""

@@ -7,6 +7,7 @@ import shlex
 import time
 from pathlib import Path
 from typing import Any, Dict, Iterable, List, Mapping, Optional, Sequence, Tuple
+from urllib.parse import urlparse
 
 import openai
 import typer
@@ -66,7 +67,7 @@ def openai_config(zshrc_path: Optional[Path] = None) -> Tuple[str, str]:
     api_key = os.environ.get("LLM_API_KEY")
     base_url = os.environ.get("LLM_BASE_URL")
     if api_key and base_url:
-        return api_key, base_url
+        return api_key, normalize_openai_base_url(base_url)
 
     zshrc = load_zshrc_env(("LLM_API_KEY", "LLM_BASE_URL"), zshrc_path)
     api_key = api_key or zshrc.get("LLM_API_KEY")
@@ -74,7 +75,15 @@ def openai_config(zshrc_path: Optional[Path] = None) -> Tuple[str, str]:
     missing = [name for name, value in (("LLM_API_KEY", api_key), ("LLM_BASE_URL", base_url)) if not value]
     if missing:
         raise RuntimeError(f"Missing {', '.join(missing)} in environment or ~/.zshrc.")
-    return api_key, base_url
+    return api_key, normalize_openai_base_url(base_url)
+
+
+def normalize_openai_base_url(base_url: str) -> str:
+    parsed = urlparse(base_url)
+    path = parsed.path.rstrip("/")
+    if not path:
+        return base_url.rstrip("/") + "/v1"
+    return base_url.rstrip("/")
 
 
 def split_csv(value: str) -> List[str]:

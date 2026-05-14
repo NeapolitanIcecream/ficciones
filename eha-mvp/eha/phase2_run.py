@@ -69,8 +69,8 @@ class Phase2OpenAIJsonRunner:
         *,
         model: str,
         messages: Sequence[Dict[str, str]],
-        max_output_tokens: int,
-        temperature: float,
+        max_output_tokens: Optional[int],
+        temperature: Optional[float],
         schema_name: str,
         schema: Mapping[str, Any],
         mode: Optional[str] = None,
@@ -79,9 +79,11 @@ class Phase2OpenAIJsonRunner:
         kwargs: Dict[str, Any] = {
             "model": model,
             "messages": list(messages),
-            "temperature": temperature,
-            "max_completion_tokens": max_output_tokens,
         }
+        if temperature is not None:
+            kwargs["temperature"] = temperature
+        if max_output_tokens is not None and max_output_tokens > 0:
+            kwargs["max_completion_tokens"] = max_output_tokens
         payload = self._response_format_payload(schema_name=schema_name, schema=schema, mode=selected_mode)
         if payload is not None:
             kwargs["response_format"] = payload
@@ -95,7 +97,7 @@ class Phase2OpenAIJsonRunner:
                 time.sleep(2 * attempt)
             except openai.APIStatusError as exc:
                 detail = str(exc)
-                if exc.status_code == 400 and "max_completion_tokens" in detail:
+                if exc.status_code == 400 and "max_completion_tokens" in detail and "max_completion_tokens" in kwargs:
                     kwargs["max_tokens"] = kwargs.pop("max_completion_tokens")
                     completion = self.client.chat.completions.create(**kwargs)
                     break

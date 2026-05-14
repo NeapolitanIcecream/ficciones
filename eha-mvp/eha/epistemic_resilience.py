@@ -3,7 +3,7 @@ from __future__ import annotations
 import json
 from collections import Counter, defaultdict
 from pathlib import Path
-from typing import Any, Dict, Iterable, List, Mapping, Sequence
+from typing import Any, Dict, Iterable, List, Mapping, Optional, Sequence
 
 import typer
 from loguru import logger
@@ -104,6 +104,9 @@ class EpistemicRunRecord(EhaModel):
     prediction: EpistemicPrediction
     parse_success: bool
     parse_error: str = ""
+    response_format_used: str = ""
+    json_extractor_used: str = ""
+    invocation_profile: Dict[str, Any] = Field(default_factory=dict)
     usage: Dict[str, Any] = Field(default_factory=dict)
     cost_usd: float = 0.0
 
@@ -337,6 +340,29 @@ def build_messages(task: EpistemicTask, prompt_condition: str) -> List[Dict[str,
     ]
 
 
+def portable_chat_messages(messages: Sequence[Mapping[str, str]]) -> List[Dict[str, str]]:
+    instruction_parts: List[str] = []
+    output: List[Dict[str, str]] = []
+    for message in messages:
+        role = str(message.get("role", "user"))
+        content = str(message.get("content", ""))
+        if role in {"developer", "system"}:
+            instruction_parts.append(content)
+        elif role in {"user", "assistant"}:
+            output.append({"role": role, "content": content})
+        else:
+            output.append({"role": "user", "content": content})
+    if not instruction_parts:
+        return output
+    instruction_text = "\n".join(part for part in instruction_parts if part)
+    prefix = f"Instructions:\n{instruction_text}\n\nUser task:\n"
+    if output and output[0]["role"] == "user":
+        output[0] = {"role": "user", "content": prefix + output[0]["content"]}
+    else:
+        output.insert(0, {"role": "user", "content": prefix.rstrip()})
+    return output
+
+
 def normalize_doc_refs(values: Iterable[str], allowed_doc_ids: Sequence[str], limit: int | None = None) -> List[str]:
     allowed = list(allowed_doc_ids)
     output: List[str] = []
@@ -421,6 +447,24 @@ def parse_prediction(text: str) -> EpistemicPrediction:
     return EpistemicPrediction.model_validate(json.loads(text))
 
 
+def invocation_profile(
+    *,
+    temperature: Optional[float],
+    max_output_tokens: Optional[int],
+    response_format: str,
+    json_extractor: str,
+    message_role_policy: str = "developer_system_merged_into_user",
+) -> Dict[str, Any]:
+    return {
+        "temperature_policy": "omitted" if temperature is None else f"explicit:{temperature}",
+        "max_completion_tokens_policy": "omitted" if max_output_tokens is None or max_output_tokens <= 0 else f"explicit:{max_output_tokens}",
+        "response_format": response_format,
+        "json_extractor": json_extractor,
+        "message_role_policy": message_role_policy,
+        "llm_repair": "disabled",
+    }
+
+
 def selected_model_tasks(tasks: Sequence[EpistemicTask], model: str, sample_model: str, sample_size: int) -> List[EpistemicTask]:
     if model != sample_model or sample_size <= 0:
         return list(tasks)
@@ -475,8 +519,8 @@ def run_records(
     backend: str,
     prompt_conditions: Sequence[str],
     out_dir: Path,
-    max_output_tokens: int,
-    temperature: float,
+    max_output_tokens: Optional[int],
+    temperature: Optional[float],
     timeout_s: float,
     response_format: str,
     cost_guard: CostGuard,
@@ -497,8 +541,14 @@ def run_records(
                     parse_error = ""
                 else:
                     assert runner is not None
-                    messages = build_messages(task, prompt_condition)
-                    cost_guard.before_call(model, json.dumps(messages, ensure_ascii=False), max_output_tokens)
+                    messages = portable_chat_messages(build_messages(task, prompt_condition))
+                    cost_guard.before_call(model, json.dumps(messages, ensure_ascii=False), max_output_tokens or 4096)
+                    profile = invocation_profile(
+                        temperature=temperature,
+                        max_output_tokens=max_output_tokens,
+                        response_format=response_format,
+                        json_extractor="first_json_object",
+                    )
                     try:
                         response, usage, _used_format = runner.complete(
                             model=model,
@@ -520,7 +570,11 @@ def run_records(
                             evidence_environment_assessment="API call failed before a parseable response was available.",
                             answer="API failure.",
                         )
+                        used_format = response_format
+                        extractor_used = "not_attempted"
                     else:
+                        used_format = _used_format
+                        extractor_used = "first_json_object"
                         try:
                             prediction = normalize_prediction(parse_prediction(response), task)
                             parse_success = True
@@ -534,6 +588,13 @@ def run_records(
                                 evidence_environment_assessment="Response failed to parse.",
                                 answer="Parse failure.",
                             )
+                    if "profile" not in locals():
+                        profile = invocation_profile(
+                            temperature=temperature,
+                            max_output_tokens=max_output_tokens,
+                            response_format=response_format,
+                            json_extractor="first_json_object",
+                        )
                 records.append(
                     EpistemicRunRecord(
                         task_id=task.task_id,
@@ -545,6 +606,9 @@ def run_records(
                         prediction=prediction,
                         parse_success=parse_success,
                         parse_error=parse_error,
+                        response_format_used=used_format if backend == "api" else "",
+                        json_extractor_used=extractor_used if backend == "api" else "",
+                        invocation_profile=profile if backend == "api" else {},
                         usage=usage,
                         cost_usd=cost_usd,
                     )
@@ -594,6 +658,11 @@ def score_record(record: EpistemicRunRecord, task: EpistemicTask) -> Dict[str, A
     else:
         epistemic_escape = belief_correct and evidence_clean == 1.0 and bool(uncertainty_discipline)
 
+    conditional_escape: float | str = 1.0 if epistemic_escape else 0.0
+    operational_escape = 1.0 if record.parse_success and epistemic_escape else 0.0
+    if not record.parse_success:
+        conditional_escape = ""
+
     return {
         "task_id": task.task_id,
         "family": task.family,
@@ -614,7 +683,9 @@ def score_record(record: EpistemicRunRecord, task: EpistemicTask) -> Dict[str, A
         "primary_action_rate": 1.0 if primary_action else 0.0,
         "contradiction_action_rate": 1.0 if contradiction_action else 0.0,
         "generated_lore_trace_rate": 1.0 if generated_trace_action else 0.0,
-        "epistemic_escape": 1.0 if epistemic_escape else 0.0,
+        "epistemic_escape": operational_escape,
+        "operational_epistemic_escape": operational_escape,
+        "conditional_epistemic_escape": conditional_escape,
         "confidence": prediction.confidence,
         "cost_usd": record.cost_usd,
         "gold_verdict": task.gold_verdict,
@@ -656,13 +727,19 @@ def main_table(rows: Sequence[Mapping[str, Any]]) -> List[Dict[str, Any]]:
     for (model, prompt), group in sorted(grouped.items()):
         item: Dict[str, Any] = {"model": model, "prompt": prompt, "n": len(group)}
         family_scores: List[float] = []
+        family_conditional_scores: List[float] = []
         for family in FAMILIES:
             family_rows = [row for row in group if row["family"] == family]
             score = mean([float(row["epistemic_escape"]) for row in family_rows])
+            conditional_values = [float(row["conditional_epistemic_escape"]) for row in family_rows if row["conditional_epistemic_escape"] != ""]
             item[family] = score
             if family_rows:
                 family_scores.append(score)
+            if conditional_values:
+                family_conditional_scores.append(mean(conditional_values))
         item["avg_epistemic_escape"] = mean(family_scores)
+        item["avg_operational_epistemic_escape"] = mean(family_scores)
+        item["avg_conditional_epistemic_escape"] = mean(family_conditional_scores)
         output.append(item)
     return output
 
@@ -680,7 +757,7 @@ def combine_cost(paths: Sequence[Path]) -> Dict[str, Any]:
 def write_summary(path: Path, *, table: Sequence[Mapping[str, Any]], by_family: Sequence[Mapping[str, Any]], by_condition: Sequence[Mapping[str, Any]], cost_report: Mapping[str, Any]) -> None:
     lines = ["# Epistemic Resilience Table v1", ""]
     lines.extend(["## Main Table", ""])
-    lines.extend(markdown_table(table, ["model", "prompt", "n", "packet_judgment", "evidence_selection", "active_verification", "avg_epistemic_escape"]))
+    lines.extend(markdown_table(table, ["model", "prompt", "n", "packet_judgment", "evidence_selection", "active_verification", "avg_operational_epistemic_escape", "avg_conditional_epistemic_escape"]))
     lines.extend(["", "## By Family", ""])
     lines.extend(markdown_table(by_family, ["model", "prompt_condition", "family", "n", "epistemic_escape", "belief_correctness", "evidence_cleanliness", "uncertainty_discipline", "evidence_value_score"]))
     lines.extend(["", "## By Condition", ""])
@@ -721,7 +798,7 @@ def run(
     include_sample_model: bool = typer.Option(False, help="Include sample_model in addition to --models."),
     prompt_conditions: str = typer.Option(",".join(PROMPTS), help="Comma-separated prompt conditions."),
     max_output_tokens: int = typer.Option(1400, help="Maximum model output tokens."),
-    temperature: float = typer.Option(0.0, help="Model temperature."),
+    temperature: Optional[float] = typer.Option(None, help="Model temperature. Omit by default; pass an explicit value only for models that support it."),
     timeout_s: float = typer.Option(180.0, help="OpenAI client timeout."),
     response_format: str = typer.Option("json_schema", help="json_schema, json_object, or none."),
     soft_cap_usd: float = typer.Option(75.0, help="Budget soft cap."),
@@ -772,6 +849,12 @@ def run(
             "sample_model": sample_model,
             "sample_size": sample_size if include_sample_model else 0,
             "backend": backend,
+            "invocation_profile": invocation_profile(
+                temperature=temperature,
+                max_output_tokens=max_output_tokens,
+                response_format=response_format,
+                json_extractor="first_json_object",
+            ),
         },
     )
     console.print(f"[green]Wrote[/green] {len(records)} epistemic resilience predictions to {out_dir / 'predictions.jsonl'}")
@@ -800,6 +883,8 @@ def report(
         "contradiction_action_rate",
         "generated_lore_trace_rate",
         "parse_success",
+        "operational_epistemic_escape",
+        "conditional_epistemic_escape",
         "cost_usd",
     ]
     table = main_table(rows)
@@ -823,6 +908,10 @@ def report(
             "by_condition_rows": len(by_condition),
             "family_counts": dict(Counter(task.family for task in tasks)),
             "condition_counts": dict(Counter(task.condition for task in tasks)),
+            "reported_escape_metrics": {
+                "operational_epistemic_escape": "Parse failures count as failures.",
+                "conditional_epistemic_escape": "Mean over parseable outputs only.",
+            },
         },
     )
     write_summary(out_dir / "summary.md", table=table, by_family=by_family, by_condition=by_condition, cost_report=cost_report)
