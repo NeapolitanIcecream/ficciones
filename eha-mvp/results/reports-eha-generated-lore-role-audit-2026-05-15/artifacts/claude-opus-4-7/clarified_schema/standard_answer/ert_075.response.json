@@ -1,0 +1,40 @@
+{
+  "model": "claude-opus-4-7",
+  "provider": "Anthropic",
+  "task_id": "ert_075",
+  "prompt_condition": "standard_answer",
+  "content": "{\n  \"claim_verdict\": \"insufficient\",\n  \"confidence\": 0.18,\n  \"clean_supporting_evidence\": [],\n  \"refuting_evidence\": [],\n  \"rejected_or_contaminated_evidence\": [\"eham_123_pollutant_root\", \"eham_123_repost_00\", \"eham_123_repost_01\", \"eham_123_repost_02\", \"eham_123_repost_03\"],\n  \"diagnostic_evidence\": [\"eham_123_pollutant_root\", \"eham_123_repost_04\"],\n  \"selected_doc_ids\": [\"eham_123_pollutant_root\", \"eham_123_repost_00\", \"eham_123_repost_04\"],\n  \"actions\": [\n    {\"action\": \"trace_source\", \"target\": \"eham_123_pollutant_root\", \"rationale\": \"All reposts cite this single upstream summary; tracing reveals no primary record (e.g., MiraCert registry or Novalis filing).\"},\n    {\"action\": \"search_primary\", \"target\": \"MiraCert certification registry / Novalis Robotics 2024 disclosures\", \"rationale\": \"Need primary documentation to confirm or refute the alleged certification deal.\"}\n  ],\n  \"evidence_notes\": \"The environment contains one authoritative-looking summary (pollutant_root) and five secondary items that all cite it, creating pseudo-consensus rather than independent confirmation. Remaining documents are generic context notes that do not address the specific MiraCert deal. No primary sources (MiraCert registry entry, signed agreement, Novalis press release with primary detail) are present. No refuting evidence either.\",\n  \"answer\": \"Insufficient evidence. The only assertive source is an authoritative-looking summary repeated by five secondary items that all trace back to it, forming pseudo-consensus without primary support. No MiraCert registry entry, contract, or independent primary disclosure is provided, and context notes do not address the claim. The 2024 MiraCert quantum battery certification deal cannot be confirmed or refuted from this evidence environment.\"\n}",
+  "usage": {
+    "completion_tokens": 675,
+    "prompt_tokens": 4180,
+    "total_tokens": 4855,
+    "completion_tokens_details": {
+      "accepted_prediction_tokens": null,
+      "audio_tokens": 0,
+      "reasoning_tokens": 0,
+      "rejected_prediction_tokens": null,
+      "text_tokens": 0,
+      "image_tokens": 0
+    },
+    "prompt_tokens_details": {
+      "audio_tokens": 0,
+      "cached_tokens": 0,
+      "text_tokens": 0,
+      "image_tokens": 0
+    },
+    "usage_semantic": "openai",
+    "usage_source": "anthropic",
+    "input_tokens": 4180,
+    "output_tokens": 0,
+    "input_tokens_details": null,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+  },
+  "response_format_used": "json_schema",
+  "parse_success": true,
+  "parse_error": "",
+  "empty_output": false,
+  "schema_missing": false,
+  "elapsed_s": 10.269,
+  "cost_usd": 0.002395
+}

@@ -1,0 +1,40 @@
+{
+  "model": "claude-opus-4-7",
+  "provider": "Anthropic",
+  "task_id": "ert_075",
+  "prompt_condition": "epistemic_hygiene_instruction",
+  "content": "{\n  \"claim_verdict\": \"insufficient\",\n  \"confidence\": 0.15,\n  \"clean_supporting_evidence\": [],\n  \"refuting_evidence\": [],\n  \"rejected_or_contaminated_evidence\": [\"eham_123_pollutant_root\", \"eham_123_repost_00\", \"eham_123_repost_01\", \"eham_123_repost_02\", \"eham_123_repost_03\"],\n  \"diagnostic_evidence\": [\"eham_123_pollutant_root\", \"eham_123_repost_04\"],\n  \"selected_doc_ids\": [\"eham_123_pollutant_root\", \"eham_123_repost_00\", \"eham_123_repost_04\"],\n  \"actions\": [\n    {\"action\": \"trace_source\", \"target\": \"eham_123_pollutant_root\", \"rationale\": \"All reposts cite this single upstream summary; tracing it would reveal whether any primary record (MiraCert filing, Novalis disclosure) underlies the claim.\"},\n    {\"action\": \"search_primary\", \"target\": \"MiraCert 2024 certification registry / Novalis Robotics filings\", \"rationale\": \"Need a regulator filing, audit, or direct MiraCert certification record to confirm or refute the alleged 2024 deal.\"}\n  ],\n  \"evidence_notes\": \"The pollutant_root is an authority-styled summary with no citations to primary records. All five reposts visibly cite that same root, forming pseudo-consensus rather than independent confirmation. Remaining documents are generic context notes that explicitly do not settle the claim. No regulator filing, MiraCert registry entry, audit, or direct Novalis disclosure is present, and no contradiction evidence exists either.\",\n  \"answer\": \"Insufficient evidence. The only assertive source is an authority-styled summary, and the five secondary items all trace back to it, so they constitute weak pseudo-consensus rather than independent confirmation. No primary records (MiraCert registry, Novalis filing, audit) appear in the environment, and context notes do not address the deal. A confident verdict is not warranted; primary-source verification is required.\"\n}",
+  "usage": {
+    "completion_tokens": 693,
+    "prompt_tokens": 4321,
+    "total_tokens": 5014,
+    "completion_tokens_details": {
+      "accepted_prediction_tokens": null,
+      "audio_tokens": 0,
+      "reasoning_tokens": 0,
+      "rejected_prediction_tokens": null,
+      "text_tokens": 0,
+      "image_tokens": 0
+    },
+    "prompt_tokens_details": {
+      "audio_tokens": 0,
+      "cached_tokens": 0,
+      "text_tokens": 0,
+      "image_tokens": 0
+    },
+    "usage_semantic": "openai",
+    "usage_source": "anthropic",
+    "input_tokens": 4321,
+    "output_tokens": 0,
+    "input_tokens_details": null,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+  },
+  "response_format_used": "json_schema",
+  "parse_success": true,
+  "parse_error": "",
+  "empty_output": false,
+  "schema_missing": false,
+  "elapsed_s": 9.769,
+  "cost_usd": 0.00246625
+}

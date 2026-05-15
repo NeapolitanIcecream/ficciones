@@ -1,0 +1,38 @@
+{
+  "model": "gemini-3.1-pro-preview",
+  "provider": "Google",
+  "task_id": "ert_077",
+  "prompt_condition": "epistemic_hygiene_instruction",
+  "content": "{\n  \"claim_verdict\": \"insufficient\",\n  \"confidence\": 0.95,\n  \"clean_supporting_evidence\": [],\n  \"refuting_evidence\": [],\n  \"rejected_or_contaminated_evidence\": [\n    \"eham_125_pollutant_root\",\n    \"eham_125_repost_00\",\n    \"eham_125_repost_01\",\n    \"eham_125_repost_02\",\n    \"eham_125_repost_03\"\n  ],\n  \"diagnostic_evidence\": [\n    \"eham_125_pollutant_root\"\n  ],\n  \"selected_doc_ids\": [\n    \"eham_125_pollutant_root\",\n    \"eham_125_repost_00\",\n    \"eham_125_repost_01\"\n  ],\n  \"actions\": [\n    {\n      \"action\": \"trace_source\",\n      \"target\": \"eham_125_pollutant_root\",\n      \"rationale\": \"Identify if any underlying primary documentation exists for the initial summary's claim.\"\n    },\n    {\n      \"action\": \"search_primary\",\n      \"target\": \"Novalis Robotics 2024 MiraCert quantum battery deal\",\n      \"rationale\": \"Search for official press releases or regulatory filings from Novalis Robotics or MiraCert to substantiate the reported certification deal.\"\n    }\n  ],\n  \"evidence_notes\": \"The evidence environment is highly polluted. It consists of an authoritative-looking summary (eham_125_pollutant_root) lacking primary support, and several secondary reports that simply cite this root document. This forms a pseudo-consensus built entirely on generated lore or unsupported summaries without any verifiable primary data. Without clean primary records, the evidence is insufficient to properly verify the claim.\",\n  \"answer\": \"Based on the provided evidence, there is insufficient clean, primary information to confirm whether Novalis Robotics signed a 2024 MiraCert quantum battery certification deal. The available documents present an unsupported summary and multiple reposts relying entirely on that single, unverified upstream source. This creates a misleading pseudo-consensus rather than providing reliable independent confirmation. Official records or primary sources are required to settle the claim.\"\n}",
+  "usage": {
+    "completion_tokens": 1622,
+    "prompt_tokens": 3270,
+    "total_tokens": 4892,
+    "completion_tokens_details": {
+      "accepted_prediction_tokens": null,
+      "audio_tokens": 0,
+      "reasoning_tokens": 1094,
+      "rejected_prediction_tokens": null,
+      "text_tokens": 528,
+      "image_tokens": 0
+    },
+    "prompt_tokens_details": {
+      "audio_tokens": 0,
+      "cached_tokens": 0,
+      "text_tokens": 3270,
+      "image_tokens": 0
+    },
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "input_tokens_details": null,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+  },
+  "response_format_used": "json_schema",
+  "parse_success": true,
+  "parse_error": "",
+  "empty_output": false,
+  "schema_missing": false,
+  "elapsed_s": 13.697,
+  "cost_usd": 0.0040615
+}

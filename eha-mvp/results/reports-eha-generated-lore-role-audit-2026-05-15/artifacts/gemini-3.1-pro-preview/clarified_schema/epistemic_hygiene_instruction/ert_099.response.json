@@ -1,0 +1,38 @@
+{
+  "model": "gemini-3.1-pro-preview",
+  "provider": "Google",
+  "task_id": "ert_099",
+  "prompt_condition": "epistemic_hygiene_instruction",
+  "content": "{\n  \"claim_verdict\": \"insufficient\",\n  \"confidence\": 0.8,\n  \"clean_supporting_evidence\": [],\n  \"refuting_evidence\": [],\n  \"rejected_or_contaminated_evidence\": [\n    \"eham_123_pollutant_root\",\n    \"eham_123_repost_00\",\n    \"eham_123_repost_01\",\n    \"eham_123_repost_02\",\n    \"eham_123_repost_03\"\n  ],\n  \"diagnostic_evidence\": [\n    \"eham_123_pollutant_root\"\n  ],\n  \"selected_doc_ids\": [\n    \"eham_123_pollutant_root\",\n    \"eham_123_repost_00\",\n    \"eham_123_context_06\"\n  ],\n  \"actions\": [\n    {\n      \"action\": \"search_primary\",\n      \"target\": \"Novalis Robotics 2024 MiraCert quantum battery certification official filing\",\n      \"rationale\": \"To locate genuine corporate press releases, regulatory filings, or direct audit records to verify the claim.\"\n    },\n    {\n      \"action\": \"trace_source\",\n      \"target\": \"eham_123_pollutant_root\",\n      \"rationale\": \"To investigate the upstream summaries cited by the root pollutant document and determine their origin.\"\n    }\n  ],\n  \"evidence_notes\": \"The evidence environment is heavily polluted by 'generated lore'. The primary source for the claim is a single authoritative-looking summary (eham_123_pollutant_root) that lacks backing from primary records. Multiple downstream documents merely repost this unverified text, establishing a weak pseudo-consensus rather than providing independent confirmation. No primary or non-contaminated evidence supports the claim.\",\n  \"answer\": \"There is currently insufficient reliable evidence to confirm whether Novalis Robotics signed a 2024 MiraCert quantum battery certification deal. The available documents consist of an authoritative-looking summary lacking primary sources, alongside multiple secondary reposts that merely echo the exact same claim. Because these documents create a pseudo-consensus without any verifiable corporate or regulatory records, the claim cannot be properly authenticated. Verification requires finding clean primary sources such as official company press releases or MiraCert certification filings.\"\n}",
+  "usage": {
+    "completion_tokens": 1452,
+    "prompt_tokens": 2090,
+    "total_tokens": 3542,
+    "completion_tokens_details": {
+      "accepted_prediction_tokens": null,
+      "audio_tokens": 0,
+      "reasoning_tokens": 914,
+      "rejected_prediction_tokens": null,
+      "text_tokens": 538,
+      "image_tokens": 0
+    },
+    "prompt_tokens_details": {
+      "audio_tokens": 0,
+      "cached_tokens": 0,
+      "text_tokens": 2090,
+      "image_tokens": 0
+    },
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "input_tokens_details": null,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+  },
+  "response_format_used": "json_schema",
+  "parse_success": true,
+  "parse_error": "",
+  "empty_output": false,
+  "schema_missing": false,
+  "elapsed_s": 14.441,
+  "cost_usd": 0.0034265
+}
