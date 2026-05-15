@@ -1,0 +1,72 @@
+{
+  "attempts": [
+    {
+      "attempt": 1,
+      "model": "deepseek-v4-pro",
+      "provider": "DeepSeek",
+      "budget_setting": "cap_8192",
+      "task_id": "ert_065",
+      "prompt_condition": "epistemic_hygiene_instruction",
+      "content": "{\n  \"claim_verdict\": \"refuted\",\n  \"confidence\": 0.95,\n  \"supporting_evidence\": [\n    \"eham_097_primary_a\",\n    \"eham_097_primary_b\"\n  ],\n  \"rejected_evidence\": [\n    \"eham_097_pollutant_root\",\n    \"eham_097_repost_00\",\n    \"eham_097_repost_01\",\n    \"eham_097_repost_02\",\n    \"eham_097_repost_03\"\n  ],\n  \"selected_doc_ids\": [\n    \"eham_097_primary_a\",\n    \"eham_097_primary_b\"\n  ],\n  \"actions\": [\n    {\n      \"action\": \"open\",\n      \"target\": \"eham_097_primary_a\",\n      \"rationale\": \"Inspect the primary audit report for the authoritative recall rate.\"\n    },\n    {\n      \"action\": \"trace_source\",\n      \"target\": \"eham_097_pollutant_root\",\n      \"rationale\": \"Trace the root of the 1.7% claim to check for primary citations.\"\n    }\n  ],\n  \"evidence_environment_assessment\": \"Two primary documents (audit and regulator filing) report 3.8% recall rate for 2024. All other documents are reposts of a 1.7% claim originating from a single unsourced root, forming a weak pseudo-consensus. The root predates the primary records and lacks primary support. No independent corroboration for the 1.7% figure exists.\",\n  \"answer\": \"No. Primary evidence (audit and regulator filing) shows a 2024 recall rate of 3.8%, which is not below 2%.\"\n}",
+      "usage": {
+        "completion_tokens": 1490,
+        "prompt_tokens": 2667,
+        "total_tokens": 4157,
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": null,
+          "audio_tokens": null,
+          "reasoning_tokens": 1119,
+          "rejected_prediction_tokens": null
+        },
+        "prompt_tokens_details": {
+          "audio_tokens": null,
+          "cached_tokens": 0
+        },
+        "prompt_cache_hit_tokens": 0,
+        "prompt_cache_miss_tokens": 2667
+      },
+      "response_format_used": "json_object",
+      "parse_success": true,
+      "parse_error": "",
+      "empty_output": false,
+      "schema_missing": false,
+      "json_extractor_used": "first_json_object",
+      "elapsed_s": 46.72,
+      "cost_usd": 0.00364675
+    }
+  ],
+  "final_attempt": {
+    "attempt": 1,
+    "model": "deepseek-v4-pro",
+    "provider": "DeepSeek",
+    "budget_setting": "cap_8192",
+    "task_id": "ert_065",
+    "prompt_condition": "epistemic_hygiene_instruction",
+    "content": "{\n  \"claim_verdict\": \"refuted\",\n  \"confidence\": 0.95,\n  \"supporting_evidence\": [\n    \"eham_097_primary_a\",\n    \"eham_097_primary_b\"\n  ],\n  \"rejected_evidence\": [\n    \"eham_097_pollutant_root\",\n    \"eham_097_repost_00\",\n    \"eham_097_repost_01\",\n    \"eham_097_repost_02\",\n    \"eham_097_repost_03\"\n  ],\n  \"selected_doc_ids\": [\n    \"eham_097_primary_a\",\n    \"eham_097_primary_b\"\n  ],\n  \"actions\": [\n    {\n      \"action\": \"open\",\n      \"target\": \"eham_097_primary_a\",\n      \"rationale\": \"Inspect the primary audit report for the authoritative recall rate.\"\n    },\n    {\n      \"action\": \"trace_source\",\n      \"target\": \"eham_097_pollutant_root\",\n      \"rationale\": \"Trace the root of the 1.7% claim to check for primary citations.\"\n    }\n  ],\n  \"evidence_environment_assessment\": \"Two primary documents (audit and regulator filing) report 3.8% recall rate for 2024. All other documents are reposts of a 1.7% claim originating from a single unsourced root, forming a weak pseudo-consensus. The root predates the primary records and lacks primary support. No independent corroboration for the 1.7% figure exists.\",\n  \"answer\": \"No. Primary evidence (audit and regulator filing) shows a 2024 recall rate of 3.8%, which is not below 2%.\"\n}",
+    "usage": {
+      "completion_tokens": 1490,
+      "prompt_tokens": 2667,
+      "total_tokens": 4157,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": null,
+        "audio_tokens": null,
+        "reasoning_tokens": 1119,
+        "rejected_prediction_tokens": null
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": null,
+        "cached_tokens": 0
+      },
+      "prompt_cache_hit_tokens": 0,
+      "prompt_cache_miss_tokens": 2667
+    },
+    "response_format_used": "json_object",
+    "parse_success": true,
+    "parse_error": "",
+    "empty_output": false,
+    "schema_missing": false,
+    "json_extractor_used": "first_json_object",
+    "elapsed_s": 46.72,
+    "cost_usd": 0.00364675
+  }
+}

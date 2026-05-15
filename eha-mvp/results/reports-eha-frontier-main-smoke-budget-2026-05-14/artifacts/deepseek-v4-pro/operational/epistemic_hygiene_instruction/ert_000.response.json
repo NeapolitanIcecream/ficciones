@@ -1,0 +1,72 @@
+{
+  "attempts": [
+    {
+      "attempt": 1,
+      "model": "deepseek-v4-pro",
+      "provider": "DeepSeek",
+      "budget_setting": "operational",
+      "task_id": "ert_000",
+      "prompt_condition": "epistemic_hygiene_instruction",
+      "content": "{\n  \"claim_verdict\": \"supported\",\n  \"confidence\": 0.9,\n  \"supporting_evidence\": [\n    \"eham_000_primary_a\",\n    \"eham_000_primary_b\"\n  ],\n  \"rejected_evidence\": [\n    \"eham_000_pollutant_root\",\n    \"eham_000_repost_00\",\n    \"eham_000_repost_01\"\n  ],\n  \"selected_doc_ids\": [\n    \"eham_000_primary_a\",\n    \"eham_000_primary_b\",\n    \"eham_000_pollutant_root\"\n  ],\n  \"actions\": [\n    {\n      \"action\": \"open\",\n      \"target\": \"eham_000_primary_a\",\n      \"rationale\": \"Examine the signed audit report to confirm the 2024-12-12 completion date and reviewer sign-off.\"\n    },\n    {\n      \"action\": \"trace_source\",\n      \"target\": \"eham_000_pollutant_root\",\n      \"rationale\": \"Investigate the outdated planning note to verify it predates the actual completion and lacks primary support.\"\n    }\n  ],\n  \"evidence_environment_assessment\": \"Two primary records (audit report, regulator filing) confirm completion on 2024-12-12. An outdated planning note from 2024-11-03 claims still pending, echoed by two reposts citing the same upstream source, creating pseudo‑consensus. Context notes are neutral. The primary evidence outweighs the stale, interdependent secondary claims.\",\n  \"answer\": \"Yes. The signed audit report (eham_000_primary_a) and regulator filing (eham_000_primary_b) both state the Q4 supplier audit was completed on 2024-12-12 and cleared for renewal review, well before any 2025 renewal meeting.\"\n}",
+      "usage": {
+        "completion_tokens": 2452,
+        "prompt_tokens": 1701,
+        "total_tokens": 4153,
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": null,
+          "audio_tokens": null,
+          "reasoning_tokens": 2060,
+          "rejected_prediction_tokens": null
+        },
+        "prompt_tokens_details": {
+          "audio_tokens": null,
+          "cached_tokens": 0
+        },
+        "prompt_cache_hit_tokens": 0,
+        "prompt_cache_miss_tokens": 1701
+      },
+      "response_format_used": "json_object",
+      "parse_success": true,
+      "parse_error": "",
+      "empty_output": false,
+      "schema_missing": false,
+      "json_extractor_used": "first_json_object",
+      "elapsed_s": 76.872,
+      "cost_usd": 0.005329250000000001
+    }
+  ],
+  "final_attempt": {
+    "attempt": 1,
+    "model": "deepseek-v4-pro",
+    "provider": "DeepSeek",
+    "budget_setting": "operational",
+    "task_id": "ert_000",
+    "prompt_condition": "epistemic_hygiene_instruction",
+    "content": "{\n  \"claim_verdict\": \"supported\",\n  \"confidence\": 0.9,\n  \"supporting_evidence\": [\n    \"eham_000_primary_a\",\n    \"eham_000_primary_b\"\n  ],\n  \"rejected_evidence\": [\n    \"eham_000_pollutant_root\",\n    \"eham_000_repost_00\",\n    \"eham_000_repost_01\"\n  ],\n  \"selected_doc_ids\": [\n    \"eham_000_primary_a\",\n    \"eham_000_primary_b\",\n    \"eham_000_pollutant_root\"\n  ],\n  \"actions\": [\n    {\n      \"action\": \"open\",\n      \"target\": \"eham_000_primary_a\",\n      \"rationale\": \"Examine the signed audit report to confirm the 2024-12-12 completion date and reviewer sign-off.\"\n    },\n    {\n      \"action\": \"trace_source\",\n      \"target\": \"eham_000_pollutant_root\",\n      \"rationale\": \"Investigate the outdated planning note to verify it predates the actual completion and lacks primary support.\"\n    }\n  ],\n  \"evidence_environment_assessment\": \"Two primary records (audit report, regulator filing) confirm completion on 2024-12-12. An outdated planning note from 2024-11-03 claims still pending, echoed by two reposts citing the same upstream source, creating pseudo‑consensus. Context notes are neutral. The primary evidence outweighs the stale, interdependent secondary claims.\",\n  \"answer\": \"Yes. The signed audit report (eham_000_primary_a) and regulator filing (eham_000_primary_b) both state the Q4 supplier audit was completed on 2024-12-12 and cleared for renewal review, well before any 2025 renewal meeting.\"\n}",
+    "usage": {
+      "completion_tokens": 2452,
+      "prompt_tokens": 1701,
+      "total_tokens": 4153,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": null,
+        "audio_tokens": null,
+        "reasoning_tokens": 2060,
+        "rejected_prediction_tokens": null
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": null,
+        "cached_tokens": 0
+      },
+      "prompt_cache_hit_tokens": 0,
+      "prompt_cache_miss_tokens": 1701
+    },
+    "response_format_used": "json_object",
+    "parse_success": true,
+    "parse_error": "",
+    "empty_output": false,
+    "schema_missing": false,
+    "json_extractor_used": "first_json_object",
+    "elapsed_s": 76.872,
+    "cost_usd": 0.005329250000000001
+  }
+}

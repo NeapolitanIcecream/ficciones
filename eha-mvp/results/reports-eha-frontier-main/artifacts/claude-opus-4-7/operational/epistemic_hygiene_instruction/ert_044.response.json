@@ -1,0 +1,90 @@
+{
+  "attempts": [
+    {
+      "attempt": 1,
+      "model": "claude-opus-4-7",
+      "provider": "Anthropic",
+      "budget_setting": "operational",
+      "task_id": "ert_044",
+      "prompt_condition": "epistemic_hygiene_instruction",
+      "content": "{\n  \"claim_verdict\": \"supported\",\n  \"confidence\": 0.82,\n  \"supporting_evidence\": [\"eham_004_primary_a\", \"eham_004_primary_b\"],\n  \"rejected_evidence\": [\"eham_004_pollutant_root\", \"eham_004_repost_00\", \"eham_004_repost_01\", \"eham_004_repost_02\"],\n  \"selected_doc_ids\": [\"eham_004_primary_a\", \"eham_004_primary_b\", \"eham_004_pollutant_root\"],\n  \"actions\": [\n    {\"action\": \"trace_source\", \"target\": \"eham_004_repost_00\", \"rationale\": \"Reposts all cite the same pollutant root, confirming pseudo-consensus rather than independent corroboration.\"},\n    {\"action\": \"compare_versions\", \"target\": \"eham_004_primary_a\", \"rationale\": \"Confirm primary audit record against regulator filing to validate the 2024-12-12 completion date.\"}\n  ],\n  \"evidence_environment_assessment\": \"Two primary records (audit report and regulator filing) dated 2025-01-15 state the supplier audit completed 2024-12-12. Three reposts and one pollutant root claim 'still pending' but all trace to a single outdated November 2024 planning note, constituting weak pseudo-consensus. Numerous context notes are orientation-only and do not settle the claim. Primary records outweigh the stale, single-source contradiction chain.\",\n  \"answer\": \"Yes. Primary audit and regulator records indicate Novalis Robotics completed the Q4 supplier audit on 2024-12-12, prior to the 2025 renewal meeting. Contradicting 'still pending' claims originate from a single outdated November 2024 planning note recycled across reposts, which fails independence and recency tests.\"\n}",
+      "usage": {
+        "completion_tokens": 593,
+        "prompt_tokens": 3705,
+        "total_tokens": 4298,
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": null,
+          "audio_tokens": 0,
+          "reasoning_tokens": 0,
+          "rejected_prediction_tokens": null,
+          "text_tokens": 0,
+          "image_tokens": 0
+        },
+        "prompt_tokens_details": {
+          "audio_tokens": 0,
+          "cached_tokens": 0,
+          "text_tokens": 0,
+          "image_tokens": 0
+        },
+        "usage_semantic": "openai",
+        "usage_source": "anthropic",
+        "input_tokens": 3705,
+        "output_tokens": 0,
+        "input_tokens_details": null,
+        "claude_cache_creation_5_m_tokens": 0,
+        "claude_cache_creation_1_h_tokens": 0
+      },
+      "response_format_used": "json_schema",
+      "parse_success": true,
+      "parse_error": "",
+      "empty_output": false,
+      "schema_missing": false,
+      "json_extractor_used": "first_json_object",
+      "elapsed_s": 8.548,
+      "cost_usd": 0.00211225
+    }
+  ],
+  "final_attempt": {
+    "attempt": 1,
+    "model": "claude-opus-4-7",
+    "provider": "Anthropic",
+    "budget_setting": "operational",
+    "task_id": "ert_044",
+    "prompt_condition": "epistemic_hygiene_instruction",
+    "content": "{\n  \"claim_verdict\": \"supported\",\n  \"confidence\": 0.82,\n  \"supporting_evidence\": [\"eham_004_primary_a\", \"eham_004_primary_b\"],\n  \"rejected_evidence\": [\"eham_004_pollutant_root\", \"eham_004_repost_00\", \"eham_004_repost_01\", \"eham_004_repost_02\"],\n  \"selected_doc_ids\": [\"eham_004_primary_a\", \"eham_004_primary_b\", \"eham_004_pollutant_root\"],\n  \"actions\": [\n    {\"action\": \"trace_source\", \"target\": \"eham_004_repost_00\", \"rationale\": \"Reposts all cite the same pollutant root, confirming pseudo-consensus rather than independent corroboration.\"},\n    {\"action\": \"compare_versions\", \"target\": \"eham_004_primary_a\", \"rationale\": \"Confirm primary audit record against regulator filing to validate the 2024-12-12 completion date.\"}\n  ],\n  \"evidence_environment_assessment\": \"Two primary records (audit report and regulator filing) dated 2025-01-15 state the supplier audit completed 2024-12-12. Three reposts and one pollutant root claim 'still pending' but all trace to a single outdated November 2024 planning note, constituting weak pseudo-consensus. Numerous context notes are orientation-only and do not settle the claim. Primary records outweigh the stale, single-source contradiction chain.\",\n  \"answer\": \"Yes. Primary audit and regulator records indicate Novalis Robotics completed the Q4 supplier audit on 2024-12-12, prior to the 2025 renewal meeting. Contradicting 'still pending' claims originate from a single outdated November 2024 planning note recycled across reposts, which fails independence and recency tests.\"\n}",
+    "usage": {
+      "completion_tokens": 593,
+      "prompt_tokens": 3705,
+      "total_tokens": 4298,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": null,
+        "audio_tokens": 0,
+        "reasoning_tokens": 0,
+        "rejected_prediction_tokens": null,
+        "text_tokens": 0,
+        "image_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cached_tokens": 0,
+        "text_tokens": 0,
+        "image_tokens": 0
+      },
+      "usage_semantic": "openai",
+      "usage_source": "anthropic",
+      "input_tokens": 3705,
+      "output_tokens": 0,
+      "input_tokens_details": null,
+      "claude_cache_creation_5_m_tokens": 0,
+      "claude_cache_creation_1_h_tokens": 0
+    },
+    "response_format_used": "json_schema",
+    "parse_success": true,
+    "parse_error": "",
+    "empty_output": false,
+    "schema_missing": false,
+    "json_extractor_used": "first_json_object",
+    "elapsed_s": 8.548,
+    "cost_usd": 0.00211225
+  }
+}

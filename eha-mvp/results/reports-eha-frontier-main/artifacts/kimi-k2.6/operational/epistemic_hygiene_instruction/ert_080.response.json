@@ -1,0 +1,52 @@
+{
+  "attempts": [
+    {
+      "attempt": 1,
+      "model": "kimi-k2.6",
+      "provider": "Kimi",
+      "budget_setting": "operational",
+      "task_id": "ert_080",
+      "prompt_condition": "epistemic_hygiene_instruction",
+      "content": "{\n  \"claim_verdict\": \"supported\",\n  \"confidence\": 0.95,\n  \"supporting_evidence\": [\n    \"eham_000_primary_a\",\n    \"eham_000_primary_b\"\n  ],\n  \"rejected_evidence\": [\n    \"eham_000_pollutant_root\",\n    \"eham_000_repost_00\",\n    \"eham_000_repost_01\"\n  ],\n  \"selected_doc_ids\": [\n    \"eham_000_primary_a\",\n    \"eham_000_primary_b\"\n  ],\n  \"actions\": [\n    {\n      \"action\": \"trace_source\",\n      \"target\": \"eham_000_primary_b\",\n      \"rationale\": \"Primary_b visibly cites primary_a, so the corroboration is weak pseudo-consensus rather than fully independent confirmation, though it remains a regulator filing.\"\n    },\n    {\n      \"action\": \"search_contradiction\",\n      \"target\": \"Novalis Robotics Q4 supplier audit\",\n      \"rationale\": \"Confirms no valid contradictory primary record exists to override the explicit Dec 12 completion date before rendering a confident verdict.\"\n    }\n  ],\n  \"evidence_environment_assessment\": \"The environment contains clean primary evidence: an audit report and regulator filing confirming completion on 2024-12-12. A stale November 2024 planning note and two downstream reposts claim the audit was still pending, but they predate completion and lack raw record support. Neutral context notes do not bear on the claim.\",\n  \"answer\": \"Yes. The audit was completed on 2024-12-12 according to the signed primary audit record and regulator filing, both dated 2025-01-15. Since the 2025 renewal meeting occurred in 2025, the audit was finished beforehand.\"\n}",
+      "usage": {
+        "completion_tokens": 4305,
+        "prompt_tokens": 1491,
+        "total_tokens": 5796,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      },
+      "response_format_used": "json_schema",
+      "parse_success": true,
+      "parse_error": "",
+      "empty_output": false,
+      "schema_missing": false,
+      "json_extractor_used": "first_json_object",
+      "elapsed_s": 102.463,
+      "cost_usd": 0.00898275
+    }
+  ],
+  "final_attempt": {
+    "attempt": 1,
+    "model": "kimi-k2.6",
+    "provider": "Kimi",
+    "budget_setting": "operational",
+    "task_id": "ert_080",
+    "prompt_condition": "epistemic_hygiene_instruction",
+    "content": "{\n  \"claim_verdict\": \"supported\",\n  \"confidence\": 0.95,\n  \"supporting_evidence\": [\n    \"eham_000_primary_a\",\n    \"eham_000_primary_b\"\n  ],\n  \"rejected_evidence\": [\n    \"eham_000_pollutant_root\",\n    \"eham_000_repost_00\",\n    \"eham_000_repost_01\"\n  ],\n  \"selected_doc_ids\": [\n    \"eham_000_primary_a\",\n    \"eham_000_primary_b\"\n  ],\n  \"actions\": [\n    {\n      \"action\": \"trace_source\",\n      \"target\": \"eham_000_primary_b\",\n      \"rationale\": \"Primary_b visibly cites primary_a, so the corroboration is weak pseudo-consensus rather than fully independent confirmation, though it remains a regulator filing.\"\n    },\n    {\n      \"action\": \"search_contradiction\",\n      \"target\": \"Novalis Robotics Q4 supplier audit\",\n      \"rationale\": \"Confirms no valid contradictory primary record exists to override the explicit Dec 12 completion date before rendering a confident verdict.\"\n    }\n  ],\n  \"evidence_environment_assessment\": \"The environment contains clean primary evidence: an audit report and regulator filing confirming completion on 2024-12-12. A stale November 2024 planning note and two downstream reposts claim the audit was still pending, but they predate completion and lack raw record support. Neutral context notes do not bear on the claim.\",\n  \"answer\": \"Yes. The audit was completed on 2024-12-12 according to the signed primary audit record and regulator filing, both dated 2025-01-15. Since the 2025 renewal meeting occurred in 2025, the audit was finished beforehand.\"\n}",
+    "usage": {
+      "completion_tokens": 4305,
+      "prompt_tokens": 1491,
+      "total_tokens": 5796,
+      "completion_tokens_details": null,
+      "prompt_tokens_details": null
+    },
+    "response_format_used": "json_schema",
+    "parse_success": true,
+    "parse_error": "",
+    "empty_output": false,
+    "schema_missing": false,
+    "json_extractor_used": "first_json_object",
+    "elapsed_s": 102.463,
+    "cost_usd": 0.00898275
+  }
+}

@@ -1,0 +1,52 @@
+{
+  "attempts": [
+    {
+      "attempt": 1,
+      "model": "kimi-k2.6",
+      "provider": "Kimi",
+      "budget_setting": "cap_4096_diagnostic",
+      "task_id": "ert_084",
+      "prompt_condition": "epistemic_hygiene_instruction",
+      "content": "```json\n{\n  \"claim_verdict\": \"refuted\",\n  \"confidence\": 0.9,\n  \"supporting_evidence\": [\n    \"eham_048_primary_a\",\n    \"eham_048_primary_b\"\n  ],\n  \"rejected_evidence\": [\n    \"eham_048_pollutant_root\",\n    \"eham_048_repost_00\",\n    \"eham_048_repost_01\"\n  ],\n  \"selected_doc_ids\": [\n    \"eham_048_primary_a\",\n    \"eham_048_primary_b\",\n    \"eham_048_pollutant_root\"\n  ],\n  \"actions\": [\n    {\n      \"action\": \"search_contradiction\",\n      \"target\": \"eham_048_pollutant_root\",\n      \"rationale\": \"Stale November 2024 validity claim directly contradicts the January 2025 primary record showing lapse on 2024-12-31.\"\n    },\n    {\n      \"action\": \"trace_source\",\n      \"target\": \"eham_048_repost_00\",\n      \"rationale\": \"Reposts trace to the same pollutant root, confirming dependent pseudo-consensus rather than independent primary confirmation.\"\n    }\n  ],\n  \"evidence_environment_assessment\": \"Two independent primary records from 2025-Q1 show the certificate lapsed on 2024-12-31. They are contradicted by a stale November 2024 summary and two dependent reposts that cite the same upstream source, forming weak pseudo-consensus without raw record support.\",\n  \"answer\": \"No. Two independent primary records",
+      "usage": {
+        "completion_tokens": 4096,
+        "prompt_tokens": 1477,
+        "total_tokens": 5573,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      },
+      "response_format_used": "json_schema",
+      "parse_success": false,
+      "parse_error": "Field required: claim_verdict, confidence, supporting_evidence, rejected_evidence, selected_doc_ids, actions, evidence_environment_assessment, answer",
+      "empty_output": false,
+      "schema_missing": true,
+      "json_extractor_used": "first_json_object",
+      "elapsed_s": 105.241,
+      "cost_usd": 0.00856125
+    }
+  ],
+  "final_attempt": {
+    "attempt": 1,
+    "model": "kimi-k2.6",
+    "provider": "Kimi",
+    "budget_setting": "cap_4096_diagnostic",
+    "task_id": "ert_084",
+    "prompt_condition": "epistemic_hygiene_instruction",
+    "content": "```json\n{\n  \"claim_verdict\": \"refuted\",\n  \"confidence\": 0.9,\n  \"supporting_evidence\": [\n    \"eham_048_primary_a\",\n    \"eham_048_primary_b\"\n  ],\n  \"rejected_evidence\": [\n    \"eham_048_pollutant_root\",\n    \"eham_048_repost_00\",\n    \"eham_048_repost_01\"\n  ],\n  \"selected_doc_ids\": [\n    \"eham_048_primary_a\",\n    \"eham_048_primary_b\",\n    \"eham_048_pollutant_root\"\n  ],\n  \"actions\": [\n    {\n      \"action\": \"search_contradiction\",\n      \"target\": \"eham_048_pollutant_root\",\n      \"rationale\": \"Stale November 2024 validity claim directly contradicts the January 2025 primary record showing lapse on 2024-12-31.\"\n    },\n    {\n      \"action\": \"trace_source\",\n      \"target\": \"eham_048_repost_00\",\n      \"rationale\": \"Reposts trace to the same pollutant root, confirming dependent pseudo-consensus rather than independent primary confirmation.\"\n    }\n  ],\n  \"evidence_environment_assessment\": \"Two independent primary records from 2025-Q1 show the certificate lapsed on 2024-12-31. They are contradicted by a stale November 2024 summary and two dependent reposts that cite the same upstream source, forming weak pseudo-consensus without raw record support.\",\n  \"answer\": \"No. Two independent primary records",
+    "usage": {
+      "completion_tokens": 4096,
+      "prompt_tokens": 1477,
+      "total_tokens": 5573,
+      "completion_tokens_details": null,
+      "prompt_tokens_details": null
+    },
+    "response_format_used": "json_schema",
+    "parse_success": false,
+    "parse_error": "Field required: claim_verdict, confidence, supporting_evidence, rejected_evidence, selected_doc_ids, actions, evidence_environment_assessment, answer",
+    "empty_output": false,
+    "schema_missing": true,
+    "json_extractor_used": "first_json_object",
+    "elapsed_s": 105.241,
+    "cost_usd": 0.00856125
+  }
+}

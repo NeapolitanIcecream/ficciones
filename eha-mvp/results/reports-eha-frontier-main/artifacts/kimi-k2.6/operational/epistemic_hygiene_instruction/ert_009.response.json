@@ -1,0 +1,60 @@
+{
+  "attempts": [
+    {
+      "attempt": 1,
+      "model": "kimi-k2.6",
+      "provider": "Kimi",
+      "budget_setting": "operational",
+      "task_id": "ert_009",
+      "prompt_condition": "epistemic_hygiene_instruction",
+      "content": "{\n  \"claim_verdict\": \"refuted\",\n  \"confidence\": 0.92,\n  \"supporting_evidence\": [\n    \"eham_049_primary_a\",\n    \"eham_049_primary_b\"\n  ],\n  \"rejected_evidence\": [\n    \"eham_049_pollutant_root\",\n    \"eham_049_repost_00\",\n    \"eham_049_repost_01\"\n  ],\n  \"selected_doc_ids\": [\n    \"eham_049_primary_a\",\n    \"eham_049_primary_b\",\n    \"eham_049_pollutant_root\"\n  ],\n  \"actions\": [\n    {\n      \"action\": \"trace_source\",\n      \"target\": \"eham_049_pollutant_root\",\n      \"rationale\": \"Verify the summary links to raw certificates or regulator filings; its empty citations confirm it is unsupported lore, not primary evidence.\"\n    },\n    {\n      \"action\": \"compare_versions\",\n      \"target\": \"eham_049_primary_a,eham_049_primary_b\",\n      \"rationale\": \"Cross-check the certification record against the version history; both record the same 2024-12-31 lapse, strengthening reliability.\"\n    }\n  ],\n  \"evidence_environment_assessment\": \"A pollutant root with no raw citations is echoed by two reposts, creating weak pseudo-consensus. Two 2025 primary records—certification and version history—directly contradict this, stating the certificate lapsed on 2024-12-31 based on signed logs and reviewer sign-off. The primaries outweigh the uncited summaries.\",\n  \"answer\": \"No. The 2025-Q1 primary records state the EU safety certificate lapsed on 2024-12-31 with renewal unresolved. The validity claim traces to an uncited summary recycled by reposts, lacking regulatory or raw record support.\"\n}",
+      "usage": {
+        "completion_tokens": 6575,
+        "prompt_tokens": 1565,
+        "total_tokens": 8140,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": {
+          "audio_tokens": null,
+          "cached_tokens": 256
+        },
+        "cached_tokens": 256
+      },
+      "response_format_used": "json_schema",
+      "parse_success": true,
+      "parse_error": "",
+      "empty_output": false,
+      "schema_missing": false,
+      "json_extractor_used": "first_json_object",
+      "elapsed_s": 128.418,
+      "cost_usd": 0.01354125
+    }
+  ],
+  "final_attempt": {
+    "attempt": 1,
+    "model": "kimi-k2.6",
+    "provider": "Kimi",
+    "budget_setting": "operational",
+    "task_id": "ert_009",
+    "prompt_condition": "epistemic_hygiene_instruction",
+    "content": "{\n  \"claim_verdict\": \"refuted\",\n  \"confidence\": 0.92,\n  \"supporting_evidence\": [\n    \"eham_049_primary_a\",\n    \"eham_049_primary_b\"\n  ],\n  \"rejected_evidence\": [\n    \"eham_049_pollutant_root\",\n    \"eham_049_repost_00\",\n    \"eham_049_repost_01\"\n  ],\n  \"selected_doc_ids\": [\n    \"eham_049_primary_a\",\n    \"eham_049_primary_b\",\n    \"eham_049_pollutant_root\"\n  ],\n  \"actions\": [\n    {\n      \"action\": \"trace_source\",\n      \"target\": \"eham_049_pollutant_root\",\n      \"rationale\": \"Verify the summary links to raw certificates or regulator filings; its empty citations confirm it is unsupported lore, not primary evidence.\"\n    },\n    {\n      \"action\": \"compare_versions\",\n      \"target\": \"eham_049_primary_a,eham_049_primary_b\",\n      \"rationale\": \"Cross-check the certification record against the version history; both record the same 2024-12-31 lapse, strengthening reliability.\"\n    }\n  ],\n  \"evidence_environment_assessment\": \"A pollutant root with no raw citations is echoed by two reposts, creating weak pseudo-consensus. Two 2025 primary records—certification and version history—directly contradict this, stating the certificate lapsed on 2024-12-31 based on signed logs and reviewer sign-off. The primaries outweigh the uncited summaries.\",\n  \"answer\": \"No. The 2025-Q1 primary records state the EU safety certificate lapsed on 2024-12-31 with renewal unresolved. The validity claim traces to an uncited summary recycled by reposts, lacking regulatory or raw record support.\"\n}",
+    "usage": {
+      "completion_tokens": 6575,
+      "prompt_tokens": 1565,
+      "total_tokens": 8140,
+      "completion_tokens_details": null,
+      "prompt_tokens_details": {
+        "audio_tokens": null,
+        "cached_tokens": 256
+      },
+      "cached_tokens": 256
+    },
+    "response_format_used": "json_schema",
+    "parse_success": true,
+    "parse_error": "",
+    "empty_output": false,
+    "schema_missing": false,
+    "json_extractor_used": "first_json_object",
+    "elapsed_s": 128.418,
+    "cost_usd": 0.01354125
+  }
+}

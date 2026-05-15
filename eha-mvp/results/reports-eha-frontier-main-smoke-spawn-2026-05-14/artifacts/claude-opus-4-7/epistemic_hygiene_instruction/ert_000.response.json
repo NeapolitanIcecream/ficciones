@@ -1,0 +1,88 @@
+{
+  "attempts": [
+    {
+      "attempt": 1,
+      "model": "claude-opus-4-7",
+      "provider": "Anthropic",
+      "task_id": "ert_000",
+      "prompt_condition": "epistemic_hygiene_instruction",
+      "content": "{\n  \"claim_verdict\": \"supported\",\n  \"confidence\": 0.8,\n  \"supporting_evidence\": [\"eham_000_primary_a\"],\n  \"rejected_evidence\": [\"eham_000_pollutant_root\", \"eham_000_repost_00\", \"eham_000_repost_01\"],\n  \"selected_doc_ids\": [\"eham_000_primary_a\", \"eham_000_primary_b\", \"eham_000_pollutant_root\"],\n  \"actions\": [\n    {\"action\": \"trace_source\", \"target\": \"eham_000_primary_b\", \"rationale\": \"Verify whether the regulator filing is genuinely independent or derives from primary_a.\"},\n    {\"action\": \"search_contradiction\", \"target\": \"eham_000_pollutant_root\", \"rationale\": \"Confirm the pollutant chain is stale (Nov 2024) and superseded by the December 2024 completion record.\"}\n  ],\n  \"evidence_environment_assessment\": \"Two primary-style records (audit report and regulator filing) dated 2025-01-15 state the audit was completed 2024-12-12. The contradicting 'still pending' claim originates from a single Nov 2024 planning note and is echoed by two reposts citing it—pseudo-consensus, and stale relative to the December completion date. Context notes are non-probative.\",\n  \"answer\": \"Yes. Primary records indicate the Q4 supplier audit was completed on 2024-12-12, before the 2025 renewal meeting. The contradicting 'pending' claims are stale (Nov 2024) and trace to a single upstream planning note.\"\n}",
+      "usage": {
+        "completion_tokens": 520,
+        "prompt_tokens": 2277,
+        "total_tokens": 2797,
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": null,
+          "audio_tokens": 0,
+          "reasoning_tokens": 0,
+          "rejected_prediction_tokens": null,
+          "text_tokens": 0,
+          "image_tokens": 0
+        },
+        "prompt_tokens_details": {
+          "audio_tokens": 0,
+          "cached_tokens": 0,
+          "text_tokens": 0,
+          "image_tokens": 0
+        },
+        "usage_semantic": "openai",
+        "usage_source": "anthropic",
+        "input_tokens": 2277,
+        "output_tokens": 0,
+        "input_tokens_details": null,
+        "claude_cache_creation_5_m_tokens": 0,
+        "claude_cache_creation_1_h_tokens": 0
+      },
+      "response_format_used": "json_schema",
+      "parse_success": true,
+      "parse_error": "",
+      "empty_output": false,
+      "schema_missing": false,
+      "json_extractor_used": "first_json_object",
+      "elapsed_s": 14.434,
+      "cost_usd": 0.00160925
+    }
+  ],
+  "final_attempt": {
+    "attempt": 1,
+    "model": "claude-opus-4-7",
+    "provider": "Anthropic",
+    "task_id": "ert_000",
+    "prompt_condition": "epistemic_hygiene_instruction",
+    "content": "{\n  \"claim_verdict\": \"supported\",\n  \"confidence\": 0.8,\n  \"supporting_evidence\": [\"eham_000_primary_a\"],\n  \"rejected_evidence\": [\"eham_000_pollutant_root\", \"eham_000_repost_00\", \"eham_000_repost_01\"],\n  \"selected_doc_ids\": [\"eham_000_primary_a\", \"eham_000_primary_b\", \"eham_000_pollutant_root\"],\n  \"actions\": [\n    {\"action\": \"trace_source\", \"target\": \"eham_000_primary_b\", \"rationale\": \"Verify whether the regulator filing is genuinely independent or derives from primary_a.\"},\n    {\"action\": \"search_contradiction\", \"target\": \"eham_000_pollutant_root\", \"rationale\": \"Confirm the pollutant chain is stale (Nov 2024) and superseded by the December 2024 completion record.\"}\n  ],\n  \"evidence_environment_assessment\": \"Two primary-style records (audit report and regulator filing) dated 2025-01-15 state the audit was completed 2024-12-12. The contradicting 'still pending' claim originates from a single Nov 2024 planning note and is echoed by two reposts citing it—pseudo-consensus, and stale relative to the December completion date. Context notes are non-probative.\",\n  \"answer\": \"Yes. Primary records indicate the Q4 supplier audit was completed on 2024-12-12, before the 2025 renewal meeting. The contradicting 'pending' claims are stale (Nov 2024) and trace to a single upstream planning note.\"\n}",
+    "usage": {
+      "completion_tokens": 520,
+      "prompt_tokens": 2277,
+      "total_tokens": 2797,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": null,
+        "audio_tokens": 0,
+        "reasoning_tokens": 0,
+        "rejected_prediction_tokens": null,
+        "text_tokens": 0,
+        "image_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cached_tokens": 0,
+        "text_tokens": 0,
+        "image_tokens": 0
+      },
+      "usage_semantic": "openai",
+      "usage_source": "anthropic",
+      "input_tokens": 2277,
+      "output_tokens": 0,
+      "input_tokens_details": null,
+      "claude_cache_creation_5_m_tokens": 0,
+      "claude_cache_creation_1_h_tokens": 0
+    },
+    "response_format_used": "json_schema",
+    "parse_success": true,
+    "parse_error": "",
+    "empty_output": false,
+    "schema_missing": false,
+    "json_extractor_used": "first_json_object",
+    "elapsed_s": 14.434,
+    "cost_usd": 0.00160925
+  }
+}

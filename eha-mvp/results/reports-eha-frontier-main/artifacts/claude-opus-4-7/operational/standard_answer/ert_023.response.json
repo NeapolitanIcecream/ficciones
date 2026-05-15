@@ -1,0 +1,90 @@
+{
+  "attempts": [
+    {
+      "attempt": 1,
+      "model": "claude-opus-4-7",
+      "provider": "Anthropic",
+      "budget_setting": "operational",
+      "task_id": "ert_023",
+      "prompt_condition": "standard_answer",
+      "content": "{\n  \"claim_verdict\": \"refuted\",\n  \"confidence\": 0.9,\n  \"supporting_evidence\": [\"eham_079_primary_a\", \"eham_079_primary_b\"],\n  \"rejected_evidence\": [\"eham_079_pollutant_root\", \"eham_079_repost_00\", \"eham_079_repost_01\", \"eham_079_repost_02\", \"eham_079_repost_03\"],\n  \"selected_doc_ids\": [\"eham_079_primary_a\", \"eham_079_primary_b\", \"eham_079_pollutant_root\"],\n  \"actions\": [\n    {\"action\": \"trace_source\", \"target\": \"eham_079_repost_00\", \"rationale\": \"Reposts all cite the same pollutant root, indicating false consensus rather than independent confirmation.\"},\n    {\"action\": \"search_primary\", \"target\": \"eham_079_primary_a\", \"rationale\": \"Audit report and regulator filing provide signed primary records with raw logs, outweighing repeated summaries.\"}\n  ],\n  \"evidence_environment_assessment\": \"The environment shows a classic false-consensus pattern: one wiki-style 'pollutant root' asserts a 1.7% recall rate, and six secondary items (varied source types but all citing the same upstream) repeat the claim verbatim. Apparent breadth is illusory because lineage collapses to a single source. Two primary records—an audit report and an independent regulator filing dated 2025-01-15—report an audited 3.8% rate based on raw logs and reviewer sign-off. Primary, signed records outweigh chained summaries.\",\n  \"answer\": \"No. The audited primary records (audit report and regulator filing) report a 2024 recall rate of 3.8%, above two percent. The 1.7% figure circulates only through a single pollutant root and its reposts, so the claim is refuted.\"\n}",
+      "usage": {
+        "completion_tokens": 603,
+        "prompt_tokens": 2437,
+        "total_tokens": 3040,
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": null,
+          "audio_tokens": 0,
+          "reasoning_tokens": 0,
+          "rejected_prediction_tokens": null,
+          "text_tokens": 0,
+          "image_tokens": 0
+        },
+        "prompt_tokens_details": {
+          "audio_tokens": 0,
+          "cached_tokens": 0,
+          "text_tokens": 0,
+          "image_tokens": 0
+        },
+        "usage_semantic": "openai",
+        "usage_source": "anthropic",
+        "input_tokens": 2437,
+        "output_tokens": 0,
+        "input_tokens_details": null,
+        "claude_cache_creation_5_m_tokens": 0,
+        "claude_cache_creation_1_h_tokens": 0
+      },
+      "response_format_used": "json_schema",
+      "parse_success": true,
+      "parse_error": "",
+      "empty_output": false,
+      "schema_missing": false,
+      "json_extractor_used": "first_json_object",
+      "elapsed_s": 17.559,
+      "cost_usd": 0.00181525
+    }
+  ],
+  "final_attempt": {
+    "attempt": 1,
+    "model": "claude-opus-4-7",
+    "provider": "Anthropic",
+    "budget_setting": "operational",
+    "task_id": "ert_023",
+    "prompt_condition": "standard_answer",
+    "content": "{\n  \"claim_verdict\": \"refuted\",\n  \"confidence\": 0.9,\n  \"supporting_evidence\": [\"eham_079_primary_a\", \"eham_079_primary_b\"],\n  \"rejected_evidence\": [\"eham_079_pollutant_root\", \"eham_079_repost_00\", \"eham_079_repost_01\", \"eham_079_repost_02\", \"eham_079_repost_03\"],\n  \"selected_doc_ids\": [\"eham_079_primary_a\", \"eham_079_primary_b\", \"eham_079_pollutant_root\"],\n  \"actions\": [\n    {\"action\": \"trace_source\", \"target\": \"eham_079_repost_00\", \"rationale\": \"Reposts all cite the same pollutant root, indicating false consensus rather than independent confirmation.\"},\n    {\"action\": \"search_primary\", \"target\": \"eham_079_primary_a\", \"rationale\": \"Audit report and regulator filing provide signed primary records with raw logs, outweighing repeated summaries.\"}\n  ],\n  \"evidence_environment_assessment\": \"The environment shows a classic false-consensus pattern: one wiki-style 'pollutant root' asserts a 1.7% recall rate, and six secondary items (varied source types but all citing the same upstream) repeat the claim verbatim. Apparent breadth is illusory because lineage collapses to a single source. Two primary records—an audit report and an independent regulator filing dated 2025-01-15—report an audited 3.8% rate based on raw logs and reviewer sign-off. Primary, signed records outweigh chained summaries.\",\n  \"answer\": \"No. The audited primary records (audit report and regulator filing) report a 2024 recall rate of 3.8%, above two percent. The 1.7% figure circulates only through a single pollutant root and its reposts, so the claim is refuted.\"\n}",
+    "usage": {
+      "completion_tokens": 603,
+      "prompt_tokens": 2437,
+      "total_tokens": 3040,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": null,
+        "audio_tokens": 0,
+        "reasoning_tokens": 0,
+        "rejected_prediction_tokens": null,
+        "text_tokens": 0,
+        "image_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cached_tokens": 0,
+        "text_tokens": 0,
+        "image_tokens": 0
+      },
+      "usage_semantic": "openai",
+      "usage_source": "anthropic",
+      "input_tokens": 2437,
+      "output_tokens": 0,
+      "input_tokens_details": null,
+      "claude_cache_creation_5_m_tokens": 0,
+      "claude_cache_creation_1_h_tokens": 0
+    },
+    "response_format_used": "json_schema",
+    "parse_success": true,
+    "parse_error": "",
+    "empty_output": false,
+    "schema_missing": false,
+    "json_extractor_used": "first_json_object",
+    "elapsed_s": 17.559,
+    "cost_usd": 0.00181525
+  }
+}

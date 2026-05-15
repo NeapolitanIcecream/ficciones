@@ -1,0 +1,72 @@
+{
+  "attempts": [
+    {
+      "attempt": 1,
+      "model": "deepseek-v4-pro",
+      "provider": "DeepSeek",
+      "budget_setting": "operational",
+      "task_id": "ert_000",
+      "prompt_condition": "epistemic_hygiene_instruction",
+      "content": "{\n  \"claim_verdict\": \"supported\",\n  \"confidence\": 0.9,\n  \"supporting_evidence\": [\"eham_000_primary_a\"],\n  \"rejected_evidence\": [\"eham_000_primary_b\", \"eham_000_pollutant_root\", \"eham_000_repost_00\", \"eham_000_repost_01\"],\n  \"selected_doc_ids\": [\"eham_000_primary_a\"],\n  \"actions\": [\n    {\n      \"action\": \"open\",\n      \"target\": \"eham_000_primary_a\",\n      \"rationale\": \"Open the primary audit report to verify the claimed completion date and renewal clearance.\"\n    },\n    {\n      \"action\": \"trace_source\",\n      \"target\": \"eham_000_pollutant_root\",\n      \"rationale\": \"Trace the outdated planning note to confirm it lacks primary support and predates the audit.\"\n    }\n  ],\n  \"evidence_environment_assessment\": \"Evidence includes primary audit records dated 2025-01-15 stating audit completion on 2024-12-12, and outdated planning notes from November 2024 claiming pending status. The primary records are signed and based on raw logs; the outdated notes are reposted, creating weak pseudo-consensus. No primary contradiction exists. Environment is clean but contains stale information.\",\n  \"answer\": \"Yes, Novalis Robotics completed the Q4 supplier audit on 2024-12-12, before the 2025 renewal meeting, as confirmed by primary audit records.\"\n}",
+      "usage": {
+        "completion_tokens": 1307,
+        "prompt_tokens": 1701,
+        "total_tokens": 3008,
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": null,
+          "audio_tokens": null,
+          "reasoning_tokens": 980,
+          "rejected_prediction_tokens": null
+        },
+        "prompt_tokens_details": {
+          "audio_tokens": null,
+          "cached_tokens": 1664
+        },
+        "prompt_cache_hit_tokens": 1664,
+        "prompt_cache_miss_tokens": 37
+      },
+      "response_format_used": "json_object",
+      "parse_success": true,
+      "parse_error": "",
+      "empty_output": false,
+      "schema_missing": false,
+      "json_extractor_used": "first_json_object",
+      "elapsed_s": 41.561,
+      "cost_usd": 0.00303925
+    }
+  ],
+  "final_attempt": {
+    "attempt": 1,
+    "model": "deepseek-v4-pro",
+    "provider": "DeepSeek",
+    "budget_setting": "operational",
+    "task_id": "ert_000",
+    "prompt_condition": "epistemic_hygiene_instruction",
+    "content": "{\n  \"claim_verdict\": \"supported\",\n  \"confidence\": 0.9,\n  \"supporting_evidence\": [\"eham_000_primary_a\"],\n  \"rejected_evidence\": [\"eham_000_primary_b\", \"eham_000_pollutant_root\", \"eham_000_repost_00\", \"eham_000_repost_01\"],\n  \"selected_doc_ids\": [\"eham_000_primary_a\"],\n  \"actions\": [\n    {\n      \"action\": \"open\",\n      \"target\": \"eham_000_primary_a\",\n      \"rationale\": \"Open the primary audit report to verify the claimed completion date and renewal clearance.\"\n    },\n    {\n      \"action\": \"trace_source\",\n      \"target\": \"eham_000_pollutant_root\",\n      \"rationale\": \"Trace the outdated planning note to confirm it lacks primary support and predates the audit.\"\n    }\n  ],\n  \"evidence_environment_assessment\": \"Evidence includes primary audit records dated 2025-01-15 stating audit completion on 2024-12-12, and outdated planning notes from November 2024 claiming pending status. The primary records are signed and based on raw logs; the outdated notes are reposted, creating weak pseudo-consensus. No primary contradiction exists. Environment is clean but contains stale information.\",\n  \"answer\": \"Yes, Novalis Robotics completed the Q4 supplier audit on 2024-12-12, before the 2025 renewal meeting, as confirmed by primary audit records.\"\n}",
+    "usage": {
+      "completion_tokens": 1307,
+      "prompt_tokens": 1701,
+      "total_tokens": 3008,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": null,
+        "audio_tokens": null,
+        "reasoning_tokens": 980,
+        "rejected_prediction_tokens": null
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": null,
+        "cached_tokens": 1664
+      },
+      "prompt_cache_hit_tokens": 1664,
+      "prompt_cache_miss_tokens": 37
+    },
+    "response_format_used": "json_object",
+    "parse_success": true,
+    "parse_error": "",
+    "empty_output": false,
+    "schema_missing": false,
+    "json_extractor_used": "first_json_object",
+    "elapsed_s": 41.561,
+    "cost_usd": 0.00303925
+  }
+}

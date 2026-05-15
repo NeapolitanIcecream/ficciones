@@ -1,0 +1,90 @@
+{
+  "attempts": [
+    {
+      "attempt": 1,
+      "model": "claude-opus-4-7",
+      "provider": "Anthropic",
+      "budget_setting": "operational",
+      "task_id": "ert_047",
+      "prompt_condition": "epistemic_hygiene_instruction",
+      "content": "{\n  \"claim_verdict\": \"supported\",\n  \"confidence\": 0.78,\n  \"supporting_evidence\": [\"eham_007_primary_a\", \"eham_007_primary_b\"],\n  \"rejected_evidence\": [\"eham_007_pollutant_root\", \"eham_007_repost_00\", \"eham_007_repost_01\", \"eham_007_repost_02\"],\n  \"selected_doc_ids\": [\"eham_007_primary_a\", \"eham_007_primary_b\", \"eham_007_pollutant_root\"],\n  \"actions\": [\n    {\"action\": \"trace_source\", \"target\": \"eham_007_primary_b\", \"rationale\": \"Confirm independence from primary_a since it cites it; verify whether it is genuinely independent corroboration or a derivative filing.\"},\n    {\"action\": \"search_contradiction\", \"target\": \"eham_007_pollutant_root\", \"rationale\": \"Check whether the pending claim has any primary backing post-dating the audit completion date of 2024-12-12.\"}\n  ],\n  \"evidence_environment_assessment\": \"Two primary records (audit report and regulator filing dated 2025-01-15) state the audit was completed 2024-12-12. The contradicting 'pending' narrative traces to a single outdated planning note (2024-11-03) amplified by three reposts that all cite the same upstream — pseudo-consensus, not independent confirmation. Context notes are orientation-only. Primary_b cites primary_a, slightly weakening independence, but both are primary-type records predating the renewal meeting timeframe and post-dating the pollutant. Stale pollutant evidence is properly downweighted.\",\n  \"answer\": \"Yes. Primary audit and regulator records indicate the Q4 supplier audit was completed on 2024-12-12, before the 2025 renewal meeting. Contradicting 'still pending' claims derive from a single outdated November 2024 planning note echoed by reposts citing the same source, which constitutes weak pseudo-consensus rather than independent refutation.\"\n}",
+      "usage": {
+        "completion_tokens": 662,
+        "prompt_tokens": 3713,
+        "total_tokens": 4375,
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": null,
+          "audio_tokens": 0,
+          "reasoning_tokens": 0,
+          "rejected_prediction_tokens": null,
+          "text_tokens": 0,
+          "image_tokens": 0
+        },
+        "prompt_tokens_details": {
+          "audio_tokens": 0,
+          "cached_tokens": 0,
+          "text_tokens": 0,
+          "image_tokens": 0
+        },
+        "usage_semantic": "openai",
+        "usage_source": "anthropic",
+        "input_tokens": 3713,
+        "output_tokens": 0,
+        "input_tokens_details": null,
+        "claude_cache_creation_5_m_tokens": 0,
+        "claude_cache_creation_1_h_tokens": 0
+      },
+      "response_format_used": "json_schema",
+      "parse_success": true,
+      "parse_error": "",
+      "empty_output": false,
+      "schema_missing": false,
+      "json_extractor_used": "first_json_object",
+      "elapsed_s": 10.498,
+      "cost_usd": 0.00225225
+    }
+  ],
+  "final_attempt": {
+    "attempt": 1,
+    "model": "claude-opus-4-7",
+    "provider": "Anthropic",
+    "budget_setting": "operational",
+    "task_id": "ert_047",
+    "prompt_condition": "epistemic_hygiene_instruction",
+    "content": "{\n  \"claim_verdict\": \"supported\",\n  \"confidence\": 0.78,\n  \"supporting_evidence\": [\"eham_007_primary_a\", \"eham_007_primary_b\"],\n  \"rejected_evidence\": [\"eham_007_pollutant_root\", \"eham_007_repost_00\", \"eham_007_repost_01\", \"eham_007_repost_02\"],\n  \"selected_doc_ids\": [\"eham_007_primary_a\", \"eham_007_primary_b\", \"eham_007_pollutant_root\"],\n  \"actions\": [\n    {\"action\": \"trace_source\", \"target\": \"eham_007_primary_b\", \"rationale\": \"Confirm independence from primary_a since it cites it; verify whether it is genuinely independent corroboration or a derivative filing.\"},\n    {\"action\": \"search_contradiction\", \"target\": \"eham_007_pollutant_root\", \"rationale\": \"Check whether the pending claim has any primary backing post-dating the audit completion date of 2024-12-12.\"}\n  ],\n  \"evidence_environment_assessment\": \"Two primary records (audit report and regulator filing dated 2025-01-15) state the audit was completed 2024-12-12. The contradicting 'pending' narrative traces to a single outdated planning note (2024-11-03) amplified by three reposts that all cite the same upstream — pseudo-consensus, not independent confirmation. Context notes are orientation-only. Primary_b cites primary_a, slightly weakening independence, but both are primary-type records predating the renewal meeting timeframe and post-dating the pollutant. Stale pollutant evidence is properly downweighted.\",\n  \"answer\": \"Yes. Primary audit and regulator records indicate the Q4 supplier audit was completed on 2024-12-12, before the 2025 renewal meeting. Contradicting 'still pending' claims derive from a single outdated November 2024 planning note echoed by reposts citing the same source, which constitutes weak pseudo-consensus rather than independent refutation.\"\n}",
+    "usage": {
+      "completion_tokens": 662,
+      "prompt_tokens": 3713,
+      "total_tokens": 4375,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": null,
+        "audio_tokens": 0,
+        "reasoning_tokens": 0,
+        "rejected_prediction_tokens": null,
+        "text_tokens": 0,
+        "image_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cached_tokens": 0,
+        "text_tokens": 0,
+        "image_tokens": 0
+      },
+      "usage_semantic": "openai",
+      "usage_source": "anthropic",
+      "input_tokens": 3713,
+      "output_tokens": 0,
+      "input_tokens_details": null,
+      "claude_cache_creation_5_m_tokens": 0,
+      "claude_cache_creation_1_h_tokens": 0
+    },
+    "response_format_used": "json_schema",
+    "parse_success": true,
+    "parse_error": "",
+    "empty_output": false,
+    "schema_missing": false,
+    "json_extractor_used": "first_json_object",
+    "elapsed_s": 10.498,
+    "cost_usd": 0.00225225
+  }
+}

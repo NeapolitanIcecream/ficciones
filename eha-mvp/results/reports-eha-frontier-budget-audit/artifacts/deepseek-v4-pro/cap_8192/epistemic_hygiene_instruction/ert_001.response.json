@@ -1,0 +1,72 @@
+{
+  "attempts": [
+    {
+      "attempt": 1,
+      "model": "deepseek-v4-pro",
+      "provider": "DeepSeek",
+      "budget_setting": "cap_8192",
+      "task_id": "ert_001",
+      "prompt_condition": "epistemic_hygiene_instruction",
+      "content": "{\n  \"claim_verdict\": \"supported\",\n  \"confidence\": 0.9,\n  \"supporting_evidence\": [\n    \"eham_001_primary_a\"\n  ],\n  \"rejected_evidence\": [\n    \"eham_001_pollutant_root\",\n    \"eham_001_repost_00\",\n    \"eham_001_repost_01\"\n  ],\n  \"selected_doc_ids\": [\n    \"eham_001_primary_a\"\n  ],\n  \"actions\": [\n    {\n      \"action\": \"open\",\n      \"target\": \"eham_001_primary_a\",\n      \"rationale\": \"Verify signed primary record showing audit completion on 2024-12-12.\"\n    },\n    {\n      \"action\": \"trace_source\",\n      \"target\": \"eham_001_pollutant_root\",\n      \"rationale\": \"Trace the outdated planning note to confirm it predates the audit completion and lacks primary support.\"\n    }\n  ],\n  \"evidence_environment_assessment\": \"Two primary documents (audit report and regulator filing) dated 2025-01-15 state the audit was completed on 2024-12-12. However, one cites the other, so this is weak pseudo-consensus, not independent confirmation. An outdated planning note from 2024-11-03 claims the audit was pending, with two reposts echoing it. No independent contradictory primary evidence exists. The primaries are more recent and authoritative.\",\n  \"answer\": \"Yes. The primary audit report (eham_001_primary_a) confirms the supplier audit was completed on 12 December 2024, before the 2025 renewal meeting.\"\n}",
+      "usage": {
+        "completion_tokens": 1927,
+        "prompt_tokens": 1700,
+        "total_tokens": 3627,
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": null,
+          "audio_tokens": null,
+          "reasoning_tokens": 1574,
+          "rejected_prediction_tokens": null
+        },
+        "prompt_tokens_details": {
+          "audio_tokens": null,
+          "cached_tokens": 0
+        },
+        "prompt_cache_hit_tokens": 0,
+        "prompt_cache_miss_tokens": 1700
+      },
+      "response_format_used": "json_object",
+      "parse_success": true,
+      "parse_error": "",
+      "empty_output": false,
+      "schema_missing": false,
+      "json_extractor_used": "first_json_object",
+      "elapsed_s": 61.459,
+      "cost_usd": 0.004279
+    }
+  ],
+  "final_attempt": {
+    "attempt": 1,
+    "model": "deepseek-v4-pro",
+    "provider": "DeepSeek",
+    "budget_setting": "cap_8192",
+    "task_id": "ert_001",
+    "prompt_condition": "epistemic_hygiene_instruction",
+    "content": "{\n  \"claim_verdict\": \"supported\",\n  \"confidence\": 0.9,\n  \"supporting_evidence\": [\n    \"eham_001_primary_a\"\n  ],\n  \"rejected_evidence\": [\n    \"eham_001_pollutant_root\",\n    \"eham_001_repost_00\",\n    \"eham_001_repost_01\"\n  ],\n  \"selected_doc_ids\": [\n    \"eham_001_primary_a\"\n  ],\n  \"actions\": [\n    {\n      \"action\": \"open\",\n      \"target\": \"eham_001_primary_a\",\n      \"rationale\": \"Verify signed primary record showing audit completion on 2024-12-12.\"\n    },\n    {\n      \"action\": \"trace_source\",\n      \"target\": \"eham_001_pollutant_root\",\n      \"rationale\": \"Trace the outdated planning note to confirm it predates the audit completion and lacks primary support.\"\n    }\n  ],\n  \"evidence_environment_assessment\": \"Two primary documents (audit report and regulator filing) dated 2025-01-15 state the audit was completed on 2024-12-12. However, one cites the other, so this is weak pseudo-consensus, not independent confirmation. An outdated planning note from 2024-11-03 claims the audit was pending, with two reposts echoing it. No independent contradictory primary evidence exists. The primaries are more recent and authoritative.\",\n  \"answer\": \"Yes. The primary audit report (eham_001_primary_a) confirms the supplier audit was completed on 12 December 2024, before the 2025 renewal meeting.\"\n}",
+    "usage": {
+      "completion_tokens": 1927,
+      "prompt_tokens": 1700,
+      "total_tokens": 3627,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": null,
+        "audio_tokens": null,
+        "reasoning_tokens": 1574,
+        "rejected_prediction_tokens": null
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": null,
+        "cached_tokens": 0
+      },
+      "prompt_cache_hit_tokens": 0,
+      "prompt_cache_miss_tokens": 1700
+    },
+    "response_format_used": "json_object",
+    "parse_success": true,
+    "parse_error": "",
+    "empty_output": false,
+    "schema_missing": false,
+    "json_extractor_used": "first_json_object",
+    "elapsed_s": 61.459,
+    "cost_usd": 0.004279
+  }
+}

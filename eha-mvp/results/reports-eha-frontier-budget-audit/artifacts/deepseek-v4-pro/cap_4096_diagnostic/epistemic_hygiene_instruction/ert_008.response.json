@@ -1,0 +1,72 @@
+{
+  "attempts": [
+    {
+      "attempt": 1,
+      "model": "deepseek-v4-pro",
+      "provider": "DeepSeek",
+      "budget_setting": "cap_4096_diagnostic",
+      "task_id": "ert_008",
+      "prompt_condition": "epistemic_hygiene_instruction",
+      "content": "{\n  \"claim_verdict\": \"refuted\",\n  \"confidence\": 0.95,\n  \"supporting_evidence\": [\n    \"eham_048_primary_a\",\n    \"eham_048_primary_b\"\n  ],\n  \"rejected_evidence\": [\n    \"eham_048_pollutant_root\",\n    \"eham_048_repost_00\",\n    \"eham_048_repost_01\"\n  ],\n  \"selected_doc_ids\": [\n    \"eham_048_primary_a\",\n    \"eham_048_primary_b\"\n  ],\n  \"actions\": [\n    {\n      \"action\": \"trace_source\",\n      \"target\": \"eham_048_repost_00\",\n      \"rationale\": \"Traced citation to eham_048_pollutant_root, revealing it is the sole upstream source for the validity claim.\"\n    },\n    {\n      \"action\": \"search_primary\",\n      \"target\": \"Novalis Robotics certification records\",\n      \"rationale\": \"Searched for primary records, found signed logs from 2025 indicating lapse on 2024-12-31 with renewal unresolved.\"\n    }\n  ],\n  \"evidence_environment_assessment\": \"The environment contains outdated summaries and reposts claiming validity through 2025, all tracing back to a single authoritative-looking notice. Primary records from January and February 2025 directly contradict this, showing the certification lapsed on 2024-12-31. The reposts form a weak pseudo-consensus; the primaries are more reliable.\",\n  \"answer\": \"No, Novalis Robotics' EU safety certification was not valid in January 2025. Primary records show it lapsed on 2024-12-31 with renewal unresolved.\"\n}",
+      "usage": {
+        "completion_tokens": 1742,
+        "prompt_tokens": 1604,
+        "total_tokens": 3346,
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": null,
+          "audio_tokens": null,
+          "reasoning_tokens": 1374,
+          "rejected_prediction_tokens": null
+        },
+        "prompt_tokens_details": {
+          "audio_tokens": null,
+          "cached_tokens": 1536
+        },
+        "prompt_cache_hit_tokens": 1536,
+        "prompt_cache_miss_tokens": 68
+      },
+      "response_format_used": "json_object",
+      "parse_success": true,
+      "parse_error": "",
+      "empty_output": false,
+      "schema_missing": false,
+      "json_extractor_used": "first_json_object",
+      "elapsed_s": 55.012,
+      "cost_usd": 0.003885
+    }
+  ],
+  "final_attempt": {
+    "attempt": 1,
+    "model": "deepseek-v4-pro",
+    "provider": "DeepSeek",
+    "budget_setting": "cap_4096_diagnostic",
+    "task_id": "ert_008",
+    "prompt_condition": "epistemic_hygiene_instruction",
+    "content": "{\n  \"claim_verdict\": \"refuted\",\n  \"confidence\": 0.95,\n  \"supporting_evidence\": [\n    \"eham_048_primary_a\",\n    \"eham_048_primary_b\"\n  ],\n  \"rejected_evidence\": [\n    \"eham_048_pollutant_root\",\n    \"eham_048_repost_00\",\n    \"eham_048_repost_01\"\n  ],\n  \"selected_doc_ids\": [\n    \"eham_048_primary_a\",\n    \"eham_048_primary_b\"\n  ],\n  \"actions\": [\n    {\n      \"action\": \"trace_source\",\n      \"target\": \"eham_048_repost_00\",\n      \"rationale\": \"Traced citation to eham_048_pollutant_root, revealing it is the sole upstream source for the validity claim.\"\n    },\n    {\n      \"action\": \"search_primary\",\n      \"target\": \"Novalis Robotics certification records\",\n      \"rationale\": \"Searched for primary records, found signed logs from 2025 indicating lapse on 2024-12-31 with renewal unresolved.\"\n    }\n  ],\n  \"evidence_environment_assessment\": \"The environment contains outdated summaries and reposts claiming validity through 2025, all tracing back to a single authoritative-looking notice. Primary records from January and February 2025 directly contradict this, showing the certification lapsed on 2024-12-31. The reposts form a weak pseudo-consensus; the primaries are more reliable.\",\n  \"answer\": \"No, Novalis Robotics' EU safety certification was not valid in January 2025. Primary records show it lapsed on 2024-12-31 with renewal unresolved.\"\n}",
+    "usage": {
+      "completion_tokens": 1742,
+      "prompt_tokens": 1604,
+      "total_tokens": 3346,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": null,
+        "audio_tokens": null,
+        "reasoning_tokens": 1374,
+        "rejected_prediction_tokens": null
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": null,
+        "cached_tokens": 1536
+      },
+      "prompt_cache_hit_tokens": 1536,
+      "prompt_cache_miss_tokens": 68
+    },
+    "response_format_used": "json_object",
+    "parse_success": true,
+    "parse_error": "",
+    "empty_output": false,
+    "schema_missing": false,
+    "json_extractor_used": "first_json_object",
+    "elapsed_s": 55.012,
+    "cost_usd": 0.003885
+  }
+}

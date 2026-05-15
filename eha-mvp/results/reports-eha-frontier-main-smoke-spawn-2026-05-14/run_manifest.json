@@ -1,0 +1,90 @@
+{
+  "name": "EHA Frontier Cohort Main Run",
+  "task_count": 1,
+  "model_count": 5,
+  "prompt_conditions": [
+    "standard_answer",
+    "epistemic_hygiene_instruction"
+  ],
+  "job_count": 10,
+  "parallel_strategy": {
+    "parallel_model_streams": 5,
+    "per_model_concurrency": 1,
+    "reason": "Run one sequential stream per model to preserve call success while parallelizing across providers."
+  },
+  "max_attempts": 2,
+  "models": [
+    {
+      "provider": "OpenAI",
+      "model": "gpt-5.4",
+      "temperature": null,
+      "max_output_tokens": 4096,
+      "response_format": "json_schema",
+      "timeout_s": 180.0,
+      "cost_estimate_output_tokens": 4096,
+      "message_role_policy": "developer_system_merged_into_user",
+      "json_extractor": "first_json_object"
+    },
+    {
+      "provider": "Anthropic",
+      "model": "claude-opus-4-7",
+      "temperature": null,
+      "max_output_tokens": 4096,
+      "response_format": "json_schema",
+      "timeout_s": 180.0,
+      "cost_estimate_output_tokens": 4096,
+      "message_role_policy": "developer_system_merged_into_user",
+      "json_extractor": "first_json_object"
+    },
+    {
+      "provider": "Google",
+      "model": "gemini-3.1-pro-preview",
+      "temperature": null,
+      "max_output_tokens": 4096,
+      "response_format": "json_schema",
+      "timeout_s": 180.0,
+      "cost_estimate_output_tokens": 4096,
+      "message_role_policy": "developer_system_merged_into_user",
+      "json_extractor": "first_json_object"
+    },
+    {
+      "provider": "DeepSeek",
+      "model": "deepseek-v4-pro",
+      "temperature": null,
+      "max_output_tokens": null,
+      "response_format": "json_object",
+      "timeout_s": 240.0,
+      "cost_estimate_output_tokens": 4096,
+      "message_role_policy": "developer_system_merged_into_user",
+      "json_extractor": "first_json_object"
+    },
+    {
+      "provider": "Kimi",
+      "model": "kimi-k2.6",
+      "temperature": null,
+      "max_output_tokens": null,
+      "response_format": "json_schema",
+      "timeout_s": 300.0,
+      "cost_estimate_output_tokens": 4096,
+      "message_role_policy": "developer_system_merged_into_user",
+      "json_extractor": "first_json_object"
+    }
+  ],
+  "family_counts": {
+    "packet_judgment": 1
+  },
+  "condition_counts": {
+    "clean": 1
+  },
+  "outputs": [
+    "summary.md",
+    "frontier_main_metrics_by_model.csv",
+    "frontier_main_metrics_by_family.csv",
+    "frontier_main_metrics_by_condition.csv",
+    "frontier_main_metrics_by_prompt.csv",
+    "operational_vs_conditional_escape.csv",
+    "failure_cases_frontier.jsonl",
+    "cost_report.json"
+  ],
+  "resume_completed_count": 0
+}

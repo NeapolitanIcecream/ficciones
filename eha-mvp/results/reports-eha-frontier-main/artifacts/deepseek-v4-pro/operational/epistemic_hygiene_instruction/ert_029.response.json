@@ -1,0 +1,72 @@
+{
+  "attempts": [
+    {
+      "attempt": 1,
+      "model": "deepseek-v4-pro",
+      "provider": "DeepSeek",
+      "budget_setting": "operational",
+      "task_id": "ert_029",
+      "prompt_condition": "epistemic_hygiene_instruction",
+      "content": "{\n  \"claim_verdict\": \"refuted\",\n  \"confidence\": 0.95,\n  \"supporting_evidence\": [\n    \"eham_101_primary_a\",\n    \"eham_101_primary_b\"\n  ],\n  \"rejected_evidence\": [\n    \"eham_101_pollutant_root\",\n    \"eham_101_repost_00\",\n    \"eham_101_repost_01\",\n    \"eham_101_repost_02\",\n    \"eham_101_repost_03\"\n  ],\n  \"selected_doc_ids\": [\n    \"eham_101_primary_a\",\n    \"eham_101_primary_b\"\n  ],\n  \"actions\": [\n    {\n      \"action\": \"search_primary\",\n      \"target\": \"eham_101_primary_a\",\n      \"rationale\": \"Located signed primary audit report with raw operating data showing 3.8% recall rate, directly responsive to the claim.\"\n    },\n    {\n      \"action\": \"compare_versions\",\n      \"target\": \"eham_101_pollutant_root\",\n      \"rationale\": \"Compared the secondary summary claiming 1.7% with the primary record; the primary data refutes the summary.\"\n    }\n  ],\n  \"evidence_environment_assessment\": \"Multiple secondary documents repeat a 1.7% claim, all citing the same unverified root. Two independent primary records (audit and regulator filing) consistently report 3.8%, contradicting the claim. The secondary cascade lacks primary support and represents a polluted information environment.\",\n  \"answer\": \"No. Primary audit and regulator records from 2025-01-15 show the 2024 recall rate was 3.8%, which is above the two percent threshold.\"\n}",
+      "usage": {
+        "completion_tokens": 1334,
+        "prompt_tokens": 1906,
+        "total_tokens": 3240,
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": null,
+          "audio_tokens": null,
+          "reasoning_tokens": 961,
+          "rejected_prediction_tokens": null
+        },
+        "prompt_tokens_details": {
+          "audio_tokens": null,
+          "cached_tokens": 256
+        },
+        "prompt_cache_hit_tokens": 256,
+        "prompt_cache_miss_tokens": 1650
+      },
+      "response_format_used": "json_object",
+      "parse_success": true,
+      "parse_error": "",
+      "empty_output": false,
+      "schema_missing": false,
+      "json_extractor_used": "first_json_object",
+      "elapsed_s": 43.266,
+      "cost_usd": 0.0031444999999999997
+    }
+  ],
+  "final_attempt": {
+    "attempt": 1,
+    "model": "deepseek-v4-pro",
+    "provider": "DeepSeek",
+    "budget_setting": "operational",
+    "task_id": "ert_029",
+    "prompt_condition": "epistemic_hygiene_instruction",
+    "content": "{\n  \"claim_verdict\": \"refuted\",\n  \"confidence\": 0.95,\n  \"supporting_evidence\": [\n    \"eham_101_primary_a\",\n    \"eham_101_primary_b\"\n  ],\n  \"rejected_evidence\": [\n    \"eham_101_pollutant_root\",\n    \"eham_101_repost_00\",\n    \"eham_101_repost_01\",\n    \"eham_101_repost_02\",\n    \"eham_101_repost_03\"\n  ],\n  \"selected_doc_ids\": [\n    \"eham_101_primary_a\",\n    \"eham_101_primary_b\"\n  ],\n  \"actions\": [\n    {\n      \"action\": \"search_primary\",\n      \"target\": \"eham_101_primary_a\",\n      \"rationale\": \"Located signed primary audit report with raw operating data showing 3.8% recall rate, directly responsive to the claim.\"\n    },\n    {\n      \"action\": \"compare_versions\",\n      \"target\": \"eham_101_pollutant_root\",\n      \"rationale\": \"Compared the secondary summary claiming 1.7% with the primary record; the primary data refutes the summary.\"\n    }\n  ],\n  \"evidence_environment_assessment\": \"Multiple secondary documents repeat a 1.7% claim, all citing the same unverified root. Two independent primary records (audit and regulator filing) consistently report 3.8%, contradicting the claim. The secondary cascade lacks primary support and represents a polluted information environment.\",\n  \"answer\": \"No. Primary audit and regulator records from 2025-01-15 show the 2024 recall rate was 3.8%, which is above the two percent threshold.\"\n}",
+    "usage": {
+      "completion_tokens": 1334,
+      "prompt_tokens": 1906,
+      "total_tokens": 3240,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": null,
+        "audio_tokens": null,
+        "reasoning_tokens": 961,
+        "rejected_prediction_tokens": null
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": null,
+        "cached_tokens": 256
+      },
+      "prompt_cache_hit_tokens": 256,
+      "prompt_cache_miss_tokens": 1650
+    },
+    "response_format_used": "json_object",
+    "parse_success": true,
+    "parse_error": "",
+    "empty_output": false,
+    "schema_missing": false,
+    "json_extractor_used": "first_json_object",
+    "elapsed_s": 43.266,
+    "cost_usd": 0.0031444999999999997
+  }
+}

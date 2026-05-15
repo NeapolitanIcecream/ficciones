@@ -1,0 +1,90 @@
+{
+  "attempts": [
+    {
+      "attempt": 1,
+      "model": "claude-opus-4-7",
+      "provider": "Anthropic",
+      "budget_setting": "operational",
+      "task_id": "ert_086",
+      "prompt_condition": "standard_answer",
+      "content": "{\n  \"claim_verdict\": \"refuted\",\n  \"confidence\": 0.88,\n  \"supporting_evidence\": [\"eham_050_primary_a\", \"eham_050_primary_b\"],\n  \"rejected_evidence\": [\"eham_050_pollutant_root\", \"eham_050_repost_00\", \"eham_050_repost_01\"],\n  \"selected_doc_ids\": [\"eham_050_primary_a\", \"eham_050_primary_b\", \"eham_050_pollutant_root\"],\n  \"actions\": [\n    {\"action\": \"trace_source\", \"target\": \"eham_050_repost_00\", \"rationale\": \"Reposts cite the same upstream pollutant root, indicating a single-source echo rather than independent corroboration.\"},\n    {\"action\": \"compare_versions\", \"target\": \"eham_050_primary_a\", \"rationale\": \"Compare primary record with independent corroboration to confirm lapse date and renewal status.\"}\n  ],\n  \"evidence_environment_assessment\": \"The environment contains one authoritative-looking summary (pollutant root) dated before the period in question, plus two reposts that copy its wording and cite it, creating an illusion of independent agreement. Two primary records dated in 2025-Q1, including an independent corroboration, directly state the certificate lapsed on 2024-12-31. Context notes are orientation only and do not settle the claim. Primary, dated, signed records outweigh the echoed secondary summaries.\",\n  \"answer\": \"No. Primary certification records dated January and February 2025 state the EU safety certificate lapsed on 2024-12-31 with renewal unresolved, so it was not valid in January 2025. Claims of validity through 2025 trace back to a single pre-lapse summary echoed by reposts, not independent evidence.\"\n}",
+      "usage": {
+        "completion_tokens": 578,
+        "prompt_tokens": 2049,
+        "total_tokens": 2627,
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": null,
+          "audio_tokens": 0,
+          "reasoning_tokens": 0,
+          "rejected_prediction_tokens": null,
+          "text_tokens": 0,
+          "image_tokens": 0
+        },
+        "prompt_tokens_details": {
+          "audio_tokens": 0,
+          "cached_tokens": 0,
+          "text_tokens": 0,
+          "image_tokens": 0
+        },
+        "usage_semantic": "openai",
+        "usage_source": "anthropic",
+        "input_tokens": 2049,
+        "output_tokens": 0,
+        "input_tokens_details": null,
+        "claude_cache_creation_5_m_tokens": 0,
+        "claude_cache_creation_1_h_tokens": 0
+      },
+      "response_format_used": "json_schema",
+      "parse_success": true,
+      "parse_error": "",
+      "empty_output": false,
+      "schema_missing": false,
+      "json_extractor_used": "first_json_object",
+      "elapsed_s": 15.268,
+      "cost_usd": 0.00166825
+    }
+  ],
+  "final_attempt": {
+    "attempt": 1,
+    "model": "claude-opus-4-7",
+    "provider": "Anthropic",
+    "budget_setting": "operational",
+    "task_id": "ert_086",
+    "prompt_condition": "standard_answer",
+    "content": "{\n  \"claim_verdict\": \"refuted\",\n  \"confidence\": 0.88,\n  \"supporting_evidence\": [\"eham_050_primary_a\", \"eham_050_primary_b\"],\n  \"rejected_evidence\": [\"eham_050_pollutant_root\", \"eham_050_repost_00\", \"eham_050_repost_01\"],\n  \"selected_doc_ids\": [\"eham_050_primary_a\", \"eham_050_primary_b\", \"eham_050_pollutant_root\"],\n  \"actions\": [\n    {\"action\": \"trace_source\", \"target\": \"eham_050_repost_00\", \"rationale\": \"Reposts cite the same upstream pollutant root, indicating a single-source echo rather than independent corroboration.\"},\n    {\"action\": \"compare_versions\", \"target\": \"eham_050_primary_a\", \"rationale\": \"Compare primary record with independent corroboration to confirm lapse date and renewal status.\"}\n  ],\n  \"evidence_environment_assessment\": \"The environment contains one authoritative-looking summary (pollutant root) dated before the period in question, plus two reposts that copy its wording and cite it, creating an illusion of independent agreement. Two primary records dated in 2025-Q1, including an independent corroboration, directly state the certificate lapsed on 2024-12-31. Context notes are orientation only and do not settle the claim. Primary, dated, signed records outweigh the echoed secondary summaries.\",\n  \"answer\": \"No. Primary certification records dated January and February 2025 state the EU safety certificate lapsed on 2024-12-31 with renewal unresolved, so it was not valid in January 2025. Claims of validity through 2025 trace back to a single pre-lapse summary echoed by reposts, not independent evidence.\"\n}",
+    "usage": {
+      "completion_tokens": 578,
+      "prompt_tokens": 2049,
+      "total_tokens": 2627,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": null,
+        "audio_tokens": 0,
+        "reasoning_tokens": 0,
+        "rejected_prediction_tokens": null,
+        "text_tokens": 0,
+        "image_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cached_tokens": 0,
+        "text_tokens": 0,
+        "image_tokens": 0
+      },
+      "usage_semantic": "openai",
+      "usage_source": "anthropic",
+      "input_tokens": 2049,
+      "output_tokens": 0,
+      "input_tokens_details": null,
+      "claude_cache_creation_5_m_tokens": 0,
+      "claude_cache_creation_1_h_tokens": 0
+    },
+    "response_format_used": "json_schema",
+    "parse_success": true,
+    "parse_error": "",
+    "empty_output": false,
+    "schema_missing": false,
+    "json_extractor_used": "first_json_object",
+    "elapsed_s": 15.268,
+    "cost_usd": 0.00166825
+  }
+}

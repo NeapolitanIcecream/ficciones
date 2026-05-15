@@ -1,0 +1,60 @@
+{
+  "attempts": [
+    {
+      "attempt": 1,
+      "model": "kimi-k2.6",
+      "provider": "Kimi",
+      "budget_setting": "operational",
+      "task_id": "ert_006",
+      "prompt_condition": "epistemic_hygiene_instruction",
+      "content": "{\n  \"claim_verdict\": \"supported\",\n  \"confidence\": 0.95,\n  \"supporting_evidence\": [\"eham_006_primary_a\"],\n  \"rejected_evidence\": [\"eham_006_pollutant_root\", \"eham_006_repost_00\", \"eham_006_repost_01\"],\n  \"selected_doc_ids\": [\"eham_006_primary_a\", \"eham_006_pollutant_root\"],\n  \"actions\": [\n    {\n      \"action\": \"trace_source\",\n      \"target\": \"eham_006_pollutant_root\",\n      \"rationale\": \"Trace the outdated planning note to confirm it lacks raw record support and predates the signed completion record.\"\n    }\n  ],\n  \"evidence_environment_assessment\": \"The environment contains one strong primary audit record stating completion on 2024-12-12, plus a stale November 2024 planning note and its secondary reposts that falsely suggest the audit is still pending. The reposts create weak pseudo-consensus by copying the same upstream outdated claim. The primary record is post-dated to the completion and based on raw logs, making it reliable.\",\n  \"answer\": \"Yes. The signed primary audit record states the supplier audit was completed on 2024-12-12 and cleared for renewal review. An outdated November 2024 planning note and its secondary reposts claiming the audit was pending are stale and lack raw record support.\"\n}",
+      "usage": {
+        "completion_tokens": 2960,
+        "prompt_tokens": 1665,
+        "total_tokens": 4625,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": {
+          "audio_tokens": null,
+          "cached_tokens": 256
+        },
+        "cached_tokens": 256
+      },
+      "response_format_used": "json_schema",
+      "parse_success": true,
+      "parse_error": "",
+      "empty_output": false,
+      "schema_missing": false,
+      "json_extractor_used": "first_json_object",
+      "elapsed_s": 49.551,
+      "cost_usd": 0.00633625
+    }
+  ],
+  "final_attempt": {
+    "attempt": 1,
+    "model": "kimi-k2.6",
+    "provider": "Kimi",
+    "budget_setting": "operational",
+    "task_id": "ert_006",
+    "prompt_condition": "epistemic_hygiene_instruction",
+    "content": "{\n  \"claim_verdict\": \"supported\",\n  \"confidence\": 0.95,\n  \"supporting_evidence\": [\"eham_006_primary_a\"],\n  \"rejected_evidence\": [\"eham_006_pollutant_root\", \"eham_006_repost_00\", \"eham_006_repost_01\"],\n  \"selected_doc_ids\": [\"eham_006_primary_a\", \"eham_006_pollutant_root\"],\n  \"actions\": [\n    {\n      \"action\": \"trace_source\",\n      \"target\": \"eham_006_pollutant_root\",\n      \"rationale\": \"Trace the outdated planning note to confirm it lacks raw record support and predates the signed completion record.\"\n    }\n  ],\n  \"evidence_environment_assessment\": \"The environment contains one strong primary audit record stating completion on 2024-12-12, plus a stale November 2024 planning note and its secondary reposts that falsely suggest the audit is still pending. The reposts create weak pseudo-consensus by copying the same upstream outdated claim. The primary record is post-dated to the completion and based on raw logs, making it reliable.\",\n  \"answer\": \"Yes. The signed primary audit record states the supplier audit was completed on 2024-12-12 and cleared for renewal review. An outdated November 2024 planning note and its secondary reposts claiming the audit was pending are stale and lack raw record support.\"\n}",
+    "usage": {
+      "completion_tokens": 2960,
+      "prompt_tokens": 1665,
+      "total_tokens": 4625,
+      "completion_tokens_details": null,
+      "prompt_tokens_details": {
+        "audio_tokens": null,
+        "cached_tokens": 256
+      },
+      "cached_tokens": 256
+    },
+    "response_format_used": "json_schema",
+    "parse_success": true,
+    "parse_error": "",
+    "empty_output": false,
+    "schema_missing": false,
+    "json_extractor_used": "first_json_object",
+    "elapsed_s": 49.551,
+    "cost_usd": 0.00633625
+  }
+}

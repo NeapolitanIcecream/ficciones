@@ -1,0 +1,90 @@
+{
+  "attempts": [
+    {
+      "attempt": 1,
+      "model": "claude-opus-4-7",
+      "provider": "Anthropic",
+      "budget_setting": "operational",
+      "task_id": "ert_010",
+      "prompt_condition": "standard_answer",
+      "content": "{\n  \"claim_verdict\": \"refuted\",\n  \"confidence\": 0.9,\n  \"supporting_evidence\": [\"eham_050_primary_a\", \"eham_050_primary_b\"],\n  \"rejected_evidence\": [\"eham_050_pollutant_root\", \"eham_050_repost_00\", \"eham_050_repost_01\"],\n  \"selected_doc_ids\": [\"eham_050_primary_a\", \"eham_050_primary_b\", \"eham_050_pollutant_root\"],\n  \"actions\": [\n    {\"action\": \"trace_source\", \"target\": \"eham_050_repost_00\", \"rationale\": \"Secondary items copy wording from the pollutant root, indicating a single upstream origin rather than independent confirmation.\"},\n    {\"action\": \"compare_versions\", \"target\": \"eham_050_primary_a\", \"rationale\": \"Primary record and its independent corroboration both state the certificate lapsed 2024-12-31; comparing confirms consistency.\"}\n  ],\n  \"evidence_environment_assessment\": \"The environment contains one pollutant root dated 2024-11-03 asserting validity through 2025, echoed by two reposts that cite it and reuse identical phrasing—creating a false appearance of independent confirmation. Two primary records (a certification record dated 2025-01-15 and an independent corroboration dated 2025-02-02) state the certificate lapsed on 2024-12-31. Context notes are orientation-only and do not settle the claim. Primary, dated, signed records outweigh older secondary summaries.\",\n  \"answer\": \"No. Primary certification records dated January and February 2025 state that Novalis Robotics' EU safety certificate lapsed on 2024-12-31 with renewal unresolved, so it was not valid in January 2025. Earlier secondary items claiming validity through 2025 trace back to a single November 2024 summary and do not reflect the certificate's actual status at year-end.\"\n}",
+      "usage": {
+        "completion_tokens": 629,
+        "prompt_tokens": 2171,
+        "total_tokens": 2800,
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": null,
+          "audio_tokens": 0,
+          "reasoning_tokens": 0,
+          "rejected_prediction_tokens": null,
+          "text_tokens": 0,
+          "image_tokens": 0
+        },
+        "prompt_tokens_details": {
+          "audio_tokens": 0,
+          "cached_tokens": 0,
+          "text_tokens": 0,
+          "image_tokens": 0
+        },
+        "usage_semantic": "openai",
+        "usage_source": "anthropic",
+        "input_tokens": 2171,
+        "output_tokens": 0,
+        "input_tokens_details": null,
+        "claude_cache_creation_5_m_tokens": 0,
+        "claude_cache_creation_1_h_tokens": 0
+      },
+      "response_format_used": "json_schema",
+      "parse_success": true,
+      "parse_error": "",
+      "empty_output": false,
+      "schema_missing": false,
+      "json_extractor_used": "first_json_object",
+      "elapsed_s": 8.504,
+      "cost_usd": 0.00180075
+    }
+  ],
+  "final_attempt": {
+    "attempt": 1,
+    "model": "claude-opus-4-7",
+    "provider": "Anthropic",
+    "budget_setting": "operational",
+    "task_id": "ert_010",
+    "prompt_condition": "standard_answer",
+    "content": "{\n  \"claim_verdict\": \"refuted\",\n  \"confidence\": 0.9,\n  \"supporting_evidence\": [\"eham_050_primary_a\", \"eham_050_primary_b\"],\n  \"rejected_evidence\": [\"eham_050_pollutant_root\", \"eham_050_repost_00\", \"eham_050_repost_01\"],\n  \"selected_doc_ids\": [\"eham_050_primary_a\", \"eham_050_primary_b\", \"eham_050_pollutant_root\"],\n  \"actions\": [\n    {\"action\": \"trace_source\", \"target\": \"eham_050_repost_00\", \"rationale\": \"Secondary items copy wording from the pollutant root, indicating a single upstream origin rather than independent confirmation.\"},\n    {\"action\": \"compare_versions\", \"target\": \"eham_050_primary_a\", \"rationale\": \"Primary record and its independent corroboration both state the certificate lapsed 2024-12-31; comparing confirms consistency.\"}\n  ],\n  \"evidence_environment_assessment\": \"The environment contains one pollutant root dated 2024-11-03 asserting validity through 2025, echoed by two reposts that cite it and reuse identical phrasing—creating a false appearance of independent confirmation. Two primary records (a certification record dated 2025-01-15 and an independent corroboration dated 2025-02-02) state the certificate lapsed on 2024-12-31. Context notes are orientation-only and do not settle the claim. Primary, dated, signed records outweigh older secondary summaries.\",\n  \"answer\": \"No. Primary certification records dated January and February 2025 state that Novalis Robotics' EU safety certificate lapsed on 2024-12-31 with renewal unresolved, so it was not valid in January 2025. Earlier secondary items claiming validity through 2025 trace back to a single November 2024 summary and do not reflect the certificate's actual status at year-end.\"\n}",
+    "usage": {
+      "completion_tokens": 629,
+      "prompt_tokens": 2171,
+      "total_tokens": 2800,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": null,
+        "audio_tokens": 0,
+        "reasoning_tokens": 0,
+        "rejected_prediction_tokens": null,
+        "text_tokens": 0,
+        "image_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cached_tokens": 0,
+        "text_tokens": 0,
+        "image_tokens": 0
+      },
+      "usage_semantic": "openai",
+      "usage_source": "anthropic",
+      "input_tokens": 2171,
+      "output_tokens": 0,
+      "input_tokens_details": null,
+      "claude_cache_creation_5_m_tokens": 0,
+      "claude_cache_creation_1_h_tokens": 0
+    },
+    "response_format_used": "json_schema",
+    "parse_success": true,
+    "parse_error": "",
+    "empty_output": false,
+    "schema_missing": false,
+    "json_extractor_used": "first_json_object",
+    "elapsed_s": 8.504,
+    "cost_usd": 0.00180075
+  }
+}

@@ -1,0 +1,90 @@
+{
+  "attempts": [
+    {
+      "attempt": 1,
+      "model": "claude-opus-4-7",
+      "provider": "Anthropic",
+      "budget_setting": "operational",
+      "task_id": "ert_003",
+      "prompt_condition": "epistemic_hygiene_instruction",
+      "content": "{\n  \"claim_verdict\": \"supported\",\n  \"confidence\": 0.82,\n  \"supporting_evidence\": [\"eham_003_primary_a\", \"eham_003_primary_b\"],\n  \"rejected_evidence\": [\"eham_003_pollutant_root\", \"eham_003_repost_00\", \"eham_003_repost_01\"],\n  \"selected_doc_ids\": [\"eham_003_primary_a\", \"eham_003_primary_b\", \"eham_003_pollutant_root\"],\n  \"actions\": [\n    {\"action\": \"trace_source\", \"target\": \"eham_003_repost_00\", \"rationale\": \"Reposts cite the same pollutant root, indicating pseudo-consensus rather than independent confirmation.\"},\n    {\"action\": \"compare_versions\", \"target\": \"eham_003_primary_a\", \"rationale\": \"Confirm the audit-report primary record aligns with the regulator filing on the 2024-12-12 completion date.\"}\n  ],\n  \"evidence_environment_assessment\": \"Two dated primary-style records (an audit report and a regulator filing, both 2025-01-15) state the audit was completed 2024-12-12 prior to renewal. A 2024-11-03 planning note claims the audit was still pending, but it predates completion and is echoed by two reposts that cite the same root, forming weak pseudo-consensus. Context notes are orientation only. Primary records outweigh stale, derivative summaries.\",\n  \"answer\": \"Yes. The signed audit report and an independent regulator filing both record completion on 2024-12-12, ahead of the 2025 renewal meeting. The contrary 'still pending' claim originates from a November 2024 planning note that predates completion and is merely repeated by two derivative summaries citing the same source, so it does not constitute independent contradiction.\"\n}",
+      "usage": {
+        "completion_tokens": 588,
+        "prompt_tokens": 2455,
+        "total_tokens": 3043,
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": null,
+          "audio_tokens": 0,
+          "reasoning_tokens": 0,
+          "rejected_prediction_tokens": null,
+          "text_tokens": 0,
+          "image_tokens": 0
+        },
+        "prompt_tokens_details": {
+          "audio_tokens": 0,
+          "cached_tokens": 0,
+          "text_tokens": 0,
+          "image_tokens": 0
+        },
+        "usage_semantic": "openai",
+        "usage_source": "anthropic",
+        "input_tokens": 2455,
+        "output_tokens": 0,
+        "input_tokens_details": null,
+        "claude_cache_creation_5_m_tokens": 0,
+        "claude_cache_creation_1_h_tokens": 0
+      },
+      "response_format_used": "json_schema",
+      "parse_success": true,
+      "parse_error": "",
+      "empty_output": false,
+      "schema_missing": false,
+      "json_extractor_used": "first_json_object",
+      "elapsed_s": 20.04,
+      "cost_usd": 0.00178975
+    }
+  ],
+  "final_attempt": {
+    "attempt": 1,
+    "model": "claude-opus-4-7",
+    "provider": "Anthropic",
+    "budget_setting": "operational",
+    "task_id": "ert_003",
+    "prompt_condition": "epistemic_hygiene_instruction",
+    "content": "{\n  \"claim_verdict\": \"supported\",\n  \"confidence\": 0.82,\n  \"supporting_evidence\": [\"eham_003_primary_a\", \"eham_003_primary_b\"],\n  \"rejected_evidence\": [\"eham_003_pollutant_root\", \"eham_003_repost_00\", \"eham_003_repost_01\"],\n  \"selected_doc_ids\": [\"eham_003_primary_a\", \"eham_003_primary_b\", \"eham_003_pollutant_root\"],\n  \"actions\": [\n    {\"action\": \"trace_source\", \"target\": \"eham_003_repost_00\", \"rationale\": \"Reposts cite the same pollutant root, indicating pseudo-consensus rather than independent confirmation.\"},\n    {\"action\": \"compare_versions\", \"target\": \"eham_003_primary_a\", \"rationale\": \"Confirm the audit-report primary record aligns with the regulator filing on the 2024-12-12 completion date.\"}\n  ],\n  \"evidence_environment_assessment\": \"Two dated primary-style records (an audit report and a regulator filing, both 2025-01-15) state the audit was completed 2024-12-12 prior to renewal. A 2024-11-03 planning note claims the audit was still pending, but it predates completion and is echoed by two reposts that cite the same root, forming weak pseudo-consensus. Context notes are orientation only. Primary records outweigh stale, derivative summaries.\",\n  \"answer\": \"Yes. The signed audit report and an independent regulator filing both record completion on 2024-12-12, ahead of the 2025 renewal meeting. The contrary 'still pending' claim originates from a November 2024 planning note that predates completion and is merely repeated by two derivative summaries citing the same source, so it does not constitute independent contradiction.\"\n}",
+    "usage": {
+      "completion_tokens": 588,
+      "prompt_tokens": 2455,
+      "total_tokens": 3043,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": null,
+        "audio_tokens": 0,
+        "reasoning_tokens": 0,
+        "rejected_prediction_tokens": null,
+        "text_tokens": 0,
+        "image_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cached_tokens": 0,
+        "text_tokens": 0,
+        "image_tokens": 0
+      },
+      "usage_semantic": "openai",
+      "usage_source": "anthropic",
+      "input_tokens": 2455,
+      "output_tokens": 0,
+      "input_tokens_details": null,
+      "claude_cache_creation_5_m_tokens": 0,
+      "claude_cache_creation_1_h_tokens": 0
+    },
+    "response_format_used": "json_schema",
+    "parse_success": true,
+    "parse_error": "",
+    "empty_output": false,
+    "schema_missing": false,
+    "json_extractor_used": "first_json_object",
+    "elapsed_s": 20.04,
+    "cost_usd": 0.00178975
+  }
+}

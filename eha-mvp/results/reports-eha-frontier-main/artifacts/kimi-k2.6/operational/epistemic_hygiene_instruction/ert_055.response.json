@@ -1,0 +1,60 @@
+{
+  "attempts": [
+    {
+      "attempt": 1,
+      "model": "kimi-k2.6",
+      "provider": "Kimi",
+      "budget_setting": "operational",
+      "task_id": "ert_055",
+      "prompt_condition": "epistemic_hygiene_instruction",
+      "content": "{\n  \"claim_verdict\": \"refuted\",\n  \"confidence\": 0.95,\n  \"supporting_evidence\": [\n    \"eham_055_primary_a\",\n    \"eham_055_primary_b\"\n  ],\n  \"rejected_evidence\": [\n    \"eham_055_pollutant_root\",\n    \"eham_055_repost_00\",\n    \"eham_055_repost_01\",\n    \"eham_055_repost_02\"\n  ],\n  \"selected_doc_ids\": [\n    \"eham_055_primary_a\",\n    \"eham_055_primary_b\",\n    \"eham_055_pollutant_root\"\n  ],\n  \"actions\": [\n    {\n      \"action\": \"trace_source\",\n      \"target\": \"eham_055_pollutant_root\",\n      \"rationale\": \"Authority-like summary claims validity through 2025 but cites only secondary summaries; tracing upstream confirms no raw record support and identifies the single polluted root.\"\n    },\n    {\n      \"action\": \"compare_versions\",\n      \"target\": \"eham_055_primary_b\",\n      \"rationale\": \"Version history entry matches primary_a on lapse date and reviewer sign-off, confirming consistency across records before issuing verdict.\"\n    }\n  ],\n  \"evidence_environment_assessment\": \"Environment contains clean primary evidence: a Jan 2025 certification record explicitly stating the EU safety certificate lapsed on 2024-12-31, corroborated by a version history entry. Opposing this is a pollutant cluster from Nov 2024—an authoritative-looking summary and three secondary reposts—that falsely claims validity through 2025 but shares a single root source, lacks raw record support, and predates the target month. Context notes are non-dispositive. The pseudo-consensus among reposts should be disregarded. Primary evidence is sufficient and unambiguous.\",\n  \"answer\": \"No. A primary certification record dated January 15, 2025, states that the EU safety certificate lapsed on December 31, 2024, with renewal unresolved. This is corroborated by a version history entry. Claims that the certification remained valid through 2025 originate from a November 2024 authoritative-looking summary and its secondary reposts, which lack primary record support and predate January 2025. The apparent consensus among those reposts is pseudo-consensus from a single polluted root. Therefore, the certification was not valid in January 2025.\"\n}",
+      "usage": {
+        "completion_tokens": 5666,
+        "prompt_tokens": 2460,
+        "total_tokens": 8126,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": {
+          "audio_tokens": null,
+          "cached_tokens": 256
+        },
+        "cached_tokens": 256
+      },
+      "response_format_used": "json_schema",
+      "parse_success": true,
+      "parse_error": "",
+      "empty_output": false,
+      "schema_missing": false,
+      "json_extractor_used": "first_json_object",
+      "elapsed_s": 103.109,
+      "cost_usd": 0.011947
+    }
+  ],
+  "final_attempt": {
+    "attempt": 1,
+    "model": "kimi-k2.6",
+    "provider": "Kimi",
+    "budget_setting": "operational",
+    "task_id": "ert_055",
+    "prompt_condition": "epistemic_hygiene_instruction",
+    "content": "{\n  \"claim_verdict\": \"refuted\",\n  \"confidence\": 0.95,\n  \"supporting_evidence\": [\n    \"eham_055_primary_a\",\n    \"eham_055_primary_b\"\n  ],\n  \"rejected_evidence\": [\n    \"eham_055_pollutant_root\",\n    \"eham_055_repost_00\",\n    \"eham_055_repost_01\",\n    \"eham_055_repost_02\"\n  ],\n  \"selected_doc_ids\": [\n    \"eham_055_primary_a\",\n    \"eham_055_primary_b\",\n    \"eham_055_pollutant_root\"\n  ],\n  \"actions\": [\n    {\n      \"action\": \"trace_source\",\n      \"target\": \"eham_055_pollutant_root\",\n      \"rationale\": \"Authority-like summary claims validity through 2025 but cites only secondary summaries; tracing upstream confirms no raw record support and identifies the single polluted root.\"\n    },\n    {\n      \"action\": \"compare_versions\",\n      \"target\": \"eham_055_primary_b\",\n      \"rationale\": \"Version history entry matches primary_a on lapse date and reviewer sign-off, confirming consistency across records before issuing verdict.\"\n    }\n  ],\n  \"evidence_environment_assessment\": \"Environment contains clean primary evidence: a Jan 2025 certification record explicitly stating the EU safety certificate lapsed on 2024-12-31, corroborated by a version history entry. Opposing this is a pollutant cluster from Nov 2024—an authoritative-looking summary and three secondary reposts—that falsely claims validity through 2025 but shares a single root source, lacks raw record support, and predates the target month. Context notes are non-dispositive. The pseudo-consensus among reposts should be disregarded. Primary evidence is sufficient and unambiguous.\",\n  \"answer\": \"No. A primary certification record dated January 15, 2025, states that the EU safety certificate lapsed on December 31, 2024, with renewal unresolved. This is corroborated by a version history entry. Claims that the certification remained valid through 2025 originate from a November 2024 authoritative-looking summary and its secondary reposts, which lack primary record support and predate January 2025. The apparent consensus among those reposts is pseudo-consensus from a single polluted root. Therefore, the certification was not valid in January 2025.\"\n}",
+    "usage": {
+      "completion_tokens": 5666,
+      "prompt_tokens": 2460,
+      "total_tokens": 8126,
+      "completion_tokens_details": null,
+      "prompt_tokens_details": {
+        "audio_tokens": null,
+        "cached_tokens": 256
+      },
+      "cached_tokens": 256
+    },
+    "response_format_used": "json_schema",
+    "parse_success": true,
+    "parse_error": "",
+    "empty_output": false,
+    "schema_missing": false,
+    "json_extractor_used": "first_json_object",
+    "elapsed_s": 103.109,
+    "cost_usd": 0.011947
+  }
+}

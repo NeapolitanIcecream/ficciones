@@ -1,0 +1,72 @@
+{
+  "attempts": [
+    {
+      "attempt": 1,
+      "model": "deepseek-v4-pro",
+      "provider": "DeepSeek",
+      "budget_setting": "cap_4096_diagnostic",
+      "task_id": "ert_080",
+      "prompt_condition": "epistemic_hygiene_instruction",
+      "content": "{\n  \"claim_verdict\": \"supported\",\n  \"confidence\": 0.9,\n  \"supporting_evidence\": [\"eham_000_primary_a\"],\n  \"rejected_evidence\": [\"eham_000_pollutant_root\", \"eham_000_repost_00\", \"eham_000_repost_01\", \"eham_000_primary_b\", \"eham_000_context_07\"],\n  \"selected_doc_ids\": [\"eham_000_primary_a\"],\n  \"actions\": [\n    {\n      \"action\": \"open\",\n      \"target\": \"eham_000_primary_a\",\n      \"rationale\": \"Inspect the signed audit report to confirm the completion date and clearance for renewal review.\"\n    }\n  ],\n  \"evidence_environment_assessment\": \"Clean environment. One primary audit report (eham_000_primary_a) from 2025-01-15 states the supplier audit was completed on 2024-12-12 and cleared for renewal review. eham_000_primary_b is a regulator filing citing the same primary source, not independent. An outdated planning note from 2024-11-03 and its reposts claim pending status but are stale and non-primary. Context notes are irrelevant. No contradictory primary evidence.\",\n  \"answer\": \"Yes, the primary record indicates the Q4 supplier audit was completed on 2024-12-12, before the 2025 renewal meeting.\"\n}",
+      "usage": {
+        "completion_tokens": 1828,
+        "prompt_tokens": 1526,
+        "total_tokens": 3354,
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": null,
+          "audio_tokens": null,
+          "reasoning_tokens": 1521,
+          "rejected_prediction_tokens": null
+        },
+        "prompt_tokens_details": {
+          "audio_tokens": null,
+          "cached_tokens": 1408
+        },
+        "prompt_cache_hit_tokens": 1408,
+        "prompt_cache_miss_tokens": 118
+      },
+      "response_format_used": "json_object",
+      "parse_success": true,
+      "parse_error": "",
+      "empty_output": false,
+      "schema_missing": false,
+      "json_extractor_used": "first_json_object",
+      "elapsed_s": 55.77,
+      "cost_usd": 0.0040375
+    }
+  ],
+  "final_attempt": {
+    "attempt": 1,
+    "model": "deepseek-v4-pro",
+    "provider": "DeepSeek",
+    "budget_setting": "cap_4096_diagnostic",
+    "task_id": "ert_080",
+    "prompt_condition": "epistemic_hygiene_instruction",
+    "content": "{\n  \"claim_verdict\": \"supported\",\n  \"confidence\": 0.9,\n  \"supporting_evidence\": [\"eham_000_primary_a\"],\n  \"rejected_evidence\": [\"eham_000_pollutant_root\", \"eham_000_repost_00\", \"eham_000_repost_01\", \"eham_000_primary_b\", \"eham_000_context_07\"],\n  \"selected_doc_ids\": [\"eham_000_primary_a\"],\n  \"actions\": [\n    {\n      \"action\": \"open\",\n      \"target\": \"eham_000_primary_a\",\n      \"rationale\": \"Inspect the signed audit report to confirm the completion date and clearance for renewal review.\"\n    }\n  ],\n  \"evidence_environment_assessment\": \"Clean environment. One primary audit report (eham_000_primary_a) from 2025-01-15 states the supplier audit was completed on 2024-12-12 and cleared for renewal review. eham_000_primary_b is a regulator filing citing the same primary source, not independent. An outdated planning note from 2024-11-03 and its reposts claim pending status but are stale and non-primary. Context notes are irrelevant. No contradictory primary evidence.\",\n  \"answer\": \"Yes, the primary record indicates the Q4 supplier audit was completed on 2024-12-12, before the 2025 renewal meeting.\"\n}",
+    "usage": {
+      "completion_tokens": 1828,
+      "prompt_tokens": 1526,
+      "total_tokens": 3354,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": null,
+        "audio_tokens": null,
+        "reasoning_tokens": 1521,
+        "rejected_prediction_tokens": null
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": null,
+        "cached_tokens": 1408
+      },
+      "prompt_cache_hit_tokens": 1408,
+      "prompt_cache_miss_tokens": 118
+    },
+    "response_format_used": "json_object",
+    "parse_success": true,
+    "parse_error": "",
+    "empty_output": false,
+    "schema_missing": false,
+    "json_extractor_used": "first_json_object",
+    "elapsed_s": 55.77,
+    "cost_usd": 0.0040375
+  }
+}
