@@ -23,9 +23,13 @@ from .epistemic_resilience import (
     aggregate,
     build_messages,
     normalize_doc_refs,
+    opaque_doc_id_view,
     portable_chat_messages,
     read_tasks,
+    replace_doc_id_refs,
     score_records,
+    translate_doc_refs_to_audit,
+    visible_payload_audit,
 )
 from .report import markdown_table, write_csv
 from .schemas import EhaModel, model_to_dict, write_json, write_jsonl
@@ -156,8 +160,34 @@ def normalize_clarified_prediction(prediction: ClarifiedEvidencePrediction, task
     )
 
 
-def build_clarified_messages(task: EpistemicTask, prompt_condition: str) -> List[Dict[str, str]]:
-    base_messages = build_messages(task, prompt_condition)
+def translate_clarified_prediction_to_audit_ids(prediction: ClarifiedEvidencePrediction, visible_to_audit: Mapping[str, str]) -> ClarifiedEvidencePrediction:
+    if not visible_to_audit:
+        return prediction
+    actions = [
+        action.model_copy(
+            update={
+                "target": translate_doc_refs_to_audit([action.target], visible_to_audit)[0],
+                "rationale": replace_doc_id_refs(action.rationale, visible_to_audit),
+            }
+        )
+        for action in prediction.actions
+    ]
+    return prediction.model_copy(
+        update={
+            "clean_supporting_evidence": translate_doc_refs_to_audit(prediction.clean_supporting_evidence, visible_to_audit),
+            "refuting_evidence": translate_doc_refs_to_audit(prediction.refuting_evidence, visible_to_audit),
+            "rejected_or_contaminated_evidence": translate_doc_refs_to_audit(prediction.rejected_or_contaminated_evidence, visible_to_audit),
+            "diagnostic_evidence": translate_doc_refs_to_audit(prediction.diagnostic_evidence, visible_to_audit),
+            "selected_doc_ids": translate_doc_refs_to_audit(prediction.selected_doc_ids, visible_to_audit),
+            "actions": actions,
+            "evidence_notes": replace_doc_id_refs(prediction.evidence_notes, visible_to_audit),
+            "answer": replace_doc_id_refs(prediction.answer, visible_to_audit),
+        }
+    )
+
+
+def build_clarified_messages(task: EpistemicTask, prompt_condition: str, *, opaque_doc_ids: bool = False, scrub_audit_labels: bool = False) -> List[Dict[str, str]]:
+    base_messages = build_messages(task, prompt_condition, opaque_doc_ids=opaque_doc_ids, scrub_audit_labels=scrub_audit_labels)
     payload = json.loads(base_messages[-1]["content"])
     clarified_rules = [
         "Use the clarified evidence-role fields literally.",
@@ -494,7 +524,11 @@ def call_clarified_job(
     cost_guard: CostGuard,
     cost_lock: threading.Lock,
 ) -> ClarifiedRunRecord:
-    messages = portable_chat_messages(build_clarified_messages(task, prompt_condition))
+    doc_id_view = opaque_doc_id_view(task)
+    base_messages = build_clarified_messages(task, prompt_condition, opaque_doc_ids=True, scrub_audit_labels=True)
+    prompt_payload = json.loads(base_messages[-1]["content"])
+    prompt_audit = visible_payload_audit(prompt_payload.get("documents", []))
+    messages = portable_chat_messages(base_messages)
     prompt_text = json.dumps(messages, ensure_ascii=False)
     with cost_lock:
         cost_guard.before_call(model, prompt_text, max_output_tokens or 4096)
@@ -522,7 +556,8 @@ def call_clarified_job(
         with cost_lock:
             cost_usd = cost_guard.after_call(model, usage)
         empty_output = not content.strip()
-        prediction = normalize_clarified_prediction(parse_clarified_prediction(content), task)
+        translated_prediction = translate_clarified_prediction_to_audit_ids(parse_clarified_prediction(content), doc_id_view.visible_to_audit)
+        prediction = normalize_clarified_prediction(translated_prediction, task)
         parse_success = True
     except BudgetExceeded:
         raise
@@ -532,7 +567,19 @@ def call_clarified_job(
         schema_missing = "field required" in parse_error.lower() or "missing" in parse_error.lower()
     finally:
         base = out_dir / "artifacts" / safe_model_dir(model) / "clarified_schema" / prompt_condition / task.task_id
-        write_json(base.with_suffix(".prompt.json"), {"model": model, "provider": provider, "task_id": task.task_id, "prompt_condition": prompt_condition, "messages": messages})
+        write_json(
+            base.with_suffix(".prompt.json"),
+            {
+                "model": model,
+                "provider": provider,
+                "task_id": task.task_id,
+                "prompt_condition": prompt_condition,
+                "messages": messages,
+                "model_visible_doc_id_policy": "opaque_per_task",
+                "scorer_visible_to_audit_doc_id_map": doc_id_view.visible_to_audit,
+                "visible_prompt_audit": prompt_audit,
+            },
+        )
         write_json(
             base.with_suffix(".response.json"),
             {

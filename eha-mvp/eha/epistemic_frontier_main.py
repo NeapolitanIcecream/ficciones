@@ -25,10 +25,13 @@ from .epistemic_resilience import (
     epistemic_prediction_json_schema,
     invocation_profile,
     normalize_prediction,
+    opaque_doc_id_view,
     portable_chat_messages,
     read_tasks,
     score_records,
     split_csv,
+    translate_prediction_to_audit_ids,
+    visible_payload_audit,
 )
 from .report import markdown_table, write_csv
 from .schemas import EhaModel, model_to_dict, write_json, write_jsonl
@@ -181,9 +184,24 @@ def write_call_artifacts(
     prompt_condition: str,
     messages: Sequence[Mapping[str, str]],
     attempt_payloads: Sequence[Mapping[str, Any]],
+    doc_id_map: Mapping[str, str] | None = None,
+    visible_prompt_audit: Mapping[str, Any] | None = None,
 ) -> None:
     base = call_artifact_base(out_dir, model=profile.model, budget_setting=profile.budget_setting, prompt_condition=prompt_condition, task_id=task.task_id)
-    write_json(base.with_suffix(".prompt.json"), {"model": profile.model, "provider": profile.provider, "task_id": task.task_id, "prompt_condition": prompt_condition, "messages": list(messages), "invocation_profile": profile.invocation()})
+    write_json(
+        base.with_suffix(".prompt.json"),
+        {
+            "model": profile.model,
+            "provider": profile.provider,
+            "task_id": task.task_id,
+            "prompt_condition": prompt_condition,
+            "messages": list(messages),
+            "invocation_profile": profile.invocation(),
+            "model_visible_doc_id_policy": "opaque_per_task",
+            "scorer_visible_to_audit_doc_id_map": dict(doc_id_map or {}),
+            "visible_prompt_audit": dict(visible_prompt_audit or {}),
+        },
+    )
     write_json(base.with_suffix(".response.json"), {"attempts": list(attempt_payloads), "final_attempt": attempt_payloads[-1] if attempt_payloads else {}})
 
 
@@ -236,7 +254,11 @@ def run_single_job(
     cost_guard: CostGuard,
     cost_lock: threading.Lock,
 ) -> EpistemicRunRecord:
-    messages = portable_chat_messages(build_messages(task, prompt_condition))
+    doc_id_view = opaque_doc_id_view(task)
+    base_messages = build_messages(task, prompt_condition, opaque_doc_ids=True, scrub_audit_labels=True)
+    messages = portable_chat_messages(base_messages)
+    prompt_payload = json.loads(base_messages[-1]["content"])
+    prompt_audit = visible_payload_audit(prompt_payload.get("documents", []))
     prompt_text = json.dumps(messages, ensure_ascii=False)
     attempt_payloads: List[Dict[str, Any]] = []
     final_response = ""
@@ -288,7 +310,8 @@ def run_single_job(
             extractor = parsed.json_extractor_used
             empty_output = not response.strip()
             if parsed.prediction is not None:
-                final_prediction = normalize_prediction(parsed.prediction, task)
+                translated_prediction = translate_prediction_to_audit_ids(parsed.prediction, doc_id_view.visible_to_audit)
+                final_prediction = normalize_prediction(translated_prediction, task)
                 final_visible_tokens, final_field_lengths, final_overlength = output_budget_diagnostics(final_prediction, response)
         except BudgetExceeded:
             raise
@@ -332,10 +355,19 @@ def run_single_job(
             continue
         break
 
-    write_call_artifacts(out_dir, profile=profile, task=task, prompt_condition=prompt_condition, messages=messages, attempt_payloads=attempt_payloads)
+    write_call_artifacts(
+        out_dir,
+        profile=profile,
+        task=task,
+        prompt_condition=prompt_condition,
+        messages=messages,
+        attempt_payloads=attempt_payloads,
+        doc_id_map=doc_id_view.visible_to_audit,
+        visible_prompt_audit=prompt_audit,
+    )
     prediction = final_prediction if final_success and final_prediction is not None else fallback_prediction(final_error)
     profile_payload = profile.invocation()
-    profile_payload.update({"attempts": attempts_used, "max_attempts": max_attempts})
+    profile_payload.update({"attempts": attempts_used, "max_attempts": max_attempts, "doc_id_policy": "opaque_per_task", "visible_prompt_audit": prompt_audit})
     return EpistemicRunRecord(
         task_id=task.task_id,
         family=task.family,
@@ -664,6 +696,12 @@ def run_plan_payload(tasks: Sequence[EpistemicTask], profiles: Sequence[Frontier
             "reason": "Run one sequential stream per model to preserve call success while parallelizing across providers.",
         },
         "max_attempts": max_attempts,
+        "model_visible_doc_id_policy": "opaque_per_task",
+        "visible_prompt_sanitization": [
+            "semantic doc_id tokens are replaced with opaque per-task IDs",
+            "visible_citations are remapped into the same opaque namespace",
+            "audit-only source IDs in title/body text are scrubbed before model calls",
+        ],
         "models": [model_to_dict(profile) for profile in profiles],
         "family_counts": dict(Counter(task.family for task in tasks)),
         "condition_counts": dict(Counter(task.condition for task in tasks)),
@@ -691,6 +729,7 @@ def write_plan_markdown(path: Path, plan: Mapping[str, Any]) -> None:
         f"- Parallel model streams: `{plan['parallel_strategy']['parallel_model_streams']}`",
         f"- Per-model concurrency: `{plan['parallel_strategy']['per_model_concurrency']}`",
         f"- Max attempts per call: `{plan['max_attempts']}`",
+        f"- Model-visible document IDs: `{plan.get('model_visible_doc_id_policy', 'legacy')}`",
         "",
         "## Models",
         "",

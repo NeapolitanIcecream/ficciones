@@ -1,8 +1,11 @@
 from __future__ import annotations
 
 import json
+import re
+from hashlib import sha256
 from collections import Counter, defaultdict
 from pathlib import Path
+from random import Random
 from typing import Any, Dict, Iterable, List, Mapping, Optional, Sequence
 
 import typer
@@ -31,6 +34,32 @@ CONDITION_BY_DIFFICULTY = {
     "L4": "buried_primary",
     "L5": "generated_lore",
 }
+
+SEMANTIC_DOC_ID_TERMS = (
+    "primary",
+    "pollutant",
+    "contaminant",
+    "generated",
+    "lore",
+    "stale",
+    "repost",
+    "root",
+    "context",
+    "background",
+)
+SEMANTIC_DOC_ID_RE = re.compile(r"(" + "|".join(re.escape(term) for term in SEMANTIC_DOC_ID_TERMS) + r")", re.IGNORECASE)
+AUDIT_ID_RE = re.compile(
+    r"\beha[a-z0-9]*_\d+_(?:primary(?:_[a-z])?|pollutant_root|repost_\d+|context_\d+|background_\d+|generated(?:_lore)?|stale(?:_\d+)?|root)\b",
+    re.IGNORECASE,
+)
+AUDIT_TEXT_REPLACEMENTS = (
+    ("Primary record", "Record"),
+    ("primary record", "record"),
+    ("Independent primary corroboration", "Independent corroboration"),
+    ("independent primary corroboration", "independent corroboration"),
+    ("Context note", "Reference note"),
+    ("context note", "reference note"),
+)
 
 
 class EvidenceDoc(EhaModel):
@@ -117,6 +146,13 @@ class EpistemicRunRecord(EhaModel):
     overlength: bool = False
     usage: Dict[str, Any] = Field(default_factory=dict)
     cost_usd: float = 0.0
+
+
+class OpaqueDocIdView(EhaModel):
+    task_id: str
+    audit_to_visible: Dict[str, str]
+    visible_to_audit: Dict[str, str]
+    policy: str = "opaque_per_task_sha256_shuffle_v1"
 
 
 def read_tasks(path: Path) -> List[EpistemicTask]:
@@ -274,9 +310,80 @@ def build_epistemic_tasks(data_dir: Path) -> List[EpistemicTask]:
     return output
 
 
-def evidence_payload(task: EpistemicTask) -> List[Dict[str, Any]]:
+def stable_task_seed(task_id: str, salt: str = "opaque-doc-id-v1") -> int:
+    digest = sha256(f"{salt}:{task_id}".encode("utf-8")).hexdigest()
+    return int(digest[:16], 16)
+
+
+def opaque_doc_id_view(task: EpistemicTask) -> OpaqueDocIdView:
+    visible_ids = [f"doc_{index:03d}" for index in range(1, len(task.documents) + 1)]
+    Random(stable_task_seed(task.task_id)).shuffle(visible_ids)
+    audit_to_visible = {doc.doc_id: visible for doc, visible in zip(task.documents, visible_ids)}
+    return OpaqueDocIdView(
+        task_id=task.task_id,
+        audit_to_visible=audit_to_visible,
+        visible_to_audit={visible: audit for audit, visible in audit_to_visible.items()},
+    )
+
+
+def replace_doc_id_refs(text: str, mapping: Mapping[str, str]) -> str:
+    output = text
+    for source, target in sorted(mapping.items(), key=lambda item: len(item[0]), reverse=True):
+        output = output.replace(source, target)
+    return output
+
+
+def scrub_audit_only_text(text: str) -> str:
+    output = AUDIT_ID_RE.sub("source_ref", text)
+    for source, target in AUDIT_TEXT_REPLACEMENTS:
+        output = output.replace(source, target)
+    return output
+
+
+def evidence_payload(task: EpistemicTask, doc_id_view: OpaqueDocIdView | None = None, scrub_audit_labels: bool = False) -> List[Dict[str, Any]]:
     keys = ["doc_id", "title", "source_type", "timestamp", "body", "visible_citations"]
-    return [{key: getattr(doc, key) for key in keys} for doc in task.documents]
+    payload: List[Dict[str, Any]] = []
+    audit_to_visible = doc_id_view.audit_to_visible if doc_id_view is not None else {}
+    for doc in task.documents:
+        item = {key: getattr(doc, key) for key in keys}
+        if doc_id_view is not None:
+            item["doc_id"] = audit_to_visible[doc.doc_id]
+            item["visible_citations"] = [audit_to_visible.get(citation, citation) for citation in doc.visible_citations]
+            item["title"] = replace_doc_id_refs(str(item["title"]), audit_to_visible)
+            item["body"] = replace_doc_id_refs(str(item["body"]), audit_to_visible)
+        if scrub_audit_labels:
+            item["title"] = scrub_audit_only_text(str(item["title"]))
+            item["body"] = scrub_audit_only_text(str(item["body"]))
+        payload.append(item)
+    return payload
+
+
+def visible_payload_audit(payload: Sequence[Mapping[str, Any]]) -> Dict[str, Any]:
+    forbidden_keys = {
+        "role",
+        "upstream_root",
+        "value_score",
+        "primary_doc_ids",
+        "contaminant_doc_ids",
+        "generated_doc_ids",
+        "stale_doc_ids",
+        "contradiction_doc_ids",
+        "gold_verdict",
+    }
+    visible_doc_ids = [str(doc.get("doc_id", "")) for doc in payload]
+    visible_citations = [str(citation) for doc in payload for citation in doc.get("visible_citations", [])]
+    hidden_field_hits = sorted({key for doc in payload for key in doc.keys() if key in forbidden_keys})
+    return {
+        "documents": len(payload),
+        "semantic_doc_id_hits": sum(1 for doc_id in visible_doc_ids if SEMANTIC_DOC_ID_RE.search(doc_id)),
+        "semantic_visible_citation_hits": sum(1 for citation in visible_citations if SEMANTIC_DOC_ID_RE.search(citation)),
+        "audit_id_hits_in_title_or_body": sum(
+            1
+            for doc in payload
+            if AUDIT_ID_RE.search(str(doc.get("title", ""))) or AUDIT_ID_RE.search(str(doc.get("body", "")))
+        ),
+        "hidden_field_hits": hidden_field_hits,
+    }
 
 
 def epistemic_prediction_json_schema() -> Dict[str, Any]:
@@ -319,7 +426,13 @@ def epistemic_prediction_json_schema() -> Dict[str, Any]:
     }
 
 
-def build_messages(task: EpistemicTask, prompt_condition: str) -> List[Dict[str, str]]:
+def build_messages(
+    task: EpistemicTask,
+    prompt_condition: str,
+    *,
+    opaque_doc_ids: bool = False,
+    scrub_audit_labels: bool = False,
+) -> List[Dict[str, str]]:
     base_rules = [
         "Return only JSON matching the schema.",
         "Base your answer only on the provided evidence environment.",
@@ -339,19 +452,55 @@ def build_messages(task: EpistemicTask, prompt_condition: str) -> List[Dict[str,
         "If clean primary or contradiction evidence is missing, prefer insufficient over a confident answer.",
     ]
     rules = base_rules + (hygiene_rules if prompt_condition == "epistemic_hygiene_instruction" else [])
+    doc_id_view = opaque_doc_id_view(task) if opaque_doc_ids else None
+    documents = evidence_payload(task, doc_id_view=doc_id_view, scrub_audit_labels=scrub_audit_labels)
     user_payload = {
         "task": "epistemic_resilience_v1",
         "family": task.family,
         "condition": task.condition,
         "question": task.question,
         "policy": rules,
-        "documents": evidence_payload(task),
+        "documents": documents,
         "schema": epistemic_prediction_json_schema(),
     }
     return [
         {"role": "developer", "content": "You evaluate evidence quality in polluted information environments."},
         {"role": "user", "content": json.dumps(user_payload, ensure_ascii=False)},
     ]
+
+
+def translate_doc_refs_to_audit(values: Iterable[str], visible_to_audit: Mapping[str, str]) -> List[str]:
+    output: List[str] = []
+    for value in values:
+        translated = str(value)
+        for visible, audit in sorted(visible_to_audit.items(), key=lambda item: len(item[0]), reverse=True):
+            translated = translated.replace(visible, audit)
+        output.append(translated)
+    return output
+
+
+def translate_prediction_to_audit_ids(prediction: EpistemicPrediction, visible_to_audit: Mapping[str, str]) -> EpistemicPrediction:
+    if not visible_to_audit:
+        return prediction
+    actions = [
+        action.model_copy(
+            update={
+                "target": translate_doc_refs_to_audit([action.target], visible_to_audit)[0],
+                "rationale": replace_doc_id_refs(action.rationale, visible_to_audit),
+            }
+        )
+        for action in prediction.actions
+    ]
+    return prediction.model_copy(
+        update={
+            "supporting_evidence": translate_doc_refs_to_audit(prediction.supporting_evidence, visible_to_audit),
+            "rejected_evidence": translate_doc_refs_to_audit(prediction.rejected_evidence, visible_to_audit),
+            "selected_doc_ids": translate_doc_refs_to_audit(prediction.selected_doc_ids, visible_to_audit),
+            "actions": actions,
+            "evidence_environment_assessment": replace_doc_id_refs(prediction.evidence_environment_assessment, visible_to_audit),
+            "answer": replace_doc_id_refs(prediction.answer, visible_to_audit),
+        }
+    )
 
 
 def portable_chat_messages(messages: Sequence[Mapping[str, str]]) -> List[Dict[str, str]]:

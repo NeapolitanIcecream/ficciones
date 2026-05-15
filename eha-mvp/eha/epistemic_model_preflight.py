@@ -24,9 +24,11 @@ from .epistemic_resilience import (
     build_messages,
     epistemic_prediction_json_schema,
     invocation_profile,
+    opaque_doc_id_view,
     portable_chat_messages,
     read_tasks,
     score_records,
+    translate_prediction_to_audit_ids,
 )
 from .phase2_run import Phase2OpenAIJsonRunner, split_csv
 from .report import markdown_table, write_csv
@@ -347,10 +349,12 @@ def run_preflight_records(
         response_format=response_format,
         json_extractor="first_json_object",
     )
+    profile["doc_id_policy"] = "opaque_per_task"
     records: List[PreflightRecord] = []
     for model in models:
         for task in tasks:
-            messages = portable_chat_messages(build_messages(task, prompt_condition))
+            doc_id_view = opaque_doc_id_view(task)
+            messages = portable_chat_messages(build_messages(task, prompt_condition, opaque_doc_ids=True, scrub_audit_labels=True))
             prompt_text = json.dumps(messages, ensure_ascii=False)
             cost_guard.before_call(model, prompt_text, max_output_tokens or 4096)
             response = ""
@@ -370,6 +374,8 @@ def run_preflight_records(
                 )
                 cost_usd = cost_guard.after_call(model, usage)
                 parsed = parse_prediction_with_diagnostics(response)
+                if parsed.prediction is not None:
+                    parsed = parsed.model_copy(update={"prediction": translate_prediction_to_audit_ids(parsed.prediction, doc_id_view.visible_to_audit)})
                 empty_output = not response.strip()
             except Exception as exc:  # noqa: BLE001
                 parsed = PredictionParseResult(parse_success=False, parse_error=str(exc), json_extractor_used="not_attempted")
