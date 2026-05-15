@@ -1,0 +1,33 @@
+\section{Related Work}
+
+\subsection{Hallucination and Truthfulness Evaluation}
+
+Existing hallucination and truthfulness benchmarks ask whether models produce true or false answers, resist common false beliefs, or ground claims in provided evidence. TruthfulQA directly evaluates whether models imitate human falsehoods rather than answer truthfully \citep{lin-etal-2022-truthfulqa}. RAGTruth studies hallucination under retrieval-augmented generation and annotates unsupported or contradictory spans in RAG responses \citep{niu-etal-2024-ragtruth}. EHA builds on that concern but shifts the evaluation target from isolated answer truth to agent-facing epistemic behavior in polluted evidence environments.
+
+\subsection{Fact Verification and Claim Verification}
+
+Fact-verification tasks typically require systems to classify claims as supported, refuted, or not enough information given evidence. FEVER established a large-scale claim-verification task with evidence sentences and supported/refuted/not-enough-information labels \citep{thorne-etal-2018-fever}. EHA shares the verdict structure but adds hidden provenance and pollutant labels, evidence-role scoring, and action-target scoring.
+
+\subsection{RAG Factuality and Attribution}
+
+Retrieval-augmented generation studies how external evidence can improve factuality and attribution. RAG introduced a parametric generation model coupled with a non-parametric retriever for knowledge-intensive tasks \citep{lewis2020retrieval}. ALCE evaluates citation-bearing generation and citation quality for LLM information seeking \citep{gao-etal-2023-enabling}. RAGTruth shows that unsupported or contradictory claims can persist even when retrieval is present \citep{niu-etal-2024-ragtruth}. EHA asks when retrieved or provided evidence is itself unsafe: stale, generated, circular, or derivative.
+
+\subsection{RAG Poisoning and Knowledge-Base Contamination}
+
+RAG poisoning and knowledge-base contamination work studies attacks or failures where injected documents steer model output. PoisonedRAG formulates knowledge corruption attacks in which malicious texts are inserted into a RAG knowledge base to induce attacker-chosen answers \citep{zou2025poisonedrag}. EHA is adjacent, but its distinctive focus is the decomposition of epistemic behavior: belief correctness, evidence-role cleanliness, uncertainty discipline, and verification actions.
+
+\subsection{Provenance, Source Credibility, and Citation Quality}
+
+Source credibility and provenance work asks whether evidence comes from reliable, independent, and relevant sources. Source-monitoring research studies how people attribute the origins of memories and beliefs \citep{johnson1993source}. Computer credibility work models credibility as a perceived quality linked to trustworthiness and expertise \citep{fogg1999elements}. ALCE makes citation quality a measurable dimension of LLM answer generation \citep{gao-etal-2023-enabling}. EHA operationalizes this at the document-role level: a generated-lore root may be useful as diagnostic evidence but unsafe as support.
+
+\subsection{Misinformation, False Consensus, and Repetition Effects}
+
+Misinformation research has long studied how repetition, source ambiguity, and false consensus can affect belief. The illusory-truth effect shows that repeated statements can be judged more valid even without independent support \citep{hasher1977frequency}. Source-monitoring failures provide a mechanism for confusing origin and credibility \citep{johnson1993source}. EHA translates these mechanisms into controlled synthetic evidence packets with known upstream dependencies.
+
+\subsection{Tool-Use and Agent Evaluation}
+
+Tool-use and web-agent benchmarks evaluate whether agents complete tasks through external actions. ReAct interleaves reasoning traces with actions against external environments \citep{yao2023react}. Toolformer trains models to decide which APIs to call and how to incorporate results \citep{schick2023toolformer}. API-Bank and Gorilla evaluate tool/API calling and argument selection for tool-augmented LLMs \citep{li-etal-2023-api,patil2023gorilla}. WebArena provides a realistic web environment for autonomous agents and shows large gaps between agents and humans on end-to-end web tasks \citep{zhou2024webarena}. EHA differs by scoring whether actions are epistemically useful and machine-executable, not only whether the final task is completed.
+
+\subsection{Structured Output and Agent Interface Reliability}
+
+Structured outputs are increasingly used as the interface between LLMs and downstream systems. Tool and API benchmarks emphasize that the correctness of arguments, targets, and call structure matters for downstream execution \citep{schick2023toolformer,li-etal-2023-api,patil2023gorilla}. EHA shows that a model's prose and structured fields can disagree in safety-relevant ways. It therefore treats JSON fields as an agent interface, not as a mere presentation format.

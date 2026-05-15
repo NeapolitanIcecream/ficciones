@@ -1,0 +1,11 @@
+\section{Mechanism Case Study 2: Active Verification}
+
+The second mechanism case concerns executable action expression. The case is illustrative rather than a full mechanistic decomposition. To reduce cherry-picking risk, we also performed a lightweight 20-row action-interface audit of active-verification failures.
+
+In \code{gpt-5.4}, task \code{ert_082}, \code{standard_answer}, the question asks whether Novalis Robotics completed a Q4 supplier audit before the 2025 renewal meeting. The gold verdict is \code{supported}. The answer layer is correct. The model predicts \code{supported} and cites clean primary support: \code{eham_002_primary_a} and \code{eham_002_primary_b}. The scored row has belief correctness 1.000, evidence cleanliness 1.000, verification action score 0.000, and primary action rate 0.000.
+
+The failure is in the action interface. The first target is a bundled string containing \code{eham_002_primary_a}, \code{eham_002_primary_b}, and \code{eham_002_pollutant_root}. The second target is a composite path from repost IDs to a pollutant root. These are understandable to a human, but they are not exact machine-checkable targets or clear \code{search_primary} actions. Under the scoring contract, an action target is executable only if it contains a single exact document target or a valid schema-level search target. Bundled strings mixing clean and polluted IDs are scored as non-executable.
+
+In the 20-row active-verification audit sample, all audited actions were semantically understandable, but 4/20 had non-machine-checkable targets and 16/20 missed a required action type or exact target under the current scoring contract. Four rows were labeled borderline: semantically useful but not executable. This supports the limitation that active-verification scoring needs more human audit, while also showing that the failure is not merely arbitrary strictness.
+
+Together, \Cref{sec:generated-lore} and this section show why EHA evaluates more than correctness. Generated lore exposes evidence-role failure. Active verification exposes action-expression failure.

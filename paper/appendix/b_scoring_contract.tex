@@ -1,0 +1,12 @@
+\section{Scoring Contract Details}
+\label{app:scoring-contract}
+
+EHA scores machine-readable behavior. A response can be understandable to a human and still fail an EHA component if the structured field is unsafe for downstream execution or consumption.
+
+\paragraph{Support semantics.} \code{supporting_evidence} is reserved for clean evidence directly supporting the substantive verdict about the target claim. For \code{insufficient} verdicts, it should normally be empty. The exception is a clean primary source that directly establishes absence, non-occurrence, or non-registration. Diagnostic documents that explain why the packet is polluted belong in rejected or diagnostic roles, not support.
+
+\paragraph{Rejected and diagnostic evidence.} Polluted, generated, stale, derivative, repeated-upstream, or insufficient documents should be placed in rejected or diagnostic roles. The current main-run schema did not include a dedicated \code{diagnostic_evidence} field, which is why the clarified-schema mini-rerun is useful for validity analysis.
+
+\paragraph{Action targets.} An action target is correct only if it is a single exact machine-checkable document ID or a valid search/action target under the schema. Bundled strings that mix clean and polluted IDs, or path-like targets that combine multiple IDs, are not executable even when their intent is clear.
+
+\paragraph{Parse failures.} Operational escape counts parse and schema failures as failures. Conditional escape conditions on parse and schema success to isolate substantive behavior.

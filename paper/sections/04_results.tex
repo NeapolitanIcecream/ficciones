@@ -1,0 +1,48 @@
+\section{Main Results}
+
+These are descriptive results from 100 tasks and 1000 calls. They are not statistically powered for fine-grained provider ranking. Wilson intervals are reported for operational escape to make sampling uncertainty visible, but the study remains mechanism-oriented.
+
+\input{tables/main_model_decomposition}
+
+\begin{figure}[t]
+    \centering
+    \includegraphics[width=0.92\linewidth]{figures/fig2_capability_decomposition.pdf}
+    \caption{Capability decomposition by model. Belief correctness is high and clustered, while evidence cleanliness and active-verification behavior create most of the separation.}
+    \label{fig:capability-decomposition}
+\end{figure}
+
+\subsection{Finding 1: Belief Correctness Is Not Enough}
+
+\Cref{tab:main-model-decomposition,fig:capability-decomposition} show that belief correctness is high and clustered, while evidence cleanliness and verification behavior separate models. \code{gpt-5.4} illustrates the point: its belief correctness matches the leading cluster, but its evidence cleanliness is much lower. That gap is invisible in final-answer accuracy alone.
+
+\subsection{Finding 2: Agent-Facing Tasks Are Harder Than Packet Judgment}
+
+\input{tables/task_family_breakdown}
+
+\begin{figure}[t]
+    \centering
+    \includegraphics[width=0.92\linewidth]{figures/fig3_task_family_breakdown.pdf}
+    \caption{Operational escape by task family. Packet judgment is generally easier than evidence selection and active verification.}
+    \label{fig:task-family-breakdown}
+\end{figure}
+
+\Cref{tab:task-family-breakdown,fig:task-family-breakdown} show that packet judgment is generally easier than evidence selection and active verification. Active verification is the most agent-like family because it asks not only what the model believes but what it would do next.
+
+\subsection{Finding 3: Generated Lore Exposes Evidence-Role Failures}
+
+\input{tables/evidence_condition_breakdown}
+
+Generated lore is the sharpest condition for evidence-role analysis in this run under the current schema. For \code{gpt-5.4}, generated-lore escape is 0.100 despite belief correctness of 1.000. \Cref{sec:generated-lore} analyzes the mechanism.
+
+\subsection{Finding 4: Hygiene Prompting Is Not a Universal Fix}
+
+\input{tables/prompt_hygiene}
+
+\begin{figure}[t]
+    \centering
+    \includegraphics[width=0.92\linewidth]{figures/fig5_prompt_hygiene_slope.pdf}
+    \caption{Prompt-hygiene slope by model. Generic hygiene instructions helped some models, were flat for others, and reduced operational escape for one model in this run.}
+    \label{fig:prompt-hygiene-slope}
+\end{figure}
+
+\Cref{tab:prompt-hygiene,fig:prompt-hygiene-slope} suggest that epistemic resilience is not reliably induced by a generic instruction to be careful. It depends on model behavior, schema semantics, and task family.

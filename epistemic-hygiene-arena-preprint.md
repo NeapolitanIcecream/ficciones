@@ -4,7 +4,7 @@ Author: Anonymous
 
 Date: 2026-05-15
 
-Status: v1 major-revision draft based on the EHA frontier cohort run and 0515-3 review notes. Citation TODO tags are intentionally unresolved; this draft does not invent bibliographic entries.
+Status: superseded scratchpad. As of 2026-05-15, the canonical formal manuscript is `paper/main.tex`; this Markdown draft is retained only as a pre-LaTeX working copy and still contains pre-migration citation TODO notes.
 
 ## Abstract
 

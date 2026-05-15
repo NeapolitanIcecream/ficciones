@@ -1,0 +1,8 @@
+\section{Model Invocation and Empty-Output Diagnostics}
+\label{app:model-invocation}
+
+The main run used provider-compatible profiles. All models omitted \code{temperature}. DeepSeek and Kimi used no max-completion token cap in the main operational profile after capped profiles produced empty or malformed outputs in diagnostics.
+
+The no-cap diagnostic did not indicate runaway visible output. In the main run, \code{deepseek-v4-pro} averaged 399.825 visible output tokens. \code{kimi-k2.6} averaged 404.205 visible output tokens. Both had \code{overlength_rate=0.0}. Thus the empty-output issue is treated as an invocation-profile compatibility issue, not as evidence that the upstream model was unavailable or that the model required unusually long answers.
+
+The model-availability and cap/no-cap diagnostics are recorded in the model-selection report and in the cap-versus-no-cap JSON artifact under \code{eha-mvp/results/}.

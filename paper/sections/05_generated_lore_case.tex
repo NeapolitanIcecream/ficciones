@@ -1,0 +1,46 @@
+\section{Mechanism Case Study 1: Generated Lore}
+\label{sec:generated-lore}
+
+\begin{figure}[t]
+    \centering
+    \includegraphics[width=0.92\linewidth]{figures/fig4_generated_lore_role_decomposition.pdf}
+    \caption{Generated-lore role decomposition under the current schema. The key failure is not always belief formation; it can be unsafe assignment of polluted material into support-like fields.}
+    \label{fig:generated-lore-role-decomposition}
+\end{figure}
+
+The generated-lore condition should not be described as a simple failure to detect bad content. For \code{gpt-5.4}, the generated-lore slice shows a separation between belief correctness and evidence-role correctness. \Cref{fig:generated-lore-role-decomposition} visualizes the current-schema role decomposition.
+
+\input{tables/generated_lore_role_decomposition}
+
+The aggregate current-schema result covers 20 generated-lore tasks across two prompt conditions, for 40 rows per model. The model gives the correct insufficient verdict in every generated-lore row. It also places pollutants into rejected evidence in every row. The failure is that 36/40 rows still place polluted documents into \code{supporting_evidence}, and 35/40 rows assign the same pollutant both support and rejection roles.
+
+The three examples discussed below are audited representatives, not the full rerun: \code{ert_032}, \code{ert_033}, and \code{ert_096}.
+
+In task \code{ert_032}, the question asks whether there is reliable evidence that Novalis Robotics ran Project LumenShield in 2024. The gold verdict is \code{insufficient}. The \code{gpt-5.4} answer says that the apparent support is a wiki-style summary and multiple downstream reposts, with no primary document, raw record, or independent contemporaneous evidence. This is the right belief-level response. Yet the structured fields contain \code{eham_120_pollutant_root}, \code{eham_120_repost_00}, and \code{eham_120_context_06} in \code{supporting_evidence}, while reposts also appear in \code{rejected_evidence}. The same pattern appears in task \code{ert_033}, about a fictional MiraCert certification deal, and in active-verification generated-lore task \code{ert_096}. In each case, the model's natural-language explanation recognizes unreliable source structure, while the machine-readable support field includes generated-lore roots or reposts.
+
+\subsection{Clarified-Schema Mini-Rerun}
+
+The clarified-schema rerun used the same 20 generated-lore tasks and two prompt conditions, giving 40 clarified-schema rows per model. It separates \code{clean_supporting_evidence}, \code{refuting_evidence}, \code{rejected_or_contaminated_evidence}, and \code{diagnostic_evidence}. The clarified rerun is a validity analysis, not a replacement for the frozen main-run score.
+
+\begin{table}[t]
+    \centering
+    \small
+    \caption{Generated-lore current-schema versus clarified-schema rerun. The clarified schema removes polluted support and dual-role pollution for the audited three-model subset.}
+    \label{tab:clarified-schema-rerun}
+    \begin{tabular}{llrrrrr}
+        \toprule
+        Model & Schema & n & Belief & Rejected pollutant & Polluted support & Escape \\
+        \midrule
+        \code{gpt-5.4} & Current & 40 & 1.000 & 1.000 & 0.900 & 0.100 \\
+        \code{claude-opus-4-7} & Current & 40 & 1.000 & 1.000 & 0.000 & 0.600 \\
+        \code{gemini-3.1-pro-preview} & Current & 40 & 1.000 & 1.000 & 0.000 & 0.425 \\
+        \code{gpt-5.4} & Clarified & 40 & 1.000 & 1.000 & 0.000 & 1.000 \\
+        \code{claude-opus-4-7} & Clarified & 40 & 1.000 & 1.000 & 0.000 & 1.000 \\
+        \code{gemini-3.1-pro-preview} & Clarified & 40 & 1.000 & 1.000 & 0.000 & 1.000 \\
+        \bottomrule
+    \end{tabular}
+\end{table}
+
+The current-schema table also explains why Claude and Gemini can have generated-lore escape below 1.000 despite zero polluted-supporting rate. Their failures are mostly not support-field pollution. In the generated-lore slice, both models have packet-judgment escape 1.000 and evidence cleanliness 1.000; their current-schema losses come from evidence-selection and active-verification criteria. Claude has evidence-selection escape 0.000 in generated lore because selected evidence still includes generated-lore materials rather than clean high-value alternatives, while its active-verification escape is 1.000. Gemini similarly has evidence-selection escape 0.000 and active-verification escape 0.125, driven by low generated-lore trace-action rate.
+
+The interpretation is narrow but important: the current schema exposes an agent-interface risk. A model can verbally reject a pollutant while still placing it in a support field that downstream systems may consume. The clarified schema shows that the failure is sensitive to field semantics and evidence-role assignment. It does not show that the main score should be retroactively rewritten.

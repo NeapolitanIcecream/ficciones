@@ -1,0 +1,67 @@
+\section{Model Cohort and Invocation}
+
+The frontier cohort contains five models in a fixed provider order:
+
+\begin{table}[t]
+    \centering
+    \caption{Fixed cohort order. The order is provider order, not a ranking.}
+    \label{tab:model-cohort}
+    \begin{tabular}{ll}
+        \toprule
+        Provider family & Model ID \\
+        \midrule
+        OpenAI / GPT-o & \code{gpt-5.4} \\
+        Anthropic Claude & \code{claude-opus-4-7} \\
+        Google Gemini & \code{gemini-3.1-pro-preview} \\
+        DeepSeek & \code{deepseek-v4-pro} \\
+        Kimi & \code{kimi-k2.6} \\
+        \bottomrule
+    \end{tabular}
+\end{table}
+
+Each model was evaluated on 100 tasks under two prompt conditions, producing 200 calls per model and 1000 calls in total.
+
+\subsection{Preflight Gate}
+
+Before the main run, each model went through a 20-task structured-output preflight. The gate was \code{parse_success >= 0.95}, \code{empty_output = 0}, and \code{schema_missing_rate <= 0.05}.
+
+\begin{table}[t]
+    \centering
+    \small
+    \caption{Structured-output preflight.}
+    \label{tab:preflight}
+    \begin{tabular}{lrrrrlll}
+        \toprule
+        Model & n & Parse & Empty & Missing & Format & Temp. & Token cap \\
+        \midrule
+        \code{gpt-5.4} & 20 & 20/20 & 0 & 0 & \code{json_schema} & omitted & 4096 \\
+        \code{claude-opus-4-7} & 20 & 20/20 & 0 & 0 & \code{json_schema} & omitted & 4096 \\
+        \code{gemini-3.1-pro-preview} & 20 & 20/20 & 0 & 0 & \code{json_schema} & omitted & 4096 \\
+        \code{deepseek-v4-pro} & 20 & 20/20 & 0 & 0 & \code{json_object} & omitted & omitted \\
+        \code{kimi-k2.6} & 20 & 20/20 & 0 & 0 & \code{json_schema} & omitted & omitted \\
+        \bottomrule
+    \end{tabular}
+\end{table}
+
+\subsection{Provider-Compatible Invocation}
+
+The main run used provider-compatible invocation profiles rather than forcing one uniform parameter set across providers. This matters because fixed caps produced empty outputs for \code{deepseek-v4-pro} and \code{kimi-k2.6} during preflight or budget audit. A later no-cap diagnostic showed that the empty-content failures were consistent with token-cap/profile incompatibility rather than unavailable upstream models.
+
+\begin{table}[t]
+    \centering
+    \caption{Main invocation notes.}
+    \label{tab:invocation-notes}
+    \begin{tabularx}{\linewidth}{lX}
+        \toprule
+        Model & Main invocation note \\
+        \midrule
+        \code{gpt-5.4} & No \code{temperature}; \code{json_schema}; capped profile. \\
+        \code{claude-opus-4-7} & No \code{temperature}; \code{json_schema}; developer/system role merged into user where required. \\
+        \code{gemini-3.1-pro-preview} & No \code{temperature}; \code{json_schema}; capped profile. \\
+        \code{deepseek-v4-pro} & No \code{temperature}; no \code{max_completion_tokens}; \code{json_object}. \\
+        \code{kimi-k2.6} & No \code{temperature}; no \code{max_completion_tokens}; \code{json_schema}. \\
+        \bottomrule
+    \end{tabularx}
+\end{table}
+
+The no-cap settings did not inflate visible output in the main run. DeepSeek averaged 399.825 visible output tokens, Kimi averaged 404.205, and both had \code{overlength_rate=0.0}. Across the main run, \code{empty_output=0/1000}; DeepSeek had one schema-missing row and all other models had full parse success.
