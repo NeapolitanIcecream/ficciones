@@ -99,14 +99,22 @@ class EpistemicRunRecord(EhaModel):
     family: str
     condition: str
     model: str
+    provider: str = ""
+    budget_setting: str = "operational"
     prompt_condition: str
     backend: str
     prediction: EpistemicPrediction
     parse_success: bool
     parse_error: str = ""
+    empty_output: bool = False
+    schema_missing: bool = False
+    attempt_count: int = 1
     response_format_used: str = ""
     json_extractor_used: str = ""
     invocation_profile: Dict[str, Any] = Field(default_factory=dict)
+    visible_output_tokens: int = 0
+    json_field_lengths: Dict[str, Any] = Field(default_factory=dict)
+    overlength: bool = False
     usage: Dict[str, Any] = Field(default_factory=dict)
     cost_usd: float = 0.0
 
@@ -288,11 +296,12 @@ def epistemic_prediction_json_schema() -> Dict[str, Any]:
         "properties": {
             "claim_verdict": {"type": "string", "enum": ["supported", "refuted", "insufficient"]},
             "confidence": {"type": "number", "minimum": 0.0, "maximum": 1.0},
-            "supporting_evidence": {"type": "array", "items": {"type": "string"}},
-            "rejected_evidence": {"type": "array", "items": {"type": "string"}},
-            "selected_doc_ids": {"type": "array", "items": {"type": "string"}},
+            "supporting_evidence": {"type": "array", "items": {"type": "string"}, "maxItems": 5},
+            "rejected_evidence": {"type": "array", "items": {"type": "string"}, "maxItems": 5},
+            "selected_doc_ids": {"type": "array", "items": {"type": "string"}, "maxItems": 3},
             "actions": {
                 "type": "array",
+                "maxItems": 2,
                 "items": {
                     "type": "object",
                     "additionalProperties": False,
@@ -300,12 +309,12 @@ def epistemic_prediction_json_schema() -> Dict[str, Any]:
                     "properties": {
                         "action": {"type": "string", "enum": ["open", "trace_source", "search_primary", "search_contradiction", "compare_versions", "abstain"]},
                         "target": {"type": "string"},
-                        "rationale": {"type": "string"},
+                        "rationale": {"type": "string", "maxLength": 600},
                     },
                 },
             },
-            "evidence_environment_assessment": {"type": "string"},
-            "answer": {"type": "string"},
+            "evidence_environment_assessment": {"type": "string", "maxLength": 1000},
+            "answer": {"type": "string", "maxLength": 1000},
         },
     }
 
@@ -314,7 +323,12 @@ def build_messages(task: EpistemicTask, prompt_condition: str) -> List[Dict[str,
     base_rules = [
         "Return only JSON matching the schema.",
         "Base your answer only on the provided evidence environment.",
+        "Do not output chain-of-thought or hidden reasoning.",
+        "Keep answer at or below 120 words.",
+        "Keep evidence_environment_assessment at or below 120 words.",
+        "Keep each action rationale short, preferably under 80 words.",
         "Use doc_id strings exactly as given.",
+        "Use at most five supporting_evidence IDs and at most five rejected_evidence IDs.",
         "For selected_doc_ids choose at most three document IDs that are most valuable for judging the claim.",
         "For actions choose at most two actions from open, trace_source, search_primary, search_contradiction, compare_versions, abstain.",
     ]
@@ -601,11 +615,16 @@ def run_records(
                         family=task.family,
                         condition=task.condition,
                         model=model,
+                        provider="",
+                        budget_setting="operational",
                         prompt_condition=prompt_condition,
                         backend=backend,
                         prediction=prediction,
                         parse_success=parse_success,
                         parse_error=parse_error,
+                        empty_output=False,
+                        schema_missing=False,
+                        attempt_count=1,
                         response_format_used=used_format if backend == "api" else "",
                         json_extractor_used=extractor_used if backend == "api" else "",
                         invocation_profile=profile if backend == "api" else {},
@@ -669,9 +688,21 @@ def score_record(record: EpistemicRunRecord, task: EpistemicTask) -> Dict[str, A
         "condition": task.condition,
         "difficulty": task.difficulty,
         "model": record.model,
+        "provider": record.provider,
+        "budget_setting": record.budget_setting,
         "prompt_condition": record.prompt_condition,
         "backend": record.backend,
         "parse_success": 1.0 if record.parse_success else 0.0,
+        "empty_output": 1.0 if record.empty_output else 0.0,
+        "schema_missing": 1.0 if record.schema_missing else 0.0,
+        "attempt_count": record.attempt_count,
+        "visible_output_tokens": record.visible_output_tokens,
+        "answer_word_count": record.json_field_lengths.get("answer_words", ""),
+        "evidence_assessment_word_count": record.json_field_lengths.get("evidence_environment_assessment_words", ""),
+        "max_action_rationale_word_count": record.json_field_lengths.get("max_action_rationale_words", ""),
+        "supporting_evidence_count": record.json_field_lengths.get("supporting_evidence_count", ""),
+        "rejected_evidence_count": record.json_field_lengths.get("rejected_evidence_count", ""),
+        "overlength_rate": 1.0 if record.overlength else 0.0,
         "belief_correctness": 1.0 if belief_correct else 0.0,
         "evidence_cleanliness": evidence_clean,
         "uncertainty_discipline": 1.0 if uncertainty_discipline else 0.0,

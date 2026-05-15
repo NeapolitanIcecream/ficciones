@@ -294,7 +294,10 @@ def complete_with_process_timeout(
     schema_name: str,
     schema: Mapping[str, Any],
 ) -> tuple[str, Dict[str, Any], str]:
-    context_name = "fork" if "fork" in multiprocessing.get_all_start_methods() else "spawn"
+    # macOS Objective-C frameworks are not fork-safe once multiple threads exist.
+    # The frontier runner calls this from worker threads, so prefer spawn even
+    # though it is slower.
+    context_name = "spawn" if "spawn" in multiprocessing.get_all_start_methods() else "fork"
     context = multiprocessing.get_context(context_name)
     queue: multiprocessing.Queue = context.Queue()
     process = context.Process(
