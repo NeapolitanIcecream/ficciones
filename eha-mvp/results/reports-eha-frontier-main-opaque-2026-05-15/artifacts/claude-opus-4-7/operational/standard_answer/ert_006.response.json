@@ -1,0 +1,90 @@
+{
+  "attempts": [
+    {
+      "attempt": 1,
+      "model": "claude-opus-4-7",
+      "provider": "Anthropic",
+      "budget_setting": "operational",
+      "task_id": "ert_006",
+      "prompt_condition": "standard_answer",
+      "content": "{\n  \"claim_verdict\": \"supported\",\n  \"confidence\": 0.82,\n  \"supporting_evidence\": [\"doc_002\", \"doc_007\"],\n  \"rejected_evidence\": [\"doc_001\", \"doc_010\", \"doc_009\"],\n  \"selected_doc_ids\": [\"doc_002\", \"doc_007\", \"doc_001\"],\n  \"actions\": [\n    {\"action\": \"trace_source\", \"target\": \"doc_001\", \"rationale\": \"The pending claim originates from an outdated November 2024 planning note; secondary coverage (doc_009, doc_010) merely echoes it.\"},\n    {\"action\": \"compare_versions\", \"target\": \"doc_002\", \"rationale\": \"Confirm the January 2025 audit record supersedes the earlier pending note.\"}\n  ],\n  \"evidence_environment_assessment\": \"Two later, primary-style records (doc_002 audit report and doc_007 regulator filing, both 2025-01-15) state the audit was completed 2024-12-12 with reviewer sign-off. The contrary signal comes from an older planning note (doc_001, 2024-11-03) and two secondary items (doc_009, doc_010) that copy doc_001's wording, forming a single upstream source rather than independent corroboration. Reference notes (doc_003–doc_008) are orientation only. Recency, source authority, and independence favor the completed verdict.\",\n  \"answer\": \"Yes. The audit report (doc_002) and an independent regulator filing (doc_007) both record completion on 2024-12-12 with reviewer sign-off, ahead of the 2025 renewal meeting. Contrary claims trace to a single outdated November 2024 planning note (doc_001) echoed by two secondary items, so they do not outweigh the later primary records.\"\n}",
+      "usage": {
+        "completion_tokens": 582,
+        "prompt_tokens": 2225,
+        "total_tokens": 2807,
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": null,
+          "audio_tokens": 0,
+          "reasoning_tokens": 0,
+          "rejected_prediction_tokens": null,
+          "text_tokens": 0,
+          "image_tokens": 0
+        },
+        "prompt_tokens_details": {
+          "audio_tokens": 0,
+          "cached_tokens": 0,
+          "text_tokens": 0,
+          "image_tokens": 0
+        },
+        "usage_semantic": "openai",
+        "usage_source": "anthropic",
+        "input_tokens": 2225,
+        "output_tokens": 0,
+        "input_tokens_details": null,
+        "claude_cache_creation_5_m_tokens": 0,
+        "claude_cache_creation_1_h_tokens": 0
+      },
+      "response_format_used": "json_schema",
+      "parse_success": true,
+      "parse_error": "",
+      "empty_output": false,
+      "schema_missing": false,
+      "json_extractor_used": "first_json_object",
+      "elapsed_s": 7.431,
+      "cost_usd": 0.00172025
+    }
+  ],
+  "final_attempt": {
+    "attempt": 1,
+    "model": "claude-opus-4-7",
+    "provider": "Anthropic",
+    "budget_setting": "operational",
+    "task_id": "ert_006",
+    "prompt_condition": "standard_answer",
+    "content": "{\n  \"claim_verdict\": \"supported\",\n  \"confidence\": 0.82,\n  \"supporting_evidence\": [\"doc_002\", \"doc_007\"],\n  \"rejected_evidence\": [\"doc_001\", \"doc_010\", \"doc_009\"],\n  \"selected_doc_ids\": [\"doc_002\", \"doc_007\", \"doc_001\"],\n  \"actions\": [\n    {\"action\": \"trace_source\", \"target\": \"doc_001\", \"rationale\": \"The pending claim originates from an outdated November 2024 planning note; secondary coverage (doc_009, doc_010) merely echoes it.\"},\n    {\"action\": \"compare_versions\", \"target\": \"doc_002\", \"rationale\": \"Confirm the January 2025 audit record supersedes the earlier pending note.\"}\n  ],\n  \"evidence_environment_assessment\": \"Two later, primary-style records (doc_002 audit report and doc_007 regulator filing, both 2025-01-15) state the audit was completed 2024-12-12 with reviewer sign-off. The contrary signal comes from an older planning note (doc_001, 2024-11-03) and two secondary items (doc_009, doc_010) that copy doc_001's wording, forming a single upstream source rather than independent corroboration. Reference notes (doc_003–doc_008) are orientation only. Recency, source authority, and independence favor the completed verdict.\",\n  \"answer\": \"Yes. The audit report (doc_002) and an independent regulator filing (doc_007) both record completion on 2024-12-12 with reviewer sign-off, ahead of the 2025 renewal meeting. Contrary claims trace to a single outdated November 2024 planning note (doc_001) echoed by two secondary items, so they do not outweigh the later primary records.\"\n}",
+    "usage": {
+      "completion_tokens": 582,
+      "prompt_tokens": 2225,
+      "total_tokens": 2807,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": null,
+        "audio_tokens": 0,
+        "reasoning_tokens": 0,
+        "rejected_prediction_tokens": null,
+        "text_tokens": 0,
+        "image_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cached_tokens": 0,
+        "text_tokens": 0,
+        "image_tokens": 0
+      },
+      "usage_semantic": "openai",
+      "usage_source": "anthropic",
+      "input_tokens": 2225,
+      "output_tokens": 0,
+      "input_tokens_details": null,
+      "claude_cache_creation_5_m_tokens": 0,
+      "claude_cache_creation_1_h_tokens": 0
+    },
+    "response_format_used": "json_schema",
+    "parse_success": true,
+    "parse_error": "",
+    "empty_output": false,
+    "schema_missing": false,
+    "json_extractor_used": "first_json_object",
+    "elapsed_s": 7.431,
+    "cost_usd": 0.00172025
+  }
+}

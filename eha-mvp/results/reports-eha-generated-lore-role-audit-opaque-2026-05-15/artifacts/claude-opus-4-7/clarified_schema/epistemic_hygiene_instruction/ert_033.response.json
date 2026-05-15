@@ -1,0 +1,40 @@
+{
+  "model": "claude-opus-4-7",
+  "provider": "Anthropic",
+  "task_id": "ert_033",
+  "prompt_condition": "epistemic_hygiene_instruction",
+  "content": "{\n  \"claim_verdict\": \"insufficient\",\n  \"confidence\": 0.15,\n  \"clean_supporting_evidence\": [],\n  \"refuting_evidence\": [],\n  \"rejected_or_contaminated_evidence\": [\"doc_001\", \"doc_004\", \"doc_007\", \"doc_006\", \"doc_005\"],\n  \"diagnostic_evidence\": [\"doc_001\", \"doc_004\"],\n  \"selected_doc_ids\": [\"doc_001\", \"doc_004\", \"doc_007\"],\n  \"actions\": [\n    {\"action\": \"search_primary\", \"target\": \"MiraCert certification registry or Novalis Robotics 2024 press releases/regulator filings\", \"rationale\": \"Need a primary record of the alleged certification deal, not summaries.\"},\n    {\"action\": \"trace_source\", \"target\": \"doc_001 upstream citations\", \"rationale\": \"All secondary items trace back to doc_001; verify whether any genuine primary source exists upstream.\"}\n  ],\n  \"evidence_notes\": \"doc_001 is an authority-styled summary with no citations and mirrors the question wording — classic generated-lore pattern. doc_004–007 all cite doc_001, forming pseudo-consensus rather than independent confirmation. Reference notes (doc_002, 003, 008–011) mention Novalis only in passing and do not address the certification claim. No primary records, regulator filings, or MiraCert documents are present, and no contradicting evidence is available.\",\n  \"answer\": \"There is insufficient clean evidence to confirm or refute that Novalis Robotics signed a 2024 MiraCert quantum battery certification deal. The only assertive source (doc_001) is an uncited authority-style summary, and doc_004–007 merely repeat it, constituting pseudo-consensus. Remaining documents are unrelated reference notes. A primary MiraCert filing or Novalis announcement is required before a verdict can be issued.\"\n}",
+  "usage": {
+    "completion_tokens": 637,
+    "prompt_tokens": 3050,
+    "total_tokens": 3687,
+    "completion_tokens_details": {
+      "accepted_prediction_tokens": null,
+      "audio_tokens": 0,
+      "reasoning_tokens": 0,
+      "rejected_prediction_tokens": null,
+      "text_tokens": 0,
+      "image_tokens": 0
+    },
+    "prompt_tokens_details": {
+      "audio_tokens": 0,
+      "cached_tokens": 0,
+      "text_tokens": 0,
+      "image_tokens": 0
+    },
+    "usage_semantic": "openai",
+    "usage_source": "anthropic",
+    "input_tokens": 3050,
+    "output_tokens": 0,
+    "input_tokens_details": null,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+  },
+  "response_format_used": "json_schema",
+  "parse_success": true,
+  "parse_error": "",
+  "empty_output": false,
+  "schema_missing": false,
+  "elapsed_s": 10.6,
+  "cost_usd": 0.0020365
+}

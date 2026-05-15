@@ -1,0 +1,90 @@
+{
+  "attempts": [
+    {
+      "attempt": 1,
+      "model": "claude-opus-4-7",
+      "provider": "Anthropic",
+      "budget_setting": "operational",
+      "task_id": "ert_043",
+      "prompt_condition": "standard_answer",
+      "content": "{\n\"claim_verdict\": \"supported\",\n\"confidence\": 0.82,\n\"supporting_evidence\": [\"doc_019\", \"doc_009\"],\n\"rejected_evidence\": [\"doc_002\", \"doc_008\", \"doc_018\", \"doc_013\", \"doc_016\"],\n\"selected_doc_ids\": [\"doc_019\", \"doc_009\", \"doc_002\"],\n\"actions\": [\n{\"action\": \"trace_source\", \"target\": \"doc_019\", \"rationale\": \"Confirm the primary audit record's raw operating logs and reviewer sign-off underlying the completion finding.\"},\n{\"action\": \"compare_versions\", \"target\": \"doc_002\", \"rationale\": \"Older planning note (Nov 2024) conflicts with later signed records; verify it was superseded by the December completion.\"}\n],\n\"evidence_environment_assessment\": \"Two dated, primary-style records (doc_019 audit report and doc_009 regulator filing citing it) state the audit was completed 2024-12-12. Opposing claims come from an older Nov 2024 planning note (doc_002) and four secondary items (doc_008, doc_018, doc_013, doc_016) all copied from doc_002, forming a single upstream source rather than independent corroboration. The remaining reference notes are orientation material and do not settle the claim. The primary records postdate and supersede the planning note.\",\n\"answer\": \"Yes. The signed audit report (doc_019) and an independent regulator filing (doc_009) both record completion on 2024-12-12, before the 2025 renewal meeting. Contrary claims trace to a single outdated November 2024 planning note (doc_002) echoed by secondary coverage, which does not outweigh the later primary records.\"\n}",
+      "usage": {
+        "completion_tokens": 559,
+        "prompt_tokens": 3485,
+        "total_tokens": 4044,
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": null,
+          "audio_tokens": 0,
+          "reasoning_tokens": 0,
+          "rejected_prediction_tokens": null,
+          "text_tokens": 0,
+          "image_tokens": 0
+        },
+        "prompt_tokens_details": {
+          "audio_tokens": 0,
+          "cached_tokens": 0,
+          "text_tokens": 0,
+          "image_tokens": 0
+        },
+        "usage_semantic": "openai",
+        "usage_source": "anthropic",
+        "input_tokens": 3485,
+        "output_tokens": 0,
+        "input_tokens_details": null,
+        "claude_cache_creation_5_m_tokens": 0,
+        "claude_cache_creation_1_h_tokens": 0
+      },
+      "response_format_used": "json_schema",
+      "parse_success": true,
+      "parse_error": "",
+      "empty_output": false,
+      "schema_missing": false,
+      "json_extractor_used": "first_json_object",
+      "elapsed_s": 10.453,
+      "cost_usd": 0.00198925
+    }
+  ],
+  "final_attempt": {
+    "attempt": 1,
+    "model": "claude-opus-4-7",
+    "provider": "Anthropic",
+    "budget_setting": "operational",
+    "task_id": "ert_043",
+    "prompt_condition": "standard_answer",
+    "content": "{\n\"claim_verdict\": \"supported\",\n\"confidence\": 0.82,\n\"supporting_evidence\": [\"doc_019\", \"doc_009\"],\n\"rejected_evidence\": [\"doc_002\", \"doc_008\", \"doc_018\", \"doc_013\", \"doc_016\"],\n\"selected_doc_ids\": [\"doc_019\", \"doc_009\", \"doc_002\"],\n\"actions\": [\n{\"action\": \"trace_source\", \"target\": \"doc_019\", \"rationale\": \"Confirm the primary audit record's raw operating logs and reviewer sign-off underlying the completion finding.\"},\n{\"action\": \"compare_versions\", \"target\": \"doc_002\", \"rationale\": \"Older planning note (Nov 2024) conflicts with later signed records; verify it was superseded by the December completion.\"}\n],\n\"evidence_environment_assessment\": \"Two dated, primary-style records (doc_019 audit report and doc_009 regulator filing citing it) state the audit was completed 2024-12-12. Opposing claims come from an older Nov 2024 planning note (doc_002) and four secondary items (doc_008, doc_018, doc_013, doc_016) all copied from doc_002, forming a single upstream source rather than independent corroboration. The remaining reference notes are orientation material and do not settle the claim. The primary records postdate and supersede the planning note.\",\n\"answer\": \"Yes. The signed audit report (doc_019) and an independent regulator filing (doc_009) both record completion on 2024-12-12, before the 2025 renewal meeting. Contrary claims trace to a single outdated November 2024 planning note (doc_002) echoed by secondary coverage, which does not outweigh the later primary records.\"\n}",
+    "usage": {
+      "completion_tokens": 559,
+      "prompt_tokens": 3485,
+      "total_tokens": 4044,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": null,
+        "audio_tokens": 0,
+        "reasoning_tokens": 0,
+        "rejected_prediction_tokens": null,
+        "text_tokens": 0,
+        "image_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cached_tokens": 0,
+        "text_tokens": 0,
+        "image_tokens": 0
+      },
+      "usage_semantic": "openai",
+      "usage_source": "anthropic",
+      "input_tokens": 3485,
+      "output_tokens": 0,
+      "input_tokens_details": null,
+      "claude_cache_creation_5_m_tokens": 0,
+      "claude_cache_creation_1_h_tokens": 0
+    },
+    "response_format_used": "json_schema",
+    "parse_success": true,
+    "parse_error": "",
+    "empty_output": false,
+    "schema_missing": false,
+    "json_extractor_used": "first_json_object",
+    "elapsed_s": 10.453,
+    "cost_usd": 0.00198925
+  }
+}

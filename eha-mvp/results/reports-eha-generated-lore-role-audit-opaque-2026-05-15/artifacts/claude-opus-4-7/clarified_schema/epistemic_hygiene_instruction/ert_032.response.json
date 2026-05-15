@@ -1,0 +1,40 @@
+{
+  "model": "claude-opus-4-7",
+  "provider": "Anthropic",
+  "task_id": "ert_032",
+  "prompt_condition": "epistemic_hygiene_instruction",
+  "content": "{\n  \"claim_verdict\": \"insufficient\",\n  \"confidence\": 0.15,\n  \"clean_supporting_evidence\": [],\n  \"refuting_evidence\": [],\n  \"rejected_or_contaminated_evidence\": [\"doc_008\", \"doc_006\", \"doc_005\", \"doc_009\", \"doc_004\"],\n  \"diagnostic_evidence\": [\"doc_008\", \"doc_006\"],\n  \"selected_doc_ids\": [\"doc_008\", \"doc_006\", \"doc_005\"],\n  \"actions\": [\n    {\n      \"action\": \"search_primary\",\n      \"target\": \"Novalis Robotics official filings or audits referencing Project LumenShield (2024)\",\n      \"rationale\": \"No primary records, regulator filings, or audits are present. Only an authority-like wiki summary and reposts citing it exist.\"\n    },\n    {\n      \"action\": \"trace_source\",\n      \"target\": \"doc_008\",\n      \"rationale\": \"doc_008 is the upstream source that all secondary coverage cites. Tracing its provenance would reveal whether any primary basis exists.\"\n    }\n  ],\n  \"evidence_notes\": \"doc_008 is an authority-like wiki-style summary with no citations and echoes the question's wording — characteristic of generated lore. doc_004, doc_005, doc_006, doc_009 all cite doc_008, forming pseudo-consensus rather than independent confirmation. Reference notes (doc_001, doc_002, doc_003, doc_007, doc_010, doc_011) mention Novalis Robotics generically but do not address Project LumenShield. No primary records, filings, audits, or version histories are available.\",\n  \"answer\": \"There is no reliable evidence that Novalis Robotics ran Project LumenShield in 2024. The only substantive claim originates in an unsourced authority-like summary (doc_008), and all other coverage merely reposts that source, producing pseudo-consensus rather than independent confirmation. Reference notes do not address the project. Primary records or contradiction checks are needed before any verdict can be reached.\"\n}",
+  "usage": {
+    "completion_tokens": 678,
+    "prompt_tokens": 2967,
+    "total_tokens": 3645,
+    "completion_tokens_details": {
+      "accepted_prediction_tokens": null,
+      "audio_tokens": 0,
+      "reasoning_tokens": 0,
+      "rejected_prediction_tokens": null,
+      "text_tokens": 0,
+      "image_tokens": 0
+    },
+    "prompt_tokens_details": {
+      "audio_tokens": 0,
+      "cached_tokens": 0,
+      "text_tokens": 0,
+      "image_tokens": 0
+    },
+    "usage_semantic": "openai",
+    "usage_source": "anthropic",
+    "input_tokens": 2967,
+    "output_tokens": 0,
+    "input_tokens_details": null,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+  },
+  "response_format_used": "json_schema",
+  "parse_success": true,
+  "parse_error": "",
+  "empty_output": false,
+  "schema_missing": false,
+  "elapsed_s": 8.895,
+  "cost_usd": 0.00209775
+}

@@ -1,0 +1,90 @@
+{
+  "attempts": [
+    {
+      "attempt": 1,
+      "model": "claude-opus-4-7",
+      "provider": "Anthropic",
+      "budget_setting": "operational",
+      "task_id": "ert_002",
+      "prompt_condition": "epistemic_hygiene_instruction",
+      "content": "{\n  \"claim_verdict\": \"supported\",\n  \"confidence\": 0.78,\n  \"supporting_evidence\": [\"doc_006\", \"doc_007\"],\n  \"rejected_evidence\": [\"doc_008\", \"doc_010\", \"doc_003\"],\n  \"selected_doc_ids\": [\"doc_006\", \"doc_007\", \"doc_008\"],\n  \"actions\": [\n    {\"action\": \"trace_source\", \"target\": \"doc_007\", \"rationale\": \"doc_007 cites doc_006; verify whether it is independent corroboration or merely a repost of the same upstream record.\"},\n    {\"action\": \"compare_versions\", \"target\": \"doc_008\", \"rationale\": \"The pending claim is dated 2024-11-03, predating the 2024-12-12 completion date in doc_006; confirm staleness against the audit record.\"}\n  ],\n  \"evidence_environment_assessment\": \"The environment contains one primary audit record (doc_006) and a regulator filing (doc_007) that cites it, providing partial corroboration but possible single-source dependence. Three documents (doc_008, doc_010, doc_003) claim the audit is pending, but doc_008 is dated before the stated completion date and the other two cite doc_008, forming pseudo-consensus rather than independent evidence. Remaining reference notes are orientation-only and do not settle the claim. Net: primary record outweighs stale, derivative contradictions.\",\n  \"answer\": \"Yes. The signed audit record (doc_006, 2025-01-15) states the Q4 supplier audit was completed on 2024-12-12 and cleared for renewal, corroborated by a regulator filing (doc_007). The contradicting 'pending' claims (doc_008, doc_010, doc_003) are stale (dated November 2024, before the completion date) and derive from a single upstream summary, constituting weak pseudo-consensus. Reference notes do not bear on the claim. The audit was completed before the 2025 renewal meeting.\"\n}",
+      "usage": {
+        "completion_tokens": 647,
+        "prompt_tokens": 2365,
+        "total_tokens": 3012,
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": null,
+          "audio_tokens": 0,
+          "reasoning_tokens": 0,
+          "rejected_prediction_tokens": null,
+          "text_tokens": 0,
+          "image_tokens": 0
+        },
+        "prompt_tokens_details": {
+          "audio_tokens": 0,
+          "cached_tokens": 0,
+          "text_tokens": 0,
+          "image_tokens": 0
+        },
+        "usage_semantic": "openai",
+        "usage_source": "anthropic",
+        "input_tokens": 2365,
+        "output_tokens": 0,
+        "input_tokens_details": null,
+        "claude_cache_creation_5_m_tokens": 0,
+        "claude_cache_creation_1_h_tokens": 0
+      },
+      "response_format_used": "json_schema",
+      "parse_success": true,
+      "parse_error": "",
+      "empty_output": false,
+      "schema_missing": false,
+      "json_extractor_used": "first_json_object",
+      "elapsed_s": 8.625,
+      "cost_usd": 0.00188525
+    }
+  ],
+  "final_attempt": {
+    "attempt": 1,
+    "model": "claude-opus-4-7",
+    "provider": "Anthropic",
+    "budget_setting": "operational",
+    "task_id": "ert_002",
+    "prompt_condition": "epistemic_hygiene_instruction",
+    "content": "{\n  \"claim_verdict\": \"supported\",\n  \"confidence\": 0.78,\n  \"supporting_evidence\": [\"doc_006\", \"doc_007\"],\n  \"rejected_evidence\": [\"doc_008\", \"doc_010\", \"doc_003\"],\n  \"selected_doc_ids\": [\"doc_006\", \"doc_007\", \"doc_008\"],\n  \"actions\": [\n    {\"action\": \"trace_source\", \"target\": \"doc_007\", \"rationale\": \"doc_007 cites doc_006; verify whether it is independent corroboration or merely a repost of the same upstream record.\"},\n    {\"action\": \"compare_versions\", \"target\": \"doc_008\", \"rationale\": \"The pending claim is dated 2024-11-03, predating the 2024-12-12 completion date in doc_006; confirm staleness against the audit record.\"}\n  ],\n  \"evidence_environment_assessment\": \"The environment contains one primary audit record (doc_006) and a regulator filing (doc_007) that cites it, providing partial corroboration but possible single-source dependence. Three documents (doc_008, doc_010, doc_003) claim the audit is pending, but doc_008 is dated before the stated completion date and the other two cite doc_008, forming pseudo-consensus rather than independent evidence. Remaining reference notes are orientation-only and do not settle the claim. Net: primary record outweighs stale, derivative contradictions.\",\n  \"answer\": \"Yes. The signed audit record (doc_006, 2025-01-15) states the Q4 supplier audit was completed on 2024-12-12 and cleared for renewal, corroborated by a regulator filing (doc_007). The contradicting 'pending' claims (doc_008, doc_010, doc_003) are stale (dated November 2024, before the completion date) and derive from a single upstream summary, constituting weak pseudo-consensus. Reference notes do not bear on the claim. The audit was completed before the 2025 renewal meeting.\"\n}",
+    "usage": {
+      "completion_tokens": 647,
+      "prompt_tokens": 2365,
+      "total_tokens": 3012,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": null,
+        "audio_tokens": 0,
+        "reasoning_tokens": 0,
+        "rejected_prediction_tokens": null,
+        "text_tokens": 0,
+        "image_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cached_tokens": 0,
+        "text_tokens": 0,
+        "image_tokens": 0
+      },
+      "usage_semantic": "openai",
+      "usage_source": "anthropic",
+      "input_tokens": 2365,
+      "output_tokens": 0,
+      "input_tokens_details": null,
+      "claude_cache_creation_5_m_tokens": 0,
+      "claude_cache_creation_1_h_tokens": 0
+    },
+    "response_format_used": "json_schema",
+    "parse_success": true,
+    "parse_error": "",
+    "empty_output": false,
+    "schema_missing": false,
+    "json_extractor_used": "first_json_object",
+    "elapsed_s": 8.625,
+    "cost_usd": 0.00188525
+  }
+}

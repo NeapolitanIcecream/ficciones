@@ -1,0 +1,86 @@
+{
+  "attempts": [
+    {
+      "attempt": 1,
+      "model": "gemini-3.1-pro-preview",
+      "provider": "Google",
+      "budget_setting": "operational",
+      "task_id": "ert_008",
+      "prompt_condition": "epistemic_hygiene_instruction",
+      "content": "{\n  \"claim_verdict\": \"refuted\",\n  \"confidence\": 0.95,\n  \"supporting_evidence\": [\n    \"doc_001\",\n    \"doc_008\"\n  ],\n  \"rejected_evidence\": [\n    \"doc_004\",\n    \"doc_006\",\n    \"doc_007\"\n  ],\n  \"selected_doc_ids\": [\n    \"doc_001\",\n    \"doc_008\",\n    \"doc_004\"\n  ],\n  \"actions\": [\n    {\n      \"action\": \"search_primary\",\n      \"target\": \"EU safety certification regulatory database\",\n      \"rationale\": \"Querying the official EU regulatory database for Novalis Robotics will definitively confirm the expiration date and current renewal status directly from the source.\"\n    },\n    {\n      \"action\": \"compare_versions\",\n      \"target\": \"doc_001\",\n      \"rationale\": \"Checking the version history and sign-off logs of the January 2025 certification record ensures the lapse finding is authentic, finalized, and unmodified.\"\n    }\n  ],\n  \"evidence_environment_assessment\": \"The evidence environment contains conflicting claims. One side is a pseudo-consensus of older, secondary summaries from November 2024 (doc_004, doc_006, doc_007) asserting validity through 2025 without citing raw evidence. The other side features a robust primary certification record (doc_001) and version history corroboration (doc_008) from early 2025, which conclusively prove the certificate lapsed at the end of 2024. The primary records are authoritative and override the stale secondary network.\",\n  \"answer\": \"No, Novalis Robotics' EU safety certification was not valid in January 2025. Primary certification records from January 2025 confirm that the certificate officially lapsed on December 31, 2024, with its renewal unresolved. While several secondary summaries from November 2024 suggested the certification would remain valid through 2025, they represent a stale pseudo-consensus lacking raw evidentiary backing. The primary, dated operating records explicitly refute the claim.\"\n}",
+      "usage": {
+        "completion_tokens": 1575,
+        "prompt_tokens": 1733,
+        "total_tokens": 3308,
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": null,
+          "audio_tokens": 0,
+          "reasoning_tokens": 1068,
+          "rejected_prediction_tokens": null,
+          "text_tokens": 507,
+          "image_tokens": 0
+        },
+        "prompt_tokens_details": {
+          "audio_tokens": 0,
+          "cached_tokens": 0,
+          "text_tokens": 1733,
+          "image_tokens": 0
+        },
+        "input_tokens": 0,
+        "output_tokens": 0,
+        "input_tokens_details": null,
+        "claude_cache_creation_5_m_tokens": 0,
+        "claude_cache_creation_1_h_tokens": 0
+      },
+      "response_format_used": "json_schema",
+      "parse_success": true,
+      "parse_error": "",
+      "empty_output": false,
+      "schema_missing": false,
+      "json_extractor_used": "first_json_object",
+      "elapsed_s": 13.513,
+      "cost_usd": 0.00358325
+    }
+  ],
+  "final_attempt": {
+    "attempt": 1,
+    "model": "gemini-3.1-pro-preview",
+    "provider": "Google",
+    "budget_setting": "operational",
+    "task_id": "ert_008",
+    "prompt_condition": "epistemic_hygiene_instruction",
+    "content": "{\n  \"claim_verdict\": \"refuted\",\n  \"confidence\": 0.95,\n  \"supporting_evidence\": [\n    \"doc_001\",\n    \"doc_008\"\n  ],\n  \"rejected_evidence\": [\n    \"doc_004\",\n    \"doc_006\",\n    \"doc_007\"\n  ],\n  \"selected_doc_ids\": [\n    \"doc_001\",\n    \"doc_008\",\n    \"doc_004\"\n  ],\n  \"actions\": [\n    {\n      \"action\": \"search_primary\",\n      \"target\": \"EU safety certification regulatory database\",\n      \"rationale\": \"Querying the official EU regulatory database for Novalis Robotics will definitively confirm the expiration date and current renewal status directly from the source.\"\n    },\n    {\n      \"action\": \"compare_versions\",\n      \"target\": \"doc_001\",\n      \"rationale\": \"Checking the version history and sign-off logs of the January 2025 certification record ensures the lapse finding is authentic, finalized, and unmodified.\"\n    }\n  ],\n  \"evidence_environment_assessment\": \"The evidence environment contains conflicting claims. One side is a pseudo-consensus of older, secondary summaries from November 2024 (doc_004, doc_006, doc_007) asserting validity through 2025 without citing raw evidence. The other side features a robust primary certification record (doc_001) and version history corroboration (doc_008) from early 2025, which conclusively prove the certificate lapsed at the end of 2024. The primary records are authoritative and override the stale secondary network.\",\n  \"answer\": \"No, Novalis Robotics' EU safety certification was not valid in January 2025. Primary certification records from January 2025 confirm that the certificate officially lapsed on December 31, 2024, with its renewal unresolved. While several secondary summaries from November 2024 suggested the certification would remain valid through 2025, they represent a stale pseudo-consensus lacking raw evidentiary backing. The primary, dated operating records explicitly refute the claim.\"\n}",
+    "usage": {
+      "completion_tokens": 1575,
+      "prompt_tokens": 1733,
+      "total_tokens": 3308,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": null,
+        "audio_tokens": 0,
+        "reasoning_tokens": 1068,
+        "rejected_prediction_tokens": null,
+        "text_tokens": 507,
+        "image_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cached_tokens": 0,
+        "text_tokens": 1733,
+        "image_tokens": 0
+      },
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "input_tokens_details": null,
+      "claude_cache_creation_5_m_tokens": 0,
+      "claude_cache_creation_1_h_tokens": 0
+    },
+    "response_format_used": "json_schema",
+    "parse_success": true,
+    "parse_error": "",
+    "empty_output": false,
+    "schema_missing": false,
+    "json_extractor_used": "first_json_object",
+    "elapsed_s": 13.513,
+    "cost_usd": 0.00358325
+  }
+}

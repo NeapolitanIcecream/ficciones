@@ -1,0 +1,90 @@
+{
+  "attempts": [
+    {
+      "attempt": 1,
+      "model": "claude-opus-4-7",
+      "provider": "Anthropic",
+      "budget_setting": "operational",
+      "task_id": "ert_024",
+      "prompt_condition": "standard_answer",
+      "content": "{\n  \"claim_verdict\": \"refuted\",\n  \"confidence\": 0.85,\n  \"supporting_evidence\": [\"doc_001\", \"doc_002\"],\n  \"rejected_evidence\": [\"doc_005\", \"doc_006\", \"doc_004\", \"doc_010\", \"doc_007\"],\n  \"selected_doc_ids\": [\"doc_001\", \"doc_002\", \"doc_005\"],\n  \"actions\": [\n    {\"action\": \"trace_source\", \"target\": \"doc_005\", \"rationale\": \"All 1.7% claims trace back to doc_005, which cites only secondary summaries, not raw records.\"},\n    {\"action\": \"compare_versions\", \"target\": \"doc_001\", \"rationale\": \"Audit report and regulator filing both report 3.8%, contradicting the executive memo chain.\"}\n  ],\n  \"evidence_environment_assessment\": \"The environment is dominated by eight repetitive secondary items (doc_003–doc_010) all echoing a 1.7% figure sourced to doc_005, an executive memo with no primary citations. This creates an illusion of consensus through repetition. Buried beneath are doc_001 (audit report) and doc_002 (regulator filing), both dated later and grounded in raw operating records and reviewer sign-off, reporting 3.8%. Source quality, not volume, favors the audit/regulator pair. doc_011 is orientation only.\",\n  \"answer\": \"No. The audited exception rate for 2024 is 3.8% per the signed audit report (doc_001) and corroborating regulator filing (doc_002), both based on raw records. The 1.7% figure appears only in an executive memo (doc_005) and seven downstream items that copy its wording without independent sourcing. Primary, dated evidence refutes the claim.\"\n}",
+      "usage": {
+        "completion_tokens": 577,
+        "prompt_tokens": 2559,
+        "total_tokens": 3136,
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": null,
+          "audio_tokens": 0,
+          "reasoning_tokens": 0,
+          "rejected_prediction_tokens": null,
+          "text_tokens": 0,
+          "image_tokens": 0
+        },
+        "prompt_tokens_details": {
+          "audio_tokens": 0,
+          "cached_tokens": 0,
+          "text_tokens": 0,
+          "image_tokens": 0
+        },
+        "usage_semantic": "openai",
+        "usage_source": "anthropic",
+        "input_tokens": 2559,
+        "output_tokens": 0,
+        "input_tokens_details": null,
+        "claude_cache_creation_5_m_tokens": 0,
+        "claude_cache_creation_1_h_tokens": 0
+      },
+      "response_format_used": "json_schema",
+      "parse_success": true,
+      "parse_error": "",
+      "empty_output": false,
+      "schema_missing": false,
+      "json_extractor_used": "first_json_object",
+      "elapsed_s": 7.897,
+      "cost_usd": 0.0017937500000000002
+    }
+  ],
+  "final_attempt": {
+    "attempt": 1,
+    "model": "claude-opus-4-7",
+    "provider": "Anthropic",
+    "budget_setting": "operational",
+    "task_id": "ert_024",
+    "prompt_condition": "standard_answer",
+    "content": "{\n  \"claim_verdict\": \"refuted\",\n  \"confidence\": 0.85,\n  \"supporting_evidence\": [\"doc_001\", \"doc_002\"],\n  \"rejected_evidence\": [\"doc_005\", \"doc_006\", \"doc_004\", \"doc_010\", \"doc_007\"],\n  \"selected_doc_ids\": [\"doc_001\", \"doc_002\", \"doc_005\"],\n  \"actions\": [\n    {\"action\": \"trace_source\", \"target\": \"doc_005\", \"rationale\": \"All 1.7% claims trace back to doc_005, which cites only secondary summaries, not raw records.\"},\n    {\"action\": \"compare_versions\", \"target\": \"doc_001\", \"rationale\": \"Audit report and regulator filing both report 3.8%, contradicting the executive memo chain.\"}\n  ],\n  \"evidence_environment_assessment\": \"The environment is dominated by eight repetitive secondary items (doc_003–doc_010) all echoing a 1.7% figure sourced to doc_005, an executive memo with no primary citations. This creates an illusion of consensus through repetition. Buried beneath are doc_001 (audit report) and doc_002 (regulator filing), both dated later and grounded in raw operating records and reviewer sign-off, reporting 3.8%. Source quality, not volume, favors the audit/regulator pair. doc_011 is orientation only.\",\n  \"answer\": \"No. The audited exception rate for 2024 is 3.8% per the signed audit report (doc_001) and corroborating regulator filing (doc_002), both based on raw records. The 1.7% figure appears only in an executive memo (doc_005) and seven downstream items that copy its wording without independent sourcing. Primary, dated evidence refutes the claim.\"\n}",
+    "usage": {
+      "completion_tokens": 577,
+      "prompt_tokens": 2559,
+      "total_tokens": 3136,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": null,
+        "audio_tokens": 0,
+        "reasoning_tokens": 0,
+        "rejected_prediction_tokens": null,
+        "text_tokens": 0,
+        "image_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cached_tokens": 0,
+        "text_tokens": 0,
+        "image_tokens": 0
+      },
+      "usage_semantic": "openai",
+      "usage_source": "anthropic",
+      "input_tokens": 2559,
+      "output_tokens": 0,
+      "input_tokens_details": null,
+      "claude_cache_creation_5_m_tokens": 0,
+      "claude_cache_creation_1_h_tokens": 0
+    },
+    "response_format_used": "json_schema",
+    "parse_success": true,
+    "parse_error": "",
+    "empty_output": false,
+    "schema_missing": false,
+    "json_extractor_used": "first_json_object",
+    "elapsed_s": 7.897,
+    "cost_usd": 0.0017937500000000002
+  }
+}

@@ -1,0 +1,60 @@
+{
+  "attempts": [
+    {
+      "attempt": 1,
+      "model": "kimi-k2.6",
+      "provider": "Kimi",
+      "budget_setting": "operational",
+      "task_id": "ert_094",
+      "prompt_condition": "epistemic_hygiene_instruction",
+      "content": "{\n  \"claim_verdict\": \"insufficient\",\n  \"confidence\": 0.2,\n  \"supporting_evidence\": [],\n  \"rejected_evidence\": [\n    \"doc_007\",\n    \"doc_006\",\n    \"doc_008\",\n    \"doc_004\",\n    \"doc_001\"\n  ],\n  \"selected_doc_ids\": [\n    \"doc_007\"\n  ],\n  \"actions\": [\n    {\n      \"action\": \"search_primary\",\n      \"target\": \"Novalis Robotics 2024 recall rate regulatory filing or audit\",\n      \"rationale\": \"All provided documents are secondary summaries lacking raw data, regulator filings, or audited results. A primary record is needed to verify the 1.7% figure.\"\n    },\n    {\n      \"action\": \"trace_source\",\n      \"target\": \"doc_007\",\n      \"rationale\": \"Doc_007 is the upstream source for all repeated claims but cites no primary records. Tracing it may uncover whether any primary basis exists.\"\n    }\n  ],\n  \"evidence_environment_assessment\": \"The environment exhibits pseudo-consensus: seven secondary documents repeat a 1.7% recall rate copied from a single upstream supplier whitepaper (doc_007). That whitepaper cites no primary records, audits, or regulator filings. No contradiction or version history is present. The repeated claim therefore lacks independent confirmation and should be treated as unsupported lore.\",\n  \"answer\": \"The provided evidence is insufficient to confirm whether Novalis Robotics reduced its 2024 recall rate below two percent. All available documents are secondary repetitions tracing to a single authority-like summary (doc_007) that cites no primary records, audits, or regulator filings. This creates weak pseudo-consensus rather than independent verification. Without clean primary or contradictory evidence, no confident verdict is possible.\"\n}",
+      "usage": {
+        "completion_tokens": 3568,
+        "prompt_tokens": 1526,
+        "total_tokens": 5094,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": {
+          "audio_tokens": null,
+          "cached_tokens": 256
+        },
+        "cached_tokens": 256
+      },
+      "response_format_used": "json_schema",
+      "parse_success": true,
+      "parse_error": "",
+      "empty_output": false,
+      "schema_missing": false,
+      "json_extractor_used": "first_json_object",
+      "elapsed_s": 136.622,
+      "cost_usd": 0.0075175
+    }
+  ],
+  "final_attempt": {
+    "attempt": 1,
+    "model": "kimi-k2.6",
+    "provider": "Kimi",
+    "budget_setting": "operational",
+    "task_id": "ert_094",
+    "prompt_condition": "epistemic_hygiene_instruction",
+    "content": "{\n  \"claim_verdict\": \"insufficient\",\n  \"confidence\": 0.2,\n  \"supporting_evidence\": [],\n  \"rejected_evidence\": [\n    \"doc_007\",\n    \"doc_006\",\n    \"doc_008\",\n    \"doc_004\",\n    \"doc_001\"\n  ],\n  \"selected_doc_ids\": [\n    \"doc_007\"\n  ],\n  \"actions\": [\n    {\n      \"action\": \"search_primary\",\n      \"target\": \"Novalis Robotics 2024 recall rate regulatory filing or audit\",\n      \"rationale\": \"All provided documents are secondary summaries lacking raw data, regulator filings, or audited results. A primary record is needed to verify the 1.7% figure.\"\n    },\n    {\n      \"action\": \"trace_source\",\n      \"target\": \"doc_007\",\n      \"rationale\": \"Doc_007 is the upstream source for all repeated claims but cites no primary records. Tracing it may uncover whether any primary basis exists.\"\n    }\n  ],\n  \"evidence_environment_assessment\": \"The environment exhibits pseudo-consensus: seven secondary documents repeat a 1.7% recall rate copied from a single upstream supplier whitepaper (doc_007). That whitepaper cites no primary records, audits, or regulator filings. No contradiction or version history is present. The repeated claim therefore lacks independent confirmation and should be treated as unsupported lore.\",\n  \"answer\": \"The provided evidence is insufficient to confirm whether Novalis Robotics reduced its 2024 recall rate below two percent. All available documents are secondary repetitions tracing to a single authority-like summary (doc_007) that cites no primary records, audits, or regulator filings. This creates weak pseudo-consensus rather than independent verification. Without clean primary or contradictory evidence, no confident verdict is possible.\"\n}",
+    "usage": {
+      "completion_tokens": 3568,
+      "prompt_tokens": 1526,
+      "total_tokens": 5094,
+      "completion_tokens_details": null,
+      "prompt_tokens_details": {
+        "audio_tokens": null,
+        "cached_tokens": 256
+      },
+      "cached_tokens": 256
+    },
+    "response_format_used": "json_schema",
+    "parse_success": true,
+    "parse_error": "",
+    "empty_output": false,
+    "schema_missing": false,
+    "json_extractor_used": "first_json_object",
+    "elapsed_s": 136.622,
+    "cost_usd": 0.0075175
+  }
+}

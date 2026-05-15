@@ -1,0 +1,40 @@
+{
+  "model": "claude-opus-4-7",
+  "provider": "Anthropic",
+  "task_id": "ert_075",
+  "prompt_condition": "standard_answer",
+  "content": "{\n  \"claim_verdict\": \"insufficient\",\n  \"confidence\": 0.2,\n  \"clean_supporting_evidence\": [],\n  \"refuting_evidence\": [],\n  \"rejected_or_contaminated_evidence\": [\"doc_020\", \"doc_015\", \"doc_006\", \"doc_016\", \"doc_003\"],\n  \"diagnostic_evidence\": [\"doc_020\", \"doc_013\"],\n  \"selected_doc_ids\": [\"doc_020\", \"doc_015\", \"doc_006\"],\n  \"actions\": [\n    {\"action\": \"trace_source\", \"target\": \"doc_020\", \"rationale\": \"doc_020 is the upstream wiki-style summary that all secondary coverage cites; tracing it would reveal whether any primary record (MiraCert registry, Novalis filing) actually exists.\"},\n    {\"action\": \"search_primary\", \"target\": \"MiraCert certification registry / Novalis Robotics 2024 filings\", \"rationale\": \"No primary documentation (registry entry, signed agreement, official press release with verifiable details) is present; a primary search is needed to confirm or refute.\"}\n  ],\n  \"evidence_notes\": \"The environment shows a single authoritative-looking summary (doc_020) with no citations, echoed verbatim by five secondary items (doc_015, doc_006, doc_016, doc_003, doc_013) that all cite back to doc_020. This is a classic pseudo-consensus / generated-lore pattern. The remaining documents are generic reference notes that do not address the claim. No primary source (MiraCert registry, signed agreement, Novalis official release) is provided.\",\n  \"answer\": \"Evidence is insufficient to confirm that Novalis Robotics signed a 2024 MiraCert quantum battery certification deal. The only assertive source is an uncited wiki-style summary (doc_020), and all other affirmative items merely repeat its wording while citing it, forming a pseudo-consensus rather than independent corroboration. No primary record is available. Tracing doc_020 and searching primary MiraCert/Novalis sources are required before the claim can be accepted.\"\n}",
+  "usage": {
+    "completion_tokens": 694,
+    "prompt_tokens": 4040,
+    "total_tokens": 4734,
+    "completion_tokens_details": {
+      "accepted_prediction_tokens": null,
+      "audio_tokens": 0,
+      "reasoning_tokens": 0,
+      "rejected_prediction_tokens": null,
+      "text_tokens": 0,
+      "image_tokens": 0
+    },
+    "prompt_tokens_details": {
+      "audio_tokens": 0,
+      "cached_tokens": 0,
+      "text_tokens": 0,
+      "image_tokens": 0
+    },
+    "usage_semantic": "openai",
+    "usage_source": "anthropic",
+    "input_tokens": 4040,
+    "output_tokens": 0,
+    "input_tokens_details": null,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+  },
+  "response_format_used": "json_schema",
+  "parse_success": true,
+  "parse_error": "",
+  "empty_output": false,
+  "schema_missing": false,
+  "elapsed_s": 9.672,
+  "cost_usd": 0.002398
+}

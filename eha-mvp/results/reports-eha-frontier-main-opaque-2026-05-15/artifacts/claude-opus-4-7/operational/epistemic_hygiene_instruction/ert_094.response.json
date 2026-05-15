@@ -1,0 +1,90 @@
+{
+  "attempts": [
+    {
+      "attempt": 1,
+      "model": "claude-opus-4-7",
+      "provider": "Anthropic",
+      "budget_setting": "operational",
+      "task_id": "ert_094",
+      "prompt_condition": "epistemic_hygiene_instruction",
+      "content": "{\n  \"claim_verdict\": \"insufficient\",\n  \"confidence\": 0.2,\n  \"supporting_evidence\": [],\n  \"rejected_evidence\": [\"doc_007\", \"doc_006\", \"doc_008\", \"doc_004\", \"doc_001\"],\n  \"selected_doc_ids\": [\"doc_007\"],\n  \"actions\": [\n    {\n      \"action\": \"search_primary\",\n      \"target\": \"Novalis Robotics 2024 recall rate regulatory filing or audited annual report\",\n      \"rationale\": \"No primary record (regulator filing, audit, or company financial disclosure) is present. A primary source is required to confirm the sub-2% recall claim.\"\n    },\n    {\n      \"action\": \"trace_source\",\n      \"target\": \"doc_007\",\n      \"rationale\": \"doc_007 is the upstream of all other items but cites only secondary summaries. Tracing its origin would reveal whether any primary record underlies the 1.7% figure.\"\n    }\n  ],\n  \"evidence_environment_assessment\": \"The environment shows pseudo-consensus: one authoritative-looking whitepaper (doc_007) asserts 1.7% without primary citations, and seven later items (doc_001–006, doc_008) repeat the same wording while citing doc_007. Despite varied source_types (press release, executive memo, wiki, digest), they form a single citation chain, not independent confirmation. No regulator filing, audit, recall registry, or contradiction source appears. Stale or laundered authority signals dominate.\",\n  \"answer\": \"Available evidence is insufficient to confirm whether Novalis Robotics reduced its 2024 recall rate below two percent. All eight documents trace back to a single unsourced whitepaper (doc_007); the remaining items merely repeat its wording. No primary record—regulator filing, audit, or recall registry—supports the 1.7% figure, and no contradicting source is provided. Under the policy preferring insufficient over confident answers absent clean primary or contradiction evidence, the claim cannot be verified. Recommended next steps: retrieve a primary regulatory or audited disclosure and trace doc_007's origin.\"\n}",
+      "usage": {
+        "completion_tokens": 704,
+        "prompt_tokens": 2306,
+        "total_tokens": 3010,
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": null,
+          "audio_tokens": 0,
+          "reasoning_tokens": 0,
+          "rejected_prediction_tokens": null,
+          "text_tokens": 0,
+          "image_tokens": 0
+        },
+        "prompt_tokens_details": {
+          "audio_tokens": 0,
+          "cached_tokens": 0,
+          "text_tokens": 0,
+          "image_tokens": 0
+        },
+        "usage_semantic": "openai",
+        "usage_source": "anthropic",
+        "input_tokens": 2306,
+        "output_tokens": 0,
+        "input_tokens_details": null,
+        "claude_cache_creation_5_m_tokens": 0,
+        "claude_cache_creation_1_h_tokens": 0
+      },
+      "response_format_used": "json_schema",
+      "parse_success": true,
+      "parse_error": "",
+      "empty_output": false,
+      "schema_missing": false,
+      "json_extractor_used": "first_json_object",
+      "elapsed_s": 9.397,
+      "cost_usd": 0.0019845
+    }
+  ],
+  "final_attempt": {
+    "attempt": 1,
+    "model": "claude-opus-4-7",
+    "provider": "Anthropic",
+    "budget_setting": "operational",
+    "task_id": "ert_094",
+    "prompt_condition": "epistemic_hygiene_instruction",
+    "content": "{\n  \"claim_verdict\": \"insufficient\",\n  \"confidence\": 0.2,\n  \"supporting_evidence\": [],\n  \"rejected_evidence\": [\"doc_007\", \"doc_006\", \"doc_008\", \"doc_004\", \"doc_001\"],\n  \"selected_doc_ids\": [\"doc_007\"],\n  \"actions\": [\n    {\n      \"action\": \"search_primary\",\n      \"target\": \"Novalis Robotics 2024 recall rate regulatory filing or audited annual report\",\n      \"rationale\": \"No primary record (regulator filing, audit, or company financial disclosure) is present. A primary source is required to confirm the sub-2% recall claim.\"\n    },\n    {\n      \"action\": \"trace_source\",\n      \"target\": \"doc_007\",\n      \"rationale\": \"doc_007 is the upstream of all other items but cites only secondary summaries. Tracing its origin would reveal whether any primary record underlies the 1.7% figure.\"\n    }\n  ],\n  \"evidence_environment_assessment\": \"The environment shows pseudo-consensus: one authoritative-looking whitepaper (doc_007) asserts 1.7% without primary citations, and seven later items (doc_001–006, doc_008) repeat the same wording while citing doc_007. Despite varied source_types (press release, executive memo, wiki, digest), they form a single citation chain, not independent confirmation. No regulator filing, audit, recall registry, or contradiction source appears. Stale or laundered authority signals dominate.\",\n  \"answer\": \"Available evidence is insufficient to confirm whether Novalis Robotics reduced its 2024 recall rate below two percent. All eight documents trace back to a single unsourced whitepaper (doc_007); the remaining items merely repeat its wording. No primary record—regulator filing, audit, or recall registry—supports the 1.7% figure, and no contradicting source is provided. Under the policy preferring insufficient over confident answers absent clean primary or contradiction evidence, the claim cannot be verified. Recommended next steps: retrieve a primary regulatory or audited disclosure and trace doc_007's origin.\"\n}",
+    "usage": {
+      "completion_tokens": 704,
+      "prompt_tokens": 2306,
+      "total_tokens": 3010,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": null,
+        "audio_tokens": 0,
+        "reasoning_tokens": 0,
+        "rejected_prediction_tokens": null,
+        "text_tokens": 0,
+        "image_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cached_tokens": 0,
+        "text_tokens": 0,
+        "image_tokens": 0
+      },
+      "usage_semantic": "openai",
+      "usage_source": "anthropic",
+      "input_tokens": 2306,
+      "output_tokens": 0,
+      "input_tokens_details": null,
+      "claude_cache_creation_5_m_tokens": 0,
+      "claude_cache_creation_1_h_tokens": 0
+    },
+    "response_format_used": "json_schema",
+    "parse_success": true,
+    "parse_error": "",
+    "empty_output": false,
+    "schema_missing": false,
+    "json_extractor_used": "first_json_object",
+    "elapsed_s": 9.397,
+    "cost_usd": 0.0019845
+  }
+}

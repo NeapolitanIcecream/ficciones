@@ -1,0 +1,70 @@
+{
+  "attempts": [
+    {
+      "attempt": 1,
+      "model": "kimi-k2.6",
+      "provider": "Kimi",
+      "budget_setting": "operational",
+      "task_id": "ert_001",
+      "prompt_condition": "standard_answer",
+      "content": "",
+      "usage": {},
+      "response_format_used": "json_schema",
+      "parse_success": false,
+      "parse_error": "API call exceeded 300.0s process timeout",
+      "empty_output": false,
+      "schema_missing": false,
+      "json_extractor_used": "not_attempted",
+      "elapsed_s": 300.009,
+      "cost_usd": 0.0
+    },
+    {
+      "attempt": 2,
+      "model": "kimi-k2.6",
+      "provider": "Kimi",
+      "budget_setting": "operational",
+      "task_id": "ert_001",
+      "prompt_condition": "standard_answer",
+      "content": "{\"claim_verdict\":\"supported\",\"confidence\":0.95,\"supporting_evidence\":[\"doc_009\",\"doc_010\"],\"rejected_evidence\":[\"doc_006\",\"doc_007\",\"doc_005\"],\"selected_doc_ids\":[\"doc_009\",\"doc_010\"],\"actions\":[{\"action\":\"trace_source\",\"target\":\"doc_010\",\"rationale\":\"Confirm the regulator filing's citation to the audit report underpins the shared completion date with valid documentary backing.\"},{\"action\":\"search_contradiction\",\"target\":\"doc_006\",\"rationale\":\"Determine whether the outdated planning note's pending claim was explicitly superseded by the December 2024 audit record.\"}],\"evidence_environment_assessment\":\"The provided environment includes two aligned primary-source documents dated January 2025 confirming the supplier audit was completed on 2024-12-12. Contrary claims originate from outdated November 2024 planning notes and derivative secondary coverage that lack raw record support and merely circularly cite one another.\",\"answer\":\"Yes. The audit report (doc_009) and corroborating regulator filing (doc_010) both state the Q4 supplier audit was completed on 2024-12-12 and cleared for renewal review, which predates the 2025 renewal meeting. The contrary sources are outdated planning notes from November 2024 and derivative secondary coverage that lack raw record backing.\"}",
+      "usage": {
+        "completion_tokens": 4067,
+        "prompt_tokens": 1514,
+        "total_tokens": 5581,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      },
+      "response_format_used": "json_schema",
+      "parse_success": true,
+      "parse_error": "",
+      "empty_output": false,
+      "schema_missing": false,
+      "json_extractor_used": "first_json_object",
+      "elapsed_s": 113.468,
+      "cost_usd": 0.008512500000000001
+    }
+  ],
+  "final_attempt": {
+    "attempt": 2,
+    "model": "kimi-k2.6",
+    "provider": "Kimi",
+    "budget_setting": "operational",
+    "task_id": "ert_001",
+    "prompt_condition": "standard_answer",
+    "content": "{\"claim_verdict\":\"supported\",\"confidence\":0.95,\"supporting_evidence\":[\"doc_009\",\"doc_010\"],\"rejected_evidence\":[\"doc_006\",\"doc_007\",\"doc_005\"],\"selected_doc_ids\":[\"doc_009\",\"doc_010\"],\"actions\":[{\"action\":\"trace_source\",\"target\":\"doc_010\",\"rationale\":\"Confirm the regulator filing's citation to the audit report underpins the shared completion date with valid documentary backing.\"},{\"action\":\"search_contradiction\",\"target\":\"doc_006\",\"rationale\":\"Determine whether the outdated planning note's pending claim was explicitly superseded by the December 2024 audit record.\"}],\"evidence_environment_assessment\":\"The provided environment includes two aligned primary-source documents dated January 2025 confirming the supplier audit was completed on 2024-12-12. Contrary claims originate from outdated November 2024 planning notes and derivative secondary coverage that lack raw record support and merely circularly cite one another.\",\"answer\":\"Yes. The audit report (doc_009) and corroborating regulator filing (doc_010) both state the Q4 supplier audit was completed on 2024-12-12 and cleared for renewal review, which predates the 2025 renewal meeting. The contrary sources are outdated planning notes from November 2024 and derivative secondary coverage that lack raw record backing.\"}",
+    "usage": {
+      "completion_tokens": 4067,
+      "prompt_tokens": 1514,
+      "total_tokens": 5581,
+      "completion_tokens_details": null,
+      "prompt_tokens_details": null
+    },
+    "response_format_used": "json_schema",
+    "parse_success": true,
+    "parse_error": "",
+    "empty_output": false,
+    "schema_missing": false,
+    "json_extractor_used": "first_json_object",
+    "elapsed_s": 113.468,
+    "cost_usd": 0.008512500000000001
+  }
+}

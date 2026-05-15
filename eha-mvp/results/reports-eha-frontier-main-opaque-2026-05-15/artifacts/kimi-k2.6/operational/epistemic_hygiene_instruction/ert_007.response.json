@@ -1,0 +1,60 @@
+{
+  "attempts": [
+    {
+      "attempt": 1,
+      "model": "kimi-k2.6",
+      "provider": "Kimi",
+      "budget_setting": "operational",
+      "task_id": "ert_007",
+      "prompt_condition": "epistemic_hygiene_instruction",
+      "content": "{\"claim_verdict\": \"supported\", \"confidence\": 0.9, \"supporting_evidence\": [\"doc_005\"], \"rejected_evidence\": [\"doc_010\", \"doc_006\", \"doc_009\"], \"selected_doc_ids\": [\"doc_005\", \"doc_010\"], \"actions\": [{\"action\": \"trace_source\", \"target\": \"doc_001\", \"rationale\": \"Confirm whether doc_001 offers independent evidence or only repeats doc_005.\"}], \"evidence_environment_assessment\": \"The environment contains one primary audit record (doc_005) stating the Q4 supplier audit was completed on 2024-12-12, backed by raw logs and sign-off. A regulator filing (doc_001) repeats this but cites the audit record directly, offering no independent confirmation. Three documents (doc_010, doc_006, doc_009) claim the audit was still pending, but they are outdated planning notes and secondary coverage from November 2024 that share a single upstream source and lack primary support. Several reference notes are non-substantive. The clean primary evidence supports the claim, while the contradictory cluster constitutes stale pseudo-consensus.\", \"answer\": \"Yes. The primary audit report (doc_005) records that the supplier audit was completed on 2024-12-12, before the 2025 renewal meeting. This is backed by raw operating records, dated logs, and reviewer sign-off. The contradictory claim that the audit was still pending originates from an outdated November 2024 planning note (doc_010) and is repeated by derivative secondary sources lacking independent primary support.\"}",
+      "usage": {
+        "completion_tokens": 4821,
+        "prompt_tokens": 1590,
+        "total_tokens": 6411,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": {
+          "audio_tokens": null,
+          "cached_tokens": 256
+        },
+        "cached_tokens": 256
+      },
+      "response_format_used": "json_schema",
+      "parse_success": true,
+      "parse_error": "",
+      "empty_output": false,
+      "schema_missing": false,
+      "json_extractor_used": "first_json_object",
+      "elapsed_s": 115.728,
+      "cost_usd": 0.0100395
+    }
+  ],
+  "final_attempt": {
+    "attempt": 1,
+    "model": "kimi-k2.6",
+    "provider": "Kimi",
+    "budget_setting": "operational",
+    "task_id": "ert_007",
+    "prompt_condition": "epistemic_hygiene_instruction",
+    "content": "{\"claim_verdict\": \"supported\", \"confidence\": 0.9, \"supporting_evidence\": [\"doc_005\"], \"rejected_evidence\": [\"doc_010\", \"doc_006\", \"doc_009\"], \"selected_doc_ids\": [\"doc_005\", \"doc_010\"], \"actions\": [{\"action\": \"trace_source\", \"target\": \"doc_001\", \"rationale\": \"Confirm whether doc_001 offers independent evidence or only repeats doc_005.\"}], \"evidence_environment_assessment\": \"The environment contains one primary audit record (doc_005) stating the Q4 supplier audit was completed on 2024-12-12, backed by raw logs and sign-off. A regulator filing (doc_001) repeats this but cites the audit record directly, offering no independent confirmation. Three documents (doc_010, doc_006, doc_009) claim the audit was still pending, but they are outdated planning notes and secondary coverage from November 2024 that share a single upstream source and lack primary support. Several reference notes are non-substantive. The clean primary evidence supports the claim, while the contradictory cluster constitutes stale pseudo-consensus.\", \"answer\": \"Yes. The primary audit report (doc_005) records that the supplier audit was completed on 2024-12-12, before the 2025 renewal meeting. This is backed by raw operating records, dated logs, and reviewer sign-off. The contradictory claim that the audit was still pending originates from an outdated November 2024 planning note (doc_010) and is repeated by derivative secondary sources lacking independent primary support.\"}",
+    "usage": {
+      "completion_tokens": 4821,
+      "prompt_tokens": 1590,
+      "total_tokens": 6411,
+      "completion_tokens_details": null,
+      "prompt_tokens_details": {
+        "audio_tokens": null,
+        "cached_tokens": 256
+      },
+      "cached_tokens": 256
+    },
+    "response_format_used": "json_schema",
+    "parse_success": true,
+    "parse_error": "",
+    "empty_output": false,
+    "schema_missing": false,
+    "json_extractor_used": "first_json_object",
+    "elapsed_s": 115.728,
+    "cost_usd": 0.0100395
+  }
+}

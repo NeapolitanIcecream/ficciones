@@ -1,0 +1,90 @@
+{
+  "attempts": [
+    {
+      "attempt": 1,
+      "model": "claude-opus-4-7",
+      "provider": "Anthropic",
+      "budget_setting": "operational",
+      "task_id": "ert_040",
+      "prompt_condition": "epistemic_hygiene_instruction",
+      "content": "{\n  \"claim_verdict\": \"supported\",\n  \"confidence\": 0.78,\n  \"supporting_evidence\": [\"doc_014\", \"doc_012\"],\n  \"rejected_evidence\": [\"doc_006\", \"doc_004\", \"doc_013\", \"doc_019\", \"doc_011\"],\n  \"selected_doc_ids\": [\"doc_014\", \"doc_012\", \"doc_006\"],\n  \"actions\": [\n    {\n      \"action\": \"trace_source\",\n      \"target\": \"doc_012\",\n      \"rationale\": \"doc_012 cites doc_014; verify it is independent corroboration rather than a copy of the same audit record.\"\n    },\n    {\n      \"action\": \"search_contradiction\",\n      \"target\": \"doc_006\",\n      \"rationale\": \"The pending claim originates in a stale Nov 2024 planning note repeated by later reposts; check for any post-Dec 2024 primary contradiction.\"\n    }\n  ],\n  \"evidence_environment_assessment\": \"The environment contains one primary audit record (doc_014) dated 2025-01-15 stating completion on 2024-12-12, plus a regulator filing (doc_012) corroborating it. Opposing the claim is a single stale Nov 2024 planning note (doc_006) echoed by four secondary reposts (doc_004, doc_013, doc_019, doc_011) — pseudo-consensus from one upstream source predating the reported completion date. Many reference notes are orientation-only and non-probative. Primary and regulator sources outweigh stale repeated summaries.\",\n  \"answer\": \"Yes. The signed audit record (doc_014) and a regulator filing (doc_012) state the Q4 supplier audit was completed on 2024-12-12 and cleared for renewal review, before the 2025 renewal meeting. Contrary claims trace to a single outdated November 2024 planning note (doc_006) repeated by secondary coverage, which predates the reported completion and constitutes weak pseudo-consensus rather than independent refutation.\"\n}",
+      "usage": {
+        "completion_tokens": 655,
+        "prompt_tokens": 3631,
+        "total_tokens": 4286,
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": null,
+          "audio_tokens": 0,
+          "reasoning_tokens": 0,
+          "rejected_prediction_tokens": null,
+          "text_tokens": 0,
+          "image_tokens": 0
+        },
+        "prompt_tokens_details": {
+          "audio_tokens": 0,
+          "cached_tokens": 0,
+          "text_tokens": 0,
+          "image_tokens": 0
+        },
+        "usage_semantic": "openai",
+        "usage_source": "anthropic",
+        "input_tokens": 3631,
+        "output_tokens": 0,
+        "input_tokens_details": null,
+        "claude_cache_creation_5_m_tokens": 0,
+        "claude_cache_creation_1_h_tokens": 0
+      },
+      "response_format_used": "json_schema",
+      "parse_success": true,
+      "parse_error": "",
+      "empty_output": false,
+      "schema_missing": false,
+      "json_extractor_used": "first_json_object",
+      "elapsed_s": 10.624,
+      "cost_usd": 0.00221775
+    }
+  ],
+  "final_attempt": {
+    "attempt": 1,
+    "model": "claude-opus-4-7",
+    "provider": "Anthropic",
+    "budget_setting": "operational",
+    "task_id": "ert_040",
+    "prompt_condition": "epistemic_hygiene_instruction",
+    "content": "{\n  \"claim_verdict\": \"supported\",\n  \"confidence\": 0.78,\n  \"supporting_evidence\": [\"doc_014\", \"doc_012\"],\n  \"rejected_evidence\": [\"doc_006\", \"doc_004\", \"doc_013\", \"doc_019\", \"doc_011\"],\n  \"selected_doc_ids\": [\"doc_014\", \"doc_012\", \"doc_006\"],\n  \"actions\": [\n    {\n      \"action\": \"trace_source\",\n      \"target\": \"doc_012\",\n      \"rationale\": \"doc_012 cites doc_014; verify it is independent corroboration rather than a copy of the same audit record.\"\n    },\n    {\n      \"action\": \"search_contradiction\",\n      \"target\": \"doc_006\",\n      \"rationale\": \"The pending claim originates in a stale Nov 2024 planning note repeated by later reposts; check for any post-Dec 2024 primary contradiction.\"\n    }\n  ],\n  \"evidence_environment_assessment\": \"The environment contains one primary audit record (doc_014) dated 2025-01-15 stating completion on 2024-12-12, plus a regulator filing (doc_012) corroborating it. Opposing the claim is a single stale Nov 2024 planning note (doc_006) echoed by four secondary reposts (doc_004, doc_013, doc_019, doc_011) — pseudo-consensus from one upstream source predating the reported completion date. Many reference notes are orientation-only and non-probative. Primary and regulator sources outweigh stale repeated summaries.\",\n  \"answer\": \"Yes. The signed audit record (doc_014) and a regulator filing (doc_012) state the Q4 supplier audit was completed on 2024-12-12 and cleared for renewal review, before the 2025 renewal meeting. Contrary claims trace to a single outdated November 2024 planning note (doc_006) repeated by secondary coverage, which predates the reported completion and constitutes weak pseudo-consensus rather than independent refutation.\"\n}",
+    "usage": {
+      "completion_tokens": 655,
+      "prompt_tokens": 3631,
+      "total_tokens": 4286,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": null,
+        "audio_tokens": 0,
+        "reasoning_tokens": 0,
+        "rejected_prediction_tokens": null,
+        "text_tokens": 0,
+        "image_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cached_tokens": 0,
+        "text_tokens": 0,
+        "image_tokens": 0
+      },
+      "usage_semantic": "openai",
+      "usage_source": "anthropic",
+      "input_tokens": 3631,
+      "output_tokens": 0,
+      "input_tokens_details": null,
+      "claude_cache_creation_5_m_tokens": 0,
+      "claude_cache_creation_1_h_tokens": 0
+    },
+    "response_format_used": "json_schema",
+    "parse_success": true,
+    "parse_error": "",
+    "empty_output": false,
+    "schema_missing": false,
+    "json_extractor_used": "first_json_object",
+    "elapsed_s": 10.624,
+    "cost_usd": 0.00221775
+  }
+}

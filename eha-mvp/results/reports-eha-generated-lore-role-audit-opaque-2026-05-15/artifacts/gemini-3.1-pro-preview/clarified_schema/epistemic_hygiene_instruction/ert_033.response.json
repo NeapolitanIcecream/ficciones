@@ -1,0 +1,38 @@
+{
+  "model": "gemini-3.1-pro-preview",
+  "provider": "Google",
+  "task_id": "ert_033",
+  "prompt_condition": "epistemic_hygiene_instruction",
+  "content": "{\n  \"claim_verdict\": \"insufficient\",\n  \"confidence\": 0.2,\n  \"clean_supporting_evidence\": [],\n  \"refuting_evidence\": [],\n  \"rejected_or_contaminated_evidence\": [\n    \"doc_004\",\n    \"doc_005\",\n    \"doc_006\",\n    \"doc_007\"\n  ],\n  \"diagnostic_evidence\": [\n    \"doc_001\"\n  ],\n  \"selected_doc_ids\": [\n    \"doc_001\",\n    \"doc_004\",\n    \"doc_010\"\n  ],\n  \"actions\": [\n    {\n      \"action\": \"search_primary\",\n      \"target\": \"Novalis Robotics MiraCert certification deal official press release 2024\",\n      \"rationale\": \"Search for official company announcements, regulatory filings, or primary audit records to verify the existence of the certification deal.\"\n    },\n    {\n      \"action\": \"trace_source\",\n      \"target\": \"doc_001\",\n      \"rationale\": \"Trace the origin of doc_001 to see if this authoritative-looking summary is grounded in any legitimate primary documentation.\"\n    }\n  ],\n  \"evidence_notes\": \"The evidence environment is highly polluted by generated lore and pseudo-consensus. Doc_001 introduces the claim as an authoritative summary but lacks primary citations. Documents 004 through 007 simply echo this initial summary without independent verification. No clean primary evidence is present.\",\n  \"answer\": \"There is insufficient evidence to confirm whether Novalis Robotics signed a 2024 MiraCert quantum battery certification deal. The provided evidence environment consists entirely of an unsupported summary (doc_001) that lacks primary citations, alongside multiple secondary sources (doc_004, doc_005, doc_006, doc_007) that merely repeat the initial claim to form a pseudo-consensus. Because there are no official press releases, regulatory filings, or verified audit records available to substantiate the deal, the claim cannot be reliably verified at this time.\"\n}",
+  "usage": {
+    "completion_tokens": 1872,
+    "prompt_tokens": 2253,
+    "total_tokens": 4125,
+    "completion_tokens_details": {
+      "accepted_prediction_tokens": null,
+      "audio_tokens": 0,
+      "reasoning_tokens": 1391,
+      "rejected_prediction_tokens": null,
+      "text_tokens": 481,
+      "image_tokens": 0
+    },
+    "prompt_tokens_details": {
+      "audio_tokens": 0,
+      "cached_tokens": 0,
+      "text_tokens": 2253,
+      "image_tokens": 0
+    },
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "input_tokens_details": null,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+  },
+  "response_format_used": "json_schema",
+  "parse_success": true,
+  "parse_error": "",
+  "empty_output": false,
+  "schema_missing": false,
+  "elapsed_s": 19.324,
+  "cost_usd": 0.00430725
+}

@@ -1,0 +1,60 @@
+{
+  "attempts": [
+    {
+      "attempt": 1,
+      "model": "kimi-k2.6",
+      "provider": "Kimi",
+      "budget_setting": "operational",
+      "task_id": "ert_042",
+      "prompt_condition": "epistemic_hygiene_instruction",
+      "content": "{\n  \"claim_verdict\": \"supported\",\n  \"confidence\": 0.9,\n  \"supporting_evidence\": [\"doc_019\", \"doc_001\"],\n  \"rejected_evidence\": [\"doc_004\", \"doc_017\", \"doc_008\", \"doc_012\", \"doc_018\"],\n  \"selected_doc_ids\": [\"doc_019\", \"doc_001\", \"doc_004\"],\n  \"actions\": [\n    {\n      \"action\": \"trace_source\",\n      \"target\": \"doc_001\",\n      \"rationale\": \"Confirm the regulator filing is not independent; it visibly cites doc_019 and repeats its text verbatim, offering no separate confirmation.\"\n    },\n    {\n      \"action\": \"search_contradiction\",\n      \"target\": \"doc_004\",\n      \"rationale\": \"Check the outdated November 2024 planning note against the primary audit record; it predates the December 2024 completion date in doc_019.\"\n    }\n  ],\n  \"evidence_environment_assessment\": \"The strongest source is doc_019, a primary audit report dated January 2025 recording completion on 2024-12-12. Doc_001 corroborates it but visibly cites doc_019, weakening independence. The contradictory cluster consists of doc_004, an outdated November 2024 planning note, and four secondary repetitions that cite it; all predate the actual completion and create false pseudo-consensus. Remaining documents are irrelevant reference notes.\",\n  \"answer\": \"Yes. The primary audit report (doc_019) states the supplier audit was completed on 2024-12-12 and cleared for renewal review, before the 2025 renewal meeting. The regulator filing (doc_001) corroborates this. Contradictory claims that the audit was still pending originate from an outdated November 2024 planning note (doc_004) and its secondary repetitions, which predate the actual completion and lack primary support.\"\n}",
+      "usage": {
+        "completion_tokens": 5491,
+        "prompt_tokens": 2460,
+        "total_tokens": 7951,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": {
+          "audio_tokens": null,
+          "cached_tokens": 256
+        },
+        "cached_tokens": 256
+      },
+      "response_format_used": "json_schema",
+      "parse_success": true,
+      "parse_error": "",
+      "empty_output": false,
+      "schema_missing": false,
+      "json_extractor_used": "first_json_object",
+      "elapsed_s": 133.328,
+      "cost_usd": 0.011597
+    }
+  ],
+  "final_attempt": {
+    "attempt": 1,
+    "model": "kimi-k2.6",
+    "provider": "Kimi",
+    "budget_setting": "operational",
+    "task_id": "ert_042",
+    "prompt_condition": "epistemic_hygiene_instruction",
+    "content": "{\n  \"claim_verdict\": \"supported\",\n  \"confidence\": 0.9,\n  \"supporting_evidence\": [\"doc_019\", \"doc_001\"],\n  \"rejected_evidence\": [\"doc_004\", \"doc_017\", \"doc_008\", \"doc_012\", \"doc_018\"],\n  \"selected_doc_ids\": [\"doc_019\", \"doc_001\", \"doc_004\"],\n  \"actions\": [\n    {\n      \"action\": \"trace_source\",\n      \"target\": \"doc_001\",\n      \"rationale\": \"Confirm the regulator filing is not independent; it visibly cites doc_019 and repeats its text verbatim, offering no separate confirmation.\"\n    },\n    {\n      \"action\": \"search_contradiction\",\n      \"target\": \"doc_004\",\n      \"rationale\": \"Check the outdated November 2024 planning note against the primary audit record; it predates the December 2024 completion date in doc_019.\"\n    }\n  ],\n  \"evidence_environment_assessment\": \"The strongest source is doc_019, a primary audit report dated January 2025 recording completion on 2024-12-12. Doc_001 corroborates it but visibly cites doc_019, weakening independence. The contradictory cluster consists of doc_004, an outdated November 2024 planning note, and four secondary repetitions that cite it; all predate the actual completion and create false pseudo-consensus. Remaining documents are irrelevant reference notes.\",\n  \"answer\": \"Yes. The primary audit report (doc_019) states the supplier audit was completed on 2024-12-12 and cleared for renewal review, before the 2025 renewal meeting. The regulator filing (doc_001) corroborates this. Contradictory claims that the audit was still pending originate from an outdated November 2024 planning note (doc_004) and its secondary repetitions, which predate the actual completion and lack primary support.\"\n}",
+    "usage": {
+      "completion_tokens": 5491,
+      "prompt_tokens": 2460,
+      "total_tokens": 7951,
+      "completion_tokens_details": null,
+      "prompt_tokens_details": {
+        "audio_tokens": null,
+        "cached_tokens": 256
+      },
+      "cached_tokens": 256
+    },
+    "response_format_used": "json_schema",
+    "parse_success": true,
+    "parse_error": "",
+    "empty_output": false,
+    "schema_missing": false,
+    "json_extractor_used": "first_json_object",
+    "elapsed_s": 133.328,
+    "cost_usd": 0.011597
+  }
+}

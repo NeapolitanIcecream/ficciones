@@ -1,0 +1,90 @@
+{
+  "attempts": [
+    {
+      "attempt": 1,
+      "model": "claude-opus-4-7",
+      "provider": "Anthropic",
+      "budget_setting": "operational",
+      "task_id": "ert_060",
+      "prompt_condition": "epistemic_hygiene_instruction",
+      "content": "{\n  \"claim_verdict\": \"refuted\",\n  \"confidence\": 0.85,\n  \"supporting_evidence\": [\"doc_016\", \"doc_005\"],\n  \"rejected_evidence\": [\"doc_010\", \"doc_009\", \"doc_002\", \"doc_007\", \"doc_003\"],\n  \"selected_doc_ids\": [\"doc_016\", \"doc_005\", \"doc_010\"],\n  \"actions\": [\n    {\"action\": \"trace_source\", \"target\": \"doc_010\", \"rationale\": \"All 13 secondary coverage items cite doc_010 as upstream; tracing confirms pseudo-consensus rather than independent confirmation.\"},\n    {\"action\": \"compare_versions\", \"target\": \"doc_016\", \"rationale\": \"Cross-check audit report against regulator filing doc_005 to confirm the 3.8 percent figure is grounded in primary records.\"}\n  ],\n  \"evidence_environment_assessment\": \"The environment shows a strong false consensus: 13 secondary items (memos, digests, whitepapers, wiki summaries, press releases) all repeat a 1.7% figure but trace to a single upstream summary (doc_010) with no primary records. The audit report (doc_016) and regulator filing (doc_005) independently report 3.8% based on raw operating logs and reviewer sign-off. Per policy, repeated citations of one upstream source are weak pseudo-consensus. Primary and regulator-grade documents outweigh the volume of reposts.\",\n  \"answer\": \"No. The audited 2024 recall rate was 3.8 percent, per the audit report (doc_016) and regulator filing (doc_005), both grounded in raw operating records. The widely repeated 1.7% figure originates from a single executive summary (doc_010) and is echoed by reposts that all cite it, constituting pseudo-consensus rather than independent confirmation. The claim that Novalis reduced its 2024 recall rate below two percent is refuted.\"\n}",
+      "usage": {
+        "completion_tokens": 642,
+        "prompt_tokens": 3531,
+        "total_tokens": 4173,
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": null,
+          "audio_tokens": 0,
+          "reasoning_tokens": 0,
+          "rejected_prediction_tokens": null,
+          "text_tokens": 0,
+          "image_tokens": 0
+        },
+        "prompt_tokens_details": {
+          "audio_tokens": 0,
+          "cached_tokens": 0,
+          "text_tokens": 0,
+          "image_tokens": 0
+        },
+        "usage_semantic": "openai",
+        "usage_source": "anthropic",
+        "input_tokens": 3531,
+        "output_tokens": 0,
+        "input_tokens_details": null,
+        "claude_cache_creation_5_m_tokens": 0,
+        "claude_cache_creation_1_h_tokens": 0
+      },
+      "response_format_used": "json_schema",
+      "parse_success": true,
+      "parse_error": "",
+      "empty_output": false,
+      "schema_missing": false,
+      "json_extractor_used": "first_json_object",
+      "elapsed_s": 10.863,
+      "cost_usd": 0.00216675
+    }
+  ],
+  "final_attempt": {
+    "attempt": 1,
+    "model": "claude-opus-4-7",
+    "provider": "Anthropic",
+    "budget_setting": "operational",
+    "task_id": "ert_060",
+    "prompt_condition": "epistemic_hygiene_instruction",
+    "content": "{\n  \"claim_verdict\": \"refuted\",\n  \"confidence\": 0.85,\n  \"supporting_evidence\": [\"doc_016\", \"doc_005\"],\n  \"rejected_evidence\": [\"doc_010\", \"doc_009\", \"doc_002\", \"doc_007\", \"doc_003\"],\n  \"selected_doc_ids\": [\"doc_016\", \"doc_005\", \"doc_010\"],\n  \"actions\": [\n    {\"action\": \"trace_source\", \"target\": \"doc_010\", \"rationale\": \"All 13 secondary coverage items cite doc_010 as upstream; tracing confirms pseudo-consensus rather than independent confirmation.\"},\n    {\"action\": \"compare_versions\", \"target\": \"doc_016\", \"rationale\": \"Cross-check audit report against regulator filing doc_005 to confirm the 3.8 percent figure is grounded in primary records.\"}\n  ],\n  \"evidence_environment_assessment\": \"The environment shows a strong false consensus: 13 secondary items (memos, digests, whitepapers, wiki summaries, press releases) all repeat a 1.7% figure but trace to a single upstream summary (doc_010) with no primary records. The audit report (doc_016) and regulator filing (doc_005) independently report 3.8% based on raw operating logs and reviewer sign-off. Per policy, repeated citations of one upstream source are weak pseudo-consensus. Primary and regulator-grade documents outweigh the volume of reposts.\",\n  \"answer\": \"No. The audited 2024 recall rate was 3.8 percent, per the audit report (doc_016) and regulator filing (doc_005), both grounded in raw operating records. The widely repeated 1.7% figure originates from a single executive summary (doc_010) and is echoed by reposts that all cite it, constituting pseudo-consensus rather than independent confirmation. The claim that Novalis reduced its 2024 recall rate below two percent is refuted.\"\n}",
+    "usage": {
+      "completion_tokens": 642,
+      "prompt_tokens": 3531,
+      "total_tokens": 4173,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": null,
+        "audio_tokens": 0,
+        "reasoning_tokens": 0,
+        "rejected_prediction_tokens": null,
+        "text_tokens": 0,
+        "image_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cached_tokens": 0,
+        "text_tokens": 0,
+        "image_tokens": 0
+      },
+      "usage_semantic": "openai",
+      "usage_source": "anthropic",
+      "input_tokens": 3531,
+      "output_tokens": 0,
+      "input_tokens_details": null,
+      "claude_cache_creation_5_m_tokens": 0,
+      "claude_cache_creation_1_h_tokens": 0
+    },
+    "response_format_used": "json_schema",
+    "parse_success": true,
+    "parse_error": "",
+    "empty_output": false,
+    "schema_missing": false,
+    "json_extractor_used": "first_json_object",
+    "elapsed_s": 10.863,
+    "cost_usd": 0.00216675
+  }
+}

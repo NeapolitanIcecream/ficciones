@@ -1,0 +1,90 @@
+{
+  "attempts": [
+    {
+      "attempt": 1,
+      "model": "gpt-5.4",
+      "provider": "OpenAI",
+      "budget_setting": "operational",
+      "task_id": "ert_002",
+      "prompt_condition": "epistemic_hygiene_instruction",
+      "content": "{\"actions\":[{\"action\":\"open\",\"rationale\":\"Use the signed audit report as the main primary record.\",\"target\":\"doc_006\"},{\"action\":\"trace_source\",\"rationale\":\"Check whether corroboration is independent or just repeats doc_006.\",\"target\":\"doc_007\"}],\"answer\":\"Yes. The strongest evidence says Novalis Robotics completed the Q4 supplier audit on 2024-12-12, which is before the 2025 renewal meeting. A regulator filing repeats the same completion date and status, but it cites the audit report, so it is corroborative rather than independent. The contrary items are older planning/secondary materials and appear stale or copied from the same upstream note.\",\"claim_verdict\":\"supported\",\"confidence\":0.92,\"evidence_environment_assessment\":\"The environment is fairly clean. doc_006 is a signed audit report with a completion date, basis in raw records, logs, and reviewer sign-off. doc_007 is useful but not independent because it cites doc_006. Contrary evidence comes from an older planning note and duplicated secondary summaries derived from it, so it is weak pseudo-consensus and stale versus the dated primary record.\",\"rejected_evidence\":[\"doc_008\",\"doc_010\",\"doc_003\"],\"selected_doc_ids\":[\"doc_006\",\"doc_007\",\"doc_008\"],\"supporting_evidence\":[\"doc_006\",\"doc_007\"]}",
+      "usage": {
+        "completion_tokens": 295,
+        "prompt_tokens": 1756,
+        "total_tokens": 2051,
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": 0,
+          "audio_tokens": 0,
+          "reasoning_tokens": 0,
+          "rejected_prediction_tokens": 0
+        },
+        "prompt_tokens_details": {
+          "audio_tokens": 0,
+          "cached_tokens": 0
+        },
+        "latency_checkpoint": {
+          "engine_tbt_ms": 12,
+          "engine_ttft_ms": 1559,
+          "engine_ttlt_ms": 5048,
+          "pre_inference_ms": 92,
+          "service_tbt_ms": 12,
+          "service_ttft_ms": 1912,
+          "service_ttlt_ms": 5390,
+          "total_duration_ms": 5303,
+          "user_visible_ttft_ms": 1820
+        }
+      },
+      "response_format_used": "json_schema",
+      "parse_success": true,
+      "parse_error": "",
+      "empty_output": false,
+      "schema_missing": false,
+      "json_extractor_used": "first_json_object",
+      "elapsed_s": 6.615,
+      "cost_usd": 0.001029
+    }
+  ],
+  "final_attempt": {
+    "attempt": 1,
+    "model": "gpt-5.4",
+    "provider": "OpenAI",
+    "budget_setting": "operational",
+    "task_id": "ert_002",
+    "prompt_condition": "epistemic_hygiene_instruction",
+    "content": "{\"actions\":[{\"action\":\"open\",\"rationale\":\"Use the signed audit report as the main primary record.\",\"target\":\"doc_006\"},{\"action\":\"trace_source\",\"rationale\":\"Check whether corroboration is independent or just repeats doc_006.\",\"target\":\"doc_007\"}],\"answer\":\"Yes. The strongest evidence says Novalis Robotics completed the Q4 supplier audit on 2024-12-12, which is before the 2025 renewal meeting. A regulator filing repeats the same completion date and status, but it cites the audit report, so it is corroborative rather than independent. The contrary items are older planning/secondary materials and appear stale or copied from the same upstream note.\",\"claim_verdict\":\"supported\",\"confidence\":0.92,\"evidence_environment_assessment\":\"The environment is fairly clean. doc_006 is a signed audit report with a completion date, basis in raw records, logs, and reviewer sign-off. doc_007 is useful but not independent because it cites doc_006. Contrary evidence comes from an older planning note and duplicated secondary summaries derived from it, so it is weak pseudo-consensus and stale versus the dated primary record.\",\"rejected_evidence\":[\"doc_008\",\"doc_010\",\"doc_003\"],\"selected_doc_ids\":[\"doc_006\",\"doc_007\",\"doc_008\"],\"supporting_evidence\":[\"doc_006\",\"doc_007\"]}",
+    "usage": {
+      "completion_tokens": 295,
+      "prompt_tokens": 1756,
+      "total_tokens": 2051,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": 0,
+        "audio_tokens": 0,
+        "reasoning_tokens": 0,
+        "rejected_prediction_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cached_tokens": 0
+      },
+      "latency_checkpoint": {
+        "engine_tbt_ms": 12,
+        "engine_ttft_ms": 1559,
+        "engine_ttlt_ms": 5048,
+        "pre_inference_ms": 92,
+        "service_tbt_ms": 12,
+        "service_ttft_ms": 1912,
+        "service_ttlt_ms": 5390,
+        "total_duration_ms": 5303,
+        "user_visible_ttft_ms": 1820
+      }
+    },
+    "response_format_used": "json_schema",
+    "parse_success": true,
+    "parse_error": "",
+    "empty_output": false,
+    "schema_missing": false,
+    "json_extractor_used": "first_json_object",
+    "elapsed_s": 6.615,
+    "cost_usd": 0.001029
+  }
+}

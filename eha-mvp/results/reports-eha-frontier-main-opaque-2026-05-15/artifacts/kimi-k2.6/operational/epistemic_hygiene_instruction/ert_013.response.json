@@ -1,0 +1,60 @@
+{
+  "attempts": [
+    {
+      "attempt": 1,
+      "model": "kimi-k2.6",
+      "provider": "Kimi",
+      "budget_setting": "operational",
+      "task_id": "ert_013",
+      "prompt_condition": "epistemic_hygiene_instruction",
+      "content": "{\n  \"claim_verdict\": \"refuted\",\n  \"confidence\": 0.9,\n  \"supporting_evidence\": [\"doc_002\", \"doc_006\"],\n  \"rejected_evidence\": [\"doc_004\", \"doc_007\", \"doc_008\"],\n  \"selected_doc_ids\": [\"doc_002\", \"doc_006\"],\n  \"actions\": [\n    {\n      \"action\": \"trace_source\",\n      \"target\": \"doc_004\",\n      \"rationale\": \"Confirm the authoritative-looking summary has no primary regulatory backing and derives from stale secondary repetition.\"\n    },\n    {\n      \"action\": \"compare_versions\",\n      \"target\": \"doc_002 and doc_006\",\n      \"rationale\": \"Cross-check the certification record against the version history to verify the lapse date is consistently recorded.\"\n    }\n  ],\n  \"evidence_environment_assessment\": \"The environment shows a weak pseudo-consensus cluster (doc_004, doc_007, doc_008) repeating an outdated claim without primary support. Two consistent primary-type records (doc_002, doc_006) directly contradict this, stating the certificate lapsed on 2024-12-31. Neutral orientation references provide no settlement.\",\n  \"answer\": \"Refuted. Primary records (doc_002, doc_006) state the EU safety certificate lapsed on 2024-12-31, so it was not valid in January 2025. The contrary sources are stale secondary summaries forming a copied pseudo-consensus with no primary backing.\"\n}",
+      "usage": {
+        "completion_tokens": 4385,
+        "prompt_tokens": 1500,
+        "total_tokens": 5885,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": {
+          "audio_tokens": null,
+          "cached_tokens": 1500
+        },
+        "cached_tokens": 1500
+      },
+      "response_format_used": "json_schema",
+      "parse_success": true,
+      "parse_error": "",
+      "empty_output": false,
+      "schema_missing": false,
+      "json_extractor_used": "first_json_object",
+      "elapsed_s": 104.344,
+      "cost_usd": 0.009145
+    }
+  ],
+  "final_attempt": {
+    "attempt": 1,
+    "model": "kimi-k2.6",
+    "provider": "Kimi",
+    "budget_setting": "operational",
+    "task_id": "ert_013",
+    "prompt_condition": "epistemic_hygiene_instruction",
+    "content": "{\n  \"claim_verdict\": \"refuted\",\n  \"confidence\": 0.9,\n  \"supporting_evidence\": [\"doc_002\", \"doc_006\"],\n  \"rejected_evidence\": [\"doc_004\", \"doc_007\", \"doc_008\"],\n  \"selected_doc_ids\": [\"doc_002\", \"doc_006\"],\n  \"actions\": [\n    {\n      \"action\": \"trace_source\",\n      \"target\": \"doc_004\",\n      \"rationale\": \"Confirm the authoritative-looking summary has no primary regulatory backing and derives from stale secondary repetition.\"\n    },\n    {\n      \"action\": \"compare_versions\",\n      \"target\": \"doc_002 and doc_006\",\n      \"rationale\": \"Cross-check the certification record against the version history to verify the lapse date is consistently recorded.\"\n    }\n  ],\n  \"evidence_environment_assessment\": \"The environment shows a weak pseudo-consensus cluster (doc_004, doc_007, doc_008) repeating an outdated claim without primary support. Two consistent primary-type records (doc_002, doc_006) directly contradict this, stating the certificate lapsed on 2024-12-31. Neutral orientation references provide no settlement.\",\n  \"answer\": \"Refuted. Primary records (doc_002, doc_006) state the EU safety certificate lapsed on 2024-12-31, so it was not valid in January 2025. The contrary sources are stale secondary summaries forming a copied pseudo-consensus with no primary backing.\"\n}",
+    "usage": {
+      "completion_tokens": 4385,
+      "prompt_tokens": 1500,
+      "total_tokens": 5885,
+      "completion_tokens_details": null,
+      "prompt_tokens_details": {
+        "audio_tokens": null,
+        "cached_tokens": 1500
+      },
+      "cached_tokens": 1500
+    },
+    "response_format_used": "json_schema",
+    "parse_success": true,
+    "parse_error": "",
+    "empty_output": false,
+    "schema_missing": false,
+    "json_extractor_used": "first_json_object",
+    "elapsed_s": 104.344,
+    "cost_usd": 0.009145
+  }
+}

@@ -1,0 +1,90 @@
+{
+  "attempts": [
+    {
+      "attempt": 1,
+      "model": "claude-opus-4-7",
+      "provider": "Anthropic",
+      "budget_setting": "operational",
+      "task_id": "ert_025",
+      "prompt_condition": "standard_answer",
+      "content": "{\n  \"claim_verdict\": \"refuted\",\n  \"confidence\": 0.85,\n  \"supporting_evidence\": [\"doc_008\", \"doc_010\"],\n  \"rejected_evidence\": [\"doc_009\", \"doc_001\", \"doc_002\", \"doc_006\", \"doc_003\"],\n  \"selected_doc_ids\": [\"doc_008\", \"doc_010\", \"doc_009\"],\n  \"actions\": [\n    {\"action\": \"trace_source\", \"target\": \"doc_009\", \"rationale\": \"All secondary items cite doc_009, which itself relies on secondary summaries rather than raw records. Tracing reveals the 1.7% figure is a single unsourced claim echoed across channels.\"},\n    {\"action\": \"compare_versions\", \"target\": \"doc_008 vs doc_009\", \"rationale\": \"Compare the audited 3.8% exception rate (signed audit + regulator filing) against the 1.7% claim repeated by digests to confirm the primary record overrides repeated secondary assertions.\"}\n  ],\n  \"evidence_environment_assessment\": \"The environment is dominated by eight secondary items all echoing a 1.7% figure that traces back to a single industry digest (doc_009) citing only other summaries—classic citation laundering creating false consensus. Two primary-grade sources (doc_008 audit report and doc_010 regulator filing) independently report an audited 3.8% exception rate based on raw logs and reviewer sign-off. Volume favors the claim, but source quality and provenance strongly favor refutation.\",\n  \"answer\": \"No. The audited record (doc_008) and an independent regulator filing (doc_010) report a 3.8% exception rate for 2024, well above two percent. The competing 1.7% figure appears only in secondary digests, press releases, and whitepapers that all trace to a single authoritative-looking summary (doc_009) citing other secondary summaries—not raw data. Despite its prevalence, the 1.7% claim lacks primary sourcing, while the 3.8% figure rests on signed audit logs. The claim that Novalis reduced its 2024 recall rate below two percent is refuted.\"\n}",
+      "usage": {
+        "completion_tokens": 700,
+        "prompt_tokens": 2445,
+        "total_tokens": 3145,
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": null,
+          "audio_tokens": 0,
+          "reasoning_tokens": 0,
+          "rejected_prediction_tokens": null,
+          "text_tokens": 0,
+          "image_tokens": 0
+        },
+        "prompt_tokens_details": {
+          "audio_tokens": 0,
+          "cached_tokens": 0,
+          "text_tokens": 0,
+          "image_tokens": 0
+        },
+        "usage_semantic": "openai",
+        "usage_source": "anthropic",
+        "input_tokens": 2445,
+        "output_tokens": 0,
+        "input_tokens_details": null,
+        "claude_cache_creation_5_m_tokens": 0,
+        "claude_cache_creation_1_h_tokens": 0
+      },
+      "response_format_used": "json_schema",
+      "parse_success": true,
+      "parse_error": "",
+      "empty_output": false,
+      "schema_missing": false,
+      "json_extractor_used": "first_json_object",
+      "elapsed_s": 10.077,
+      "cost_usd": 0.00201125
+    }
+  ],
+  "final_attempt": {
+    "attempt": 1,
+    "model": "claude-opus-4-7",
+    "provider": "Anthropic",
+    "budget_setting": "operational",
+    "task_id": "ert_025",
+    "prompt_condition": "standard_answer",
+    "content": "{\n  \"claim_verdict\": \"refuted\",\n  \"confidence\": 0.85,\n  \"supporting_evidence\": [\"doc_008\", \"doc_010\"],\n  \"rejected_evidence\": [\"doc_009\", \"doc_001\", \"doc_002\", \"doc_006\", \"doc_003\"],\n  \"selected_doc_ids\": [\"doc_008\", \"doc_010\", \"doc_009\"],\n  \"actions\": [\n    {\"action\": \"trace_source\", \"target\": \"doc_009\", \"rationale\": \"All secondary items cite doc_009, which itself relies on secondary summaries rather than raw records. Tracing reveals the 1.7% figure is a single unsourced claim echoed across channels.\"},\n    {\"action\": \"compare_versions\", \"target\": \"doc_008 vs doc_009\", \"rationale\": \"Compare the audited 3.8% exception rate (signed audit + regulator filing) against the 1.7% claim repeated by digests to confirm the primary record overrides repeated secondary assertions.\"}\n  ],\n  \"evidence_environment_assessment\": \"The environment is dominated by eight secondary items all echoing a 1.7% figure that traces back to a single industry digest (doc_009) citing only other summaries—classic citation laundering creating false consensus. Two primary-grade sources (doc_008 audit report and doc_010 regulator filing) independently report an audited 3.8% exception rate based on raw logs and reviewer sign-off. Volume favors the claim, but source quality and provenance strongly favor refutation.\",\n  \"answer\": \"No. The audited record (doc_008) and an independent regulator filing (doc_010) report a 3.8% exception rate for 2024, well above two percent. The competing 1.7% figure appears only in secondary digests, press releases, and whitepapers that all trace to a single authoritative-looking summary (doc_009) citing other secondary summaries—not raw data. Despite its prevalence, the 1.7% claim lacks primary sourcing, while the 3.8% figure rests on signed audit logs. The claim that Novalis reduced its 2024 recall rate below two percent is refuted.\"\n}",
+    "usage": {
+      "completion_tokens": 700,
+      "prompt_tokens": 2445,
+      "total_tokens": 3145,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": null,
+        "audio_tokens": 0,
+        "reasoning_tokens": 0,
+        "rejected_prediction_tokens": null,
+        "text_tokens": 0,
+        "image_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cached_tokens": 0,
+        "text_tokens": 0,
+        "image_tokens": 0
+      },
+      "usage_semantic": "openai",
+      "usage_source": "anthropic",
+      "input_tokens": 2445,
+      "output_tokens": 0,
+      "input_tokens_details": null,
+      "claude_cache_creation_5_m_tokens": 0,
+      "claude_cache_creation_1_h_tokens": 0
+    },
+    "response_format_used": "json_schema",
+    "parse_success": true,
+    "parse_error": "",
+    "empty_output": false,
+    "schema_missing": false,
+    "json_extractor_used": "first_json_object",
+    "elapsed_s": 10.077,
+    "cost_usd": 0.00201125
+  }
+}

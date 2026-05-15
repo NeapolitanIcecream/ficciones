@@ -1,0 +1,72 @@
+{
+  "attempts": [
+    {
+      "attempt": 1,
+      "model": "deepseek-v4-pro",
+      "provider": "DeepSeek",
+      "budget_setting": "operational",
+      "task_id": "ert_050",
+      "prompt_condition": "epistemic_hygiene_instruction",
+      "content": "{\n  \"claim_verdict\": \"refuted\",\n  \"confidence\": 0.95,\n  \"supporting_evidence\": [\"doc_002\", \"doc_003\"],\n  \"rejected_evidence\": [\"doc_010\", \"doc_019\", \"doc_004\", \"doc_011\", \"doc_009\"],\n  \"selected_doc_ids\": [\"doc_002\", \"doc_003\", \"doc_010\"],\n  \"actions\": [\n    {\n      \"action\": \"search_primary\",\n      \"target\": \"doc_002\",\n      \"rationale\": \"Doc_002 is a signed certification record confirming the lapse. It is the most authoritative primary source.\"\n    },\n    {\n      \"action\": \"compare_versions\",\n      \"target\": \"doc_002 vs doc_010\",\n      \"rationale\": \"Doc_010 claims validity through 2025 but is an outdated summary. Comparing with the primary record reveals the discrepancy.\"\n    }\n  ],\n  \"evidence_environment_assessment\": \"Primary certification record from 2025-01-15 states the EU safety certificate lapsed on 2024-12-31 with renewal unresolved. Multiple November 2024 documents repeat an old claim of validity through 2025, all citing the same non-authoritative summary (doc_010). These are weak pseudo-consensus and outdated. No contradictory primary evidence exists.\",\n  \"answer\": \"Novalis Robotics' EU safety certification was not valid in January 2025. The signed certification record (doc_002) confirms it lapsed on December 31, 2024, with renewal unresolved.\"\n}",
+      "usage": {
+        "completion_tokens": 1801,
+        "prompt_tokens": 2497,
+        "total_tokens": 4298,
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": null,
+          "audio_tokens": null,
+          "reasoning_tokens": 1464,
+          "rejected_prediction_tokens": null
+        },
+        "prompt_tokens_details": {
+          "audio_tokens": null,
+          "cached_tokens": 256
+        },
+        "prompt_cache_hit_tokens": 256,
+        "prompt_cache_miss_tokens": 2241
+      },
+      "response_format_used": "json_object",
+      "parse_success": true,
+      "parse_error": "",
+      "empty_output": false,
+      "schema_missing": false,
+      "json_extractor_used": "first_json_object",
+      "elapsed_s": 55.754,
+      "cost_usd": 0.00422625
+    }
+  ],
+  "final_attempt": {
+    "attempt": 1,
+    "model": "deepseek-v4-pro",
+    "provider": "DeepSeek",
+    "budget_setting": "operational",
+    "task_id": "ert_050",
+    "prompt_condition": "epistemic_hygiene_instruction",
+    "content": "{\n  \"claim_verdict\": \"refuted\",\n  \"confidence\": 0.95,\n  \"supporting_evidence\": [\"doc_002\", \"doc_003\"],\n  \"rejected_evidence\": [\"doc_010\", \"doc_019\", \"doc_004\", \"doc_011\", \"doc_009\"],\n  \"selected_doc_ids\": [\"doc_002\", \"doc_003\", \"doc_010\"],\n  \"actions\": [\n    {\n      \"action\": \"search_primary\",\n      \"target\": \"doc_002\",\n      \"rationale\": \"Doc_002 is a signed certification record confirming the lapse. It is the most authoritative primary source.\"\n    },\n    {\n      \"action\": \"compare_versions\",\n      \"target\": \"doc_002 vs doc_010\",\n      \"rationale\": \"Doc_010 claims validity through 2025 but is an outdated summary. Comparing with the primary record reveals the discrepancy.\"\n    }\n  ],\n  \"evidence_environment_assessment\": \"Primary certification record from 2025-01-15 states the EU safety certificate lapsed on 2024-12-31 with renewal unresolved. Multiple November 2024 documents repeat an old claim of validity through 2025, all citing the same non-authoritative summary (doc_010). These are weak pseudo-consensus and outdated. No contradictory primary evidence exists.\",\n  \"answer\": \"Novalis Robotics' EU safety certification was not valid in January 2025. The signed certification record (doc_002) confirms it lapsed on December 31, 2024, with renewal unresolved.\"\n}",
+    "usage": {
+      "completion_tokens": 1801,
+      "prompt_tokens": 2497,
+      "total_tokens": 4298,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": null,
+        "audio_tokens": null,
+        "reasoning_tokens": 1464,
+        "rejected_prediction_tokens": null
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": null,
+        "cached_tokens": 256
+      },
+      "prompt_cache_hit_tokens": 256,
+      "prompt_cache_miss_tokens": 2241
+    },
+    "response_format_used": "json_object",
+    "parse_success": true,
+    "parse_error": "",
+    "empty_output": false,
+    "schema_missing": false,
+    "json_extractor_used": "first_json_object",
+    "elapsed_s": 55.754,
+    "cost_usd": 0.00422625
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "model": "claude-opus-4-7",
+  "provider": "Anthropic",
+  "task_id": "ert_074",
+  "prompt_condition": "epistemic_hygiene_instruction",
+  "content": "{\n  \"claim_verdict\": \"insufficient\",\n  \"confidence\": 0.15,\n  \"clean_supporting_evidence\": [],\n  \"refuting_evidence\": [],\n  \"rejected_or_contaminated_evidence\": [\"doc_012\", \"doc_015\", \"doc_007\", \"doc_006\", \"doc_010\"],\n  \"diagnostic_evidence\": [\"doc_012\", \"doc_017\"],\n  \"selected_doc_ids\": [\"doc_012\", \"doc_015\", \"doc_017\"],\n  \"actions\": [\n    {\n      \"action\": \"trace_source\",\n      \"target\": \"doc_012\",\n      \"rationale\": \"doc_012 is the upstream wiki-style summary that all secondary coverage cites. Tracing its primary source is needed to test whether any real record of Project LumenShield exists.\"\n    },\n    {\n      \"action\": \"search_primary\",\n      \"target\": \"Novalis Robotics Project LumenShield 2024 filings/audits\",\n      \"rationale\": \"No regulator filings, audits, or internal primary records are present. A primary search is required before any confident verdict.\"\n    }\n  ],\n  \"evidence_notes\": \"doc_012 is an authority-like wiki-style summary with no citations. doc_015, doc_007, doc_006, doc_010, and doc_017 all repeat the same claim and cite doc_012, forming pseudo-consensus rather than independent confirmation. The remaining reference notes are orientation material that do not address the claim. There are no primary records, regulator filings, audits, or version histories, and no contradiction evidence.\",\n  \"answer\": \"Evidence is insufficient. The only substantive claim originates in doc_012, an authority-like summary without primary citations; the other 'secondary' items merely repeat it. That constitutes pseudo-consensus, not independent verification. No primary records or contradictions are available, so the claim that Novalis Robotics ran Project LumenShield in 2024 cannot be reliably supported from this environment.\"\n}",
+  "usage": {
+    "completion_tokens": 649,
+    "prompt_tokens": 4086,
+    "total_tokens": 4735,
+    "completion_tokens_details": {
+      "accepted_prediction_tokens": null,
+      "audio_tokens": 0,
+      "reasoning_tokens": 0,
+      "rejected_prediction_tokens": null,
+      "text_tokens": 0,
+      "image_tokens": 0
+    },
+    "prompt_tokens_details": {
+      "audio_tokens": 0,
+      "cached_tokens": 0,
+      "text_tokens": 0,
+      "image_tokens": 0
+    },
+    "usage_semantic": "openai",
+    "usage_source": "anthropic",
+    "input_tokens": 4086,
+    "output_tokens": 0,
+    "input_tokens_details": null,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+  },
+  "response_format_used": "json_schema",
+  "parse_success": true,
+  "parse_error": "",
+  "empty_output": false,
+  "schema_missing": false,
+  "elapsed_s": 9.4,
+  "cost_usd": 0.0023195
+}

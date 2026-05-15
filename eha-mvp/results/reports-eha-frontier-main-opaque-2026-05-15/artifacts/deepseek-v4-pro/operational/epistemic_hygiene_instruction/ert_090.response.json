@@ -1,0 +1,72 @@
+{
+  "attempts": [
+    {
+      "attempt": 1,
+      "model": "deepseek-v4-pro",
+      "provider": "DeepSeek",
+      "budget_setting": "operational",
+      "task_id": "ert_090",
+      "prompt_condition": "epistemic_hygiene_instruction",
+      "content": "{\n  \"claim_verdict\": \"refuted\",\n  \"confidence\": 0.95,\n  \"supporting_evidence\": [\"doc_007\"],\n  \"rejected_evidence\": [\"doc_005\", \"doc_004\", \"doc_008\", \"doc_001\", \"doc_002\"],\n  \"selected_doc_ids\": [\"doc_007\", \"doc_005\"],\n  \"actions\": [\n    {\n      \"action\": \"open\",\n      \"target\": \"doc_007\",\n      \"rationale\": \"Examine the audit report for veracity, raw data, and sign-off to confirm the 3.8% rate.\"\n    },\n    {\n      \"action\": \"trace_source\",\n      \"target\": \"doc_005\",\n      \"rationale\": \"Trace the origin of the 1.7% claim to check for any primary support beyond the repeating summaries.\"\n    }\n  ],\n  \"evidence_environment_assessment\": \"Multiple secondary sources repeat a 1.7% claim from doc_005, a wiki-style summary with no primary support, creating a pseudo-consensus. A later audit report (doc_007) from 2025 records a 3.8% rate, based on raw operational records and reviewer sign-off. The secondary sources all trace back to the unsupported summary, so the consensus is weak and misleading.\",\n  \"answer\": \"No, the 2024 recall rate was 3.8 percent according to an audited record, not below two percent.\"\n}",
+      "usage": {
+        "completion_tokens": 1767,
+        "prompt_tokens": 1552,
+        "total_tokens": 3319,
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": null,
+          "audio_tokens": null,
+          "reasoning_tokens": 1452,
+          "rejected_prediction_tokens": null
+        },
+        "prompt_tokens_details": {
+          "audio_tokens": null,
+          "cached_tokens": 256
+        },
+        "prompt_cache_hit_tokens": 256,
+        "prompt_cache_miss_tokens": 1296
+      },
+      "response_format_used": "json_object",
+      "parse_success": true,
+      "parse_error": "",
+      "empty_output": false,
+      "schema_missing": false,
+      "json_extractor_used": "first_json_object",
+      "elapsed_s": 54.472,
+      "cost_usd": 0.003922
+    }
+  ],
+  "final_attempt": {
+    "attempt": 1,
+    "model": "deepseek-v4-pro",
+    "provider": "DeepSeek",
+    "budget_setting": "operational",
+    "task_id": "ert_090",
+    "prompt_condition": "epistemic_hygiene_instruction",
+    "content": "{\n  \"claim_verdict\": \"refuted\",\n  \"confidence\": 0.95,\n  \"supporting_evidence\": [\"doc_007\"],\n  \"rejected_evidence\": [\"doc_005\", \"doc_004\", \"doc_008\", \"doc_001\", \"doc_002\"],\n  \"selected_doc_ids\": [\"doc_007\", \"doc_005\"],\n  \"actions\": [\n    {\n      \"action\": \"open\",\n      \"target\": \"doc_007\",\n      \"rationale\": \"Examine the audit report for veracity, raw data, and sign-off to confirm the 3.8% rate.\"\n    },\n    {\n      \"action\": \"trace_source\",\n      \"target\": \"doc_005\",\n      \"rationale\": \"Trace the origin of the 1.7% claim to check for any primary support beyond the repeating summaries.\"\n    }\n  ],\n  \"evidence_environment_assessment\": \"Multiple secondary sources repeat a 1.7% claim from doc_005, a wiki-style summary with no primary support, creating a pseudo-consensus. A later audit report (doc_007) from 2025 records a 3.8% rate, based on raw operational records and reviewer sign-off. The secondary sources all trace back to the unsupported summary, so the consensus is weak and misleading.\",\n  \"answer\": \"No, the 2024 recall rate was 3.8 percent according to an audited record, not below two percent.\"\n}",
+    "usage": {
+      "completion_tokens": 1767,
+      "prompt_tokens": 1552,
+      "total_tokens": 3319,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": null,
+        "audio_tokens": null,
+        "reasoning_tokens": 1452,
+        "rejected_prediction_tokens": null
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": null,
+        "cached_tokens": 256
+      },
+      "prompt_cache_hit_tokens": 256,
+      "prompt_cache_miss_tokens": 1296
+    },
+    "response_format_used": "json_object",
+    "parse_success": true,
+    "parse_error": "",
+    "empty_output": false,
+    "schema_missing": false,
+    "json_extractor_used": "first_json_object",
+    "elapsed_s": 54.472,
+    "cost_usd": 0.003922
+  }
+}

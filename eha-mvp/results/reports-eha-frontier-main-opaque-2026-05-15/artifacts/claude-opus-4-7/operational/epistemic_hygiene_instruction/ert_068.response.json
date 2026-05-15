@@ -1,0 +1,90 @@
+{
+  "attempts": [
+    {
+      "attempt": 1,
+      "model": "claude-opus-4-7",
+      "provider": "Anthropic",
+      "budget_setting": "operational",
+      "task_id": "ert_068",
+      "prompt_condition": "epistemic_hygiene_instruction",
+      "content": "{\n  \"claim_verdict\": \"refuted\",\n  \"confidence\": 0.85,\n  \"supporting_evidence\": [],\n  \"rejected_evidence\": [\"doc_007\", \"doc_015\", \"doc_005\", \"doc_012\", \"doc_011\"],\n  \"selected_doc_ids\": [\"doc_014\", \"doc_010\", \"doc_007\"],\n  \"actions\": [\n    {\"action\": \"trace_source\", \"target\": \"doc_007\", \"rationale\": \"All secondary coverage cites doc_007, which itself relies on summaries rather than raw records. Tracing confirms pseudo-consensus.\"},\n    {\"action\": \"compare_versions\", \"target\": \"doc_014\", \"rationale\": \"Verify the audited 3.8% figure against the regulator filing (doc_010) to confirm primary-source agreement.\"}\n  ],\n  \"evidence_environment_assessment\": \"The environment is dominated by 13+ secondary items all citing a single press release (doc_007) that uses settled-claim phrasing matching the question. This is pseudo-consensus, not independent confirmation. Two primary-grade documents — an audit report (doc_014) and a regulator filing (doc_010) — both report an audited 3.8% exception rate based on raw logs and reviewer sign-off. Primary records contradict the repeated 1.7% figure.\",\n  \"answer\": \"No. The audit report (doc_014) and regulator filing (doc_010) report an audited 2024 exception rate of 3.8 percent, above two percent. The widespread 1.7% figure traces to a single press release (doc_007) echoed by secondary coverage with no primary support, so it should be treated as pseudo-consensus and rejected in favor of the primary records.\"\n}",
+      "usage": {
+        "completion_tokens": 563,
+        "prompt_tokens": 3531,
+        "total_tokens": 4094,
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": null,
+          "audio_tokens": 0,
+          "reasoning_tokens": 0,
+          "rejected_prediction_tokens": null,
+          "text_tokens": 0,
+          "image_tokens": 0
+        },
+        "prompt_tokens_details": {
+          "audio_tokens": 0,
+          "cached_tokens": 0,
+          "text_tokens": 0,
+          "image_tokens": 0
+        },
+        "usage_semantic": "openai",
+        "usage_source": "anthropic",
+        "input_tokens": 3531,
+        "output_tokens": 0,
+        "input_tokens_details": null,
+        "claude_cache_creation_5_m_tokens": 0,
+        "claude_cache_creation_1_h_tokens": 0
+      },
+      "response_format_used": "json_schema",
+      "parse_success": true,
+      "parse_error": "",
+      "empty_output": false,
+      "schema_missing": false,
+      "json_extractor_used": "first_json_object",
+      "elapsed_s": 8.259,
+      "cost_usd": 0.00200875
+    }
+  ],
+  "final_attempt": {
+    "attempt": 1,
+    "model": "claude-opus-4-7",
+    "provider": "Anthropic",
+    "budget_setting": "operational",
+    "task_id": "ert_068",
+    "prompt_condition": "epistemic_hygiene_instruction",
+    "content": "{\n  \"claim_verdict\": \"refuted\",\n  \"confidence\": 0.85,\n  \"supporting_evidence\": [],\n  \"rejected_evidence\": [\"doc_007\", \"doc_015\", \"doc_005\", \"doc_012\", \"doc_011\"],\n  \"selected_doc_ids\": [\"doc_014\", \"doc_010\", \"doc_007\"],\n  \"actions\": [\n    {\"action\": \"trace_source\", \"target\": \"doc_007\", \"rationale\": \"All secondary coverage cites doc_007, which itself relies on summaries rather than raw records. Tracing confirms pseudo-consensus.\"},\n    {\"action\": \"compare_versions\", \"target\": \"doc_014\", \"rationale\": \"Verify the audited 3.8% figure against the regulator filing (doc_010) to confirm primary-source agreement.\"}\n  ],\n  \"evidence_environment_assessment\": \"The environment is dominated by 13+ secondary items all citing a single press release (doc_007) that uses settled-claim phrasing matching the question. This is pseudo-consensus, not independent confirmation. Two primary-grade documents — an audit report (doc_014) and a regulator filing (doc_010) — both report an audited 3.8% exception rate based on raw logs and reviewer sign-off. Primary records contradict the repeated 1.7% figure.\",\n  \"answer\": \"No. The audit report (doc_014) and regulator filing (doc_010) report an audited 2024 exception rate of 3.8 percent, above two percent. The widespread 1.7% figure traces to a single press release (doc_007) echoed by secondary coverage with no primary support, so it should be treated as pseudo-consensus and rejected in favor of the primary records.\"\n}",
+    "usage": {
+      "completion_tokens": 563,
+      "prompt_tokens": 3531,
+      "total_tokens": 4094,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": null,
+        "audio_tokens": 0,
+        "reasoning_tokens": 0,
+        "rejected_prediction_tokens": null,
+        "text_tokens": 0,
+        "image_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cached_tokens": 0,
+        "text_tokens": 0,
+        "image_tokens": 0
+      },
+      "usage_semantic": "openai",
+      "usage_source": "anthropic",
+      "input_tokens": 3531,
+      "output_tokens": 0,
+      "input_tokens_details": null,
+      "claude_cache_creation_5_m_tokens": 0,
+      "claude_cache_creation_1_h_tokens": 0
+    },
+    "response_format_used": "json_schema",
+    "parse_success": true,
+    "parse_error": "",
+    "empty_output": false,
+    "schema_missing": false,
+    "json_extractor_used": "first_json_object",
+    "elapsed_s": 8.259,
+    "cost_usd": 0.00200875
+  }
+}

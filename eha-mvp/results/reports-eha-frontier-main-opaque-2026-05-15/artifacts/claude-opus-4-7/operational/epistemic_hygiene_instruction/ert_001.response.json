@@ -1,0 +1,90 @@
+{
+  "attempts": [
+    {
+      "attempt": 1,
+      "model": "claude-opus-4-7",
+      "provider": "Anthropic",
+      "budget_setting": "operational",
+      "task_id": "ert_001",
+      "prompt_condition": "epistemic_hygiene_instruction",
+      "content": "{\n  \"claim_verdict\": \"supported\",\n  \"confidence\": 0.74,\n  \"supporting_evidence\": [\"doc_009\"],\n  \"rejected_evidence\": [\"doc_006\", \"doc_007\", \"doc_005\"],\n  \"selected_doc_ids\": [\"doc_009\", \"doc_010\", \"doc_006\"],\n  \"actions\": [\n    {\n      \"action\": \"trace_source\",\n      \"target\": \"doc_010\",\n      \"rationale\": \"doc_010 cites doc_009, so it is not independent corroboration. Tracing confirms whether the regulator filing relies on the same underlying audit record.\"\n    },\n    {\n      \"action\": \"search_contradiction\",\n      \"target\": \"doc_006\",\n      \"rationale\": \"The 'still pending' claim predates the audit completion date and is echoed by doc_007 and doc_005 citing doc_006, forming pseudo-consensus that should be checked against the primary record.\"\n    }\n  ],\n  \"evidence_environment_assessment\": \"The environment contains one primary audit record (doc_009) dated after completion, plus a regulator filing (doc_010) that explicitly cites doc_009, so they are not independent. Three 'still pending' items (doc_006, doc_007, doc_005) form a pseudo-consensus: doc_007 and doc_005 both cite doc_006, and all are dated November 2024, before the stated 2024-12-12 completion. Remaining notes are orientation only and do not settle the claim. Net: one primary record supports completion; the contradicting cluster is stale and single-sourced.\",\n  \"answer\": \"Yes. The signed audit record (doc_009) states the Q4 supplier audit was completed on 2024-12-12 and cleared for renewal review, ahead of the 2025 renewal meeting. The contradicting 'still pending' documents (doc_006, doc_007, doc_005) are dated November 2024, predate the completion, and form a single-source pseudo-consensus rather than independent refutation. doc_010 repeats doc_009 and is not independent corroboration, so confidence is moderate rather than high.\"\n}",
+      "usage": {
+        "completion_tokens": 688,
+        "prompt_tokens": 2367,
+        "total_tokens": 3055,
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": null,
+          "audio_tokens": 0,
+          "reasoning_tokens": 0,
+          "rejected_prediction_tokens": null,
+          "text_tokens": 0,
+          "image_tokens": 0
+        },
+        "prompt_tokens_details": {
+          "audio_tokens": 0,
+          "cached_tokens": 0,
+          "text_tokens": 0,
+          "image_tokens": 0
+        },
+        "usage_semantic": "openai",
+        "usage_source": "anthropic",
+        "input_tokens": 2367,
+        "output_tokens": 0,
+        "input_tokens_details": null,
+        "claude_cache_creation_5_m_tokens": 0,
+        "claude_cache_creation_1_h_tokens": 0
+      },
+      "response_format_used": "json_schema",
+      "parse_success": true,
+      "parse_error": "",
+      "empty_output": false,
+      "schema_missing": false,
+      "json_extractor_used": "first_json_object",
+      "elapsed_s": 9.56,
+      "cost_usd": 0.00196775
+    }
+  ],
+  "final_attempt": {
+    "attempt": 1,
+    "model": "claude-opus-4-7",
+    "provider": "Anthropic",
+    "budget_setting": "operational",
+    "task_id": "ert_001",
+    "prompt_condition": "epistemic_hygiene_instruction",
+    "content": "{\n  \"claim_verdict\": \"supported\",\n  \"confidence\": 0.74,\n  \"supporting_evidence\": [\"doc_009\"],\n  \"rejected_evidence\": [\"doc_006\", \"doc_007\", \"doc_005\"],\n  \"selected_doc_ids\": [\"doc_009\", \"doc_010\", \"doc_006\"],\n  \"actions\": [\n    {\n      \"action\": \"trace_source\",\n      \"target\": \"doc_010\",\n      \"rationale\": \"doc_010 cites doc_009, so it is not independent corroboration. Tracing confirms whether the regulator filing relies on the same underlying audit record.\"\n    },\n    {\n      \"action\": \"search_contradiction\",\n      \"target\": \"doc_006\",\n      \"rationale\": \"The 'still pending' claim predates the audit completion date and is echoed by doc_007 and doc_005 citing doc_006, forming pseudo-consensus that should be checked against the primary record.\"\n    }\n  ],\n  \"evidence_environment_assessment\": \"The environment contains one primary audit record (doc_009) dated after completion, plus a regulator filing (doc_010) that explicitly cites doc_009, so they are not independent. Three 'still pending' items (doc_006, doc_007, doc_005) form a pseudo-consensus: doc_007 and doc_005 both cite doc_006, and all are dated November 2024, before the stated 2024-12-12 completion. Remaining notes are orientation only and do not settle the claim. Net: one primary record supports completion; the contradicting cluster is stale and single-sourced.\",\n  \"answer\": \"Yes. The signed audit record (doc_009) states the Q4 supplier audit was completed on 2024-12-12 and cleared for renewal review, ahead of the 2025 renewal meeting. The contradicting 'still pending' documents (doc_006, doc_007, doc_005) are dated November 2024, predate the completion, and form a single-source pseudo-consensus rather than independent refutation. doc_010 repeats doc_009 and is not independent corroboration, so confidence is moderate rather than high.\"\n}",
+    "usage": {
+      "completion_tokens": 688,
+      "prompt_tokens": 2367,
+      "total_tokens": 3055,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": null,
+        "audio_tokens": 0,
+        "reasoning_tokens": 0,
+        "rejected_prediction_tokens": null,
+        "text_tokens": 0,
+        "image_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cached_tokens": 0,
+        "text_tokens": 0,
+        "image_tokens": 0
+      },
+      "usage_semantic": "openai",
+      "usage_source": "anthropic",
+      "input_tokens": 2367,
+      "output_tokens": 0,
+      "input_tokens_details": null,
+      "claude_cache_creation_5_m_tokens": 0,
+      "claude_cache_creation_1_h_tokens": 0
+    },
+    "response_format_used": "json_schema",
+    "parse_success": true,
+    "parse_error": "",
+    "empty_output": false,
+    "schema_missing": false,
+    "json_extractor_used": "first_json_object",
+    "elapsed_s": 9.56,
+    "cost_usd": 0.00196775
+  }
+}

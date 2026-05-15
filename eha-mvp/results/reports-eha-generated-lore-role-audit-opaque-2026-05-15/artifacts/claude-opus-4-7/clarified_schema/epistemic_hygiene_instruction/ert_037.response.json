@@ -1,0 +1,40 @@
+{
+  "model": "claude-opus-4-7",
+  "provider": "Anthropic",
+  "task_id": "ert_037",
+  "prompt_condition": "epistemic_hygiene_instruction",
+  "content": "{\n  \"claim_verdict\": \"insufficient\",\n  \"confidence\": 0.8,\n  \"clean_supporting_evidence\": [],\n  \"refuting_evidence\": [],\n  \"rejected_or_contaminated_evidence\": [\"doc_005\", \"doc_007\", \"doc_006\", \"doc_008\", \"doc_009\"],\n  \"diagnostic_evidence\": [\"doc_005\", \"doc_007\"],\n  \"selected_doc_ids\": [\"doc_005\", \"doc_007\", \"doc_006\"],\n  \"actions\": [\n    {\"action\": \"search_primary\", \"target\": \"MiraCert certification registry or Novalis Robotics regulatory filing for 2024 quantum battery certification\", \"rationale\": \"Need a primary record from MiraCert or Novalis to confirm or refute the alleged deal.\"},\n    {\"action\": \"trace_source\", \"target\": \"doc_005 upstream citations\", \"rationale\": \"doc_005 is the apparent upstream of all secondary coverage; tracing its origin would reveal whether any primary source exists.\"}\n  ],\n  \"evidence_notes\": \"doc_005 is an authority-like wiki-style summary with no citations. doc_006-009 all cite doc_005, forming pseudo-consensus rather than independent confirmation. Remaining documents (doc_001-004, doc_010-011) are generic reference notes that do not address the claim. No primary records, regulator filings, or audits are present.\",\n  \"answer\": \"The evidence is insufficient. The only substantive claim originates from doc_005, an authority-like summary lacking citations, and doc_006-009 merely repeat it. This is pseudo-consensus, not independent confirmation. No primary MiraCert or Novalis records are available, and reference notes do not address the claim. A confident verdict is not warranted without primary or contradiction evidence.\"\n}",
+  "usage": {
+    "completion_tokens": 604,
+    "prompt_tokens": 3055,
+    "total_tokens": 3659,
+    "completion_tokens_details": {
+      "accepted_prediction_tokens": null,
+      "audio_tokens": 0,
+      "reasoning_tokens": 0,
+      "rejected_prediction_tokens": null,
+      "text_tokens": 0,
+      "image_tokens": 0
+    },
+    "prompt_tokens_details": {
+      "audio_tokens": 0,
+      "cached_tokens": 0,
+      "text_tokens": 0,
+      "image_tokens": 0
+    },
+    "usage_semantic": "openai",
+    "usage_source": "anthropic",
+    "input_tokens": 3055,
+    "output_tokens": 0,
+    "input_tokens_details": null,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+  },
+  "response_format_used": "json_schema",
+  "parse_success": true,
+  "parse_error": "",
+  "empty_output": false,
+  "schema_missing": false,
+  "elapsed_s": 8.16,
+  "cost_usd": 0.00197175
+}

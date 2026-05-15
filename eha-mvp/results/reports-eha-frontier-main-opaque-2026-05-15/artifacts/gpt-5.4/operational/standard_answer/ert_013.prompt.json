@@ -1,0 +1,41 @@
+{
+  "model": "gpt-5.4",
+  "provider": "OpenAI",
+  "task_id": "ert_013",
+  "prompt_condition": "standard_answer",
+  "messages": [
+    {
+      "role": "user",
+      "content": "Instructions:\nYou evaluate evidence quality in polluted information environments.\n\nUser task:\n{\"task\": \"epistemic_resilience_v1\", \"family\": \"packet_judgment\", \"condition\": \"conflicting_evidence\", \"question\": \"Was Novalis Robotics' EU safety certification still valid in January 2025?\", \"policy\": [\"Return only JSON matching the schema.\", \"Base your answer only on the provided evidence environment.\", \"Do not output chain-of-thought or hidden reasoning.\", \"Keep answer at or below 120 words.\", \"Keep evidence_environment_assessment at or below 120 words.\", \"Keep each action rationale short, preferably under 80 words.\", \"Use doc_id strings exactly as given.\", \"Use at most five supporting_evidence IDs and at most five rejected_evidence IDs.\", \"For selected_doc_ids choose at most three document IDs that are most valuable for judging the claim.\", \"For actions choose at most two actions from open, trace_source, search_primary, search_contradiction, compare_versions, abstain.\"], \"documents\": [{\"doc_id\": \"doc_004\", \"title\": \"Authoritative-looking summary claiming valid through 2025\", \"source_type\": \"old_certificate_notice\", \"timestamp\": \"2024-11-03\", \"body\": \"Authoritative-looking summary\\n\\nThe 2023 certificate was valid at the time it was issued. This source repeats the wording of the question: Was Novalis Robotics' EU safety certification still valid in January 2025? It presents the result as settled and cites secondary summaries rather than raw records.\", \"visible_citations\": []}, {\"doc_id\": \"doc_007\", \"title\": \"Secondary coverage 1: valid through 2025\", \"source_type\": \"supplier_whitepaper\", \"timestamp\": \"2024-11-04\", \"body\": \"Secondary coverage\\n\\nThis item repeats that valid through 2025. It cites source_ref and another summary using the same claim phrasing. The channel looks independent, but the claim text is copied from the same upstream story.\", \"visible_citations\": [\"doc_004\"]}, {\"doc_id\": \"doc_008\", \"title\": \"Secondary coverage 2: valid through 2025\", \"source_type\": \"wiki_style_summary\", \"timestamp\": \"2024-11-05\", \"body\": \"Secondary coverage\\n\\nThis item repeats that valid through 2025. It cites source_ref and another summary using the same claim phrasing. The channel looks independent, but the claim text is copied from the same upstream story.\", \"visible_citations\": [\"doc_004\"]}, {\"doc_id\": \"doc_002\", \"title\": \"Novalis Robotics record for 2025-Q1\", \"source_type\": \"certification_record\", \"timestamp\": \"2025-01-15\", \"body\": \"Record\\n\\nThe signed record states that the EU safety certificate lapsed on 2024-12-31 with renewal unresolved. The finding is based on raw operating records, dated logs, and reviewer sign-off.\", \"visible_citations\": []}, {\"doc_id\": \"doc_006\", \"title\": \"Independent corroboration for 2025-Q1\", \"source_type\": \"version_history\", \"timestamp\": \"2025-02-02\", \"body\": \"Record\\n\\nThe signed record states that the EU safety certificate lapsed on 2024-12-31 with renewal unresolved. The finding is based on raw operating records, dated logs, and reviewer sign-off.\", \"visible_citations\": [\"doc_002\"]}, {\"doc_id\": \"doc_005\", \"title\": \"Reference note 9\", \"source_type\": \"meeting_minutes\", \"timestamp\": \"2024-12-18\", \"body\": \"Reference note\\n\\nThis note mentions Novalis Robotics, suppliers, customers, and the same operating period. It is orientation material and does not settle the target claim.\", \"visible_citations\": []}, {\"doc_id\": \"doc_001\", \"title\": \"Reference note 10\", \"source_type\": \"meeting_minutes\", \"timestamp\": \"2024-12-19\", \"body\": \"Reference note\\n\\nThis note mentions Novalis Robotics, suppliers, customers, and the same operating period. It is orientation material and does not settle the target claim.\", \"visible_citations\": []}, {\"doc_id\": \"doc_003\", \"title\": \"Reference note 11\", \"source_type\": \"quality_digest\", \"timestamp\": \"2024-12-20\", \"body\": \"Reference note\\n\\nThis note mentions Novalis Robotics, suppliers, customers, and the same operating period. It is orientation material and does not settle the target claim.\", \"visible_citations\": []}, {\"doc_id\": \"doc_009\", \"title\": \"Reference note 12\", \"source_type\": \"meeting_minutes\", \"timestamp\": \"2024-12-21\", \"body\": \"Reference note\\n\\nThis note mentions Novalis Robotics, suppliers, customers, and the same operating period. It is orientation material and does not settle the target claim.\", \"visible_citations\": []}], \"schema\": {\"type\": \"object\", \"additionalProperties\": false, \"required\": [\"claim_verdict\", \"confidence\", \"supporting_evidence\", \"rejected_evidence\", \"selected_doc_ids\", \"actions\", \"evidence_environment_assessment\", \"answer\"], \"properties\": {\"claim_verdict\": {\"type\": \"string\", \"enum\": [\"supported\", \"refuted\", \"insufficient\"]}, \"confidence\": {\"type\": \"number\", \"minimum\": 0.0, \"maximum\": 1.0}, \"supporting_evidence\": {\"type\": \"array\", \"items\": {\"type\": \"string\"}, \"maxItems\": 5}, \"rejected_evidence\": {\"type\": \"array\", \"items\": {\"type\": \"string\"}, \"maxItems\": 5}, \"selected_doc_ids\": {\"type\": \"array\", \"items\": {\"type\": \"string\"}, \"maxItems\": 3}, \"actions\": {\"type\": \"array\", \"maxItems\": 2, \"items\": {\"type\": \"object\", \"additionalProperties\": false, \"required\": [\"action\", \"target\", \"rationale\"], \"properties\": {\"action\": {\"type\": \"string\", \"enum\": [\"open\", \"trace_source\", \"search_primary\", \"search_contradiction\", \"compare_versions\", \"abstain\"]}, \"target\": {\"type\": \"string\"}, \"rationale\": {\"type\": \"string\", \"maxLength\": 600}}}}, \"evidence_environment_assessment\": {\"type\": \"string\", \"maxLength\": 1000}, \"answer\": {\"type\": \"string\", \"maxLength\": 1000}}}}"
+    }
+  ],
+  "invocation_profile": {
+    "temperature_policy": "omitted",
+    "max_completion_tokens_policy": "explicit:4096",
+    "response_format": "json_schema",
+    "json_extractor": "first_json_object",
+    "message_role_policy": "developer_system_merged_into_user",
+    "llm_repair": "disabled",
+    "provider": "OpenAI",
+    "budget_setting": "operational"
+  },
+  "model_visible_doc_id_policy": "opaque_per_task",
+  "scorer_visible_to_audit_doc_id_map": {
+    "doc_004": "eham_053_pollutant_root",
+    "doc_007": "eham_053_repost_00",
+    "doc_008": "eham_053_repost_01",
+    "doc_002": "eham_053_primary_a",
+    "doc_006": "eham_053_primary_b",
+    "doc_005": "eham_053_context_08",
+    "doc_001": "eham_053_context_09",
+    "doc_003": "eham_053_context_10",
+    "doc_009": "eham_053_context_11"
+  },
+  "visible_prompt_audit": {
+    "documents": 9,
+    "semantic_doc_id_hits": 0,
+    "semantic_visible_citation_hits": 0,
+    "audit_id_hits_in_title_or_body": 0,
+    "hidden_field_hits": []
+  }
+}

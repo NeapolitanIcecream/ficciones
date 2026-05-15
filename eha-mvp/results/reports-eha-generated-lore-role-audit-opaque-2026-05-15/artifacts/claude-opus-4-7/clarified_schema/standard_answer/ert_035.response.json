@@ -1,0 +1,40 @@
+{
+  "model": "claude-opus-4-7",
+  "provider": "Anthropic",
+  "task_id": "ert_035",
+  "prompt_condition": "standard_answer",
+  "content": "{\n  \"claim_verdict\": \"insufficient\",\n  \"confidence\": 0.2,\n  \"clean_supporting_evidence\": [],\n  \"refuting_evidence\": [],\n  \"rejected_or_contaminated_evidence\": [\"doc_002\", \"doc_007\", \"doc_008\", \"doc_003\", \"doc_005\"],\n  \"diagnostic_evidence\": [\"doc_002\", \"doc_007\"],\n  \"selected_doc_ids\": [\"doc_002\", \"doc_007\", \"doc_008\"],\n  \"actions\": [\n    {\"action\": \"trace_source\", \"target\": \"doc_002\", \"rationale\": \"doc_002 is the upstream wiki-style summary that all secondary coverage cites; tracing it would reveal whether any primary record (MiraCert registry, signed agreement) exists.\"},\n    {\"action\": \"search_primary\", \"target\": \"MiraCert certification registry / Novalis Robotics 2024 filings\", \"rationale\": \"No primary source (registry entry, signed contract, official Novalis or MiraCert announcement) is present; a primary search is needed to confirm or refute.\"}\n  ],\n  \"evidence_notes\": \"doc_002 is an authoritative-looking wiki-style summary that mirrors the question wording and cites only secondary summaries. doc_007, doc_008, doc_003, and doc_005 all repeat the same claim and cite doc_002, forming a pseudo-consensus from a single upstream source. Reference notes (doc_001, doc_004, doc_006, doc_009-doc_011) are orientation material and do not address the certification claim. No primary MiraCert record, signed agreement, or independent confirmation appears in the environment.\",\n  \"answer\": \"The evidence is insufficient to confirm the claim. All affirmative documents trace back to a single wiki-style summary (doc_002), with secondary items (doc_003, doc_005, doc_007, doc_008) merely repeating its wording. No primary record from MiraCert or Novalis Robotics is provided, and reference notes do not address certification. This pattern indicates pseudo-consensus rather than independent verification.\"\n}",
+  "usage": {
+    "completion_tokens": 695,
+    "prompt_tokens": 2907,
+    "total_tokens": 3602,
+    "completion_tokens_details": {
+      "accepted_prediction_tokens": null,
+      "audio_tokens": 0,
+      "reasoning_tokens": 0,
+      "rejected_prediction_tokens": null,
+      "text_tokens": 0,
+      "image_tokens": 0
+    },
+    "prompt_tokens_details": {
+      "audio_tokens": 0,
+      "cached_tokens": 0,
+      "text_tokens": 0,
+      "image_tokens": 0
+    },
+    "usage_semantic": "openai",
+    "usage_source": "anthropic",
+    "input_tokens": 2907,
+    "output_tokens": 0,
+    "input_tokens_details": null,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+  },
+  "response_format_used": "json_schema",
+  "parse_success": true,
+  "parse_error": "",
+  "empty_output": false,
+  "schema_missing": false,
+  "elapsed_s": 8.875,
+  "cost_usd": 0.0021167499999999997
+}

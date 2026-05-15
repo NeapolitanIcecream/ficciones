@@ -1,0 +1,40 @@
+{
+  "model": "claude-opus-4-7",
+  "provider": "Anthropic",
+  "task_id": "ert_079",
+  "prompt_condition": "standard_answer",
+  "content": "{\n  \"claim_verdict\": \"insufficient\",\n  \"confidence\": 0.15,\n  \"clean_supporting_evidence\": [],\n  \"refuting_evidence\": [],\n  \"rejected_or_contaminated_evidence\": [\"doc_001\", \"doc_018\", \"doc_004\", \"doc_019\", \"doc_008\"],\n  \"diagnostic_evidence\": [\"doc_001\", \"doc_015\"],\n  \"selected_doc_ids\": [\"doc_001\", \"doc_018\", \"doc_004\"],\n  \"actions\": [\n    {\"action\": \"trace_source\", \"target\": \"doc_001\", \"rationale\": \"doc_001 is the upstream wiki-style summary that all secondary coverage cites; tracing it would reveal whether any primary record (MiraCert registry, Novalis filing) actually exists.\"},\n    {\"action\": \"search_primary\", \"target\": \"MiraCert 2024 certification registry / Novalis Robotics filings\", \"rationale\": \"No primary source (registry entry, signed agreement, official press release from MiraCert or Novalis) is present. Primary records are needed to confirm or refute.\"}\n  ],\n  \"evidence_notes\": \"doc_001 is an authoritative-looking wiki-style summary with no citations. doc_018, doc_004, doc_019, doc_008, doc_015 all repeat the same wording and cite doc_001, forming a pseudo-consensus loop rather than independent confirmation. The remaining documents are generic reference notes that mention Novalis but do not address the MiraCert claim. No primary documentation (registry entries, signed agreements, MiraCert announcements) is provided, and no refuting source exists either.\",\n  \"answer\": \"There is insufficient clean evidence to confirm or deny that Novalis Robotics signed a 2024 MiraCert quantum battery certification deal. The only assertive source (doc_001) is an unsourced wiki-style summary, and the apparent corroborating coverage merely recycles its wording while citing it, producing a pseudo-consensus. No primary record from MiraCert or Novalis is present, and reference notes do not address the claim. A verdict requires tracing doc_001's origin and locating primary certification records.\"\n}",
+  "usage": {
+    "completion_tokens": 722,
+    "prompt_tokens": 4041,
+    "total_tokens": 4763,
+    "completion_tokens_details": {
+      "accepted_prediction_tokens": null,
+      "audio_tokens": 0,
+      "reasoning_tokens": 0,
+      "rejected_prediction_tokens": null,
+      "text_tokens": 0,
+      "image_tokens": 0
+    },
+    "prompt_tokens_details": {
+      "audio_tokens": 0,
+      "cached_tokens": 0,
+      "text_tokens": 0,
+      "image_tokens": 0
+    },
+    "usage_semantic": "openai",
+    "usage_source": "anthropic",
+    "input_tokens": 4041,
+    "output_tokens": 0,
+    "input_tokens_details": null,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+  },
+  "response_format_used": "json_schema",
+  "parse_success": true,
+  "parse_error": "",
+  "empty_output": false,
+  "schema_missing": false,
+  "elapsed_s": 12.695,
+  "cost_usd": 0.00245425
+}

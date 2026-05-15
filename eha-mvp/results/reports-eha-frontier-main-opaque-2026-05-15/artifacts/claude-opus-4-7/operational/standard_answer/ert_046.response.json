@@ -1,0 +1,90 @@
+{
+  "attempts": [
+    {
+      "attempt": 1,
+      "model": "claude-opus-4-7",
+      "provider": "Anthropic",
+      "budget_setting": "operational",
+      "task_id": "ert_046",
+      "prompt_condition": "standard_answer",
+      "content": "{\n  \"claim_verdict\": \"supported\",\n  \"confidence\": 0.82,\n  \"supporting_evidence\": [\"doc_015\", \"doc_016\"],\n  \"rejected_evidence\": [\"doc_005\", \"doc_003\", \"doc_019\", \"doc_018\", \"doc_007\"],\n  \"selected_doc_ids\": [\"doc_015\", \"doc_016\", \"doc_005\"],\n  \"actions\": [\n    {\"action\": \"trace_source\", \"target\": \"doc_005\", \"rationale\": \"Multiple secondary items echo doc_005's 'still pending' wording; tracing confirms they share one outdated upstream and should not be counted as independent.\"},\n    {\"action\": \"compare_versions\", \"target\": \"doc_015\", \"rationale\": \"Confirm the January 2025 audit record supersedes the November 2024 planning note that predates the stated completion date of 2024-12-12.\"}\n  ],\n  \"evidence_environment_assessment\": \"Two primary-style records (doc_015 audit report; doc_016 regulator filing citing it) state the audit was completed 2024-12-12 before the 2025 renewal meeting. Five 'still pending' items (doc_003, doc_007, doc_018, doc_019, doc_020) are dated November 2024, predate the completion date, and all trace back to doc_005, an outdated planning note—an echo cluster, not independent corroboration. Numerous reference notes are orientation-only and do not settle the claim.\",\n  \"answer\": \"Yes. The signed audit report (doc_015) and a regulator filing (doc_016) state the Q4 supplier audit was completed on 2024-12-12 and cleared for renewal review, before the 2025 renewal meeting. Contrary 'still pending' items are November 2024 secondary echoes of a single outdated planning note (doc_005) and predate the recorded completion.\"\n}",
+      "usage": {
+        "completion_tokens": 606,
+        "prompt_tokens": 3526,
+        "total_tokens": 4132,
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": null,
+          "audio_tokens": 0,
+          "reasoning_tokens": 0,
+          "rejected_prediction_tokens": null,
+          "text_tokens": 0,
+          "image_tokens": 0
+        },
+        "prompt_tokens_details": {
+          "audio_tokens": 0,
+          "cached_tokens": 0,
+          "text_tokens": 0,
+          "image_tokens": 0
+        },
+        "usage_semantic": "openai",
+        "usage_source": "anthropic",
+        "input_tokens": 3526,
+        "output_tokens": 0,
+        "input_tokens_details": null,
+        "claude_cache_creation_5_m_tokens": 0,
+        "claude_cache_creation_1_h_tokens": 0
+      },
+      "response_format_used": "json_schema",
+      "parse_success": true,
+      "parse_error": "",
+      "empty_output": false,
+      "schema_missing": false,
+      "json_extractor_used": "first_json_object",
+      "elapsed_s": 9.901,
+      "cost_usd": 0.0020935
+    }
+  ],
+  "final_attempt": {
+    "attempt": 1,
+    "model": "claude-opus-4-7",
+    "provider": "Anthropic",
+    "budget_setting": "operational",
+    "task_id": "ert_046",
+    "prompt_condition": "standard_answer",
+    "content": "{\n  \"claim_verdict\": \"supported\",\n  \"confidence\": 0.82,\n  \"supporting_evidence\": [\"doc_015\", \"doc_016\"],\n  \"rejected_evidence\": [\"doc_005\", \"doc_003\", \"doc_019\", \"doc_018\", \"doc_007\"],\n  \"selected_doc_ids\": [\"doc_015\", \"doc_016\", \"doc_005\"],\n  \"actions\": [\n    {\"action\": \"trace_source\", \"target\": \"doc_005\", \"rationale\": \"Multiple secondary items echo doc_005's 'still pending' wording; tracing confirms they share one outdated upstream and should not be counted as independent.\"},\n    {\"action\": \"compare_versions\", \"target\": \"doc_015\", \"rationale\": \"Confirm the January 2025 audit record supersedes the November 2024 planning note that predates the stated completion date of 2024-12-12.\"}\n  ],\n  \"evidence_environment_assessment\": \"Two primary-style records (doc_015 audit report; doc_016 regulator filing citing it) state the audit was completed 2024-12-12 before the 2025 renewal meeting. Five 'still pending' items (doc_003, doc_007, doc_018, doc_019, doc_020) are dated November 2024, predate the completion date, and all trace back to doc_005, an outdated planning note—an echo cluster, not independent corroboration. Numerous reference notes are orientation-only and do not settle the claim.\",\n  \"answer\": \"Yes. The signed audit report (doc_015) and a regulator filing (doc_016) state the Q4 supplier audit was completed on 2024-12-12 and cleared for renewal review, before the 2025 renewal meeting. Contrary 'still pending' items are November 2024 secondary echoes of a single outdated planning note (doc_005) and predate the recorded completion.\"\n}",
+    "usage": {
+      "completion_tokens": 606,
+      "prompt_tokens": 3526,
+      "total_tokens": 4132,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": null,
+        "audio_tokens": 0,
+        "reasoning_tokens": 0,
+        "rejected_prediction_tokens": null,
+        "text_tokens": 0,
+        "image_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cached_tokens": 0,
+        "text_tokens": 0,
+        "image_tokens": 0
+      },
+      "usage_semantic": "openai",
+      "usage_source": "anthropic",
+      "input_tokens": 3526,
+      "output_tokens": 0,
+      "input_tokens_details": null,
+      "claude_cache_creation_5_m_tokens": 0,
+      "claude_cache_creation_1_h_tokens": 0
+    },
+    "response_format_used": "json_schema",
+    "parse_success": true,
+    "parse_error": "",
+    "empty_output": false,
+    "schema_missing": false,
+    "json_extractor_used": "first_json_object",
+    "elapsed_s": 9.901,
+    "cost_usd": 0.0020935
+  }
+}

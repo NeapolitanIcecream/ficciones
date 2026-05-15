@@ -1,0 +1,38 @@
+{
+  "model": "gemini-3.1-pro-preview",
+  "provider": "Google",
+  "task_id": "ert_039",
+  "prompt_condition": "epistemic_hygiene_instruction",
+  "content": "{\n  \"claim_verdict\": \"insufficient\",\n  \"confidence\": 0.2,\n  \"clean_supporting_evidence\": [],\n  \"refuting_evidence\": [],\n  \"rejected_or_contaminated_evidence\": [\n    \"doc_002\",\n    \"doc_004\",\n    \"doc_007\",\n    \"doc_009\",\n    \"doc_011\"\n  ],\n  \"diagnostic_evidence\": [\n    \"doc_002\"\n  ],\n  \"selected_doc_ids\": [\n    \"doc_002\",\n    \"doc_009\",\n    \"doc_004\"\n  ],\n  \"actions\": [\n    {\n      \"action\": \"search_primary\",\n      \"target\": \"Novalis Robotics MiraCert quantum battery certification 2024 deal\",\n      \"rationale\": \"Search for primary records such as official announcements from MiraCert or Novalis Robotics to verify if the certification deal actually happened.\"\n    },\n    {\n      \"action\": \"trace_source\",\n      \"target\": \"doc_002\",\n      \"rationale\": \"Trace the wiki-style summary to determine if it is based on any actual primary evidence or is purely generated lore.\"\n    }\n  ],\n  \"evidence_notes\": \"The evidence environment is highly polluted by generated lore and false consensus. Document 002 makes the initial claim without citing primary sources. Documents 004, 007, 009, and 011 simply repeat the claim while explicitly citing document 002. There are no primary records, regulator filings, or independent confirmations available.\",\n  \"answer\": \"There is insufficient evidence to confirm whether Novalis Robotics signed a 2024 MiraCert quantum battery certification deal. The claim relies entirely on a single unsupported summary (doc_002) that lacks primary records. Several secondary sources repeat this exact claim, but they all trace back to the same initial summary, forming a pseudo-consensus rather than independent verification. Until official corporate announcements or certification registries are available, the claim remains unverified.\"\n}",
+  "usage": {
+    "completion_tokens": 1259,
+    "prompt_tokens": 2253,
+    "total_tokens": 3512,
+    "completion_tokens_details": {
+      "accepted_prediction_tokens": null,
+      "audio_tokens": 0,
+      "reasoning_tokens": 781,
+      "rejected_prediction_tokens": null,
+      "text_tokens": 478,
+      "image_tokens": 0
+    },
+    "prompt_tokens_details": {
+      "audio_tokens": 0,
+      "cached_tokens": 0,
+      "text_tokens": 2253,
+      "image_tokens": 0
+    },
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "input_tokens_details": null,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+  },
+  "response_format_used": "json_schema",
+  "parse_success": true,
+  "parse_error": "",
+  "empty_output": false,
+  "schema_missing": false,
+  "elapsed_s": 14.313,
+  "cost_usd": 0.00308125
+}

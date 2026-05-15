@@ -1,0 +1,90 @@
+{
+  "attempts": [
+    {
+      "attempt": 1,
+      "model": "gpt-5.4",
+      "provider": "OpenAI",
+      "budget_setting": "operational",
+      "task_id": "ert_001",
+      "prompt_condition": "epistemic_hygiene_instruction",
+      "content": "{\"actions\":[{\"action\":\"open\",\"rationale\":\"Prioritize the direct signed audit record with date and basis.\",\"target\":\"doc_009\"},{\"action\":\"trace_source\",\"rationale\":\"Check whether corroboration is independent or just repeats doc_009.\",\"target\":\"doc_010\"}],\"answer\":\"Yes. The strongest evidence is a signed audit record dated 2025-01-15 stating the supplier audit was completed on 2024-12-12 and cleared for renewal review, which is before the 2025 renewal meeting. A regulator filing repeats the same completion date but cites the audit record, so it is corroborative but not independent. The contrary items are outdated or secondary and trace back to the same older planning note.\",\"claim_verdict\":\"supported\",\"confidence\":0.92,\"evidence_environment_assessment\":\"The environment is fairly clean. There is one strong primary-like record (doc_009) with specific completion date, sign-off, and stated basis in raw logs. doc_010 supports it but is not independent because it cites doc_009. The contrary cluster (doc_006, doc_007, doc_005) is weak pseudo-consensus: outdated/secondary and source-linked to the same upstream note. Other notes are non-dispositive context only.\",\"rejected_evidence\":[\"doc_006\",\"doc_007\",\"doc_005\"],\"selected_doc_ids\":[\"doc_009\",\"doc_010\",\"doc_006\"],\"supporting_evidence\":[\"doc_009\",\"doc_010\"]}",
+      "usage": {
+        "completion_tokens": 318,
+        "prompt_tokens": 1757,
+        "total_tokens": 2075,
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": 0,
+          "audio_tokens": 0,
+          "reasoning_tokens": 0,
+          "rejected_prediction_tokens": 0
+        },
+        "prompt_tokens_details": {
+          "audio_tokens": 0,
+          "cached_tokens": 0
+        },
+        "latency_checkpoint": {
+          "engine_tbt_ms": 15,
+          "engine_ttft_ms": 115,
+          "engine_ttlt_ms": 4746,
+          "pre_inference_ms": 79,
+          "service_tbt_ms": 15,
+          "service_ttft_ms": 459,
+          "service_ttlt_ms": 5077,
+          "total_duration_ms": 5007,
+          "user_visible_ttft_ms": 380
+        }
+      },
+      "response_format_used": "json_schema",
+      "parse_success": true,
+      "parse_error": "",
+      "empty_output": false,
+      "schema_missing": false,
+      "json_extractor_used": "first_json_object",
+      "elapsed_s": 6.146,
+      "cost_usd": 0.00107525
+    }
+  ],
+  "final_attempt": {
+    "attempt": 1,
+    "model": "gpt-5.4",
+    "provider": "OpenAI",
+    "budget_setting": "operational",
+    "task_id": "ert_001",
+    "prompt_condition": "epistemic_hygiene_instruction",
+    "content": "{\"actions\":[{\"action\":\"open\",\"rationale\":\"Prioritize the direct signed audit record with date and basis.\",\"target\":\"doc_009\"},{\"action\":\"trace_source\",\"rationale\":\"Check whether corroboration is independent or just repeats doc_009.\",\"target\":\"doc_010\"}],\"answer\":\"Yes. The strongest evidence is a signed audit record dated 2025-01-15 stating the supplier audit was completed on 2024-12-12 and cleared for renewal review, which is before the 2025 renewal meeting. A regulator filing repeats the same completion date but cites the audit record, so it is corroborative but not independent. The contrary items are outdated or secondary and trace back to the same older planning note.\",\"claim_verdict\":\"supported\",\"confidence\":0.92,\"evidence_environment_assessment\":\"The environment is fairly clean. There is one strong primary-like record (doc_009) with specific completion date, sign-off, and stated basis in raw logs. doc_010 supports it but is not independent because it cites doc_009. The contrary cluster (doc_006, doc_007, doc_005) is weak pseudo-consensus: outdated/secondary and source-linked to the same upstream note. Other notes are non-dispositive context only.\",\"rejected_evidence\":[\"doc_006\",\"doc_007\",\"doc_005\"],\"selected_doc_ids\":[\"doc_009\",\"doc_010\",\"doc_006\"],\"supporting_evidence\":[\"doc_009\",\"doc_010\"]}",
+    "usage": {
+      "completion_tokens": 318,
+      "prompt_tokens": 1757,
+      "total_tokens": 2075,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": 0,
+        "audio_tokens": 0,
+        "reasoning_tokens": 0,
+        "rejected_prediction_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cached_tokens": 0
+      },
+      "latency_checkpoint": {
+        "engine_tbt_ms": 15,
+        "engine_ttft_ms": 115,
+        "engine_ttlt_ms": 4746,
+        "pre_inference_ms": 79,
+        "service_tbt_ms": 15,
+        "service_ttft_ms": 459,
+        "service_ttlt_ms": 5077,
+        "total_duration_ms": 5007,
+        "user_visible_ttft_ms": 380
+      }
+    },
+    "response_format_used": "json_schema",
+    "parse_success": true,
+    "parse_error": "",
+    "empty_output": false,
+    "schema_missing": false,
+    "json_extractor_used": "first_json_object",
+    "elapsed_s": 6.146,
+    "cost_usd": 0.00107525
+  }
+}

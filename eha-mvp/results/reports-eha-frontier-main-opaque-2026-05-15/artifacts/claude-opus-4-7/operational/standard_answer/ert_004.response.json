@@ -1,0 +1,90 @@
+{
+  "attempts": [
+    {
+      "attempt": 1,
+      "model": "claude-opus-4-7",
+      "provider": "Anthropic",
+      "budget_setting": "operational",
+      "task_id": "ert_004",
+      "prompt_condition": "standard_answer",
+      "content": "{\n\"claim_verdict\": \"supported\",\n\"confidence\": 0.82,\n\"supporting_evidence\": [\"doc_008\", \"doc_006\"],\n\"rejected_evidence\": [\"doc_003\", \"doc_009\", \"doc_007\"],\n\"selected_doc_ids\": [\"doc_008\", \"doc_006\", \"doc_003\"],\n\"actions\": [\n{\"action\": \"trace_source\", \"target\": \"doc_009\", \"rationale\": \"Secondary items echo doc_003's wording; tracing confirms single upstream origin rather than independent corroboration.\"},\n{\"action\": \"compare_versions\", \"target\": \"doc_003 vs doc_008\", \"rationale\": \"Compare the November planning note against the January audit record to confirm the pending status was superseded by the December 12 completion.\"}\n],\n\"evidence_environment_assessment\": \"Two dated January 2025 records (an audit report and a regulator filing) state the supplier audit was completed 2024-12-12 and cleared for renewal. Three earlier November 2024 items claim the audit was still pending, but doc_009 and doc_007 both cite doc_003, indicating a single upstream source rather than independent corroboration. The reference notes are orientation-only and do not settle the claim. The contradicting cluster predates the completion date, so it is stale rather than refuting.\",\n\"answer\": \"Yes. The signed audit report (doc_008) and an independent regulator filing (doc_006) both record completion on 2024-12-12, cleared for renewal review. Contradicting items (doc_003, doc_009, doc_007) predate completion and trace to a single November planning note, so they do not refute the later primary records.\"\n}",
+      "usage": {
+        "completion_tokens": 538,
+        "prompt_tokens": 2223,
+        "total_tokens": 2761,
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": null,
+          "audio_tokens": 0,
+          "reasoning_tokens": 0,
+          "rejected_prediction_tokens": null,
+          "text_tokens": 0,
+          "image_tokens": 0
+        },
+        "prompt_tokens_details": {
+          "audio_tokens": 0,
+          "cached_tokens": 0,
+          "text_tokens": 0,
+          "image_tokens": 0
+        },
+        "usage_semantic": "openai",
+        "usage_source": "anthropic",
+        "input_tokens": 2223,
+        "output_tokens": 0,
+        "input_tokens_details": null,
+        "claude_cache_creation_5_m_tokens": 0,
+        "claude_cache_creation_1_h_tokens": 0
+      },
+      "response_format_used": "json_schema",
+      "parse_success": true,
+      "parse_error": "",
+      "empty_output": false,
+      "schema_missing": false,
+      "json_extractor_used": "first_json_object",
+      "elapsed_s": 7.452,
+      "cost_usd": 0.00163175
+    }
+  ],
+  "final_attempt": {
+    "attempt": 1,
+    "model": "claude-opus-4-7",
+    "provider": "Anthropic",
+    "budget_setting": "operational",
+    "task_id": "ert_004",
+    "prompt_condition": "standard_answer",
+    "content": "{\n\"claim_verdict\": \"supported\",\n\"confidence\": 0.82,\n\"supporting_evidence\": [\"doc_008\", \"doc_006\"],\n\"rejected_evidence\": [\"doc_003\", \"doc_009\", \"doc_007\"],\n\"selected_doc_ids\": [\"doc_008\", \"doc_006\", \"doc_003\"],\n\"actions\": [\n{\"action\": \"trace_source\", \"target\": \"doc_009\", \"rationale\": \"Secondary items echo doc_003's wording; tracing confirms single upstream origin rather than independent corroboration.\"},\n{\"action\": \"compare_versions\", \"target\": \"doc_003 vs doc_008\", \"rationale\": \"Compare the November planning note against the January audit record to confirm the pending status was superseded by the December 12 completion.\"}\n],\n\"evidence_environment_assessment\": \"Two dated January 2025 records (an audit report and a regulator filing) state the supplier audit was completed 2024-12-12 and cleared for renewal. Three earlier November 2024 items claim the audit was still pending, but doc_009 and doc_007 both cite doc_003, indicating a single upstream source rather than independent corroboration. The reference notes are orientation-only and do not settle the claim. The contradicting cluster predates the completion date, so it is stale rather than refuting.\",\n\"answer\": \"Yes. The signed audit report (doc_008) and an independent regulator filing (doc_006) both record completion on 2024-12-12, cleared for renewal review. Contradicting items (doc_003, doc_009, doc_007) predate completion and trace to a single November planning note, so they do not refute the later primary records.\"\n}",
+    "usage": {
+      "completion_tokens": 538,
+      "prompt_tokens": 2223,
+      "total_tokens": 2761,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": null,
+        "audio_tokens": 0,
+        "reasoning_tokens": 0,
+        "rejected_prediction_tokens": null,
+        "text_tokens": 0,
+        "image_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cached_tokens": 0,
+        "text_tokens": 0,
+        "image_tokens": 0
+      },
+      "usage_semantic": "openai",
+      "usage_source": "anthropic",
+      "input_tokens": 2223,
+      "output_tokens": 0,
+      "input_tokens_details": null,
+      "claude_cache_creation_5_m_tokens": 0,
+      "claude_cache_creation_1_h_tokens": 0
+    },
+    "response_format_used": "json_schema",
+    "parse_success": true,
+    "parse_error": "",
+    "empty_output": false,
+    "schema_missing": false,
+    "json_extractor_used": "first_json_object",
+    "elapsed_s": 7.452,
+    "cost_usd": 0.00163175
+  }
+}

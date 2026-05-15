@@ -1,0 +1,40 @@
+{
+  "model": "claude-opus-4-7",
+  "provider": "Anthropic",
+  "task_id": "ert_036",
+  "prompt_condition": "epistemic_hygiene_instruction",
+  "content": "{\n  \"claim_verdict\": \"insufficient\",\n  \"confidence\": 0.8,\n  \"clean_supporting_evidence\": [],\n  \"refuting_evidence\": [],\n  \"rejected_or_contaminated_evidence\": [\"doc_007\", \"doc_010\", \"doc_002\", \"doc_001\"],\n  \"diagnostic_evidence\": [\"doc_007\", \"doc_010\"],\n  \"selected_doc_ids\": [\"doc_007\", \"doc_010\", \"doc_002\"],\n  \"actions\": [\n    {\n      \"action\": \"search_primary\",\n      \"target\": \"Novalis Robotics primary records or regulator filings on Project LumenShield 2024\",\n      \"rationale\": \"No primary records, audits, or filings are present. Need direct evidence from Novalis Robotics or regulators to confirm the project existed.\"\n    },\n    {\n      \"action\": \"trace_source\",\n      \"target\": \"doc_007\",\n      \"rationale\": \"doc_007 is the upstream source cited by doc_010, doc_002, and doc_001. Tracing it would reveal whether any primary record underlies the claim or whether it is generated lore.\"\n    }\n  ],\n  \"evidence_notes\": \"doc_007 is an authoritative-looking wiki-style summary that mirrors the question wording and cites only secondary summaries. doc_010, doc_002, and doc_001 all cite doc_007, forming pseudo-consensus rather than independent confirmation. The remaining documents (doc_003–doc_009, doc_008) are orientation notes mentioning Novalis Robotics but not addressing Project LumenShield. No primary records, regulator filings, audits, or version histories are available, and no contradictions are present.\",\n  \"answer\": \"There is no reliable evidence that Novalis Robotics ran Project LumenShield in 2024. The only affirming source (doc_007) is an authority-styled summary without primary support, and the other affirming items (doc_010, doc_002, doc_001) all cite doc_007, constituting pseudo-consensus. Reference notes do not address the claim. Verdict: insufficient pending primary records.\"\n}",
+  "usage": {
+    "completion_tokens": 693,
+    "prompt_tokens": 2804,
+    "total_tokens": 3497,
+    "completion_tokens_details": {
+      "accepted_prediction_tokens": null,
+      "audio_tokens": 0,
+      "reasoning_tokens": 0,
+      "rejected_prediction_tokens": null,
+      "text_tokens": 0,
+      "image_tokens": 0
+    },
+    "prompt_tokens_details": {
+      "audio_tokens": 0,
+      "cached_tokens": 0,
+      "text_tokens": 0,
+      "image_tokens": 0
+    },
+    "usage_semantic": "openai",
+    "usage_source": "anthropic",
+    "input_tokens": 2804,
+    "output_tokens": 0,
+    "input_tokens_details": null,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+  },
+  "response_format_used": "json_schema",
+  "parse_success": true,
+  "parse_error": "",
+  "empty_output": false,
+  "schema_missing": false,
+  "elapsed_s": 10.668,
+  "cost_usd": 0.0020870000000000003
+}

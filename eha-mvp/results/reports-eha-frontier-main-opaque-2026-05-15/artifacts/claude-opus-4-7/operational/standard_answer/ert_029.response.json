@@ -1,0 +1,90 @@
+{
+  "attempts": [
+    {
+      "attempt": 1,
+      "model": "claude-opus-4-7",
+      "provider": "Anthropic",
+      "budget_setting": "operational",
+      "task_id": "ert_029",
+      "prompt_condition": "standard_answer",
+      "content": "{\n  \"claim_verdict\": \"refuted\",\n  \"confidence\": 0.85,\n  \"supporting_evidence\": [\"doc_009\", \"doc_008\"],\n  \"rejected_evidence\": [\"doc_005\", \"doc_004\", \"doc_007\", \"doc_001\", \"doc_006\"],\n  \"selected_doc_ids\": [\"doc_009\", \"doc_008\", \"doc_005\"],\n  \"actions\": [\n    {\"action\": \"trace_source\", \"target\": \"doc_005\", \"rationale\": \"All secondary coverage cites doc_005, indicating a single upstream source rather than independent confirmation.\"},\n    {\"action\": \"compare_versions\", \"target\": \"doc_009 vs doc_005\", \"rationale\": \"Audit report and regulator filing show 3.8% versus the 1.7% figure repeated by memos; primary records outweigh repeated summaries.\"}\n  ],\n  \"evidence_environment_assessment\": \"The environment is dominated by eight near-identical secondary items (memos, digests, press release, wiki, whitepaper) all tracing back to doc_005, creating an illusion of consensus around 1.7%. Two primary-grade documents—an audit report (doc_009) and a regulator filing (doc_008) corroborating it—report an audited 3.8% exception rate for 2024. Primary, signed, log-based sources outweigh repeated secondary echoes of a single executive memo.\",\n  \"answer\": \"No. The audited record (doc_009) and independent regulator filing (doc_008) report a 3.8% exception rate for 2024, above two percent. The cluster of memos and digests claiming 1.7% all derive from a single upstream summary (doc_005) and do not constitute independent confirmation. The claim that Novalis reduced its 2024 recall rate below two percent is refuted by the primary evidence.\"\n}",
+      "usage": {
+        "completion_tokens": 599,
+        "prompt_tokens": 2441,
+        "total_tokens": 3040,
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": null,
+          "audio_tokens": 0,
+          "reasoning_tokens": 0,
+          "rejected_prediction_tokens": null,
+          "text_tokens": 0,
+          "image_tokens": 0
+        },
+        "prompt_tokens_details": {
+          "audio_tokens": 0,
+          "cached_tokens": 0,
+          "text_tokens": 0,
+          "image_tokens": 0
+        },
+        "usage_semantic": "openai",
+        "usage_source": "anthropic",
+        "input_tokens": 2441,
+        "output_tokens": 0,
+        "input_tokens_details": null,
+        "claude_cache_creation_5_m_tokens": 0,
+        "claude_cache_creation_1_h_tokens": 0
+      },
+      "response_format_used": "json_schema",
+      "parse_success": true,
+      "parse_error": "",
+      "empty_output": false,
+      "schema_missing": false,
+      "json_extractor_used": "first_json_object",
+      "elapsed_s": 8.216,
+      "cost_usd": 0.00180825
+    }
+  ],
+  "final_attempt": {
+    "attempt": 1,
+    "model": "claude-opus-4-7",
+    "provider": "Anthropic",
+    "budget_setting": "operational",
+    "task_id": "ert_029",
+    "prompt_condition": "standard_answer",
+    "content": "{\n  \"claim_verdict\": \"refuted\",\n  \"confidence\": 0.85,\n  \"supporting_evidence\": [\"doc_009\", \"doc_008\"],\n  \"rejected_evidence\": [\"doc_005\", \"doc_004\", \"doc_007\", \"doc_001\", \"doc_006\"],\n  \"selected_doc_ids\": [\"doc_009\", \"doc_008\", \"doc_005\"],\n  \"actions\": [\n    {\"action\": \"trace_source\", \"target\": \"doc_005\", \"rationale\": \"All secondary coverage cites doc_005, indicating a single upstream source rather than independent confirmation.\"},\n    {\"action\": \"compare_versions\", \"target\": \"doc_009 vs doc_005\", \"rationale\": \"Audit report and regulator filing show 3.8% versus the 1.7% figure repeated by memos; primary records outweigh repeated summaries.\"}\n  ],\n  \"evidence_environment_assessment\": \"The environment is dominated by eight near-identical secondary items (memos, digests, press release, wiki, whitepaper) all tracing back to doc_005, creating an illusion of consensus around 1.7%. Two primary-grade documents—an audit report (doc_009) and a regulator filing (doc_008) corroborating it—report an audited 3.8% exception rate for 2024. Primary, signed, log-based sources outweigh repeated secondary echoes of a single executive memo.\",\n  \"answer\": \"No. The audited record (doc_009) and independent regulator filing (doc_008) report a 3.8% exception rate for 2024, above two percent. The cluster of memos and digests claiming 1.7% all derive from a single upstream summary (doc_005) and do not constitute independent confirmation. The claim that Novalis reduced its 2024 recall rate below two percent is refuted by the primary evidence.\"\n}",
+    "usage": {
+      "completion_tokens": 599,
+      "prompt_tokens": 2441,
+      "total_tokens": 3040,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": null,
+        "audio_tokens": 0,
+        "reasoning_tokens": 0,
+        "rejected_prediction_tokens": null,
+        "text_tokens": 0,
+        "image_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cached_tokens": 0,
+        "text_tokens": 0,
+        "image_tokens": 0
+      },
+      "usage_semantic": "openai",
+      "usage_source": "anthropic",
+      "input_tokens": 2441,
+      "output_tokens": 0,
+      "input_tokens_details": null,
+      "claude_cache_creation_5_m_tokens": 0,
+      "claude_cache_creation_1_h_tokens": 0
+    },
+    "response_format_used": "json_schema",
+    "parse_success": true,
+    "parse_error": "",
+    "empty_output": false,
+    "schema_missing": false,
+    "json_extractor_used": "first_json_object",
+    "elapsed_s": 8.216,
+    "cost_usd": 0.00180825
+  }
+}

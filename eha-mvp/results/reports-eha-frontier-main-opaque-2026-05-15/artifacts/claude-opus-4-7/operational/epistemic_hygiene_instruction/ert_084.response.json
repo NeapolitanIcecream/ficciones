@@ -1,0 +1,90 @@
+{
+  "attempts": [
+    {
+      "attempt": 1,
+      "model": "claude-opus-4-7",
+      "provider": "Anthropic",
+      "budget_setting": "operational",
+      "task_id": "ert_084",
+      "prompt_condition": "epistemic_hygiene_instruction",
+      "content": "{\n  \"claim_verdict\": \"refuted\",\n  \"confidence\": 0.86,\n  \"supporting_evidence\": [\"doc_008\", \"doc_001\"],\n  \"rejected_evidence\": [\"doc_007\", \"doc_003\", \"doc_002\"],\n  \"selected_doc_ids\": [\"doc_008\", \"doc_001\", \"doc_007\"],\n  \"actions\": [\n    {\"action\": \"trace_source\", \"target\": \"doc_008\", \"rationale\": \"Confirm the certification record's reviewer sign-off and raw logs as primary evidence of lapse on 2024-12-31.\"},\n    {\"action\": \"search_contradiction\", \"target\": \"doc_007\", \"rationale\": \"The 'valid through 2025' claim relies on a 2024-11 summary citing secondary sources; check for any primary renewal filing that would override the lapse record.\"}\n  ],\n  \"evidence_environment_assessment\": \"The environment contains one primary certification record (doc_008) and an independent version-history corroboration (doc_001) both stating the EU certificate lapsed 2024-12-31. Opposing claims (doc_007, doc_003, doc_002) form pseudo-consensus: doc_003 and doc_002 cite doc_007, an authoritative-looking summary without primary records and predating the lapse date. Reference notes (doc_004, doc_005, doc_006) are orientation only. Primary and dated evidence outweighs the upstream-shared secondary cluster.\",\n  \"answer\": \"No. Primary records (doc_008, dated 2025-01-15) and an independent version history (doc_001) indicate Novalis Robotics' EU safety certificate lapsed on 2024-12-31 with renewal unresolved, so it was not valid in January 2025. The contrary 'valid through 2025' claims trace back to a single November 2024 summary (doc_007) repeated by secondary outlets, which constitutes weak pseudo-consensus rather than independent confirmation.\"\n}",
+      "usage": {
+        "completion_tokens": 645,
+        "prompt_tokens": 2117,
+        "total_tokens": 2762,
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": null,
+          "audio_tokens": 0,
+          "reasoning_tokens": 0,
+          "rejected_prediction_tokens": null,
+          "text_tokens": 0,
+          "image_tokens": 0
+        },
+        "prompt_tokens_details": {
+          "audio_tokens": 0,
+          "cached_tokens": 0,
+          "text_tokens": 0,
+          "image_tokens": 0
+        },
+        "usage_semantic": "openai",
+        "usage_source": "anthropic",
+        "input_tokens": 2117,
+        "output_tokens": 0,
+        "input_tokens_details": null,
+        "claude_cache_creation_5_m_tokens": 0,
+        "claude_cache_creation_1_h_tokens": 0
+      },
+      "response_format_used": "json_schema",
+      "parse_success": true,
+      "parse_error": "",
+      "empty_output": false,
+      "schema_missing": false,
+      "json_extractor_used": "first_json_object",
+      "elapsed_s": 9.45,
+      "cost_usd": 0.00181925
+    }
+  ],
+  "final_attempt": {
+    "attempt": 1,
+    "model": "claude-opus-4-7",
+    "provider": "Anthropic",
+    "budget_setting": "operational",
+    "task_id": "ert_084",
+    "prompt_condition": "epistemic_hygiene_instruction",
+    "content": "{\n  \"claim_verdict\": \"refuted\",\n  \"confidence\": 0.86,\n  \"supporting_evidence\": [\"doc_008\", \"doc_001\"],\n  \"rejected_evidence\": [\"doc_007\", \"doc_003\", \"doc_002\"],\n  \"selected_doc_ids\": [\"doc_008\", \"doc_001\", \"doc_007\"],\n  \"actions\": [\n    {\"action\": \"trace_source\", \"target\": \"doc_008\", \"rationale\": \"Confirm the certification record's reviewer sign-off and raw logs as primary evidence of lapse on 2024-12-31.\"},\n    {\"action\": \"search_contradiction\", \"target\": \"doc_007\", \"rationale\": \"The 'valid through 2025' claim relies on a 2024-11 summary citing secondary sources; check for any primary renewal filing that would override the lapse record.\"}\n  ],\n  \"evidence_environment_assessment\": \"The environment contains one primary certification record (doc_008) and an independent version-history corroboration (doc_001) both stating the EU certificate lapsed 2024-12-31. Opposing claims (doc_007, doc_003, doc_002) form pseudo-consensus: doc_003 and doc_002 cite doc_007, an authoritative-looking summary without primary records and predating the lapse date. Reference notes (doc_004, doc_005, doc_006) are orientation only. Primary and dated evidence outweighs the upstream-shared secondary cluster.\",\n  \"answer\": \"No. Primary records (doc_008, dated 2025-01-15) and an independent version history (doc_001) indicate Novalis Robotics' EU safety certificate lapsed on 2024-12-31 with renewal unresolved, so it was not valid in January 2025. The contrary 'valid through 2025' claims trace back to a single November 2024 summary (doc_007) repeated by secondary outlets, which constitutes weak pseudo-consensus rather than independent confirmation.\"\n}",
+    "usage": {
+      "completion_tokens": 645,
+      "prompt_tokens": 2117,
+      "total_tokens": 2762,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": null,
+        "audio_tokens": 0,
+        "reasoning_tokens": 0,
+        "rejected_prediction_tokens": null,
+        "text_tokens": 0,
+        "image_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cached_tokens": 0,
+        "text_tokens": 0,
+        "image_tokens": 0
+      },
+      "usage_semantic": "openai",
+      "usage_source": "anthropic",
+      "input_tokens": 2117,
+      "output_tokens": 0,
+      "input_tokens_details": null,
+      "claude_cache_creation_5_m_tokens": 0,
+      "claude_cache_creation_1_h_tokens": 0
+    },
+    "response_format_used": "json_schema",
+    "parse_success": true,
+    "parse_error": "",
+    "empty_output": false,
+    "schema_missing": false,
+    "json_extractor_used": "first_json_object",
+    "elapsed_s": 9.45,
+    "cost_usd": 0.00181925
+  }
+}

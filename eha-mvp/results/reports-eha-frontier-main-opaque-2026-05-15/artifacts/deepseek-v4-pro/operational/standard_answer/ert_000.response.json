@@ -1,0 +1,72 @@
+{
+  "attempts": [
+    {
+      "attempt": 1,
+      "model": "deepseek-v4-pro",
+      "provider": "DeepSeek",
+      "budget_setting": "operational",
+      "task_id": "ert_000",
+      "prompt_condition": "standard_answer",
+      "content": "{\n  \"claim_verdict\": \"supported\",\n  \"confidence\": 0.95,\n  \"supporting_evidence\": [\"doc_006\", \"doc_001\"],\n  \"rejected_evidence\": [\"doc_010\", \"doc_004\", \"doc_003\"],\n  \"selected_doc_ids\": [\"doc_006\", \"doc_001\", \"doc_010\"],\n  \"actions\": [\n    {\n      \"action\": \"open\",\n      \"target\": \"doc_006\",\n      \"rationale\": \"Inspect the primary audit report to confirm the completion date, raw operating records, dated logs, and reviewer sign-off.\"\n    },\n    {\n      \"action\": \"compare_versions\",\n      \"target\": \"doc_006, doc_010\",\n      \"rationale\": \"Compare the January 2025 audit report with the November 2023 planning note to illustrate the shift from pending to completed status.\"\n    }\n  ],\n  \"evidence_environment_assessment\": \"Two high-quality January 2025 sources (audit report, regulator filing) consistently state audit completion on 2024-12-12. Several outdated November 2024 sources repeat a pending claim, but they are contradicted by the more recent primary records. Reference notes are neutral and non-dispositive.\",\n  \"answer\": \"Yes, the audit was completed on December 12, 2024, as confirmed by the signed audit report and regulator filing, both dated January 2025. This clearly predates any 2025 renewal meeting.\"\n}",
+      "usage": {
+        "completion_tokens": 1260,
+        "prompt_tokens": 1545,
+        "total_tokens": 2805,
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": null,
+          "audio_tokens": null,
+          "reasoning_tokens": 942,
+          "rejected_prediction_tokens": null
+        },
+        "prompt_tokens_details": {
+          "audio_tokens": null,
+          "cached_tokens": 0
+        },
+        "prompt_cache_hit_tokens": 0,
+        "prompt_cache_miss_tokens": 1545
+      },
+      "response_format_used": "json_object",
+      "parse_success": true,
+      "parse_error": "",
+      "empty_output": false,
+      "schema_missing": false,
+      "json_extractor_used": "first_json_object",
+      "elapsed_s": 40.324,
+      "cost_usd": 0.00290625
+    }
+  ],
+  "final_attempt": {
+    "attempt": 1,
+    "model": "deepseek-v4-pro",
+    "provider": "DeepSeek",
+    "budget_setting": "operational",
+    "task_id": "ert_000",
+    "prompt_condition": "standard_answer",
+    "content": "{\n  \"claim_verdict\": \"supported\",\n  \"confidence\": 0.95,\n  \"supporting_evidence\": [\"doc_006\", \"doc_001\"],\n  \"rejected_evidence\": [\"doc_010\", \"doc_004\", \"doc_003\"],\n  \"selected_doc_ids\": [\"doc_006\", \"doc_001\", \"doc_010\"],\n  \"actions\": [\n    {\n      \"action\": \"open\",\n      \"target\": \"doc_006\",\n      \"rationale\": \"Inspect the primary audit report to confirm the completion date, raw operating records, dated logs, and reviewer sign-off.\"\n    },\n    {\n      \"action\": \"compare_versions\",\n      \"target\": \"doc_006, doc_010\",\n      \"rationale\": \"Compare the January 2025 audit report with the November 2023 planning note to illustrate the shift from pending to completed status.\"\n    }\n  ],\n  \"evidence_environment_assessment\": \"Two high-quality January 2025 sources (audit report, regulator filing) consistently state audit completion on 2024-12-12. Several outdated November 2024 sources repeat a pending claim, but they are contradicted by the more recent primary records. Reference notes are neutral and non-dispositive.\",\n  \"answer\": \"Yes, the audit was completed on December 12, 2024, as confirmed by the signed audit report and regulator filing, both dated January 2025. This clearly predates any 2025 renewal meeting.\"\n}",
+    "usage": {
+      "completion_tokens": 1260,
+      "prompt_tokens": 1545,
+      "total_tokens": 2805,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": null,
+        "audio_tokens": null,
+        "reasoning_tokens": 942,
+        "rejected_prediction_tokens": null
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": null,
+        "cached_tokens": 0
+      },
+      "prompt_cache_hit_tokens": 0,
+      "prompt_cache_miss_tokens": 1545
+    },
+    "response_format_used": "json_object",
+    "parse_success": true,
+    "parse_error": "",
+    "empty_output": false,
+    "schema_missing": false,
+    "json_extractor_used": "first_json_object",
+    "elapsed_s": 40.324,
+    "cost_usd": 0.00290625
+  }
+}

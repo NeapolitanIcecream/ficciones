@@ -1,0 +1,90 @@
+{
+  "attempts": [
+    {
+      "attempt": 1,
+      "model": "claude-opus-4-7",
+      "provider": "Anthropic",
+      "budget_setting": "operational",
+      "task_id": "ert_043",
+      "prompt_condition": "epistemic_hygiene_instruction",
+      "content": "{\n  \"claim_verdict\": \"supported\",\n  \"confidence\": 0.78,\n  \"supporting_evidence\": [\"doc_019\", \"doc_009\"],\n  \"rejected_evidence\": [\"doc_002\", \"doc_008\", \"doc_018\", \"doc_013\", \"doc_016\"],\n  \"selected_doc_ids\": [\"doc_019\", \"doc_009\", \"doc_002\"],\n  \"actions\": [\n    {\"action\": \"trace_source\", \"target\": \"doc_009\", \"rationale\": \"Confirm doc_009 cites doc_019 as upstream; treat as weak corroboration rather than independent confirmation.\"},\n    {\"action\": \"search_contradiction\", \"target\": \"doc_002\", \"rationale\": \"The pending claim cluster predates the audit completion date and propagates from a single outdated planning note; verify no fresher contradiction exists.\"}\n  ],\n  \"evidence_environment_assessment\": \"Two recent records (doc_019 audit_report; doc_009 regulator_filing citing doc_019) state the audit was completed 2024-12-12. The contradicting cluster (doc_002 and doc_008/018/013/016) is stale (Nov 2024, before completion) and is pseudo-consensus all citing doc_002. Many reference notes are orientation-only and do not settle the claim. Primary record favors completion; contradictions are outdated and non-independent.\",\n  \"answer\": \"Yes. The signed audit record (doc_019) reports completion on 2024-12-12, ahead of the 2025 renewal meeting, with a regulator filing (doc_009) corroborating. The opposing 'still pending' documents are dated November 2024, predate the recorded completion, and all trace back to a single outdated planning note (doc_002), so they constitute weak pseudo-consensus rather than valid contradiction.\"\n}",
+      "usage": {
+        "completion_tokens": 597,
+        "prompt_tokens": 3626,
+        "total_tokens": 4223,
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": null,
+          "audio_tokens": 0,
+          "reasoning_tokens": 0,
+          "rejected_prediction_tokens": null,
+          "text_tokens": 0,
+          "image_tokens": 0
+        },
+        "prompt_tokens_details": {
+          "audio_tokens": 0,
+          "cached_tokens": 0,
+          "text_tokens": 0,
+          "image_tokens": 0
+        },
+        "usage_semantic": "openai",
+        "usage_source": "anthropic",
+        "input_tokens": 3626,
+        "output_tokens": 0,
+        "input_tokens_details": null,
+        "claude_cache_creation_5_m_tokens": 0,
+        "claude_cache_creation_1_h_tokens": 0
+      },
+      "response_format_used": "json_schema",
+      "parse_success": true,
+      "parse_error": "",
+      "empty_output": false,
+      "schema_missing": false,
+      "json_extractor_used": "first_json_object",
+      "elapsed_s": 8.84,
+      "cost_usd": 0.0021005
+    }
+  ],
+  "final_attempt": {
+    "attempt": 1,
+    "model": "claude-opus-4-7",
+    "provider": "Anthropic",
+    "budget_setting": "operational",
+    "task_id": "ert_043",
+    "prompt_condition": "epistemic_hygiene_instruction",
+    "content": "{\n  \"claim_verdict\": \"supported\",\n  \"confidence\": 0.78,\n  \"supporting_evidence\": [\"doc_019\", \"doc_009\"],\n  \"rejected_evidence\": [\"doc_002\", \"doc_008\", \"doc_018\", \"doc_013\", \"doc_016\"],\n  \"selected_doc_ids\": [\"doc_019\", \"doc_009\", \"doc_002\"],\n  \"actions\": [\n    {\"action\": \"trace_source\", \"target\": \"doc_009\", \"rationale\": \"Confirm doc_009 cites doc_019 as upstream; treat as weak corroboration rather than independent confirmation.\"},\n    {\"action\": \"search_contradiction\", \"target\": \"doc_002\", \"rationale\": \"The pending claim cluster predates the audit completion date and propagates from a single outdated planning note; verify no fresher contradiction exists.\"}\n  ],\n  \"evidence_environment_assessment\": \"Two recent records (doc_019 audit_report; doc_009 regulator_filing citing doc_019) state the audit was completed 2024-12-12. The contradicting cluster (doc_002 and doc_008/018/013/016) is stale (Nov 2024, before completion) and is pseudo-consensus all citing doc_002. Many reference notes are orientation-only and do not settle the claim. Primary record favors completion; contradictions are outdated and non-independent.\",\n  \"answer\": \"Yes. The signed audit record (doc_019) reports completion on 2024-12-12, ahead of the 2025 renewal meeting, with a regulator filing (doc_009) corroborating. The opposing 'still pending' documents are dated November 2024, predate the recorded completion, and all trace back to a single outdated planning note (doc_002), so they constitute weak pseudo-consensus rather than valid contradiction.\"\n}",
+    "usage": {
+      "completion_tokens": 597,
+      "prompt_tokens": 3626,
+      "total_tokens": 4223,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": null,
+        "audio_tokens": 0,
+        "reasoning_tokens": 0,
+        "rejected_prediction_tokens": null,
+        "text_tokens": 0,
+        "image_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cached_tokens": 0,
+        "text_tokens": 0,
+        "image_tokens": 0
+      },
+      "usage_semantic": "openai",
+      "usage_source": "anthropic",
+      "input_tokens": 3626,
+      "output_tokens": 0,
+      "input_tokens_details": null,
+      "claude_cache_creation_5_m_tokens": 0,
+      "claude_cache_creation_1_h_tokens": 0
+    },
+    "response_format_used": "json_schema",
+    "parse_success": true,
+    "parse_error": "",
+    "empty_output": false,
+    "schema_missing": false,
+    "json_extractor_used": "first_json_object",
+    "elapsed_s": 8.84,
+    "cost_usd": 0.0021005
+  }
+}

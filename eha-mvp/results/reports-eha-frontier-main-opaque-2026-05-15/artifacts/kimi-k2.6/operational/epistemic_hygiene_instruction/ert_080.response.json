@@ -1,0 +1,52 @@
+{
+  "attempts": [
+    {
+      "attempt": 1,
+      "model": "kimi-k2.6",
+      "provider": "Kimi",
+      "budget_setting": "operational",
+      "task_id": "ert_080",
+      "prompt_condition": "epistemic_hygiene_instruction",
+      "content": "{\"claim_verdict\": \"supported\", \"confidence\": 0.95, \"supporting_evidence\": [\"doc_002\"], \"rejected_evidence\": [\"doc_007\", \"doc_003\", \"doc_001\"], \"selected_doc_ids\": [\"doc_002\", \"doc_007\"], \"actions\": [{\"action\": \"trace_source\", \"target\": \"doc_003\", \"rationale\": \"The pending claim appears in secondary coverage citing the outdated planning note doc_007. Tracing confirms the contradiction lacks independent primary support and is pseudo-consensus.\"}, {\"action\": \"search_contradiction\", \"target\": \"doc_002\", \"rationale\": \"Since doc_002 is a single primary audit record, searching for another primary record contradicting its completion date would strengthen confidence.\"}], \"evidence_environment_assessment\": \"The environment contains one strong primary audit record (doc_002) stating completion on 2024-12-12. A regulator filing (doc_006) repeats this but cites the audit record, offering no independent confirmation. A separate cluster of three documents (doc_007, doc_003, doc_001) claims the audit was still pending, but these are dated November 2024, stale, and form a pseudo-consensus tracing to an outdated planning note without primary support. Three reference notes are non-substantive. Overall, the primary evidence is clear and the contradictory evidence is weak and outdated.\", \"answer\": \"Yes. The 2025-Q1 audit record (doc_002) states the supplier audit was completed on 2024-12-12 and cleared for renewal review, which is before 2025. Contradictory claims that it was still pending in January 2025 come from an outdated November 2024 planning note and secondary coverage citing it, making them stale and non-independent.\"}",
+      "usage": {
+        "completion_tokens": 6195,
+        "prompt_tokens": 1425,
+        "total_tokens": 7620,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      },
+      "response_format_used": "json_schema",
+      "parse_success": true,
+      "parse_error": "",
+      "empty_output": false,
+      "schema_missing": false,
+      "json_extractor_used": "first_json_object",
+      "elapsed_s": 141.792,
+      "cost_usd": 0.01274625
+    }
+  ],
+  "final_attempt": {
+    "attempt": 1,
+    "model": "kimi-k2.6",
+    "provider": "Kimi",
+    "budget_setting": "operational",
+    "task_id": "ert_080",
+    "prompt_condition": "epistemic_hygiene_instruction",
+    "content": "{\"claim_verdict\": \"supported\", \"confidence\": 0.95, \"supporting_evidence\": [\"doc_002\"], \"rejected_evidence\": [\"doc_007\", \"doc_003\", \"doc_001\"], \"selected_doc_ids\": [\"doc_002\", \"doc_007\"], \"actions\": [{\"action\": \"trace_source\", \"target\": \"doc_003\", \"rationale\": \"The pending claim appears in secondary coverage citing the outdated planning note doc_007. Tracing confirms the contradiction lacks independent primary support and is pseudo-consensus.\"}, {\"action\": \"search_contradiction\", \"target\": \"doc_002\", \"rationale\": \"Since doc_002 is a single primary audit record, searching for another primary record contradicting its completion date would strengthen confidence.\"}], \"evidence_environment_assessment\": \"The environment contains one strong primary audit record (doc_002) stating completion on 2024-12-12. A regulator filing (doc_006) repeats this but cites the audit record, offering no independent confirmation. A separate cluster of three documents (doc_007, doc_003, doc_001) claims the audit was still pending, but these are dated November 2024, stale, and form a pseudo-consensus tracing to an outdated planning note without primary support. Three reference notes are non-substantive. Overall, the primary evidence is clear and the contradictory evidence is weak and outdated.\", \"answer\": \"Yes. The 2025-Q1 audit record (doc_002) states the supplier audit was completed on 2024-12-12 and cleared for renewal review, which is before 2025. Contradictory claims that it was still pending in January 2025 come from an outdated November 2024 planning note and secondary coverage citing it, making them stale and non-independent.\"}",
+    "usage": {
+      "completion_tokens": 6195,
+      "prompt_tokens": 1425,
+      "total_tokens": 7620,
+      "completion_tokens_details": null,
+      "prompt_tokens_details": null
+    },
+    "response_format_used": "json_schema",
+    "parse_success": true,
+    "parse_error": "",
+    "empty_output": false,
+    "schema_missing": false,
+    "json_extractor_used": "first_json_object",
+    "elapsed_s": 141.792,
+    "cost_usd": 0.01274625
+  }
+}

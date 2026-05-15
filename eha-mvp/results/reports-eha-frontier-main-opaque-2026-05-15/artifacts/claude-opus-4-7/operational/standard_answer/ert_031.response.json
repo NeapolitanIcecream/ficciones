@@ -1,0 +1,90 @@
+{
+  "attempts": [
+    {
+      "attempt": 1,
+      "model": "claude-opus-4-7",
+      "provider": "Anthropic",
+      "budget_setting": "operational",
+      "task_id": "ert_031",
+      "prompt_condition": "standard_answer",
+      "content": "{\n  \"claim_verdict\": \"refuted\",\n  \"confidence\": 0.85,\n  \"supporting_evidence\": [\"doc_002\", \"doc_006\"],\n  \"rejected_evidence\": [\"doc_010\", \"doc_008\", \"doc_003\", \"doc_007\", \"doc_005\"],\n  \"selected_doc_ids\": [\"doc_002\", \"doc_006\", \"doc_010\"],\n  \"actions\": [\n    {\"action\": \"trace_source\", \"target\": \"doc_010\", \"rationale\": \"All 1.7% claims trace back to doc_010, a supplier whitepaper without primary citations. Tracing confirms the secondary cluster is single-sourced.\"},\n    {\"action\": \"compare_versions\", \"target\": \"doc_002 vs doc_010\", \"rationale\": \"Audit report and regulator filing report 3.8% from raw records, contradicting the whitepaper's 1.7%. Primary signed records outweigh repeated secondary summaries.\"}\n  ],\n  \"evidence_environment_assessment\": \"The environment is dominated by eight near-identical secondary items (whitepapers, wiki summaries, press release, memo, digest) all repeating a 1.7% figure and ultimately citing a single upstream supplier whitepaper (doc_010) with no primary citations. This creates an illusion of independent corroboration. Buried beneath the repetition are two primary-grade documents: an audit report (doc_002) and a regulator filing (doc_006) that independently report an audited 3.8% exception rate based on raw logs and reviewer sign-off. Source quality, not volume, favors the audit and filing.\",\n  \"answer\": \"No. The audit report (doc_002) and regulator filing (doc_006) report a 3.8% audited exception rate for 2024 based on raw records, refuting the claim. The eight sources citing 1.7% all trace to a single supplier whitepaper (doc_010) lacking primary documentation, so their apparent independence is illusory. Novalis Robotics did not reduce its 2024 recall rate below two percent.\"\n}",
+      "usage": {
+        "completion_tokens": 672,
+        "prompt_tokens": 2452,
+        "total_tokens": 3124,
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": null,
+          "audio_tokens": 0,
+          "reasoning_tokens": 0,
+          "rejected_prediction_tokens": null,
+          "text_tokens": 0,
+          "image_tokens": 0
+        },
+        "prompt_tokens_details": {
+          "audio_tokens": 0,
+          "cached_tokens": 0,
+          "text_tokens": 0,
+          "image_tokens": 0
+        },
+        "usage_semantic": "openai",
+        "usage_source": "anthropic",
+        "input_tokens": 2452,
+        "output_tokens": 0,
+        "input_tokens_details": null,
+        "claude_cache_creation_5_m_tokens": 0,
+        "claude_cache_creation_1_h_tokens": 0
+      },
+      "response_format_used": "json_schema",
+      "parse_success": true,
+      "parse_error": "",
+      "empty_output": false,
+      "schema_missing": false,
+      "json_extractor_used": "first_json_object",
+      "elapsed_s": 13.57,
+      "cost_usd": 0.001957
+    }
+  ],
+  "final_attempt": {
+    "attempt": 1,
+    "model": "claude-opus-4-7",
+    "provider": "Anthropic",
+    "budget_setting": "operational",
+    "task_id": "ert_031",
+    "prompt_condition": "standard_answer",
+    "content": "{\n  \"claim_verdict\": \"refuted\",\n  \"confidence\": 0.85,\n  \"supporting_evidence\": [\"doc_002\", \"doc_006\"],\n  \"rejected_evidence\": [\"doc_010\", \"doc_008\", \"doc_003\", \"doc_007\", \"doc_005\"],\n  \"selected_doc_ids\": [\"doc_002\", \"doc_006\", \"doc_010\"],\n  \"actions\": [\n    {\"action\": \"trace_source\", \"target\": \"doc_010\", \"rationale\": \"All 1.7% claims trace back to doc_010, a supplier whitepaper without primary citations. Tracing confirms the secondary cluster is single-sourced.\"},\n    {\"action\": \"compare_versions\", \"target\": \"doc_002 vs doc_010\", \"rationale\": \"Audit report and regulator filing report 3.8% from raw records, contradicting the whitepaper's 1.7%. Primary signed records outweigh repeated secondary summaries.\"}\n  ],\n  \"evidence_environment_assessment\": \"The environment is dominated by eight near-identical secondary items (whitepapers, wiki summaries, press release, memo, digest) all repeating a 1.7% figure and ultimately citing a single upstream supplier whitepaper (doc_010) with no primary citations. This creates an illusion of independent corroboration. Buried beneath the repetition are two primary-grade documents: an audit report (doc_002) and a regulator filing (doc_006) that independently report an audited 3.8% exception rate based on raw logs and reviewer sign-off. Source quality, not volume, favors the audit and filing.\",\n  \"answer\": \"No. The audit report (doc_002) and regulator filing (doc_006) report a 3.8% audited exception rate for 2024 based on raw records, refuting the claim. The eight sources citing 1.7% all trace to a single supplier whitepaper (doc_010) lacking primary documentation, so their apparent independence is illusory. Novalis Robotics did not reduce its 2024 recall rate below two percent.\"\n}",
+    "usage": {
+      "completion_tokens": 672,
+      "prompt_tokens": 2452,
+      "total_tokens": 3124,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": null,
+        "audio_tokens": 0,
+        "reasoning_tokens": 0,
+        "rejected_prediction_tokens": null,
+        "text_tokens": 0,
+        "image_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cached_tokens": 0,
+        "text_tokens": 0,
+        "image_tokens": 0
+      },
+      "usage_semantic": "openai",
+      "usage_source": "anthropic",
+      "input_tokens": 2452,
+      "output_tokens": 0,
+      "input_tokens_details": null,
+      "claude_cache_creation_5_m_tokens": 0,
+      "claude_cache_creation_1_h_tokens": 0
+    },
+    "response_format_used": "json_schema",
+    "parse_success": true,
+    "parse_error": "",
+    "empty_output": false,
+    "schema_missing": false,
+    "json_extractor_used": "first_json_object",
+    "elapsed_s": 13.57,
+    "cost_usd": 0.001957
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "model": "gemini-3.1-pro-preview",
+  "provider": "Google",
+  "task_id": "ert_096",
+  "prompt_condition": "epistemic_hygiene_instruction",
+  "content": "{\n  \"claim_verdict\": \"insufficient\",\n  \"confidence\": 0.85,\n  \"clean_supporting_evidence\": [],\n  \"refuting_evidence\": [],\n  \"rejected_or_contaminated_evidence\": [\n    \"doc_007\",\n    \"doc_004\",\n    \"doc_008\",\n    \"doc_001\",\n    \"doc_002\"\n  ],\n  \"diagnostic_evidence\": [\n    \"doc_007\"\n  ],\n  \"selected_doc_ids\": [\n    \"doc_007\",\n    \"doc_004\",\n    \"doc_008\"\n  ],\n  \"actions\": [\n    {\n      \"action\": \"trace_source\",\n      \"target\": \"doc_007\",\n      \"rationale\": \"Investigate the central unsupported summary to determine if its claims about Project LumenShield trace back to any actual primary records.\"\n    },\n    {\n      \"action\": \"search_primary\",\n      \"target\": \"Novalis Robotics Project LumenShield 2024\",\n      \"rationale\": \"Search for direct primary sources, such as corporate filings or technical logs, to independently verify the claim.\"\n    }\n  ],\n  \"evidence_notes\": \"The evidence environment is highly polluted by generated lore and pseudo-consensus. Document doc_007 acts as a central node, presenting an authoritative-looking summary without primary records. Documents doc_004, doc_008, doc_001, and doc_002 form a pseudo-consensus by merely citing doc_007 while repeating the same claim. No direct, primary evidence (e.g., corporate filings, project repositories, or official press releases) exists to substantiate the existence of Project LumenShield in 2024. Thus, all supportive documents must be rejected as contaminated secondary coverage.\",\n  \"answer\": \"There is no reliable evidence that Novalis Robotics ran Project LumenShield in 2024. The available information environment consists entirely of an artificial consensus rooted in a single, unsupported wiki-style summary (doc_007). Multiple secondary sources cite this central document, repeating the claim without providing independent verification or citing primary records such as corporate filings, project documents, or official company releases. Because the evidence relies solely on circular reporting and lacks primary substantiation, the claim cannot be reliably verified at this time.\"\n}",
+  "usage": {
+    "completion_tokens": 1936,
+    "prompt_tokens": 1947,
+    "total_tokens": 3883,
+    "completion_tokens_details": {
+      "accepted_prediction_tokens": null,
+      "audio_tokens": 0,
+      "reasoning_tokens": 1396,
+      "rejected_prediction_tokens": null,
+      "text_tokens": 540,
+      "image_tokens": 0
+    },
+    "prompt_tokens_details": {
+      "audio_tokens": 0,
+      "cached_tokens": 0,
+      "text_tokens": 1947,
+      "image_tokens": 0
+    },
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "input_tokens_details": null,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+  },
+  "response_format_used": "json_schema",
+  "parse_success": true,
+  "parse_error": "",
+  "empty_output": false,
+  "schema_missing": false,
+  "elapsed_s": 21.8,
+  "cost_usd": 0.00435875
+}

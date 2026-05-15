@@ -1,0 +1,52 @@
+{
+  "attempts": [
+    {
+      "attempt": 1,
+      "model": "kimi-k2.6",
+      "provider": "Kimi",
+      "budget_setting": "operational",
+      "task_id": "ert_084",
+      "prompt_condition": "epistemic_hygiene_instruction",
+      "content": "{\"claim_verdict\":\"refuted\",\"confidence\":0.92,\"supporting_evidence\":[\"doc_008\",\"doc_001\"],\"rejected_evidence\":[\"doc_007\",\"doc_003\",\"doc_002\"],\"selected_doc_ids\":[\"doc_008\",\"doc_001\",\"doc_007\"],\"actions\":[{\"action\":\"trace_source\",\"target\":\"doc_007\",\"rationale\":\"Secondary coverage doc_003 and doc_002 both cite doc_007, revealing pseudo-consensus. Tracing confirms the 'valid through 2025' claim lacks primary support and originates from a single uncorroborated summary.\"},{\"action\":\"search_contradiction\",\"target\":\"doc_008\",\"rationale\":\"Primary records doc_008 and doc_001 directly contradict the secondary cluster. A contradiction check confirms the lapse date of 2024-12-31 is backed by raw operating records and reviewer sign-off.\"}],\"evidence_environment_assessment\":\"The environment contains conflicting claims. A cluster of secondary sources repeats an uncorroborated assertion without primary records, forming weak pseudo-consensus. Two primary records based on raw logs and signed sign-off state the certificate lapsed on 2024-12-31. Primary evidence overrides circular secondary coverage.\",\"answer\":\"No. Primary certification records (doc_008, doc_001) show the EU safety certificate lapsed on 2024-12-31 with renewal unresolved, so it was not valid in January 2025. The contrary 'valid through 2025' claim comes from circular secondary summaries (doc_007, doc_003, doc_002) lacking primary support.\"}",
+      "usage": {
+        "completion_tokens": 3670,
+        "prompt_tokens": 1411,
+        "total_tokens": 5081,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      },
+      "response_format_used": "json_schema",
+      "parse_success": true,
+      "parse_error": "",
+      "empty_output": false,
+      "schema_missing": false,
+      "json_extractor_used": "first_json_object",
+      "elapsed_s": 144.047,
+      "cost_usd": 0.00769275
+    }
+  ],
+  "final_attempt": {
+    "attempt": 1,
+    "model": "kimi-k2.6",
+    "provider": "Kimi",
+    "budget_setting": "operational",
+    "task_id": "ert_084",
+    "prompt_condition": "epistemic_hygiene_instruction",
+    "content": "{\"claim_verdict\":\"refuted\",\"confidence\":0.92,\"supporting_evidence\":[\"doc_008\",\"doc_001\"],\"rejected_evidence\":[\"doc_007\",\"doc_003\",\"doc_002\"],\"selected_doc_ids\":[\"doc_008\",\"doc_001\",\"doc_007\"],\"actions\":[{\"action\":\"trace_source\",\"target\":\"doc_007\",\"rationale\":\"Secondary coverage doc_003 and doc_002 both cite doc_007, revealing pseudo-consensus. Tracing confirms the 'valid through 2025' claim lacks primary support and originates from a single uncorroborated summary.\"},{\"action\":\"search_contradiction\",\"target\":\"doc_008\",\"rationale\":\"Primary records doc_008 and doc_001 directly contradict the secondary cluster. A contradiction check confirms the lapse date of 2024-12-31 is backed by raw operating records and reviewer sign-off.\"}],\"evidence_environment_assessment\":\"The environment contains conflicting claims. A cluster of secondary sources repeats an uncorroborated assertion without primary records, forming weak pseudo-consensus. Two primary records based on raw logs and signed sign-off state the certificate lapsed on 2024-12-31. Primary evidence overrides circular secondary coverage.\",\"answer\":\"No. Primary certification records (doc_008, doc_001) show the EU safety certificate lapsed on 2024-12-31 with renewal unresolved, so it was not valid in January 2025. The contrary 'valid through 2025' claim comes from circular secondary summaries (doc_007, doc_003, doc_002) lacking primary support.\"}",
+    "usage": {
+      "completion_tokens": 3670,
+      "prompt_tokens": 1411,
+      "total_tokens": 5081,
+      "completion_tokens_details": null,
+      "prompt_tokens_details": null
+    },
+    "response_format_used": "json_schema",
+    "parse_success": true,
+    "parse_error": "",
+    "empty_output": false,
+    "schema_missing": false,
+    "json_extractor_used": "first_json_object",
+    "elapsed_s": 144.047,
+    "cost_usd": 0.00769275
+  }
+}

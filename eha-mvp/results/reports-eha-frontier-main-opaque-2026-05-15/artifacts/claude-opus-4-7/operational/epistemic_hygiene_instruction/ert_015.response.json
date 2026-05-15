@@ -1,0 +1,90 @@
+{
+  "attempts": [
+    {
+      "attempt": 1,
+      "model": "claude-opus-4-7",
+      "provider": "Anthropic",
+      "budget_setting": "operational",
+      "task_id": "ert_015",
+      "prompt_condition": "epistemic_hygiene_instruction",
+      "content": "{\n  \"claim_verdict\": \"refuted\",\n  \"confidence\": 0.86,\n  \"supporting_evidence\": [\"doc_002\", \"doc_008\"],\n  \"rejected_evidence\": [\"doc_004\", \"doc_003\", \"doc_009\"],\n  \"selected_doc_ids\": [\"doc_002\", \"doc_008\", \"doc_004\"],\n  \"actions\": [\n    {\"action\": \"trace_source\", \"target\": \"doc_004\", \"rationale\": \"The 'authoritative' summary and its echoes (doc_003, doc_009) all trace to the same upstream wording without primary records, suggesting pseudo-consensus rather than independent confirmation.\"},\n    {\"action\": \"compare_versions\", \"target\": \"doc_002\", \"rationale\": \"Confirm the certification record and reviewer sign-off against doc_008's corroboration to verify the 2024-12-31 lapse is the authoritative status.\"}\n  ],\n  \"evidence_environment_assessment\": \"The environment contains a primary certification record (doc_002) dated 2025-01-15 with independent version-history corroboration (doc_008) stating the EU certificate lapsed 2024-12-31. Three 'valid through 2025' items (doc_004, doc_003, doc_009) form weak pseudo-consensus: doc_003 and doc_009 both cite doc_004, which itself relies on secondary summaries with no primary support and predates the lapse. Remaining documents (doc_001, doc_005, doc_006, doc_007) are orientation notes that do not settle the claim. Primary and version-history evidence outweighs the echo chain.\",\n  \"answer\": \"No. The signed certification record (doc_002, 2025-01-15) and an independent version history (doc_008) state the EU safety certificate lapsed on 2024-12-31 with renewal unresolved, so it was not valid in January 2025. The contrary 'valid through 2025' claims (doc_004, doc_003, doc_009) form a weak echo chain citing the same upstream summary without primary records and predate the lapse, so they are rejected.\"\n}",
+      "usage": {
+        "completion_tokens": 680,
+        "prompt_tokens": 2228,
+        "total_tokens": 2908,
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": null,
+          "audio_tokens": 0,
+          "reasoning_tokens": 0,
+          "rejected_prediction_tokens": null,
+          "text_tokens": 0,
+          "image_tokens": 0
+        },
+        "prompt_tokens_details": {
+          "audio_tokens": 0,
+          "cached_tokens": 0,
+          "text_tokens": 0,
+          "image_tokens": 0
+        },
+        "usage_semantic": "openai",
+        "usage_source": "anthropic",
+        "input_tokens": 2228,
+        "output_tokens": 0,
+        "input_tokens_details": null,
+        "claude_cache_creation_5_m_tokens": 0,
+        "claude_cache_creation_1_h_tokens": 0
+      },
+      "response_format_used": "json_schema",
+      "parse_success": true,
+      "parse_error": "",
+      "empty_output": false,
+      "schema_missing": false,
+      "json_extractor_used": "first_json_object",
+      "elapsed_s": 12.074,
+      "cost_usd": 0.001917
+    }
+  ],
+  "final_attempt": {
+    "attempt": 1,
+    "model": "claude-opus-4-7",
+    "provider": "Anthropic",
+    "budget_setting": "operational",
+    "task_id": "ert_015",
+    "prompt_condition": "epistemic_hygiene_instruction",
+    "content": "{\n  \"claim_verdict\": \"refuted\",\n  \"confidence\": 0.86,\n  \"supporting_evidence\": [\"doc_002\", \"doc_008\"],\n  \"rejected_evidence\": [\"doc_004\", \"doc_003\", \"doc_009\"],\n  \"selected_doc_ids\": [\"doc_002\", \"doc_008\", \"doc_004\"],\n  \"actions\": [\n    {\"action\": \"trace_source\", \"target\": \"doc_004\", \"rationale\": \"The 'authoritative' summary and its echoes (doc_003, doc_009) all trace to the same upstream wording without primary records, suggesting pseudo-consensus rather than independent confirmation.\"},\n    {\"action\": \"compare_versions\", \"target\": \"doc_002\", \"rationale\": \"Confirm the certification record and reviewer sign-off against doc_008's corroboration to verify the 2024-12-31 lapse is the authoritative status.\"}\n  ],\n  \"evidence_environment_assessment\": \"The environment contains a primary certification record (doc_002) dated 2025-01-15 with independent version-history corroboration (doc_008) stating the EU certificate lapsed 2024-12-31. Three 'valid through 2025' items (doc_004, doc_003, doc_009) form weak pseudo-consensus: doc_003 and doc_009 both cite doc_004, which itself relies on secondary summaries with no primary support and predates the lapse. Remaining documents (doc_001, doc_005, doc_006, doc_007) are orientation notes that do not settle the claim. Primary and version-history evidence outweighs the echo chain.\",\n  \"answer\": \"No. The signed certification record (doc_002, 2025-01-15) and an independent version history (doc_008) state the EU safety certificate lapsed on 2024-12-31 with renewal unresolved, so it was not valid in January 2025. The contrary 'valid through 2025' claims (doc_004, doc_003, doc_009) form a weak echo chain citing the same upstream summary without primary records and predate the lapse, so they are rejected.\"\n}",
+    "usage": {
+      "completion_tokens": 680,
+      "prompt_tokens": 2228,
+      "total_tokens": 2908,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": null,
+        "audio_tokens": 0,
+        "reasoning_tokens": 0,
+        "rejected_prediction_tokens": null,
+        "text_tokens": 0,
+        "image_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cached_tokens": 0,
+        "text_tokens": 0,
+        "image_tokens": 0
+      },
+      "usage_semantic": "openai",
+      "usage_source": "anthropic",
+      "input_tokens": 2228,
+      "output_tokens": 0,
+      "input_tokens_details": null,
+      "claude_cache_creation_5_m_tokens": 0,
+      "claude_cache_creation_1_h_tokens": 0
+    },
+    "response_format_used": "json_schema",
+    "parse_success": true,
+    "parse_error": "",
+    "empty_output": false,
+    "schema_missing": false,
+    "json_extractor_used": "first_json_object",
+    "elapsed_s": 12.074,
+    "cost_usd": 0.001917
+  }
+}

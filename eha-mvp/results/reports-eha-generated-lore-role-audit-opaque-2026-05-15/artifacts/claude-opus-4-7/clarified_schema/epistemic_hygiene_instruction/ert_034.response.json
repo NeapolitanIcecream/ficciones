@@ -1,0 +1,40 @@
+{
+  "model": "claude-opus-4-7",
+  "provider": "Anthropic",
+  "task_id": "ert_034",
+  "prompt_condition": "epistemic_hygiene_instruction",
+  "content": "{\n  \"claim_verdict\": \"insufficient\",\n  \"confidence\": 0.15,\n  \"clean_supporting_evidence\": [],\n  \"refuting_evidence\": [],\n  \"rejected_or_contaminated_evidence\": [\"doc_005\", \"doc_007\", \"doc_001\", \"doc_006\", \"doc_008\"],\n  \"diagnostic_evidence\": [\"doc_005\", \"doc_007\"],\n  \"selected_doc_ids\": [\"doc_005\", \"doc_007\", \"doc_001\"],\n  \"actions\": [\n    {\"action\": \"trace_source\", \"target\": \"doc_005\", \"rationale\": \"All secondary items cite doc_005, an authority-like summary with no primary records. Tracing upstream is needed to find any underlying source.\"},\n    {\"action\": \"search_primary\", \"target\": \"Novalis Robotics Project LumenShield 2024 filings or audits\", \"rationale\": \"No regulator filings, audits, or internal records are present. Primary documentation is required to confirm the project existed.\"}\n  ],\n  \"evidence_notes\": \"doc_005 is a wiki-style summary that mirrors the question wording and cites only secondary summaries. doc_001, doc_006, doc_007, doc_008 all repeat doc_005's wording, forming pseudo-consensus rather than independent confirmation. Reference notes (doc_002, doc_003, doc_004, doc_009, doc_010, doc_011) are orientation material and do not address the claim. No primary records, filings, audits, or contradiction sources are available.\",\n  \"answer\": \"There is no reliable evidence in the provided environment that Novalis Robotics ran Project LumenShield in 2024. The only assertive source is an authority-like summary (doc_005) without primary citations; the other supportive items copy its wording, producing weak pseudo-consensus rather than independent confirmation. Reference notes mention Novalis Robotics generally but do not settle the claim. Primary records such as filings, audits, or version histories are absent. The verdict is insufficient pending upstream tracing and a search for primary documentation.\"\n}",
+  "usage": {
+    "completion_tokens": 683,
+    "prompt_tokens": 2974,
+    "total_tokens": 3657,
+    "completion_tokens_details": {
+      "accepted_prediction_tokens": null,
+      "audio_tokens": 0,
+      "reasoning_tokens": 0,
+      "rejected_prediction_tokens": null,
+      "text_tokens": 0,
+      "image_tokens": 0
+    },
+    "prompt_tokens_details": {
+      "audio_tokens": 0,
+      "cached_tokens": 0,
+      "text_tokens": 0,
+      "image_tokens": 0
+    },
+    "usage_semantic": "openai",
+    "usage_source": "anthropic",
+    "input_tokens": 2974,
+    "output_tokens": 0,
+    "input_tokens_details": null,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+  },
+  "response_format_used": "json_schema",
+  "parse_success": true,
+  "parse_error": "",
+  "empty_output": false,
+  "schema_missing": false,
+  "elapsed_s": 11.757,
+  "cost_usd": 0.0021095000000000003
+}

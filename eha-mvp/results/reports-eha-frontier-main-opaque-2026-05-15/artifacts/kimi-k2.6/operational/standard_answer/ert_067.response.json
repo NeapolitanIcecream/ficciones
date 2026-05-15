@@ -1,0 +1,52 @@
+{
+  "attempts": [
+    {
+      "attempt": 1,
+      "model": "kimi-k2.6",
+      "provider": "Kimi",
+      "budget_setting": "operational",
+      "task_id": "ert_067",
+      "prompt_condition": "standard_answer",
+      "content": "{\n  \"claim_verdict\": \"refuted\",\n  \"confidence\": 0.9,\n  \"supporting_evidence\": [\n    \"doc_004\",\n    \"doc_001\"\n  ],\n  \"rejected_evidence\": [\n    \"doc_009\",\n    \"doc_002\",\n    \"doc_005\",\n    \"doc_006\",\n    \"doc_007\"\n  ],\n  \"selected_doc_ids\": [\n    \"doc_004\",\n    \"doc_001\",\n    \"doc_009\"\n  ],\n  \"actions\": [\n    {\n      \"action\": \"trace_source\",\n      \"target\": \"doc_009\",\n      \"rationale\": \"Confirms the 1.7% claim lacks raw-record citations and rests only on secondary summaries.\"\n    },\n    {\n      \"action\": \"trace_source\",\n      \"target\": \"doc_002\",\n      \"rationale\": \"Reveals circular citation to doc_009, exposing false independence in the secondary cascade.\"\n    }\n  ],\n  \"evidence_environment_assessment\": \"The environment shows a polluted cascade: a single unsourced wiki summary (doc_009) claiming 1.7% is echoed by ten secondary sources, creating false consensus. The primary evidence—an audit report (doc_004) and regulator filing (doc_001)—is buried but shows a 3.8% audited exception rate based on raw records. The secondary network shares copied phrasing and circular citations, lacking primary backing.\",\n  \"answer\": \"No. The audited operating record shows a 3.8 percent exception rate for 2024, which is above two percent. The 1.7 percent recall rate claim originates from an unsourced wiki-style summary (doc_009) and is echoed by secondary sources without independent primary verification. The audit report and regulator filing are the only documents grounded in raw operating records.\"\n}",
+      "usage": {
+        "completion_tokens": 4053,
+        "prompt_tokens": 2050,
+        "total_tokens": 6103,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      },
+      "response_format_used": "json_schema",
+      "parse_success": true,
+      "parse_error": "",
+      "empty_output": false,
+      "schema_missing": false,
+      "json_extractor_used": "first_json_object",
+      "elapsed_s": 97.571,
+      "cost_usd": 0.008618500000000001
+    }
+  ],
+  "final_attempt": {
+    "attempt": 1,
+    "model": "kimi-k2.6",
+    "provider": "Kimi",
+    "budget_setting": "operational",
+    "task_id": "ert_067",
+    "prompt_condition": "standard_answer",
+    "content": "{\n  \"claim_verdict\": \"refuted\",\n  \"confidence\": 0.9,\n  \"supporting_evidence\": [\n    \"doc_004\",\n    \"doc_001\"\n  ],\n  \"rejected_evidence\": [\n    \"doc_009\",\n    \"doc_002\",\n    \"doc_005\",\n    \"doc_006\",\n    \"doc_007\"\n  ],\n  \"selected_doc_ids\": [\n    \"doc_004\",\n    \"doc_001\",\n    \"doc_009\"\n  ],\n  \"actions\": [\n    {\n      \"action\": \"trace_source\",\n      \"target\": \"doc_009\",\n      \"rationale\": \"Confirms the 1.7% claim lacks raw-record citations and rests only on secondary summaries.\"\n    },\n    {\n      \"action\": \"trace_source\",\n      \"target\": \"doc_002\",\n      \"rationale\": \"Reveals circular citation to doc_009, exposing false independence in the secondary cascade.\"\n    }\n  ],\n  \"evidence_environment_assessment\": \"The environment shows a polluted cascade: a single unsourced wiki summary (doc_009) claiming 1.7% is echoed by ten secondary sources, creating false consensus. The primary evidence—an audit report (doc_004) and regulator filing (doc_001)—is buried but shows a 3.8% audited exception rate based on raw records. The secondary network shares copied phrasing and circular citations, lacking primary backing.\",\n  \"answer\": \"No. The audited operating record shows a 3.8 percent exception rate for 2024, which is above two percent. The 1.7 percent recall rate claim originates from an unsourced wiki-style summary (doc_009) and is echoed by secondary sources without independent primary verification. The audit report and regulator filing are the only documents grounded in raw operating records.\"\n}",
+    "usage": {
+      "completion_tokens": 4053,
+      "prompt_tokens": 2050,
+      "total_tokens": 6103,
+      "completion_tokens_details": null,
+      "prompt_tokens_details": null
+    },
+    "response_format_used": "json_schema",
+    "parse_success": true,
+    "parse_error": "",
+    "empty_output": false,
+    "schema_missing": false,
+    "json_extractor_used": "first_json_object",
+    "elapsed_s": 97.571,
+    "cost_usd": 0.008618500000000001
+  }
+}

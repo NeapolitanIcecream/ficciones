@@ -1,0 +1,40 @@
+{
+  "model": "gpt-5.4",
+  "provider": "OpenAI",
+  "task_id": "ert_036",
+  "prompt_condition": "epistemic_hygiene_instruction",
+  "content": "{\"actions\":[{\"action\":\"trace_source\",\"rationale\":\"doc_010, doc_002, and doc_001 all route back to doc_007, so this is pseudo-consensus from one unsupported upstream summary.\",\"target\":\"doc_007\"},{\"action\":\"abstain\",\"rationale\":\"No primary records, filings, audits, logs, or direct contradiction checks are present in the provided set.\",\"target\":\"evidence_environment\"}],\"answer\":\"No. The provided environment does not contain reliable evidence that Novalis Robotics ran Project LumenShield in 2024. The apparent support is a chain of summary-like items that repeat the same claim and cite one another, not primary records. The remaining notes mention related entities or timing but explicitly do not settle the claim.\",\"claim_verdict\":\"insufficient\",\"clean_supporting_evidence\":[],\"confidence\":0.93,\"diagnostic_evidence\":[\"doc_007\",\"doc_010\",\"doc_003\"],\"evidence_notes\":\"Evidence environment is polluted by generated-lore style repetition. doc_007 is an authority-like summary with no visible primary citations; doc_010/doc_002/doc_001 recycle it, creating weak pseudo-consensus rather than independent confirmation. The reference notes are contextual only and do not verify whether the project actually ran in 2024.\",\"refuting_evidence\":[],\"rejected_or_contaminated_evidence\":[\"doc_007\",\"doc_010\",\"doc_002\",\"doc_001\"],\"selected_doc_ids\":[\"doc_007\",\"doc_010\",\"doc_003\"]}",
+  "usage": {
+    "completion_tokens": 325,
+    "prompt_tokens": 2051,
+    "total_tokens": 2376,
+    "completion_tokens_details": {
+      "accepted_prediction_tokens": 0,
+      "audio_tokens": 0,
+      "reasoning_tokens": 0,
+      "rejected_prediction_tokens": 0
+    },
+    "prompt_tokens_details": {
+      "audio_tokens": 0,
+      "cached_tokens": 0
+    },
+    "latency_checkpoint": {
+      "engine_tbt_ms": 12,
+      "engine_ttft_ms": 125,
+      "engine_ttlt_ms": 4155,
+      "pre_inference_ms": 76,
+      "service_tbt_ms": 12,
+      "service_ttft_ms": 238,
+      "service_ttlt_ms": 4258,
+      "total_duration_ms": 4185,
+      "user_visible_ttft_ms": 162
+    }
+  },
+  "response_format_used": "json_schema",
+  "parse_success": true,
+  "parse_error": "",
+  "empty_output": false,
+  "schema_missing": false,
+  "elapsed_s": 5.509,
+  "cost_usd": 0.00116275
+}

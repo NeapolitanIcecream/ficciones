@@ -1,0 +1,90 @@
+{
+  "attempts": [
+    {
+      "attempt": 1,
+      "model": "claude-opus-4-7",
+      "provider": "Anthropic",
+      "budget_setting": "operational",
+      "task_id": "ert_000",
+      "prompt_condition": "epistemic_hygiene_instruction",
+      "content": "{\n  \"claim_verdict\": \"supported\",\n  \"confidence\": 0.78,\n  \"supporting_evidence\": [\"doc_006\", \"doc_001\"],\n  \"rejected_evidence\": [\"doc_010\", \"doc_004\", \"doc_003\"],\n  \"selected_doc_ids\": [\"doc_006\", \"doc_001\", \"doc_010\"],\n  \"actions\": [\n    {\"action\": \"trace_source\", \"target\": \"doc_001\", \"rationale\": \"Confirm regulator filing's reliance on doc_006 to assess whether it provides independent confirmation or pseudo-consensus.\"},\n    {\"action\": \"compare_versions\", \"target\": \"doc_010\", \"rationale\": \"Check whether the older planning note was superseded by the December audit completion record.\"}\n  ],\n  \"evidence_environment_assessment\": \"The environment contains one primary audit report (doc_006) dated 2025-01-15 stating completion on 2024-12-12, plus a regulator filing (doc_001) with identical wording citing doc_006—weak pseudo-consensus rather than independent confirmation. Three 'still pending' items (doc_010, doc_004, doc_003) are stale (Nov 2024) and trace to a single upstream planning note, so they don't refute a December completion. Remaining documents are orientation notes that don't settle the claim. Primary record exists; contradictions are stale and non-independent.\",\n  \"answer\": \"Yes. The signed audit record (doc_006) states the Q4 supplier audit was completed on 2024-12-12 and cleared for renewal review, supported by a regulator filing (doc_001). Contradicting items are stale November 2024 planning notes predating the completion date and trace to a single upstream source, so they do not refute the primary record. Confidence is moderate because doc_001 echoes doc_006 rather than providing independent corroboration.\"\n}",
+      "usage": {
+        "completion_tokens": 608,
+        "prompt_tokens": 2370,
+        "total_tokens": 2978,
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": null,
+          "audio_tokens": 0,
+          "reasoning_tokens": 0,
+          "rejected_prediction_tokens": null,
+          "text_tokens": 0,
+          "image_tokens": 0
+        },
+        "prompt_tokens_details": {
+          "audio_tokens": 0,
+          "cached_tokens": 0,
+          "text_tokens": 0,
+          "image_tokens": 0
+        },
+        "usage_semantic": "openai",
+        "usage_source": "anthropic",
+        "input_tokens": 2370,
+        "output_tokens": 0,
+        "input_tokens_details": null,
+        "claude_cache_creation_5_m_tokens": 0,
+        "claude_cache_creation_1_h_tokens": 0
+      },
+      "response_format_used": "json_schema",
+      "parse_success": true,
+      "parse_error": "",
+      "empty_output": false,
+      "schema_missing": false,
+      "json_extractor_used": "first_json_object",
+      "elapsed_s": 7.923,
+      "cost_usd": 0.0018085000000000002
+    }
+  ],
+  "final_attempt": {
+    "attempt": 1,
+    "model": "claude-opus-4-7",
+    "provider": "Anthropic",
+    "budget_setting": "operational",
+    "task_id": "ert_000",
+    "prompt_condition": "epistemic_hygiene_instruction",
+    "content": "{\n  \"claim_verdict\": \"supported\",\n  \"confidence\": 0.78,\n  \"supporting_evidence\": [\"doc_006\", \"doc_001\"],\n  \"rejected_evidence\": [\"doc_010\", \"doc_004\", \"doc_003\"],\n  \"selected_doc_ids\": [\"doc_006\", \"doc_001\", \"doc_010\"],\n  \"actions\": [\n    {\"action\": \"trace_source\", \"target\": \"doc_001\", \"rationale\": \"Confirm regulator filing's reliance on doc_006 to assess whether it provides independent confirmation or pseudo-consensus.\"},\n    {\"action\": \"compare_versions\", \"target\": \"doc_010\", \"rationale\": \"Check whether the older planning note was superseded by the December audit completion record.\"}\n  ],\n  \"evidence_environment_assessment\": \"The environment contains one primary audit report (doc_006) dated 2025-01-15 stating completion on 2024-12-12, plus a regulator filing (doc_001) with identical wording citing doc_006—weak pseudo-consensus rather than independent confirmation. Three 'still pending' items (doc_010, doc_004, doc_003) are stale (Nov 2024) and trace to a single upstream planning note, so they don't refute a December completion. Remaining documents are orientation notes that don't settle the claim. Primary record exists; contradictions are stale and non-independent.\",\n  \"answer\": \"Yes. The signed audit record (doc_006) states the Q4 supplier audit was completed on 2024-12-12 and cleared for renewal review, supported by a regulator filing (doc_001). Contradicting items are stale November 2024 planning notes predating the completion date and trace to a single upstream source, so they do not refute the primary record. Confidence is moderate because doc_001 echoes doc_006 rather than providing independent corroboration.\"\n}",
+    "usage": {
+      "completion_tokens": 608,
+      "prompt_tokens": 2370,
+      "total_tokens": 2978,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": null,
+        "audio_tokens": 0,
+        "reasoning_tokens": 0,
+        "rejected_prediction_tokens": null,
+        "text_tokens": 0,
+        "image_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cached_tokens": 0,
+        "text_tokens": 0,
+        "image_tokens": 0
+      },
+      "usage_semantic": "openai",
+      "usage_source": "anthropic",
+      "input_tokens": 2370,
+      "output_tokens": 0,
+      "input_tokens_details": null,
+      "claude_cache_creation_5_m_tokens": 0,
+      "claude_cache_creation_1_h_tokens": 0
+    },
+    "response_format_used": "json_schema",
+    "parse_success": true,
+    "parse_error": "",
+    "empty_output": false,
+    "schema_missing": false,
+    "json_extractor_used": "first_json_object",
+    "elapsed_s": 7.923,
+    "cost_usd": 0.0018085000000000002
+  }
+}

@@ -1,0 +1,90 @@
+{
+  "attempts": [
+    {
+      "attempt": 1,
+      "model": "claude-opus-4-7",
+      "provider": "Anthropic",
+      "budget_setting": "operational",
+      "task_id": "ert_019",
+      "prompt_condition": "epistemic_hygiene_instruction",
+      "content": "{\n  \"claim_verdict\": \"refuted\",\n  \"confidence\": 0.85,\n  \"supporting_evidence\": [\"doc_005\", \"doc_008\"],\n  \"rejected_evidence\": [\"doc_003\", \"doc_009\", \"doc_007\", \"doc_002\", \"doc_006\"],\n  \"selected_doc_ids\": [\"doc_005\", \"doc_008\", \"doc_003\"],\n  \"actions\": [\n    {\"action\": \"trace_source\", \"target\": \"doc_003\", \"rationale\": \"All 1.7% claims trace back to doc_003, which cites only secondary summaries with no primary records.\"},\n    {\"action\": \"compare_versions\", \"target\": \"doc_005\", \"rationale\": \"Confirm the audited 3.8% figure against the regulator filing in doc_008 for independent corroboration.\"}\n  ],\n  \"evidence_environment_assessment\": \"The environment shows pseudo-consensus: doc_003 is an authoritative-sounding press release with no citations, and docs 009, 007, 002, 006, 004, 010 all repeat its 1.7% claim while citing doc_003. This is a single upstream source, not independent confirmation. Against this stand doc_005 (audit report) and doc_008 (regulator filing), both primary records with reviewer sign-off reporting an audited 3.8% recall rate. Primary and regulatory records outweigh repeated secondary summaries.\",\n  \"answer\": \"No. The audited recall rate for 2024 was 3.8 percent according to the audit report (doc_005) and regulator filing (doc_008), both primary records. The widespread 1.7% claim originates from a single uncited press release (doc_003) and is merely repeated by secondary outlets, constituting pseudo-consensus rather than independent confirmation. The claim that Novalis reduced its 2024 recall rate below two percent is refuted by the primary evidence.\"\n}",
+      "usage": {
+        "completion_tokens": 617,
+        "prompt_tokens": 2529,
+        "total_tokens": 3146,
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": null,
+          "audio_tokens": 0,
+          "reasoning_tokens": 0,
+          "rejected_prediction_tokens": null,
+          "text_tokens": 0,
+          "image_tokens": 0
+        },
+        "prompt_tokens_details": {
+          "audio_tokens": 0,
+          "cached_tokens": 0,
+          "text_tokens": 0,
+          "image_tokens": 0
+        },
+        "usage_semantic": "openai",
+        "usage_source": "anthropic",
+        "input_tokens": 2529,
+        "output_tokens": 0,
+        "input_tokens_details": null,
+        "claude_cache_creation_5_m_tokens": 0,
+        "claude_cache_creation_1_h_tokens": 0
+      },
+      "response_format_used": "json_schema",
+      "parse_success": true,
+      "parse_error": "",
+      "empty_output": false,
+      "schema_missing": false,
+      "json_extractor_used": "first_json_object",
+      "elapsed_s": 18.57,
+      "cost_usd": 0.00186625
+    }
+  ],
+  "final_attempt": {
+    "attempt": 1,
+    "model": "claude-opus-4-7",
+    "provider": "Anthropic",
+    "budget_setting": "operational",
+    "task_id": "ert_019",
+    "prompt_condition": "epistemic_hygiene_instruction",
+    "content": "{\n  \"claim_verdict\": \"refuted\",\n  \"confidence\": 0.85,\n  \"supporting_evidence\": [\"doc_005\", \"doc_008\"],\n  \"rejected_evidence\": [\"doc_003\", \"doc_009\", \"doc_007\", \"doc_002\", \"doc_006\"],\n  \"selected_doc_ids\": [\"doc_005\", \"doc_008\", \"doc_003\"],\n  \"actions\": [\n    {\"action\": \"trace_source\", \"target\": \"doc_003\", \"rationale\": \"All 1.7% claims trace back to doc_003, which cites only secondary summaries with no primary records.\"},\n    {\"action\": \"compare_versions\", \"target\": \"doc_005\", \"rationale\": \"Confirm the audited 3.8% figure against the regulator filing in doc_008 for independent corroboration.\"}\n  ],\n  \"evidence_environment_assessment\": \"The environment shows pseudo-consensus: doc_003 is an authoritative-sounding press release with no citations, and docs 009, 007, 002, 006, 004, 010 all repeat its 1.7% claim while citing doc_003. This is a single upstream source, not independent confirmation. Against this stand doc_005 (audit report) and doc_008 (regulator filing), both primary records with reviewer sign-off reporting an audited 3.8% recall rate. Primary and regulatory records outweigh repeated secondary summaries.\",\n  \"answer\": \"No. The audited recall rate for 2024 was 3.8 percent according to the audit report (doc_005) and regulator filing (doc_008), both primary records. The widespread 1.7% claim originates from a single uncited press release (doc_003) and is merely repeated by secondary outlets, constituting pseudo-consensus rather than independent confirmation. The claim that Novalis reduced its 2024 recall rate below two percent is refuted by the primary evidence.\"\n}",
+    "usage": {
+      "completion_tokens": 617,
+      "prompt_tokens": 2529,
+      "total_tokens": 3146,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": null,
+        "audio_tokens": 0,
+        "reasoning_tokens": 0,
+        "rejected_prediction_tokens": null,
+        "text_tokens": 0,
+        "image_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cached_tokens": 0,
+        "text_tokens": 0,
+        "image_tokens": 0
+      },
+      "usage_semantic": "openai",
+      "usage_source": "anthropic",
+      "input_tokens": 2529,
+      "output_tokens": 0,
+      "input_tokens_details": null,
+      "claude_cache_creation_5_m_tokens": 0,
+      "claude_cache_creation_1_h_tokens": 0
+    },
+    "response_format_used": "json_schema",
+    "parse_success": true,
+    "parse_error": "",
+    "empty_output": false,
+    "schema_missing": false,
+    "json_extractor_used": "first_json_object",
+    "elapsed_s": 18.57,
+    "cost_usd": 0.00186625
+  }
+}

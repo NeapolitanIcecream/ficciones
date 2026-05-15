@@ -1,0 +1,70 @@
+{
+  "attempts": [
+    {
+      "attempt": 1,
+      "model": "kimi-k2.6",
+      "provider": "Kimi",
+      "budget_setting": "operational",
+      "task_id": "ert_000",
+      "prompt_condition": "epistemic_hygiene_instruction",
+      "content": "",
+      "usage": {},
+      "response_format_used": "json_schema",
+      "parse_success": false,
+      "parse_error": "API call exceeded 300.0s process timeout",
+      "empty_output": false,
+      "schema_missing": false,
+      "json_extractor_used": "not_attempted",
+      "elapsed_s": 300.007,
+      "cost_usd": 0.0
+    },
+    {
+      "attempt": 2,
+      "model": "kimi-k2.6",
+      "provider": "Kimi",
+      "budget_setting": "operational",
+      "task_id": "ert_000",
+      "prompt_condition": "epistemic_hygiene_instruction",
+      "content": "{\"claim_verdict\":\"supported\",\"confidence\":0.94,\"supporting_evidence\":[\"doc_006\",\"doc_001\"],\"rejected_evidence\":[\"doc_010\",\"doc_004\",\"doc_003\"],\"selected_doc_ids\":[\"doc_006\",\"doc_001\",\"doc_010\"],\"actions\":[{\"action\":\"open\",\"target\":\"doc_006\",\"rationale\":\"Primary audit report with raw records and sign-off directly establishes the completion date. Essential first source.\"},{\"action\":\"trace_source\",\"target\":\"doc_001\",\"rationale\":\"Regulator filing cites the primary audit report; tracing confirms it derives from the same verified record.\"}],\"evidence_environment_assessment\":\"Two strong primary sources confirm the audit was completed on 2024-12-12. Three stale documents from November 2024 falsely claim it was still pending, but they predate the completion date and lack raw-record support. The remaining documents are irrelevant orientation material, so the signal is clear despite pseudo-consensus repetition.\",\"answer\":\"Yes. The Q4 supplier audit was completed on 2024-12-12. The primary audit report (doc_006) and a regulator filing (doc_001) confirm completion based on raw operating records, dated logs, and reviewer sign-off. The audit was therefore finished before any 2025 renewal meeting.\"}",
+      "usage": {
+        "completion_tokens": 4397,
+        "prompt_tokens": 1592,
+        "total_tokens": 5989,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      },
+      "response_format_used": "json_schema",
+      "parse_success": true,
+      "parse_error": "",
+      "empty_output": false,
+      "schema_missing": false,
+      "json_extractor_used": "first_json_object",
+      "elapsed_s": 135.226,
+      "cost_usd": 0.009192
+    }
+  ],
+  "final_attempt": {
+    "attempt": 2,
+    "model": "kimi-k2.6",
+    "provider": "Kimi",
+    "budget_setting": "operational",
+    "task_id": "ert_000",
+    "prompt_condition": "epistemic_hygiene_instruction",
+    "content": "{\"claim_verdict\":\"supported\",\"confidence\":0.94,\"supporting_evidence\":[\"doc_006\",\"doc_001\"],\"rejected_evidence\":[\"doc_010\",\"doc_004\",\"doc_003\"],\"selected_doc_ids\":[\"doc_006\",\"doc_001\",\"doc_010\"],\"actions\":[{\"action\":\"open\",\"target\":\"doc_006\",\"rationale\":\"Primary audit report with raw records and sign-off directly establishes the completion date. Essential first source.\"},{\"action\":\"trace_source\",\"target\":\"doc_001\",\"rationale\":\"Regulator filing cites the primary audit report; tracing confirms it derives from the same verified record.\"}],\"evidence_environment_assessment\":\"Two strong primary sources confirm the audit was completed on 2024-12-12. Three stale documents from November 2024 falsely claim it was still pending, but they predate the completion date and lack raw-record support. The remaining documents are irrelevant orientation material, so the signal is clear despite pseudo-consensus repetition.\",\"answer\":\"Yes. The Q4 supplier audit was completed on 2024-12-12. The primary audit report (doc_006) and a regulator filing (doc_001) confirm completion based on raw operating records, dated logs, and reviewer sign-off. The audit was therefore finished before any 2025 renewal meeting.\"}",
+    "usage": {
+      "completion_tokens": 4397,
+      "prompt_tokens": 1592,
+      "total_tokens": 5989,
+      "completion_tokens_details": null,
+      "prompt_tokens_details": null
+    },
+    "response_format_used": "json_schema",
+    "parse_success": true,
+    "parse_error": "",
+    "empty_output": false,
+    "schema_missing": false,
+    "json_extractor_used": "first_json_object",
+    "elapsed_s": 135.226,
+    "cost_usd": 0.009192
+  }
+}

@@ -1,0 +1,90 @@
+{
+  "attempts": [
+    {
+      "attempt": 1,
+      "model": "claude-opus-4-7",
+      "provider": "Anthropic",
+      "budget_setting": "operational",
+      "task_id": "ert_020",
+      "prompt_condition": "standard_answer",
+      "content": "{\n  \"claim_verdict\": \"refuted\",\n  \"confidence\": 0.9,\n  \"supporting_evidence\": [\"doc_001\", \"doc_009\"],\n  \"rejected_evidence\": [\"doc_002\", \"doc_006\", \"doc_003\", \"doc_004\", \"doc_005\"],\n  \"selected_doc_ids\": [\"doc_001\", \"doc_009\", \"doc_002\"],\n  \"actions\": [\n    {\"action\": \"trace_source\", \"target\": \"doc_002\", \"rationale\": \"All secondary items cite doc_002, indicating a single upstream source rather than independent confirmation.\"},\n    {\"action\": \"compare_versions\", \"target\": \"doc_001\", \"rationale\": \"Cross-check the audit report against the regulator filing to confirm the 3.8% figure.\"}\n  ],\n  \"evidence_environment_assessment\": \"The environment shows false consensus: seven items repeat a 1.7% figure, but six are secondary pieces all citing doc_002, an executive memo with no primary citations. Against this stand two independent primary-grade documents—an audit report (doc_001) and a regulator filing (doc_009)—both reporting an audited 3.8% recall rate based on raw records and sign-off. Volume favors the low figure; provenance and source quality strongly favor the high figure.\",\n  \"answer\": \"No. The audited primary records (doc_001 audit report and doc_009 regulator filing) report a 2024 recall rate of 3.8%, above two percent. The competing 1.7% claim appears across many documents but traces to a single executive memo (doc_002), making it false consensus rather than independent corroboration.\"\n}",
+      "usage": {
+        "completion_tokens": 532,
+        "prompt_tokens": 2275,
+        "total_tokens": 2807,
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": null,
+          "audio_tokens": 0,
+          "reasoning_tokens": 0,
+          "rejected_prediction_tokens": null,
+          "text_tokens": 0,
+          "image_tokens": 0
+        },
+        "prompt_tokens_details": {
+          "audio_tokens": 0,
+          "cached_tokens": 0,
+          "text_tokens": 0,
+          "image_tokens": 0
+        },
+        "usage_semantic": "openai",
+        "usage_source": "anthropic",
+        "input_tokens": 2275,
+        "output_tokens": 0,
+        "input_tokens_details": null,
+        "claude_cache_creation_5_m_tokens": 0,
+        "claude_cache_creation_1_h_tokens": 0
+      },
+      "response_format_used": "json_schema",
+      "parse_success": true,
+      "parse_error": "",
+      "empty_output": false,
+      "schema_missing": false,
+      "json_extractor_used": "first_json_object",
+      "elapsed_s": 8.363,
+      "cost_usd": 0.00163275
+    }
+  ],
+  "final_attempt": {
+    "attempt": 1,
+    "model": "claude-opus-4-7",
+    "provider": "Anthropic",
+    "budget_setting": "operational",
+    "task_id": "ert_020",
+    "prompt_condition": "standard_answer",
+    "content": "{\n  \"claim_verdict\": \"refuted\",\n  \"confidence\": 0.9,\n  \"supporting_evidence\": [\"doc_001\", \"doc_009\"],\n  \"rejected_evidence\": [\"doc_002\", \"doc_006\", \"doc_003\", \"doc_004\", \"doc_005\"],\n  \"selected_doc_ids\": [\"doc_001\", \"doc_009\", \"doc_002\"],\n  \"actions\": [\n    {\"action\": \"trace_source\", \"target\": \"doc_002\", \"rationale\": \"All secondary items cite doc_002, indicating a single upstream source rather than independent confirmation.\"},\n    {\"action\": \"compare_versions\", \"target\": \"doc_001\", \"rationale\": \"Cross-check the audit report against the regulator filing to confirm the 3.8% figure.\"}\n  ],\n  \"evidence_environment_assessment\": \"The environment shows false consensus: seven items repeat a 1.7% figure, but six are secondary pieces all citing doc_002, an executive memo with no primary citations. Against this stand two independent primary-grade documents—an audit report (doc_001) and a regulator filing (doc_009)—both reporting an audited 3.8% recall rate based on raw records and sign-off. Volume favors the low figure; provenance and source quality strongly favor the high figure.\",\n  \"answer\": \"No. The audited primary records (doc_001 audit report and doc_009 regulator filing) report a 2024 recall rate of 3.8%, above two percent. The competing 1.7% claim appears across many documents but traces to a single executive memo (doc_002), making it false consensus rather than independent corroboration.\"\n}",
+    "usage": {
+      "completion_tokens": 532,
+      "prompt_tokens": 2275,
+      "total_tokens": 2807,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": null,
+        "audio_tokens": 0,
+        "reasoning_tokens": 0,
+        "rejected_prediction_tokens": null,
+        "text_tokens": 0,
+        "image_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cached_tokens": 0,
+        "text_tokens": 0,
+        "image_tokens": 0
+      },
+      "usage_semantic": "openai",
+      "usage_source": "anthropic",
+      "input_tokens": 2275,
+      "output_tokens": 0,
+      "input_tokens_details": null,
+      "claude_cache_creation_5_m_tokens": 0,
+      "claude_cache_creation_1_h_tokens": 0
+    },
+    "response_format_used": "json_schema",
+    "parse_success": true,
+    "parse_error": "",
+    "empty_output": false,
+    "schema_missing": false,
+    "json_extractor_used": "first_json_object",
+    "elapsed_s": 8.363,
+    "cost_usd": 0.00163275
+  }
+}

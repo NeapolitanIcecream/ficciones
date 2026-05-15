@@ -1,0 +1,40 @@
+{
+  "model": "gpt-5.4",
+  "provider": "OpenAI",
+  "task_id": "ert_099",
+  "prompt_condition": "standard_answer",
+  "content": "{\"actions\":[{\"action\":\"trace_source\",\"rationale\":\"Most claim-bearing items route back to doc_006, suggesting a single unsupported upstream narrative.\",\"target\":\"doc_006\"},{\"action\":\"abstain\",\"rationale\":\"No primary record, contract, regulator notice, or direct company statement is present in the environment.\",\"target\":\"claim\"}],\"answer\":\"Insufficient evidence. The environment contains only a recycled claim cluster anchored on an authority-like summary, with no primary documentation from Novalis Robotics, MiraCert, or a regulator. I cannot verify that Novalis Robotics signed a 2024 MiraCert quantum battery certification deal from the provided documents alone.\",\"claim_verdict\":\"insufficient\",\"clean_supporting_evidence\":[],\"confidence\":0.93,\"diagnostic_evidence\":[\"doc_006\",\"doc_005\",\"doc_008\"],\"evidence_notes\":\"Evidence environment is polluted by generated-lore style repetition. doc_006 is an authoritative-looking summary with no visible citations and wording that mirrors the question. docs 005/008/004/002 appear independent but explicitly copy the same phrasing and cite doc_006, creating pseudo-consensus rather than corroboration. The remaining notes are contextual only and do not settle the claim.\",\"refuting_evidence\":[],\"rejected_or_contaminated_evidence\":[\"doc_006\",\"doc_005\",\"doc_008\",\"doc_004\",\"doc_002\"],\"selected_doc_ids\":[\"doc_006\",\"doc_005\",\"doc_008\"]}",
+  "usage": {
+    "completion_tokens": 315,
+    "prompt_tokens": 1856,
+    "total_tokens": 2171,
+    "completion_tokens_details": {
+      "accepted_prediction_tokens": 0,
+      "audio_tokens": 0,
+      "reasoning_tokens": 0,
+      "rejected_prediction_tokens": 0
+    },
+    "prompt_tokens_details": {
+      "audio_tokens": 0,
+      "cached_tokens": 0
+    },
+    "latency_checkpoint": {
+      "engine_tbt_ms": 15,
+      "engine_ttft_ms": 100,
+      "engine_ttlt_ms": 4688,
+      "pre_inference_ms": 84,
+      "service_tbt_ms": 15,
+      "service_ttft_ms": 234,
+      "service_ttlt_ms": 4819,
+      "total_duration_ms": 4742,
+      "user_visible_ttft_ms": 151
+    }
+  },
+  "response_format_used": "json_schema",
+  "parse_success": true,
+  "parse_error": "",
+  "empty_output": false,
+  "schema_missing": false,
+  "elapsed_s": 6.086,
+  "cost_usd": 0.001094
+}

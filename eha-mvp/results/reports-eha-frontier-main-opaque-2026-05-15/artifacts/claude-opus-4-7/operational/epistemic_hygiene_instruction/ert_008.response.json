@@ -1,0 +1,90 @@
+{
+  "attempts": [
+    {
+      "attempt": 1,
+      "model": "claude-opus-4-7",
+      "provider": "Anthropic",
+      "budget_setting": "operational",
+      "task_id": "ert_008",
+      "prompt_condition": "epistemic_hygiene_instruction",
+      "content": "{\n  \"claim_verdict\": \"refuted\",\n  \"confidence\": 0.85,\n  \"supporting_evidence\": [\"doc_001\", \"doc_008\"],\n  \"rejected_evidence\": [\"doc_004\", \"doc_006\", \"doc_007\"],\n  \"selected_doc_ids\": [\"doc_001\", \"doc_008\", \"doc_004\"],\n  \"actions\": [\n    {\n      \"action\": \"trace_source\",\n      \"target\": \"doc_004\",\n      \"rationale\": \"doc_006 and doc_007 both cite doc_004, indicating pseudo-consensus from a single upstream summary lacking primary support.\"\n    },\n    {\n      \"action\": \"compare_versions\",\n      \"target\": \"doc_001\",\n      \"rationale\": \"Confirm the certification record and its corroboration in doc_008 reflect the authoritative lapse date of 2024-12-31.\"\n    }\n  ],\n  \"evidence_environment_assessment\": \"The environment contains one primary certification record (doc_001) dated 2025-01-15 stating the EU safety certificate lapsed 2024-12-31, corroborated by a version history (doc_008). Opposing claims come from doc_004, an authoritative-looking summary citing only secondary sources, echoed verbatim by doc_006 and doc_007 — pseudo-consensus from a single upstream item. Remaining documents (doc_002, doc_003, doc_005, doc_009) are orientation notes that do not settle the claim. Primary and dated records outweigh the repeated secondary summaries.\",\n  \"answer\": \"No. The signed certification record (doc_001, 2025-01-15) and an independent version history (doc_008) state the EU safety certificate lapsed on 2024-12-31 with renewal unresolved, so it was not valid in January 2025. Contrary claims (doc_004, doc_006, doc_007) trace to a single secondary summary without primary support and constitute pseudo-consensus, not independent confirmation.\"\n}",
+      "usage": {
+        "completion_tokens": 644,
+        "prompt_tokens": 2237,
+        "total_tokens": 2881,
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": null,
+          "audio_tokens": 0,
+          "reasoning_tokens": 0,
+          "rejected_prediction_tokens": null,
+          "text_tokens": 0,
+          "image_tokens": 0
+        },
+        "prompt_tokens_details": {
+          "audio_tokens": 0,
+          "cached_tokens": 0,
+          "text_tokens": 0,
+          "image_tokens": 0
+        },
+        "usage_semantic": "openai",
+        "usage_source": "anthropic",
+        "input_tokens": 2237,
+        "output_tokens": 0,
+        "input_tokens_details": null,
+        "claude_cache_creation_5_m_tokens": 0,
+        "claude_cache_creation_1_h_tokens": 0
+      },
+      "response_format_used": "json_schema",
+      "parse_success": true,
+      "parse_error": "",
+      "empty_output": false,
+      "schema_missing": false,
+      "json_extractor_used": "first_json_object",
+      "elapsed_s": 21.02,
+      "cost_usd": 0.00184725
+    }
+  ],
+  "final_attempt": {
+    "attempt": 1,
+    "model": "claude-opus-4-7",
+    "provider": "Anthropic",
+    "budget_setting": "operational",
+    "task_id": "ert_008",
+    "prompt_condition": "epistemic_hygiene_instruction",
+    "content": "{\n  \"claim_verdict\": \"refuted\",\n  \"confidence\": 0.85,\n  \"supporting_evidence\": [\"doc_001\", \"doc_008\"],\n  \"rejected_evidence\": [\"doc_004\", \"doc_006\", \"doc_007\"],\n  \"selected_doc_ids\": [\"doc_001\", \"doc_008\", \"doc_004\"],\n  \"actions\": [\n    {\n      \"action\": \"trace_source\",\n      \"target\": \"doc_004\",\n      \"rationale\": \"doc_006 and doc_007 both cite doc_004, indicating pseudo-consensus from a single upstream summary lacking primary support.\"\n    },\n    {\n      \"action\": \"compare_versions\",\n      \"target\": \"doc_001\",\n      \"rationale\": \"Confirm the certification record and its corroboration in doc_008 reflect the authoritative lapse date of 2024-12-31.\"\n    }\n  ],\n  \"evidence_environment_assessment\": \"The environment contains one primary certification record (doc_001) dated 2025-01-15 stating the EU safety certificate lapsed 2024-12-31, corroborated by a version history (doc_008). Opposing claims come from doc_004, an authoritative-looking summary citing only secondary sources, echoed verbatim by doc_006 and doc_007 — pseudo-consensus from a single upstream item. Remaining documents (doc_002, doc_003, doc_005, doc_009) are orientation notes that do not settle the claim. Primary and dated records outweigh the repeated secondary summaries.\",\n  \"answer\": \"No. The signed certification record (doc_001, 2025-01-15) and an independent version history (doc_008) state the EU safety certificate lapsed on 2024-12-31 with renewal unresolved, so it was not valid in January 2025. Contrary claims (doc_004, doc_006, doc_007) trace to a single secondary summary without primary support and constitute pseudo-consensus, not independent confirmation.\"\n}",
+    "usage": {
+      "completion_tokens": 644,
+      "prompt_tokens": 2237,
+      "total_tokens": 2881,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": null,
+        "audio_tokens": 0,
+        "reasoning_tokens": 0,
+        "rejected_prediction_tokens": null,
+        "text_tokens": 0,
+        "image_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cached_tokens": 0,
+        "text_tokens": 0,
+        "image_tokens": 0
+      },
+      "usage_semantic": "openai",
+      "usage_source": "anthropic",
+      "input_tokens": 2237,
+      "output_tokens": 0,
+      "input_tokens_details": null,
+      "claude_cache_creation_5_m_tokens": 0,
+      "claude_cache_creation_1_h_tokens": 0
+    },
+    "response_format_used": "json_schema",
+    "parse_success": true,
+    "parse_error": "",
+    "empty_output": false,
+    "schema_missing": false,
+    "json_extractor_used": "first_json_object",
+    "elapsed_s": 21.02,
+    "cost_usd": 0.00184725
+  }
+}

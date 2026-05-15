@@ -1,0 +1,90 @@
+{
+  "attempts": [
+    {
+      "attempt": 1,
+      "model": "claude-opus-4-7",
+      "provider": "Anthropic",
+      "budget_setting": "operational",
+      "task_id": "ert_011",
+      "prompt_condition": "epistemic_hygiene_instruction",
+      "content": "{\n  \"claim_verdict\": \"refuted\",\n  \"confidence\": 0.85,\n  \"supporting_evidence\": [\"doc_003\", \"doc_006\"],\n  \"rejected_evidence\": [\"doc_007\", \"doc_005\", \"doc_008\"],\n  \"selected_doc_ids\": [\"doc_003\", \"doc_006\", \"doc_007\"],\n  \"actions\": [\n    {\n      \"action\": \"trace_source\",\n      \"target\": \"doc_007\",\n      \"rationale\": \"doc_005 and doc_008 both cite doc_007, indicating pseudo-consensus from a single upstream summary lacking primary support.\"\n    },\n    {\n      \"action\": \"compare_versions\",\n      \"target\": \"doc_003\",\n      \"rationale\": \"Confirm the certification record's lapse date against the version history in doc_006 to ensure the contradiction is grounded in primary records.\"\n    }\n  ],\n  \"evidence_environment_assessment\": \"The environment contains a primary certification record (doc_003) dated 2025-01-15 stating the EU certificate lapsed 2024-12-31, corroborated by an independent version history (doc_006). Opposing it, doc_007 is an authoritative-looking summary without citations, and doc_005/doc_008 merely repeat doc_007's wording, forming weak pseudo-consensus. Reference notes (doc_001, doc_002, doc_004, doc_009) are orientation material and do not settle the claim. Primary and version-history evidence outweigh the recycled summaries.\",\n  \"answer\": \"No. The signed certification record (doc_003) and an independent version history (doc_006) state that Novalis Robotics' EU safety certificate lapsed on 2024-12-31 with renewal unresolved, so it was not valid in January 2025. The contrary 'valid through 2025' claims (doc_007, doc_005, doc_008) trace back to a single authoritative-looking summary without primary support and constitute pseudo-consensus rather than independent confirmation.\"\n}",
+      "usage": {
+        "completion_tokens": 653,
+        "prompt_tokens": 2238,
+        "total_tokens": 2891,
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": null,
+          "audio_tokens": 0,
+          "reasoning_tokens": 0,
+          "rejected_prediction_tokens": null,
+          "text_tokens": 0,
+          "image_tokens": 0
+        },
+        "prompt_tokens_details": {
+          "audio_tokens": 0,
+          "cached_tokens": 0,
+          "text_tokens": 0,
+          "image_tokens": 0
+        },
+        "usage_semantic": "openai",
+        "usage_source": "anthropic",
+        "input_tokens": 2238,
+        "output_tokens": 0,
+        "input_tokens_details": null,
+        "claude_cache_creation_5_m_tokens": 0,
+        "claude_cache_creation_1_h_tokens": 0
+      },
+      "response_format_used": "json_schema",
+      "parse_success": true,
+      "parse_error": "",
+      "empty_output": false,
+      "schema_missing": false,
+      "json_extractor_used": "first_json_object",
+      "elapsed_s": 7.686,
+      "cost_usd": 0.0018655
+    }
+  ],
+  "final_attempt": {
+    "attempt": 1,
+    "model": "claude-opus-4-7",
+    "provider": "Anthropic",
+    "budget_setting": "operational",
+    "task_id": "ert_011",
+    "prompt_condition": "epistemic_hygiene_instruction",
+    "content": "{\n  \"claim_verdict\": \"refuted\",\n  \"confidence\": 0.85,\n  \"supporting_evidence\": [\"doc_003\", \"doc_006\"],\n  \"rejected_evidence\": [\"doc_007\", \"doc_005\", \"doc_008\"],\n  \"selected_doc_ids\": [\"doc_003\", \"doc_006\", \"doc_007\"],\n  \"actions\": [\n    {\n      \"action\": \"trace_source\",\n      \"target\": \"doc_007\",\n      \"rationale\": \"doc_005 and doc_008 both cite doc_007, indicating pseudo-consensus from a single upstream summary lacking primary support.\"\n    },\n    {\n      \"action\": \"compare_versions\",\n      \"target\": \"doc_003\",\n      \"rationale\": \"Confirm the certification record's lapse date against the version history in doc_006 to ensure the contradiction is grounded in primary records.\"\n    }\n  ],\n  \"evidence_environment_assessment\": \"The environment contains a primary certification record (doc_003) dated 2025-01-15 stating the EU certificate lapsed 2024-12-31, corroborated by an independent version history (doc_006). Opposing it, doc_007 is an authoritative-looking summary without citations, and doc_005/doc_008 merely repeat doc_007's wording, forming weak pseudo-consensus. Reference notes (doc_001, doc_002, doc_004, doc_009) are orientation material and do not settle the claim. Primary and version-history evidence outweigh the recycled summaries.\",\n  \"answer\": \"No. The signed certification record (doc_003) and an independent version history (doc_006) state that Novalis Robotics' EU safety certificate lapsed on 2024-12-31 with renewal unresolved, so it was not valid in January 2025. The contrary 'valid through 2025' claims (doc_007, doc_005, doc_008) trace back to a single authoritative-looking summary without primary support and constitute pseudo-consensus rather than independent confirmation.\"\n}",
+    "usage": {
+      "completion_tokens": 653,
+      "prompt_tokens": 2238,
+      "total_tokens": 2891,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": null,
+        "audio_tokens": 0,
+        "reasoning_tokens": 0,
+        "rejected_prediction_tokens": null,
+        "text_tokens": 0,
+        "image_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cached_tokens": 0,
+        "text_tokens": 0,
+        "image_tokens": 0
+      },
+      "usage_semantic": "openai",
+      "usage_source": "anthropic",
+      "input_tokens": 2238,
+      "output_tokens": 0,
+      "input_tokens_details": null,
+      "claude_cache_creation_5_m_tokens": 0,
+      "claude_cache_creation_1_h_tokens": 0
+    },
+    "response_format_used": "json_schema",
+    "parse_success": true,
+    "parse_error": "",
+    "empty_output": false,
+    "schema_missing": false,
+    "json_extractor_used": "first_json_object",
+    "elapsed_s": 7.686,
+    "cost_usd": 0.0018655
+  }
+}

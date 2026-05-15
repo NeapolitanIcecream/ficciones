@@ -1,0 +1,90 @@
+{
+  "attempts": [
+    {
+      "attempt": 1,
+      "model": "claude-opus-4-7",
+      "provider": "Anthropic",
+      "budget_setting": "operational",
+      "task_id": "ert_069",
+      "prompt_condition": "epistemic_hygiene_instruction",
+      "content": "{\n  \"claim_verdict\": \"refuted\",\n  \"confidence\": 0.85,\n  \"supporting_evidence\": [\"doc_015\", \"doc_012\"],\n  \"rejected_evidence\": [\"doc_013\", \"doc_001\", \"doc_004\", \"doc_010\", \"doc_014\"],\n  \"selected_doc_ids\": [\"doc_015\", \"doc_012\", \"doc_013\"],\n  \"actions\": [\n    {\"action\": \"trace_source\", \"target\": \"doc_013\", \"rationale\": \"All 1.7% claims trace to doc_013, an executive summary citing only secondary summaries with no primary records. Confirms pseudo-consensus rather than independent confirmation.\"},\n    {\"action\": \"compare_versions\", \"target\": \"doc_015\", \"rationale\": \"Verify the audit report's 3.8% figure against the regulator filing (doc_012) to confirm primary-record agreement on the exception/recall rate.\"}\n  ],\n  \"evidence_environment_assessment\": \"The environment is dominated by ~14 secondary items all citing a single executive memo (doc_013), creating pseudo-consensus around 1.7%. Two primary-grade records — an audit report (doc_015) and a regulator filing (doc_012) — independently report 3.8%, based on raw logs and reviewer sign-off. Per policy, primary records and regulator filings outweigh repeated reposts of an authority-styled summary lacking primary support.\",\n  \"answer\": \"No. The audit report (doc_015) and regulator filing (doc_012) report a 3.8% audited exception rate for 2024, grounded in raw logs and reviewer sign-off. The widespread 1.7% figure originates solely from doc_013, an executive memo citing only secondary summaries, and is amplified by reposts that share its wording — weak pseudo-consensus, not independent confirmation. The claim that Novalis reduced its 2024 recall rate below two percent is refuted by the available primary evidence.\"\n}",
+      "usage": {
+        "completion_tokens": 645,
+        "prompt_tokens": 3819,
+        "total_tokens": 4464,
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": null,
+          "audio_tokens": 0,
+          "reasoning_tokens": 0,
+          "rejected_prediction_tokens": null,
+          "text_tokens": 0,
+          "image_tokens": 0
+        },
+        "prompt_tokens_details": {
+          "audio_tokens": 0,
+          "cached_tokens": 0,
+          "text_tokens": 0,
+          "image_tokens": 0
+        },
+        "usage_semantic": "openai",
+        "usage_source": "anthropic",
+        "input_tokens": 3819,
+        "output_tokens": 0,
+        "input_tokens_details": null,
+        "claude_cache_creation_5_m_tokens": 0,
+        "claude_cache_creation_1_h_tokens": 0
+      },
+      "response_format_used": "json_schema",
+      "parse_success": true,
+      "parse_error": "",
+      "empty_output": false,
+      "schema_missing": false,
+      "json_extractor_used": "first_json_object",
+      "elapsed_s": 14.766,
+      "cost_usd": 0.00224475
+    }
+  ],
+  "final_attempt": {
+    "attempt": 1,
+    "model": "claude-opus-4-7",
+    "provider": "Anthropic",
+    "budget_setting": "operational",
+    "task_id": "ert_069",
+    "prompt_condition": "epistemic_hygiene_instruction",
+    "content": "{\n  \"claim_verdict\": \"refuted\",\n  \"confidence\": 0.85,\n  \"supporting_evidence\": [\"doc_015\", \"doc_012\"],\n  \"rejected_evidence\": [\"doc_013\", \"doc_001\", \"doc_004\", \"doc_010\", \"doc_014\"],\n  \"selected_doc_ids\": [\"doc_015\", \"doc_012\", \"doc_013\"],\n  \"actions\": [\n    {\"action\": \"trace_source\", \"target\": \"doc_013\", \"rationale\": \"All 1.7% claims trace to doc_013, an executive summary citing only secondary summaries with no primary records. Confirms pseudo-consensus rather than independent confirmation.\"},\n    {\"action\": \"compare_versions\", \"target\": \"doc_015\", \"rationale\": \"Verify the audit report's 3.8% figure against the regulator filing (doc_012) to confirm primary-record agreement on the exception/recall rate.\"}\n  ],\n  \"evidence_environment_assessment\": \"The environment is dominated by ~14 secondary items all citing a single executive memo (doc_013), creating pseudo-consensus around 1.7%. Two primary-grade records — an audit report (doc_015) and a regulator filing (doc_012) — independently report 3.8%, based on raw logs and reviewer sign-off. Per policy, primary records and regulator filings outweigh repeated reposts of an authority-styled summary lacking primary support.\",\n  \"answer\": \"No. The audit report (doc_015) and regulator filing (doc_012) report a 3.8% audited exception rate for 2024, grounded in raw logs and reviewer sign-off. The widespread 1.7% figure originates solely from doc_013, an executive memo citing only secondary summaries, and is amplified by reposts that share its wording — weak pseudo-consensus, not independent confirmation. The claim that Novalis reduced its 2024 recall rate below two percent is refuted by the available primary evidence.\"\n}",
+    "usage": {
+      "completion_tokens": 645,
+      "prompt_tokens": 3819,
+      "total_tokens": 4464,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": null,
+        "audio_tokens": 0,
+        "reasoning_tokens": 0,
+        "rejected_prediction_tokens": null,
+        "text_tokens": 0,
+        "image_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cached_tokens": 0,
+        "text_tokens": 0,
+        "image_tokens": 0
+      },
+      "usage_semantic": "openai",
+      "usage_source": "anthropic",
+      "input_tokens": 3819,
+      "output_tokens": 0,
+      "input_tokens_details": null,
+      "claude_cache_creation_5_m_tokens": 0,
+      "claude_cache_creation_1_h_tokens": 0
+    },
+    "response_format_used": "json_schema",
+    "parse_success": true,
+    "parse_error": "",
+    "empty_output": false,
+    "schema_missing": false,
+    "json_extractor_used": "first_json_object",
+    "elapsed_s": 14.766,
+    "cost_usd": 0.00224475
+  }
+}

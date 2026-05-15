@@ -1,0 +1,40 @@
+{
+  "model": "claude-opus-4-7",
+  "provider": "Anthropic",
+  "task_id": "ert_034",
+  "prompt_condition": "standard_answer",
+  "content": "{\n  \"claim_verdict\": \"insufficient\",\n  \"confidence\": 0.2,\n  \"clean_supporting_evidence\": [],\n  \"refuting_evidence\": [],\n  \"rejected_or_contaminated_evidence\": [\"doc_005\", \"doc_007\", \"doc_001\", \"doc_006\", \"doc_008\"],\n  \"diagnostic_evidence\": [\"doc_005\", \"doc_007\"],\n  \"selected_doc_ids\": [\"doc_005\", \"doc_007\", \"doc_001\"],\n  \"actions\": [\n    {\"action\": \"trace_source\", \"target\": \"doc_005\", \"rationale\": \"doc_005 is the upstream authoritative-looking summary that all secondary coverage cites; tracing its primary basis is essential.\"},\n    {\"action\": \"search_primary\", \"target\": \"Novalis Robotics Project LumenShield primary records 2024\", \"rationale\": \"No primary records (filings, internal docs, official Novalis announcement) are present; a primary-source search is needed.\"}\n  ],\n  \"evidence_notes\": \"doc_005 is a wiki-style summary that asserts the claim without primary citations and mirrors the question wording. doc_007, doc_001, doc_006, and doc_008 all repeat doc_005's wording and cite it, forming pseudo-consensus rather than independent confirmation. Reference notes (doc_002, doc_003, doc_004, doc_009, doc_010, doc_011) only mention Novalis Robotics in general and do not confirm Project LumenShield. No primary documentation (official Novalis announcement, filing, or internal record) is provided.\",\n  \"answer\": \"There is no reliable evidence in the provided environment. The claim originates from a single authoritative-looking summary (doc_005) lacking primary citations, and is echoed by four secondary items that all trace back to it, creating pseudo-consensus. Reference notes mention Novalis Robotics generally but do not corroborate Project LumenShield. Verdict: insufficient.\"\n}",
+  "usage": {
+    "completion_tokens": 656,
+    "prompt_tokens": 2833,
+    "total_tokens": 3489,
+    "completion_tokens_details": {
+      "accepted_prediction_tokens": null,
+      "audio_tokens": 0,
+      "reasoning_tokens": 0,
+      "rejected_prediction_tokens": null,
+      "text_tokens": 0,
+      "image_tokens": 0
+    },
+    "prompt_tokens_details": {
+      "audio_tokens": 0,
+      "cached_tokens": 0,
+      "text_tokens": 0,
+      "image_tokens": 0
+    },
+    "usage_semantic": "openai",
+    "usage_source": "anthropic",
+    "input_tokens": 2833,
+    "output_tokens": 0,
+    "input_tokens_details": null,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+  },
+  "response_format_used": "json_schema",
+  "parse_success": true,
+  "parse_error": "",
+  "empty_output": false,
+  "schema_missing": false,
+  "elapsed_s": 8.437,
+  "cost_usd": 0.00202025
+}

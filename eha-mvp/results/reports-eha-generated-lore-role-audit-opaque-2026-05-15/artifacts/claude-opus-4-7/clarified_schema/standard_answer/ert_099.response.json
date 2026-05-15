@@ -1,0 +1,40 @@
+{
+  "model": "claude-opus-4-7",
+  "provider": "Anthropic",
+  "task_id": "ert_099",
+  "prompt_condition": "standard_answer",
+  "content": "{\n  \"claim_verdict\": \"insufficient\",\n  \"confidence\": 0.15,\n  \"clean_supporting_evidence\": [],\n  \"refuting_evidence\": [],\n  \"rejected_or_contaminated_evidence\": [\"doc_006\", \"doc_005\", \"doc_008\", \"doc_004\", \"doc_002\"],\n  \"diagnostic_evidence\": [\"doc_007\", \"doc_001\", \"doc_003\"],\n  \"selected_doc_ids\": [\"doc_006\", \"doc_005\", \"doc_008\"],\n  \"actions\": [\n    {\"action\": \"trace_source\", \"target\": \"doc_006\", \"rationale\": \"doc_006 is the upstream wiki-style summary that all secondary items cite. Tracing it would reveal whether any primary record (MiraCert registry, Novalis filing) underlies the claim.\"},\n    {\"action\": \"search_primary\", \"target\": \"MiraCert certification registry / Novalis Robotics 2024 filings\", \"rationale\": \"Need an independent primary source (registry entry, official press release from MiraCert or Novalis) to confirm or refute the alleged 2024 certification deal.\"}\n  ],\n  \"evidence_notes\": \"All five claim-affirming documents trace back to a single authoritative-looking summary (doc_006) with no visible citations to primary records. doc_005, doc_008, doc_004, and doc_002 explicitly cite doc_006 and copy its phrasing, forming pseudo-consensus rather than independent corroboration. The remaining documents (doc_007, doc_001, doc_003) are orientation notes that do not address the certification deal. No primary MiraCert or Novalis record is present, and no refuting evidence exists either.\",\n  \"answer\": \"There is insufficient clean evidence to confirm that Novalis Robotics signed a 2024 MiraCert quantum battery certification deal. The claim appears in one wiki-style summary (doc_006) and is repeated by four secondary items that all cite it, producing pseudo-consensus from a single unsourced upstream. No primary records (MiraCert registry, official Novalis or MiraCert announcements) are provided. Recommended next steps: trace doc_006's origin and search for primary documentation before treating the claim as established.\"\n}",
+  "usage": {
+    "completion_tokens": 738,
+    "prompt_tokens": 2552,
+    "total_tokens": 3290,
+    "completion_tokens_details": {
+      "accepted_prediction_tokens": null,
+      "audio_tokens": 0,
+      "reasoning_tokens": 0,
+      "rejected_prediction_tokens": null,
+      "text_tokens": 0,
+      "image_tokens": 0
+    },
+    "prompt_tokens_details": {
+      "audio_tokens": 0,
+      "cached_tokens": 0,
+      "text_tokens": 0,
+      "image_tokens": 0
+    },
+    "usage_semantic": "openai",
+    "usage_source": "anthropic",
+    "input_tokens": 2552,
+    "output_tokens": 0,
+    "input_tokens_details": null,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+  },
+  "response_format_used": "json_schema",
+  "parse_success": true,
+  "parse_error": "",
+  "empty_output": false,
+  "schema_missing": false,
+  "elapsed_s": 9.634,
+  "cost_usd": 0.002114
+}

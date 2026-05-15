@@ -1,0 +1,90 @@
+{
+  "attempts": [
+    {
+      "attempt": 1,
+      "model": "claude-opus-4-7",
+      "provider": "Anthropic",
+      "budget_setting": "operational",
+      "task_id": "ert_086",
+      "prompt_condition": "epistemic_hygiene_instruction",
+      "content": "{\n  \"claim_verdict\": \"refuted\",\n  \"confidence\": 0.85,\n  \"supporting_evidence\": [\"doc_006\", \"doc_004\"],\n  \"rejected_evidence\": [\"doc_008\", \"doc_005\", \"doc_007\"],\n  \"selected_doc_ids\": [\"doc_006\", \"doc_004\", \"doc_008\"],\n  \"actions\": [\n    {\"action\": \"trace_source\", \"target\": \"doc_006\", \"rationale\": \"Confirm the signed certification record and reviewer sign-off as primary evidence of lapse on 2024-12-31.\"},\n    {\"action\": \"compare_versions\", \"target\": \"doc_008\", \"rationale\": \"Check whether the authoritative-looking summary has primary backing or only secondary citations repeated by doc_005 and doc_007.\"}\n  ],\n  \"evidence_environment_assessment\": \"The environment contains one primary certification record (doc_006) with independent corroboration via version history (doc_004), both indicating the EU certificate lapsed 2024-12-31. Opposing claims come from doc_008, an authoritative-looking summary citing only secondary material, echoed by doc_005 and doc_007, which both cite doc_008 — pseudo-consensus, not independent confirmation. Reference notes (doc_001–003) are orientation only. Primary and version-history evidence outweighs the repost cluster.\",\n  \"answer\": \"No. The signed certification record (doc_006, 2025-01-15) and an independent version history (doc_004) state the EU safety certificate lapsed on 2024-12-31 with renewal unresolved, so it was not valid in January 2025. Contrary claims trace back to a single authoritative-looking summary (doc_008) repeated by doc_005 and doc_007, which constitutes pseudo-consensus rather than independent confirmation and lacks primary backing.\"\n}",
+      "usage": {
+        "completion_tokens": 610,
+        "prompt_tokens": 2112,
+        "total_tokens": 2722,
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": null,
+          "audio_tokens": 0,
+          "reasoning_tokens": 0,
+          "rejected_prediction_tokens": null,
+          "text_tokens": 0,
+          "image_tokens": 0
+        },
+        "prompt_tokens_details": {
+          "audio_tokens": 0,
+          "cached_tokens": 0,
+          "text_tokens": 0,
+          "image_tokens": 0
+        },
+        "usage_semantic": "openai",
+        "usage_source": "anthropic",
+        "input_tokens": 2112,
+        "output_tokens": 0,
+        "input_tokens_details": null,
+        "claude_cache_creation_5_m_tokens": 0,
+        "claude_cache_creation_1_h_tokens": 0
+      },
+      "response_format_used": "json_schema",
+      "parse_success": true,
+      "parse_error": "",
+      "empty_output": false,
+      "schema_missing": false,
+      "json_extractor_used": "first_json_object",
+      "elapsed_s": 7.807,
+      "cost_usd": 0.001748
+    }
+  ],
+  "final_attempt": {
+    "attempt": 1,
+    "model": "claude-opus-4-7",
+    "provider": "Anthropic",
+    "budget_setting": "operational",
+    "task_id": "ert_086",
+    "prompt_condition": "epistemic_hygiene_instruction",
+    "content": "{\n  \"claim_verdict\": \"refuted\",\n  \"confidence\": 0.85,\n  \"supporting_evidence\": [\"doc_006\", \"doc_004\"],\n  \"rejected_evidence\": [\"doc_008\", \"doc_005\", \"doc_007\"],\n  \"selected_doc_ids\": [\"doc_006\", \"doc_004\", \"doc_008\"],\n  \"actions\": [\n    {\"action\": \"trace_source\", \"target\": \"doc_006\", \"rationale\": \"Confirm the signed certification record and reviewer sign-off as primary evidence of lapse on 2024-12-31.\"},\n    {\"action\": \"compare_versions\", \"target\": \"doc_008\", \"rationale\": \"Check whether the authoritative-looking summary has primary backing or only secondary citations repeated by doc_005 and doc_007.\"}\n  ],\n  \"evidence_environment_assessment\": \"The environment contains one primary certification record (doc_006) with independent corroboration via version history (doc_004), both indicating the EU certificate lapsed 2024-12-31. Opposing claims come from doc_008, an authoritative-looking summary citing only secondary material, echoed by doc_005 and doc_007, which both cite doc_008 — pseudo-consensus, not independent confirmation. Reference notes (doc_001–003) are orientation only. Primary and version-history evidence outweighs the repost cluster.\",\n  \"answer\": \"No. The signed certification record (doc_006, 2025-01-15) and an independent version history (doc_004) state the EU safety certificate lapsed on 2024-12-31 with renewal unresolved, so it was not valid in January 2025. Contrary claims trace back to a single authoritative-looking summary (doc_008) repeated by doc_005 and doc_007, which constitutes pseudo-consensus rather than independent confirmation and lacks primary backing.\"\n}",
+    "usage": {
+      "completion_tokens": 610,
+      "prompt_tokens": 2112,
+      "total_tokens": 2722,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": null,
+        "audio_tokens": 0,
+        "reasoning_tokens": 0,
+        "rejected_prediction_tokens": null,
+        "text_tokens": 0,
+        "image_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cached_tokens": 0,
+        "text_tokens": 0,
+        "image_tokens": 0
+      },
+      "usage_semantic": "openai",
+      "usage_source": "anthropic",
+      "input_tokens": 2112,
+      "output_tokens": 0,
+      "input_tokens_details": null,
+      "claude_cache_creation_5_m_tokens": 0,
+      "claude_cache_creation_1_h_tokens": 0
+    },
+    "response_format_used": "json_schema",
+    "parse_success": true,
+    "parse_error": "",
+    "empty_output": false,
+    "schema_missing": false,
+    "json_extractor_used": "first_json_object",
+    "elapsed_s": 7.807,
+    "cost_usd": 0.001748
+  }
+}

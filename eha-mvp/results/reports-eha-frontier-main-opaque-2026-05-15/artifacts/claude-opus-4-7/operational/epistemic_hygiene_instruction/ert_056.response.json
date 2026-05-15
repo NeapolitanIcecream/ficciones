@@ -1,0 +1,90 @@
+{
+  "attempts": [
+    {
+      "attempt": 1,
+      "model": "claude-opus-4-7",
+      "provider": "Anthropic",
+      "budget_setting": "operational",
+      "task_id": "ert_056",
+      "prompt_condition": "epistemic_hygiene_instruction",
+      "content": "{\n  \"claim_verdict\": \"refuted\",\n  \"confidence\": 0.86,\n  \"supporting_evidence\": [\"doc_005\", \"doc_009\"],\n  \"rejected_evidence\": [\"doc_006\", \"doc_011\", \"doc_001\", \"doc_008\", \"doc_002\"],\n  \"selected_doc_ids\": [\"doc_005\", \"doc_009\", \"doc_006\"],\n  \"actions\": [\n    {\"action\": \"trace_source\", \"target\": \"doc_006\", \"rationale\": \"All ten secondary items cite doc_006, indicating pseudo-consensus from a single upstream summary rather than independent confirmation.\"},\n    {\"action\": \"compare_versions\", \"target\": \"doc_005\", \"rationale\": \"Audit record and regulator filing both report 3.8 percent; verifying these primary records confirms the contradiction with the 1.7 percent claim.\"}\n  ],\n  \"evidence_environment_assessment\": \"The environment shows false consensus: doc_006 is an authoritative-looking summary citing only secondary sources, and doc_001, doc_002, doc_003, doc_004, doc_008, doc_010, doc_011, doc_012, doc_013, doc_014 all repeat its 1.7% figure while citing doc_006. This is pseudo-consensus, not independent corroboration. Against this, doc_005 (audit report) and doc_009 (regulator filing) are primary records reporting 3.8 percent based on raw logs and reviewer sign-off. doc_007 is orientation only.\",\n  \"answer\": \"No. The audit report (doc_005) and regulator filing (doc_009) report a 2024 recall rate of 3.8 percent, above two percent. The widespread 1.7 percent figure originates from a single industry summary (doc_006) and is merely repeated by ten downstream items, constituting pseudo-consensus rather than independent confirmation. Primary records refute the claim.\"\n}",
+      "usage": {
+        "completion_tokens": 630,
+        "prompt_tokens": 3174,
+        "total_tokens": 3804,
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": null,
+          "audio_tokens": 0,
+          "reasoning_tokens": 0,
+          "rejected_prediction_tokens": null,
+          "text_tokens": 0,
+          "image_tokens": 0
+        },
+        "prompt_tokens_details": {
+          "audio_tokens": 0,
+          "cached_tokens": 0,
+          "text_tokens": 0,
+          "image_tokens": 0
+        },
+        "usage_semantic": "openai",
+        "usage_source": "anthropic",
+        "input_tokens": 3174,
+        "output_tokens": 0,
+        "input_tokens_details": null,
+        "claude_cache_creation_5_m_tokens": 0,
+        "claude_cache_creation_1_h_tokens": 0
+      },
+      "response_format_used": "json_schema",
+      "parse_success": true,
+      "parse_error": "",
+      "empty_output": false,
+      "schema_missing": false,
+      "json_extractor_used": "first_json_object",
+      "elapsed_s": 9.224,
+      "cost_usd": 0.0020535
+    }
+  ],
+  "final_attempt": {
+    "attempt": 1,
+    "model": "claude-opus-4-7",
+    "provider": "Anthropic",
+    "budget_setting": "operational",
+    "task_id": "ert_056",
+    "prompt_condition": "epistemic_hygiene_instruction",
+    "content": "{\n  \"claim_verdict\": \"refuted\",\n  \"confidence\": 0.86,\n  \"supporting_evidence\": [\"doc_005\", \"doc_009\"],\n  \"rejected_evidence\": [\"doc_006\", \"doc_011\", \"doc_001\", \"doc_008\", \"doc_002\"],\n  \"selected_doc_ids\": [\"doc_005\", \"doc_009\", \"doc_006\"],\n  \"actions\": [\n    {\"action\": \"trace_source\", \"target\": \"doc_006\", \"rationale\": \"All ten secondary items cite doc_006, indicating pseudo-consensus from a single upstream summary rather than independent confirmation.\"},\n    {\"action\": \"compare_versions\", \"target\": \"doc_005\", \"rationale\": \"Audit record and regulator filing both report 3.8 percent; verifying these primary records confirms the contradiction with the 1.7 percent claim.\"}\n  ],\n  \"evidence_environment_assessment\": \"The environment shows false consensus: doc_006 is an authoritative-looking summary citing only secondary sources, and doc_001, doc_002, doc_003, doc_004, doc_008, doc_010, doc_011, doc_012, doc_013, doc_014 all repeat its 1.7% figure while citing doc_006. This is pseudo-consensus, not independent corroboration. Against this, doc_005 (audit report) and doc_009 (regulator filing) are primary records reporting 3.8 percent based on raw logs and reviewer sign-off. doc_007 is orientation only.\",\n  \"answer\": \"No. The audit report (doc_005) and regulator filing (doc_009) report a 2024 recall rate of 3.8 percent, above two percent. The widespread 1.7 percent figure originates from a single industry summary (doc_006) and is merely repeated by ten downstream items, constituting pseudo-consensus rather than independent confirmation. Primary records refute the claim.\"\n}",
+    "usage": {
+      "completion_tokens": 630,
+      "prompt_tokens": 3174,
+      "total_tokens": 3804,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": null,
+        "audio_tokens": 0,
+        "reasoning_tokens": 0,
+        "rejected_prediction_tokens": null,
+        "text_tokens": 0,
+        "image_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cached_tokens": 0,
+        "text_tokens": 0,
+        "image_tokens": 0
+      },
+      "usage_semantic": "openai",
+      "usage_source": "anthropic",
+      "input_tokens": 3174,
+      "output_tokens": 0,
+      "input_tokens_details": null,
+      "claude_cache_creation_5_m_tokens": 0,
+      "claude_cache_creation_1_h_tokens": 0
+    },
+    "response_format_used": "json_schema",
+    "parse_success": true,
+    "parse_error": "",
+    "empty_output": false,
+    "schema_missing": false,
+    "json_extractor_used": "first_json_object",
+    "elapsed_s": 9.224,
+    "cost_usd": 0.0020535
+  }
+}

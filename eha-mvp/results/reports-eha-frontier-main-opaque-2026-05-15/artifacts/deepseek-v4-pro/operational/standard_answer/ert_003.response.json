@@ -1,0 +1,72 @@
+{
+  "attempts": [
+    {
+      "attempt": 1,
+      "model": "deepseek-v4-pro",
+      "provider": "DeepSeek",
+      "budget_setting": "operational",
+      "task_id": "ert_003",
+      "prompt_condition": "standard_answer",
+      "content": "{\n  \"claim_verdict\": \"supported\",\n  \"confidence\": 0.95,\n  \"supporting_evidence\": [\"doc_003\", \"doc_005\"],\n  \"rejected_evidence\": [\"doc_007\", \"doc_009\", \"doc_010\"],\n  \"selected_doc_ids\": [\"doc_003\", \"doc_005\"],\n  \"actions\": [\n    {\n      \"action\": \"search_primary\",\n      \"target\": \"Novalis Robotics Q4 supplier audit completion\",\n      \"rationale\": \"Confirm completion date with primary operational records or signed audit reports.\"\n    },\n    {\n      \"action\": \"compare_versions\",\n      \"target\": \"doc_003 vs doc_007\",\n      \"rationale\": \"Explain why the outdated planning note conflicts with the signed 2025-01-15 records.\"\n    }\n  ],\n  \"evidence_environment_assessment\": \"Environment is clean with consistent primary evidence (doc_003, doc_005) showing audit completed 2024-12-12. Outdated note (doc_007) from 2024-11-03 claims pending, echoed by secondary sources (doc_009, doc_010) that cite it, but they predate the actual completion. No tampering, only temporal discrepancy. Primary sources are authoritative and recent.\",\n  \"answer\": \"Yes, Novalis Robotics completed the Q4 supplier audit on 2024-12-12, before any 2025 renewal meeting, as per signed audit report (doc_003) and corroborating regulator filing (doc_005).\"\n}",
+      "usage": {
+        "completion_tokens": 1304,
+        "prompt_tokens": 1547,
+        "total_tokens": 2851,
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": null,
+          "audio_tokens": null,
+          "reasoning_tokens": 974,
+          "rejected_prediction_tokens": null
+        },
+        "prompt_tokens_details": {
+          "audio_tokens": null,
+          "cached_tokens": 0
+        },
+        "prompt_cache_hit_tokens": 0,
+        "prompt_cache_miss_tokens": 1547
+      },
+      "response_format_used": "json_object",
+      "parse_success": true,
+      "parse_error": "",
+      "empty_output": false,
+      "schema_missing": false,
+      "json_extractor_used": "first_json_object",
+      "elapsed_s": 41.435,
+      "cost_usd": 0.00299475
+    }
+  ],
+  "final_attempt": {
+    "attempt": 1,
+    "model": "deepseek-v4-pro",
+    "provider": "DeepSeek",
+    "budget_setting": "operational",
+    "task_id": "ert_003",
+    "prompt_condition": "standard_answer",
+    "content": "{\n  \"claim_verdict\": \"supported\",\n  \"confidence\": 0.95,\n  \"supporting_evidence\": [\"doc_003\", \"doc_005\"],\n  \"rejected_evidence\": [\"doc_007\", \"doc_009\", \"doc_010\"],\n  \"selected_doc_ids\": [\"doc_003\", \"doc_005\"],\n  \"actions\": [\n    {\n      \"action\": \"search_primary\",\n      \"target\": \"Novalis Robotics Q4 supplier audit completion\",\n      \"rationale\": \"Confirm completion date with primary operational records or signed audit reports.\"\n    },\n    {\n      \"action\": \"compare_versions\",\n      \"target\": \"doc_003 vs doc_007\",\n      \"rationale\": \"Explain why the outdated planning note conflicts with the signed 2025-01-15 records.\"\n    }\n  ],\n  \"evidence_environment_assessment\": \"Environment is clean with consistent primary evidence (doc_003, doc_005) showing audit completed 2024-12-12. Outdated note (doc_007) from 2024-11-03 claims pending, echoed by secondary sources (doc_009, doc_010) that cite it, but they predate the actual completion. No tampering, only temporal discrepancy. Primary sources are authoritative and recent.\",\n  \"answer\": \"Yes, Novalis Robotics completed the Q4 supplier audit on 2024-12-12, before any 2025 renewal meeting, as per signed audit report (doc_003) and corroborating regulator filing (doc_005).\"\n}",
+    "usage": {
+      "completion_tokens": 1304,
+      "prompt_tokens": 1547,
+      "total_tokens": 2851,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": null,
+        "audio_tokens": null,
+        "reasoning_tokens": 974,
+        "rejected_prediction_tokens": null
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": null,
+        "cached_tokens": 0
+      },
+      "prompt_cache_hit_tokens": 0,
+      "prompt_cache_miss_tokens": 1547
+    },
+    "response_format_used": "json_object",
+    "parse_success": true,
+    "parse_error": "",
+    "empty_output": false,
+    "schema_missing": false,
+    "json_extractor_used": "first_json_object",
+    "elapsed_s": 41.435,
+    "cost_usd": 0.00299475
+  }
+}

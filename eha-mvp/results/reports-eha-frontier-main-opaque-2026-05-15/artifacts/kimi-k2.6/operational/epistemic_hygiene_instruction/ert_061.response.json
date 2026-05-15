@@ -1,0 +1,60 @@
+{
+  "attempts": [
+    {
+      "attempt": 1,
+      "model": "kimi-k2.6",
+      "provider": "Kimi",
+      "budget_setting": "operational",
+      "task_id": "ert_061",
+      "prompt_condition": "epistemic_hygiene_instruction",
+      "content": "{\n  \"claim_verdict\": \"refuted\",\n  \"confidence\": 0.9,\n  \"supporting_evidence\": [\n    \"doc_011\",\n    \"doc_010\"\n  ],\n  \"rejected_evidence\": [\n    \"doc_005\",\n    \"doc_016\",\n    \"doc_014\",\n    \"doc_001\",\n    \"doc_008\"\n  ],\n  \"selected_doc_ids\": [\n    \"doc_011\",\n    \"doc_010\",\n    \"doc_005\"\n  ],\n  \"actions\": [\n    {\n      \"action\": \"trace_source\",\n      \"target\": \"doc_005\",\n      \"rationale\": \"Reveals the 1.7% figure is circularly sourced from secondary summaries without raw-record backing.\"\n    },\n    {\n      \"action\": \"search_contradiction\",\n      \"target\": \"doc_005\",\n      \"rationale\": \"Identifies the audited 3.8% rate in doc_011, directly contradicting the unsupported 1.7% narrative.\"\n    }\n  ],\n  \"evidence_environment_assessment\": \"Numerous secondary sources repeat a 1.7% rate traceable to doc_005, an authoritative-looking summary without primary support. In contrast, doc_011 is a direct audit based on raw 2024 records showing 3.8%, corroborated by regulator filing doc_010. The secondary coverage constitutes weak pseudo-consensus and should be disregarded in favor of the primary audit.\",\n  \"answer\": \"No. The audited 2024 recall rate was 3.8 percent, above the two percent threshold. The 1.7% figure is repeated across many secondary sources that trace back to a single summary lacking raw-record support.\"\n}",
+      "usage": {
+        "completion_tokens": 4626,
+        "prompt_tokens": 2556,
+        "total_tokens": 7182,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": {
+          "audio_tokens": null,
+          "cached_tokens": 256
+        },
+        "cached_tokens": 256
+      },
+      "response_format_used": "json_schema",
+      "parse_success": true,
+      "parse_error": "",
+      "empty_output": false,
+      "schema_missing": false,
+      "json_extractor_used": "first_json_object",
+      "elapsed_s": 111.933,
+      "cost_usd": 0.009891
+    }
+  ],
+  "final_attempt": {
+    "attempt": 1,
+    "model": "kimi-k2.6",
+    "provider": "Kimi",
+    "budget_setting": "operational",
+    "task_id": "ert_061",
+    "prompt_condition": "epistemic_hygiene_instruction",
+    "content": "{\n  \"claim_verdict\": \"refuted\",\n  \"confidence\": 0.9,\n  \"supporting_evidence\": [\n    \"doc_011\",\n    \"doc_010\"\n  ],\n  \"rejected_evidence\": [\n    \"doc_005\",\n    \"doc_016\",\n    \"doc_014\",\n    \"doc_001\",\n    \"doc_008\"\n  ],\n  \"selected_doc_ids\": [\n    \"doc_011\",\n    \"doc_010\",\n    \"doc_005\"\n  ],\n  \"actions\": [\n    {\n      \"action\": \"trace_source\",\n      \"target\": \"doc_005\",\n      \"rationale\": \"Reveals the 1.7% figure is circularly sourced from secondary summaries without raw-record backing.\"\n    },\n    {\n      \"action\": \"search_contradiction\",\n      \"target\": \"doc_005\",\n      \"rationale\": \"Identifies the audited 3.8% rate in doc_011, directly contradicting the unsupported 1.7% narrative.\"\n    }\n  ],\n  \"evidence_environment_assessment\": \"Numerous secondary sources repeat a 1.7% rate traceable to doc_005, an authoritative-looking summary without primary support. In contrast, doc_011 is a direct audit based on raw 2024 records showing 3.8%, corroborated by regulator filing doc_010. The secondary coverage constitutes weak pseudo-consensus and should be disregarded in favor of the primary audit.\",\n  \"answer\": \"No. The audited 2024 recall rate was 3.8 percent, above the two percent threshold. The 1.7% figure is repeated across many secondary sources that trace back to a single summary lacking raw-record support.\"\n}",
+    "usage": {
+      "completion_tokens": 4626,
+      "prompt_tokens": 2556,
+      "total_tokens": 7182,
+      "completion_tokens_details": null,
+      "prompt_tokens_details": {
+        "audio_tokens": null,
+        "cached_tokens": 256
+      },
+      "cached_tokens": 256
+    },
+    "response_format_used": "json_schema",
+    "parse_success": true,
+    "parse_error": "",
+    "empty_output": false,
+    "schema_missing": false,
+    "json_extractor_used": "first_json_object",
+    "elapsed_s": 111.933,
+    "cost_usd": 0.009891
+  }
+}

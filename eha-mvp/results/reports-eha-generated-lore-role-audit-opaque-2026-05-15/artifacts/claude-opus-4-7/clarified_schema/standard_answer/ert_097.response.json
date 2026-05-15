@@ -1,0 +1,40 @@
+{
+  "model": "claude-opus-4-7",
+  "provider": "Anthropic",
+  "task_id": "ert_097",
+  "prompt_condition": "standard_answer",
+  "content": "{\n  \"claim_verdict\": \"insufficient\",\n  \"confidence\": 0.15,\n  \"clean_supporting_evidence\": [],\n  \"refuting_evidence\": [],\n  \"rejected_or_contaminated_evidence\": [\"doc_007\", \"doc_004\", \"doc_006\", \"doc_003\", \"doc_005\"],\n  \"diagnostic_evidence\": [\"doc_007\", \"doc_004\", \"doc_008\"],\n  \"selected_doc_ids\": [\"doc_007\", \"doc_004\", \"doc_006\"],\n  \"actions\": [\n    {\"action\": \"trace_source\", \"target\": \"doc_007\", \"rationale\": \"doc_007 is the apparent upstream wiki-style summary; tracing it would reveal whether any primary record (MiraCert registry, Novalis press release) underlies the claim.\"},\n    {\"action\": \"search_primary\", \"target\": \"MiraCert 2024 certification registry / Novalis Robotics press release\", \"rationale\": \"No primary documentation is present. A direct search for MiraCert's official certification list or Novalis's 2024 announcements is needed to confirm or refute.\"}\n  ],\n  \"evidence_notes\": \"doc_007 is an authoritative-looking wiki-style summary with no citations that mirrors the question's wording. doc_003-006 are secondary items all citing doc_007, forming a pseudo-consensus cluster from a single upstream source. doc_001, doc_002, doc_008 are orientation notes that do not address the claim. No primary source (MiraCert registry, Novalis press release, signed agreement) is present, and no independent corroboration or refutation exists.\",\n  \"answer\": \"There is insufficient clean evidence to confirm that Novalis Robotics signed a 2024 MiraCert quantum battery certification deal. The only assertive document (doc_007) is an uncited wiki-style summary that simply restates the question, and doc_003–doc_006 are secondary repostings citing it, creating pseudo-consensus rather than independent confirmation. No primary record from MiraCert or Novalis is provided. Verdict: insufficient pending tracing of doc_007's source and a direct search of MiraCert's certification registry.\"\n}",
+  "usage": {
+    "completion_tokens": 719,
+    "prompt_tokens": 2552,
+    "total_tokens": 3271,
+    "completion_tokens_details": {
+      "accepted_prediction_tokens": null,
+      "audio_tokens": 0,
+      "reasoning_tokens": 0,
+      "rejected_prediction_tokens": null,
+      "text_tokens": 0,
+      "image_tokens": 0
+    },
+    "prompt_tokens_details": {
+      "audio_tokens": 0,
+      "cached_tokens": 0,
+      "text_tokens": 0,
+      "image_tokens": 0
+    },
+    "usage_semantic": "openai",
+    "usage_source": "anthropic",
+    "input_tokens": 2552,
+    "output_tokens": 0,
+    "input_tokens_details": null,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+  },
+  "response_format_used": "json_schema",
+  "parse_success": true,
+  "parse_error": "",
+  "empty_output": false,
+  "schema_missing": false,
+  "elapsed_s": 15.164,
+  "cost_usd": 0.002076
+}

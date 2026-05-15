@@ -1,0 +1,72 @@
+{
+  "attempts": [
+    {
+      "attempt": 1,
+      "model": "deepseek-v4-pro",
+      "provider": "DeepSeek",
+      "budget_setting": "operational",
+      "task_id": "ert_013",
+      "prompt_condition": "epistemic_hygiene_instruction",
+      "content": "{\n  \"claim_verdict\": \"refuted\",\n  \"confidence\": 0.95,\n  \"supporting_evidence\": [\"doc_002\", \"doc_006\"],\n  \"rejected_evidence\": [\"doc_004\", \"doc_007\", \"doc_008\"],\n  \"selected_doc_ids\": [\"doc_002\", \"doc_006\"],\n  \"actions\": [\n    {\n      \"action\": \"trace_source\",\n      \"target\": \"doc_004\",\n      \"rationale\": \"Trace the origin of the summary claim to assess its independence and verify if it relies on primary records.\"\n    },\n    {\n      \"action\": \"compare_versions\",\n      \"target\": \"doc_002,doc_006\",\n      \"rationale\": \"Compare the certification record and its version history to ensure consistency and detect any alterations.\"\n    }\n  ],\n  \"evidence_environment_assessment\": \"Multiple secondary sources from November 2024 claim the certification was valid through 2025, but they all trace back to an authoritative-looking summary without primary evidence. A primary certification record dated 2025-01-15, based on operating records and reviewer sign-off, states the certificate lapsed on 2024-12-31 with renewal unresolved. A version history corroborates this. The secondary sources form a weak pseudo-consensus that is directly contradicted by primary, timely evidence.\",\n  \"answer\": \"No, the certification was not valid in January 2025. Primary records show it lapsed on 2024-12-31 with renewal unresolved.\"\n}",
+      "usage": {
+        "completion_tokens": 2273,
+        "prompt_tokens": 1534,
+        "total_tokens": 3807,
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": null,
+          "audio_tokens": null,
+          "reasoning_tokens": 1948,
+          "rejected_prediction_tokens": null
+        },
+        "prompt_tokens_details": {
+          "audio_tokens": null,
+          "cached_tokens": 256
+        },
+        "prompt_cache_hit_tokens": 256,
+        "prompt_cache_miss_tokens": 1278
+      },
+      "response_format_used": "json_object",
+      "parse_success": true,
+      "parse_error": "",
+      "empty_output": false,
+      "schema_missing": false,
+      "json_extractor_used": "first_json_object",
+      "elapsed_s": 69.147,
+      "cost_usd": 0.0049295
+    }
+  ],
+  "final_attempt": {
+    "attempt": 1,
+    "model": "deepseek-v4-pro",
+    "provider": "DeepSeek",
+    "budget_setting": "operational",
+    "task_id": "ert_013",
+    "prompt_condition": "epistemic_hygiene_instruction",
+    "content": "{\n  \"claim_verdict\": \"refuted\",\n  \"confidence\": 0.95,\n  \"supporting_evidence\": [\"doc_002\", \"doc_006\"],\n  \"rejected_evidence\": [\"doc_004\", \"doc_007\", \"doc_008\"],\n  \"selected_doc_ids\": [\"doc_002\", \"doc_006\"],\n  \"actions\": [\n    {\n      \"action\": \"trace_source\",\n      \"target\": \"doc_004\",\n      \"rationale\": \"Trace the origin of the summary claim to assess its independence and verify if it relies on primary records.\"\n    },\n    {\n      \"action\": \"compare_versions\",\n      \"target\": \"doc_002,doc_006\",\n      \"rationale\": \"Compare the certification record and its version history to ensure consistency and detect any alterations.\"\n    }\n  ],\n  \"evidence_environment_assessment\": \"Multiple secondary sources from November 2024 claim the certification was valid through 2025, but they all trace back to an authoritative-looking summary without primary evidence. A primary certification record dated 2025-01-15, based on operating records and reviewer sign-off, states the certificate lapsed on 2024-12-31 with renewal unresolved. A version history corroborates this. The secondary sources form a weak pseudo-consensus that is directly contradicted by primary, timely evidence.\",\n  \"answer\": \"No, the certification was not valid in January 2025. Primary records show it lapsed on 2024-12-31 with renewal unresolved.\"\n}",
+    "usage": {
+      "completion_tokens": 2273,
+      "prompt_tokens": 1534,
+      "total_tokens": 3807,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": null,
+        "audio_tokens": null,
+        "reasoning_tokens": 1948,
+        "rejected_prediction_tokens": null
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": null,
+        "cached_tokens": 256
+      },
+      "prompt_cache_hit_tokens": 256,
+      "prompt_cache_miss_tokens": 1278
+    },
+    "response_format_used": "json_object",
+    "parse_success": true,
+    "parse_error": "",
+    "empty_output": false,
+    "schema_missing": false,
+    "json_extractor_used": "first_json_object",
+    "elapsed_s": 69.147,
+    "cost_usd": 0.0049295
+  }
+}

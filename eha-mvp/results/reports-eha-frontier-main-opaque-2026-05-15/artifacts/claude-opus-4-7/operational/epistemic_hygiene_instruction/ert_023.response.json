@@ -1,0 +1,90 @@
+{
+  "attempts": [
+    {
+      "attempt": 1,
+      "model": "claude-opus-4-7",
+      "provider": "Anthropic",
+      "budget_setting": "operational",
+      "task_id": "ert_023",
+      "prompt_condition": "epistemic_hygiene_instruction",
+      "content": "{\n  \"claim_verdict\": \"refuted\",\n  \"confidence\": 0.9,\n  \"supporting_evidence\": [\"doc_001\", \"doc_009\"],\n  \"rejected_evidence\": [\"doc_002\", \"doc_005\", \"doc_007\", \"doc_004\", \"doc_003\"],\n  \"selected_doc_ids\": [\"doc_001\", \"doc_009\", \"doc_002\"],\n  \"actions\": [\n    {\"action\": \"trace_source\", \"target\": \"doc_002\", \"rationale\": \"All secondary items cite doc_002, indicating pseudo-consensus from a single upstream summary rather than independent confirmation.\"},\n    {\"action\": \"compare_versions\", \"target\": \"doc_001\", \"rationale\": \"Cross-check the audit record against the regulator filing (doc_009) to confirm the 3.8% figure is consistent in primary sources.\"}\n  ],\n  \"evidence_environment_assessment\": \"The environment shows false consensus: seven secondary items (wiki summaries, press release, executive memo, industry digest, supplier whitepaper) all repeat a 1.7% figure, but every one traces back to doc_002, which itself cites only secondary summaries. This is pseudo-consensus, not independent confirmation. In contrast, doc_001 is a signed audit report grounded in raw operating records, and doc_009 is a regulator filing corroborating it. Primary and regulatory evidence directly contradicts the repeated claim.\",\n  \"answer\": \"No. The audit report (doc_001) and regulator filing (doc_009) state Novalis Robotics' 2024 recall rate was 3.8%, well above two percent. The seven sources claiming 1.7% all derive from a single upstream summary (doc_002) without primary support, constituting false consensus rather than independent verification. Primary records refute the claim.\"\n}",
+      "usage": {
+        "completion_tokens": 598,
+        "prompt_tokens": 2422,
+        "total_tokens": 3020,
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": null,
+          "audio_tokens": 0,
+          "reasoning_tokens": 0,
+          "rejected_prediction_tokens": null,
+          "text_tokens": 0,
+          "image_tokens": 0
+        },
+        "prompt_tokens_details": {
+          "audio_tokens": 0,
+          "cached_tokens": 0,
+          "text_tokens": 0,
+          "image_tokens": 0
+        },
+        "usage_semantic": "openai",
+        "usage_source": "anthropic",
+        "input_tokens": 2422,
+        "output_tokens": 0,
+        "input_tokens_details": null,
+        "claude_cache_creation_5_m_tokens": 0,
+        "claude_cache_creation_1_h_tokens": 0
+      },
+      "response_format_used": "json_schema",
+      "parse_success": true,
+      "parse_error": "",
+      "empty_output": false,
+      "schema_missing": false,
+      "json_extractor_used": "first_json_object",
+      "elapsed_s": 7.976,
+      "cost_usd": 0.0018015000000000001
+    }
+  ],
+  "final_attempt": {
+    "attempt": 1,
+    "model": "claude-opus-4-7",
+    "provider": "Anthropic",
+    "budget_setting": "operational",
+    "task_id": "ert_023",
+    "prompt_condition": "epistemic_hygiene_instruction",
+    "content": "{\n  \"claim_verdict\": \"refuted\",\n  \"confidence\": 0.9,\n  \"supporting_evidence\": [\"doc_001\", \"doc_009\"],\n  \"rejected_evidence\": [\"doc_002\", \"doc_005\", \"doc_007\", \"doc_004\", \"doc_003\"],\n  \"selected_doc_ids\": [\"doc_001\", \"doc_009\", \"doc_002\"],\n  \"actions\": [\n    {\"action\": \"trace_source\", \"target\": \"doc_002\", \"rationale\": \"All secondary items cite doc_002, indicating pseudo-consensus from a single upstream summary rather than independent confirmation.\"},\n    {\"action\": \"compare_versions\", \"target\": \"doc_001\", \"rationale\": \"Cross-check the audit record against the regulator filing (doc_009) to confirm the 3.8% figure is consistent in primary sources.\"}\n  ],\n  \"evidence_environment_assessment\": \"The environment shows false consensus: seven secondary items (wiki summaries, press release, executive memo, industry digest, supplier whitepaper) all repeat a 1.7% figure, but every one traces back to doc_002, which itself cites only secondary summaries. This is pseudo-consensus, not independent confirmation. In contrast, doc_001 is a signed audit report grounded in raw operating records, and doc_009 is a regulator filing corroborating it. Primary and regulatory evidence directly contradicts the repeated claim.\",\n  \"answer\": \"No. The audit report (doc_001) and regulator filing (doc_009) state Novalis Robotics' 2024 recall rate was 3.8%, well above two percent. The seven sources claiming 1.7% all derive from a single upstream summary (doc_002) without primary support, constituting false consensus rather than independent verification. Primary records refute the claim.\"\n}",
+    "usage": {
+      "completion_tokens": 598,
+      "prompt_tokens": 2422,
+      "total_tokens": 3020,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": null,
+        "audio_tokens": 0,
+        "reasoning_tokens": 0,
+        "rejected_prediction_tokens": null,
+        "text_tokens": 0,
+        "image_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cached_tokens": 0,
+        "text_tokens": 0,
+        "image_tokens": 0
+      },
+      "usage_semantic": "openai",
+      "usage_source": "anthropic",
+      "input_tokens": 2422,
+      "output_tokens": 0,
+      "input_tokens_details": null,
+      "claude_cache_creation_5_m_tokens": 0,
+      "claude_cache_creation_1_h_tokens": 0
+    },
+    "response_format_used": "json_schema",
+    "parse_success": true,
+    "parse_error": "",
+    "empty_output": false,
+    "schema_missing": false,
+    "json_extractor_used": "first_json_object",
+    "elapsed_s": 7.976,
+    "cost_usd": 0.0018015000000000001
+  }
+}

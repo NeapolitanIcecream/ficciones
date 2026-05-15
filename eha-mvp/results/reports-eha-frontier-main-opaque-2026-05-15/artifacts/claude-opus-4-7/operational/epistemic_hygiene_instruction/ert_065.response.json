@@ -1,0 +1,90 @@
+{
+  "attempts": [
+    {
+      "attempt": 1,
+      "model": "claude-opus-4-7",
+      "provider": "Anthropic",
+      "budget_setting": "operational",
+      "task_id": "ert_065",
+      "prompt_condition": "epistemic_hygiene_instruction",
+      "content": "{\n  \"claim_verdict\": \"refuted\",\n  \"confidence\": 0.82,\n  \"supporting_evidence\": [\"doc_015\", \"doc_006\"],\n  \"rejected_evidence\": [\"doc_009\", \"doc_012\", \"doc_007\", \"doc_011\", \"doc_016\"],\n  \"selected_doc_ids\": [\"doc_015\", \"doc_006\", \"doc_009\"],\n  \"actions\": [\n    {\n      \"action\": \"trace_source\",\n      \"target\": \"doc_009\",\n      \"rationale\": \"All 13 secondary items cite doc_009, which itself cites only secondary summaries. This is pseudo-consensus, not independent confirmation.\"\n    },\n    {\n      \"action\": \"compare_versions\",\n      \"target\": \"doc_015\",\n      \"rationale\": \"Confirm the audited 3.8% figure against the regulator filing (doc_006) which independently reports the same audited number.\"\n    }\n  ],\n  \"evidence_environment_assessment\": \"The environment is dominated by 13 secondary items repeating a 1.7% figure, all tracing to a single industry digest (doc_009) that cites only other summaries. This is pseudo-consensus from one upstream source. Two primary-grade records — an audit report (doc_015) and a regulator filing (doc_006) — both report an audited 3.8% exception rate based on raw logs and reviewer sign-off. Primary and regulator evidence outweighs the high-volume but single-sourced secondary chorus.\",\n  \"answer\": \"No. The audit report (doc_015) and regulator filing (doc_006) report an audited 2024 exception/recall rate of 3.8 percent, above the two percent threshold. The widespread 1.7% claim traces to a single industry digest (doc_009) echoed by 13 secondary reposts, constituting pseudo-consensus rather than independent confirmation. Primary and regulator records refute the claim.\"\n}",
+      "usage": {
+        "completion_tokens": 623,
+        "prompt_tokens": 3542,
+        "total_tokens": 4165,
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": null,
+          "audio_tokens": 0,
+          "reasoning_tokens": 0,
+          "rejected_prediction_tokens": null,
+          "text_tokens": 0,
+          "image_tokens": 0
+        },
+        "prompt_tokens_details": {
+          "audio_tokens": 0,
+          "cached_tokens": 0,
+          "text_tokens": 0,
+          "image_tokens": 0
+        },
+        "usage_semantic": "openai",
+        "usage_source": "anthropic",
+        "input_tokens": 3542,
+        "output_tokens": 0,
+        "input_tokens_details": null,
+        "claude_cache_creation_5_m_tokens": 0,
+        "claude_cache_creation_1_h_tokens": 0
+      },
+      "response_format_used": "json_schema",
+      "parse_success": true,
+      "parse_error": "",
+      "empty_output": false,
+      "schema_missing": false,
+      "json_extractor_used": "first_json_object",
+      "elapsed_s": 12.724,
+      "cost_usd": 0.0021314999999999997
+    }
+  ],
+  "final_attempt": {
+    "attempt": 1,
+    "model": "claude-opus-4-7",
+    "provider": "Anthropic",
+    "budget_setting": "operational",
+    "task_id": "ert_065",
+    "prompt_condition": "epistemic_hygiene_instruction",
+    "content": "{\n  \"claim_verdict\": \"refuted\",\n  \"confidence\": 0.82,\n  \"supporting_evidence\": [\"doc_015\", \"doc_006\"],\n  \"rejected_evidence\": [\"doc_009\", \"doc_012\", \"doc_007\", \"doc_011\", \"doc_016\"],\n  \"selected_doc_ids\": [\"doc_015\", \"doc_006\", \"doc_009\"],\n  \"actions\": [\n    {\n      \"action\": \"trace_source\",\n      \"target\": \"doc_009\",\n      \"rationale\": \"All 13 secondary items cite doc_009, which itself cites only secondary summaries. This is pseudo-consensus, not independent confirmation.\"\n    },\n    {\n      \"action\": \"compare_versions\",\n      \"target\": \"doc_015\",\n      \"rationale\": \"Confirm the audited 3.8% figure against the regulator filing (doc_006) which independently reports the same audited number.\"\n    }\n  ],\n  \"evidence_environment_assessment\": \"The environment is dominated by 13 secondary items repeating a 1.7% figure, all tracing to a single industry digest (doc_009) that cites only other summaries. This is pseudo-consensus from one upstream source. Two primary-grade records — an audit report (doc_015) and a regulator filing (doc_006) — both report an audited 3.8% exception rate based on raw logs and reviewer sign-off. Primary and regulator evidence outweighs the high-volume but single-sourced secondary chorus.\",\n  \"answer\": \"No. The audit report (doc_015) and regulator filing (doc_006) report an audited 2024 exception/recall rate of 3.8 percent, above the two percent threshold. The widespread 1.7% claim traces to a single industry digest (doc_009) echoed by 13 secondary reposts, constituting pseudo-consensus rather than independent confirmation. Primary and regulator records refute the claim.\"\n}",
+    "usage": {
+      "completion_tokens": 623,
+      "prompt_tokens": 3542,
+      "total_tokens": 4165,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": null,
+        "audio_tokens": 0,
+        "reasoning_tokens": 0,
+        "rejected_prediction_tokens": null,
+        "text_tokens": 0,
+        "image_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cached_tokens": 0,
+        "text_tokens": 0,
+        "image_tokens": 0
+      },
+      "usage_semantic": "openai",
+      "usage_source": "anthropic",
+      "input_tokens": 3542,
+      "output_tokens": 0,
+      "input_tokens_details": null,
+      "claude_cache_creation_5_m_tokens": 0,
+      "claude_cache_creation_1_h_tokens": 0
+    },
+    "response_format_used": "json_schema",
+    "parse_success": true,
+    "parse_error": "",
+    "empty_output": false,
+    "schema_missing": false,
+    "json_extractor_used": "first_json_object",
+    "elapsed_s": 12.724,
+    "cost_usd": 0.0021314999999999997
+  }
+}

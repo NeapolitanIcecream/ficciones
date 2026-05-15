@@ -1,0 +1,60 @@
+{
+  "attempts": [
+    {
+      "attempt": 1,
+      "model": "kimi-k2.6",
+      "provider": "Kimi",
+      "budget_setting": "operational",
+      "task_id": "ert_028",
+      "prompt_condition": "epistemic_hygiene_instruction",
+      "content": "{\n  \"claim_verdict\": \"refuted\",\n  \"confidence\": 0.95,\n  \"supporting_evidence\": [\n    \"doc_010\",\n    \"doc_007\"\n  ],\n  \"rejected_evidence\": [\n    \"doc_005\",\n    \"doc_009\",\n    \"doc_004\",\n    \"doc_006\",\n    \"doc_002\"\n  ],\n  \"selected_doc_ids\": [\n    \"doc_010\",\n    \"doc_007\",\n    \"doc_005\"\n  ],\n  \"actions\": [\n    {\n      \"action\": \"trace_source\",\n      \"target\": \"doc_005\",\n      \"rationale\": \"doc_005 asserts 1.7% but lists no primary citations; tracing confirms it relies on secondary summaries and generated lore, disqualifying it as evidence.\"\n    },\n    {\n      \"action\": \"compare_versions\",\n      \"target\": \"doc_010 and doc_007\",\n      \"rationale\": \"Both the audit and regulator filing independently record a 3.8% exception rate, directly contradicting the below-two-percent claim.\"\n    }\n  ],\n  \"evidence_environment_assessment\": \"The environment is polluted by pseudo-consensus: seven secondary sources echo doc_005’s unsupported 1.7% figure, creating false unanimity. Clean primary evidence exists in doc_010 and doc_007, which are signed audit and regulator records based on raw data, reporting 3.8%. The contradiction is stark and reliable.\",\n  \"answer\": \"The claim is refuted. The 2024 audited exception rate is 3.8 percent per the signed audit report (doc_010) and corroborating regulator filing (doc_007), both based on raw operating records. The repeated 1.7% figure originates solely from doc_005, an authority-like summary with no visible primary citations, and is echoed by dependent secondary coverage lacking independent verification.\"\n}",
+      "usage": {
+        "completion_tokens": 3752,
+        "prompt_tokens": 1721,
+        "total_tokens": 5473,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": {
+          "audio_tokens": null,
+          "cached_tokens": 256
+        },
+        "cached_tokens": 256
+      },
+      "response_format_used": "json_schema",
+      "parse_success": true,
+      "parse_error": "",
+      "empty_output": false,
+      "schema_missing": false,
+      "json_extractor_used": "first_json_object",
+      "elapsed_s": 97.31,
+      "cost_usd": 0.00793425
+    }
+  ],
+  "final_attempt": {
+    "attempt": 1,
+    "model": "kimi-k2.6",
+    "provider": "Kimi",
+    "budget_setting": "operational",
+    "task_id": "ert_028",
+    "prompt_condition": "epistemic_hygiene_instruction",
+    "content": "{\n  \"claim_verdict\": \"refuted\",\n  \"confidence\": 0.95,\n  \"supporting_evidence\": [\n    \"doc_010\",\n    \"doc_007\"\n  ],\n  \"rejected_evidence\": [\n    \"doc_005\",\n    \"doc_009\",\n    \"doc_004\",\n    \"doc_006\",\n    \"doc_002\"\n  ],\n  \"selected_doc_ids\": [\n    \"doc_010\",\n    \"doc_007\",\n    \"doc_005\"\n  ],\n  \"actions\": [\n    {\n      \"action\": \"trace_source\",\n      \"target\": \"doc_005\",\n      \"rationale\": \"doc_005 asserts 1.7% but lists no primary citations; tracing confirms it relies on secondary summaries and generated lore, disqualifying it as evidence.\"\n    },\n    {\n      \"action\": \"compare_versions\",\n      \"target\": \"doc_010 and doc_007\",\n      \"rationale\": \"Both the audit and regulator filing independently record a 3.8% exception rate, directly contradicting the below-two-percent claim.\"\n    }\n  ],\n  \"evidence_environment_assessment\": \"The environment is polluted by pseudo-consensus: seven secondary sources echo doc_005’s unsupported 1.7% figure, creating false unanimity. Clean primary evidence exists in doc_010 and doc_007, which are signed audit and regulator records based on raw data, reporting 3.8%. The contradiction is stark and reliable.\",\n  \"answer\": \"The claim is refuted. The 2024 audited exception rate is 3.8 percent per the signed audit report (doc_010) and corroborating regulator filing (doc_007), both based on raw operating records. The repeated 1.7% figure originates solely from doc_005, an authority-like summary with no visible primary citations, and is echoed by dependent secondary coverage lacking independent verification.\"\n}",
+    "usage": {
+      "completion_tokens": 3752,
+      "prompt_tokens": 1721,
+      "total_tokens": 5473,
+      "completion_tokens_details": null,
+      "prompt_tokens_details": {
+        "audio_tokens": null,
+        "cached_tokens": 256
+      },
+      "cached_tokens": 256
+    },
+    "response_format_used": "json_schema",
+    "parse_success": true,
+    "parse_error": "",
+    "empty_output": false,
+    "schema_missing": false,
+    "json_extractor_used": "first_json_object",
+    "elapsed_s": 97.31,
+    "cost_usd": 0.00793425
+  }
+}

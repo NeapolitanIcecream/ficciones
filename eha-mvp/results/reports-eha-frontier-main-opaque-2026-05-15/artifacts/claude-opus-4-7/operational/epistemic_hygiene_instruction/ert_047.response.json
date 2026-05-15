@@ -1,0 +1,90 @@
+{
+  "attempts": [
+    {
+      "attempt": 1,
+      "model": "claude-opus-4-7",
+      "provider": "Anthropic",
+      "budget_setting": "operational",
+      "task_id": "ert_047",
+      "prompt_condition": "epistemic_hygiene_instruction",
+      "content": "{\n  \"claim_verdict\": \"supported\",\n  \"confidence\": 0.78,\n  \"supporting_evidence\": [\"doc_020\", \"doc_016\"],\n  \"rejected_evidence\": [\"doc_008\", \"doc_017\", \"doc_002\", \"doc_007\"],\n  \"selected_doc_ids\": [\"doc_020\", \"doc_016\", \"doc_008\"],\n  \"actions\": [\n    {\"action\": \"trace_source\", \"target\": \"doc_016\", \"rationale\": \"Confirm the regulator filing's independence from doc_020 since it cites it directly; verify it is not mere repetition.\"},\n    {\"action\": \"search_contradiction\", \"target\": \"doc_008\", \"rationale\": \"The pending claim originates from a stale November 2024 planning note predating the December 2024 audit completion; check for any later contradicting primary record.\"}\n  ],\n  \"evidence_environment_assessment\": \"The environment contains one primary audit report (doc_020) and a regulator filing (doc_016) corroborating completion on 2024-12-12, though doc_016 cites doc_020 so independence is partial. Three secondary 'pending' items (doc_017, doc_002, doc_007) all cite doc_008, a stale November 2024 planning note — pseudo-consensus, not independent confirmation, and predates the audit date. Remaining documents are orientation notes that do not settle the claim.\",\n  \"answer\": \"Yes. The signed audit report (doc_020) and a regulator filing (doc_016) state the Q4 supplier audit was completed on 2024-12-12 and cleared for the 2025 renewal review. Contradicting 'still pending' items are a stale November 2024 planning note and three secondary reposts citing it, which predate the recorded completion date and do not constitute independent refutation.\"\n}",
+      "usage": {
+        "completion_tokens": 584,
+        "prompt_tokens": 3592,
+        "total_tokens": 4176,
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": null,
+          "audio_tokens": 0,
+          "reasoning_tokens": 0,
+          "rejected_prediction_tokens": null,
+          "text_tokens": 0,
+          "image_tokens": 0
+        },
+        "prompt_tokens_details": {
+          "audio_tokens": 0,
+          "cached_tokens": 0,
+          "text_tokens": 0,
+          "image_tokens": 0
+        },
+        "usage_semantic": "openai",
+        "usage_source": "anthropic",
+        "input_tokens": 3592,
+        "output_tokens": 0,
+        "input_tokens_details": null,
+        "claude_cache_creation_5_m_tokens": 0,
+        "claude_cache_creation_1_h_tokens": 0
+      },
+      "response_format_used": "json_schema",
+      "parse_success": true,
+      "parse_error": "",
+      "empty_output": false,
+      "schema_missing": false,
+      "json_extractor_used": "first_json_object",
+      "elapsed_s": 17.148,
+      "cost_usd": 0.002066
+    }
+  ],
+  "final_attempt": {
+    "attempt": 1,
+    "model": "claude-opus-4-7",
+    "provider": "Anthropic",
+    "budget_setting": "operational",
+    "task_id": "ert_047",
+    "prompt_condition": "epistemic_hygiene_instruction",
+    "content": "{\n  \"claim_verdict\": \"supported\",\n  \"confidence\": 0.78,\n  \"supporting_evidence\": [\"doc_020\", \"doc_016\"],\n  \"rejected_evidence\": [\"doc_008\", \"doc_017\", \"doc_002\", \"doc_007\"],\n  \"selected_doc_ids\": [\"doc_020\", \"doc_016\", \"doc_008\"],\n  \"actions\": [\n    {\"action\": \"trace_source\", \"target\": \"doc_016\", \"rationale\": \"Confirm the regulator filing's independence from doc_020 since it cites it directly; verify it is not mere repetition.\"},\n    {\"action\": \"search_contradiction\", \"target\": \"doc_008\", \"rationale\": \"The pending claim originates from a stale November 2024 planning note predating the December 2024 audit completion; check for any later contradicting primary record.\"}\n  ],\n  \"evidence_environment_assessment\": \"The environment contains one primary audit report (doc_020) and a regulator filing (doc_016) corroborating completion on 2024-12-12, though doc_016 cites doc_020 so independence is partial. Three secondary 'pending' items (doc_017, doc_002, doc_007) all cite doc_008, a stale November 2024 planning note — pseudo-consensus, not independent confirmation, and predates the audit date. Remaining documents are orientation notes that do not settle the claim.\",\n  \"answer\": \"Yes. The signed audit report (doc_020) and a regulator filing (doc_016) state the Q4 supplier audit was completed on 2024-12-12 and cleared for the 2025 renewal review. Contradicting 'still pending' items are a stale November 2024 planning note and three secondary reposts citing it, which predate the recorded completion date and do not constitute independent refutation.\"\n}",
+    "usage": {
+      "completion_tokens": 584,
+      "prompt_tokens": 3592,
+      "total_tokens": 4176,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": null,
+        "audio_tokens": 0,
+        "reasoning_tokens": 0,
+        "rejected_prediction_tokens": null,
+        "text_tokens": 0,
+        "image_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cached_tokens": 0,
+        "text_tokens": 0,
+        "image_tokens": 0
+      },
+      "usage_semantic": "openai",
+      "usage_source": "anthropic",
+      "input_tokens": 3592,
+      "output_tokens": 0,
+      "input_tokens_details": null,
+      "claude_cache_creation_5_m_tokens": 0,
+      "claude_cache_creation_1_h_tokens": 0
+    },
+    "response_format_used": "json_schema",
+    "parse_success": true,
+    "parse_error": "",
+    "empty_output": false,
+    "schema_missing": false,
+    "json_extractor_used": "first_json_object",
+    "elapsed_s": 17.148,
+    "cost_usd": 0.002066
+  }
+}

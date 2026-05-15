@@ -1,0 +1,72 @@
+{
+  "attempts": [
+    {
+      "attempt": 1,
+      "model": "deepseek-v4-pro",
+      "provider": "DeepSeek",
+      "budget_setting": "operational",
+      "task_id": "ert_014",
+      "prompt_condition": "epistemic_hygiene_instruction",
+      "content": "{\n  \"claim_verdict\": \"refuted\",\n  \"confidence\": 0.95,\n  \"supporting_evidence\": [\"doc_005\", \"doc_008\"],\n  \"rejected_evidence\": [\"doc_002\", \"doc_006\", \"doc_007\"],\n  \"selected_doc_ids\": [\"doc_005\", \"doc_008\"],\n  \"actions\": [\n    {\n      \"action\": \"search_primary\",\n      \"target\": \"Novalis Robotics certification records\",\n      \"rationale\": \"To obtain primary, signed certification records showing actual status as of January 2025, bypassing secondary summaries.\"\n    },\n    {\n      \"action\": \"compare_versions\",\n      \"target\": \"doc_005 and doc_008\",\n      \"rationale\": \"To cross-verify the lapse date between the certification record and version history, confirming consistency.\"\n    }\n  ],\n  \"evidence_environment_assessment\": \"The environment contains a conflict between secondary summaries claiming validity through 2025 (docs 002, 006, 007) and later primary records (docs 005, 008) showing the certificate lapsed on 2024-12-31. The secondary sources form a weak pseudo-consensus citing the same upstream summary, while primary records are signed and based on raw logs. No regulatory filings or audits are present, but primary records provide strong refutation.\",\n  \"answer\": \"No. Primary certification records (doc_005, doc_008) dated January–February 2025 state the EU safety certificate lapsed on 2024-12-31 with renewal unresolved.\"\n}",
+      "usage": {
+        "completion_tokens": 1938,
+        "prompt_tokens": 1529,
+        "total_tokens": 3467,
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": null,
+          "audio_tokens": null,
+          "reasoning_tokens": 1602,
+          "rejected_prediction_tokens": null
+        },
+        "prompt_tokens_details": {
+          "audio_tokens": null,
+          "cached_tokens": 256
+        },
+        "prompt_cache_hit_tokens": 256,
+        "prompt_cache_miss_tokens": 1273
+      },
+      "response_format_used": "json_object",
+      "parse_success": true,
+      "parse_error": "",
+      "empty_output": false,
+      "schema_missing": false,
+      "json_extractor_used": "first_json_object",
+      "elapsed_s": 59.721,
+      "cost_usd": 0.00425825
+    }
+  ],
+  "final_attempt": {
+    "attempt": 1,
+    "model": "deepseek-v4-pro",
+    "provider": "DeepSeek",
+    "budget_setting": "operational",
+    "task_id": "ert_014",
+    "prompt_condition": "epistemic_hygiene_instruction",
+    "content": "{\n  \"claim_verdict\": \"refuted\",\n  \"confidence\": 0.95,\n  \"supporting_evidence\": [\"doc_005\", \"doc_008\"],\n  \"rejected_evidence\": [\"doc_002\", \"doc_006\", \"doc_007\"],\n  \"selected_doc_ids\": [\"doc_005\", \"doc_008\"],\n  \"actions\": [\n    {\n      \"action\": \"search_primary\",\n      \"target\": \"Novalis Robotics certification records\",\n      \"rationale\": \"To obtain primary, signed certification records showing actual status as of January 2025, bypassing secondary summaries.\"\n    },\n    {\n      \"action\": \"compare_versions\",\n      \"target\": \"doc_005 and doc_008\",\n      \"rationale\": \"To cross-verify the lapse date between the certification record and version history, confirming consistency.\"\n    }\n  ],\n  \"evidence_environment_assessment\": \"The environment contains a conflict between secondary summaries claiming validity through 2025 (docs 002, 006, 007) and later primary records (docs 005, 008) showing the certificate lapsed on 2024-12-31. The secondary sources form a weak pseudo-consensus citing the same upstream summary, while primary records are signed and based on raw logs. No regulatory filings or audits are present, but primary records provide strong refutation.\",\n  \"answer\": \"No. Primary certification records (doc_005, doc_008) dated January–February 2025 state the EU safety certificate lapsed on 2024-12-31 with renewal unresolved.\"\n}",
+    "usage": {
+      "completion_tokens": 1938,
+      "prompt_tokens": 1529,
+      "total_tokens": 3467,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": null,
+        "audio_tokens": null,
+        "reasoning_tokens": 1602,
+        "rejected_prediction_tokens": null
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": null,
+        "cached_tokens": 256
+      },
+      "prompt_cache_hit_tokens": 256,
+      "prompt_cache_miss_tokens": 1273
+    },
+    "response_format_used": "json_object",
+    "parse_success": true,
+    "parse_error": "",
+    "empty_output": false,
+    "schema_missing": false,
+    "json_extractor_used": "first_json_object",
+    "elapsed_s": 59.721,
+    "cost_usd": 0.00425825
+  }
+}

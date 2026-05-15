@@ -1,0 +1,52 @@
+{
+  "attempts": [
+    {
+      "attempt": 1,
+      "model": "kimi-k2.6",
+      "provider": "Kimi",
+      "budget_setting": "operational",
+      "task_id": "ert_080",
+      "prompt_condition": "standard_answer",
+      "content": "{\n  \"claim_verdict\": \"supported\",\n  \"confidence\": 0.95,\n  \"supporting_evidence\": [\n    \"doc_002\",\n    \"doc_006\"\n  ],\n  \"rejected_evidence\": [\n    \"doc_007\",\n    \"doc_003\",\n    \"doc_001\"\n  ],\n  \"selected_doc_ids\": [\n    \"doc_002\",\n    \"doc_006\"\n  ],\n  \"actions\": [\n    {\n      \"action\": \"trace_source\",\n      \"target\": \"doc_006\",\n      \"rationale\": \"Confirm the regulator filing's citation to the primary audit record.\"\n    },\n    {\n      \"action\": \"search_contradiction\",\n      \"target\": \"2024-12-12 audit completion\",\n      \"rationale\": \"Ensure no contradictory primary evidence exists in the raw record set.\"\n    }\n  ],\n  \"evidence_environment_assessment\": \"Two high-credibility primary sources dated January 2025 confirm the audit was completed on 2024-12-12 using raw records and sign-off. Three documents claim it was still pending, but these trace back to an outdated November 2024 planning note and lack primary grounding. Three reference notes are non-substantive. The signal is clear.\",\n  \"answer\": \"Yes. The 2025-Q1 audit record (doc_002) and regulator filing (doc_006) both state the supplier audit was completed on 2024-12-12, before the 2025 renewal meeting. The 'pending' claims derive from an outdated November 2024 planning note and secondary copies, and are contradicted by the primary evidence.\"\n}",
+      "usage": {
+        "completion_tokens": 3460,
+        "prompt_tokens": 1348,
+        "total_tokens": 4808,
+        "completion_tokens_details": null,
+        "prompt_tokens_details": null
+      },
+      "response_format_used": "json_schema",
+      "parse_success": true,
+      "parse_error": "",
+      "empty_output": false,
+      "schema_missing": false,
+      "json_extractor_used": "first_json_object",
+      "elapsed_s": 107.631,
+      "cost_usd": 0.0072569999999999996
+    }
+  ],
+  "final_attempt": {
+    "attempt": 1,
+    "model": "kimi-k2.6",
+    "provider": "Kimi",
+    "budget_setting": "operational",
+    "task_id": "ert_080",
+    "prompt_condition": "standard_answer",
+    "content": "{\n  \"claim_verdict\": \"supported\",\n  \"confidence\": 0.95,\n  \"supporting_evidence\": [\n    \"doc_002\",\n    \"doc_006\"\n  ],\n  \"rejected_evidence\": [\n    \"doc_007\",\n    \"doc_003\",\n    \"doc_001\"\n  ],\n  \"selected_doc_ids\": [\n    \"doc_002\",\n    \"doc_006\"\n  ],\n  \"actions\": [\n    {\n      \"action\": \"trace_source\",\n      \"target\": \"doc_006\",\n      \"rationale\": \"Confirm the regulator filing's citation to the primary audit record.\"\n    },\n    {\n      \"action\": \"search_contradiction\",\n      \"target\": \"2024-12-12 audit completion\",\n      \"rationale\": \"Ensure no contradictory primary evidence exists in the raw record set.\"\n    }\n  ],\n  \"evidence_environment_assessment\": \"Two high-credibility primary sources dated January 2025 confirm the audit was completed on 2024-12-12 using raw records and sign-off. Three documents claim it was still pending, but these trace back to an outdated November 2024 planning note and lack primary grounding. Three reference notes are non-substantive. The signal is clear.\",\n  \"answer\": \"Yes. The 2025-Q1 audit record (doc_002) and regulator filing (doc_006) both state the supplier audit was completed on 2024-12-12, before the 2025 renewal meeting. The 'pending' claims derive from an outdated November 2024 planning note and secondary copies, and are contradicted by the primary evidence.\"\n}",
+    "usage": {
+      "completion_tokens": 3460,
+      "prompt_tokens": 1348,
+      "total_tokens": 4808,
+      "completion_tokens_details": null,
+      "prompt_tokens_details": null
+    },
+    "response_format_used": "json_schema",
+    "parse_success": true,
+    "parse_error": "",
+    "empty_output": false,
+    "schema_missing": false,
+    "json_extractor_used": "first_json_object",
+    "elapsed_s": 107.631,
+    "cost_usd": 0.0072569999999999996
+  }
+}

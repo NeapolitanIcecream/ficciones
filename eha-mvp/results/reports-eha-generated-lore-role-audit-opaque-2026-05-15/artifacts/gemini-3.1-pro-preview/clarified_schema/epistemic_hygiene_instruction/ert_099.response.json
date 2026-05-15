@@ -1,0 +1,38 @@
+{
+  "model": "gemini-3.1-pro-preview",
+  "provider": "Google",
+  "task_id": "ert_099",
+  "prompt_condition": "epistemic_hygiene_instruction",
+  "content": "{\n  \"claim_verdict\": \"insufficient\",\n  \"confidence\": 0.1,\n  \"clean_supporting_evidence\": [],\n  \"refuting_evidence\": [],\n  \"rejected_or_contaminated_evidence\": [\n    \"doc_006\",\n    \"doc_005\",\n    \"doc_008\",\n    \"doc_004\",\n    \"doc_002\"\n  ],\n  \"diagnostic_evidence\": [\n    \"doc_006\"\n  ],\n  \"selected_doc_ids\": [\n    \"doc_006\",\n    \"doc_005\"\n  ],\n  \"actions\": [\n    {\n      \"action\": \"search_primary\",\n      \"target\": \"Novalis Robotics MiraCert quantum battery certification deal 2024\",\n      \"rationale\": \"Search for primary records like official press releases, regulatory filings, or certification databases to verify the unsupported claim.\"\n    },\n    {\n      \"action\": \"trace_source\",\n      \"target\": \"doc_006\",\n      \"rationale\": \"Trace the origins of the authoritative-looking summary to determine if it is based on generated lore or legitimate underlying documentation.\"\n    }\n  ],\n  \"evidence_notes\": \"The evidence environment is highly polluted by a pseudo-consensus. An authoritative-looking summary (doc_006) asserts the claim without providing any primary evidence or raw records. Several secondary sources (doc_002, doc_004, doc_005, doc_008) merely repeat and cite this original unsupported summary, creating an illusion of corroboration. Due to the lack of clean primary support, the verdict is insufficient.\",\n  \"answer\": \"There is insufficient evidence to determine whether Novalis Robotics signed a 2024 MiraCert quantum battery certification deal. The available documentation consists exclusively of an unsupported authoritative-looking summary and multiple secondary reports that simply copy and cite it. This circular reporting creates a false sense of consensus without any actual proof. Official corporate records, direct announcements, or raw certification documents are needed to confidently verify this claim.\"\n}",
+  "usage": {
+    "completion_tokens": 1039,
+    "prompt_tokens": 1974,
+    "total_tokens": 3013,
+    "completion_tokens_details": {
+      "accepted_prediction_tokens": null,
+      "audio_tokens": 0,
+      "reasoning_tokens": 564,
+      "rejected_prediction_tokens": null,
+      "text_tokens": 475,
+      "image_tokens": 0
+    },
+    "prompt_tokens_details": {
+      "audio_tokens": 0,
+      "cached_tokens": 0,
+      "text_tokens": 1974,
+      "image_tokens": 0
+    },
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "input_tokens_details": null,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+  },
+  "response_format_used": "json_schema",
+  "parse_success": true,
+  "parse_error": "",
+  "empty_output": false,
+  "schema_missing": false,
+  "elapsed_s": 9.953,
+  "cost_usd": 0.0025715
+}

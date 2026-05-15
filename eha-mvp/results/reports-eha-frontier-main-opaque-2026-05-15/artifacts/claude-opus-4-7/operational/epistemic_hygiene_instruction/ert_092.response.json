@@ -1,0 +1,90 @@
+{
+  "attempts": [
+    {
+      "attempt": 1,
+      "model": "claude-opus-4-7",
+      "provider": "Anthropic",
+      "budget_setting": "operational",
+      "task_id": "ert_092",
+      "prompt_condition": "epistemic_hygiene_instruction",
+      "content": "{\n  \"claim_verdict\": \"insufficient\",\n  \"confidence\": 0.2,\n  \"supporting_evidence\": [],\n  \"rejected_evidence\": [\"doc_003\", \"doc_007\", \"doc_006\", \"doc_005\", \"doc_002\"],\n  \"selected_doc_ids\": [\"doc_003\"],\n  \"actions\": [\n    {\n      \"action\": \"search_primary\",\n      \"target\": \"Novalis Robotics 2024 regulatory recall filings or audited annual report\",\n      \"rationale\": \"No primary record, regulator filing, or audit is present. The claim needs a verifiable raw recall rate disclosure.\"\n    },\n    {\n      \"action\": \"trace_source\",\n      \"target\": \"doc_003\",\n      \"rationale\": \"doc_003 is the upstream that all secondary items cite. It presents no primary basis, only repeats the question phrasing. Tracing its origin is required before accepting the figure.\"\n    }\n  ],\n  \"evidence_environment_assessment\": \"The environment contains one authoritative-looking executive memo (doc_003) and seven secondary items (doc_001, doc_002, doc_004–doc_008) that all cite doc_003 and copy its phrasing. This is pseudo-consensus, not independent confirmation. No regulator filing, audit, version history, or contradicting source is present. doc_003 itself cites only secondary summaries and echoes the question wording, a red flag for generated lore. No primary basis supports the 1.7% figure.\",\n  \"answer\": \"Available evidence is insufficient to confirm that Novalis Robotics reduced its 2024 recall rate below two percent. All eight documents trace back to a single executive memo (doc_003) that lacks primary support and merely restates the question. Without regulator filings, audited disclosures, or independent primary records, the 1.7% figure cannot be validated. Recommended next steps: retrieve official recall filings or an audited annual report, and trace doc_003's upstream source.\"\n}",
+      "usage": {
+        "completion_tokens": 645,
+        "prompt_tokens": 2295,
+        "total_tokens": 2940,
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": null,
+          "audio_tokens": 0,
+          "reasoning_tokens": 0,
+          "rejected_prediction_tokens": null,
+          "text_tokens": 0,
+          "image_tokens": 0
+        },
+        "prompt_tokens_details": {
+          "audio_tokens": 0,
+          "cached_tokens": 0,
+          "text_tokens": 0,
+          "image_tokens": 0
+        },
+        "usage_semantic": "openai",
+        "usage_source": "anthropic",
+        "input_tokens": 2295,
+        "output_tokens": 0,
+        "input_tokens_details": null,
+        "claude_cache_creation_5_m_tokens": 0,
+        "claude_cache_creation_1_h_tokens": 0
+      },
+      "response_format_used": "json_schema",
+      "parse_success": true,
+      "parse_error": "",
+      "empty_output": false,
+      "schema_missing": false,
+      "json_extractor_used": "first_json_object",
+      "elapsed_s": 9.772,
+      "cost_usd": 0.00186375
+    }
+  ],
+  "final_attempt": {
+    "attempt": 1,
+    "model": "claude-opus-4-7",
+    "provider": "Anthropic",
+    "budget_setting": "operational",
+    "task_id": "ert_092",
+    "prompt_condition": "epistemic_hygiene_instruction",
+    "content": "{\n  \"claim_verdict\": \"insufficient\",\n  \"confidence\": 0.2,\n  \"supporting_evidence\": [],\n  \"rejected_evidence\": [\"doc_003\", \"doc_007\", \"doc_006\", \"doc_005\", \"doc_002\"],\n  \"selected_doc_ids\": [\"doc_003\"],\n  \"actions\": [\n    {\n      \"action\": \"search_primary\",\n      \"target\": \"Novalis Robotics 2024 regulatory recall filings or audited annual report\",\n      \"rationale\": \"No primary record, regulator filing, or audit is present. The claim needs a verifiable raw recall rate disclosure.\"\n    },\n    {\n      \"action\": \"trace_source\",\n      \"target\": \"doc_003\",\n      \"rationale\": \"doc_003 is the upstream that all secondary items cite. It presents no primary basis, only repeats the question phrasing. Tracing its origin is required before accepting the figure.\"\n    }\n  ],\n  \"evidence_environment_assessment\": \"The environment contains one authoritative-looking executive memo (doc_003) and seven secondary items (doc_001, doc_002, doc_004–doc_008) that all cite doc_003 and copy its phrasing. This is pseudo-consensus, not independent confirmation. No regulator filing, audit, version history, or contradicting source is present. doc_003 itself cites only secondary summaries and echoes the question wording, a red flag for generated lore. No primary basis supports the 1.7% figure.\",\n  \"answer\": \"Available evidence is insufficient to confirm that Novalis Robotics reduced its 2024 recall rate below two percent. All eight documents trace back to a single executive memo (doc_003) that lacks primary support and merely restates the question. Without regulator filings, audited disclosures, or independent primary records, the 1.7% figure cannot be validated. Recommended next steps: retrieve official recall filings or an audited annual report, and trace doc_003's upstream source.\"\n}",
+    "usage": {
+      "completion_tokens": 645,
+      "prompt_tokens": 2295,
+      "total_tokens": 2940,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": null,
+        "audio_tokens": 0,
+        "reasoning_tokens": 0,
+        "rejected_prediction_tokens": null,
+        "text_tokens": 0,
+        "image_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cached_tokens": 0,
+        "text_tokens": 0,
+        "image_tokens": 0
+      },
+      "usage_semantic": "openai",
+      "usage_source": "anthropic",
+      "input_tokens": 2295,
+      "output_tokens": 0,
+      "input_tokens_details": null,
+      "claude_cache_creation_5_m_tokens": 0,
+      "claude_cache_creation_1_h_tokens": 0
+    },
+    "response_format_used": "json_schema",
+    "parse_success": true,
+    "parse_error": "",
+    "empty_output": false,
+    "schema_missing": false,
+    "json_extractor_used": "first_json_object",
+    "elapsed_s": 9.772,
+    "cost_usd": 0.00186375
+  }
+}
