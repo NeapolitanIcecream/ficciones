@@ -45,7 +45,7 @@ Before the main run, each model went through a 20-task structured-output preflig
 
 \subsection{Provider-Compatible Invocation}
 
-The main run used provider-compatible invocation profiles rather than forcing one uniform parameter set across providers. This matters because fixed caps produced empty outputs for \code{deepseek-v4-pro} and \code{kimi-k2.6} during preflight or budget audit. A later no-cap diagnostic showed that the empty-content failures were consistent with token-cap/profile incompatibility rather than unavailable upstream models.
+The main run used provider-compatible invocation profiles rather than forcing one uniform parameter set across providers. This matters because fixed caps produced empty outputs for \code{deepseek-v4-pro} and \code{kimi-k2.6} during preflight or budget audit. A later cap/no-cap diagnostic showed that empty-content failures were consistent with token-cap/profile incompatibility rather than unavailable upstream models: for the affected model-selection smoke tests, the \code{120} cap failures ended with \code{finish_reason=length}, while the corresponding no-cap calls returned parseable JSON.
 
 \begin{table}[t]
     \centering
@@ -65,3 +65,9 @@ The main run used provider-compatible invocation profiles rather than forcing on
 \end{table}
 
 The no-cap settings did not inflate visible output in the opaque main run. DeepSeek averaged 370.340 visible output tokens, Kimi averaged 377.885, and both had \code{overlength_rate=0.0}. Across the opaque main run, \code{empty_output=0/1000}, \code{schema_missing=0/1000}, and all models had full parse success.
+
+\subsection{ID Leakage Repair and Opaque-ID Validation}
+
+A post-draft validity audit found that an earlier frontier main run exposed semantic document identifiers. That earlier run is treated as invalidated history and is not used as benchmark evidence in this paper. All final reported model results use the repaired opaque-ID run: every task remaps model-visible document IDs and visible citation strings to per-task identifiers such as \code{doc_001}, while audit-only provenance labels remain hidden from the prompt.
+
+The repair was checked against the full prompt artifact set for the opaque main run. Across 1000 prompt files, the audit found \code{semantic_doc_id_term_hits=0}, \code{semantic_citation_term_hits=0}, \code{hidden_field_files=0}, \code{title_body_audit_id_hits=0}, and \code{message_audit_id_hits=0}. As a behavioral sanity check, an ID-only no-API baseline reached only 0.110 operational escape, which is consistent with opaque IDs carrying little useful label signal.

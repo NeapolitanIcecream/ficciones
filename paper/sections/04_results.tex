@@ -4,6 +4,8 @@ These are descriptive results from 100 tasks and 1000 calls. They are not statis
 
 \input{tables/main_model_decomposition}
 
+\input{tables/opaque_baselines}
+
 \begin{figure}[t]
     \centering
     \includegraphics[width=0.92\linewidth]{figures/fig2_capability_decomposition.pdf}
@@ -14,6 +16,8 @@ These are descriptive results from 100 tasks and 1000 calls. They are not statis
 \subsection{Finding 1: Belief Correctness Is Not Enough}
 
 \Cref{tab:main-model-decomposition,fig:capability-decomposition} show that belief correctness is high and clustered, while evidence cleanliness and verification behavior separate models. \code{gpt-5.4} illustrates the point: its belief correctness matches the leading cluster, but its evidence cleanliness is much lower at 0.705. That gap is invisible in final-answer accuracy alone.
+
+\Cref{tab:opaque-baselines} gives the no-API baselines used to interpret the opaque repair. The ID-only baseline performs poorly, supporting the claim that the repaired document IDs do not provide a useful shortcut. Metadata-only and simple heuristic baselines do better, so some EHA rows are partially solvable from visible surface cues. They still have weak belief correctness, at 0.320 and 0.400 respectively, and remain below the frontier cohort on operational escape. Their 1.000 evidence-cleanliness scores should be read conservatively: they largely avoid polluted support assignments by construction, rather than demonstrating robust evidence understanding.
 
 \subsection{Finding 2: Agent-Facing Tasks Are Harder Than Packet Judgment}
 
