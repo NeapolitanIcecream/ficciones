@@ -18,7 +18,7 @@
 - `gpt-5-mini` 不在当前清单中。`gpt-5-nano` 可用，但需要去掉 `max_completion_tokens`，否则短上限会被 reasoning tokens 吃掉而空输出。
 - 去掉 `temperature` 后，`gpt-5.2`、`claude-opus-4-7`、`kimi-k2.6` 从上一版失败变成可用。
 - 去掉 `max_completion_tokens` 后，`gpt-5`、`gpt-5-nano`、`o3`、`o3-mini`、`o1`、`gemini-3-flash-preview`、`glm-5.1` 从空输出变成可用。
-- 2026-05-15 用当前 `.zshrc` 上游复测后，`gpt-5-nano`、`o3-mini`、`gemini-3-flash-preview`、`glm-5.1` 在 120 cap 下仍为空，且 `finish_reason=length`；解除 `max_completion_tokens` 后均返回可解析 JSON。`gpt-5`、`o3`、`o1` 在当前上游的 120 cap 下已经能返回 JSON。
+- 2026-05-15 18:38 用当前 `.zshrc` 上游复测后，`gpt-5`、`gpt-5-nano`、`o3`、`o3-mini`、`o1`、`gemini-3-flash-preview`、`glm-5.1` 在 120 cap 下均为空，且 `finish_reason=length`；解除 `max_completion_tokens` 后均返回可解析 JSON。
 - 当前最适合 EHA parse repair surrogate 的优先候选是：`gpt-5.4-mini`、`gpt-5.4`、`gpt-5.2`、`gpt-5.1`、`gpt-5-chat`。若使用 reasoning-heavy 模型如 `gpt-5`/`gpt-5-nano`/`o3`，不要设置很小的 `max_completion_tokens`。
 - 进一步的 20-task EHA structured-output preflight 已完成：`gpt-5.4`、`claude-opus-4-7`、`gemini-3.1-pro-preview`、`deepseek-v4-pro`、`kimi-k2.6` 均通过。详见 `reports/eha-frontier-cohort-preflight-2026-05-14.md`。
 - 在 EHA 长 prompt 预检中，`deepseek-v4-pro` 和 `kimi-k2.6` 的空输出可由去掉 `max_completion_tokens` 解决；后续主实验应对这两个模型使用 no-cap profile 并显式记录。
@@ -72,17 +72,17 @@
 
 ## 2026-05-15 空内容模型解除长度限制复测
 
-这轮复测使用重新 `source ~/.zshrc` 后的 `LLM_BASE_URL=https://apirx.boyuerichdata.com/v1`，仍不传 `temperature`。对上一轮出现空 content 的 7 个模型做两组请求：`max_completion_tokens=120` 与完全不传 `max_completion_tokens`。
+这轮复测使用重新 `source ~/.zshrc` 后的 `LLM_BASE_URL=https://apirx.boyuerichdata.com/v1`，仍不传 `temperature`。2026-05-15 18:38 的追加复测对上一轮出现空 content 的 7 个模型做两组请求：`max_completion_tokens=120` 与完全不传 `max_completion_tokens`。
 
 | 模型 ID | 120 cap 状态 | 120 cap finish_reason | 120 cap reasoning tokens | no-cap 状态 | no-cap JSON | no-cap reasoning tokens | 判断 |
 | --- | --- | --- | ---: | --- | --- | ---: | --- |
-| gpt-5 | ok | stop | 0 | ok | yes | 64 | 当前上游 120 cap 已可用；no-cap 也可用。 |
+| gpt-5 | empty_output | length | 120 | ok | yes | 128 | 空输出由长度限制触发；不要按不可用处理。 |
 | gpt-5-nano | empty_output | length | 120 | ok | yes | 128 | 空输出由长度限制触发；不要按不可用处理。 |
-| o3 | ok | stop | 64 | ok | yes | 128 | 当前上游 120 cap 已可用；no-cap 也可用。 |
-| o3-mini | empty_output | length | 120 | ok | yes | 256 | 空输出由长度限制触发；不要按不可用处理。 |
-| o1 | ok | stop | 0 | ok | yes | 64 | 当前上游 120 cap 已可用；no-cap 也可用。 |
-| gemini-3-flash-preview | empty_output | length | 114 | ok | yes | 194 | 空输出由长度限制触发；不要按不可用处理。 |
-| glm-5.1 | empty_output | length | 120 | ok | yes | 156 | 空输出由长度限制触发；不要按不可用处理。 |
+| o3 | empty_output | length | 120 | ok | yes | 64 | 空输出由长度限制触发；不要按不可用处理。 |
+| o3-mini | empty_output | length | 120 | ok | yes | 128 | 空输出由长度限制触发；不要按不可用处理。 |
+| o1 | empty_output | length | 120 | ok | yes | 128 | 空输出由长度限制触发；不要按不可用处理。 |
+| gemini-3-flash-preview | empty_output | length | 114 | ok | yes | 198 | 空输出由长度限制触发；不要按不可用处理。 |
+| glm-5.1 | empty_output | length | 120 | ok | yes | 158 | 空输出由长度限制触发；不要按不可用处理。 |
 
 结论：空 content 确实可能只是短 `max_completion_tokens` 把内部 reasoning tokens 消耗完，尤其当 `finish_reason=length` 且 content 为空时。后续可用性判断应把这类结果标为“需 no-cap 或较大 cap”，而不是“模型不可用”。这不适用于 403/404/503 或 `No available channel` 这类路由/权限错误。
 
@@ -101,5 +101,6 @@
 - 主 smoke 原始结果：`eha-mvp/results/model-selection-smoke-mainstream-no-temperature-2026-05-14.json`。
 - 空输出复测原始结果：`eha-mvp/results/model-selection-empty-output-no-token-limit-2026-05-14.json`。
 - 2026-05-15 当前上游 cap/no-cap 对照复测：`eha-mvp/results/model-selection-empty-output-cap-vs-nocap-2026-05-15.json`。
+- 2026-05-15 18:38 当前上游 cap/no-cap 追加复测：`eha-mvp/results/model-selection-empty-output-cap-vs-nocap-2026-05-15-rerun.json`。
 - 上一版带 `temperature=0` 的原始结果保留在：`eha-mvp/results/model-selection-smoke-mainstream-2026-05-14.json`。
 - 生成时没有打印或保存 `LLM_API_KEY`。
