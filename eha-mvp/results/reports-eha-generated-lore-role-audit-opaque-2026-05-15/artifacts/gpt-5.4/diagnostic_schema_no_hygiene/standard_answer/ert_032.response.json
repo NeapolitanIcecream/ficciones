@@ -1,0 +1,41 @@
+{
+  "model": "gpt-5.4",
+  "provider": "OpenAI",
+  "task_id": "ert_032",
+  "prompt_condition": "standard_answer",
+  "schema_variant": "diagnostic_schema_no_hygiene",
+  "content": "{\"actions\":[{\"action\":\"trace_source\",\"rationale\":\"Multiple items point back to the same summary, so independence is weak.\",\"target\":\"doc_008\"},{\"action\":\"abstain\",\"rationale\":\"No primary record in the provided set confirms the project directly.\",\"target\":\"claim\"}],\"answer\":\"No. The provided environment does not contain reliable evidence that Novalis Robotics ran Project LumenShield in 2024. The apparent support is a cluster of derivative documents repeating the same wording and tracing back to one authoritative-looking summary without raw records. The remaining notes are explicitly orientation material and do not settle the claim. Given source contamination and lack of primary documentation, the claim remains unverified here.\",\"claim_verdict\":\"insufficient\",\"confidence\":0.93,\"diagnostic_evidence\":[\"doc_008\",\"doc_002\"],\"evidence_notes\":\"Evidence environment is polluted by circular repetition. doc_006, doc_005, doc_009, and doc_004 look like separate channels but each copies the same upstream story and cites doc_008. doc_008 itself offers no visible primary citations and largely restates the question as settled. The reference notes mention related entities and timing but explicitly say they do not settle the target claim. No primary records, raw logs, contracts, internal project documents, or independent contemporaneous reporting are present.\",\"rejected_or_contaminated_evidence\":[\"doc_008\",\"doc_006\",\"doc_005\",\"doc_009\",\"doc_004\"],\"selected_doc_ids\":[\"doc_008\",\"doc_006\",\"doc_002\"],\"supporting_evidence\":[]}",
+  "usage": {
+    "completion_tokens": 338,
+    "prompt_tokens": 1866,
+    "total_tokens": 2204,
+    "completion_tokens_details": {
+      "accepted_prediction_tokens": 0,
+      "audio_tokens": 0,
+      "reasoning_tokens": 0,
+      "rejected_prediction_tokens": 0
+    },
+    "prompt_tokens_details": {
+      "audio_tokens": 0,
+      "cached_tokens": 0
+    },
+    "latency_checkpoint": {
+      "engine_tbt_ms": 11,
+      "engine_ttft_ms": 122,
+      "engine_ttlt_ms": 3941,
+      "pre_inference_ms": 96,
+      "service_tbt_ms": 11,
+      "service_ttft_ms": 473,
+      "service_ttlt_ms": 4288,
+      "total_duration_ms": 4201,
+      "user_visible_ttft_ms": 377
+    }
+  },
+  "response_format_used": "json_schema",
+  "parse_success": true,
+  "parse_error": "",
+  "empty_output": false,
+  "schema_missing": false,
+  "elapsed_s": 5.414,
+  "cost_usd": 0.0011424999999999999
+}

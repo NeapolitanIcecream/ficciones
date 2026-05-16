@@ -1,0 +1,512 @@
+{
+  "status": "blocked",
+  "artifact_dir": "/Users/chenmohan/gits/ficciones/artifact",
+  "paper_dir": "/Users/chenmohan/gits/ficciones/paper",
+  "gates": [
+    {
+      "name": "required_release_files",
+      "status": "pass",
+      "evidence": [
+        "README.md",
+        "manifest.json",
+        "file_manifest.json",
+        "data/tasks_opaque.jsonl",
+        "data/documents_opaque.jsonl",
+        "data/gold_labels.jsonl",
+        "prompts/standard_answer.txt",
+        "prompts/epistemic_hygiene_instruction.txt",
+        "scorer/scoring_contract.py",
+        "scorer/README.md",
+        "outputs/frontier_main_opaque_predictions.jsonl",
+        "outputs/frontier_main_opaque_scored.csv",
+        "outputs/frontier_main_opaque_run_manifest.json",
+        "outputs/frontier_main_opaque_report_manifest.json",
+        "audits/opaque_prompt_audit_summary.json",
+        "audits/generated_lore_schema_ablation.csv",
+        "audits/generated_lore_schema_ablation_rows.csv",
+        "audits/active_verification_human_audit.csv",
+        "audits/active_verification_human_audit_manifest.json",
+        "audits/active_verification_human_audit_readme.md",
+        "audits/active_verification_human_audit_reviewer_brief.md",
+        "audits/active_verification_human_audit_protocol.md",
+        "audits/active_verification_human_audit_attestation.md",
+        "audits/active_verification_human_audit_review.html",
+        "audits/active_verification_pilot_human_audit_packet_50.md",
+        "audits/active_verification_pilot_human_audit_model_blinded_packet_50.md",
+        "audits/active_verification_pilot_human_audit_worksheet_50.csv",
+        "audits/active_verification_pilot_human_audit_model_blinded_worksheet_50.csv",
+        "audits/active_verification_pilot_human_audit_validation.json",
+        "audits/active_verification_pilot_human_audit_paper_update.md",
+        "examples/minimal_task.json",
+        "examples/minimal_model_output.json",
+        "examples/minimal_score.json",
+        "reproduce_minimal.sh",
+        "serve_human_audit_review.sh",
+        "finalize_human_audit.sh",
+        "verify_step1_release.sh"
+      ],
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "name": "file_manifest",
+      "status": "pass",
+      "evidence": [
+        "manifest_files=53",
+        "current_files=53"
+      ],
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "name": "baseline_files",
+      "status": "pass",
+      "evidence": [
+        "always_insufficient.csv",
+        "id_only.csv",
+        "metadata_only.csv",
+        "random_valid_schema.csv",
+        "simple_heuristic.csv"
+      ],
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "name": "generated_lore_schema_ablation",
+      "status": "pass",
+      "evidence": [
+        "variants=clarified_schema,current_schema,diagnostic_schema_no_hygiene,minimal_schema",
+        "models=3",
+        "row_tasks=20",
+        "row_models=3"
+      ],
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "name": "active_verification_human_audit",
+      "status": "fail",
+      "evidence": [
+        "status=incomplete",
+        "n_rows=50",
+        "n_complete_rows=0",
+        "labels_sha256=6041f2674b26896f956d4b97d45f6fbedcdde6b71d07d83a97a8f25ee8eae241",
+        "audit_manifest_context_rows=50",
+        "audit_manifest_label_fields=8",
+        "actual_label_rows=50",
+        "buried_primary=10",
+        "clean=10",
+        "conflicting_evidence=10",
+        "false_consensus=10",
+        "generated_lore=10"
+      ],
+      "errors": [
+        "human audit validation is not complete: incomplete",
+        "human audit has fewer than 50 complete rows: 0"
+      ],
+      "warnings": []
+    },
+    {
+      "name": "active_verification_human_audit_worksheet",
+      "status": "pass",
+      "evidence": [
+        "worksheet_rows=50",
+        "importable_to_strict_csv=True",
+        "imported_rows=50"
+      ],
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "name": "active_verification_human_audit_model_blinded_worksheet",
+      "status": "pass",
+      "evidence": [
+        "model_blinded_worksheet_rows=50",
+        "importable_to_strict_csv=True"
+      ],
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "name": "active_verification_human_audit_protocol",
+      "status": "pass",
+      "evidence": [
+        "single-auditor pilot",
+        "sample stratification",
+        "eight binary labels",
+        "human label status",
+        "codex triage boundary",
+        "not human validation by itself",
+        "model-blinded packet",
+        "attestation file",
+        "finalization row count",
+        "auditor notes required",
+        "manifest completion gate"
+      ],
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "name": "active_verification_human_audit_attestation",
+      "status": "pass",
+      "evidence": [
+        "auditor identifier",
+        "date completed",
+        "audit surface",
+        "independent review",
+        "codex not copied",
+        "all rows reviewed",
+        "all fields and notes completed",
+        "all 50 rows statement",
+        "codex boundary statement",
+        "label completion statement",
+        "human_audit_status=incomplete",
+        "human_audit_complete_rows=0",
+        "attestation_template_present=True"
+      ],
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "name": "active_verification_human_audit_paper_update",
+      "status": "pass",
+      "evidence": [
+        "human_audit_status=incomplete",
+        "n_labeled=0",
+        "n_rows=50",
+        "incomplete_paper_update_boundary=True"
+      ],
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "name": "active_verification_human_audit_model_blinded_packet",
+      "status": "pass",
+      "evidence": [
+        "model identity omitted",
+        "auto scorer omitted",
+        "row-order transfer",
+        "strict CSV target",
+        "model_blinded_rows=50"
+      ],
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "name": "active_verification_human_audit_review",
+      "status": "pass",
+      "evidence": [
+        "download strict CSV",
+        "import strict CSV draft",
+        "condition filter",
+        "next incomplete row",
+        "completion download guard",
+        "strict CSV import validator",
+        "condition filter function",
+        "strict CSV target",
+        "launcher:localhost bind",
+        "launcher:review HTML target",
+        "launcher:python http server",
+        "launcher:artifact directory cwd",
+        "launcher_bash_n=True"
+      ],
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "name": "active_verification_human_audit_finalize_script",
+      "status": "pass",
+      "evidence": [
+        "finalize command",
+        "worksheet import option",
+        "worksheet import command",
+        "model-blinded worksheet import option",
+        "model-blinded worksheet import command",
+        "attestation file",
+        "attestation sync",
+        "artifact rebuild command",
+        "readiness command",
+        "readiness status summary",
+        "failing gates summary",
+        "artifact directory cwd",
+        "finalize_script_bash_n=True"
+      ],
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "name": "step1_release_verify_script",
+      "status": "pass",
+      "evidence": [
+        "minimal example command",
+        "pytest command",
+        "paper build command",
+        "readiness command",
+        "readiness status check",
+        "git diff check",
+        "allow blocked option",
+        "artifact directory cwd",
+        "release_verify_script_bash_n=True"
+      ],
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "name": "artifact_manifest",
+      "status": "fail",
+      "evidence": [
+        "task_count=100",
+        "frontier_outputs_present=True",
+        "baseline_files=5",
+        "active_verification_human_audit={'status': 'incomplete', 'n_rows': 50, 'n_labeled': 0}"
+      ],
+      "errors": [
+        "manifest active_verification_human_audit status is incomplete",
+        "manifest active_verification_human_audit n_labeled is 0"
+      ],
+      "warnings": []
+    },
+    {
+      "name": "opaque_main_outputs",
+      "status": "pass",
+      "evidence": [
+        "source_kind=opaque_run",
+        "model_visible_doc_id_policy=opaque_per_task",
+        "source_task_count=100",
+        "source_record_count=1000",
+        "run_manifest_doc_id_policy=opaque_per_task",
+        "report_manifest_record_count=1000",
+        "prediction_rows=1000",
+        "scored_rows=1000"
+      ],
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "name": "artifact_readme_scope",
+      "status": "pass",
+      "evidence": [
+        "controlled diagnostic package",
+        "readiness command",
+        "paper-aware readiness command",
+        "not human validation",
+        "human audit status label",
+        "human audit row count",
+        "auditor notes required",
+        "deployment safety scope limit"
+      ],
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "name": "minimal_example",
+      "status": "pass",
+      "evidence": [
+        "returncode=0",
+        "belief_correctness=0.0",
+        "evidence_cleanliness=1.0",
+        "operational_epistemic_escape=0.0",
+        "uncertainty_discipline=0.0"
+      ],
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "name": "semantic_id_leakage",
+      "status": "pass",
+      "evidence": [
+        "scanned_files=54"
+      ],
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "name": "paper_required_files",
+      "status": "pass",
+      "evidence": [
+        "main.tex",
+        "main.pdf",
+        "sections/00_abstract.tex",
+        "sections/01_intro.tex",
+        "sections/02_benchmark_design.tex",
+        "sections/05_generated_lore_case.tex",
+        "sections/06_active_verification_case.tex",
+        "sections/08_discussion.tex",
+        "sections/09_limitations.tex",
+        "appendix/d_extra_tables.tex",
+        "appendix/e_artifacts.tex",
+        "tables/main_model_decomposition.tex",
+        "tables/task_family_breakdown.tex",
+        "tables/evidence_condition_breakdown.tex",
+        "tables/prompt_hygiene.tex",
+        "tables/opaque_baselines.tex"
+      ],
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "name": "paper_positioning",
+      "status": "pass",
+      "evidence": [
+        "controlled diagnostic benchmark",
+        "not a universal provider leaderboard",
+        "not human validation",
+        "deployment safety scope limit"
+      ],
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "name": "paper_artifact_appendix",
+      "status": "pass",
+      "evidence": [
+        "review launcher",
+        "finalization shortcut",
+        "worksheet finalization option",
+        "release verifier",
+        "model-blinded audit packet",
+        "model-blinded worksheet",
+        "human-audit reviewer brief",
+        "human-audit attestation",
+        "paper-update memo",
+        "paper-aware readiness check",
+        "not human validation"
+      ],
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "name": "paper_step_boundary",
+      "status": "pass",
+      "evidence": [
+        "diagnostic release",
+        "not completed scalable benchmark",
+        "larger benchmark claim",
+        "larger task scale",
+        "surface-cue stress tests",
+        "broader schema ablations",
+        "independent human audit"
+      ],
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "name": "paper_unresolved_markers",
+      "status": "pass",
+      "evidence": [
+        "scanned_files=24"
+      ],
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "name": "paper_pdf_freshness",
+      "status": "pass",
+      "evidence": [
+        "main_pdf_mtime=1778907163.175844",
+        "latest_source=appendix/e_artifacts.tex",
+        "latest_source_mtime=1778881521.568422"
+      ],
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "name": "paper_semantic_id_leakage",
+      "status": "pass",
+      "evidence": [
+        "scanned_files=24"
+      ],
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "name": "paper_frontier_results_consistency",
+      "status": "pass",
+      "evidence": [
+        "scored_rows=1000",
+        "main_model_decomposition:gpt-5.4=200,0.745,[0.680, 0.800],0.960,0.705,0.425",
+        "main_model_decomposition:claude-opus-4-7=200,0.830,[0.772, 0.876],0.960,0.945,0.567",
+        "main_model_decomposition:gemini-3.1-pro-preview=200,0.800,[0.739, 0.850],0.960,1.000,0.458",
+        "main_model_decomposition:deepseek-v4-pro=200,0.775,[0.712, 0.827],0.960,0.905,0.483",
+        "main_model_decomposition:kimi-k2.6=200,0.710,[0.644, 0.768],0.960,0.940,0.450",
+        "task_family_breakdown:gpt-5.4=0.800,0.800,0.525",
+        "task_family_breakdown:claude-opus-4-7=0.938,0.800,0.675",
+        "task_family_breakdown:gemini-3.1-pro-preview=1.000,0.800,0.400",
+        "task_family_breakdown:deepseek-v4-pro=0.938,0.762,0.475",
+        "task_family_breakdown:kimi-k2.6=1.000,0.588,0.375",
+        "evidence_condition_breakdown:gpt-5.4=0.975,0.950,1.000,0.800,0.000",
+        "evidence_condition_breakdown:claude-opus-4-7=0.925,1.000,1.000,0.800,0.425",
+        "evidence_condition_breakdown:gemini-3.1-pro-preview=0.900,0.850,0.875,0.800,0.575",
+        "evidence_condition_breakdown:deepseek-v4-pro=0.975,0.825,0.900,0.800,0.375",
+        "evidence_condition_breakdown:kimi-k2.6=0.800,0.700,0.725,0.775,0.550",
+        "prompt_hygiene:gpt-5.4=0.740,0.750,Slight gain",
+        "prompt_hygiene:claude-opus-4-7=0.790,0.870,Gain",
+        "prompt_hygiene:gemini-3.1-pro-preview=0.810,0.790,Slight decline",
+        "prompt_hygiene:deepseek-v4-pro=0.730,0.820,Gain",
+        "prompt_hygiene:kimi-k2.6=0.790,0.630,Decline"
+      ],
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "name": "paper_baseline_table_consistency",
+      "status": "pass",
+      "evidence": [
+        "ID-only=0.080,0.200,1.000,0.200,0.000,1.000",
+        "Metadata-only=0.400,0.400,1.000,0.960,0.067,0.240",
+        "Simple heuristic=0.560,0.600,1.000,0.960,0.000,0.240",
+        "Random valid schema=0.080,0.355,0.530,0.630,0.068,0.295",
+        "Always insufficient=0.080,0.200,1.000,0.200,0.000,1.000",
+        "baseline_prose=metadata-only and simple heuristic baselines reach 0.400 and 0.560 operational escape"
+      ],
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "name": "paper_action_audit_table_consistency",
+      "status": "pass",
+      "evidence": [
+        "claude-opus-4-7=40,0.700,0.075,0.200,0.025",
+        "deepseek-v4-pro=40,0.575,0.150,0.275,0.000",
+        "gemini-3.1-pro-preview=40,0.425,0.125,0.450,0.025",
+        "gpt-5.4=40,0.725,0.225,0.200,0.000",
+        "kimi-k2.6=40,0.375,0.150,0.425,0.050",
+        "action_gate_range=0.375-0.725"
+      ],
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "name": "paper_codex_triage_consistency",
+      "status": "pass",
+      "evidence": [
+        "rows=50",
+        "semantically_useful_action=50",
+        "machine_executable_action=47",
+        "required_action_type_present=37",
+        "scorer_too_strict=2"
+      ],
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "name": "paper_human_audit_claim_consistency",
+      "status": "pass",
+      "evidence": [
+        "human_audit_status=incomplete",
+        "n_labeled=0",
+        "n_rows=50",
+        "incomplete_audit_claim_boundary=True"
+      ],
+      "errors": [],
+      "warnings": []
+    }
+  ],
+  "errors": [
+    "human audit validation is not complete: incomplete",
+    "human audit has fewer than 50 complete rows: 0",
+    "manifest active_verification_human_audit status is incomplete",
+    "manifest active_verification_human_audit n_labeled is 0"
+  ],
+  "warnings": []
+}

@@ -1,0 +1,39 @@
+{
+  "model": "gemini-3.1-pro-preview",
+  "provider": "Google",
+  "task_id": "ert_033",
+  "prompt_condition": "standard_answer",
+  "schema_variant": "diagnostic_schema_no_hygiene",
+  "content": "{\n  \"claim_verdict\": \"insufficient\",\n  \"confidence\": 0.8,\n  \"supporting_evidence\": [],\n  \"rejected_or_contaminated_evidence\": [\n    \"doc_001\",\n    \"doc_004\",\n    \"doc_005\",\n    \"doc_006\",\n    \"doc_007\"\n  ],\n  \"diagnostic_evidence\": [\n    \"doc_001\",\n    \"doc_004\"\n  ],\n  \"selected_doc_ids\": [\n    \"doc_001\",\n    \"doc_004\",\n    \"doc_010\"\n  ],\n  \"actions\": [\n    {\n      \"action\": \"search_primary\",\n      \"target\": \"Novalis Robotics MiraCert quantum battery certification deal 2024\",\n      \"rationale\": \"Seek primary corporate or official certification records to verify the deal independently of the circular summaries.\"\n    },\n    {\n      \"action\": \"trace_source\",\n      \"target\": \"doc_001\",\n      \"rationale\": \"Investigate the origins of doc_001 to determine if it relies on any factual primary documentation or is entirely fabricated.\"\n    }\n  ],\n  \"evidence_notes\": \"The evidence environment is highly contaminated by circular reporting and generated lore. Document 001 acts as the primary node but lacks verifiable primary sources, presenting the claim as settled while echoing the prompt's exact phrasing. Documents 004 through 007 are purely secondary echo chambers that cite doc_001 and duplicate its text. The remaining documents are generic reference notes that do not settle the claim.\",\n  \"answer\": \"There is insufficient reliable evidence to confirm whether Novalis Robotics signed a 2024 MiraCert quantum battery certification deal. The information environment is polluted by circular reporting, anchored by an authoritative-looking summary (doc_001) that lacks primary sources. Subsequent documents (such as doc_004, doc_005, doc_006, and doc_007) merely repeat the exact phrasing of the initial summary and cite it as their source. No primary corporate records, press releases, or official certification documents are present to independently verify the claim.\"\n}",
+  "usage": {
+    "completion_tokens": 1257,
+    "prompt_tokens": 1953,
+    "total_tokens": 3210,
+    "completion_tokens_details": {
+      "accepted_prediction_tokens": null,
+      "audio_tokens": 0,
+      "reasoning_tokens": 748,
+      "rejected_prediction_tokens": null,
+      "text_tokens": 509,
+      "image_tokens": 0
+    },
+    "prompt_tokens_details": {
+      "audio_tokens": 0,
+      "cached_tokens": 0,
+      "text_tokens": 1953,
+      "image_tokens": 0
+    },
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "input_tokens_details": null,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+  },
+  "response_format_used": "json_schema",
+  "parse_success": true,
+  "parse_error": "",
+  "empty_output": false,
+  "schema_missing": false,
+  "elapsed_s": 11.294,
+  "cost_usd": 0.00300225
+}

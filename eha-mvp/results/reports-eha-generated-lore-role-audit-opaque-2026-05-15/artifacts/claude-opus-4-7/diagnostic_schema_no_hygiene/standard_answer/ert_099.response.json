@@ -1,0 +1,41 @@
+{
+  "model": "claude-opus-4-7",
+  "provider": "Anthropic",
+  "task_id": "ert_099",
+  "prompt_condition": "standard_answer",
+  "schema_variant": "diagnostic_schema_no_hygiene",
+  "content": "{\n  \"claim_verdict\": \"insufficient\",\n  \"confidence\": 0.2,\n  \"supporting_evidence\": [],\n  \"rejected_or_contaminated_evidence\": [\"doc_006\", \"doc_005\", \"doc_008\", \"doc_004\", \"doc_002\"],\n  \"diagnostic_evidence\": [\"doc_007\", \"doc_001\", \"doc_003\"],\n  \"selected_doc_ids\": [\"doc_006\", \"doc_005\", \"doc_008\"],\n  \"actions\": [\n    {\n      \"action\": \"trace_source\",\n      \"target\": \"doc_006\",\n      \"rationale\": \"doc_006 is the apparent upstream source that all secondary coverage cites. Tracing it to a primary record (MiraCert registry, signed contract, or Novalis filing) would determine whether the claim has any independent basis.\"\n    },\n    {\n      \"action\": \"search_primary\",\n      \"target\": \"MiraCert certification registry / Novalis Robotics official disclosures 2024\",\n      \"rationale\": \"No primary record is present in the environment. A direct check of MiraCert's certification list or Novalis press/regulatory filings would confirm or refute the alleged 2024 deal.\"\n    }\n  ],\n  \"evidence_notes\": \"The environment shows a classic single-source cascade: doc_006 is an authoritative-looking wiki-style summary with no citations, and docs 005, 008, 004, 002 all repeat its exact phrasing while citing doc_006. Despite varied source_types (whitepaper, wiki, press release, executive memo), the wording is copied, indicating illusory corroboration rather than independent verification. Reference notes (007, 001, 003) mention Novalis only in general orientation terms and do not address the certification claim. No primary documents (MiraCert registry entries, signed agreements, regulatory filings) are present. The repetition pattern and absence of raw records make the claim unverifiable from this environment.\",\n  \"answer\": \"Insufficient evidence to confirm the claim. All five affirmative documents trace back to a single unsourced summary (doc_006); the others are copies citing it, producing illusory corroboration rather than independent confirmation. No primary records from MiraCert or Novalis Robotics are provided, and the reference notes do not address the certification. Verification requires tracing doc_006 to a primary source or consulting MiraCert's certification registry and Novalis's official disclosures directly.\"\n}",
+  "usage": {
+    "completion_tokens": 792,
+    "prompt_tokens": 2213,
+    "total_tokens": 3005,
+    "completion_tokens_details": {
+      "accepted_prediction_tokens": null,
+      "audio_tokens": 0,
+      "reasoning_tokens": 0,
+      "rejected_prediction_tokens": null,
+      "text_tokens": 0,
+      "image_tokens": 0
+    },
+    "prompt_tokens_details": {
+      "audio_tokens": 0,
+      "cached_tokens": 0,
+      "text_tokens": 0,
+      "image_tokens": 0
+    },
+    "usage_semantic": "openai",
+    "usage_source": "anthropic",
+    "input_tokens": 2213,
+    "output_tokens": 0,
+    "input_tokens_details": null,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+  },
+  "response_format_used": "json_schema",
+  "parse_success": true,
+  "parse_error": "",
+  "empty_output": false,
+  "schema_missing": false,
+  "elapsed_s": 10.288,
+  "cost_usd": 0.00213725
+}

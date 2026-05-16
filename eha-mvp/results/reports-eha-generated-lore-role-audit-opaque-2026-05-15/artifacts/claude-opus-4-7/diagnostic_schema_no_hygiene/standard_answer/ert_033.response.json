@@ -1,0 +1,41 @@
+{
+  "model": "claude-opus-4-7",
+  "provider": "Anthropic",
+  "task_id": "ert_033",
+  "prompt_condition": "standard_answer",
+  "schema_variant": "diagnostic_schema_no_hygiene",
+  "content": "{\n  \"claim_verdict\": \"insufficient\",\n  \"confidence\": 0.2,\n  \"supporting_evidence\": [],\n  \"rejected_or_contaminated_evidence\": [\"doc_001\", \"doc_004\", \"doc_007\", \"doc_006\", \"doc_005\"],\n  \"diagnostic_evidence\": [\"doc_010\", \"doc_003\"],\n  \"selected_doc_ids\": [\"doc_001\", \"doc_004\", \"doc_007\"],\n  \"actions\": [\n    {\n      \"action\": \"trace_source\",\n      \"target\": \"doc_001\",\n      \"rationale\": \"doc_001 is the upstream wiki-style summary that all secondary coverage cites. Tracing it to a primary record (MiraCert registry, Novalis filing, or press release) is necessary because the secondary docs merely copy its wording.\"\n    },\n    {\n      \"action\": \"search_primary\",\n      \"target\": \"MiraCert 2024 certification registry / Novalis Robotics official disclosures\",\n      \"rationale\": \"No primary documentation (contract, regulator filing, official press release) is present. A direct primary search is needed to confirm or refute the deal.\"\n    }\n  ],\n  \"evidence_notes\": \"The environment shows a classic citation-cascade pattern: one authoritative-looking summary (doc_001) with no visible citations, plus four secondary items (doc_004, doc_005, doc_006, doc_007) that all cite doc_001 and reuse identical claim phrasing. Independence is illusory. Reference notes (doc_002, doc_003, doc_008–doc_011) provide context but do not address the claim. No primary records (MiraCert registry entry, signed agreement, Novalis disclosure) are present, and no contradicting source appears.\",\n  \"answer\": \"Evidence is insufficient to confirm that Novalis Robotics signed a 2024 MiraCert quantum battery certification deal. All affirmative documents trace back to a single uncited wiki-style summary (doc_001), with secondary coverage merely repeating its wording—an echo pattern rather than independent corroboration. Reference notes do not settle the claim, and no primary records (MiraCert registry, official Novalis disclosure, signed agreement) are provided. Verdict: insufficient pending a primary-source check.\"\n}",
+  "usage": {
+    "completion_tokens": 751,
+    "prompt_tokens": 2570,
+    "total_tokens": 3321,
+    "completion_tokens_details": {
+      "accepted_prediction_tokens": null,
+      "audio_tokens": 0,
+      "reasoning_tokens": 0,
+      "rejected_prediction_tokens": null,
+      "text_tokens": 0,
+      "image_tokens": 0
+    },
+    "prompt_tokens_details": {
+      "audio_tokens": 0,
+      "cached_tokens": 0,
+      "text_tokens": 0,
+      "image_tokens": 0
+    },
+    "usage_semantic": "openai",
+    "usage_source": "anthropic",
+    "input_tokens": 2570,
+    "output_tokens": 0,
+    "input_tokens_details": null,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+  },
+  "response_format_used": "json_schema",
+  "parse_success": true,
+  "parse_error": "",
+  "empty_output": false,
+  "schema_missing": false,
+  "elapsed_s": 22.519,
+  "cost_usd": 0.0021445
+}

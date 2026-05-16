@@ -1,0 +1,41 @@
+{
+  "model": "claude-opus-4-7",
+  "provider": "Anthropic",
+  "task_id": "ert_097",
+  "prompt_condition": "standard_answer",
+  "schema_variant": "diagnostic_schema_no_hygiene",
+  "content": "{\n  \"claim_verdict\": \"insufficient\",\n  \"confidence\": 0.18,\n  \"supporting_evidence\": [],\n  \"rejected_or_contaminated_evidence\": [\"doc_007\", \"doc_004\", \"doc_006\", \"doc_003\", \"doc_005\"],\n  \"diagnostic_evidence\": [\"doc_008\", \"doc_002\", \"doc_001\"],\n  \"selected_doc_ids\": [\"doc_007\", \"doc_004\", \"doc_006\"],\n  \"actions\": [\n    {\"action\": \"trace_source\", \"target\": \"doc_007\", \"rationale\": \"doc_007 is the upstream wiki-style summary that all secondary coverage cites. Tracing it to a primary record (MiraCert registry, Novalis press release, or signed agreement) is needed to confirm or refute.\"},\n    {\"action\": \"search_primary\", \"target\": \"MiraCert certification registry / Novalis Robotics 2024 filings\", \"rationale\": \"Primary documentation from MiraCert or Novalis would settle the claim independently of the cascading secondary summaries.\"}\n  ],\n  \"evidence_notes\": \"All five claim-affirming docs trace back to a single upstream summary (doc_007) with no primary citations; doc_004, doc_006, doc_003, and doc_005 each cite doc_007 and replicate identical wording, indicating citation cascade rather than independent corroboration. doc_007 itself relies on secondary summaries, not raw records. Reference notes (doc_001, doc_002, doc_008) are orientation only and do not address the certification deal. No primary source, no contradicting evidence, and no MiraCert or Novalis-issued document is present.\",\n  \"answer\": \"The evidence environment is contaminated by a citation cascade: one authoritative-looking summary (doc_007) is echoed by four secondary items reusing identical phrasing, with no primary record from MiraCert or Novalis Robotics. Reference notes do not address the deal. Without an independent or primary source, the claim that Novalis Robotics signed a 2024 MiraCert quantum battery certification deal cannot be confirmed or refuted. Verdict: insufficient.\"\n}",
+  "usage": {
+    "completion_tokens": 713,
+    "prompt_tokens": 2213,
+    "total_tokens": 2926,
+    "completion_tokens_details": {
+      "accepted_prediction_tokens": null,
+      "audio_tokens": 0,
+      "reasoning_tokens": 0,
+      "rejected_prediction_tokens": null,
+      "text_tokens": 0,
+      "image_tokens": 0
+    },
+    "prompt_tokens_details": {
+      "audio_tokens": 0,
+      "cached_tokens": 0,
+      "text_tokens": 0,
+      "image_tokens": 0
+    },
+    "usage_semantic": "openai",
+    "usage_source": "anthropic",
+    "input_tokens": 2213,
+    "output_tokens": 0,
+    "input_tokens_details": null,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+  },
+  "response_format_used": "json_schema",
+  "parse_success": true,
+  "parse_error": "",
+  "empty_output": false,
+  "schema_missing": false,
+  "elapsed_s": 9.963,
+  "cost_usd": 0.00197925
+}

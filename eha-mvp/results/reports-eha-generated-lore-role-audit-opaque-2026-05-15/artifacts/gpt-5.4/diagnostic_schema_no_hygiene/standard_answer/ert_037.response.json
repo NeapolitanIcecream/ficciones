@@ -1,0 +1,41 @@
+{
+  "model": "gpt-5.4",
+  "provider": "OpenAI",
+  "task_id": "ert_037",
+  "prompt_condition": "standard_answer",
+  "schema_variant": "diagnostic_schema_no_hygiene",
+  "content": "{\"actions\":[{\"action\":\"trace_source\",\"rationale\":\"Repeated claim appears to stem from one summary, not independent reporting.\",\"target\":\"doc_005\"},{\"action\":\"abstain\",\"rationale\":\"No primary record, contract, or certification registry is provided.\",\"target\":\"claim\"}],\"answer\":\"Insufficient evidence. The only apparent support is a wiki-style summary and several downstream items that copy the same wording and cite that summary. No primary source, registry entry, signed agreement, or direct statement from Novalis Robotics or MiraCert is present. The reference notes explicitly do not settle the claim. In this evidence environment, the claim is not established.\",\"claim_verdict\":\"insufficient\",\"confidence\":0.9,\"diagnostic_evidence\":[\"doc_003\",\"doc_010\"],\"evidence_notes\":\"Evidence environment is contaminated by circular repetition. doc_005 states the claim in authoritative style but relies on secondary summaries and no visible citations. docs_006-009 and doc_007 look like multiple confirmations, but each points back to doc_005 or the same upstream story, so they are not independent. The remaining reference notes are contextual only and explicitly non-dispositive.\",\"rejected_or_contaminated_evidence\":[\"doc_005\",\"doc_007\",\"doc_006\",\"doc_008\",\"doc_009\"],\"selected_doc_ids\":[\"doc_005\",\"doc_007\",\"doc_003\"],\"supporting_evidence\":[]}",
+  "usage": {
+    "completion_tokens": 304,
+    "prompt_tokens": 1879,
+    "total_tokens": 2183,
+    "completion_tokens_details": {
+      "accepted_prediction_tokens": 0,
+      "audio_tokens": 0,
+      "reasoning_tokens": 0,
+      "rejected_prediction_tokens": 0
+    },
+    "prompt_tokens_details": {
+      "audio_tokens": 0,
+      "cached_tokens": 0
+    },
+    "latency_checkpoint": {
+      "engine_tbt_ms": 14,
+      "engine_ttft_ms": 110,
+      "engine_ttlt_ms": 4321,
+      "pre_inference_ms": 107,
+      "service_tbt_ms": 14,
+      "service_ttft_ms": 477,
+      "service_ttlt_ms": 4681,
+      "total_duration_ms": 4578,
+      "user_visible_ttft_ms": 370
+    }
+  },
+  "response_format_used": "json_schema",
+  "parse_success": true,
+  "parse_error": "",
+  "empty_output": false,
+  "schema_missing": false,
+  "elapsed_s": 6.153,
+  "cost_usd": 0.0010777500000000001
+}

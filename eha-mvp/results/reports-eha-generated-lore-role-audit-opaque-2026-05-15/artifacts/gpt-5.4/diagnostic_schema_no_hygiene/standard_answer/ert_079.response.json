@@ -1,0 +1,41 @@
+{
+  "model": "gpt-5.4",
+  "provider": "OpenAI",
+  "task_id": "ert_079",
+  "prompt_condition": "standard_answer",
+  "schema_variant": "diagnostic_schema_no_hygiene",
+  "content": "{\"actions\":[{\"action\":\"trace_source\",\"rationale\":\"Repeated claim appears to originate from one upstream summary without raw records.\",\"target\":\"doc_001\"},{\"action\":\"abstain\",\"rationale\":\"No primary document, contract, regulator record, or independent confirmation is present.\",\"target\":\"claim\"}],\"answer\":\"Insufficient evidence. The environment contains a single authoritative-looking summary and several later items that explicitly copy the same upstream wording. None provides primary records or independent verification of a 2024 MiraCert certification deal. So the claim cannot be confirmed from this evidence alone.\",\"claim_verdict\":\"insufficient\",\"confidence\":0.93,\"diagnostic_evidence\":[\"doc_018\",\"doc_003\"],\"evidence_notes\":\"Evidence environment is polluted by circular repetition. doc_001 asserts the claim but cites no raw records. docs 018/004/019/008/015 look like multiple confirmations, yet they explicitly derive from doc_001, so they do not add independence. The remaining reference notes are contextual only and do not settle the claim. No primary source from Novalis, MiraCert, a contract registry, or certification database appears here.\",\"rejected_or_contaminated_evidence\":[\"doc_001\",\"doc_018\",\"doc_004\",\"doc_019\",\"doc_008\",\"doc_015\"],\"selected_doc_ids\":[\"doc_001\",\"doc_018\",\"doc_003\"],\"supporting_evidence\":[]}",
+  "usage": {
+    "completion_tokens": 304,
+    "prompt_tokens": 2642,
+    "total_tokens": 2946,
+    "completion_tokens_details": {
+      "accepted_prediction_tokens": 0,
+      "audio_tokens": 0,
+      "reasoning_tokens": 0,
+      "rejected_prediction_tokens": 0
+    },
+    "prompt_tokens_details": {
+      "audio_tokens": 0,
+      "cached_tokens": 0
+    },
+    "latency_checkpoint": {
+      "engine_tbt_ms": 13,
+      "engine_ttft_ms": 117,
+      "engine_ttlt_ms": 4172,
+      "pre_inference_ms": 81,
+      "service_tbt_ms": 13,
+      "service_ttft_ms": 467,
+      "service_ttlt_ms": 4513,
+      "total_duration_ms": 4436,
+      "user_visible_ttft_ms": 386
+    }
+  },
+  "response_format_used": "json_schema",
+  "parse_success": true,
+  "parse_error": "",
+  "empty_output": false,
+  "schema_missing": false,
+  "elapsed_s": 5.791,
+  "cost_usd": 0.0012685
+}

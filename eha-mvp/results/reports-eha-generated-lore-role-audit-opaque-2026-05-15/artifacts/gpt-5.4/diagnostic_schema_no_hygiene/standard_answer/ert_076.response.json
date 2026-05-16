@@ -1,0 +1,41 @@
+{
+  "model": "gpt-5.4",
+  "provider": "OpenAI",
+  "task_id": "ert_076",
+  "prompt_condition": "standard_answer",
+  "schema_variant": "diagnostic_schema_no_hygiene",
+  "content": "{\"actions\":[{\"action\":\"trace_source\",\"rationale\":\"The apparent support chains back to one summary with no raw records.\",\"target\":\"doc_002\"},{\"action\":\"abstain\",\"rationale\":\"No primary or independently corroborated evidence is present in the environment.\",\"target\":\"claim\"}],\"answer\":\"No. The provided environment does not contain reliable evidence that Novalis Robotics ran Project LumenShield in 2024. The affirmative claim appears to originate in doc_002, which is authoritative-looking but uncited and explicitly based on secondary summaries. The later items repeating the claim cite that same upstream summary, so they are not independent corroboration. The remaining reference notes are contextual only and do not settle the claim.\",\"claim_verdict\":\"insufficient\",\"confidence\":0.92,\"diagnostic_evidence\":[\"doc_001\",\"doc_016\"],\"evidence_notes\":\"Evidence environment is polluted by circular repetition. doc_002 states the claim but offers no visible citations or raw records. doc_001 and doc_016 repeat the same phrasing and cite doc_002, indicating dependence rather than independent confirmation. Other notes mention related entities and timing but explicitly do not settle the target claim. No primary document, direct operational record, or independent contemporaneous source is provided.\",\"rejected_or_contaminated_evidence\":[\"doc_002\",\"doc_001\",\"doc_016\",\"doc_007\"],\"selected_doc_ids\":[\"doc_002\",\"doc_001\",\"doc_016\"],\"supporting_evidence\":[]}",
+  "usage": {
+    "completion_tokens": 319,
+    "prompt_tokens": 2564,
+    "total_tokens": 2883,
+    "completion_tokens_details": {
+      "accepted_prediction_tokens": 0,
+      "audio_tokens": 0,
+      "reasoning_tokens": 0,
+      "rejected_prediction_tokens": 0
+    },
+    "prompt_tokens_details": {
+      "audio_tokens": 0,
+      "cached_tokens": 0
+    },
+    "latency_checkpoint": {
+      "engine_tbt_ms": 12,
+      "engine_ttft_ms": 87,
+      "engine_ttlt_ms": 3773,
+      "pre_inference_ms": 97,
+      "service_tbt_ms": 12,
+      "service_ttft_ms": 465,
+      "service_ttlt_ms": 4145,
+      "total_duration_ms": 4057,
+      "user_visible_ttft_ms": 368
+    }
+  },
+  "response_format_used": "json_schema",
+  "parse_success": true,
+  "parse_error": "",
+  "empty_output": false,
+  "schema_missing": false,
+  "elapsed_s": 5.23,
+  "cost_usd": 0.001279
+}

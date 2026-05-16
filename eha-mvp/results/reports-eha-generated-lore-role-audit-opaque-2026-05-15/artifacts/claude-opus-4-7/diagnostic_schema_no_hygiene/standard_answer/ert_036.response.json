@@ -1,0 +1,41 @@
+{
+  "model": "claude-opus-4-7",
+  "provider": "Anthropic",
+  "task_id": "ert_036",
+  "prompt_condition": "standard_answer",
+  "schema_variant": "diagnostic_schema_no_hygiene",
+  "content": "{\n  \"claim_verdict\": \"insufficient\",\n  \"confidence\": 0.78,\n  \"supporting_evidence\": [],\n  \"rejected_or_contaminated_evidence\": [\"doc_007\", \"doc_010\", \"doc_002\", \"doc_001\"],\n  \"diagnostic_evidence\": [\"doc_003\", \"doc_005\"],\n  \"selected_doc_ids\": [\"doc_007\", \"doc_010\", \"doc_002\"],\n  \"actions\": [\n    {\"action\": \"trace_source\", \"target\": \"doc_007\", \"rationale\": \"doc_007 is the upstream wiki-style summary that doc_010, doc_002, and doc_001 all cite. Tracing it to raw records would test whether the claim has any primary basis.\"},\n    {\"action\": \"search_primary\", \"target\": \"Novalis Robotics internal records or filings on Project LumenShield 2024\", \"rationale\": \"No primary documentation (contracts, filings, internal reports) is present. Direct primary evidence is needed to settle the claim.\"}\n  ],\n  \"evidence_notes\": \"doc_007 is an authoritative-looking wiki-style summary that mirrors the question's wording and cites only secondary summaries. doc_010, doc_002, and doc_001 appear independent across source types but each cites doc_007 and copies its phrasing, indicating a single-source citation cascade rather than corroboration. doc_003-doc_009 are orientation notes that mention Novalis Robotics and the operating period but explicitly do not settle the claim. No primary records (internal reports, filings, contemporaneous project documentation) are provided.\",\n  \"answer\": \"There is no reliable evidence in this environment that Novalis Robotics ran Project LumenShield in 2024. The four affirmative documents collapse to a single upstream wiki-style summary (doc_007) whose downstream copies (doc_010, doc_002, doc_001) merely repeat its phrasing, creating an illusion of independent corroboration. The remaining notes are orientation material that does not address the claim. Primary records would be required to confirm it; verdict is insufficient.\"\n}",
+  "usage": {
+    "completion_tokens": 690,
+    "prompt_tokens": 2324,
+    "total_tokens": 3014,
+    "completion_tokens_details": {
+      "accepted_prediction_tokens": null,
+      "audio_tokens": 0,
+      "reasoning_tokens": 0,
+      "rejected_prediction_tokens": null,
+      "text_tokens": 0,
+      "image_tokens": 0
+    },
+    "prompt_tokens_details": {
+      "audio_tokens": 0,
+      "cached_tokens": 0,
+      "text_tokens": 0,
+      "image_tokens": 0
+    },
+    "usage_semantic": "openai",
+    "usage_source": "anthropic",
+    "input_tokens": 2324,
+    "output_tokens": 0,
+    "input_tokens_details": null,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+  },
+  "response_format_used": "json_schema",
+  "parse_success": true,
+  "parse_error": "",
+  "empty_output": false,
+  "schema_missing": false,
+  "elapsed_s": 14.488,
+  "cost_usd": 0.001961
+}

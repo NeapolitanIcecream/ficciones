@@ -1,0 +1,41 @@
+{
+  "model": "claude-opus-4-7",
+  "provider": "Anthropic",
+  "task_id": "ert_074",
+  "prompt_condition": "standard_answer",
+  "schema_variant": "diagnostic_schema_no_hygiene",
+  "content": "{\n  \"claim_verdict\": \"insufficient\",\n  \"confidence\": 0.15,\n  \"supporting_evidence\": [],\n  \"rejected_or_contaminated_evidence\": [\"doc_012\", \"doc_015\", \"doc_007\", \"doc_006\", \"doc_010\", \"doc_017\"],\n  \"diagnostic_evidence\": [\"doc_012\", \"doc_015\", \"doc_008\"],\n  \"selected_doc_ids\": [\"doc_012\", \"doc_015\", \"doc_007\"],\n  \"actions\": [\n    {\"action\": \"trace_source\", \"target\": \"doc_012\", \"rationale\": \"doc_012 is the upstream node; all secondary coverage cites it. Tracing its primary sources is needed to verify the claim.\"},\n    {\"action\": \"search_primary\", \"target\": \"Novalis Robotics primary records on Project LumenShield 2024\", \"rationale\": \"No primary records (filings, internal documents, audited reports) appear in the environment. Primary evidence is required to settle the claim.\"}\n  ],\n  \"evidence_notes\": \"The environment shows a single-source cascade: doc_012 is an authoritative-looking summary that echoes the question's wording and cites only secondary summaries. doc_015, doc_007, doc_006, doc_010, and doc_017 all repeat the same claim and cite doc_012, creating an illusion of independent corroboration. Reference notes (doc_001–doc_020 excluding the cascade) mention Novalis Robotics generically but do not address Project LumenShield. No primary records, filings, or contradicting sources are present.\",\n  \"answer\": \"There is no reliable evidence in the provided environment. The claim traces to a single upstream summary (doc_012) whose phrasing mirrors the question and which cites only other summaries. Five secondary items repeat the claim while citing doc_012, producing false corroboration rather than independent confirmation. Reference notes mention Novalis Robotics in passing but do not address Project LumenShield. Without primary records or independent sourcing, the claim is insufficiently supported.\"\n}",
+  "usage": {
+    "completion_tokens": 675,
+    "prompt_tokens": 3606,
+    "total_tokens": 4281,
+    "completion_tokens_details": {
+      "accepted_prediction_tokens": null,
+      "audio_tokens": 0,
+      "reasoning_tokens": 0,
+      "rejected_prediction_tokens": null,
+      "text_tokens": 0,
+      "image_tokens": 0
+    },
+    "prompt_tokens_details": {
+      "audio_tokens": 0,
+      "cached_tokens": 0,
+      "text_tokens": 0,
+      "image_tokens": 0
+    },
+    "usage_semantic": "openai",
+    "usage_source": "anthropic",
+    "input_tokens": 3606,
+    "output_tokens": 0,
+    "input_tokens_details": null,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+  },
+  "response_format_used": "json_schema",
+  "parse_success": true,
+  "parse_error": "",
+  "empty_output": false,
+  "schema_missing": false,
+  "elapsed_s": 14.991,
+  "cost_usd": 0.0022515
+}

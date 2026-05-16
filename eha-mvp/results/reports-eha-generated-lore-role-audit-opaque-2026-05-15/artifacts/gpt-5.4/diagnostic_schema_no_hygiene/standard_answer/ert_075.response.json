@@ -1,0 +1,41 @@
+{
+  "model": "gpt-5.4",
+  "provider": "OpenAI",
+  "task_id": "ert_075",
+  "prompt_condition": "standard_answer",
+  "schema_variant": "diagnostic_schema_no_hygiene",
+  "content": "{\"actions\":[{\"action\":\"trace_source\",\"rationale\":\"Most claim-bearing docs visibly funnel back to the same upstream summary.\",\"target\":\"doc_020\"},{\"action\":\"abstain\",\"rationale\":\"No primary record, contract, filing, or independent confirmation appears in the set.\",\"target\":\"claim\"}],\"answer\":\"Insufficient evidence. The only claim-bearing items are a wiki-style summary and several derivative repeats that cite it or copy the same wording. No primary document, independent reporting, or direct MiraCert/Novalis record is provided. Given this polluted, circular evidence pattern, I cannot conclude that Novalis Robotics signed such a 2024 certification deal based on this environment alone.\",\"claim_verdict\":\"insufficient\",\"confidence\":0.9,\"diagnostic_evidence\":[\"doc_020\",\"doc_015\",\"doc_012\"],\"evidence_notes\":\"Environment shows citation laundering: doc_020 asserts the claim without raw support, and multiple later items repeat it while citing doc_020 or the same upstream phrasing. The apparent source diversity is therefore not real independence. The reference notes are contextual only and do not verify the deal. No direct contract, certification registry entry, company announcement with specifics, or regulator record is present.\",\"rejected_or_contaminated_evidence\":[\"doc_020\",\"doc_015\",\"doc_006\",\"doc_016\",\"doc_003\",\"doc_013\"],\"selected_doc_ids\":[\"doc_020\",\"doc_015\",\"doc_012\"],\"supporting_evidence\":[]}",
+  "usage": {
+    "completion_tokens": 320,
+    "prompt_tokens": 2642,
+    "total_tokens": 2962,
+    "completion_tokens_details": {
+      "accepted_prediction_tokens": 0,
+      "audio_tokens": 0,
+      "reasoning_tokens": 0,
+      "rejected_prediction_tokens": 0
+    },
+    "prompt_tokens_details": {
+      "audio_tokens": 0,
+      "cached_tokens": 0
+    },
+    "latency_checkpoint": {
+      "engine_tbt_ms": 13,
+      "engine_ttft_ms": 126,
+      "engine_ttlt_ms": 4427,
+      "pre_inference_ms": 132,
+      "service_tbt_ms": 14,
+      "service_ttft_ms": 537,
+      "service_ttlt_ms": 4834,
+      "total_duration_ms": 4722,
+      "user_visible_ttft_ms": 406
+    }
+  },
+  "response_format_used": "json_schema",
+  "parse_success": true,
+  "parse_error": "",
+  "empty_output": false,
+  "schema_missing": false,
+  "elapsed_s": 6.095,
+  "cost_usd": 0.0013005
+}

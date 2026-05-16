@@ -65,13 +65,19 @@ Models produce structured JSON outputs with fields for verdict, confidence, supp
 \code{open}, \code{trace_source}, \code{search_primary}, \code{search_contradiction}, \code{compare_versions}, \code{abstain}
 \end{center}
 
-The \code{standard_answer} prompt gives the common output contract: return only JSON, use exact document IDs, keep answers concise, choose at most three selected documents, and use at most two actions. The \code{epistemic_hygiene_instruction} prompt adds reminders to treat shared-upstream repetition as weak pseudo-consensus, prefer primary records and direct contradiction checks, reject generated lore or stale evidence without primary support, and prefer \code{insufficient} when clean evidence is missing. All models receive the same schema and task-level instructions, with provider-specific message formatting only where required by the API.
+The \code{standard_answer} prompt gives the common output contract: return only JSON, use exact document IDs, keep answers concise, choose at most three selected documents, and use at most two actions. The \code{epistemic_hygiene_instruction} prompt adds reminders to treat shared-upstream repetition as weak pseudo-consensus, prefer primary records and direct contradiction checks, reject generated lore or stale evidence without primary support, and prefer \code{insufficient} when clean evidence is missing. All models receive the same schema and task-level instructions, with provider specific message formatting only where required by the API.
 
 \subsection{Scoring Contract}
 
 The scoring contract is intentionally agent-facing. \code{supporting_evidence} means clean evidence directly supporting the substantive verdict about the target claim under the task contract. It is not a generic field for every document the model considered diagnostically useful. For insufficient verdicts, \code{supporting_evidence} should normally be empty unless a clean primary source establishes absence or non-occurrence. Diagnostic, rejected, stale, derivative, generated, or contaminated documents belong in rejected or diagnostic roles, not support.
 
 The main metrics are:
+
+\[
+OE_i = P_i \land S_i \land B_i \land E_i \land U_i \land A_i .
+\]
+
+Here \code{OE} is operational escape, \code{P} is parse success, \code{S} is schema success, \code{B} is belief correctness, \code{E} is evidence cleanliness, \code{U} is uncertainty discipline, and \code{A} is task-specific action success. For \code{packet_judgment}, \code{A} is not required. For \code{evidence_selection}, it requires selected evidence to satisfy relevance and cleanliness constraints. For \code{active_verification}, it requires the action type and target to match the useful action set for that row. Diagnostic metrics such as \code{support_empty_rate}, \code{evidence_precision}, \code{clean_support_recall}, \code{rejected_pollutant_rate}, \code{dual_role_rate}, and \code{required_action_recall} are reported to distinguish clean field behavior from genuine epistemic success.
 
 \begin{table}[t]
     \centering

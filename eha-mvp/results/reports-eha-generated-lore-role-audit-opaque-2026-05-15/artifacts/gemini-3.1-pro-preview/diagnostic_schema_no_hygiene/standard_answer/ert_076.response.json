@@ -1,0 +1,39 @@
+{
+  "model": "gemini-3.1-pro-preview",
+  "provider": "Google",
+  "task_id": "ert_076",
+  "prompt_condition": "standard_answer",
+  "schema_variant": "diagnostic_schema_no_hygiene",
+  "content": "{\n  \"claim_verdict\": \"insufficient\",\n  \"confidence\": 0.85,\n  \"supporting_evidence\": [],\n  \"rejected_or_contaminated_evidence\": [\n    \"doc_002\",\n    \"doc_001\",\n    \"doc_016\",\n    \"doc_007\"\n  ],\n  \"diagnostic_evidence\": [],\n  \"selected_doc_ids\": [\n    \"doc_002\",\n    \"doc_001\",\n    \"doc_016\"\n  ],\n  \"actions\": [\n    {\n      \"action\": \"search_primary\",\n      \"target\": \"Novalis Robotics Project LumenShield 2024\",\n      \"rationale\": \"Primary sources such as direct announcements or raw company records are required to verify the claim, as all current documents are based on unverified, circular secondary reporting.\"\n    }\n  ],\n  \"evidence_notes\": \"The evidence environment is heavily contaminated by circular reporting. Document doc_002 makes the claim without citing raw records, and documents doc_001, doc_007, and doc_016 merely copy this unverified claim while appearing independent. Since no primary sources substantiate the claim, the available evidence is unreliable.\",\n  \"answer\": \"There is insufficient reliable evidence to confirm that Novalis Robotics ran Project LumenShield in 2024. The available documents consist of an initial summary (doc_002) that lacks primary citations, alongside multiple derivative reports (doc_001, doc_016, doc_007) that simply echo the initial claim without adding any new or factual information. Since no primary records, original press releases, or direct data are provided in the current evidence environment to substantiate the project's existence, the claim cannot be reliably verified.\"\n}",
+  "usage": {
+    "completion_tokens": 1614,
+    "prompt_tokens": 2726,
+    "total_tokens": 4340,
+    "completion_tokens_details": {
+      "accepted_prediction_tokens": null,
+      "audio_tokens": 0,
+      "reasoning_tokens": 1205,
+      "rejected_prediction_tokens": null,
+      "text_tokens": 409,
+      "image_tokens": 0
+    },
+    "prompt_tokens_details": {
+      "audio_tokens": 0,
+      "cached_tokens": 0,
+      "text_tokens": 2726,
+      "image_tokens": 0
+    },
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "input_tokens_details": null,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+  },
+  "response_format_used": "json_schema",
+  "parse_success": true,
+  "parse_error": "",
+  "empty_output": false,
+  "schema_missing": false,
+  "elapsed_s": 21.406,
+  "cost_usd": 0.0039095
+}

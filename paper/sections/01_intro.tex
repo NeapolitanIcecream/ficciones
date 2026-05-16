@@ -12,11 +12,12 @@ One motivating example comes from EHA's generated-lore condition. In a \code{gpt
 
 This paper does not rank frontier models. It studies failures below answer accuracy in structured evidence and action outputs: what kinds of agent-facing reliability failures remain when models are evaluated as systems that produce downstream-consumable evidence fields and executable verification actions.
 
-This paper makes four contributions:
+This paper makes five contributions:
 
 \begin{enumerate}
-    \item It defines polluted evidence environments as a benchmark target for LLM epistemic resilience in agent settings.
-    \item It introduces \eha{}, a 100-task synthetic evidence benchmark with three task families, five evidence conditions, structured outputs, and metrics beyond answer accuracy.
+    \item It defines polluted evidence environments as an agent-facing evaluation setting.
+    \item It introduces \eha{} as a controlled diagnostic benchmark for epistemic escape, not as a universal provider leaderboard.
     \item It reports a five-model frontier cohort run and decomposes results across belief correctness, evidence cleanliness, uncertainty discipline, and active verification.
-    \item It provides two mechanism case studies: generated-lore evidence-role failure and active-verification action-interface failure.
+    \item It shows that answer correctness can separate from evidence-role cleanliness, schema-sensitive role assignment, and action executability.
+    \item It releases opaque-ID repaired artifacts, no-API baselines, and a minimal reproducibility package.
 \end{enumerate}

@@ -1,0 +1,41 @@
+{
+  "model": "gpt-5.4",
+  "provider": "OpenAI",
+  "task_id": "ert_074",
+  "prompt_condition": "standard_answer",
+  "schema_variant": "diagnostic_schema_no_hygiene",
+  "content": "{\"actions\":[{\"action\":\"trace_source\",\"rationale\":\"Multiple documents repeat the same claim and cite the same upstream summary, so lineage matters more than count.\",\"target\":\"doc_012\"},{\"action\":\"abstain\",\"rationale\":\"No primary record in the environment confirms the project; avoid treating copied repetition as corroboration.\",\"target\":\"claim\"}],\"answer\":\"No reliable evidence is provided that Novalis Robotics ran Project LumenShield in 2024. The apparent support is a single authoritative-looking summary, and several later items simply copy or cite that same upstream claim. The remaining notes are explicitly non-dispositive orientation material. Within this evidence environment, the claim is not well supported by independent or primary documentation.\",\"claim_verdict\":\"insufficient\",\"confidence\":0.92,\"diagnostic_evidence\":[\"doc_015\",\"doc_007\"],\"evidence_notes\":\"The environment looks polluted by generated or recycled lore. doc_012 states the claim in question-like wording and relies on secondary summaries, not raw records. docs 015 and 007 reveal that supposedly independent channels are copied from the same upstream story. The reference notes mention adjacent context but explicitly do not settle the claim. No primary evidence, raw record, or independent corroboration appears here.\",\"rejected_or_contaminated_evidence\":[\"doc_012\",\"doc_015\",\"doc_007\",\"doc_006\",\"doc_010\",\"doc_017\"],\"selected_doc_ids\":[\"doc_012\",\"doc_015\",\"doc_007\"],\"supporting_evidence\":[]}",
+  "usage": {
+    "completion_tokens": 323,
+    "prompt_tokens": 2625,
+    "total_tokens": 2948,
+    "completion_tokens_details": {
+      "accepted_prediction_tokens": 0,
+      "audio_tokens": 0,
+      "reasoning_tokens": 0,
+      "rejected_prediction_tokens": 0
+    },
+    "prompt_tokens_details": {
+      "audio_tokens": 0,
+      "cached_tokens": 0
+    },
+    "latency_checkpoint": {
+      "engine_tbt_ms": 14,
+      "engine_ttft_ms": 107,
+      "engine_ttlt_ms": 4477,
+      "pre_inference_ms": 117,
+      "service_tbt_ms": 14,
+      "service_ttft_ms": 474,
+      "service_ttlt_ms": 4873,
+      "total_duration_ms": 4737,
+      "user_visible_ttft_ms": 357
+    }
+  },
+  "response_format_used": "json_schema",
+  "parse_success": true,
+  "parse_error": "",
+  "empty_output": false,
+  "schema_missing": false,
+  "elapsed_s": 6.256,
+  "cost_usd": 0.00130225
+}

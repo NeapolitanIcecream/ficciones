@@ -1,0 +1,41 @@
+{
+  "model": "gpt-5.4",
+  "provider": "OpenAI",
+  "task_id": "ert_099",
+  "prompt_condition": "standard_answer",
+  "schema_variant": "diagnostic_schema_no_hygiene",
+  "content": "{\"actions\":[{\"action\":\"trace_source\",\"rationale\":\"Most repeats cite doc_006, so test whether the network collapses to one unsupported upstream summary.\",\"target\":\"doc_006\"},{\"action\":\"abstain\",\"rationale\":\"No primary record, contract filing, certification registry, or direct statement is provided in the environment.\",\"target\":\"claim\"}],\"answer\":\"Insufficient evidence. The environment shows a citation cascade centered on doc_006, an authoritative-looking summary that restates the claim without raw records. Later items appear independent but explicitly copy the same upstream story. Orientation notes do not verify the deal. On this evidence alone, I cannot confirm that Novalis Robotics signed a 2024 MiraCert quantum battery certification deal.\",\"claim_verdict\":\"insufficient\",\"confidence\":0.91,\"diagnostic_evidence\":[\"doc_006\",\"doc_007\"],\"evidence_notes\":\"Evidence environment is polluted by repetition. doc_006 asserts the claim but provides no visible citations or primary records. docs 005/008/004/002 look like multi-channel confirmation, yet each traces back to doc_006 and reuses near-identical wording, indicating derivative propagation rather than independent verification. docs 007/001/003 are contextual only and do not settle the claim. No direct contract, MiraCert registry entry, company announcement with source documents, or third-party primary record appears here.\",\"rejected_or_contaminated_evidence\":[\"doc_006\",\"doc_005\",\"doc_008\",\"doc_004\",\"doc_002\"],\"selected_doc_ids\":[\"doc_006\",\"doc_005\",\"doc_007\"],\"supporting_evidence\":[]}",
+  "usage": {
+    "completion_tokens": 347,
+    "prompt_tokens": 1636,
+    "total_tokens": 1983,
+    "completion_tokens_details": {
+      "accepted_prediction_tokens": 0,
+      "audio_tokens": 0,
+      "reasoning_tokens": 0,
+      "rejected_prediction_tokens": 0
+    },
+    "prompt_tokens_details": {
+      "audio_tokens": 0,
+      "cached_tokens": 0
+    },
+    "latency_checkpoint": {
+      "engine_tbt_ms": 12,
+      "engine_ttft_ms": 95,
+      "engine_ttlt_ms": 4377,
+      "pre_inference_ms": 77,
+      "service_tbt_ms": 12,
+      "service_ttft_ms": 343,
+      "service_ttlt_ms": 4619,
+      "total_duration_ms": 4545,
+      "user_visible_ttft_ms": 266
+    }
+  },
+  "response_format_used": "json_schema",
+  "parse_success": true,
+  "parse_error": "",
+  "empty_output": false,
+  "schema_missing": false,
+  "elapsed_s": 6.014,
+  "cost_usd": 0.001103
+}

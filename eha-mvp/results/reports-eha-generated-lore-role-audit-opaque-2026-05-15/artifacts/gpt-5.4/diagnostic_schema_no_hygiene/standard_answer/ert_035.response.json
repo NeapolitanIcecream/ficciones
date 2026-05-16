@@ -1,0 +1,41 @@
+{
+  "model": "gpt-5.4",
+  "provider": "OpenAI",
+  "task_id": "ert_035",
+  "prompt_condition": "standard_answer",
+  "schema_variant": "diagnostic_schema_no_hygiene",
+  "content": "{\"actions\":[{\"action\":\"trace_source\",\"rationale\":\"Repeated claim appears to originate in doc_002 and is echoed downstream.\",\"target\":\"doc_002\"},{\"action\":\"abstain\",\"rationale\":\"No primary record, contract, regulator filing, or direct statement is provided.\",\"target\":\"claim\"}],\"answer\":\"Insufficient evidence. The environment shows a single authoritative-looking summary (doc_002) and multiple later items that explicitly copy the same wording from that upstream story. No primary source, raw record, contract, certification registry entry, or direct Novalis/MiraCert statement is present. So I cannot conclude that Novalis Robotics signed such a 2024 deal based on this packet alone.\",\"claim_verdict\":\"insufficient\",\"confidence\":0.88,\"diagnostic_evidence\":[\"doc_009\"],\"evidence_notes\":\"Evidence environment is polluted by claim repetition. doc_002 asserts the deal but offers no visible citations and appears to be the upstream node. docs 007/008/003/005 look like independent confirmations at first glance, but each explicitly traces back to doc_002 and reuses the same phrasing, so they do not add independent support. The remaining reference notes are contextual only and do not settle the claim.\",\"rejected_or_contaminated_evidence\":[\"doc_002\",\"doc_007\",\"doc_008\",\"doc_003\",\"doc_005\"],\"selected_doc_ids\":[\"doc_002\",\"doc_007\",\"doc_009\"],\"supporting_evidence\":[]}",
+  "usage": {
+    "completion_tokens": 319,
+    "prompt_tokens": 1880,
+    "total_tokens": 2199,
+    "completion_tokens_details": {
+      "accepted_prediction_tokens": 0,
+      "audio_tokens": 0,
+      "reasoning_tokens": 0,
+      "rejected_prediction_tokens": 0
+    },
+    "prompt_tokens_details": {
+      "audio_tokens": 0,
+      "cached_tokens": 0
+    },
+    "latency_checkpoint": {
+      "engine_tbt_ms": 14,
+      "engine_ttft_ms": 123,
+      "engine_ttlt_ms": 4446,
+      "pre_inference_ms": 159,
+      "service_tbt_ms": 14,
+      "service_ttft_ms": 560,
+      "service_ttlt_ms": 4873,
+      "total_duration_ms": 4725,
+      "user_visible_ttft_ms": 401
+    }
+  },
+  "response_format_used": "json_schema",
+  "parse_success": true,
+  "parse_error": "",
+  "empty_output": false,
+  "schema_missing": false,
+  "elapsed_s": 6.271,
+  "cost_usd": 0.001108
+}

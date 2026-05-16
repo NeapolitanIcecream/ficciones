@@ -17,7 +17,7 @@ These are descriptive results from 100 tasks and 1000 calls. They are not statis
 
 \Cref{tab:main-model-decomposition,fig:capability-decomposition} show that belief correctness is high and clustered, while evidence cleanliness and verification behavior separate models. \code{gpt-5.4} illustrates the point: its belief correctness matches the leading cluster, but its evidence cleanliness is much lower at 0.705. That gap is invisible in final-answer accuracy alone.
 
-\Cref{tab:opaque-baselines} gives the no-API baselines used to interpret the opaque repair. The ID-only baseline performs poorly, supporting the claim that the repaired document IDs do not provide a useful shortcut. Metadata-only and simple heuristic baselines do better, so some EHA rows are partially solvable from visible surface cues. They still have weak belief correctness, at 0.320 and 0.400 respectively, and remain below the frontier cohort on operational escape. Their 1.000 evidence-cleanliness scores should be read conservatively: they largely avoid polluted support assignments by construction, rather than demonstrating robust evidence understanding.
+\Cref{tab:opaque-baselines} gives the no-API baselines used to interpret the opaque repair. The ID-only and random-valid-schema baselines perform poorly, supporting the claim that repaired document IDs and format compliance alone do not solve EHA. Metadata-only and simple heuristic baselines do better, so some rows are partially solvable from visible surface cues. Their 1.000 evidence-cleanliness scores should be read conservatively: the ID-only and always-insufficient baselines have \code{support_empty_rate=1.000}, so they avoid polluted support largely by never filling support fields. Clean evidence fields alone are therefore not enough; EHA separates field cleanliness from belief formation and action selection.
 
 \subsection{Finding 2: Agent-Facing Tasks Are Harder Than Packet Judgment}
 
@@ -36,9 +36,13 @@ These are descriptive results from 100 tasks and 1000 calls. They are not statis
 
 \input{tables/evidence_condition_breakdown}
 
-Generated lore is the sharpest condition for evidence-role analysis in this run under the current schema. For \code{gpt-5.4}, generated-lore escape is 0.000 despite belief correctness of 1.000. \Cref{sec:generated-lore} analyzes the mechanism.
+Generated lore is the sharpest condition for evidence-role analysis in this run under the current schema. For \code{gpt-5.4}, generated-lore escape is 0.000 despite belief correctness of 1.000. \Cref{sec:generated-lore} analyzes the mechanism and the schema-sensitivity rerun.
 
-\subsection{Finding 4: Hygiene Prompting Is Not a Universal Fix}
+\subsection{Finding 4: Evidence-Role Schema Design Matters}
+
+The generated-lore schema ablation is not used to rewrite the frozen main score. It is a diagnostic ablation: role assignment improves when rejection and diagnostic evidence roles are available, while a minimal verdict-plus-evidence-ID schema makes polluted evidence support-like by default. This makes schema design part of agent-facing epistemic hygiene, not a mere formatting detail.
+
+\subsection{Finding 5: Hygiene Prompting Is Not a Universal Fix}
 
 \input{tables/prompt_hygiene}
 

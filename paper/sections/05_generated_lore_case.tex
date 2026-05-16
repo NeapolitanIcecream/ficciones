@@ -18,29 +18,29 @@ The three examples discussed below are audited representatives, not the full rer
 
 In task \code{ert_032}, the question asks whether there is reliable evidence that Novalis Robotics ran Project LumenShield in 2024. The gold verdict is \code{insufficient}. The \code{gpt-5.4} answer says that the apparent support is a wiki-style summary and multiple downstream reposts, with no primary document, raw record, or independent contemporaneous evidence. This is the right belief-level response. Yet the structured fields place model-visible \code{doc_008} (audit role: generated-lore root), \code{doc_006} (audit role: downstream repost), and \code{doc_002} (audit role: contextual non-primary document) in \code{supporting_evidence}, while reposts also appear in \code{rejected_evidence}. The same pattern appears in task \code{ert_033}, about a fictional MiraCert certification deal, where \code{doc_001} is the audit-role generated-lore root, and in active-verification generated-lore task \code{ert_096}, where \code{doc_007} is the audit-role generated-lore root. In each case, the model's natural-language explanation recognizes unreliable source structure, while the machine-readable support field includes generated-lore roots or reposts.
 
-\subsection{Clarified-Schema Mini-Rerun}
+\subsection{Generated-Lore Schema Ablation}
 
-The clarified-schema rerun used the same 20 generated-lore tasks and two prompt conditions, giving 40 clarified-schema rows per model. It separates \code{clean_supporting_evidence}, \code{refuting_evidence}, \code{rejected_or_contaminated_evidence}, and \code{diagnostic_evidence}. The clarified rerun is a validity analysis, not a replacement for the frozen main-run score.
+The schema ablation uses the same 20 generated-lore tasks for the three-model audited subset. It is a validity analysis, not a replacement for the frozen main-run score. The ablation compares four agent-facing output contracts: the current schema, a minimal verdict-plus-evidence-ID schema, a diagnostic schema with no extra hygiene prompt, and a clarified schema that separates \code{clean_supporting_evidence}, \code{refuting_evidence}, \code{rejected_or_contaminated_evidence}, and \code{diagnostic_evidence}.
+
+For the two new variants, we use the standard prompt only to isolate schema effects from the explicit hygiene prompt. In the minimal schema, \code{evidence_doc_ids} is evaluated as support-like because the schema provides no role distinction. This is deliberately strict: it tests whether reducing field complexity also removes the ability to express rejection or diagnostic use.
 
 \begin{table}[t]
     \centering
     \small
-    \caption{Generated-lore current-schema versus clarified-schema rerun. The clarified schema removes polluted support and dual-role pollution for the audited three-model subset.}
-    \label{tab:clarified-schema-rerun}
+    \caption{Generated-lore schema ablation over the audited three-model subset under the standard prompt. Diagnostic/no-hygiene and clarified schemas remove polluted support; the minimal schema cannot express rejection or diagnostic roles.}
+    \label{tab:generated-lore-schema-ablation}
     \begin{tabular}{llrrrrr}
         \toprule
-        Model & Schema & n & Belief & Rejected pollutant & Polluted support & Escape \\
+        Schema & Prompt & n & Belief & Rejected pollutant & Polluted support & Role escape \\
         \midrule
-        \code{gpt-5.4} & Current & 40 & 1.000 & 1.000 & 1.000 & 0.000 \\
-        \code{claude-opus-4-7} & Current & 40 & 1.000 & 0.800 & 0.200 & 0.425 \\
-        \code{gemini-3.1-pro-preview} & Current & 40 & 1.000 & 1.000 & 0.000 & 0.575 \\
-        \code{gpt-5.4} & Clarified & 40 & 1.000 & 1.000 & 0.000 & 1.000 \\
-        \code{claude-opus-4-7} & Clarified & 40 & 1.000 & 1.000 & 0.000 & 1.000 \\
-        \code{gemini-3.1-pro-preview} & Clarified & 40 & 1.000 & 1.000 & 0.000 & 1.000 \\
+        Current & standard & 60 & 1.000 & 0.867 & 0.467 & 0.300 \\
+        Minimal & standard & 60 & 1.000 & 0.000 & 1.000 & 0.000 \\
+        Diagnostic/no hygiene & standard & 60 & 1.000 & 1.000 & 0.000 & 1.000 \\
+        Clarified & standard & 60 & 1.000 & 1.000 & 0.000 & 1.000 \\
         \bottomrule
     \end{tabular}
 \end{table}
 
 The current-schema table also explains why Claude and Gemini can have generated-lore escape below 1.000 even when belief correctness is perfect. Their failures are not primarily belief failures. Claude still puts polluted material into support fields in 0.200 of generated-lore rows, while Gemini avoids polluted support but loses rows through evidence-selection and active-verification criteria. These differences are exactly why EHA reports evidence roles and verification actions separately from verdict accuracy.
 
-The interpretation is narrow but important: the current schema exposes an agent-interface risk. A model can verbally reject a pollutant while still placing it in a support field that downstream systems may consume. The clarified schema shows that the failure is sensitive to field semantics and evidence-role assignment. It does not show that the main score should be retroactively rewritten.
+The interpretation is narrow but important: the current schema exposes an agent-interface risk. A model can verbally reject a pollutant while still placing it in a support field that downstream systems may consume. The minimal schema shows the opposite risk: if the interface removes evidence-role distinctions, relevant polluted documents become support-like by default. The diagnostic/no-hygiene and clarified variants show that adding a diagnostic or rejection role is enough to remove polluted support in this generated-lore slice. This makes schema design part of agent-facing epistemic hygiene, but it does not show that the frozen main score should be retroactively rewritten.

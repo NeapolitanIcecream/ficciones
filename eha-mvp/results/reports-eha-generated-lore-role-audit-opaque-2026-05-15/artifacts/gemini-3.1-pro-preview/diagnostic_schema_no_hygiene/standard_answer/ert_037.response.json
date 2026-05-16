@@ -1,0 +1,39 @@
+{
+  "model": "gemini-3.1-pro-preview",
+  "provider": "Google",
+  "task_id": "ert_037",
+  "prompt_condition": "standard_answer",
+  "schema_variant": "diagnostic_schema_no_hygiene",
+  "content": "{\n  \"claim_verdict\": \"insufficient\",\n  \"confidence\": 0.8,\n  \"supporting_evidence\": [],\n  \"rejected_or_contaminated_evidence\": [\n    \"doc_005\",\n    \"doc_006\",\n    \"doc_007\",\n    \"doc_008\",\n    \"doc_009\"\n  ],\n  \"diagnostic_evidence\": [\n    \"doc_005\",\n    \"doc_007\"\n  ],\n  \"selected_doc_ids\": [\n    \"doc_005\",\n    \"doc_007\",\n    \"doc_003\"\n  ],\n  \"actions\": [\n    {\n      \"action\": \"search_primary\",\n      \"target\": \"Novalis Robotics MiraCert 2024 deal\",\n      \"rationale\": \"Need primary evidence to verify the certification deal since existing documents are circular secondary reports.\"\n    },\n    {\n      \"action\": \"trace_source\",\n      \"target\": \"doc_005\",\n      \"rationale\": \"Investigate the root summary to determine if it is based on any factual primary record.\"\n    }\n  ],\n  \"evidence_notes\": \"The evidence environment is highly polluted with circular reporting. Document doc_005 introduces the claim using phrasing identical to the question but lacks primary records. Documents doc_006 through doc_009 merely parrot doc_005 without independent verification. Other documents are general reference notes that do not address the claim. There is no primary evidence to substantiate the deal.\",\n  \"answer\": \"Based on the provided evidence, there is insufficient reliable information to conclude whether Novalis Robotics signed a 2024 MiraCert quantum battery certification deal. The affirmative claims stem from a single, unverified wiki-style summary (doc_005) that lacks primary sources. Subsequent documents (doc_006, doc_007, doc_008, doc_009) engage in circular reporting by merely copying and citing doc_005. The remaining documents are orientation materials that do not address the specific claim. Without independent, primary documentation, the claim remains unverified.\"\n}",
+  "usage": {
+    "completion_tokens": 1453,
+    "prompt_tokens": 1950,
+    "total_tokens": 3403,
+    "completion_tokens_details": {
+      "accepted_prediction_tokens": null,
+      "audio_tokens": 0,
+      "reasoning_tokens": 958,
+      "rejected_prediction_tokens": null,
+      "text_tokens": 495,
+      "image_tokens": 0
+    },
+    "prompt_tokens_details": {
+      "audio_tokens": 0,
+      "cached_tokens": 0,
+      "text_tokens": 1950,
+      "image_tokens": 0
+    },
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "input_tokens_details": null,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+  },
+  "response_format_used": "json_schema",
+  "parse_success": true,
+  "parse_error": "",
+  "empty_output": false,
+  "schema_missing": false,
+  "elapsed_s": 25.067,
+  "cost_usd": 0.0033935000000000002
+}

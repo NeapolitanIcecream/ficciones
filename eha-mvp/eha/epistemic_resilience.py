@@ -799,7 +799,16 @@ def score_record(record: EpistemicRunRecord, task: EpistemicTask) -> Dict[str, A
     docs_by_id = {doc.doc_id: doc for doc in task.documents}
     supporting = [doc_id for doc_id in prediction.supporting_evidence if doc_id in docs_by_id]
     selected = [docs_by_id[doc_id] for doc_id in prediction.selected_doc_ids if doc_id in docs_by_id]
-    support_dirty = any(doc_id in set(task.contaminant_doc_ids + task.generated_doc_ids + task.stale_doc_ids) for doc_id in supporting)
+    pollutant_doc_ids = set(task.contaminant_doc_ids + task.generated_doc_ids + task.stale_doc_ids)
+    support_dirty = any(doc_id in pollutant_doc_ids for doc_id in supporting)
+    supporting_set = set(supporting)
+    rejected_set = set(prediction.rejected_evidence)
+    clean_supporting = [doc_id for doc_id in supporting if doc_id in task.primary_doc_ids and doc_id not in pollutant_doc_ids]
+    support_empty_rate = 1.0 if not supporting else 0.0
+    evidence_precision: float | str = len(clean_supporting) / len(supporting) if supporting else ""
+    clean_support_recall: float | str = len(set(clean_supporting)) / len(task.primary_doc_ids) if task.primary_doc_ids else ""
+    rejected_pollutant_rate = 1.0 if rejected_set & pollutant_doc_ids else 0.0
+    dual_role_rate = 1.0 if supporting_set & rejected_set else 0.0
     belief_correct = prediction.claim_verdict == task.gold_verdict
     evidence_clean = 1.0 if not support_dirty else 0.0
     uncertainty_discipline = (
@@ -816,6 +825,15 @@ def score_record(record: EpistemicRunRecord, task: EpistemicTask) -> Dict[str, A
     primary_action = any(action.action == "search_primary" or action.target in task.primary_doc_ids for action in prediction.actions)
     contradiction_action = any(action.action in {"search_contradiction", "compare_versions"} or action.target in task.contradiction_doc_ids for action in prediction.actions)
     generated_trace_action = any(action.action == "trace_source" and (not action.target or action.target in task.generated_doc_ids) for action in prediction.actions)
+    required_actions: List[bool] = []
+    if task.family == "active_verification":
+        if task.primary_doc_ids:
+            required_actions.append(primary_action)
+        if task.condition in {"false_consensus", "buried_primary", "conflicting_evidence"}:
+            required_actions.append(contradiction_action)
+        if task.condition == "generated_lore":
+            required_actions.append(generated_trace_action)
+    required_action_recall: float | str = mean([1.0 if action else 0.0 for action in required_actions]) if required_actions else ""
 
     if task.family == "evidence_selection":
         epistemic_escape = value_score >= 0.50 and duplicate_ok == 1.0 and not generated_selected
@@ -855,6 +873,12 @@ def score_record(record: EpistemicRunRecord, task: EpistemicTask) -> Dict[str, A
         "belief_correctness": 1.0 if belief_correct else 0.0,
         "evidence_cleanliness": evidence_clean,
         "uncertainty_discipline": 1.0 if uncertainty_discipline else 0.0,
+        "support_empty_rate": support_empty_rate,
+        "evidence_precision": evidence_precision,
+        "clean_support_recall": clean_support_recall,
+        "rejected_pollutant_rate": rejected_pollutant_rate,
+        "dual_role_rate": dual_role_rate,
+        "required_action_recall": required_action_recall,
         "primary_seeking_rate": 1.0 if primary_selected else 0.0,
         "duplicate_avoidance_rate": duplicate_ok,
         "generated_lore_avoidance_rate": 0.0 if generated_selected else 1.0,
@@ -1054,6 +1078,12 @@ def report(
         "belief_correctness",
         "evidence_cleanliness",
         "uncertainty_discipline",
+        "support_empty_rate",
+        "evidence_precision",
+        "clean_support_recall",
+        "rejected_pollutant_rate",
+        "dual_role_rate",
+        "required_action_recall",
         "primary_seeking_rate",
         "duplicate_avoidance_rate",
         "generated_lore_avoidance_rate",

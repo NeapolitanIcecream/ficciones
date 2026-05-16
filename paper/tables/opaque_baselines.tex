@@ -1,15 +1,17 @@
 \begin{table}[t]
     \centering
-    \small
-    \caption{No-API baselines under the opaque-ID repair. The baselines show that opaque document IDs alone carry little useful signal, while visible metadata and simple rules solve some surface structure without reliably forming the right belief.}
+    \scriptsize
+    \caption{No-API baselines under the opaque-ID repair. Support-empty rate is included because a baseline can look evidence-clean by avoiding support fields entirely.}
     \label{tab:opaque-baselines}
-    \begin{tabular}{lrrrrr}
+    \begin{tabular}{lrrrrrr}
         \toprule
-        Baseline & Operational escape & Belief & Evidence clean & Uncertainty & Verification \\
+        Baseline & Operational escape & Belief & Evidence clean & Uncertainty & Verification & Support empty \\
         \midrule
-        ID-only & 0.110 & 0.200 & 1.000 & 0.200 & 0.000 \\
-        Metadata-only & 0.520 & 0.320 & 1.000 & 0.640 & 0.467 \\
-        Simple heuristic & 0.560 & 0.400 & 1.000 & 0.960 & 0.600 \\
+        ID-only & 0.080 & 0.200 & 1.000 & 0.200 & 0.000 & 1.000 \\
+        Random valid schema & 0.080 & 0.355 & 0.530 & 0.630 & 0.068 & 0.295 \\
+        Always insufficient & 0.080 & 0.200 & 1.000 & 0.200 & 0.000 & 1.000 \\
+        Metadata-only & 0.400 & 0.400 & 1.000 & 0.960 & 0.067 & 0.240 \\
+        Simple heuristic & 0.560 & 0.600 & 1.000 & 0.960 & 0.000 & 0.240 \\
         \bottomrule
     \end{tabular}
 \end{table}

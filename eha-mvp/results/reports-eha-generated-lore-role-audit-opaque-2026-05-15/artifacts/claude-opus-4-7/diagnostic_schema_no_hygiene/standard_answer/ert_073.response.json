@@ -1,0 +1,41 @@
+{
+  "model": "claude-opus-4-7",
+  "provider": "Anthropic",
+  "task_id": "ert_073",
+  "prompt_condition": "standard_answer",
+  "schema_variant": "diagnostic_schema_no_hygiene",
+  "content": "{\n  \"claim_verdict\": \"insufficient\",\n  \"confidence\": 0.2,\n  \"supporting_evidence\": [],\n  \"rejected_or_contaminated_evidence\": [\"doc_012\", \"doc_015\", \"doc_007\", \"doc_005\", \"doc_006\", \"doc_009\"],\n  \"diagnostic_evidence\": [\"doc_012\", \"doc_015\"],\n  \"selected_doc_ids\": [\"doc_012\", \"doc_015\", \"doc_007\"],\n  \"actions\": [\n    {\"action\": \"trace_source\", \"target\": \"doc_012\", \"rationale\": \"doc_012 is the upstream wiki-style summary that all secondary coverage cites; tracing it would reveal whether any primary record (MiraCert registry, Novalis filing) actually exists.\"},\n    {\"action\": \"search_primary\", \"target\": \"MiraCert certification registry / Novalis Robotics 2024 disclosures\", \"rationale\": \"No primary document (registry entry, signed agreement, official press release from MiraCert or Novalis) is present. A primary search is needed to confirm or refute.\"}\n  ],\n  \"evidence_notes\": \"The corpus shows a classic citation-cascade pattern: one authoritative-looking summary (doc_012) with no citations, and five secondary items (doc_005, doc_006, doc_007, doc_009, doc_015) that all point back to doc_012 while echoing identical phrasing. Independence is illusory. The remaining 14 reference notes are orientation filler that do not address the claim. No primary records (MiraCert registry, Novalis filing, MiraCert announcement) are present, and no contradicting source exists either. The repetition inflates apparent consensus without adding evidentiary weight.\",\n  \"answer\": \"Insufficient evidence. The only substantive claim originates in doc_012, an uncited wiki-style summary; doc_005/006/007/009/015 merely repeat it and cite doc_012, so they form a single-source cascade rather than independent confirmation. No primary MiraCert or Novalis records are provided, and the reference notes are non-probative. The claim that Novalis Robotics signed a 2024 MiraCert quantum battery certification deal cannot be judged supported on this evidence; primary-source verification is required.\"\n}",
+  "usage": {
+    "completion_tokens": 745,
+    "prompt_tokens": 3697,
+    "total_tokens": 4442,
+    "completion_tokens_details": {
+      "accepted_prediction_tokens": null,
+      "audio_tokens": 0,
+      "reasoning_tokens": 0,
+      "rejected_prediction_tokens": null,
+      "text_tokens": 0,
+      "image_tokens": 0
+    },
+    "prompt_tokens_details": {
+      "audio_tokens": 0,
+      "cached_tokens": 0,
+      "text_tokens": 0,
+      "image_tokens": 0
+    },
+    "usage_semantic": "openai",
+    "usage_source": "anthropic",
+    "input_tokens": 3697,
+    "output_tokens": 0,
+    "input_tokens_details": null,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+  },
+  "response_format_used": "json_schema",
+  "parse_success": true,
+  "parse_error": "",
+  "empty_output": false,
+  "schema_missing": false,
+  "elapsed_s": 12.494,
+  "cost_usd": 0.00241425
+}
