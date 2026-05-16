@@ -1,0 +1,42 @@
+{
+  "date": "2026-05-16",
+  "status": "incomplete",
+  "ready": false,
+  "target_venue": "",
+  "target_deadline": "",
+  "submission_track": "",
+  "decision_owner": "",
+  "budget_confirmed": false,
+  "max_step2_api_budget_usd": 0.0,
+  "human_review_budget_confirmed": false,
+  "human_review_budget_usd": 0.0,
+  "approval_required_before_model_calls": true,
+  "missing_fields": [
+    "target_venue",
+    "target_deadline",
+    "submission_track",
+    "decision_owner",
+    "budget_confirmed",
+    "human_review_budget_confirmed",
+    "max_step2_api_budget_usd",
+    "human_review_budget_usd"
+  ],
+  "candidate_paths": [
+    {
+      "path_id": "workshop_arxiv_v1_first",
+      "description": "Release Step 1 as a controlled diagnostic benchmark only after the independent human audit is complete.",
+      "api_boundary": "No new model calls required."
+    },
+    {
+      "path_id": "main_conference_step2_after_gates",
+      "description": "Prepare a larger benchmark/evaluation submission only after Step 1 human audit, surface-cue design review, schema repair, target venue, and budget gates clear.",
+      "api_boundary": "Requires explicit approval and budget before fixed-slice or larger API runs."
+    }
+  ],
+  "non_claims": [
+    "not model evidence",
+    "not permission to run model/API calls",
+    "not a substitute for Step 1 human audit or surface-cue design review",
+    "not a budget approval unless budget_confirmed and human_review_budget_confirmed are true"
+  ]
+}

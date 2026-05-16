@@ -1,0 +1,283 @@
+{
+  "date": "2026-05-16",
+  "status": "blocked",
+  "launch_ready": false,
+  "decision": "do not launch a Step 2 API pilot or 500-1000 task expansion",
+  "checks": {
+    "step1_release_ready": false,
+    "surface_cue_design_review_complete": false,
+    "surface_cue_pilot_ready": false,
+    "external_validity_api_ready": false,
+    "deterministic_support_role_validation_ready": true,
+    "structural_schema_repair_passed": false,
+    "target_venue_and_budget_defined": false
+  },
+  "required_next_actions": [
+    "complete Step 1 independent human audit",
+    "complete 90-pair surface-cue human design review",
+    "repair critical-risk structural schema; support-role guard is ready but not a substitute",
+    "keep external-validity work design-only until prerequisite gates clear",
+    "define target venue and budget before model calls"
+  ],
+  "step1_readiness": {
+    "status": "blocked",
+    "errors": [
+      "human audit validation is not complete: incomplete",
+      "human audit has fewer than 50 complete rows: 0",
+      "manifest active_verification_human_audit status is incomplete",
+      "manifest active_verification_human_audit n_labeled is 0"
+    ]
+  },
+  "surface_cue_design_review": {
+    "status": "incomplete",
+    "n_pairs": 90,
+    "n_reviewed": 0,
+    "pilot_ready": false,
+    "pilot_blockers": [
+      "missing_label_cells",
+      "missing_notes",
+      "review_status_incomplete"
+    ]
+  },
+  "external_validity": {
+    "status": "design_only",
+    "api_ready": false,
+    "recommended_first_slice": "semi_real_enterprise_wiki"
+  },
+  "structural_schema_calibration": {
+    "runs": [
+      {
+        "report_dir": "results/reports-phase2s-v8-structural-schema-calibration-slice-gpt4omini",
+        "n": 35,
+        "claim_accuracy": 0.8857142857142857,
+        "contaminated_citation_rate": 0.0,
+        "support_role_valid_rate": 0.8857142857142857,
+        "critical_risk_macro_f1": 0.36947110860154336,
+        "passed": false
+      },
+      {
+        "report_dir": "results/reports-phase2s-v9-structural-recall-calibration-slice-gpt4omini",
+        "n": 35,
+        "claim_accuracy": 0.8857142857142857,
+        "contaminated_citation_rate": 0.02857142857142857,
+        "support_role_valid_rate": 0.8857142857142857,
+        "critical_risk_macro_f1": 0.2994743351886209,
+        "passed": false
+      },
+      {
+        "report_dir": "results/reports-phase2s-v10-structural-contract-calibration-slice-gpt4omini",
+        "n": 35,
+        "claim_accuracy": 0.8857142857142857,
+        "contaminated_citation_rate": 0.08571428571428572,
+        "support_role_valid_rate": 0.8571428571428571,
+        "critical_risk_macro_f1": 0.403874883286648,
+        "passed": false
+      },
+      {
+        "report_dir": "results/reports-phase2s-v11-role-disciplined-calibration-slice-gpt4omini",
+        "n": 35,
+        "claim_accuracy": 0.8571428571428571,
+        "contaminated_citation_rate": 0.0,
+        "support_role_valid_rate": 0.8571428571428571,
+        "critical_risk_macro_f1": 0.23964673588733737,
+        "passed": false
+      }
+    ],
+    "passed_runs": []
+  },
+  "support_role_guard": {
+    "status": "ready",
+    "guard_ready": true,
+    "recommended_run": {
+      "report_dir": "reports-phase2s-v11-role-disciplined-calibration-slice-gpt4omini",
+      "n": 35,
+      "guard_ready": true,
+      "allow_rate": 0.8571428571428571,
+      "block_rate": 0.14285714285714285,
+      "support_role_valid_rate": 0.8571428571428571,
+      "support_role_clean_only_rate": 1.0,
+      "support_role_verdict_direct_rate": 0.8571428571428571,
+      "contaminated_support_rate": 0.0,
+      "unknown_support_rate": 0.0,
+      "extraneous_clean_support_rate": 0.0,
+      "nonempty_support_for_insufficient_rate": 0.0,
+      "invalid_accepted_rate": 0.0,
+      "valid_blocked_rate": 0.0,
+      "reason_counts": {
+        "not_verdict_direct": 5
+      },
+      "missing_fields": []
+    },
+    "ready_runs": [
+      {
+        "report_dir": "reports-phase2s-v8-structural-schema-calibration-slice-gpt4omini",
+        "n": 35,
+        "guard_ready": true,
+        "allow_rate": 0.8857142857142857,
+        "block_rate": 0.11428571428571428,
+        "support_role_valid_rate": 0.8857142857142857,
+        "support_role_clean_only_rate": 1.0,
+        "support_role_verdict_direct_rate": 0.8857142857142857,
+        "contaminated_support_rate": 0.0,
+        "unknown_support_rate": 0.0,
+        "extraneous_clean_support_rate": 0.0,
+        "nonempty_support_for_insufficient_rate": 0.02857142857142857,
+        "invalid_accepted_rate": 0.0,
+        "valid_blocked_rate": 0.0,
+        "reason_counts": {
+          "not_verdict_direct": 4,
+          "nonempty_support_for_insufficient": 1
+        },
+        "missing_fields": []
+      },
+      {
+        "report_dir": "reports-phase2s-v9-structural-recall-calibration-slice-gpt4omini",
+        "n": 35,
+        "guard_ready": true,
+        "allow_rate": 0.8857142857142857,
+        "block_rate": 0.11428571428571428,
+        "support_role_valid_rate": 0.8857142857142857,
+        "support_role_clean_only_rate": 0.9714285714285714,
+        "support_role_verdict_direct_rate": 0.8857142857142857,
+        "contaminated_support_rate": 0.02857142857142857,
+        "unknown_support_rate": 0.0,
+        "extraneous_clean_support_rate": 0.0,
+        "nonempty_support_for_insufficient_rate": 0.02857142857142857,
+        "invalid_accepted_rate": 0.0,
+        "valid_blocked_rate": 0.0,
+        "reason_counts": {
+          "not_verdict_direct": 4,
+          "contaminated_support": 1,
+          "nonempty_support_for_insufficient": 1
+        },
+        "missing_fields": []
+      },
+      {
+        "report_dir": "reports-phase2s-v10-structural-contract-calibration-slice-gpt4omini",
+        "n": 35,
+        "guard_ready": true,
+        "allow_rate": 0.8571428571428571,
+        "block_rate": 0.14285714285714285,
+        "support_role_valid_rate": 0.8571428571428571,
+        "support_role_clean_only_rate": 0.9142857142857143,
+        "support_role_verdict_direct_rate": 0.8571428571428571,
+        "contaminated_support_rate": 0.08571428571428572,
+        "unknown_support_rate": 0.0,
+        "extraneous_clean_support_rate": 0.0,
+        "nonempty_support_for_insufficient_rate": 0.08571428571428572,
+        "invalid_accepted_rate": 0.0,
+        "valid_blocked_rate": 0.0,
+        "reason_counts": {
+          "contaminated_support": 3,
+          "nonempty_support_for_insufficient": 3,
+          "not_verdict_direct": 5
+        },
+        "missing_fields": []
+      },
+      {
+        "report_dir": "reports-phase2s-v11-role-disciplined-calibration-slice-gpt4omini",
+        "n": 35,
+        "guard_ready": true,
+        "allow_rate": 0.8571428571428571,
+        "block_rate": 0.14285714285714285,
+        "support_role_valid_rate": 0.8571428571428571,
+        "support_role_clean_only_rate": 1.0,
+        "support_role_verdict_direct_rate": 0.8571428571428571,
+        "contaminated_support_rate": 0.0,
+        "unknown_support_rate": 0.0,
+        "extraneous_clean_support_rate": 0.0,
+        "nonempty_support_for_insufficient_rate": 0.0,
+        "invalid_accepted_rate": 0.0,
+        "valid_blocked_rate": 0.0,
+        "reason_counts": {
+          "not_verdict_direct": 5
+        },
+        "missing_fields": []
+      }
+    ],
+    "non_claims": [
+      "not new model evidence",
+      "not a repair for wrong claim verdicts",
+      "not a repair for missing critical-risk labels",
+      "not a substitute for human audit or surface-cue design review"
+    ]
+  },
+  "critical_risk_audit": {
+    "status": "blocked",
+    "critical_risk_repair_ready": false,
+    "best_run": {
+      "report_dir": "reports-phase2s-v10-structural-contract-calibration-slice-gpt4omini",
+      "n": 35,
+      "repair_ready": false,
+      "claim_accuracy": 0.8857142857142857,
+      "contaminated_citation_rate": 0.08571428571428572,
+      "critical_risk_macro_f1": 0.403874883286648,
+      "critical_risk_exact_row_rate": 0.14285714285714285,
+      "false_negative_row_rate": 0.6,
+      "false_positive_row_rate": 0.5142857142857142,
+      "mixed_error_row_rate": 0.2571428571428571,
+      "error_counts": {
+        "exact": 5,
+        "false_negative_only": 12,
+        "mixed_error": 9,
+        "false_positive_only": 9
+      },
+      "false_negative_counts": {
+        "conflicting_evidence": 6,
+        "false_consensus": 4,
+        "citation_laundering": 4,
+        "stale_evidence": 2,
+        "generated_lore": 3,
+        "no_primary_source": 5,
+        "partial_support": 4
+      },
+      "false_positive_counts": {
+        "citation_laundering": 3,
+        "partial_support": 1,
+        "false_consensus": 4,
+        "no_primary_source": 2,
+        "conflicting_evidence": 7,
+        "generated_lore": 3
+      },
+      "top_repair_focus": "require repeated same-root apparent support that could dominate the verdict, not ordinary visible repetition",
+      "missing_fields": []
+    },
+    "ready_runs": [],
+    "recommended_next_contract": [
+      "keep support-role guard as a separate deterministic consumer-safety check",
+      "use evidence_diagnostics_v12_critical_risk_contract to add explicit positive and negative examples for false_consensus, citation_laundering, and partial_support",
+      "separate visible rejected pollution from verdict-critical risks in every label definition",
+      "require exact critical-risk rows on a fixed no-API audit before any full C-only API spend"
+    ]
+  },
+  "v12_critical_risk_contract_smoke": {
+    "status": "no_api_smoke_complete",
+    "prompt": "evidence_diagnostics_v12_critical_risk_contract",
+    "backend": "heuristic",
+    "model_label": "heuristic-sim",
+    "model_evidence": false,
+    "api_calls": 0,
+    "predictions": 35,
+    "report_completed": true,
+    "cost_usd": 0.0,
+    "gate_scope": "partial",
+    "gate_passed": false,
+    "support_role_valid_rate_min": 0.8125,
+    "run_dir": "results/runs/phase2s-v12-critical-risk-contract-calibration-slice-heuristic",
+    "report_dir": "results/reports-phase2s-v12-critical-risk-contract-calibration-slice-heuristic",
+    "non_claims": [
+      "not a model run",
+      "not model evidence",
+      "not launch approval"
+    ]
+  },
+  "target_context": {
+    "target_venue": "",
+    "budget_confirmed": false
+  },
+  "non_claims": [
+    "not model evidence",
+    "not a substitute for Step 1 human validation",
+    "not permission to run a 500-1000 task expansion"
+  ]
+}
