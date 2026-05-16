@@ -229,6 +229,7 @@ class VerificationLedgerEntry(EhaModel):
 class Phase2SPrediction(EhaModel):
     claim_verdict: ClaimVerdict
     confidence: float = Field(ge=0.0, le=1.0)
+    environment_observations: Dict[str, str] = Field(default_factory=dict)
     evidence_diagnostics: EvidenceDiagnostics
     critical_risks: List[CriticalRisk] = Field(default_factory=list)
     supporting_evidence: List[str] = Field(default_factory=list)

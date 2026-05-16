@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import csv
 import json
 from pathlib import Path
 from typing import Any, Dict, List, Mapping, Optional, Sequence, Tuple
@@ -14,6 +15,7 @@ from .phase2_run import Phase2OpenAIJsonRunner, append_tool_documents, execute_t
 from .phase2r_prompts import build_phase2r_messages, parse_phase2r_prediction_json, phase2r_prediction_json_schema
 from .phase2r_run import forced_triage_calls, run_tool_plan as run_legacy_tool_plan, select_hard_subset
 from .phase2s_prompts import (
+    PHASE2S_DIAGNOSTIC_PROMPTS,
     build_phase2s_messages,
     parse_phase2s_prediction_json,
     parse_phase2s_routing_json,
@@ -22,7 +24,7 @@ from .phase2s_prompts import (
     phase2s_routing_json_schema,
     phase2s_routing_messages,
 )
-from .phase2s_scoring import phase2s_gate, score_phase2s_run
+from .phase2s_scoring import Phase2SGate, phase2s_gate, phase2s_module_a_gate, score_phase2s_run
 from .report import write_csv
 from .schemas import (
     AgentDocument,
@@ -48,6 +50,30 @@ console = Console()
 log = logger.bind(module="eha.phase2s_run")
 
 MODULE_C_RETRIEVERS = ("bm25_top8", "primary_preserve_top8", "hygienic_combo_top8")
+
+
+def load_calibration_slice(path: Path | None) -> Optional[set[tuple[str, str]]]:
+    if path is None:
+        return None
+    with path.open(newline="") as handle:
+        reader = csv.DictReader(handle)
+        if not reader.fieldnames or "task_id" not in reader.fieldnames or "retriever" not in reader.fieldnames:
+            raise ValueError("calibration slice must include task_id and retriever columns")
+        pairs: set[tuple[str, str]] = set()
+        for row in reader:
+            task_id = str(row.get("task_id", "")).strip()
+            retriever = str(row.get("retriever", "")).strip()
+            if not task_id or not retriever:
+                raise ValueError("calibration slice rows must include nonblank task_id and retriever")
+            if retriever not in MODULE_C_RETRIEVERS:
+                raise ValueError(f"unsupported calibration slice retriever: {retriever}")
+            pair = (task_id, retriever)
+            if pair in pairs:
+                raise ValueError(f"duplicate calibration slice task/retriever pair: {task_id}/{retriever}")
+            pairs.add(pair)
+    if not pairs:
+        raise ValueError("calibration slice must include at least one task/retriever pair")
+    return pairs
 
 
 def gold_diagnostics(task: Task) -> EvidenceDiagnostics:
@@ -205,7 +231,7 @@ def run_final_prediction(
     prompt: str,
     out_dir: Path,
     max_output_tokens: int,
-    temperature: float,
+    temperature: float | None,
 ) -> Tuple[Phase2SPrediction, bool, Optional[str], Dict[str, Any], float, Optional[str], Optional[str]]:
     if backend == "heuristic":
         return (
@@ -232,8 +258,8 @@ def run_final_prediction(
         schema = phase2r_prediction_json_schema()
         schema_name = "eha_phase2r_prediction"
     else:
-        messages = build_phase2s_messages(task.question, final_docs, tool_results)
-        schema = phase2s_prediction_json_schema()
+        messages = build_phase2s_messages(task.question, final_docs, tool_results, prompt=prompt)
+        schema = phase2s_prediction_json_schema(prompt)
         schema_name = "eha_phase2s_prediction"
     cost_guard.before_call(model, json.dumps(messages, ensure_ascii=False), max_output_tokens)
     response_text, usage, used_format = runner.complete(
@@ -333,7 +359,7 @@ def run_route_then_answer(
     initial_docs: Sequence[AgentDocument],
     episode_docs: Sequence[AgentDocument],
     out_dir: Path,
-    temperature: float,
+    temperature: float | None,
 ) -> tuple[List[ToolCall], List[Dict[str, Any]], bool, Dict[str, Any]]:
     if backend == "heuristic":
         calls = heuristic_route_calls(task, initial_docs)
@@ -433,13 +459,20 @@ def run_module_a(
     models: Sequence[str],
     out_dir: Path,
     max_output_tokens: int,
-    temperature: float,
+    temperature: float | None,
+    module_a_prompts: Sequence[str] = (
+        "evidence_graph_v3",
+        "evidence_diagnostics_v1",
+        "evidence_diagnostics_v2",
+        "evidence_diagnostics_v3",
+        "evidence_diagnostics_v4",
+    ),
 ) -> None:
     for model in models:
         for task in tasks:
             docs = docs_by_task_map[task.task_id][:8]
             gold_docs = gold_by_task[task.task_id]
-            for prompt in ("evidence_graph_v3", "evidence_diagnostics_v1"):
+            for prompt in module_a_prompts:
                 prediction, parse_success, parse_error, usage, cost_usd, prompt_path, response_path = run_final_prediction(
                     backend=backend,
                     runner=runner,
@@ -496,7 +529,8 @@ def run_module_b(
     models: Sequence[str],
     out_dir: Path,
     max_output_tokens: int,
-    temperature: float,
+    temperature: float | None,
+    final_diagnostic_prompt: str = "evidence_diagnostics_v1",
 ) -> None:
     for model in models:
         for task in tasks:
@@ -549,7 +583,7 @@ def run_module_b(
                     dataset="EHA-v2S-temporal-routing",
                     retriever=retriever,
                     strategy=strategy,
-                    prompt="evidence_diagnostics_v1",
+                    prompt=final_diagnostic_prompt,
                     out_dir=out_dir,
                     max_output_tokens=max_output_tokens,
                     temperature=temperature,
@@ -562,7 +596,7 @@ def run_module_b(
                     model=model,
                     retriever=retriever,
                     strategy=strategy,
-                    prompt="evidence_diagnostics_v1",
+                    prompt=final_diagnostic_prompt,
                     backend=backend,
                     initial_docs=bm25_docs if retriever == "bm25_top8" else combo_docs,
                     final_docs=final_docs,
@@ -592,15 +626,29 @@ def run_module_c(
     models: Sequence[str],
     out_dir: Path,
     max_output_tokens: int,
-    temperature: float,
+    temperature: float | None,
+    final_diagnostic_prompt: str = "evidence_diagnostics_v1",
+    calibration_slice: Optional[set[tuple[str, str]]] = None,
 ) -> List[Dict[str, Any]]:
     retrieval_rows = compute_retrieval_metrics_for_tasks(tasks, docs_by_task_map, gold_by_task, MODULE_C_RETRIEVERS)
+    if calibration_slice is not None:
+        available_pairs = {(task.task_id, retriever) for task in tasks for retriever in MODULE_C_RETRIEVERS}
+        unknown_pairs = sorted(calibration_slice - available_pairs)
+        if unknown_pairs:
+            preview = ", ".join(f"{task_id}/{retriever}" for task_id, retriever in unknown_pairs[:5])
+            raise ValueError(f"unknown calibration slice task/retriever pairs: {preview}")
+        retrieval_rows = [
+            row for row in retrieval_rows if (str(row["task_id"]), str(row["retriever"])) in calibration_slice
+        ]
     write_csv(out_dir / "retrieval_metrics.csv", retrieval_rows)
     for model in models:
         for task in tasks:
+            static_records_for_task = 0
             episode_docs = docs_by_task_map[task.task_id]
             episode_gold = gold_by_task[task.task_id]
             for retriever in MODULE_C_RETRIEVERS:
+                if calibration_slice is not None and (task.task_id, retriever) not in calibration_slice:
+                    continue
                 retrieved_docs = [hit.doc for hit in retrieve(task.question, episode_docs, episode_gold, retriever)]
                 prediction, parse_success, parse_error, usage, cost_usd, prompt_path, response_path = run_final_prediction(
                     backend=backend,
@@ -614,8 +662,8 @@ def run_module_c(
                     module="C",
                     dataset="EHA-v2R-stress-pilot",
                     retriever=retriever,
-                    strategy="evidence_diagnostics_v1",
-                    prompt="evidence_diagnostics_v1",
+                    strategy=final_diagnostic_prompt,
+                    prompt=final_diagnostic_prompt,
                     out_dir=out_dir,
                     max_output_tokens=max_output_tokens,
                     temperature=temperature,
@@ -627,8 +675,8 @@ def run_module_c(
                     dataset="EHA-v2R-stress-pilot",
                     model=model,
                     retriever=retriever,
-                    strategy="evidence_diagnostics_v1",
-                    prompt="evidence_diagnostics_v1",
+                    strategy=final_diagnostic_prompt,
+                    prompt=final_diagnostic_prompt,
                     backend=backend,
                     initial_docs=retrieved_docs,
                     final_docs=retrieved_docs,
@@ -643,7 +691,17 @@ def run_module_c(
                     prompt_path=prompt_path,
                     response_path=response_path,
                 )
-            log.info("phase2s module=C static task={task_id} model={model}", task_id=task.task_id, model=model)
+                static_records_for_task += 1
+            if static_records_for_task:
+                log.info(
+                    "phase2s module=C static task={task_id} model={model} rows={rows}",
+                    task_id=task.task_id,
+                    model=model,
+                    rows=static_records_for_task,
+                )
+
+        if calibration_slice is not None:
+            continue
 
         for task in select_hard_subset(tasks):
             episode_docs = docs_by_task_map[task.task_id]
@@ -682,7 +740,7 @@ def run_module_c(
                     dataset="EHA-v2R-stress-pilot",
                     retriever=retriever,
                     strategy=strategy,
-                    prompt="evidence_diagnostics_v1",
+                    prompt=final_diagnostic_prompt,
                     out_dir=out_dir,
                     max_output_tokens=max_output_tokens,
                     temperature=temperature,
@@ -695,7 +753,7 @@ def run_module_c(
                     model=model,
                     retriever=retriever,
                     strategy=strategy,
-                    prompt="evidence_diagnostics_v1",
+                    prompt=final_diagnostic_prompt,
                     backend=backend,
                     initial_docs=bm25_docs if retriever == "bm25_top8" else combo_docs,
                     final_docs=final_docs,
@@ -723,52 +781,72 @@ def run_phase2s_records(
     models: Sequence[str],
     out_dir: Path,
     max_output_tokens: int,
-    temperature: float,
+    temperature: float | None,
     timeout_s: float,
     response_format: str,
     cost_guard: CostGuard,
+    modules: Sequence[str] = ("A", "B", "C"),
+    module_a_prompts: Sequence[str] = (
+        "evidence_graph_v3",
+        "evidence_diagnostics_v1",
+        "evidence_diagnostics_v2",
+        "evidence_diagnostics_v3",
+        "evidence_diagnostics_v4",
+    ),
+    final_diagnostic_prompt: str = "evidence_diagnostics_v1",
+    calibration_slice: Optional[Path] = None,
 ) -> tuple[List[Phase2SRunRecord], List[Dict[str, Any]]]:
     runner = Phase2OpenAIJsonRunner(timeout_s=timeout_s, response_format=response_format) if backend == "api" else None
     records: List[Phase2SRunRecord] = []
-    run_module_a(
-        records=records,
-        tasks=scope_dataset["tasks"],
-        docs_by_task_map=by_task(scope_dataset["documents"]),
-        gold_by_task=by_task(scope_dataset["gold_documents"]),
-        backend=backend,
-        runner=runner,
-        cost_guard=cost_guard,
-        models=models,
-        out_dir=out_dir,
-        max_output_tokens=max_output_tokens,
-        temperature=temperature,
-    )
-    run_module_b(
-        records=records,
-        tasks=temporal_dataset["tasks"],
-        docs_by_task_map=by_task(temporal_dataset["documents"]),
-        gold_by_task=by_task(temporal_dataset["gold_documents"]),
-        backend=backend,
-        runner=runner,
-        cost_guard=cost_guard,
-        models=models,
-        out_dir=out_dir,
-        max_output_tokens=max_output_tokens,
-        temperature=temperature,
-    )
-    retrieval_rows = run_module_c(
-        records=records,
-        tasks=phase2r_dataset["tasks"],
-        docs_by_task_map=by_task(phase2r_dataset["documents"]),
-        gold_by_task=by_task(phase2r_dataset["gold_documents"]),
-        backend=backend,
-        runner=runner,
-        cost_guard=cost_guard,
-        models=models,
-        out_dir=out_dir,
-        max_output_tokens=max_output_tokens,
-        temperature=temperature,
-    )
+    selected_modules = {module.upper() for module in modules}
+    module_c_calibration_slice = load_calibration_slice(calibration_slice)
+    if "A" in selected_modules:
+        run_module_a(
+            records=records,
+            tasks=scope_dataset["tasks"],
+            docs_by_task_map=by_task(scope_dataset["documents"]),
+            gold_by_task=by_task(scope_dataset["gold_documents"]),
+            backend=backend,
+            runner=runner,
+            cost_guard=cost_guard,
+            models=models,
+            out_dir=out_dir,
+            max_output_tokens=max_output_tokens,
+            temperature=temperature,
+            module_a_prompts=module_a_prompts,
+        )
+    if "B" in selected_modules:
+        run_module_b(
+            records=records,
+            tasks=temporal_dataset["tasks"],
+            docs_by_task_map=by_task(temporal_dataset["documents"]),
+            gold_by_task=by_task(temporal_dataset["gold_documents"]),
+            backend=backend,
+            runner=runner,
+            cost_guard=cost_guard,
+            models=models,
+            out_dir=out_dir,
+            max_output_tokens=max_output_tokens,
+            temperature=temperature,
+            final_diagnostic_prompt=final_diagnostic_prompt,
+        )
+    retrieval_rows: List[Dict[str, Any]] = []
+    if "C" in selected_modules:
+        retrieval_rows = run_module_c(
+            records=records,
+            tasks=phase2r_dataset["tasks"],
+            docs_by_task_map=by_task(phase2r_dataset["documents"]),
+            gold_by_task=by_task(phase2r_dataset["gold_documents"]),
+            backend=backend,
+            runner=runner,
+            cost_guard=cost_guard,
+            models=models,
+            out_dir=out_dir,
+            max_output_tokens=max_output_tokens,
+            temperature=temperature,
+            final_diagnostic_prompt=final_diagnostic_prompt,
+            calibration_slice=module_c_calibration_slice,
+        )
     return records, retrieval_rows
 
 
@@ -781,15 +859,36 @@ def main(
     models: str = typer.Option("heuristic-sim", help="Comma-separated model names."),
     out_dir: Path = typer.Option(Path("results/runs/phase2s"), help="Run output directory."),
     max_output_tokens: int = typer.Option(3500, help="Maximum model output tokens."),
-    temperature: float = typer.Option(0.0, help="Model temperature."),
+    temperature: Optional[float] = typer.Option(None, help="Omit by default; pass an explicit value only for models that support it."),
     timeout_s: float = typer.Option(180.0, help="OpenAI client timeout."),
     response_format: str = typer.Option("json_schema", help="json_schema, json_object, or none."),
+    modules: str = typer.Option("A,B,C", help="Comma-separated Phase 2S modules to run: A, B, C, or A,B,C."),
+    module_a_prompts: str = typer.Option(
+        "evidence_graph_v3,evidence_diagnostics_v1,evidence_diagnostics_v2,evidence_diagnostics_v3,evidence_diagnostics_v4",
+        help="Comma-separated Module A prompt arms to run.",
+    ),
+    final_diagnostic_prompt: str = typer.Option("evidence_diagnostics_v1", help="Diagnostic prompt for Module B/C final answers."),
+    calibration_slice: Optional[Path] = typer.Option(
+        None,
+        help="CSV with task_id,retriever pairs for a Module C static calibration slice. Skips Module C active rows.",
+    ),
     soft_cap_usd: float = typer.Option(50.0, help="Budget soft cap."),
     hard_cap_usd: float = typer.Option(150.0, help="Stop before projected spend exceeds this cap."),
     abort_cap_usd: float = typer.Option(300.0, help="Abort if actual spend exceeds this cap."),
 ) -> None:
     if backend not in {"heuristic", "api"}:
         raise typer.BadParameter("backend must be heuristic or api")
+    selected_modules = tuple(module.upper() for module in split_csv(modules))
+    invalid_modules = [module for module in selected_modules if module not in {"A", "B", "C"}]
+    if not selected_modules or invalid_modules:
+        raise typer.BadParameter("modules must be a comma-separated subset of A,B,C")
+    selected_module_a_prompts = tuple(split_csv(module_a_prompts))
+    valid_module_a_prompts = {"evidence_graph_v3", *PHASE2S_DIAGNOSTIC_PROMPTS}
+    invalid_module_a_prompts = [prompt for prompt in selected_module_a_prompts if prompt not in valid_module_a_prompts]
+    if not selected_module_a_prompts or invalid_module_a_prompts:
+        raise typer.BadParameter("module-a-prompts must be a comma-separated subset of the known Module A prompt arms")
+    if final_diagnostic_prompt not in PHASE2S_DIAGNOSTIC_PROMPTS:
+        raise typer.BadParameter("final-diagnostic-prompt must be one of the known diagnostic prompt arms")
     selected_models = split_csv(models)
     if backend == "api" and selected_models == ["heuristic-sim"]:
         selected_models = ["openai/gpt-4o-mini"]
@@ -811,6 +910,10 @@ def main(
             timeout_s=timeout_s,
             response_format=response_format,
             cost_guard=cost_guard,
+            modules=selected_modules,
+            module_a_prompts=selected_module_a_prompts,
+            final_diagnostic_prompt=final_diagnostic_prompt,
+            calibration_slice=calibration_slice,
         )
     except BudgetExceeded as exc:
         write_json(out_dir / "cost_report.json", {"aborted": True, "reason": str(exc), **cost_guard.report()})
@@ -821,8 +924,17 @@ def main(
     all_gold = list(scope_dataset["gold_documents"]) + list(temporal_dataset["gold_documents"]) + list(phase2r_dataset["gold_documents"])
     rows = score_phase2s_run(records, all_tasks, all_gold)
     write_csv(out_dir / "scored_predictions.csv", rows)
-    gate = phase2s_gate(rows, retrieval_rows, records)
-    write_json(out_dir / "phase2s_gate.json", {"passed": gate.passed, "checks": gate.checks, "details": gate.details})
+    if set(selected_modules) == {"A", "B", "C"}:
+        gate = phase2s_gate(rows, retrieval_rows, records)
+        gate_payload = {"scope": "full", "passed": gate.passed, "checks": gate.checks, "details": gate.details}
+    elif set(selected_modules) == {"A"}:
+        gate = phase2s_module_a_gate(rows)
+        gate_payload = {"scope": "module_a", "passed": gate.passed, "checks": gate.checks, "details": gate.details}
+        write_json(out_dir / "phase2s_module_a_gate.json", gate_payload)
+    else:
+        gate = Phase2SGate(passed=False, checks={}, details={"scope": "partial", "modules": list(selected_modules)})
+        gate_payload = {"scope": "partial", "passed": gate.passed, "checks": gate.checks, "details": gate.details}
+    write_json(out_dir / "phase2s_gate.json", gate_payload)
     write_json(out_dir / "cost_report.json", {"aborted": False, "record_cost_usd": round(sum(record.cost_usd for record in records), 6), **cost_guard.report()})
     status = "[green]passed[/green]" if gate.passed else "[red]failed[/red]"
     console.print(f"Phase 2S gate {status}: {gate.details}")

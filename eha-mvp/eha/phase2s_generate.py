@@ -138,6 +138,38 @@ def add_doc(
     gold_documents.append(gold)
 
 
+def scope_current_primary_sentences(episode_type: str) -> List[str]:
+    if episode_type == "full_current_primary_support":
+        return [
+            "The signed current record explicitly supports the target claim for this case.",
+            "It states that the claim is current, complete, and reviewer-signed.",
+        ]
+    if episode_type == "stale_evidence":
+        return [
+            "The signed current record says the target claim is not supported under the current status.",
+            "It supersedes the older record that appeared to support the claim.",
+        ]
+    if episode_type == "conflicting_evidence":
+        return [
+            "The signed current record directly contradicts the target claim for this case.",
+            "It is the current claim-level primary record and carries reviewer sign-off.",
+        ]
+    if episode_type == "partial_support":
+        return [
+            "The signed current record says the available primary evidence does not establish the broader target claim.",
+            "Only a narrower operational detail is documented, leaving a material component unresolved.",
+        ]
+    if episode_type == "citation_laundering":
+        return [
+            "The signed current record says the target claim is not supported by the cited chain.",
+            "It rejects the laundered summary as claim-level evidence for this case.",
+        ]
+    return [
+        "The signed current record gives the claim-level status for this case.",
+        "It is scoped to the target question and contains reviewer sign-off.",
+    ]
+
+
 def make_scope_episode(index: int, episode_type: str, rng: Random) -> Tuple[Task, List[AgentDocument], List[GoldDocument], List[DependencyEdge]]:
     task_id = f"eha2s_a_{index:03d}"
     claim_id = f"c_scope_{episode_type}_{index:03d}"
@@ -159,10 +191,7 @@ def make_scope_episode(index: int, episode_type: str, rng: Random) -> Tuple[Task
             title=f"{COMPANY} current primary record",
             source_type="audit_report",
             timestamp="2025-01-20",
-            sentences=[
-                "The signed current record gives the claim-level status for this case.",
-                "It is scoped to the target question and contains reviewer sign-off.",
-            ],
+            sentences=scope_current_primary_sentences(episode_type),
             stance="supports_gold",
             supports_gold_verdict=verdict == "supported",
             valid_time="2025-Q1",
