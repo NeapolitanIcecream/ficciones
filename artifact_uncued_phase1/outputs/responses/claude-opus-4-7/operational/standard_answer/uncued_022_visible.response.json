@@ -1,0 +1,90 @@
+{
+  "attempts": [
+    {
+      "attempt": 1,
+      "model": "claude-opus-4-7",
+      "provider": "Anthropic",
+      "budget_setting": "operational",
+      "task_id": "uncued_022_visible",
+      "prompt_condition": "standard_answer",
+      "content": "{\n  \"claim_verdict\": \"refuted\",\n  \"confidence\": 0.7,\n  \"supporting_evidence\": [\"doc_003\"],\n  \"rejected_evidence\": [\"doc_001\", \"doc_002\", \"doc_004\"],\n  \"selected_doc_ids\": [\"doc_001\", \"doc_003\"],\n  \"actions\": [\n    {\"action\": \"trace_source\", \"target\": \"doc_003\", \"rationale\": \"Digest asserts 139 but cites only a routing note (doc_004) lacking a count; verify primary ledger basis.\"},\n    {\"action\": \"compare_versions\", \"target\": \"doc_001\", \"rationale\": \"Month-close ledger shows 118, conflicting with digest's 139; reconcile which is the authoritative monthly total.\"}\n  ],\n  \"evidence_environment_assessment\": \"Four documents share site code, workstream, and close date, so labels alone cannot disambiguate. Only doc_001 (field month-close ledger) and doc_003 (operations digest) provide counts; they conflict (118 vs 139). doc_003 cites doc_004, which has no count, weakening its provenance. doc_002 and doc_004 are chronology/scheduling notes without totals. The ledger-type source (doc_001) outranks a digest with thin sourcing, but residual uncertainty remains absent a primary registry row.\",\n  \"answer\": \"The claim that Novalis Robotics logged 139 Nova pump refurbishments in July 2025 is refuted by the available evidence. The Harbor Annex month-close ledger (doc_001) records 118 completions, while the only document asserting 139 (doc_003) is a brief operations digest whose sole citation (doc_004) contains no count. Ledger-grade evidence outweighs a thinly sourced digest, so 139 is not substantiated; 118 appears to be the recorded total, pending confirmation from a primary registry row.\"\n}",
+      "usage": {
+        "completion_tokens": 625,
+        "prompt_tokens": 1501,
+        "total_tokens": 2126,
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": null,
+          "audio_tokens": 0,
+          "reasoning_tokens": 0,
+          "rejected_prediction_tokens": null,
+          "text_tokens": 0,
+          "image_tokens": 0
+        },
+        "prompt_tokens_details": {
+          "audio_tokens": 0,
+          "cached_tokens": 0,
+          "text_tokens": 0,
+          "image_tokens": 0
+        },
+        "usage_semantic": "openai",
+        "usage_source": "anthropic",
+        "input_tokens": 1501,
+        "output_tokens": 0,
+        "input_tokens_details": null,
+        "claude_cache_creation_5_m_tokens": 0,
+        "claude_cache_creation_1_h_tokens": 0
+      },
+      "response_format_used": "json_schema",
+      "parse_success": true,
+      "parse_error": "",
+      "empty_output": false,
+      "schema_missing": false,
+      "json_extractor_used": "first_json_object",
+      "elapsed_s": 18.584,
+      "cost_usd": 0.00162525
+    }
+  ],
+  "final_attempt": {
+    "attempt": 1,
+    "model": "claude-opus-4-7",
+    "provider": "Anthropic",
+    "budget_setting": "operational",
+    "task_id": "uncued_022_visible",
+    "prompt_condition": "standard_answer",
+    "content": "{\n  \"claim_verdict\": \"refuted\",\n  \"confidence\": 0.7,\n  \"supporting_evidence\": [\"doc_003\"],\n  \"rejected_evidence\": [\"doc_001\", \"doc_002\", \"doc_004\"],\n  \"selected_doc_ids\": [\"doc_001\", \"doc_003\"],\n  \"actions\": [\n    {\"action\": \"trace_source\", \"target\": \"doc_003\", \"rationale\": \"Digest asserts 139 but cites only a routing note (doc_004) lacking a count; verify primary ledger basis.\"},\n    {\"action\": \"compare_versions\", \"target\": \"doc_001\", \"rationale\": \"Month-close ledger shows 118, conflicting with digest's 139; reconcile which is the authoritative monthly total.\"}\n  ],\n  \"evidence_environment_assessment\": \"Four documents share site code, workstream, and close date, so labels alone cannot disambiguate. Only doc_001 (field month-close ledger) and doc_003 (operations digest) provide counts; they conflict (118 vs 139). doc_003 cites doc_004, which has no count, weakening its provenance. doc_002 and doc_004 are chronology/scheduling notes without totals. The ledger-type source (doc_001) outranks a digest with thin sourcing, but residual uncertainty remains absent a primary registry row.\",\n  \"answer\": \"The claim that Novalis Robotics logged 139 Nova pump refurbishments in July 2025 is refuted by the available evidence. The Harbor Annex month-close ledger (doc_001) records 118 completions, while the only document asserting 139 (doc_003) is a brief operations digest whose sole citation (doc_004) contains no count. Ledger-grade evidence outweighs a thinly sourced digest, so 139 is not substantiated; 118 appears to be the recorded total, pending confirmation from a primary registry row.\"\n}",
+    "usage": {
+      "completion_tokens": 625,
+      "prompt_tokens": 1501,
+      "total_tokens": 2126,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": null,
+        "audio_tokens": 0,
+        "reasoning_tokens": 0,
+        "rejected_prediction_tokens": null,
+        "text_tokens": 0,
+        "image_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cached_tokens": 0,
+        "text_tokens": 0,
+        "image_tokens": 0
+      },
+      "usage_semantic": "openai",
+      "usage_source": "anthropic",
+      "input_tokens": 1501,
+      "output_tokens": 0,
+      "input_tokens_details": null,
+      "claude_cache_creation_5_m_tokens": 0,
+      "claude_cache_creation_1_h_tokens": 0
+    },
+    "response_format_used": "json_schema",
+    "parse_success": true,
+    "parse_error": "",
+    "empty_output": false,
+    "schema_missing": false,
+    "json_extractor_used": "first_json_object",
+    "elapsed_s": 18.584,
+    "cost_usd": 0.00162525
+  }
+}

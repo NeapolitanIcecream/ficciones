@@ -1,0 +1,90 @@
+{
+  "attempts": [
+    {
+      "attempt": 1,
+      "model": "gpt-5.5",
+      "provider": "OpenAI",
+      "budget_setting": "operational",
+      "task_id": "uncued_005_hidden",
+      "prompt_condition": "standard_answer",
+      "content": "{\"actions\":[{\"action\":\"open\",\"rationale\":\"Directly states the count for the relevant workstream and month, and explicitly denies any 101 entry.\",\"target\":\"doc_001\"},{\"action\":\"compare_versions\",\"rationale\":\"Other documents share identifiers but omit the count, so they do not outweigh the ledger statement.\",\"target\":\"doc_001 vs doc_002/doc_003/doc_004\"}],\"answer\":\"No. The provided evidence refutes the claim: the monthly ledger says 76 approved checks for Kestrel firmware checks in August 2025 and explicitly says no line lists 101 for this workstream.\",\"claim_verdict\":\"refuted\",\"confidence\":0.91,\"evidence_environment_assessment\":\"The environment contains one directly relevant count source and several corroborating context notes that omit the count. No document supports 101. The strongest evidence is doc_001 because it states the August 2025 Kestrel firmware check count and explicitly rules out 101 in the packet.\",\"rejected_evidence\":[\"doc_002\",\"doc_003\",\"doc_004\"],\"selected_doc_ids\":[\"doc_001\",\"doc_002\",\"doc_003\"],\"supporting_evidence\":[\"doc_001\"]}",
+      "usage": {
+        "completion_tokens": 257,
+        "prompt_tokens": 1171,
+        "total_tokens": 1428,
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": 0,
+          "audio_tokens": 0,
+          "reasoning_tokens": 0,
+          "rejected_prediction_tokens": 0
+        },
+        "prompt_tokens_details": {
+          "audio_tokens": 0,
+          "cached_tokens": 0
+        },
+        "latency_checkpoint": {
+          "engine_tbt_ms": 22,
+          "engine_ttft_ms": 432,
+          "engine_ttlt_ms": 6132,
+          "pre_inference_ms": 167,
+          "service_tbt_ms": 22,
+          "service_ttft_ms": 850,
+          "service_ttlt_ms": 6540,
+          "total_duration_ms": 6393,
+          "user_visible_ttft_ms": 683
+        }
+      },
+      "response_format_used": "json_schema",
+      "parse_success": true,
+      "parse_error": "",
+      "empty_output": false,
+      "schema_missing": false,
+      "json_extractor_used": "first_json_object",
+      "elapsed_s": 8.351,
+      "cost_usd": 0.013565
+    }
+  ],
+  "final_attempt": {
+    "attempt": 1,
+    "model": "gpt-5.5",
+    "provider": "OpenAI",
+    "budget_setting": "operational",
+    "task_id": "uncued_005_hidden",
+    "prompt_condition": "standard_answer",
+    "content": "{\"actions\":[{\"action\":\"open\",\"rationale\":\"Directly states the count for the relevant workstream and month, and explicitly denies any 101 entry.\",\"target\":\"doc_001\"},{\"action\":\"compare_versions\",\"rationale\":\"Other documents share identifiers but omit the count, so they do not outweigh the ledger statement.\",\"target\":\"doc_001 vs doc_002/doc_003/doc_004\"}],\"answer\":\"No. The provided evidence refutes the claim: the monthly ledger says 76 approved checks for Kestrel firmware checks in August 2025 and explicitly says no line lists 101 for this workstream.\",\"claim_verdict\":\"refuted\",\"confidence\":0.91,\"evidence_environment_assessment\":\"The environment contains one directly relevant count source and several corroborating context notes that omit the count. No document supports 101. The strongest evidence is doc_001 because it states the August 2025 Kestrel firmware check count and explicitly rules out 101 in the packet.\",\"rejected_evidence\":[\"doc_002\",\"doc_003\",\"doc_004\"],\"selected_doc_ids\":[\"doc_001\",\"doc_002\",\"doc_003\"],\"supporting_evidence\":[\"doc_001\"]}",
+    "usage": {
+      "completion_tokens": 257,
+      "prompt_tokens": 1171,
+      "total_tokens": 1428,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": 0,
+        "audio_tokens": 0,
+        "reasoning_tokens": 0,
+        "rejected_prediction_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cached_tokens": 0
+      },
+      "latency_checkpoint": {
+        "engine_tbt_ms": 22,
+        "engine_ttft_ms": 432,
+        "engine_ttlt_ms": 6132,
+        "pre_inference_ms": 167,
+        "service_tbt_ms": 22,
+        "service_ttft_ms": 850,
+        "service_ttlt_ms": 6540,
+        "total_duration_ms": 6393,
+        "user_visible_ttft_ms": 683
+      }
+    },
+    "response_format_used": "json_schema",
+    "parse_success": true,
+    "parse_error": "",
+    "empty_output": false,
+    "schema_missing": false,
+    "json_extractor_used": "first_json_object",
+    "elapsed_s": 8.351,
+    "cost_usd": 0.013565
+  }
+}

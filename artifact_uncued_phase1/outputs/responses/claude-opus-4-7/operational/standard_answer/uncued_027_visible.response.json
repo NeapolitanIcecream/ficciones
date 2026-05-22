@@ -1,0 +1,90 @@
+{
+  "attempts": [
+    {
+      "attempt": 1,
+      "model": "claude-opus-4-7",
+      "provider": "Anthropic",
+      "budget_setting": "operational",
+      "task_id": "uncued_027_visible",
+      "prompt_condition": "standard_answer",
+      "content": "{\n  \"claim_verdict\": \"insufficient\",\n  \"confidence\": 0.4,\n  \"supporting_evidence\": [\"doc_003\", \"doc_004\"],\n  \"rejected_evidence\": [\"doc_001\"],\n  \"selected_doc_ids\": [\"doc_001\", \"doc_003\", \"doc_004\"],\n  \"actions\": [\n    {\"action\": \"trace_source\", \"target\": \"doc_004\", \"rationale\": \"The 57 figure appears in doc_003 and doc_004, but they cite each other circularly. Tracing to a primary count sheet is needed.\"},\n    {\"action\": \"search_primary\", \"target\": \"Vega rail inspections June 2025 primary count sheet\", \"rationale\": \"A primary source is needed to resolve the conflict between the ledger's 42 and the digest/memo's 57.\"}\n  ],\n  \"evidence_environment_assessment\": \"The packet contains a circular citation loop: doc_003 cites doc_004, and doc_004 cites doc_003, both repeating the 57 figure without an independent primary source. doc_001, a service ledger extract, gives a conflicting figure of 42. doc_002 provides no count. The 57 claim lacks independent grounding, while the conflicting ledger figure is presented as a closing record but is also unverified. Evidence quality is low and contradictory.\",\n  \"answer\": \"Evidence is insufficient to confirm 57 accepted Vega rail inspections in June 2025. Two documents (doc_003, doc_004) repeat the 57 figure but cite each other circularly, with no independent primary source. Meanwhile, doc_001's closing ledger reports 42, directly contradicting the claim. Without a primary count sheet, the claim cannot be verified.\"\n}",
+      "usage": {
+        "completion_tokens": 570,
+        "prompt_tokens": 1515,
+        "total_tokens": 2085,
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": null,
+          "audio_tokens": 0,
+          "reasoning_tokens": 0,
+          "rejected_prediction_tokens": null,
+          "text_tokens": 0,
+          "image_tokens": 0
+        },
+        "prompt_tokens_details": {
+          "audio_tokens": 0,
+          "cached_tokens": 0,
+          "text_tokens": 0,
+          "image_tokens": 0
+        },
+        "usage_semantic": "openai",
+        "usage_source": "anthropic",
+        "input_tokens": 1515,
+        "output_tokens": 0,
+        "input_tokens_details": null,
+        "claude_cache_creation_5_m_tokens": 0,
+        "claude_cache_creation_1_h_tokens": 0
+      },
+      "response_format_used": "json_schema",
+      "parse_success": true,
+      "parse_error": "",
+      "empty_output": false,
+      "schema_missing": false,
+      "json_extractor_used": "first_json_object",
+      "elapsed_s": 8.522,
+      "cost_usd": 0.00151875
+    }
+  ],
+  "final_attempt": {
+    "attempt": 1,
+    "model": "claude-opus-4-7",
+    "provider": "Anthropic",
+    "budget_setting": "operational",
+    "task_id": "uncued_027_visible",
+    "prompt_condition": "standard_answer",
+    "content": "{\n  \"claim_verdict\": \"insufficient\",\n  \"confidence\": 0.4,\n  \"supporting_evidence\": [\"doc_003\", \"doc_004\"],\n  \"rejected_evidence\": [\"doc_001\"],\n  \"selected_doc_ids\": [\"doc_001\", \"doc_003\", \"doc_004\"],\n  \"actions\": [\n    {\"action\": \"trace_source\", \"target\": \"doc_004\", \"rationale\": \"The 57 figure appears in doc_003 and doc_004, but they cite each other circularly. Tracing to a primary count sheet is needed.\"},\n    {\"action\": \"search_primary\", \"target\": \"Vega rail inspections June 2025 primary count sheet\", \"rationale\": \"A primary source is needed to resolve the conflict between the ledger's 42 and the digest/memo's 57.\"}\n  ],\n  \"evidence_environment_assessment\": \"The packet contains a circular citation loop: doc_003 cites doc_004, and doc_004 cites doc_003, both repeating the 57 figure without an independent primary source. doc_001, a service ledger extract, gives a conflicting figure of 42. doc_002 provides no count. The 57 claim lacks independent grounding, while the conflicting ledger figure is presented as a closing record but is also unverified. Evidence quality is low and contradictory.\",\n  \"answer\": \"Evidence is insufficient to confirm 57 accepted Vega rail inspections in June 2025. Two documents (doc_003, doc_004) repeat the 57 figure but cite each other circularly, with no independent primary source. Meanwhile, doc_001's closing ledger reports 42, directly contradicting the claim. Without a primary count sheet, the claim cannot be verified.\"\n}",
+    "usage": {
+      "completion_tokens": 570,
+      "prompt_tokens": 1515,
+      "total_tokens": 2085,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": null,
+        "audio_tokens": 0,
+        "reasoning_tokens": 0,
+        "rejected_prediction_tokens": null,
+        "text_tokens": 0,
+        "image_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cached_tokens": 0,
+        "text_tokens": 0,
+        "image_tokens": 0
+      },
+      "usage_semantic": "openai",
+      "usage_source": "anthropic",
+      "input_tokens": 1515,
+      "output_tokens": 0,
+      "input_tokens_details": null,
+      "claude_cache_creation_5_m_tokens": 0,
+      "claude_cache_creation_1_h_tokens": 0
+    },
+    "response_format_used": "json_schema",
+    "parse_success": true,
+    "parse_error": "",
+    "empty_output": false,
+    "schema_missing": false,
+    "json_extractor_used": "first_json_object",
+    "elapsed_s": 8.522,
+    "cost_usd": 0.00151875
+  }
+}

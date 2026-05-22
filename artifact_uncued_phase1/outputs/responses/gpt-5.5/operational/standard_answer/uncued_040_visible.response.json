@@ -1,0 +1,90 @@
+{
+  "attempts": [
+    {
+      "attempt": 1,
+      "model": "gpt-5.5",
+      "provider": "OpenAI",
+      "budget_setting": "operational",
+      "task_id": "uncued_040_visible",
+      "prompt_condition": "standard_answer",
+      "content": "{\"actions\":[{\"action\":\"open\",\"rationale\":\"Inspect the closeout ledger statement because it directly addresses the claimed final July 2025 count.\",\"target\":\"doc_002\"},{\"action\":\"compare_versions\",\"rationale\":\"Compare the final ledger against the running estimate to avoid treating preliminary estimates as final counts.\",\"target\":\"doc_003\"}],\"answer\":\"Yes. The claim is supported: doc_002 states that the closeout ledger lists 118 completed refurbishments for Nova pump refurbishments in July 2025. The conflicting 139 figure in doc_003 is explicitly described as a running estimate, not the final closeout number.\",\"claim_verdict\":\"supported\",\"confidence\":0.88,\"evidence_environment_assessment\":\"The packet contains both preliminary and final-looking records. The strongest evidence is doc_002, a later closeout ledger entry using the final close date. Doc_003 conflicts with a 139 count but is framed as a running estimate citing a planning memo, so it is less probative. Other documents contain no final count.\",\"rejected_evidence\":[\"doc_003\",\"doc_001\",\"doc_004\"],\"selected_doc_ids\":[\"doc_002\",\"doc_003\"],\"supporting_evidence\":[\"doc_002\"]}",
+      "usage": {
+        "completion_tokens": 263,
+        "prompt_tokens": 1191,
+        "total_tokens": 1454,
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": 0,
+          "audio_tokens": 0,
+          "reasoning_tokens": 0,
+          "rejected_prediction_tokens": 0
+        },
+        "prompt_tokens_details": {
+          "audio_tokens": 0,
+          "cached_tokens": 0
+        },
+        "latency_checkpoint": {
+          "engine_tbt_ms": 20,
+          "engine_ttft_ms": 788,
+          "engine_ttlt_ms": 6178,
+          "pre_inference_ms": 154,
+          "service_tbt_ms": 21,
+          "service_ttft_ms": 1186,
+          "service_ttlt_ms": 6576,
+          "total_duration_ms": 6429,
+          "user_visible_ttft_ms": 1032
+        }
+      },
+      "response_format_used": "json_schema",
+      "parse_success": true,
+      "parse_error": "",
+      "empty_output": false,
+      "schema_missing": false,
+      "json_extractor_used": "first_json_object",
+      "elapsed_s": 8.194,
+      "cost_usd": 0.013845
+    }
+  ],
+  "final_attempt": {
+    "attempt": 1,
+    "model": "gpt-5.5",
+    "provider": "OpenAI",
+    "budget_setting": "operational",
+    "task_id": "uncued_040_visible",
+    "prompt_condition": "standard_answer",
+    "content": "{\"actions\":[{\"action\":\"open\",\"rationale\":\"Inspect the closeout ledger statement because it directly addresses the claimed final July 2025 count.\",\"target\":\"doc_002\"},{\"action\":\"compare_versions\",\"rationale\":\"Compare the final ledger against the running estimate to avoid treating preliminary estimates as final counts.\",\"target\":\"doc_003\"}],\"answer\":\"Yes. The claim is supported: doc_002 states that the closeout ledger lists 118 completed refurbishments for Nova pump refurbishments in July 2025. The conflicting 139 figure in doc_003 is explicitly described as a running estimate, not the final closeout number.\",\"claim_verdict\":\"supported\",\"confidence\":0.88,\"evidence_environment_assessment\":\"The packet contains both preliminary and final-looking records. The strongest evidence is doc_002, a later closeout ledger entry using the final close date. Doc_003 conflicts with a 139 count but is framed as a running estimate citing a planning memo, so it is less probative. Other documents contain no final count.\",\"rejected_evidence\":[\"doc_003\",\"doc_001\",\"doc_004\"],\"selected_doc_ids\":[\"doc_002\",\"doc_003\"],\"supporting_evidence\":[\"doc_002\"]}",
+    "usage": {
+      "completion_tokens": 263,
+      "prompt_tokens": 1191,
+      "total_tokens": 1454,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": 0,
+        "audio_tokens": 0,
+        "reasoning_tokens": 0,
+        "rejected_prediction_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cached_tokens": 0
+      },
+      "latency_checkpoint": {
+        "engine_tbt_ms": 20,
+        "engine_ttft_ms": 788,
+        "engine_ttlt_ms": 6178,
+        "pre_inference_ms": 154,
+        "service_tbt_ms": 21,
+        "service_ttft_ms": 1186,
+        "service_ttlt_ms": 6576,
+        "total_duration_ms": 6429,
+        "user_visible_ttft_ms": 1032
+      }
+    },
+    "response_format_used": "json_schema",
+    "parse_success": true,
+    "parse_error": "",
+    "empty_output": false,
+    "schema_missing": false,
+    "json_extractor_used": "first_json_object",
+    "elapsed_s": 8.194,
+    "cost_usd": 0.013845
+  }
+}

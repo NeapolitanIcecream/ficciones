@@ -1,0 +1,72 @@
+{
+  "attempts": [
+    {
+      "attempt": 1,
+      "model": "deepseek-v4-pro",
+      "provider": "DeepSeek",
+      "budget_setting": "operational",
+      "task_id": "uncued_036_hidden",
+      "prompt_condition": "standard_answer",
+      "content": "{\n  \"claim_verdict\": \"supported\",\n  \"confidence\": 0.95,\n  \"supporting_evidence\": [\"doc_002\"],\n  \"rejected_evidence\": [\"doc_004\", \"doc_003\", \"doc_001\"],\n  \"selected_doc_ids\": [\"doc_002\"],\n  \"actions\": [\n    {\n      \"action\": \"open\",\n      \"target\": \"doc_002\",\n      \"rationale\": \"Open the closeout ledger to confirm the final completed checks count directly stated as 184.\"\n    },\n    {\n      \"action\": \"compare_versions\",\n      \"target\": \"doc_002 and doc_004\",\n      \"rationale\": \"Compare the closeout ledger (184) with the digest estimate (211) to understand the discrepancy and verify which is authoritative.\"\n    }\n  ],\n  \"evidence_environment_assessment\": \"The environment contains a planning memo (doc_003), a handoff note (doc_001), a digest estimate (doc_004) of 211, and a closeout ledger (doc_002) showing 184 completed checks. The ledger is the most reliable as it is finalized after the monthly close, while the digest is an earlier estimate. The planning memo and handoff note have no final numbers. The ledger directly supports the claim.\",\n  \"answer\": \"Yes, Novalis Robotics logged 184 completed checks for Atlas valve checks in March 2025, as recorded in the closeout ledger (doc_002).\"\n}",
+      "usage": {
+        "completion_tokens": 1683,
+        "prompt_tokens": 1038,
+        "total_tokens": 2721,
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": null,
+          "audio_tokens": null,
+          "reasoning_tokens": 1370,
+          "rejected_prediction_tokens": null
+        },
+        "prompt_tokens_details": {
+          "audio_tokens": null,
+          "cached_tokens": 0
+        },
+        "prompt_cache_hit_tokens": 0,
+        "prompt_cache_miss_tokens": 1038
+      },
+      "response_format_used": "json_object",
+      "parse_success": true,
+      "parse_error": "",
+      "empty_output": false,
+      "schema_missing": false,
+      "json_extractor_used": "first_json_object",
+      "elapsed_s": 41.47,
+      "cost_usd": 0.0036255000000000003
+    }
+  ],
+  "final_attempt": {
+    "attempt": 1,
+    "model": "deepseek-v4-pro",
+    "provider": "DeepSeek",
+    "budget_setting": "operational",
+    "task_id": "uncued_036_hidden",
+    "prompt_condition": "standard_answer",
+    "content": "{\n  \"claim_verdict\": \"supported\",\n  \"confidence\": 0.95,\n  \"supporting_evidence\": [\"doc_002\"],\n  \"rejected_evidence\": [\"doc_004\", \"doc_003\", \"doc_001\"],\n  \"selected_doc_ids\": [\"doc_002\"],\n  \"actions\": [\n    {\n      \"action\": \"open\",\n      \"target\": \"doc_002\",\n      \"rationale\": \"Open the closeout ledger to confirm the final completed checks count directly stated as 184.\"\n    },\n    {\n      \"action\": \"compare_versions\",\n      \"target\": \"doc_002 and doc_004\",\n      \"rationale\": \"Compare the closeout ledger (184) with the digest estimate (211) to understand the discrepancy and verify which is authoritative.\"\n    }\n  ],\n  \"evidence_environment_assessment\": \"The environment contains a planning memo (doc_003), a handoff note (doc_001), a digest estimate (doc_004) of 211, and a closeout ledger (doc_002) showing 184 completed checks. The ledger is the most reliable as it is finalized after the monthly close, while the digest is an earlier estimate. The planning memo and handoff note have no final numbers. The ledger directly supports the claim.\",\n  \"answer\": \"Yes, Novalis Robotics logged 184 completed checks for Atlas valve checks in March 2025, as recorded in the closeout ledger (doc_002).\"\n}",
+    "usage": {
+      "completion_tokens": 1683,
+      "prompt_tokens": 1038,
+      "total_tokens": 2721,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": null,
+        "audio_tokens": null,
+        "reasoning_tokens": 1370,
+        "rejected_prediction_tokens": null
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": null,
+        "cached_tokens": 0
+      },
+      "prompt_cache_hit_tokens": 0,
+      "prompt_cache_miss_tokens": 1038
+    },
+    "response_format_used": "json_object",
+    "parse_success": true,
+    "parse_error": "",
+    "empty_output": false,
+    "schema_missing": false,
+    "json_extractor_used": "first_json_object",
+    "elapsed_s": 41.47,
+    "cost_usd": 0.0036255000000000003
+  }
+}

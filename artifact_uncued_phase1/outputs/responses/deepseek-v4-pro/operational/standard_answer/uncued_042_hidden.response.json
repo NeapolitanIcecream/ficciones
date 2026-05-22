@@ -1,0 +1,72 @@
+{
+  "attempts": [
+    {
+      "attempt": 1,
+      "model": "deepseek-v4-pro",
+      "provider": "DeepSeek",
+      "budget_setting": "operational",
+      "task_id": "uncued_042_hidden",
+      "prompt_condition": "standard_answer",
+      "content": "{\n  \"claim_verdict\": \"supported\",\n  \"confidence\": 0.95,\n  \"supporting_evidence\": [\"doc_001\"],\n  \"rejected_evidence\": [\"doc_004\"],\n  \"selected_doc_ids\": [\"doc_001\", \"doc_004\"],\n  \"actions\": [\n    {\n      \"action\": \"open\",\n      \"target\": \"doc_001\",\n      \"rationale\": \"Inspect the closeout ledger to verify the final recorded count.\"\n    },\n    {\n      \"action\": \"compare_versions\",\n      \"target\": \"doc_001, doc_004\",\n      \"rationale\": \"Compare the ledger's 184 with the digest's 211 estimate to resolve the discrepancy; the digest is an estimate, so the ledger prevails.\"\n    }\n  ],\n  \"evidence_environment_assessment\": \"The documents share consistent metadata indicating a reliable workstream. The closeout ledger (doc_001) provides the definitive 184 count. The digest (doc_004) gives an estimate of 211 but is superseded by the ledger. Other documents are non-final or silent on the count. No signs of pollution or inconsistency that undermine the ledger.\",\n  \"answer\": \"Yes, the closeout ledger (doc_001) logs 184 completed checks for Atlas valve checks in March 2025.\"\n}",
+      "usage": {
+        "completion_tokens": 1525,
+        "prompt_tokens": 1036,
+        "total_tokens": 2561,
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": null,
+          "audio_tokens": null,
+          "reasoning_tokens": 1245,
+          "rejected_prediction_tokens": null
+        },
+        "prompt_tokens_details": {
+          "audio_tokens": null,
+          "cached_tokens": 0
+        },
+        "prompt_cache_hit_tokens": 0,
+        "prompt_cache_miss_tokens": 1036
+      },
+      "response_format_used": "json_object",
+      "parse_success": true,
+      "parse_error": "",
+      "empty_output": false,
+      "schema_missing": false,
+      "json_extractor_used": "first_json_object",
+      "elapsed_s": 33.013,
+      "cost_usd": 0.0033090000000000003
+    }
+  ],
+  "final_attempt": {
+    "attempt": 1,
+    "model": "deepseek-v4-pro",
+    "provider": "DeepSeek",
+    "budget_setting": "operational",
+    "task_id": "uncued_042_hidden",
+    "prompt_condition": "standard_answer",
+    "content": "{\n  \"claim_verdict\": \"supported\",\n  \"confidence\": 0.95,\n  \"supporting_evidence\": [\"doc_001\"],\n  \"rejected_evidence\": [\"doc_004\"],\n  \"selected_doc_ids\": [\"doc_001\", \"doc_004\"],\n  \"actions\": [\n    {\n      \"action\": \"open\",\n      \"target\": \"doc_001\",\n      \"rationale\": \"Inspect the closeout ledger to verify the final recorded count.\"\n    },\n    {\n      \"action\": \"compare_versions\",\n      \"target\": \"doc_001, doc_004\",\n      \"rationale\": \"Compare the ledger's 184 with the digest's 211 estimate to resolve the discrepancy; the digest is an estimate, so the ledger prevails.\"\n    }\n  ],\n  \"evidence_environment_assessment\": \"The documents share consistent metadata indicating a reliable workstream. The closeout ledger (doc_001) provides the definitive 184 count. The digest (doc_004) gives an estimate of 211 but is superseded by the ledger. Other documents are non-final or silent on the count. No signs of pollution or inconsistency that undermine the ledger.\",\n  \"answer\": \"Yes, the closeout ledger (doc_001) logs 184 completed checks for Atlas valve checks in March 2025.\"\n}",
+    "usage": {
+      "completion_tokens": 1525,
+      "prompt_tokens": 1036,
+      "total_tokens": 2561,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": null,
+        "audio_tokens": null,
+        "reasoning_tokens": 1245,
+        "rejected_prediction_tokens": null
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": null,
+        "cached_tokens": 0
+      },
+      "prompt_cache_hit_tokens": 0,
+      "prompt_cache_miss_tokens": 1036
+    },
+    "response_format_used": "json_object",
+    "parse_success": true,
+    "parse_error": "",
+    "empty_output": false,
+    "schema_missing": false,
+    "json_extractor_used": "first_json_object",
+    "elapsed_s": 33.013,
+    "cost_usd": 0.0033090000000000003
+  }
+}

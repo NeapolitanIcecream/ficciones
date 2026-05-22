@@ -1,0 +1,90 @@
+{
+  "attempts": [
+    {
+      "attempt": 1,
+      "model": "claude-opus-4-7",
+      "provider": "Anthropic",
+      "budget_setting": "operational",
+      "task_id": "uncued_023_visible",
+      "prompt_condition": "standard_answer",
+      "content": "{\n  \"claim_verdict\": \"refuted\",\n  \"confidence\": 0.7,\n  \"supporting_evidence\": [\"doc_001\"],\n  \"rejected_evidence\": [\"doc_002\", \"doc_003\"],\n  \"selected_doc_ids\": [\"doc_004\", \"doc_001\"],\n  \"actions\": [\n    {\"action\": \"trace_source\", \"target\": \"doc_001\", \"rationale\": \"The digest claiming 101 cites only doc_003, which contains no count. Tracing reveals the supporting claim is uncorroborated.\"},\n    {\"action\": \"compare_versions\", \"target\": \"doc_004 vs doc_001\", \"rationale\": \"Direct ledger extract gives 76; digest gives 101. Ledger row is more authoritative than a digest with no visible source row.\"}\n  ],\n  \"evidence_environment_assessment\": \"Four documents share site code, workstream, and close date. Only doc_004 (month-close ledger) provides a primary count: 76. Doc_001 asserts 101 but cites doc_003, which has no count—a broken citation chain. Doc_002 and doc_003 contain chronology only. The 101 figure lacks a verifiable primary source, while 76 is anchored in the ledger row.\",\n  \"answer\": \"No. The month-close ledger (doc_004) records 76 approved Kestrel firmware checks for August 2025 at Ridgeway bench. The competing 101 figure appears only in a digest (doc_001) whose citation (doc_003) contains no count, leaving it unsupported. The claim of 101 is refuted by the primary ledger entry.\"\n}",
+      "usage": {
+        "completion_tokens": 527,
+        "prompt_tokens": 1497,
+        "total_tokens": 2024,
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": null,
+          "audio_tokens": 0,
+          "reasoning_tokens": 0,
+          "rejected_prediction_tokens": null,
+          "text_tokens": 0,
+          "image_tokens": 0
+        },
+        "prompt_tokens_details": {
+          "audio_tokens": 0,
+          "cached_tokens": 0,
+          "text_tokens": 0,
+          "image_tokens": 0
+        },
+        "usage_semantic": "openai",
+        "usage_source": "anthropic",
+        "input_tokens": 1497,
+        "output_tokens": 0,
+        "input_tokens_details": null,
+        "claude_cache_creation_5_m_tokens": 0,
+        "claude_cache_creation_1_h_tokens": 0
+      },
+      "response_format_used": "json_schema",
+      "parse_success": true,
+      "parse_error": "",
+      "empty_output": false,
+      "schema_missing": false,
+      "json_extractor_used": "first_json_object",
+      "elapsed_s": 18.581,
+      "cost_usd": 0.00142825
+    }
+  ],
+  "final_attempt": {
+    "attempt": 1,
+    "model": "claude-opus-4-7",
+    "provider": "Anthropic",
+    "budget_setting": "operational",
+    "task_id": "uncued_023_visible",
+    "prompt_condition": "standard_answer",
+    "content": "{\n  \"claim_verdict\": \"refuted\",\n  \"confidence\": 0.7,\n  \"supporting_evidence\": [\"doc_001\"],\n  \"rejected_evidence\": [\"doc_002\", \"doc_003\"],\n  \"selected_doc_ids\": [\"doc_004\", \"doc_001\"],\n  \"actions\": [\n    {\"action\": \"trace_source\", \"target\": \"doc_001\", \"rationale\": \"The digest claiming 101 cites only doc_003, which contains no count. Tracing reveals the supporting claim is uncorroborated.\"},\n    {\"action\": \"compare_versions\", \"target\": \"doc_004 vs doc_001\", \"rationale\": \"Direct ledger extract gives 76; digest gives 101. Ledger row is more authoritative than a digest with no visible source row.\"}\n  ],\n  \"evidence_environment_assessment\": \"Four documents share site code, workstream, and close date. Only doc_004 (month-close ledger) provides a primary count: 76. Doc_001 asserts 101 but cites doc_003, which has no count—a broken citation chain. Doc_002 and doc_003 contain chronology only. The 101 figure lacks a verifiable primary source, while 76 is anchored in the ledger row.\",\n  \"answer\": \"No. The month-close ledger (doc_004) records 76 approved Kestrel firmware checks for August 2025 at Ridgeway bench. The competing 101 figure appears only in a digest (doc_001) whose citation (doc_003) contains no count, leaving it unsupported. The claim of 101 is refuted by the primary ledger entry.\"\n}",
+    "usage": {
+      "completion_tokens": 527,
+      "prompt_tokens": 1497,
+      "total_tokens": 2024,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": null,
+        "audio_tokens": 0,
+        "reasoning_tokens": 0,
+        "rejected_prediction_tokens": null,
+        "text_tokens": 0,
+        "image_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cached_tokens": 0,
+        "text_tokens": 0,
+        "image_tokens": 0
+      },
+      "usage_semantic": "openai",
+      "usage_source": "anthropic",
+      "input_tokens": 1497,
+      "output_tokens": 0,
+      "input_tokens_details": null,
+      "claude_cache_creation_5_m_tokens": 0,
+      "claude_cache_creation_1_h_tokens": 0
+    },
+    "response_format_used": "json_schema",
+    "parse_success": true,
+    "parse_error": "",
+    "empty_output": false,
+    "schema_missing": false,
+    "json_extractor_used": "first_json_object",
+    "elapsed_s": 18.581,
+    "cost_usd": 0.00142825
+  }
+}

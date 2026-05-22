@@ -1,0 +1,90 @@
+{
+  "attempts": [
+    {
+      "attempt": 1,
+      "model": "claude-opus-4-7",
+      "provider": "Anthropic",
+      "budget_setting": "operational",
+      "task_id": "uncued_006_visible",
+      "prompt_condition": "standard_answer",
+      "content": "{\n  \"claim_verdict\": \"supported\",\n  \"confidence\": 0.7,\n  \"supporting_evidence\": [\"doc_003\"],\n  \"rejected_evidence\": [\"doc_001\", \"doc_002\", \"doc_004\"],\n  \"selected_doc_ids\": [\"doc_003\", \"doc_001\", \"doc_002\"],\n  \"actions\": [\n    {\"action\": \"trace_source\", \"target\": \"doc_003\", \"rationale\": \"Confirm the monthly ledger entry of 184 against a primary source since it is the sole document with the count.\"},\n    {\"action\": \"search_contradiction\", \"target\": \"Atlas valve checks March 2025 count\", \"rationale\": \"Check for any conflicting tally before treating the single ledger figure as definitive.\"}\n  ],\n  \"evidence_environment_assessment\": \"Four documents share site code, workstream, and close date. Only doc_003 (Field Summary Memo) states a numeric tally (184). The other three provide context—timing, routing, staffing—but no counts, so they neither confirm nor refute the figure. No contradicting number appears, but corroboration is single-sourced, which limits confidence.\",\n  \"answer\": \"Yes—based on the provided evidence, doc_003 records 184 completed Atlas valve checks at Northline service bay for March 2025. The other documents are consistent in context but do not independently confirm the count, so the claim is supported but rests on a single ledger entry.\"\n}",
+      "usage": {
+        "completion_tokens": 468,
+        "prompt_tokens": 1500,
+        "total_tokens": 1968,
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": null,
+          "audio_tokens": 0,
+          "reasoning_tokens": 0,
+          "rejected_prediction_tokens": null,
+          "text_tokens": 0,
+          "image_tokens": 0
+        },
+        "prompt_tokens_details": {
+          "audio_tokens": 0,
+          "cached_tokens": 0,
+          "text_tokens": 0,
+          "image_tokens": 0
+        },
+        "usage_semantic": "openai",
+        "usage_source": "anthropic",
+        "input_tokens": 1500,
+        "output_tokens": 0,
+        "input_tokens_details": null,
+        "claude_cache_creation_5_m_tokens": 0,
+        "claude_cache_creation_1_h_tokens": 0
+      },
+      "response_format_used": "json_schema",
+      "parse_success": true,
+      "parse_error": "",
+      "empty_output": false,
+      "schema_missing": false,
+      "json_extractor_used": "first_json_object",
+      "elapsed_s": 10.889,
+      "cost_usd": 0.001311
+    }
+  ],
+  "final_attempt": {
+    "attempt": 1,
+    "model": "claude-opus-4-7",
+    "provider": "Anthropic",
+    "budget_setting": "operational",
+    "task_id": "uncued_006_visible",
+    "prompt_condition": "standard_answer",
+    "content": "{\n  \"claim_verdict\": \"supported\",\n  \"confidence\": 0.7,\n  \"supporting_evidence\": [\"doc_003\"],\n  \"rejected_evidence\": [\"doc_001\", \"doc_002\", \"doc_004\"],\n  \"selected_doc_ids\": [\"doc_003\", \"doc_001\", \"doc_002\"],\n  \"actions\": [\n    {\"action\": \"trace_source\", \"target\": \"doc_003\", \"rationale\": \"Confirm the monthly ledger entry of 184 against a primary source since it is the sole document with the count.\"},\n    {\"action\": \"search_contradiction\", \"target\": \"Atlas valve checks March 2025 count\", \"rationale\": \"Check for any conflicting tally before treating the single ledger figure as definitive.\"}\n  ],\n  \"evidence_environment_assessment\": \"Four documents share site code, workstream, and close date. Only doc_003 (Field Summary Memo) states a numeric tally (184). The other three provide context—timing, routing, staffing—but no counts, so they neither confirm nor refute the figure. No contradicting number appears, but corroboration is single-sourced, which limits confidence.\",\n  \"answer\": \"Yes—based on the provided evidence, doc_003 records 184 completed Atlas valve checks at Northline service bay for March 2025. The other documents are consistent in context but do not independently confirm the count, so the claim is supported but rests on a single ledger entry.\"\n}",
+    "usage": {
+      "completion_tokens": 468,
+      "prompt_tokens": 1500,
+      "total_tokens": 1968,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": null,
+        "audio_tokens": 0,
+        "reasoning_tokens": 0,
+        "rejected_prediction_tokens": null,
+        "text_tokens": 0,
+        "image_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cached_tokens": 0,
+        "text_tokens": 0,
+        "image_tokens": 0
+      },
+      "usage_semantic": "openai",
+      "usage_source": "anthropic",
+      "input_tokens": 1500,
+      "output_tokens": 0,
+      "input_tokens_details": null,
+      "claude_cache_creation_5_m_tokens": 0,
+      "claude_cache_creation_1_h_tokens": 0
+    },
+    "response_format_used": "json_schema",
+    "parse_success": true,
+    "parse_error": "",
+    "empty_output": false,
+    "schema_missing": false,
+    "json_extractor_used": "first_json_object",
+    "elapsed_s": 10.889,
+    "cost_usd": 0.001311
+  }
+}

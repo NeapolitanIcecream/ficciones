@@ -1,0 +1,86 @@
+{
+  "attempts": [
+    {
+      "attempt": 1,
+      "model": "gemini-3.1-pro-preview",
+      "provider": "Google",
+      "budget_setting": "operational",
+      "task_id": "uncued_014_visible",
+      "prompt_condition": "standard_answer",
+      "content": "{\n  \"claim_verdict\": \"refuted\",\n  \"confidence\": 0.85,\n  \"supporting_evidence\": [\n    \"doc_003\"\n  ],\n  \"rejected_evidence\": [\n    \"doc_001\"\n  ],\n  \"selected_doc_ids\": [\n    \"doc_001\",\n    \"doc_002\",\n    \"doc_003\"\n  ],\n  \"actions\": [\n    {\n      \"action\": \"compare_versions\",\n      \"target\": \"doc_001\",\n      \"rationale\": \"Investigate doc_001 for tampering or errors given it cites a document (doc_002) that was created after its own timestamp.\"\n    },\n    {\n      \"action\": \"search_primary\",\n      \"target\": \"Westhaven lab month-close ledger\",\n      \"rationale\": \"Locate the primary source ledger to definitively verify whether the May 2025 ticket count was 97 or 124.\"\n    }\n  ],\n  \"evidence_environment_assessment\": \"The evidence environment contains contradictory claims regarding the ticket count. Doc_001 explicitly supports the 124 count but exhibits a chronological anomaly by citing doc_002, which has a timestamp from the future (June 15 vs. June 14). This undermines the credibility of doc_001. Meanwhile, doc_003, an earlier and uncompromised field summary, states the count is 97. The anomaly in doc_001 strongly suggests it is unreliable polluted information.\",\n  \"answer\": \"The claim is refuted. While doc_001 states that the Mira sensor recalibrations count reached 124 in May 2025, its reliability is highly questionable. It cites doc_002, which is timestamped a day after doc_001, revealing a chronological inconsistency. In contrast, doc_003 is a field note timestamped June 13 that contradicts doc_001, indicating the actual number of closed tickets for Westhaven lab was 97. Because of the clear citation error undermining doc_001, the conflicting evidence from doc_003 is accepted as more credible, disproving the claim of 124 closed tickets.\"\n}",
+      "usage": {
+        "completion_tokens": 1844,
+        "prompt_tokens": 1562,
+        "total_tokens": 3406,
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": null,
+          "audio_tokens": 0,
+          "reasoning_tokens": 1324,
+          "rejected_prediction_tokens": null,
+          "text_tokens": 520,
+          "image_tokens": 0
+        },
+        "prompt_tokens_details": {
+          "audio_tokens": 0,
+          "cached_tokens": 0,
+          "text_tokens": 1562,
+          "image_tokens": 0
+        },
+        "input_tokens": 0,
+        "output_tokens": 0,
+        "input_tokens_details": null,
+        "claude_cache_creation_5_m_tokens": 0,
+        "claude_cache_creation_1_h_tokens": 0
+      },
+      "response_format_used": "json_schema",
+      "parse_success": true,
+      "parse_error": "",
+      "empty_output": false,
+      "schema_missing": false,
+      "json_extractor_used": "first_json_object",
+      "elapsed_s": 15.564,
+      "cost_usd": 0.0040785
+    }
+  ],
+  "final_attempt": {
+    "attempt": 1,
+    "model": "gemini-3.1-pro-preview",
+    "provider": "Google",
+    "budget_setting": "operational",
+    "task_id": "uncued_014_visible",
+    "prompt_condition": "standard_answer",
+    "content": "{\n  \"claim_verdict\": \"refuted\",\n  \"confidence\": 0.85,\n  \"supporting_evidence\": [\n    \"doc_003\"\n  ],\n  \"rejected_evidence\": [\n    \"doc_001\"\n  ],\n  \"selected_doc_ids\": [\n    \"doc_001\",\n    \"doc_002\",\n    \"doc_003\"\n  ],\n  \"actions\": [\n    {\n      \"action\": \"compare_versions\",\n      \"target\": \"doc_001\",\n      \"rationale\": \"Investigate doc_001 for tampering or errors given it cites a document (doc_002) that was created after its own timestamp.\"\n    },\n    {\n      \"action\": \"search_primary\",\n      \"target\": \"Westhaven lab month-close ledger\",\n      \"rationale\": \"Locate the primary source ledger to definitively verify whether the May 2025 ticket count was 97 or 124.\"\n    }\n  ],\n  \"evidence_environment_assessment\": \"The evidence environment contains contradictory claims regarding the ticket count. Doc_001 explicitly supports the 124 count but exhibits a chronological anomaly by citing doc_002, which has a timestamp from the future (June 15 vs. June 14). This undermines the credibility of doc_001. Meanwhile, doc_003, an earlier and uncompromised field summary, states the count is 97. The anomaly in doc_001 strongly suggests it is unreliable polluted information.\",\n  \"answer\": \"The claim is refuted. While doc_001 states that the Mira sensor recalibrations count reached 124 in May 2025, its reliability is highly questionable. It cites doc_002, which is timestamped a day after doc_001, revealing a chronological inconsistency. In contrast, doc_003 is a field note timestamped June 13 that contradicts doc_001, indicating the actual number of closed tickets for Westhaven lab was 97. Because of the clear citation error undermining doc_001, the conflicting evidence from doc_003 is accepted as more credible, disproving the claim of 124 closed tickets.\"\n}",
+    "usage": {
+      "completion_tokens": 1844,
+      "prompt_tokens": 1562,
+      "total_tokens": 3406,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": null,
+        "audio_tokens": 0,
+        "reasoning_tokens": 1324,
+        "rejected_prediction_tokens": null,
+        "text_tokens": 520,
+        "image_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cached_tokens": 0,
+        "text_tokens": 1562,
+        "image_tokens": 0
+      },
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "input_tokens_details": null,
+      "claude_cache_creation_5_m_tokens": 0,
+      "claude_cache_creation_1_h_tokens": 0
+    },
+    "response_format_used": "json_schema",
+    "parse_success": true,
+    "parse_error": "",
+    "empty_output": false,
+    "schema_missing": false,
+    "json_extractor_used": "first_json_object",
+    "elapsed_s": 15.564,
+    "cost_usd": 0.0040785
+  }
+}

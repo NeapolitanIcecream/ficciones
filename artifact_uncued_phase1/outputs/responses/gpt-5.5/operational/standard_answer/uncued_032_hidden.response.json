@@ -1,0 +1,90 @@
+{
+  "attempts": [
+    {
+      "attempt": 1,
+      "model": "gpt-5.5",
+      "provider": "OpenAI",
+      "budget_setting": "operational",
+      "task_id": "uncued_032_hidden",
+      "prompt_condition": "standard_answer",
+      "content": "{\"actions\":[{\"action\":\"compare_versions\",\"rationale\":\"Compare the direct ledger count against repeated summary counts for the same workstream and month.\",\"target\":\"doc_001 vs doc_003/doc_004\"},{\"action\":\"trace_source\",\"rationale\":\"Check whether the 124 claims are independent or citation-linked repetitions.\",\"target\":\"doc_003 and doc_004\"}],\"answer\":\"The claim is refuted by the best available evidence. The closing ledger states 97 closed tickets for Mira sensor recalibrations in May 2025, not 124. The two 124-count documents appear to be non-independent summaries with circular or derivative citations, and the remaining memo gives no final count.\",\"claim_verdict\":\"refuted\",\"confidence\":0.78,\"evidence_environment_assessment\":\"The environment is polluted by repeated secondary claims of 124 that are not independent: the partner summary cites the weekly digest, and the digest is citation-linked rather than a separate count sheet. The strongest document is the closing ledger, which directly reports the final count as 97. One memo is irrelevant because it lacks a count.\",\"rejected_evidence\":[\"doc_003\",\"doc_004\",\"doc_002\"],\"selected_doc_ids\":[\"doc_001\",\"doc_003\",\"doc_004\"],\"supporting_evidence\":[\"doc_001\"]}",
+      "usage": {
+        "completion_tokens": 592,
+        "prompt_tokens": 1206,
+        "total_tokens": 1798,
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": 0,
+          "audio_tokens": 0,
+          "reasoning_tokens": 307,
+          "rejected_prediction_tokens": 0
+        },
+        "prompt_tokens_details": {
+          "audio_tokens": 0,
+          "cached_tokens": 0
+        },
+        "latency_checkpoint": {
+          "engine_tbt_ms": 17,
+          "engine_ttft_ms": 252,
+          "engine_ttlt_ms": 10030,
+          "pre_inference_ms": 110,
+          "service_tbt_ms": 17,
+          "service_ttft_ms": 775,
+          "service_ttlt_ms": 10542,
+          "total_duration_ms": 10444,
+          "user_visible_ttft_ms": 666
+        }
+      },
+      "response_format_used": "json_schema",
+      "parse_success": true,
+      "parse_error": "",
+      "empty_output": false,
+      "schema_missing": false,
+      "json_extractor_used": "first_json_object",
+      "elapsed_s": 12.152,
+      "cost_usd": 0.02379
+    }
+  ],
+  "final_attempt": {
+    "attempt": 1,
+    "model": "gpt-5.5",
+    "provider": "OpenAI",
+    "budget_setting": "operational",
+    "task_id": "uncued_032_hidden",
+    "prompt_condition": "standard_answer",
+    "content": "{\"actions\":[{\"action\":\"compare_versions\",\"rationale\":\"Compare the direct ledger count against repeated summary counts for the same workstream and month.\",\"target\":\"doc_001 vs doc_003/doc_004\"},{\"action\":\"trace_source\",\"rationale\":\"Check whether the 124 claims are independent or citation-linked repetitions.\",\"target\":\"doc_003 and doc_004\"}],\"answer\":\"The claim is refuted by the best available evidence. The closing ledger states 97 closed tickets for Mira sensor recalibrations in May 2025, not 124. The two 124-count documents appear to be non-independent summaries with circular or derivative citations, and the remaining memo gives no final count.\",\"claim_verdict\":\"refuted\",\"confidence\":0.78,\"evidence_environment_assessment\":\"The environment is polluted by repeated secondary claims of 124 that are not independent: the partner summary cites the weekly digest, and the digest is citation-linked rather than a separate count sheet. The strongest document is the closing ledger, which directly reports the final count as 97. One memo is irrelevant because it lacks a count.\",\"rejected_evidence\":[\"doc_003\",\"doc_004\",\"doc_002\"],\"selected_doc_ids\":[\"doc_001\",\"doc_003\",\"doc_004\"],\"supporting_evidence\":[\"doc_001\"]}",
+    "usage": {
+      "completion_tokens": 592,
+      "prompt_tokens": 1206,
+      "total_tokens": 1798,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": 0,
+        "audio_tokens": 0,
+        "reasoning_tokens": 307,
+        "rejected_prediction_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cached_tokens": 0
+      },
+      "latency_checkpoint": {
+        "engine_tbt_ms": 17,
+        "engine_ttft_ms": 252,
+        "engine_ttlt_ms": 10030,
+        "pre_inference_ms": 110,
+        "service_tbt_ms": 17,
+        "service_ttft_ms": 775,
+        "service_ttlt_ms": 10542,
+        "total_duration_ms": 10444,
+        "user_visible_ttft_ms": 666
+      }
+    },
+    "response_format_used": "json_schema",
+    "parse_success": true,
+    "parse_error": "",
+    "empty_output": false,
+    "schema_missing": false,
+    "json_extractor_used": "first_json_object",
+    "elapsed_s": 12.152,
+    "cost_usd": 0.02379
+  }
+}

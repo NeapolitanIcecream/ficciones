@@ -1,0 +1,90 @@
+{
+  "attempts": [
+    {
+      "attempt": 1,
+      "model": "claude-opus-4-7",
+      "provider": "Anthropic",
+      "budget_setting": "operational",
+      "task_id": "uncued_021_hidden",
+      "prompt_condition": "standard_answer",
+      "content": "{\n  \"claim_verdict\": \"refuted\",\n  \"confidence\": 0.78,\n  \"supporting_evidence\": [],\n  \"rejected_evidence\": [\"doc_001\"],\n  \"selected_doc_ids\": [\"doc_003\", \"doc_001\", \"doc_004\"],\n  \"actions\": [\n    {\"action\": \"compare_versions\", \"target\": \"doc_003 vs doc_001\", \"rationale\": \"The ledger (doc_003) is the primary month-close record showing 42, while the operations digest (doc_001) asserts 57 without a visible row.\"},\n    {\"action\": \"trace_source\", \"target\": \"doc_001\", \"rationale\": \"Doc_001 cites doc_004, but doc_004 contains only chronology, not a count, undermining the 57 claim.\"}\n  ],\n  \"evidence_environment_assessment\": \"The packet contains one authoritative ledger (doc_003) giving 42 accepted Vega rail inspections for June 2025, and a digest (doc_001) asserting 57 but citing only doc_004, which provides chronology not totals. Doc_002 is a scheduling memo with no total. Labels overlap across documents, so judgment must rest on the values present. The ledger outranks the digest as a primary source.\",\n  \"answer\": \"No. The South Gate month-close ledger (doc_003) records 42 accepted Vega rail inspections for June 2025, contradicting the 57 figure. The only document asserting 57 (doc_001) is a digest whose sole citation (doc_004) provides assembly chronology, not a count. The claim is refuted by the primary ledger.\"\n}",
+      "usage": {
+        "completion_tokens": 525,
+        "prompt_tokens": 1463,
+        "total_tokens": 1988,
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": null,
+          "audio_tokens": 0,
+          "reasoning_tokens": 0,
+          "rejected_prediction_tokens": null,
+          "text_tokens": 0,
+          "image_tokens": 0
+        },
+        "prompt_tokens_details": {
+          "audio_tokens": 0,
+          "cached_tokens": 0,
+          "text_tokens": 0,
+          "image_tokens": 0
+        },
+        "usage_semantic": "openai",
+        "usage_source": "anthropic",
+        "input_tokens": 1463,
+        "output_tokens": 0,
+        "input_tokens_details": null,
+        "claude_cache_creation_5_m_tokens": 0,
+        "claude_cache_creation_1_h_tokens": 0
+      },
+      "response_format_used": "json_schema",
+      "parse_success": true,
+      "parse_error": "",
+      "empty_output": false,
+      "schema_missing": false,
+      "json_extractor_used": "first_json_object",
+      "elapsed_s": 14.263,
+      "cost_usd": 0.00141575
+    }
+  ],
+  "final_attempt": {
+    "attempt": 1,
+    "model": "claude-opus-4-7",
+    "provider": "Anthropic",
+    "budget_setting": "operational",
+    "task_id": "uncued_021_hidden",
+    "prompt_condition": "standard_answer",
+    "content": "{\n  \"claim_verdict\": \"refuted\",\n  \"confidence\": 0.78,\n  \"supporting_evidence\": [],\n  \"rejected_evidence\": [\"doc_001\"],\n  \"selected_doc_ids\": [\"doc_003\", \"doc_001\", \"doc_004\"],\n  \"actions\": [\n    {\"action\": \"compare_versions\", \"target\": \"doc_003 vs doc_001\", \"rationale\": \"The ledger (doc_003) is the primary month-close record showing 42, while the operations digest (doc_001) asserts 57 without a visible row.\"},\n    {\"action\": \"trace_source\", \"target\": \"doc_001\", \"rationale\": \"Doc_001 cites doc_004, but doc_004 contains only chronology, not a count, undermining the 57 claim.\"}\n  ],\n  \"evidence_environment_assessment\": \"The packet contains one authoritative ledger (doc_003) giving 42 accepted Vega rail inspections for June 2025, and a digest (doc_001) asserting 57 but citing only doc_004, which provides chronology not totals. Doc_002 is a scheduling memo with no total. Labels overlap across documents, so judgment must rest on the values present. The ledger outranks the digest as a primary source.\",\n  \"answer\": \"No. The South Gate month-close ledger (doc_003) records 42 accepted Vega rail inspections for June 2025, contradicting the 57 figure. The only document asserting 57 (doc_001) is a digest whose sole citation (doc_004) provides assembly chronology, not a count. The claim is refuted by the primary ledger.\"\n}",
+    "usage": {
+      "completion_tokens": 525,
+      "prompt_tokens": 1463,
+      "total_tokens": 1988,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": null,
+        "audio_tokens": 0,
+        "reasoning_tokens": 0,
+        "rejected_prediction_tokens": null,
+        "text_tokens": 0,
+        "image_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cached_tokens": 0,
+        "text_tokens": 0,
+        "image_tokens": 0
+      },
+      "usage_semantic": "openai",
+      "usage_source": "anthropic",
+      "input_tokens": 1463,
+      "output_tokens": 0,
+      "input_tokens_details": null,
+      "claude_cache_creation_5_m_tokens": 0,
+      "claude_cache_creation_1_h_tokens": 0
+    },
+    "response_format_used": "json_schema",
+    "parse_success": true,
+    "parse_error": "",
+    "empty_output": false,
+    "schema_missing": false,
+    "json_extractor_used": "first_json_object",
+    "elapsed_s": 14.263,
+    "cost_usd": 0.00141575
+  }
+}

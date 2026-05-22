@@ -1,0 +1,72 @@
+{
+  "attempts": [
+    {
+      "attempt": 1,
+      "model": "deepseek-v4-pro",
+      "provider": "DeepSeek",
+      "budget_setting": "operational",
+      "task_id": "uncued_034_hidden",
+      "prompt_condition": "standard_answer",
+      "content": "{\n  \"claim_verdict\": \"insufficient\",\n  \"confidence\": 0.6,\n  \"supporting_evidence\": [\"doc_003\", \"doc_004\"],\n  \"rejected_evidence\": [\"doc_001\"],\n  \"selected_doc_ids\": [\"doc_001\", \"doc_003\", \"doc_004\"],\n  \"actions\": [\n    {\n      \"action\": \"trace_source\",\n      \"target\": \"doc_003\",\n      \"rationale\": \"Doc_003 cites doc_004, which cites an earlier bulletin. Tracing to the original source could resolve the conflict.\"\n    },\n    {\n      \"action\": \"search_contradiction\",\n      \"target\": \"refurbishment records\",\n      \"rationale\": \"Search for other primary records like work orders or additional ledgers to see if 118 or 139 is the correct figure.\"\n    }\n  ],\n  \"evidence_environment_assessment\": \"Two documents (partner summary and weekly digest) report 139 completed refurbishments, but a closing ledger for Harbor Annex shows 118. All share the same site code and month, indicating they refer to the same workstream. The ledger is a primary source, while the 139 figures appear derivative and traceable to an earlier bulletin. This contradiction undermines reliability without further verification.\",\n  \"answer\": \"The evidence is conflicting: two sources report 139, but a primary ledger shows 118. Without additional verification, it is insufficient to confirm the claim.\"\n}",
+      "usage": {
+        "completion_tokens": 2023,
+        "prompt_tokens": 1059,
+        "total_tokens": 3082,
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": null,
+          "audio_tokens": null,
+          "reasoning_tokens": 1714,
+          "rejected_prediction_tokens": null
+        },
+        "prompt_tokens_details": {
+          "audio_tokens": null,
+          "cached_tokens": 0
+        },
+        "prompt_cache_hit_tokens": 0,
+        "prompt_cache_miss_tokens": 1059
+      },
+      "response_format_used": "json_object",
+      "parse_success": true,
+      "parse_error": "",
+      "empty_output": false,
+      "schema_missing": false,
+      "json_extractor_used": "first_json_object",
+      "elapsed_s": 50.753,
+      "cost_usd": 0.00431075
+    }
+  ],
+  "final_attempt": {
+    "attempt": 1,
+    "model": "deepseek-v4-pro",
+    "provider": "DeepSeek",
+    "budget_setting": "operational",
+    "task_id": "uncued_034_hidden",
+    "prompt_condition": "standard_answer",
+    "content": "{\n  \"claim_verdict\": \"insufficient\",\n  \"confidence\": 0.6,\n  \"supporting_evidence\": [\"doc_003\", \"doc_004\"],\n  \"rejected_evidence\": [\"doc_001\"],\n  \"selected_doc_ids\": [\"doc_001\", \"doc_003\", \"doc_004\"],\n  \"actions\": [\n    {\n      \"action\": \"trace_source\",\n      \"target\": \"doc_003\",\n      \"rationale\": \"Doc_003 cites doc_004, which cites an earlier bulletin. Tracing to the original source could resolve the conflict.\"\n    },\n    {\n      \"action\": \"search_contradiction\",\n      \"target\": \"refurbishment records\",\n      \"rationale\": \"Search for other primary records like work orders or additional ledgers to see if 118 or 139 is the correct figure.\"\n    }\n  ],\n  \"evidence_environment_assessment\": \"Two documents (partner summary and weekly digest) report 139 completed refurbishments, but a closing ledger for Harbor Annex shows 118. All share the same site code and month, indicating they refer to the same workstream. The ledger is a primary source, while the 139 figures appear derivative and traceable to an earlier bulletin. This contradiction undermines reliability without further verification.\",\n  \"answer\": \"The evidence is conflicting: two sources report 139, but a primary ledger shows 118. Without additional verification, it is insufficient to confirm the claim.\"\n}",
+    "usage": {
+      "completion_tokens": 2023,
+      "prompt_tokens": 1059,
+      "total_tokens": 3082,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": null,
+        "audio_tokens": null,
+        "reasoning_tokens": 1714,
+        "rejected_prediction_tokens": null
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": null,
+        "cached_tokens": 0
+      },
+      "prompt_cache_hit_tokens": 0,
+      "prompt_cache_miss_tokens": 1059
+    },
+    "response_format_used": "json_object",
+    "parse_success": true,
+    "parse_error": "",
+    "empty_output": false,
+    "schema_missing": false,
+    "json_extractor_used": "first_json_object",
+    "elapsed_s": 50.753,
+    "cost_usd": 0.00431075
+  }
+}

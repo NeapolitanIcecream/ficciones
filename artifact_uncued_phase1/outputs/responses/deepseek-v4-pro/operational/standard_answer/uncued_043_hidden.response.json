@@ -1,0 +1,72 @@
+{
+  "attempts": [
+    {
+      "attempt": 1,
+      "model": "deepseek-v4-pro",
+      "provider": "DeepSeek",
+      "budget_setting": "operational",
+      "task_id": "uncued_043_hidden",
+      "prompt_condition": "standard_answer",
+      "content": "{\n  \"claim_verdict\": \"supported\",\n  \"confidence\": 0.9,\n  \"supporting_evidence\": [\"doc_001\"],\n  \"rejected_evidence\": [\"doc_004\"],\n  \"selected_doc_ids\": [\"doc_001\"],\n  \"actions\": [\n    {\n      \"action\": \"open\",\n      \"target\": \"doc_001\",\n      \"rationale\": \"Open the closeout ledger to verify the final logged number of swaps.\"\n    },\n    {\n      \"action\": \"compare_versions\",\n      \"target\": \"doc_001,doc_004\",\n      \"rationale\": \"Compare the final ledger (63) against the running estimate (88) to resolve the contradiction.\"\n    }\n  ],\n  \"evidence_environment_assessment\": \"Four documents: a planning memo with no number (doc_003), a running estimate of 88 (doc_004), a handoff note without a count (doc_002), and a closeout ledger listing 63 verified swaps (doc_001). The ledger is the authoritative final record, directly supporting the claim. The estimate is preliminary and not logged, so it carries less weight. The discrepancy is resolved by the finality of the ledger.\",\n  \"answer\": \"The claim is supported. The closeout ledger (doc_001) explicitly records 63 verified swaps for Orion battery swaps in April 2025, confirming the final logged count. Although a prior estimate (doc_004) suggested 88, it was a non-final running total and does not override the official ledger.\"\n}",
+      "usage": {
+        "completion_tokens": 1275,
+        "prompt_tokens": 1035,
+        "total_tokens": 2310,
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": null,
+          "audio_tokens": null,
+          "reasoning_tokens": 950,
+          "rejected_prediction_tokens": null
+        },
+        "prompt_tokens_details": {
+          "audio_tokens": null,
+          "cached_tokens": 0
+        },
+        "prompt_cache_hit_tokens": 0,
+        "prompt_cache_miss_tokens": 1035
+      },
+      "response_format_used": "json_object",
+      "parse_success": true,
+      "parse_error": "",
+      "empty_output": false,
+      "schema_missing": false,
+      "json_extractor_used": "first_json_object",
+      "elapsed_s": 29.316,
+      "cost_usd": 0.00280875
+    }
+  ],
+  "final_attempt": {
+    "attempt": 1,
+    "model": "deepseek-v4-pro",
+    "provider": "DeepSeek",
+    "budget_setting": "operational",
+    "task_id": "uncued_043_hidden",
+    "prompt_condition": "standard_answer",
+    "content": "{\n  \"claim_verdict\": \"supported\",\n  \"confidence\": 0.9,\n  \"supporting_evidence\": [\"doc_001\"],\n  \"rejected_evidence\": [\"doc_004\"],\n  \"selected_doc_ids\": [\"doc_001\"],\n  \"actions\": [\n    {\n      \"action\": \"open\",\n      \"target\": \"doc_001\",\n      \"rationale\": \"Open the closeout ledger to verify the final logged number of swaps.\"\n    },\n    {\n      \"action\": \"compare_versions\",\n      \"target\": \"doc_001,doc_004\",\n      \"rationale\": \"Compare the final ledger (63) against the running estimate (88) to resolve the contradiction.\"\n    }\n  ],\n  \"evidence_environment_assessment\": \"Four documents: a planning memo with no number (doc_003), a running estimate of 88 (doc_004), a handoff note without a count (doc_002), and a closeout ledger listing 63 verified swaps (doc_001). The ledger is the authoritative final record, directly supporting the claim. The estimate is preliminary and not logged, so it carries less weight. The discrepancy is resolved by the finality of the ledger.\",\n  \"answer\": \"The claim is supported. The closeout ledger (doc_001) explicitly records 63 verified swaps for Orion battery swaps in April 2025, confirming the final logged count. Although a prior estimate (doc_004) suggested 88, it was a non-final running total and does not override the official ledger.\"\n}",
+    "usage": {
+      "completion_tokens": 1275,
+      "prompt_tokens": 1035,
+      "total_tokens": 2310,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": null,
+        "audio_tokens": null,
+        "reasoning_tokens": 950,
+        "rejected_prediction_tokens": null
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": null,
+        "cached_tokens": 0
+      },
+      "prompt_cache_hit_tokens": 0,
+      "prompt_cache_miss_tokens": 1035
+    },
+    "response_format_used": "json_object",
+    "parse_success": true,
+    "parse_error": "",
+    "empty_output": false,
+    "schema_missing": false,
+    "json_extractor_used": "first_json_object",
+    "elapsed_s": 29.316,
+    "cost_usd": 0.00280875
+  }
+}

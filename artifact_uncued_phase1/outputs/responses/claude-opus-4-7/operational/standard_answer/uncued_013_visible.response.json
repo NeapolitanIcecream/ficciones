@@ -1,0 +1,90 @@
+{
+  "attempts": [
+    {
+      "attempt": 1,
+      "model": "claude-opus-4-7",
+      "provider": "Anthropic",
+      "budget_setting": "operational",
+      "task_id": "uncued_013_visible",
+      "prompt_condition": "standard_answer",
+      "content": "{\n  \"claim_verdict\": \"refuted\",\n  \"confidence\": 0.7,\n  \"supporting_evidence\": [\"doc_003\"],\n  \"rejected_evidence\": [\"doc_001\", \"doc_004\"],\n  \"selected_doc_ids\": [\"doc_002\", \"doc_003\", \"doc_004\"],\n  \"actions\": [\n    {\"action\": \"trace_source\", \"target\": \"doc_003\", \"rationale\": \"The digest cites doc_004, which is only a routing note without a count. Tracing reveals the 88 figure lacks primary support.\"},\n    {\"action\": \"compare_versions\", \"target\": \"doc_002\", \"rationale\": \"The month-close ledger gives a concrete 63 count, conflicting with the digest's 88.\"}\n  ],\n  \"evidence_environment_assessment\": \"The packet contains one ledger-level figure (doc_002: 63), one digest asserting 88 (doc_003) that cites only a routing memo without a count (doc_004), and a scheduling note (doc_001) with no total. The primary-source ledger conflicts with the digest, and the digest's citation chain does not reach a verifying row.\",\n  \"answer\": \"No. The month-close ledger (doc_002) records 63 verified Orion battery swaps for April 2025, contradicting the 88 figure. The digest asserting 88 (doc_003) cites only a routing memo (doc_004) that contains no count, so its claim is unsupported by primary evidence.\"\n}",
+      "usage": {
+        "completion_tokens": 477,
+        "prompt_tokens": 1487,
+        "total_tokens": 1964,
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": null,
+          "audio_tokens": 0,
+          "reasoning_tokens": 0,
+          "rejected_prediction_tokens": null,
+          "text_tokens": 0,
+          "image_tokens": 0
+        },
+        "prompt_tokens_details": {
+          "audio_tokens": 0,
+          "cached_tokens": 0,
+          "text_tokens": 0,
+          "image_tokens": 0
+        },
+        "usage_semantic": "openai",
+        "usage_source": "anthropic",
+        "input_tokens": 1487,
+        "output_tokens": 0,
+        "input_tokens_details": null,
+        "claude_cache_creation_5_m_tokens": 0,
+        "claude_cache_creation_1_h_tokens": 0
+      },
+      "response_format_used": "json_schema",
+      "parse_success": true,
+      "parse_error": "",
+      "empty_output": false,
+      "schema_missing": false,
+      "json_extractor_used": "first_json_object",
+      "elapsed_s": 11.739,
+      "cost_usd": 0.00132575
+    }
+  ],
+  "final_attempt": {
+    "attempt": 1,
+    "model": "claude-opus-4-7",
+    "provider": "Anthropic",
+    "budget_setting": "operational",
+    "task_id": "uncued_013_visible",
+    "prompt_condition": "standard_answer",
+    "content": "{\n  \"claim_verdict\": \"refuted\",\n  \"confidence\": 0.7,\n  \"supporting_evidence\": [\"doc_003\"],\n  \"rejected_evidence\": [\"doc_001\", \"doc_004\"],\n  \"selected_doc_ids\": [\"doc_002\", \"doc_003\", \"doc_004\"],\n  \"actions\": [\n    {\"action\": \"trace_source\", \"target\": \"doc_003\", \"rationale\": \"The digest cites doc_004, which is only a routing note without a count. Tracing reveals the 88 figure lacks primary support.\"},\n    {\"action\": \"compare_versions\", \"target\": \"doc_002\", \"rationale\": \"The month-close ledger gives a concrete 63 count, conflicting with the digest's 88.\"}\n  ],\n  \"evidence_environment_assessment\": \"The packet contains one ledger-level figure (doc_002: 63), one digest asserting 88 (doc_003) that cites only a routing memo without a count (doc_004), and a scheduling note (doc_001) with no total. The primary-source ledger conflicts with the digest, and the digest's citation chain does not reach a verifying row.\",\n  \"answer\": \"No. The month-close ledger (doc_002) records 63 verified Orion battery swaps for April 2025, contradicting the 88 figure. The digest asserting 88 (doc_003) cites only a routing memo (doc_004) that contains no count, so its claim is unsupported by primary evidence.\"\n}",
+    "usage": {
+      "completion_tokens": 477,
+      "prompt_tokens": 1487,
+      "total_tokens": 1964,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": null,
+        "audio_tokens": 0,
+        "reasoning_tokens": 0,
+        "rejected_prediction_tokens": null,
+        "text_tokens": 0,
+        "image_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cached_tokens": 0,
+        "text_tokens": 0,
+        "image_tokens": 0
+      },
+      "usage_semantic": "openai",
+      "usage_source": "anthropic",
+      "input_tokens": 1487,
+      "output_tokens": 0,
+      "input_tokens_details": null,
+      "claude_cache_creation_5_m_tokens": 0,
+      "claude_cache_creation_1_h_tokens": 0
+    },
+    "response_format_used": "json_schema",
+    "parse_success": true,
+    "parse_error": "",
+    "empty_output": false,
+    "schema_missing": false,
+    "json_extractor_used": "first_json_object",
+    "elapsed_s": 11.739,
+    "cost_usd": 0.00132575
+  }
+}

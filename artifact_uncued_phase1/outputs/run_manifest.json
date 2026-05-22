@@ -1,0 +1,101 @@
+{
+  "name": "EHA-Uncued Phase 12 Pilot Run",
+  "task_count": 120,
+  "model_count": 4,
+  "prompt_conditions": [
+    "standard_answer"
+  ],
+  "job_count": 480,
+  "parallel_strategy": {
+    "parallel_model_streams": 4,
+    "per_model_concurrency": 1,
+    "reason": "Run one sequential stream per model to preserve call success while parallelizing across providers."
+  },
+  "max_attempts": 2,
+  "model_visible_doc_id_policy": "opaque_per_task",
+  "visible_prompt_sanitization": [
+    "semantic doc_id tokens are replaced with opaque per-task IDs",
+    "visible_citations are remapped into the same opaque namespace",
+    "audit-only source IDs in title/body text are scrubbed before model calls"
+  ],
+  "models": [
+    {
+      "provider": "OpenAI",
+      "model": "gpt-5.5",
+      "budget_setting": "operational",
+      "temperature": null,
+      "max_output_tokens": 4096,
+      "response_format": "json_schema",
+      "timeout_s": 240.0,
+      "cost_estimate_output_tokens": 4096,
+      "message_role_policy": "developer_system_merged_into_user",
+      "json_extractor": "first_json_object"
+    },
+    {
+      "provider": "Anthropic",
+      "model": "claude-opus-4-7",
+      "budget_setting": "operational",
+      "temperature": null,
+      "max_output_tokens": 4096,
+      "response_format": "json_schema",
+      "timeout_s": 240.0,
+      "cost_estimate_output_tokens": 4096,
+      "message_role_policy": "developer_system_merged_into_user",
+      "json_extractor": "first_json_object"
+    },
+    {
+      "provider": "Google",
+      "model": "gemini-3.1-pro-preview",
+      "budget_setting": "operational",
+      "temperature": null,
+      "max_output_tokens": 4096,
+      "response_format": "json_schema",
+      "timeout_s": 240.0,
+      "cost_estimate_output_tokens": 4096,
+      "message_role_policy": "developer_system_merged_into_user",
+      "json_extractor": "first_json_object"
+    },
+    {
+      "provider": "DeepSeek",
+      "model": "deepseek-v4-pro",
+      "budget_setting": "operational",
+      "temperature": null,
+      "max_output_tokens": 4096,
+      "response_format": "json_object",
+      "timeout_s": 240.0,
+      "cost_estimate_output_tokens": 4096,
+      "message_role_policy": "developer_system_merged_into_user",
+      "json_extractor": "first_json_object"
+    }
+  ],
+  "family_counts": {
+    "packet_judgment": 48,
+    "evidence_selection": 48,
+    "active_verification": 24
+  },
+  "condition_counts": {
+    "clean": 24,
+    "conflicting_evidence": 24,
+    "false_consensus": 24,
+    "buried_primary": 24,
+    "generated_lore": 24
+  },
+  "outputs": [
+    "summary.md",
+    "frontier_main_metrics_by_model.csv",
+    "frontier_main_metrics_by_family.csv",
+    "frontier_main_metrics_by_condition.csv",
+    "frontier_main_metrics_by_prompt.csv",
+    "operational_vs_conditional_escape.csv",
+    "failure_cases_frontier.jsonl",
+    "cost_report.json"
+  ],
+  "dataset_dir": "data/uncued-pilot-v1",
+  "views": [
+    "neutral_metadata_visible",
+    "neutral_metadata_hidden"
+  ],
+  "schema_variant": "clarified",
+  "prompt_condition": "standard_answer",
+  "resume_completed_count": 0
+}

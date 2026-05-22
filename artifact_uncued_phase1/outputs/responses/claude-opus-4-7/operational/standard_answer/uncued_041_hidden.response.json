@@ -1,0 +1,90 @@
+{
+  "attempts": [
+    {
+      "attempt": 1,
+      "model": "claude-opus-4-7",
+      "provider": "Anthropic",
+      "budget_setting": "operational",
+      "task_id": "uncued_041_hidden",
+      "prompt_condition": "standard_answer",
+      "content": "{\n  \"claim_verdict\": \"supported\",\n  \"confidence\": 0.78,\n  \"supporting_evidence\": [\"doc_004\"],\n  \"rejected_evidence\": [\"doc_003\", \"doc_001\", \"doc_002\"],\n  \"selected_doc_ids\": [\"doc_004\", \"doc_003\", \"doc_001\"],\n  \"actions\": [\n    {\"action\": \"trace_source\", \"target\": \"doc_004\", \"rationale\": \"Confirm the closeout ledger is the authoritative final record for August 2025 close.\"},\n    {\"action\": \"compare_versions\", \"target\": \"doc_003\", \"rationale\": \"Reconcile the 101 running estimate against the 76 final ledger figure.\"}\n  ],\n  \"evidence_environment_assessment\": \"Four documents share labels but differ in role and timing. doc_004 is a closeout ledger giving a final figure (76). doc_003 is a running estimate (101) citing a pre-close planning memo (doc_001), so it is preliminary. doc_002 is a handoff note without a count. doc_001 is pre-close planning. The ledger outranks estimates and planning notes for a closing count, though all timestamps are June 2025 despite referencing August 2025 close, a minor anomaly.\",\n  \"answer\": \"Yes. The closeout ledger (doc_004) records 76 approved checks for Kestrel firmware checks in August 2025. The competing figure of 101 (doc_003) is explicitly a running estimate tied to pre-close planning (doc_001) and is superseded by the ledger. doc_002 contains no count. The claim is supported, with mild caution due to timestamp inconsistencies in the packet.\"\n}",
+      "usage": {
+        "completion_tokens": 548,
+        "prompt_tokens": 1456,
+        "total_tokens": 2004,
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": null,
+          "audio_tokens": 0,
+          "reasoning_tokens": 0,
+          "rejected_prediction_tokens": null,
+          "text_tokens": 0,
+          "image_tokens": 0
+        },
+        "prompt_tokens_details": {
+          "audio_tokens": 0,
+          "cached_tokens": 0,
+          "text_tokens": 0,
+          "image_tokens": 0
+        },
+        "usage_semantic": "openai",
+        "usage_source": "anthropic",
+        "input_tokens": 1456,
+        "output_tokens": 0,
+        "input_tokens_details": null,
+        "claude_cache_creation_5_m_tokens": 0,
+        "claude_cache_creation_1_h_tokens": 0
+      },
+      "response_format_used": "json_schema",
+      "parse_success": true,
+      "parse_error": "",
+      "empty_output": false,
+      "schema_missing": false,
+      "json_extractor_used": "first_json_object",
+      "elapsed_s": 7.549,
+      "cost_usd": 0.00146
+    }
+  ],
+  "final_attempt": {
+    "attempt": 1,
+    "model": "claude-opus-4-7",
+    "provider": "Anthropic",
+    "budget_setting": "operational",
+    "task_id": "uncued_041_hidden",
+    "prompt_condition": "standard_answer",
+    "content": "{\n  \"claim_verdict\": \"supported\",\n  \"confidence\": 0.78,\n  \"supporting_evidence\": [\"doc_004\"],\n  \"rejected_evidence\": [\"doc_003\", \"doc_001\", \"doc_002\"],\n  \"selected_doc_ids\": [\"doc_004\", \"doc_003\", \"doc_001\"],\n  \"actions\": [\n    {\"action\": \"trace_source\", \"target\": \"doc_004\", \"rationale\": \"Confirm the closeout ledger is the authoritative final record for August 2025 close.\"},\n    {\"action\": \"compare_versions\", \"target\": \"doc_003\", \"rationale\": \"Reconcile the 101 running estimate against the 76 final ledger figure.\"}\n  ],\n  \"evidence_environment_assessment\": \"Four documents share labels but differ in role and timing. doc_004 is a closeout ledger giving a final figure (76). doc_003 is a running estimate (101) citing a pre-close planning memo (doc_001), so it is preliminary. doc_002 is a handoff note without a count. doc_001 is pre-close planning. The ledger outranks estimates and planning notes for a closing count, though all timestamps are June 2025 despite referencing August 2025 close, a minor anomaly.\",\n  \"answer\": \"Yes. The closeout ledger (doc_004) records 76 approved checks for Kestrel firmware checks in August 2025. The competing figure of 101 (doc_003) is explicitly a running estimate tied to pre-close planning (doc_001) and is superseded by the ledger. doc_002 contains no count. The claim is supported, with mild caution due to timestamp inconsistencies in the packet.\"\n}",
+    "usage": {
+      "completion_tokens": 548,
+      "prompt_tokens": 1456,
+      "total_tokens": 2004,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": null,
+        "audio_tokens": 0,
+        "reasoning_tokens": 0,
+        "rejected_prediction_tokens": null,
+        "text_tokens": 0,
+        "image_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cached_tokens": 0,
+        "text_tokens": 0,
+        "image_tokens": 0
+      },
+      "usage_semantic": "openai",
+      "usage_source": "anthropic",
+      "input_tokens": 1456,
+      "output_tokens": 0,
+      "input_tokens_details": null,
+      "claude_cache_creation_5_m_tokens": 0,
+      "claude_cache_creation_1_h_tokens": 0
+    },
+    "response_format_used": "json_schema",
+    "parse_success": true,
+    "parse_error": "",
+    "empty_output": false,
+    "schema_missing": false,
+    "json_extractor_used": "first_json_object",
+    "elapsed_s": 7.549,
+    "cost_usd": 0.00146
+  }
+}

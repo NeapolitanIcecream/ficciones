@@ -1,0 +1,90 @@
+{
+  "attempts": [
+    {
+      "attempt": 1,
+      "model": "claude-opus-4-7",
+      "provider": "Anthropic",
+      "budget_setting": "operational",
+      "task_id": "uncued_008_hidden",
+      "prompt_condition": "standard_answer",
+      "content": "{\n  \"claim_verdict\": \"supported\",\n  \"confidence\": 0.6,\n  \"supporting_evidence\": [\"doc_002\"],\n  \"rejected_evidence\": [\"doc_004\", \"doc_001\", \"doc_003\"],\n  \"selected_doc_ids\": [\"doc_002\", \"doc_004\", \"doc_001\"],\n  \"actions\": [\n    {\"action\": \"trace_source\", \"target\": \"doc_002\", \"rationale\": \"Verify the ledger entry against the original work order system since the note is dated months after May 2025 close.\"},\n    {\"action\": \"search_primary\", \"target\": \"Westhaven lab May 2025 ticket close report\", \"rationale\": \"Confirm the 97-ticket figure with a primary system-of-record export rather than a derived ledger note.\"}\n  ],\n  \"evidence_environment_assessment\": \"Only doc_002 states a count (97 closed tickets) for Mira sensor recalibrations in May 2025 at Westhaven. The other three documents corroborate the site, workstream, and timing but provide no tally. No contradicting figure appears. All documents are dated September 2025, after the month closed, and share boilerplate language, which slightly weakens independence. No primary system export or audit trail is present, so the count rests on a single ledger note.\",\n  \"answer\": \"Based on the provided evidence, yes: doc_002 records 97 closed tickets for Mira sensor recalibrations at Westhaven lab in May 2025. The other documents are consistent with the site, workstream, and timing but do not give counts. Confidence is moderate because the figure rests on a single ledger entry without a corroborating primary source.\"\n}",
+      "usage": {
+        "completion_tokens": 535,
+        "prompt_tokens": 1492,
+        "total_tokens": 2027,
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": null,
+          "audio_tokens": 0,
+          "reasoning_tokens": 0,
+          "rejected_prediction_tokens": null,
+          "text_tokens": 0,
+          "image_tokens": 0
+        },
+        "prompt_tokens_details": {
+          "audio_tokens": 0,
+          "cached_tokens": 0,
+          "text_tokens": 0,
+          "image_tokens": 0
+        },
+        "usage_semantic": "openai",
+        "usage_source": "anthropic",
+        "input_tokens": 1492,
+        "output_tokens": 0,
+        "input_tokens_details": null,
+        "claude_cache_creation_5_m_tokens": 0,
+        "claude_cache_creation_1_h_tokens": 0
+      },
+      "response_format_used": "json_schema",
+      "parse_success": true,
+      "parse_error": "",
+      "empty_output": false,
+      "schema_missing": false,
+      "json_extractor_used": "first_json_object",
+      "elapsed_s": 8.018,
+      "cost_usd": 0.001443
+    }
+  ],
+  "final_attempt": {
+    "attempt": 1,
+    "model": "claude-opus-4-7",
+    "provider": "Anthropic",
+    "budget_setting": "operational",
+    "task_id": "uncued_008_hidden",
+    "prompt_condition": "standard_answer",
+    "content": "{\n  \"claim_verdict\": \"supported\",\n  \"confidence\": 0.6,\n  \"supporting_evidence\": [\"doc_002\"],\n  \"rejected_evidence\": [\"doc_004\", \"doc_001\", \"doc_003\"],\n  \"selected_doc_ids\": [\"doc_002\", \"doc_004\", \"doc_001\"],\n  \"actions\": [\n    {\"action\": \"trace_source\", \"target\": \"doc_002\", \"rationale\": \"Verify the ledger entry against the original work order system since the note is dated months after May 2025 close.\"},\n    {\"action\": \"search_primary\", \"target\": \"Westhaven lab May 2025 ticket close report\", \"rationale\": \"Confirm the 97-ticket figure with a primary system-of-record export rather than a derived ledger note.\"}\n  ],\n  \"evidence_environment_assessment\": \"Only doc_002 states a count (97 closed tickets) for Mira sensor recalibrations in May 2025 at Westhaven. The other three documents corroborate the site, workstream, and timing but provide no tally. No contradicting figure appears. All documents are dated September 2025, after the month closed, and share boilerplate language, which slightly weakens independence. No primary system export or audit trail is present, so the count rests on a single ledger note.\",\n  \"answer\": \"Based on the provided evidence, yes: doc_002 records 97 closed tickets for Mira sensor recalibrations at Westhaven lab in May 2025. The other documents are consistent with the site, workstream, and timing but do not give counts. Confidence is moderate because the figure rests on a single ledger entry without a corroborating primary source.\"\n}",
+    "usage": {
+      "completion_tokens": 535,
+      "prompt_tokens": 1492,
+      "total_tokens": 2027,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": null,
+        "audio_tokens": 0,
+        "reasoning_tokens": 0,
+        "rejected_prediction_tokens": null,
+        "text_tokens": 0,
+        "image_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cached_tokens": 0,
+        "text_tokens": 0,
+        "image_tokens": 0
+      },
+      "usage_semantic": "openai",
+      "usage_source": "anthropic",
+      "input_tokens": 1492,
+      "output_tokens": 0,
+      "input_tokens_details": null,
+      "claude_cache_creation_5_m_tokens": 0,
+      "claude_cache_creation_1_h_tokens": 0
+    },
+    "response_format_used": "json_schema",
+    "parse_success": true,
+    "parse_error": "",
+    "empty_output": false,
+    "schema_missing": false,
+    "json_extractor_used": "first_json_object",
+    "elapsed_s": 8.018,
+    "cost_usd": 0.001443
+  }
+}

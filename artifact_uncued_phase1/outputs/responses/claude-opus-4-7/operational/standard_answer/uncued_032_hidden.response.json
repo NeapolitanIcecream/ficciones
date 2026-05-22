@@ -1,0 +1,90 @@
+{
+  "attempts": [
+    {
+      "attempt": 1,
+      "model": "claude-opus-4-7",
+      "provider": "Anthropic",
+      "budget_setting": "operational",
+      "task_id": "uncued_032_hidden",
+      "prompt_condition": "standard_answer",
+      "content": "{\n  \"claim_verdict\": \"insufficient\",\n  \"confidence\": 0.4,\n  \"supporting_evidence\": [\"doc_003\", \"doc_004\"],\n  \"rejected_evidence\": [\"doc_001\", \"doc_002\"],\n  \"selected_doc_ids\": [\"doc_003\", \"doc_004\", \"doc_001\"],\n  \"actions\": [\n    {\"action\": \"trace_source\", \"target\": \"doc_004\", \"rationale\": \"The 124 figure appears in doc_003 and doc_004, but they cite each other circularly without a primary source. Tracing the original bulletin is needed to confirm provenance.\"},\n    {\"action\": \"search_primary\", \"target\": \"Novalis Robotics May 2025 closing ledger\", \"rationale\": \"The only ledger-type document (doc_001) gives 97, contradicting 124. A primary close-of-month ledger is needed to resolve the discrepancy.\"}\n  ],\n  \"evidence_environment_assessment\": \"Two notes (doc_003, doc_004) repeat 124 but cite each other, forming a circular reference with no independent primary source. doc_001, described as a closing ledger (typically authoritative), reports 97 — directly contradicting 124. doc_002 lacks a count. The corroboration for 124 is illusory (single source echoed), while the contradicting figure comes from a more authoritative document type. Provenance cannot be established from the packet alone.\",\n  \"answer\": \"Evidence is insufficient to confirm 124 closed tickets. Two documents asserting 124 (doc_003, doc_004) cite each other circularly with no independent primary source. The closing ledger (doc_001), a more authoritative source type, reports 97 for the same workstream and month. Without a traceable primary record, the 124 figure cannot be verified and is contradicted by the ledger.\"\n}",
+      "usage": {
+        "completion_tokens": 600,
+        "prompt_tokens": 1496,
+        "total_tokens": 2096,
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": null,
+          "audio_tokens": 0,
+          "reasoning_tokens": 0,
+          "rejected_prediction_tokens": null,
+          "text_tokens": 0,
+          "image_tokens": 0
+        },
+        "prompt_tokens_details": {
+          "audio_tokens": 0,
+          "cached_tokens": 0,
+          "text_tokens": 0,
+          "image_tokens": 0
+        },
+        "usage_semantic": "openai",
+        "usage_source": "anthropic",
+        "input_tokens": 1496,
+        "output_tokens": 0,
+        "input_tokens_details": null,
+        "claude_cache_creation_5_m_tokens": 0,
+        "claude_cache_creation_1_h_tokens": 0
+      },
+      "response_format_used": "json_schema",
+      "parse_success": true,
+      "parse_error": "",
+      "empty_output": false,
+      "schema_missing": false,
+      "json_extractor_used": "first_json_object",
+      "elapsed_s": 9.967,
+      "cost_usd": 0.0015739999999999999
+    }
+  ],
+  "final_attempt": {
+    "attempt": 1,
+    "model": "claude-opus-4-7",
+    "provider": "Anthropic",
+    "budget_setting": "operational",
+    "task_id": "uncued_032_hidden",
+    "prompt_condition": "standard_answer",
+    "content": "{\n  \"claim_verdict\": \"insufficient\",\n  \"confidence\": 0.4,\n  \"supporting_evidence\": [\"doc_003\", \"doc_004\"],\n  \"rejected_evidence\": [\"doc_001\", \"doc_002\"],\n  \"selected_doc_ids\": [\"doc_003\", \"doc_004\", \"doc_001\"],\n  \"actions\": [\n    {\"action\": \"trace_source\", \"target\": \"doc_004\", \"rationale\": \"The 124 figure appears in doc_003 and doc_004, but they cite each other circularly without a primary source. Tracing the original bulletin is needed to confirm provenance.\"},\n    {\"action\": \"search_primary\", \"target\": \"Novalis Robotics May 2025 closing ledger\", \"rationale\": \"The only ledger-type document (doc_001) gives 97, contradicting 124. A primary close-of-month ledger is needed to resolve the discrepancy.\"}\n  ],\n  \"evidence_environment_assessment\": \"Two notes (doc_003, doc_004) repeat 124 but cite each other, forming a circular reference with no independent primary source. doc_001, described as a closing ledger (typically authoritative), reports 97 — directly contradicting 124. doc_002 lacks a count. The corroboration for 124 is illusory (single source echoed), while the contradicting figure comes from a more authoritative document type. Provenance cannot be established from the packet alone.\",\n  \"answer\": \"Evidence is insufficient to confirm 124 closed tickets. Two documents asserting 124 (doc_003, doc_004) cite each other circularly with no independent primary source. The closing ledger (doc_001), a more authoritative source type, reports 97 for the same workstream and month. Without a traceable primary record, the 124 figure cannot be verified and is contradicted by the ledger.\"\n}",
+    "usage": {
+      "completion_tokens": 600,
+      "prompt_tokens": 1496,
+      "total_tokens": 2096,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": null,
+        "audio_tokens": 0,
+        "reasoning_tokens": 0,
+        "rejected_prediction_tokens": null,
+        "text_tokens": 0,
+        "image_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cached_tokens": 0,
+        "text_tokens": 0,
+        "image_tokens": 0
+      },
+      "usage_semantic": "openai",
+      "usage_source": "anthropic",
+      "input_tokens": 1496,
+      "output_tokens": 0,
+      "input_tokens_details": null,
+      "claude_cache_creation_5_m_tokens": 0,
+      "claude_cache_creation_1_h_tokens": 0
+    },
+    "response_format_used": "json_schema",
+    "parse_success": true,
+    "parse_error": "",
+    "empty_output": false,
+    "schema_missing": false,
+    "json_extractor_used": "first_json_object",
+    "elapsed_s": 9.967,
+    "cost_usd": 0.0015739999999999999
+  }
+}

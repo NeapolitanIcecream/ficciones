@@ -1,0 +1,72 @@
+{
+  "attempts": [
+    {
+      "attempt": 1,
+      "model": "deepseek-v4-pro",
+      "provider": "DeepSeek",
+      "budget_setting": "operational",
+      "task_id": "uncued_002_hidden",
+      "prompt_condition": "standard_answer",
+      "content": "{\n  \"claim_verdict\": \"insufficient\",\n  \"confidence\": 0.7,\n  \"supporting_evidence\": [\"doc_001\"],\n  \"rejected_evidence\": [\"doc_002\", \"doc_003\", \"doc_004\"],\n  \"selected_doc_ids\": [\"doc_001\"],\n  \"actions\": [\n    {\n      \"action\": \"open\",\n      \"target\": \"doc_001\",\n      \"rationale\": \"Confirm the monthly ledger entry showing 97 closed tickets for Mira sensor recalibrations.\"\n    },\n    {\n      \"action\": \"trace_source\",\n      \"target\": \"doc_001\",\n      \"rationale\": \"Determine if Westhaven lab is part of Novalis Robotics to establish the organizational link needed for the claim.\"\n    }\n  ],\n  \"evidence_environment_assessment\": \"The environment provides a monthly ledger from Westhaven lab listing 97 closed tickets for Mira sensor recalibrations in May 2025. No document explicitly links Westhaven lab to Novalis Robotics. Other documents lack count data. Because the claim names Novalis Robotics and the ledger belongs to Westhaven lab, the entity connection is missing, making the evidence insufficient alone.\",\n  \"answer\": \"Insufficient evidence to verify that Novalis Robotics logged the tickets; the ledger is from Westhaven lab without a documented association.\"\n}",
+      "usage": {
+        "completion_tokens": 1915,
+        "prompt_tokens": 1063,
+        "total_tokens": 2978,
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": null,
+          "audio_tokens": null,
+          "reasoning_tokens": 1635,
+          "rejected_prediction_tokens": null
+        },
+        "prompt_tokens_details": {
+          "audio_tokens": null,
+          "cached_tokens": 1024
+        },
+        "prompt_cache_hit_tokens": 1024,
+        "prompt_cache_miss_tokens": 39
+      },
+      "response_format_used": "json_object",
+      "parse_success": true,
+      "parse_error": "",
+      "empty_output": false,
+      "schema_missing": false,
+      "json_extractor_used": "first_json_object",
+      "elapsed_s": 104.669,
+      "cost_usd": 0.00409575
+    }
+  ],
+  "final_attempt": {
+    "attempt": 1,
+    "model": "deepseek-v4-pro",
+    "provider": "DeepSeek",
+    "budget_setting": "operational",
+    "task_id": "uncued_002_hidden",
+    "prompt_condition": "standard_answer",
+    "content": "{\n  \"claim_verdict\": \"insufficient\",\n  \"confidence\": 0.7,\n  \"supporting_evidence\": [\"doc_001\"],\n  \"rejected_evidence\": [\"doc_002\", \"doc_003\", \"doc_004\"],\n  \"selected_doc_ids\": [\"doc_001\"],\n  \"actions\": [\n    {\n      \"action\": \"open\",\n      \"target\": \"doc_001\",\n      \"rationale\": \"Confirm the monthly ledger entry showing 97 closed tickets for Mira sensor recalibrations.\"\n    },\n    {\n      \"action\": \"trace_source\",\n      \"target\": \"doc_001\",\n      \"rationale\": \"Determine if Westhaven lab is part of Novalis Robotics to establish the organizational link needed for the claim.\"\n    }\n  ],\n  \"evidence_environment_assessment\": \"The environment provides a monthly ledger from Westhaven lab listing 97 closed tickets for Mira sensor recalibrations in May 2025. No document explicitly links Westhaven lab to Novalis Robotics. Other documents lack count data. Because the claim names Novalis Robotics and the ledger belongs to Westhaven lab, the entity connection is missing, making the evidence insufficient alone.\",\n  \"answer\": \"Insufficient evidence to verify that Novalis Robotics logged the tickets; the ledger is from Westhaven lab without a documented association.\"\n}",
+    "usage": {
+      "completion_tokens": 1915,
+      "prompt_tokens": 1063,
+      "total_tokens": 2978,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": null,
+        "audio_tokens": null,
+        "reasoning_tokens": 1635,
+        "rejected_prediction_tokens": null
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": null,
+        "cached_tokens": 1024
+      },
+      "prompt_cache_hit_tokens": 1024,
+      "prompt_cache_miss_tokens": 39
+    },
+    "response_format_used": "json_object",
+    "parse_success": true,
+    "parse_error": "",
+    "empty_output": false,
+    "schema_missing": false,
+    "json_extractor_used": "first_json_object",
+    "elapsed_s": 104.669,
+    "cost_usd": 0.00409575
+  }
+}

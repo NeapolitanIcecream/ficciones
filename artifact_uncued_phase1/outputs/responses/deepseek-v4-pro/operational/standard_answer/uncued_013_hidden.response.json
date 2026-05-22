@@ -1,0 +1,72 @@
+{
+  "attempts": [
+    {
+      "attempt": 1,
+      "model": "deepseek-v4-pro",
+      "provider": "DeepSeek",
+      "budget_setting": "operational",
+      "task_id": "uncued_013_hidden",
+      "prompt_condition": "standard_answer",
+      "content": "{\n  \"claim_verdict\": \"refuted\",\n  \"confidence\": 0.9,\n  \"supporting_evidence\": [\"doc_003\"],\n  \"rejected_evidence\": [\"doc_004\"],\n  \"selected_doc_ids\": [\"doc_003\", \"doc_004\"],\n  \"actions\": [\n    {\n      \"action\": \"trace_source\",\n      \"target\": \"doc_004\",\n      \"rationale\": \"Doc_004 cites doc_002 which does not contain the count, so the claim in doc_004 lacks support.\"\n    },\n    {\n      \"action\": \"search_contradiction\",\n      \"target\": \"Orion battery swaps April 2025\",\n      \"rationale\": \"Located doc_003, a month-close ledger, which records 63 verified swaps, refuting the 88 claim.\"\n    }\n  ],\n  \"evidence_environment_assessment\": \"Four documents from the same packet with consistent site code and workstream. The only document supporting 88 is an operations digest (doc_004) that cites a routing note (doc_002) lacking the count. The primary ledger (doc_003) directly contradicts with 63 verified swaps. Other documents are neutral. The environment favors the ledger as more authoritative.\",\n  \"answer\": \"No. The month-close ledger (doc_003) shows 63 verified swaps, not 88. The operations digest (doc_004) claiming 88 lacks reliable sourcing.\"\n}",
+      "usage": {
+        "completion_tokens": 1949,
+        "prompt_tokens": 1041,
+        "total_tokens": 2990,
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": null,
+          "audio_tokens": null,
+          "reasoning_tokens": 1643,
+          "rejected_prediction_tokens": null
+        },
+        "prompt_tokens_details": {
+          "audio_tokens": null,
+          "cached_tokens": 0
+        },
+        "prompt_cache_hit_tokens": 0,
+        "prompt_cache_miss_tokens": 1041
+      },
+      "response_format_used": "json_object",
+      "parse_success": true,
+      "parse_error": "",
+      "empty_output": false,
+      "schema_missing": false,
+      "json_extractor_used": "first_json_object",
+      "elapsed_s": 44.243,
+      "cost_usd": 0.00415825
+    }
+  ],
+  "final_attempt": {
+    "attempt": 1,
+    "model": "deepseek-v4-pro",
+    "provider": "DeepSeek",
+    "budget_setting": "operational",
+    "task_id": "uncued_013_hidden",
+    "prompt_condition": "standard_answer",
+    "content": "{\n  \"claim_verdict\": \"refuted\",\n  \"confidence\": 0.9,\n  \"supporting_evidence\": [\"doc_003\"],\n  \"rejected_evidence\": [\"doc_004\"],\n  \"selected_doc_ids\": [\"doc_003\", \"doc_004\"],\n  \"actions\": [\n    {\n      \"action\": \"trace_source\",\n      \"target\": \"doc_004\",\n      \"rationale\": \"Doc_004 cites doc_002 which does not contain the count, so the claim in doc_004 lacks support.\"\n    },\n    {\n      \"action\": \"search_contradiction\",\n      \"target\": \"Orion battery swaps April 2025\",\n      \"rationale\": \"Located doc_003, a month-close ledger, which records 63 verified swaps, refuting the 88 claim.\"\n    }\n  ],\n  \"evidence_environment_assessment\": \"Four documents from the same packet with consistent site code and workstream. The only document supporting 88 is an operations digest (doc_004) that cites a routing note (doc_002) lacking the count. The primary ledger (doc_003) directly contradicts with 63 verified swaps. Other documents are neutral. The environment favors the ledger as more authoritative.\",\n  \"answer\": \"No. The month-close ledger (doc_003) shows 63 verified swaps, not 88. The operations digest (doc_004) claiming 88 lacks reliable sourcing.\"\n}",
+    "usage": {
+      "completion_tokens": 1949,
+      "prompt_tokens": 1041,
+      "total_tokens": 2990,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": null,
+        "audio_tokens": null,
+        "reasoning_tokens": 1643,
+        "rejected_prediction_tokens": null
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": null,
+        "cached_tokens": 0
+      },
+      "prompt_cache_hit_tokens": 0,
+      "prompt_cache_miss_tokens": 1041
+    },
+    "response_format_used": "json_object",
+    "parse_success": true,
+    "parse_error": "",
+    "empty_output": false,
+    "schema_missing": false,
+    "json_extractor_used": "first_json_object",
+    "elapsed_s": 44.243,
+    "cost_usd": 0.00415825
+  }
+}

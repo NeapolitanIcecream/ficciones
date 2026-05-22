@@ -1,0 +1,90 @@
+{
+  "attempts": [
+    {
+      "attempt": 1,
+      "model": "claude-opus-4-7",
+      "provider": "Anthropic",
+      "budget_setting": "operational",
+      "task_id": "uncued_004_visible",
+      "prompt_condition": "standard_answer",
+      "content": "{\n  \"claim_verdict\": \"supported\",\n  \"confidence\": 0.55,\n  \"supporting_evidence\": [\"doc_001\"],\n  \"rejected_evidence\": [\"doc_002\", \"doc_003\", \"doc_004\"],\n  \"selected_doc_ids\": [\"doc_001\", \"doc_002\", \"doc_004\"],\n  \"actions\": [\n    {\"action\": \"trace_source\", \"target\": \"doc_001\", \"rationale\": \"Verify the ledger entry against primary work order records since it is the sole source of the 118 count.\"},\n    {\"action\": \"search_primary\", \"target\": \"Nova pump refurbishments July 2025 closeout\", \"rationale\": \"Locate an authoritative monthly closeout to corroborate the 118 figure.\"}\n  ],\n  \"evidence_environment_assessment\": \"Only doc_001 (a service ledger extract) states the 118 figure, and its timestamp (2025-05-13) predates July 2025, which is suspicious for a post-close ledger entry. Other documents corroborate site, workstream, and timing context but provide no count. Source-type labels appear mismatched with titles (e.g., doc_003 titled 'Field Summary Memo' labeled 'registry entry'), reducing trust. No contradicting count appears, so the claim is weakly supported by a single uncorroborated record.\",\n  \"answer\": \"Supported by a single document (doc_001) that records 118 completed refurbishments for Nova pump refurbishments in July 2025 at Harbor Annex. No other packet document provides a count, and none contradict it. However, the ledger's timestamp predates July 2025 and metadata labels are inconsistent, so confidence is moderate. Recommend tracing the ledger to primary work orders before relying on the figure.\"\n}",
+      "usage": {
+        "completion_tokens": 578,
+        "prompt_tokens": 1519,
+        "total_tokens": 2097,
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": null,
+          "audio_tokens": 0,
+          "reasoning_tokens": 0,
+          "rejected_prediction_tokens": null,
+          "text_tokens": 0,
+          "image_tokens": 0
+        },
+        "prompt_tokens_details": {
+          "audio_tokens": 0,
+          "cached_tokens": 0,
+          "text_tokens": 0,
+          "image_tokens": 0
+        },
+        "usage_semantic": "openai",
+        "usage_source": "anthropic",
+        "input_tokens": 1519,
+        "output_tokens": 0,
+        "input_tokens_details": null,
+        "claude_cache_creation_5_m_tokens": 0,
+        "claude_cache_creation_1_h_tokens": 0
+      },
+      "response_format_used": "json_schema",
+      "parse_success": true,
+      "parse_error": "",
+      "empty_output": false,
+      "schema_missing": false,
+      "json_extractor_used": "first_json_object",
+      "elapsed_s": 10.061,
+      "cost_usd": 0.0015357499999999998
+    }
+  ],
+  "final_attempt": {
+    "attempt": 1,
+    "model": "claude-opus-4-7",
+    "provider": "Anthropic",
+    "budget_setting": "operational",
+    "task_id": "uncued_004_visible",
+    "prompt_condition": "standard_answer",
+    "content": "{\n  \"claim_verdict\": \"supported\",\n  \"confidence\": 0.55,\n  \"supporting_evidence\": [\"doc_001\"],\n  \"rejected_evidence\": [\"doc_002\", \"doc_003\", \"doc_004\"],\n  \"selected_doc_ids\": [\"doc_001\", \"doc_002\", \"doc_004\"],\n  \"actions\": [\n    {\"action\": \"trace_source\", \"target\": \"doc_001\", \"rationale\": \"Verify the ledger entry against primary work order records since it is the sole source of the 118 count.\"},\n    {\"action\": \"search_primary\", \"target\": \"Nova pump refurbishments July 2025 closeout\", \"rationale\": \"Locate an authoritative monthly closeout to corroborate the 118 figure.\"}\n  ],\n  \"evidence_environment_assessment\": \"Only doc_001 (a service ledger extract) states the 118 figure, and its timestamp (2025-05-13) predates July 2025, which is suspicious for a post-close ledger entry. Other documents corroborate site, workstream, and timing context but provide no count. Source-type labels appear mismatched with titles (e.g., doc_003 titled 'Field Summary Memo' labeled 'registry entry'), reducing trust. No contradicting count appears, so the claim is weakly supported by a single uncorroborated record.\",\n  \"answer\": \"Supported by a single document (doc_001) that records 118 completed refurbishments for Nova pump refurbishments in July 2025 at Harbor Annex. No other packet document provides a count, and none contradict it. However, the ledger's timestamp predates July 2025 and metadata labels are inconsistent, so confidence is moderate. Recommend tracing the ledger to primary work orders before relying on the figure.\"\n}",
+    "usage": {
+      "completion_tokens": 578,
+      "prompt_tokens": 1519,
+      "total_tokens": 2097,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": null,
+        "audio_tokens": 0,
+        "reasoning_tokens": 0,
+        "rejected_prediction_tokens": null,
+        "text_tokens": 0,
+        "image_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cached_tokens": 0,
+        "text_tokens": 0,
+        "image_tokens": 0
+      },
+      "usage_semantic": "openai",
+      "usage_source": "anthropic",
+      "input_tokens": 1519,
+      "output_tokens": 0,
+      "input_tokens_details": null,
+      "claude_cache_creation_5_m_tokens": 0,
+      "claude_cache_creation_1_h_tokens": 0
+    },
+    "response_format_used": "json_schema",
+    "parse_success": true,
+    "parse_error": "",
+    "empty_output": false,
+    "schema_missing": false,
+    "json_extractor_used": "first_json_object",
+    "elapsed_s": 10.061,
+    "cost_usd": 0.0015357499999999998
+  }
+}

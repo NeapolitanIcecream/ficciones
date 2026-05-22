@@ -1,0 +1,141 @@
+{
+  "schema_variant": "clarified",
+  "prompt_condition": "standard_answer",
+  "views": [
+    "neutral_metadata_visible",
+    "neutral_metadata_hidden"
+  ],
+  "parallel_strategy": {
+    "parallel_model_streams": 4,
+    "per_model_concurrency": 1
+  },
+  "profiles": [
+    {
+      "model": "gpt-5.5",
+      "provider": "OpenAI",
+      "budget_setting": "operational",
+      "timeout_s": 240.0,
+      "cost_estimate_output_tokens": 4096,
+      "invocation_profile": {
+        "temperature_policy": "omitted",
+        "max_completion_tokens_policy": "explicit:4096",
+        "response_format": "json_schema",
+        "json_extractor": "first_json_object",
+        "message_role_policy": "developer_system_merged_into_user",
+        "llm_repair": "disabled",
+        "provider": "OpenAI",
+        "budget_setting": "operational"
+      },
+      "retry_profile": {
+        "max_attempts": 2,
+        "llm_repair": "disabled",
+        "json_extractor": "first_json_object",
+        "response_format": "json_schema",
+        "temperature_policy": "omitted",
+        "max_completion_tokens_policy": "explicit:4096"
+      }
+    },
+    {
+      "model": "claude-opus-4-7",
+      "provider": "Anthropic",
+      "budget_setting": "operational",
+      "timeout_s": 240.0,
+      "cost_estimate_output_tokens": 4096,
+      "invocation_profile": {
+        "temperature_policy": "omitted",
+        "max_completion_tokens_policy": "explicit:4096",
+        "response_format": "json_schema",
+        "json_extractor": "first_json_object",
+        "message_role_policy": "developer_system_merged_into_user",
+        "llm_repair": "disabled",
+        "provider": "Anthropic",
+        "budget_setting": "operational"
+      },
+      "retry_profile": {
+        "max_attempts": 2,
+        "llm_repair": "disabled",
+        "json_extractor": "first_json_object",
+        "response_format": "json_schema",
+        "temperature_policy": "omitted",
+        "max_completion_tokens_policy": "explicit:4096"
+      }
+    },
+    {
+      "model": "gemini-3.1-pro-preview",
+      "provider": "Google",
+      "budget_setting": "operational",
+      "timeout_s": 240.0,
+      "cost_estimate_output_tokens": 4096,
+      "invocation_profile": {
+        "temperature_policy": "omitted",
+        "max_completion_tokens_policy": "explicit:4096",
+        "response_format": "json_schema",
+        "json_extractor": "first_json_object",
+        "message_role_policy": "developer_system_merged_into_user",
+        "llm_repair": "disabled",
+        "provider": "Google",
+        "budget_setting": "operational"
+      },
+      "retry_profile": {
+        "max_attempts": 2,
+        "llm_repair": "disabled",
+        "json_extractor": "first_json_object",
+        "response_format": "json_schema",
+        "temperature_policy": "omitted",
+        "max_completion_tokens_policy": "explicit:4096"
+      }
+    },
+    {
+      "model": "deepseek-v4-pro",
+      "provider": "DeepSeek",
+      "budget_setting": "operational",
+      "timeout_s": 240.0,
+      "cost_estimate_output_tokens": 4096,
+      "invocation_profile": {
+        "temperature_policy": "omitted",
+        "max_completion_tokens_policy": "explicit:4096",
+        "response_format": "json_object",
+        "json_extractor": "first_json_object",
+        "message_role_policy": "developer_system_merged_into_user",
+        "llm_repair": "disabled",
+        "provider": "DeepSeek",
+        "budget_setting": "operational"
+      },
+      "retry_profile": {
+        "max_attempts": 2,
+        "llm_repair": "disabled",
+        "json_extractor": "first_json_object",
+        "response_format": "json_object",
+        "temperature_policy": "omitted",
+        "max_completion_tokens_policy": "explicit:4096"
+      }
+    }
+  ],
+  "deepseek_profiles": [
+    {
+      "model": "deepseek-v4-pro",
+      "provider": "DeepSeek",
+      "budget_setting": "operational",
+      "timeout_s": 240.0,
+      "cost_estimate_output_tokens": 4096,
+      "invocation_profile": {
+        "temperature_policy": "omitted",
+        "max_completion_tokens_policy": "explicit:4096",
+        "response_format": "json_object",
+        "json_extractor": "first_json_object",
+        "message_role_policy": "developer_system_merged_into_user",
+        "llm_repair": "disabled",
+        "provider": "DeepSeek",
+        "budget_setting": "operational"
+      },
+      "retry_profile": {
+        "max_attempts": 2,
+        "llm_repair": "disabled",
+        "json_extractor": "first_json_object",
+        "response_format": "json_object",
+        "temperature_policy": "omitted",
+        "max_completion_tokens_policy": "explicit:4096"
+      }
+    }
+  ]
+}

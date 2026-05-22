@@ -1,0 +1,90 @@
+{
+  "attempts": [
+    {
+      "attempt": 1,
+      "model": "claude-opus-4-7",
+      "provider": "Anthropic",
+      "budget_setting": "operational",
+      "task_id": "uncued_037_visible",
+      "prompt_condition": "standard_answer",
+      "content": "{\n  \"claim_verdict\": \"supported\",\n  \"confidence\": 0.78,\n  \"supporting_evidence\": [\"doc_003\"],\n  \"rejected_evidence\": [\"doc_004\", \"doc_002\"],\n  \"selected_doc_ids\": [\"doc_003\", \"doc_004\", \"doc_002\"],\n  \"actions\": [\n    {\"action\": \"compare_versions\", \"target\": \"doc_003 vs doc_004\", \"rationale\": \"Reconcile closeout ledger (63) against running estimate (88) to confirm final figure.\"},\n    {\"action\": \"trace_source\", \"target\": \"doc_003\", \"rationale\": \"Verify the closeout ledger row reflects the final monthly close rather than a draft.\"}\n  ],\n  \"evidence_environment_assessment\": \"Packet contains a planning memo (doc_002) with no final number, a handoff note (doc_001) lacking counts, a registry estimate (doc_004) citing the planning memo at 88, and a closeout ledger (doc_003) listing 63 at the final close date. The closeout ledger postdates the planning materials and is the authoritative final figure; the 88 figure is explicitly a running estimate sourced from a pre-close memo. Labels are shared across docs, so judgment rests on stated values and document role.\",\n  \"answer\": \"Yes. The closeout ledger (doc_003) records 63 verified Orion battery swaps for April 2025 at the final close date. The competing 88 figure (doc_004) is a pre-close running estimate sourced from a planning memo (doc_002) with no final number, so it does not override the closeout figure.\"\n}",
+      "usage": {
+        "completion_tokens": 527,
+        "prompt_tokens": 1477,
+        "total_tokens": 2004,
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": null,
+          "audio_tokens": 0,
+          "reasoning_tokens": 0,
+          "rejected_prediction_tokens": null,
+          "text_tokens": 0,
+          "image_tokens": 0
+        },
+        "prompt_tokens_details": {
+          "audio_tokens": 0,
+          "cached_tokens": 0,
+          "text_tokens": 0,
+          "image_tokens": 0
+        },
+        "usage_semantic": "openai",
+        "usage_source": "anthropic",
+        "input_tokens": 1477,
+        "output_tokens": 0,
+        "input_tokens_details": null,
+        "claude_cache_creation_5_m_tokens": 0,
+        "claude_cache_creation_1_h_tokens": 0
+      },
+      "response_format_used": "json_schema",
+      "parse_success": true,
+      "parse_error": "",
+      "empty_output": false,
+      "schema_missing": false,
+      "json_extractor_used": "first_json_object",
+      "elapsed_s": 6.525,
+      "cost_usd": 0.00142325
+    }
+  ],
+  "final_attempt": {
+    "attempt": 1,
+    "model": "claude-opus-4-7",
+    "provider": "Anthropic",
+    "budget_setting": "operational",
+    "task_id": "uncued_037_visible",
+    "prompt_condition": "standard_answer",
+    "content": "{\n  \"claim_verdict\": \"supported\",\n  \"confidence\": 0.78,\n  \"supporting_evidence\": [\"doc_003\"],\n  \"rejected_evidence\": [\"doc_004\", \"doc_002\"],\n  \"selected_doc_ids\": [\"doc_003\", \"doc_004\", \"doc_002\"],\n  \"actions\": [\n    {\"action\": \"compare_versions\", \"target\": \"doc_003 vs doc_004\", \"rationale\": \"Reconcile closeout ledger (63) against running estimate (88) to confirm final figure.\"},\n    {\"action\": \"trace_source\", \"target\": \"doc_003\", \"rationale\": \"Verify the closeout ledger row reflects the final monthly close rather than a draft.\"}\n  ],\n  \"evidence_environment_assessment\": \"Packet contains a planning memo (doc_002) with no final number, a handoff note (doc_001) lacking counts, a registry estimate (doc_004) citing the planning memo at 88, and a closeout ledger (doc_003) listing 63 at the final close date. The closeout ledger postdates the planning materials and is the authoritative final figure; the 88 figure is explicitly a running estimate sourced from a pre-close memo. Labels are shared across docs, so judgment rests on stated values and document role.\",\n  \"answer\": \"Yes. The closeout ledger (doc_003) records 63 verified Orion battery swaps for April 2025 at the final close date. The competing 88 figure (doc_004) is a pre-close running estimate sourced from a planning memo (doc_002) with no final number, so it does not override the closeout figure.\"\n}",
+    "usage": {
+      "completion_tokens": 527,
+      "prompt_tokens": 1477,
+      "total_tokens": 2004,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": null,
+        "audio_tokens": 0,
+        "reasoning_tokens": 0,
+        "rejected_prediction_tokens": null,
+        "text_tokens": 0,
+        "image_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cached_tokens": 0,
+        "text_tokens": 0,
+        "image_tokens": 0
+      },
+      "usage_semantic": "openai",
+      "usage_source": "anthropic",
+      "input_tokens": 1477,
+      "output_tokens": 0,
+      "input_tokens_details": null,
+      "claude_cache_creation_5_m_tokens": 0,
+      "claude_cache_creation_1_h_tokens": 0
+    },
+    "response_format_used": "json_schema",
+    "parse_success": true,
+    "parse_error": "",
+    "empty_output": false,
+    "schema_missing": false,
+    "json_extractor_used": "first_json_object",
+    "elapsed_s": 6.525,
+    "cost_usd": 0.00142325
+  }
+}

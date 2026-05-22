@@ -1,0 +1,90 @@
+{
+  "attempts": [
+    {
+      "attempt": 1,
+      "model": "claude-opus-4-7",
+      "provider": "Anthropic",
+      "budget_setting": "operational",
+      "task_id": "uncued_021_visible",
+      "prompt_condition": "standard_answer",
+      "content": "{\n  \"claim_verdict\": \"refuted\",\n  \"confidence\": 0.75,\n  \"supporting_evidence\": [\"doc_001\"],\n  \"rejected_evidence\": [\"doc_003\"],\n  \"selected_doc_ids\": [\"doc_001\", \"doc_003\", \"doc_004\"],\n  \"actions\": [\n    {\"action\": \"trace_source\", \"target\": \"doc_003\", \"rationale\": \"doc_003 cites doc_004, but doc_004 contains no count, so the 57 figure is unsupported by its cited source.\"},\n    {\"action\": \"compare_versions\", \"target\": \"doc_001 vs doc_003\", \"rationale\": \"Primary ledger lists 42; digest claims 57. Compare to identify authoritative figure.\"}\n  ],\n  \"evidence_environment_assessment\": \"The packet contains one primary-looking ledger (doc_001) reporting 42 accepted inspections, and a digest (doc_003) asserting 57 while citing doc_004, which actually carries no total — only chronology. doc_002 adds timing context but no count. The citation chain from doc_003 to doc_004 is hollow, suggesting the 57 figure lacks primary backing. The ledger entry in doc_001 is the most authoritative artifact present, directly contradicting the claim of 57.\",\n  \"answer\": \"The claim is refuted. The month-close ledger (doc_001) records 42 accepted Vega rail inspections for June 2025, not 57. The only document asserting 57 (doc_003) cites doc_004, which contains chronology but no count, leaving the 57 figure without primary support.\"\n}",
+      "usage": {
+        "completion_tokens": 527,
+        "prompt_tokens": 1491,
+        "total_tokens": 2018,
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": null,
+          "audio_tokens": 0,
+          "reasoning_tokens": 0,
+          "rejected_prediction_tokens": null,
+          "text_tokens": 0,
+          "image_tokens": 0
+        },
+        "prompt_tokens_details": {
+          "audio_tokens": 0,
+          "cached_tokens": 0,
+          "text_tokens": 0,
+          "image_tokens": 0
+        },
+        "usage_semantic": "openai",
+        "usage_source": "anthropic",
+        "input_tokens": 1491,
+        "output_tokens": 0,
+        "input_tokens_details": null,
+        "claude_cache_creation_5_m_tokens": 0,
+        "claude_cache_creation_1_h_tokens": 0
+      },
+      "response_format_used": "json_schema",
+      "parse_success": true,
+      "parse_error": "",
+      "empty_output": false,
+      "schema_missing": false,
+      "json_extractor_used": "first_json_object",
+      "elapsed_s": 8.661,
+      "cost_usd": 0.00142675
+    }
+  ],
+  "final_attempt": {
+    "attempt": 1,
+    "model": "claude-opus-4-7",
+    "provider": "Anthropic",
+    "budget_setting": "operational",
+    "task_id": "uncued_021_visible",
+    "prompt_condition": "standard_answer",
+    "content": "{\n  \"claim_verdict\": \"refuted\",\n  \"confidence\": 0.75,\n  \"supporting_evidence\": [\"doc_001\"],\n  \"rejected_evidence\": [\"doc_003\"],\n  \"selected_doc_ids\": [\"doc_001\", \"doc_003\", \"doc_004\"],\n  \"actions\": [\n    {\"action\": \"trace_source\", \"target\": \"doc_003\", \"rationale\": \"doc_003 cites doc_004, but doc_004 contains no count, so the 57 figure is unsupported by its cited source.\"},\n    {\"action\": \"compare_versions\", \"target\": \"doc_001 vs doc_003\", \"rationale\": \"Primary ledger lists 42; digest claims 57. Compare to identify authoritative figure.\"}\n  ],\n  \"evidence_environment_assessment\": \"The packet contains one primary-looking ledger (doc_001) reporting 42 accepted inspections, and a digest (doc_003) asserting 57 while citing doc_004, which actually carries no total — only chronology. doc_002 adds timing context but no count. The citation chain from doc_003 to doc_004 is hollow, suggesting the 57 figure lacks primary backing. The ledger entry in doc_001 is the most authoritative artifact present, directly contradicting the claim of 57.\",\n  \"answer\": \"The claim is refuted. The month-close ledger (doc_001) records 42 accepted Vega rail inspections for June 2025, not 57. The only document asserting 57 (doc_003) cites doc_004, which contains chronology but no count, leaving the 57 figure without primary support.\"\n}",
+    "usage": {
+      "completion_tokens": 527,
+      "prompt_tokens": 1491,
+      "total_tokens": 2018,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": null,
+        "audio_tokens": 0,
+        "reasoning_tokens": 0,
+        "rejected_prediction_tokens": null,
+        "text_tokens": 0,
+        "image_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cached_tokens": 0,
+        "text_tokens": 0,
+        "image_tokens": 0
+      },
+      "usage_semantic": "openai",
+      "usage_source": "anthropic",
+      "input_tokens": 1491,
+      "output_tokens": 0,
+      "input_tokens_details": null,
+      "claude_cache_creation_5_m_tokens": 0,
+      "claude_cache_creation_1_h_tokens": 0
+    },
+    "response_format_used": "json_schema",
+    "parse_success": true,
+    "parse_error": "",
+    "empty_output": false,
+    "schema_missing": false,
+    "json_extractor_used": "first_json_object",
+    "elapsed_s": 8.661,
+    "cost_usd": 0.00142675
+  }
+}

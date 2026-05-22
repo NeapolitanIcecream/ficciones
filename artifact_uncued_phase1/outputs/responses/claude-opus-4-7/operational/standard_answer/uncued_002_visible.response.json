@@ -1,0 +1,90 @@
+{
+  "attempts": [
+    {
+      "attempt": 1,
+      "model": "claude-opus-4-7",
+      "provider": "Anthropic",
+      "budget_setting": "operational",
+      "task_id": "uncued_002_visible",
+      "prompt_condition": "standard_answer",
+      "content": "{\n  \"claim_verdict\": \"supported\",\n  \"confidence\": 0.62,\n  \"supporting_evidence\": [\"doc_003\"],\n  \"rejected_evidence\": [\"doc_001\", \"doc_002\", \"doc_004\"],\n  \"selected_doc_ids\": [\"doc_003\", \"doc_001\", \"doc_004\"],\n  \"actions\": [\n    {\"action\": \"trace_source\", \"target\": \"doc_003\", \"rationale\": \"Only doc_003 states the 97 figure; verifying the underlying ledger entry would confirm provenance.\"},\n    {\"action\": \"search_primary\", \"target\": \"Westhaven May 2025 monthly ledger\", \"rationale\": \"Seek the primary monthly ledger to corroborate the closed-ticket count independent of the field memo.\"}\n  ],\n  \"evidence_environment_assessment\": \"Four documents share identical site code, workstream, and close date labels, signaling a packet designed so judgments rely on stated values, not labels. Only doc_003 provides a numeric count (97). The other three (doc_001, doc_002, doc_004) supply contextual notes—staffing, routing, handoff timing—without tallies, so they neither confirm nor contradict the figure. No contradicting count appears. Timestamps (mid-March 2025) predate May 2025 close for doc_001/002/004, while doc_003 is described as dated after month close, consistent with a ledger summary. Absence of corroboration limits confidence.\",\n  \"answer\": \"Per doc_003, the Westhaven monthly ledger lists 97 closed tickets for Mira sensor recalibrations in May 2025. No document contradicts this; the others lack counts. The claim is supported, though corroboration from a primary ledger would strengthen confidence.\"\n}",
+      "usage": {
+        "completion_tokens": 577,
+        "prompt_tokens": 1520,
+        "total_tokens": 2097,
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": null,
+          "audio_tokens": 0,
+          "reasoning_tokens": 0,
+          "rejected_prediction_tokens": null,
+          "text_tokens": 0,
+          "image_tokens": 0
+        },
+        "prompt_tokens_details": {
+          "audio_tokens": 0,
+          "cached_tokens": 0,
+          "text_tokens": 0,
+          "image_tokens": 0
+        },
+        "usage_semantic": "openai",
+        "usage_source": "anthropic",
+        "input_tokens": 1520,
+        "output_tokens": 0,
+        "input_tokens_details": null,
+        "claude_cache_creation_5_m_tokens": 0,
+        "claude_cache_creation_1_h_tokens": 0
+      },
+      "response_format_used": "json_schema",
+      "parse_success": true,
+      "parse_error": "",
+      "empty_output": false,
+      "schema_missing": false,
+      "json_extractor_used": "first_json_object",
+      "elapsed_s": 29.965,
+      "cost_usd": 0.0015340000000000002
+    }
+  ],
+  "final_attempt": {
+    "attempt": 1,
+    "model": "claude-opus-4-7",
+    "provider": "Anthropic",
+    "budget_setting": "operational",
+    "task_id": "uncued_002_visible",
+    "prompt_condition": "standard_answer",
+    "content": "{\n  \"claim_verdict\": \"supported\",\n  \"confidence\": 0.62,\n  \"supporting_evidence\": [\"doc_003\"],\n  \"rejected_evidence\": [\"doc_001\", \"doc_002\", \"doc_004\"],\n  \"selected_doc_ids\": [\"doc_003\", \"doc_001\", \"doc_004\"],\n  \"actions\": [\n    {\"action\": \"trace_source\", \"target\": \"doc_003\", \"rationale\": \"Only doc_003 states the 97 figure; verifying the underlying ledger entry would confirm provenance.\"},\n    {\"action\": \"search_primary\", \"target\": \"Westhaven May 2025 monthly ledger\", \"rationale\": \"Seek the primary monthly ledger to corroborate the closed-ticket count independent of the field memo.\"}\n  ],\n  \"evidence_environment_assessment\": \"Four documents share identical site code, workstream, and close date labels, signaling a packet designed so judgments rely on stated values, not labels. Only doc_003 provides a numeric count (97). The other three (doc_001, doc_002, doc_004) supply contextual notes—staffing, routing, handoff timing—without tallies, so they neither confirm nor contradict the figure. No contradicting count appears. Timestamps (mid-March 2025) predate May 2025 close for doc_001/002/004, while doc_003 is described as dated after month close, consistent with a ledger summary. Absence of corroboration limits confidence.\",\n  \"answer\": \"Per doc_003, the Westhaven monthly ledger lists 97 closed tickets for Mira sensor recalibrations in May 2025. No document contradicts this; the others lack counts. The claim is supported, though corroboration from a primary ledger would strengthen confidence.\"\n}",
+    "usage": {
+      "completion_tokens": 577,
+      "prompt_tokens": 1520,
+      "total_tokens": 2097,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": null,
+        "audio_tokens": 0,
+        "reasoning_tokens": 0,
+        "rejected_prediction_tokens": null,
+        "text_tokens": 0,
+        "image_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cached_tokens": 0,
+        "text_tokens": 0,
+        "image_tokens": 0
+      },
+      "usage_semantic": "openai",
+      "usage_source": "anthropic",
+      "input_tokens": 1520,
+      "output_tokens": 0,
+      "input_tokens_details": null,
+      "claude_cache_creation_5_m_tokens": 0,
+      "claude_cache_creation_1_h_tokens": 0
+    },
+    "response_format_used": "json_schema",
+    "parse_success": true,
+    "parse_error": "",
+    "empty_output": false,
+    "schema_missing": false,
+    "json_extractor_used": "first_json_object",
+    "elapsed_s": 29.965,
+    "cost_usd": 0.0015340000000000002
+  }
+}

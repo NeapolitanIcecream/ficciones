@@ -1,0 +1,72 @@
+{
+  "attempts": [
+    {
+      "attempt": 1,
+      "model": "deepseek-v4-pro",
+      "provider": "DeepSeek",
+      "budget_setting": "operational",
+      "task_id": "uncued_045_hidden",
+      "prompt_condition": "standard_answer",
+      "content": "{\n  \"claim_verdict\": \"supported\",\n  \"confidence\": 0.9,\n  \"supporting_evidence\": [\"doc_002\"],\n  \"rejected_evidence\": [\"doc_004\"],\n  \"selected_doc_ids\": [\"doc_002\", \"doc_004\", \"doc_003\"],\n  \"actions\": [\n    {\n      \"action\": \"compare_versions\",\n      \"target\": \"doc_002, doc_004\",\n      \"rationale\": \"Resolve the discrepancy between the ledger's 42 and the digest's 57.\"\n    },\n    {\n      \"action\": \"trace_source\",\n      \"target\": \"doc_002\",\n      \"rationale\": \"Trace the source of the closeout ledger to verify its reliability.\"\n    }\n  ],\n  \"evidence_environment_assessment\": \"The environment contains a planning memo with no number, a digest estimating 57 accepted inspections, a handoff note with no number, and a final closeout ledger listing 42. The ledger, dated after the monthly close, is the most authoritative. The contradiction between the digest and ledger is resolved by chronology and document type, indicating the ledger supersedes the estimate. Thus, the evidence supports the claim.\",\n  \"answer\": \"Yes, according to the closeout ledger (doc_002), Novalis Robotics logged 42 accepted inspections for Vega rail inspections in June 2025. An earlier digest estimated 57, but the ledger provides the finalized count.\"\n}",
+      "usage": {
+        "completion_tokens": 1956,
+        "prompt_tokens": 1035,
+        "total_tokens": 2991,
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": null,
+          "audio_tokens": null,
+          "reasoning_tokens": 1651,
+          "rejected_prediction_tokens": null
+        },
+        "prompt_tokens_details": {
+          "audio_tokens": null,
+          "cached_tokens": 0
+        },
+        "prompt_cache_hit_tokens": 0,
+        "prompt_cache_miss_tokens": 1035
+      },
+      "response_format_used": "json_object",
+      "parse_success": true,
+      "parse_error": "",
+      "empty_output": false,
+      "schema_missing": false,
+      "json_extractor_used": "first_json_object",
+      "elapsed_s": 42.051,
+      "cost_usd": 0.00417075
+    }
+  ],
+  "final_attempt": {
+    "attempt": 1,
+    "model": "deepseek-v4-pro",
+    "provider": "DeepSeek",
+    "budget_setting": "operational",
+    "task_id": "uncued_045_hidden",
+    "prompt_condition": "standard_answer",
+    "content": "{\n  \"claim_verdict\": \"supported\",\n  \"confidence\": 0.9,\n  \"supporting_evidence\": [\"doc_002\"],\n  \"rejected_evidence\": [\"doc_004\"],\n  \"selected_doc_ids\": [\"doc_002\", \"doc_004\", \"doc_003\"],\n  \"actions\": [\n    {\n      \"action\": \"compare_versions\",\n      \"target\": \"doc_002, doc_004\",\n      \"rationale\": \"Resolve the discrepancy between the ledger's 42 and the digest's 57.\"\n    },\n    {\n      \"action\": \"trace_source\",\n      \"target\": \"doc_002\",\n      \"rationale\": \"Trace the source of the closeout ledger to verify its reliability.\"\n    }\n  ],\n  \"evidence_environment_assessment\": \"The environment contains a planning memo with no number, a digest estimating 57 accepted inspections, a handoff note with no number, and a final closeout ledger listing 42. The ledger, dated after the monthly close, is the most authoritative. The contradiction between the digest and ledger is resolved by chronology and document type, indicating the ledger supersedes the estimate. Thus, the evidence supports the claim.\",\n  \"answer\": \"Yes, according to the closeout ledger (doc_002), Novalis Robotics logged 42 accepted inspections for Vega rail inspections in June 2025. An earlier digest estimated 57, but the ledger provides the finalized count.\"\n}",
+    "usage": {
+      "completion_tokens": 1956,
+      "prompt_tokens": 1035,
+      "total_tokens": 2991,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": null,
+        "audio_tokens": null,
+        "reasoning_tokens": 1651,
+        "rejected_prediction_tokens": null
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": null,
+        "cached_tokens": 0
+      },
+      "prompt_cache_hit_tokens": 0,
+      "prompt_cache_miss_tokens": 1035
+    },
+    "response_format_used": "json_object",
+    "parse_success": true,
+    "parse_error": "",
+    "empty_output": false,
+    "schema_missing": false,
+    "json_extractor_used": "first_json_object",
+    "elapsed_s": 42.051,
+    "cost_usd": 0.00417075
+  }
+}

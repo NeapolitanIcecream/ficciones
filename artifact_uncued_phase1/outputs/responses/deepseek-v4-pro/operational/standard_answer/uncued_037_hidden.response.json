@@ -1,0 +1,72 @@
+{
+  "attempts": [
+    {
+      "attempt": 1,
+      "model": "deepseek-v4-pro",
+      "provider": "DeepSeek",
+      "budget_setting": "operational",
+      "task_id": "uncued_037_hidden",
+      "prompt_condition": "standard_answer",
+      "content": "{\n  \"claim_verdict\": \"supported\",\n  \"confidence\": 0.95,\n  \"supporting_evidence\": [\"doc_003\"],\n  \"rejected_evidence\": [\"doc_004\"],\n  \"selected_doc_ids\": [\"doc_003\", \"doc_004\"],\n  \"actions\": [\n    {\n      \"action\": \"compare_versions\",\n      \"target\": \"doc_003 and doc_004\",\n      \"rationale\": \"Compare the closeout ledger (63) with the running estimate (88) to resolve the discrepancy.\"\n    },\n    {\n      \"action\": \"trace_source\",\n      \"target\": \"doc_003\",\n      \"rationale\": \"Trace the source of the closeout ledger to confirm it is the official system of record.\"\n    }\n  ],\n  \"evidence_environment_assessment\": \"The packet contains four documents: a handoff note without counts (doc_001), a planning memo with expected workload (doc_002), a closeout ledger listing 63 verified swaps (doc_003), and a digest estimating 88 verified swaps (doc_004). The final closeout ledger directly supports the claim, while the earlier running estimate contradicts it. The ledger is the most authoritative and timely source, appearing after the planning notes. The environment presents a single contradiction but the official record supports the claim, warranting high confidence.\",\n  \"answer\": \"Yes, Novalis Robotics logged 63 verified swaps for Orion battery swaps in April 2025, as recorded in the closeout ledger (doc_003).\"\n}",
+      "usage": {
+        "completion_tokens": 1283,
+        "prompt_tokens": 1037,
+        "total_tokens": 2320,
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": null,
+          "audio_tokens": null,
+          "reasoning_tokens": 961,
+          "rejected_prediction_tokens": null
+        },
+        "prompt_tokens_details": {
+          "audio_tokens": null,
+          "cached_tokens": 0
+        },
+        "prompt_cache_hit_tokens": 0,
+        "prompt_cache_miss_tokens": 1037
+      },
+      "response_format_used": "json_object",
+      "parse_success": true,
+      "parse_error": "",
+      "empty_output": false,
+      "schema_missing": false,
+      "json_extractor_used": "first_json_object",
+      "elapsed_s": 28.777,
+      "cost_usd": 0.00282525
+    }
+  ],
+  "final_attempt": {
+    "attempt": 1,
+    "model": "deepseek-v4-pro",
+    "provider": "DeepSeek",
+    "budget_setting": "operational",
+    "task_id": "uncued_037_hidden",
+    "prompt_condition": "standard_answer",
+    "content": "{\n  \"claim_verdict\": \"supported\",\n  \"confidence\": 0.95,\n  \"supporting_evidence\": [\"doc_003\"],\n  \"rejected_evidence\": [\"doc_004\"],\n  \"selected_doc_ids\": [\"doc_003\", \"doc_004\"],\n  \"actions\": [\n    {\n      \"action\": \"compare_versions\",\n      \"target\": \"doc_003 and doc_004\",\n      \"rationale\": \"Compare the closeout ledger (63) with the running estimate (88) to resolve the discrepancy.\"\n    },\n    {\n      \"action\": \"trace_source\",\n      \"target\": \"doc_003\",\n      \"rationale\": \"Trace the source of the closeout ledger to confirm it is the official system of record.\"\n    }\n  ],\n  \"evidence_environment_assessment\": \"The packet contains four documents: a handoff note without counts (doc_001), a planning memo with expected workload (doc_002), a closeout ledger listing 63 verified swaps (doc_003), and a digest estimating 88 verified swaps (doc_004). The final closeout ledger directly supports the claim, while the earlier running estimate contradicts it. The ledger is the most authoritative and timely source, appearing after the planning notes. The environment presents a single contradiction but the official record supports the claim, warranting high confidence.\",\n  \"answer\": \"Yes, Novalis Robotics logged 63 verified swaps for Orion battery swaps in April 2025, as recorded in the closeout ledger (doc_003).\"\n}",
+    "usage": {
+      "completion_tokens": 1283,
+      "prompt_tokens": 1037,
+      "total_tokens": 2320,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": null,
+        "audio_tokens": null,
+        "reasoning_tokens": 961,
+        "rejected_prediction_tokens": null
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": null,
+        "cached_tokens": 0
+      },
+      "prompt_cache_hit_tokens": 0,
+      "prompt_cache_miss_tokens": 1037
+    },
+    "response_format_used": "json_object",
+    "parse_success": true,
+    "parse_error": "",
+    "empty_output": false,
+    "schema_missing": false,
+    "json_extractor_used": "first_json_object",
+    "elapsed_s": 28.777,
+    "cost_usd": 0.00282525
+  }
+}

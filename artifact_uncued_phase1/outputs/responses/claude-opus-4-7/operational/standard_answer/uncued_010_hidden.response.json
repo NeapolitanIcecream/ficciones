@@ -1,0 +1,90 @@
+{
+  "attempts": [
+    {
+      "attempt": 1,
+      "model": "claude-opus-4-7",
+      "provider": "Anthropic",
+      "budget_setting": "operational",
+      "task_id": "uncued_010_hidden",
+      "prompt_condition": "standard_answer",
+      "content": "{\n  \"claim_verdict\": \"supported\",\n  \"confidence\": 0.78,\n  \"supporting_evidence\": [\"doc_001\"],\n  \"rejected_evidence\": [],\n  \"selected_doc_ids\": [\"doc_001\", \"doc_003\", \"doc_004\"],\n  \"actions\": [\n    {\"action\": \"trace_source\", \"target\": \"doc_001\", \"rationale\": \"Verify the ledger entry's work order code and close date against primary records.\"},\n    {\"action\": \"search_contradiction\", \"target\": \"Nova pump refurbishments July 2025 count\", \"rationale\": \"Check for any alternate tally that conflicts with the 118 figure.\"}\n  ],\n  \"evidence_environment_assessment\": \"Four documents reference the same Harbor Annex / Nova pump refurbishments / July 2025 context. Only doc_001 provides a numeric count (118), matching the claim exactly. Docs 002, 003, and 004 give context (routing, planning, shift timing) but no totals, so they neither support nor refute the count. Timestamps are February 2025, which predates July 2025—an inconsistency worth noting, though the ledger body explicitly references July 2025. No contradicting figure appears.\",\n  \"answer\": \"Yes—doc_001 logs 118 completed Nova pump refurbishments at Harbor Annex for July 2025, matching the claim. Other documents corroborate the workstream and site but provide no contrary count. A timestamp anomaly (Feb 2025 metadata for a July 2025 ledger) slightly tempers confidence.\"\n}",
+      "usage": {
+        "completion_tokens": 514,
+        "prompt_tokens": 1489,
+        "total_tokens": 2003,
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": null,
+          "audio_tokens": 0,
+          "reasoning_tokens": 0,
+          "rejected_prediction_tokens": null,
+          "text_tokens": 0,
+          "image_tokens": 0
+        },
+        "prompt_tokens_details": {
+          "audio_tokens": 0,
+          "cached_tokens": 0,
+          "text_tokens": 0,
+          "image_tokens": 0
+        },
+        "usage_semantic": "openai",
+        "usage_source": "anthropic",
+        "input_tokens": 1489,
+        "output_tokens": 0,
+        "input_tokens_details": null,
+        "claude_cache_creation_5_m_tokens": 0,
+        "claude_cache_creation_1_h_tokens": 0
+      },
+      "response_format_used": "json_schema",
+      "parse_success": true,
+      "parse_error": "",
+      "empty_output": false,
+      "schema_missing": false,
+      "json_extractor_used": "first_json_object",
+      "elapsed_s": 11.572,
+      "cost_usd": 0.00140025
+    }
+  ],
+  "final_attempt": {
+    "attempt": 1,
+    "model": "claude-opus-4-7",
+    "provider": "Anthropic",
+    "budget_setting": "operational",
+    "task_id": "uncued_010_hidden",
+    "prompt_condition": "standard_answer",
+    "content": "{\n  \"claim_verdict\": \"supported\",\n  \"confidence\": 0.78,\n  \"supporting_evidence\": [\"doc_001\"],\n  \"rejected_evidence\": [],\n  \"selected_doc_ids\": [\"doc_001\", \"doc_003\", \"doc_004\"],\n  \"actions\": [\n    {\"action\": \"trace_source\", \"target\": \"doc_001\", \"rationale\": \"Verify the ledger entry's work order code and close date against primary records.\"},\n    {\"action\": \"search_contradiction\", \"target\": \"Nova pump refurbishments July 2025 count\", \"rationale\": \"Check for any alternate tally that conflicts with the 118 figure.\"}\n  ],\n  \"evidence_environment_assessment\": \"Four documents reference the same Harbor Annex / Nova pump refurbishments / July 2025 context. Only doc_001 provides a numeric count (118), matching the claim exactly. Docs 002, 003, and 004 give context (routing, planning, shift timing) but no totals, so they neither support nor refute the count. Timestamps are February 2025, which predates July 2025—an inconsistency worth noting, though the ledger body explicitly references July 2025. No contradicting figure appears.\",\n  \"answer\": \"Yes—doc_001 logs 118 completed Nova pump refurbishments at Harbor Annex for July 2025, matching the claim. Other documents corroborate the workstream and site but provide no contrary count. A timestamp anomaly (Feb 2025 metadata for a July 2025 ledger) slightly tempers confidence.\"\n}",
+    "usage": {
+      "completion_tokens": 514,
+      "prompt_tokens": 1489,
+      "total_tokens": 2003,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": null,
+        "audio_tokens": 0,
+        "reasoning_tokens": 0,
+        "rejected_prediction_tokens": null,
+        "text_tokens": 0,
+        "image_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cached_tokens": 0,
+        "text_tokens": 0,
+        "image_tokens": 0
+      },
+      "usage_semantic": "openai",
+      "usage_source": "anthropic",
+      "input_tokens": 1489,
+      "output_tokens": 0,
+      "input_tokens_details": null,
+      "claude_cache_creation_5_m_tokens": 0,
+      "claude_cache_creation_1_h_tokens": 0
+    },
+    "response_format_used": "json_schema",
+    "parse_success": true,
+    "parse_error": "",
+    "empty_output": false,
+    "schema_missing": false,
+    "json_extractor_used": "first_json_object",
+    "elapsed_s": 11.572,
+    "cost_usd": 0.00140025
+  }
+}

@@ -1,0 +1,90 @@
+{
+  "attempts": [
+    {
+      "attempt": 1,
+      "model": "claude-opus-4-7",
+      "provider": "Anthropic",
+      "budget_setting": "operational",
+      "task_id": "uncued_036_visible",
+      "prompt_condition": "standard_answer",
+      "content": "{\n  \"claim_verdict\": \"supported\",\n  \"confidence\": 0.78,\n  \"supporting_evidence\": [\"doc_002\"],\n  \"rejected_evidence\": [\"doc_003\", \"doc_004\"],\n  \"selected_doc_ids\": [\"doc_002\", \"doc_003\", \"doc_004\"],\n  \"actions\": [\n    {\"action\": \"compare_versions\", \"target\": \"doc_002 vs doc_003\", \"rationale\": \"Doc_002 is a closeout ledger with the final close date showing 184; doc_003 is a running estimate (211) citing a pre-close planning memo. Final closeout supersedes estimates.\"},\n    {\"action\": \"trace_source\", \"target\": \"doc_003\", \"rationale\": \"Doc_003 cites doc_004, which is a planning memo with no final number, weakening the 211 estimate.\"}\n  ],\n  \"evidence_environment_assessment\": \"Four documents share identical labels (site code, workstream, close date), so judgment must rest on stated values and document role. Doc_002 is the closeout ledger with the final close date and reports 184. Doc_003 offers a competing 211 figure but self-describes as a running estimate and points to doc_004, a pre-close planning memo with no final number. Doc_001 contains no count. The closeout ledger outranks estimates and planning notes for a final monthly figure.\",\n  \"answer\": \"Yes. The closeout ledger (doc_002), dated at the monthly close, records 184 completed Atlas valve checks for March 2025. The competing 211 figure in doc_003 is explicitly a running estimate tied to a pre-close planning memo (doc_004) that has no final number, so it does not override the closeout figure.\"\n}",
+      "usage": {
+        "completion_tokens": 559,
+        "prompt_tokens": 1474,
+        "total_tokens": 2033,
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": null,
+          "audio_tokens": 0,
+          "reasoning_tokens": 0,
+          "rejected_prediction_tokens": null,
+          "text_tokens": 0,
+          "image_tokens": 0
+        },
+        "prompt_tokens_details": {
+          "audio_tokens": 0,
+          "cached_tokens": 0,
+          "text_tokens": 0,
+          "image_tokens": 0
+        },
+        "usage_semantic": "openai",
+        "usage_source": "anthropic",
+        "input_tokens": 1474,
+        "output_tokens": 0,
+        "input_tokens_details": null,
+        "claude_cache_creation_5_m_tokens": 0,
+        "claude_cache_creation_1_h_tokens": 0
+      },
+      "response_format_used": "json_schema",
+      "parse_success": true,
+      "parse_error": "",
+      "empty_output": false,
+      "schema_missing": false,
+      "json_extractor_used": "first_json_object",
+      "elapsed_s": 24.816,
+      "cost_usd": 0.0014865
+    }
+  ],
+  "final_attempt": {
+    "attempt": 1,
+    "model": "claude-opus-4-7",
+    "provider": "Anthropic",
+    "budget_setting": "operational",
+    "task_id": "uncued_036_visible",
+    "prompt_condition": "standard_answer",
+    "content": "{\n  \"claim_verdict\": \"supported\",\n  \"confidence\": 0.78,\n  \"supporting_evidence\": [\"doc_002\"],\n  \"rejected_evidence\": [\"doc_003\", \"doc_004\"],\n  \"selected_doc_ids\": [\"doc_002\", \"doc_003\", \"doc_004\"],\n  \"actions\": [\n    {\"action\": \"compare_versions\", \"target\": \"doc_002 vs doc_003\", \"rationale\": \"Doc_002 is a closeout ledger with the final close date showing 184; doc_003 is a running estimate (211) citing a pre-close planning memo. Final closeout supersedes estimates.\"},\n    {\"action\": \"trace_source\", \"target\": \"doc_003\", \"rationale\": \"Doc_003 cites doc_004, which is a planning memo with no final number, weakening the 211 estimate.\"}\n  ],\n  \"evidence_environment_assessment\": \"Four documents share identical labels (site code, workstream, close date), so judgment must rest on stated values and document role. Doc_002 is the closeout ledger with the final close date and reports 184. Doc_003 offers a competing 211 figure but self-describes as a running estimate and points to doc_004, a pre-close planning memo with no final number. Doc_001 contains no count. The closeout ledger outranks estimates and planning notes for a final monthly figure.\",\n  \"answer\": \"Yes. The closeout ledger (doc_002), dated at the monthly close, records 184 completed Atlas valve checks for March 2025. The competing 211 figure in doc_003 is explicitly a running estimate tied to a pre-close planning memo (doc_004) that has no final number, so it does not override the closeout figure.\"\n}",
+    "usage": {
+      "completion_tokens": 559,
+      "prompt_tokens": 1474,
+      "total_tokens": 2033,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": null,
+        "audio_tokens": 0,
+        "reasoning_tokens": 0,
+        "rejected_prediction_tokens": null,
+        "text_tokens": 0,
+        "image_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cached_tokens": 0,
+        "text_tokens": 0,
+        "image_tokens": 0
+      },
+      "usage_semantic": "openai",
+      "usage_source": "anthropic",
+      "input_tokens": 1474,
+      "output_tokens": 0,
+      "input_tokens_details": null,
+      "claude_cache_creation_5_m_tokens": 0,
+      "claude_cache_creation_1_h_tokens": 0
+    },
+    "response_format_used": "json_schema",
+    "parse_success": true,
+    "parse_error": "",
+    "empty_output": false,
+    "schema_missing": false,
+    "json_extractor_used": "first_json_object",
+    "elapsed_s": 24.816,
+    "cost_usd": 0.0014865
+  }
+}

@@ -1,0 +1,90 @@
+{
+  "attempts": [
+    {
+      "attempt": 1,
+      "model": "claude-opus-4-7",
+      "provider": "Anthropic",
+      "budget_setting": "operational",
+      "task_id": "uncued_038_visible",
+      "prompt_condition": "standard_answer",
+      "content": "{\n  \"claim_verdict\": \"supported\",\n  \"confidence\": 0.7,\n  \"supporting_evidence\": [\"doc_001\"],\n  \"rejected_evidence\": [\"doc_004\", \"doc_003\", \"doc_002\"],\n  \"selected_doc_ids\": [\"doc_001\", \"doc_004\", \"doc_003\"],\n  \"actions\": [\n    {\"action\": \"trace_source\", \"target\": \"doc_001\", \"rationale\": \"Confirm the closeout ledger entry is the final, authoritative record rather than a draft.\"},\n    {\"action\": \"compare_versions\", \"target\": \"doc_004 vs doc_001\", \"rationale\": \"Reconcile the 124 running estimate against the 97 closeout figure.\"}\n  ],\n  \"evidence_environment_assessment\": \"The packet contains layered notes with mismatched source_type labels and timestamps that predate the May 2025 period referenced in the claim, suggesting label noise. doc_001 is the only document stating a final closed-ticket count (97) and is framed as a closeout ledger. doc_004 offers a conflicting 124 figure but self-identifies as a running estimate citing the planning memo doc_003, which has no final number. doc_002 lacks a count. The contradiction is weak because doc_004 is explicitly preliminary, while doc_001 claims finality.\",\n  \"answer\": \"Yes. doc_001, the closeout ledger, records 97 closed tickets for Mira sensor recalibrations in May 2025. The competing figure of 124 in doc_004 is explicitly a running estimate sourced from a pre-close planning memo (doc_003) and does not override the final ledger. Confidence is moderate due to inconsistent source_type labels and timestamps in the packet.\"\n}",
+      "usage": {
+        "completion_tokens": 573,
+        "prompt_tokens": 1490,
+        "total_tokens": 2063,
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": null,
+          "audio_tokens": 0,
+          "reasoning_tokens": 0,
+          "rejected_prediction_tokens": null,
+          "text_tokens": 0,
+          "image_tokens": 0
+        },
+        "prompt_tokens_details": {
+          "audio_tokens": 0,
+          "cached_tokens": 0,
+          "text_tokens": 0,
+          "image_tokens": 0
+        },
+        "usage_semantic": "openai",
+        "usage_source": "anthropic",
+        "input_tokens": 1490,
+        "output_tokens": 0,
+        "input_tokens_details": null,
+        "claude_cache_creation_5_m_tokens": 0,
+        "claude_cache_creation_1_h_tokens": 0
+      },
+      "response_format_used": "json_schema",
+      "parse_success": true,
+      "parse_error": "",
+      "empty_output": false,
+      "schema_missing": false,
+      "json_extractor_used": "first_json_object",
+      "elapsed_s": 8.939,
+      "cost_usd": 0.0015185
+    }
+  ],
+  "final_attempt": {
+    "attempt": 1,
+    "model": "claude-opus-4-7",
+    "provider": "Anthropic",
+    "budget_setting": "operational",
+    "task_id": "uncued_038_visible",
+    "prompt_condition": "standard_answer",
+    "content": "{\n  \"claim_verdict\": \"supported\",\n  \"confidence\": 0.7,\n  \"supporting_evidence\": [\"doc_001\"],\n  \"rejected_evidence\": [\"doc_004\", \"doc_003\", \"doc_002\"],\n  \"selected_doc_ids\": [\"doc_001\", \"doc_004\", \"doc_003\"],\n  \"actions\": [\n    {\"action\": \"trace_source\", \"target\": \"doc_001\", \"rationale\": \"Confirm the closeout ledger entry is the final, authoritative record rather than a draft.\"},\n    {\"action\": \"compare_versions\", \"target\": \"doc_004 vs doc_001\", \"rationale\": \"Reconcile the 124 running estimate against the 97 closeout figure.\"}\n  ],\n  \"evidence_environment_assessment\": \"The packet contains layered notes with mismatched source_type labels and timestamps that predate the May 2025 period referenced in the claim, suggesting label noise. doc_001 is the only document stating a final closed-ticket count (97) and is framed as a closeout ledger. doc_004 offers a conflicting 124 figure but self-identifies as a running estimate citing the planning memo doc_003, which has no final number. doc_002 lacks a count. The contradiction is weak because doc_004 is explicitly preliminary, while doc_001 claims finality.\",\n  \"answer\": \"Yes. doc_001, the closeout ledger, records 97 closed tickets for Mira sensor recalibrations in May 2025. The competing figure of 124 in doc_004 is explicitly a running estimate sourced from a pre-close planning memo (doc_003) and does not override the final ledger. Confidence is moderate due to inconsistent source_type labels and timestamps in the packet.\"\n}",
+    "usage": {
+      "completion_tokens": 573,
+      "prompt_tokens": 1490,
+      "total_tokens": 2063,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": null,
+        "audio_tokens": 0,
+        "reasoning_tokens": 0,
+        "rejected_prediction_tokens": null,
+        "text_tokens": 0,
+        "image_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cached_tokens": 0,
+        "text_tokens": 0,
+        "image_tokens": 0
+      },
+      "usage_semantic": "openai",
+      "usage_source": "anthropic",
+      "input_tokens": 1490,
+      "output_tokens": 0,
+      "input_tokens_details": null,
+      "claude_cache_creation_5_m_tokens": 0,
+      "claude_cache_creation_1_h_tokens": 0
+    },
+    "response_format_used": "json_schema",
+    "parse_success": true,
+    "parse_error": "",
+    "empty_output": false,
+    "schema_missing": false,
+    "json_extractor_used": "first_json_object",
+    "elapsed_s": 8.939,
+    "cost_usd": 0.0015185
+  }
+}

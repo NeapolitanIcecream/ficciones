@@ -1,0 +1,72 @@
+{
+  "attempts": [
+    {
+      "attempt": 1,
+      "model": "deepseek-v4-pro",
+      "provider": "DeepSeek",
+      "budget_setting": "operational",
+      "task_id": "uncued_059_hidden",
+      "prompt_condition": "standard_answer",
+      "content": "{\n  \"claim_verdict\": \"insufficient\",\n  \"confidence\": 0.85,\n  \"supporting_evidence\": [\"doc_003\", \"doc_004\"],\n  \"rejected_evidence\": [\"doc_001\", \"doc_002\"],\n  \"selected_doc_ids\": [\"doc_003\", \"doc_004\", \"doc_002\"],\n  \"actions\": [\n    {\n      \"action\": \"trace_source\",\n      \"target\": \"doc_004\",\n      \"rationale\": \"Trace the citation in doc_004 to doc_003 to determine if the claim originates from an official source or hearsay. This reveals the sole support is a community roundup without operational records.\"\n    }\n  ],\n  \"evidence_environment_assessment\": \"Four documents from June 2025; two mention a SolaceGrid launch in August 2025 (a community roundup and a recap citing it), while two operational documents (a monthly index and a service planning memo) do not mention it, focusing instead on Kestrel firmware checks. The claim lacks primary verification, and the only supporting sources are not backed by official records.\",\n  \"answer\": \"Insufficient evidence to confirm or refute the launch. The only sources (doc_003, doc_004) are a community roundup and a derived partner recap with no official documentation, while planning documents (doc_001, doc_002) do not mention SolaceGrid, though they may not be exhaustive.\"\n}",
+      "usage": {
+        "completion_tokens": 3518,
+        "prompt_tokens": 1036,
+        "total_tokens": 4554,
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": null,
+          "audio_tokens": null,
+          "reasoning_tokens": 3210,
+          "rejected_prediction_tokens": null
+        },
+        "prompt_tokens_details": {
+          "audio_tokens": null,
+          "cached_tokens": 0
+        },
+        "prompt_cache_hit_tokens": 0,
+        "prompt_cache_miss_tokens": 1036
+      },
+      "response_format_used": "json_object",
+      "parse_success": true,
+      "parse_error": "",
+      "empty_output": false,
+      "schema_missing": false,
+      "json_extractor_used": "first_json_object",
+      "elapsed_s": 80.324,
+      "cost_usd": 0.007294999999999999
+    }
+  ],
+  "final_attempt": {
+    "attempt": 1,
+    "model": "deepseek-v4-pro",
+    "provider": "DeepSeek",
+    "budget_setting": "operational",
+    "task_id": "uncued_059_hidden",
+    "prompt_condition": "standard_answer",
+    "content": "{\n  \"claim_verdict\": \"insufficient\",\n  \"confidence\": 0.85,\n  \"supporting_evidence\": [\"doc_003\", \"doc_004\"],\n  \"rejected_evidence\": [\"doc_001\", \"doc_002\"],\n  \"selected_doc_ids\": [\"doc_003\", \"doc_004\", \"doc_002\"],\n  \"actions\": [\n    {\n      \"action\": \"trace_source\",\n      \"target\": \"doc_004\",\n      \"rationale\": \"Trace the citation in doc_004 to doc_003 to determine if the claim originates from an official source or hearsay. This reveals the sole support is a community roundup without operational records.\"\n    }\n  ],\n  \"evidence_environment_assessment\": \"Four documents from June 2025; two mention a SolaceGrid launch in August 2025 (a community roundup and a recap citing it), while two operational documents (a monthly index and a service planning memo) do not mention it, focusing instead on Kestrel firmware checks. The claim lacks primary verification, and the only supporting sources are not backed by official records.\",\n  \"answer\": \"Insufficient evidence to confirm or refute the launch. The only sources (doc_003, doc_004) are a community roundup and a derived partner recap with no official documentation, while planning documents (doc_001, doc_002) do not mention SolaceGrid, though they may not be exhaustive.\"\n}",
+    "usage": {
+      "completion_tokens": 3518,
+      "prompt_tokens": 1036,
+      "total_tokens": 4554,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": null,
+        "audio_tokens": null,
+        "reasoning_tokens": 3210,
+        "rejected_prediction_tokens": null
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": null,
+        "cached_tokens": 0
+      },
+      "prompt_cache_hit_tokens": 0,
+      "prompt_cache_miss_tokens": 1036
+    },
+    "response_format_used": "json_object",
+    "parse_success": true,
+    "parse_error": "",
+    "empty_output": false,
+    "schema_missing": false,
+    "json_extractor_used": "first_json_object",
+    "elapsed_s": 80.324,
+    "cost_usd": 0.007294999999999999
+  }
+}

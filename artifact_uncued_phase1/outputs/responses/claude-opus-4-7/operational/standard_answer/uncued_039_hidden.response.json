@@ -1,0 +1,90 @@
+{
+  "attempts": [
+    {
+      "attempt": 1,
+      "model": "claude-opus-4-7",
+      "provider": "Anthropic",
+      "budget_setting": "operational",
+      "task_id": "uncued_039_hidden",
+      "prompt_condition": "standard_answer",
+      "content": "{\n  \"claim_verdict\": \"supported\",\n  \"confidence\": 0.82,\n  \"supporting_evidence\": [\"doc_002\"],\n  \"rejected_evidence\": [\"doc_001\"],\n  \"selected_doc_ids\": [\"doc_002\", \"doc_001\", \"doc_003\"],\n  \"actions\": [\n    {\"action\": \"compare_versions\", \"target\": \"doc_001 vs doc_002\", \"rationale\": \"Reconcile the digest estimate (57) with the closeout ledger (42).\"},\n    {\"action\": \"trace_source\", \"target\": \"doc_002\", \"rationale\": \"Confirm the closeout ledger is the authoritative final record.\"}\n  ],\n  \"evidence_environment_assessment\": \"The packet contains one closeout ledger (doc_002) with a final figure of 42, dated at monthly close, which is the authoritative artifact. Doc_001 is an earlier digest estimate of 57, explicitly framed as preliminary and pointing to a planning memo (doc_003) that has no final number. Doc_004 is a handoff note without counts. The estimate predates the close and conflicts with the ledger; the ledger should govern. Labels are uniform across documents, so judgment depends on the values and document roles.\",\n  \"answer\": \"Yes. The closeout ledger (doc_002) records 42 accepted inspections for Vega rail inspections in June 2025. The conflicting figure of 57 in doc_001 is a preliminary digest estimate from before monthly close and is superseded by the final ledger. Doc_003 and doc_004 contain no final counts.\"\n}",
+      "usage": {
+        "completion_tokens": 521,
+        "prompt_tokens": 1453,
+        "total_tokens": 1974,
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": null,
+          "audio_tokens": 0,
+          "reasoning_tokens": 0,
+          "rejected_prediction_tokens": null,
+          "text_tokens": 0,
+          "image_tokens": 0
+        },
+        "prompt_tokens_details": {
+          "audio_tokens": 0,
+          "cached_tokens": 0,
+          "text_tokens": 0,
+          "image_tokens": 0
+        },
+        "usage_semantic": "openai",
+        "usage_source": "anthropic",
+        "input_tokens": 1453,
+        "output_tokens": 0,
+        "input_tokens_details": null,
+        "claude_cache_creation_5_m_tokens": 0,
+        "claude_cache_creation_1_h_tokens": 0
+      },
+      "response_format_used": "json_schema",
+      "parse_success": true,
+      "parse_error": "",
+      "empty_output": false,
+      "schema_missing": false,
+      "json_extractor_used": "first_json_object",
+      "elapsed_s": 9.712,
+      "cost_usd": 0.00140525
+    }
+  ],
+  "final_attempt": {
+    "attempt": 1,
+    "model": "claude-opus-4-7",
+    "provider": "Anthropic",
+    "budget_setting": "operational",
+    "task_id": "uncued_039_hidden",
+    "prompt_condition": "standard_answer",
+    "content": "{\n  \"claim_verdict\": \"supported\",\n  \"confidence\": 0.82,\n  \"supporting_evidence\": [\"doc_002\"],\n  \"rejected_evidence\": [\"doc_001\"],\n  \"selected_doc_ids\": [\"doc_002\", \"doc_001\", \"doc_003\"],\n  \"actions\": [\n    {\"action\": \"compare_versions\", \"target\": \"doc_001 vs doc_002\", \"rationale\": \"Reconcile the digest estimate (57) with the closeout ledger (42).\"},\n    {\"action\": \"trace_source\", \"target\": \"doc_002\", \"rationale\": \"Confirm the closeout ledger is the authoritative final record.\"}\n  ],\n  \"evidence_environment_assessment\": \"The packet contains one closeout ledger (doc_002) with a final figure of 42, dated at monthly close, which is the authoritative artifact. Doc_001 is an earlier digest estimate of 57, explicitly framed as preliminary and pointing to a planning memo (doc_003) that has no final number. Doc_004 is a handoff note without counts. The estimate predates the close and conflicts with the ledger; the ledger should govern. Labels are uniform across documents, so judgment depends on the values and document roles.\",\n  \"answer\": \"Yes. The closeout ledger (doc_002) records 42 accepted inspections for Vega rail inspections in June 2025. The conflicting figure of 57 in doc_001 is a preliminary digest estimate from before monthly close and is superseded by the final ledger. Doc_003 and doc_004 contain no final counts.\"\n}",
+    "usage": {
+      "completion_tokens": 521,
+      "prompt_tokens": 1453,
+      "total_tokens": 1974,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": null,
+        "audio_tokens": 0,
+        "reasoning_tokens": 0,
+        "rejected_prediction_tokens": null,
+        "text_tokens": 0,
+        "image_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cached_tokens": 0,
+        "text_tokens": 0,
+        "image_tokens": 0
+      },
+      "usage_semantic": "openai",
+      "usage_source": "anthropic",
+      "input_tokens": 1453,
+      "output_tokens": 0,
+      "input_tokens_details": null,
+      "claude_cache_creation_5_m_tokens": 0,
+      "claude_cache_creation_1_h_tokens": 0
+    },
+    "response_format_used": "json_schema",
+    "parse_success": true,
+    "parse_error": "",
+    "empty_output": false,
+    "schema_missing": false,
+    "json_extractor_used": "first_json_object",
+    "elapsed_s": 9.712,
+    "cost_usd": 0.00140525
+  }
+}

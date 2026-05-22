@@ -1,0 +1,114 @@
+{
+  "task": {
+    "max_actions": 2,
+    "max_selected_docs": 3,
+    "question": "Did Novalis Robotics log 184 completed checks for Atlas valve checks in March 2025?",
+    "task_id": "uncued_000"
+  },
+  "visible_document": {
+    "body": "A routing note lists Northline service bay as the site for the Atlas valve checks workstream. The note does not provide a closing count. The note uses the same site code, workstream name, and monthly close date as the surrounding packet so that relation checks depend on the stated values rather than labels.",
+    "doc_id": "uncued_000_d01",
+    "source_type": "timeline note",
+    "task_id": "uncued_000",
+    "timestamp": "2025-01-16",
+    "title": "Service Ledger Extract",
+    "visible_citations": []
+  },
+  "prediction": {
+    "attempt_count": 1,
+    "backend": "api",
+    "budget_setting": "operational",
+    "condition": "clean",
+    "cost_usd": 0.00192475,
+    "empty_output": false,
+    "family": "packet_judgment",
+    "invocation_profile": {
+      "attempts": 1,
+      "budget_setting": "operational",
+      "doc_id_policy": "opaque_per_task",
+      "json_extractor": "first_json_object",
+      "llm_repair": "disabled",
+      "max_attempts": 2,
+      "max_completion_tokens_policy": "explicit:4096",
+      "message_role_policy": "developer_system_merged_into_user",
+      "provider": "Google",
+      "response_format": "json_schema",
+      "temperature_policy": "omitted",
+      "visible_prompt_audit": {
+        "audit_id_hits_in_title_or_body": 0,
+        "documents": 4,
+        "hidden_field_hits": [],
+        "semantic_doc_id_hits": 0,
+        "semantic_visible_citation_hits": 0
+      }
+    },
+    "json_extractor_used": "first_json_object",
+    "json_field_lengths": {
+      "actions_count": 1,
+      "answer_words": 31,
+      "evidence_environment_assessment_words": 50,
+      "max_action_rationale_words": 12,
+      "rejected_evidence_count": 3,
+      "selected_doc_ids_count": 1,
+      "supporting_evidence_count": 1
+    },
+    "model": "gemini-3.1-pro-preview",
+    "overlength": false,
+    "parse_error": "",
+    "parse_success": true,
+    "prediction": {
+      "actions": [
+        {
+          "action": "search_primary",
+          "rationale": "To verify the 184 completed checks count against the primary source ledger.",
+          "target": "monthly ledger for Northline service bay"
+        }
+      ],
+      "answer": "Yes, based on the provided evidence, the operations timeline note confirms that the monthly ledger for the Northline service bay lists 184 completed checks for Atlas valve checks in March 2025.",
+      "claim_verdict": "supported",
+      "confidence": 0.9,
+      "evidence_environment_assessment": "The provided evidence is consistent. Document 003 directly supports the claim by stating that the monthly ledger lists 184 completed checks for Atlas valve checks in March 2025. The other documents provide supporting context regarding the location and timing of the checks but omit the final tally, causing no contradictions.",
+      "rejected_evidence": [
+        "uncued_000_d01",
+        "uncued_000_d04",
+        "uncued_000_d02"
+      ],
+      "selected_doc_ids": [
+        "uncued_000_d03"
+      ],
+      "supporting_evidence": [
+        "uncued_000_d03"
+      ]
+    },
+    "prompt_condition": "standard_answer",
+    "provider": "Google",
+    "response_format_used": "json_schema",
+    "schema_missing": false,
+    "task_id": "uncued_000_visible",
+    "usage": {
+      "claude_cache_creation_1_h_tokens": 0,
+      "claude_cache_creation_5_m_tokens": 0,
+      "completion_tokens": 767,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": null,
+        "audio_tokens": 0,
+        "image_tokens": 0,
+        "reasoning_tokens": 479,
+        "rejected_prediction_tokens": null,
+        "text_tokens": 288
+      },
+      "input_tokens": 0,
+      "input_tokens_details": null,
+      "output_tokens": 0,
+      "prompt_tokens": 1563,
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cached_tokens": 0,
+        "image_tokens": 0,
+        "text_tokens": 1563
+      },
+      "total_tokens": 2330
+    },
+    "visible_output_tokens": 254
+  }
+}

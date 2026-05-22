@@ -1,0 +1,88 @@
+{
+  "date": "2026-05-22",
+  "dataset_dir": "eha-mvp/data/uncued-pilot-v1",
+  "phase": "pilot_pre_model_gates",
+  "decision": "go",
+  "gates": {
+    "pilot_generated": true,
+    "task_count_is_60": true,
+    "condition_balance_matches_plan": true,
+    "family_balance_matches_plan": true,
+    "active_verification_action_gold_complete": true,
+    "leakage_passed": true,
+    "baseline_gates_passed": true,
+    "human_review_validation_passed": true,
+    "critical_leaks_zero": true,
+    "high_leaks_zero": true,
+    "direct_answer_cues_zero": true,
+    "human_severe_leakage_rate_within_1_percent": true
+  },
+  "hashes": {
+    "pilot_generation_manifest": "67f772df81433360276b662377a9121927ec5194f244406adb911d51d5f466e1",
+    "pilot_leakage_report": "1426c028e3f016c77723cd949846c8c9bc6c54da9eeaa48e881db69eb0c71ed2",
+    "pilot_baseline_report": "e7577c4bae0ddd3ae685b51de42e6321c0026bccf49df250aaa8da25e50c4490",
+    "pilot_human_review_validation": "54daf906fe0845aa857919daf8497cf6e2d4b985479633012394e3a8b868c34d"
+  },
+  "pilot_manifest": {
+    "task_count": 60,
+    "views": [
+      "neutral_metadata_visible",
+      "neutral_metadata_hidden"
+    ],
+    "condition_counts": {
+      "clean": 12,
+      "conflicting_evidence": 12,
+      "false_consensus": 12,
+      "buried_primary": 12,
+      "generated_lore": 12
+    },
+    "family_counts": {
+      "packet_judgment": 24,
+      "evidence_selection": 24,
+      "active_verification": 12
+    },
+    "action_gold_rows": 12,
+    "documents_per_view": 240
+  },
+  "leakage": {
+    "critical_hits": 0,
+    "high_hits": 0,
+    "hidden_label_hits": 0,
+    "semantic_id_hits": 0,
+    "direct_answer_cue_hits": 0,
+    "medium_hits": 0
+  },
+  "baselines": {
+    "baseline_count": 12,
+    "gate_count": 30,
+    "passed": true
+  },
+  "human_review": {
+    "sample": "50-tasks-200-docs",
+    "reviewed_rows": 400,
+    "unique_tasks": 50,
+    "reviewed_condition_counts": {
+      "clean": 10,
+      "conflicting_evidence": 10,
+      "false_consensus": 10,
+      "buried_primary": 10,
+      "generated_lore": 10
+    },
+    "reviewed_family_counts": {
+      "packet_judgment": 19,
+      "evidence_selection": 19,
+      "active_verification": 12
+    },
+    "view_rows": {
+      "neutral_metadata_visible": 200,
+      "neutral_metadata_hidden": 200
+    },
+    "all_active_verification_tasks_included": true,
+    "critical_leaks": 0,
+    "direct_answer_cue_rows": 0,
+    "severe_leakage_rows": 0,
+    "severe_leakage_rate": 0.0,
+    "independent_human_review": false
+  },
+  "scope_note": "Decision covers Phase 9-10 pre-model pilot gates only; no frontier/API model call was made."
+}

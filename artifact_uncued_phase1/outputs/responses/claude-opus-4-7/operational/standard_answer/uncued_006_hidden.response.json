@@ -1,0 +1,90 @@
+{
+  "attempts": [
+    {
+      "attempt": 1,
+      "model": "claude-opus-4-7",
+      "provider": "Anthropic",
+      "budget_setting": "operational",
+      "task_id": "uncued_006_hidden",
+      "prompt_condition": "standard_answer",
+      "content": "{\n  \"claim_verdict\": \"supported\",\n  \"confidence\": 0.7,\n  \"supporting_evidence\": [\"doc_002\"],\n  \"rejected_evidence\": [\"doc_003\", \"doc_004\", \"doc_001\"],\n  \"selected_doc_ids\": [\"doc_002\", \"doc_003\", \"doc_004\"],\n  \"actions\": [\n    {\"action\": \"trace_source\", \"target\": \"doc_002\", \"rationale\": \"Verify the monthly ledger entry against the original work order record to confirm the 184 count.\"},\n    {\"action\": \"search_primary\", \"target\": \"Northline March 2025 Atlas valve closing ledger\", \"rationale\": \"Locate the primary monthly close report to corroborate the figure independently.\"}\n  ],\n  \"evidence_environment_assessment\": \"Only doc_002 reports a numeric tally (184) for Atlas valve checks at Northline in March 2025. The other three documents (doc_001, doc_003, doc_004) describe routing, planning, and shift handoff context but explicitly lack a closing count, so they neither corroborate nor contradict the figure. No contradicting source is present, but there is also no independent confirmation of the ledger entry. Source diversity is low.\",\n  \"answer\": \"Evidence supports the claim: doc_002's monthly ledger records 184 completed Atlas valve checks at Northline in March 2025. Supporting documentation is single-sourced; doc_001, doc_003, and doc_004 provide consistent context (site, workstream, timing) but no counts. Confidence is moderate pending primary-source verification.\"\n}",
+      "usage": {
+        "completion_tokens": 521,
+        "prompt_tokens": 1472,
+        "total_tokens": 1993,
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": null,
+          "audio_tokens": 0,
+          "reasoning_tokens": 0,
+          "rejected_prediction_tokens": null,
+          "text_tokens": 0,
+          "image_tokens": 0
+        },
+        "prompt_tokens_details": {
+          "audio_tokens": 0,
+          "cached_tokens": 0,
+          "text_tokens": 0,
+          "image_tokens": 0
+        },
+        "usage_semantic": "openai",
+        "usage_source": "anthropic",
+        "input_tokens": 1472,
+        "output_tokens": 0,
+        "input_tokens_details": null,
+        "claude_cache_creation_5_m_tokens": 0,
+        "claude_cache_creation_1_h_tokens": 0
+      },
+      "response_format_used": "json_schema",
+      "parse_success": true,
+      "parse_error": "",
+      "empty_output": false,
+      "schema_missing": false,
+      "json_extractor_used": "first_json_object",
+      "elapsed_s": 9.809,
+      "cost_usd": 0.00141
+    }
+  ],
+  "final_attempt": {
+    "attempt": 1,
+    "model": "claude-opus-4-7",
+    "provider": "Anthropic",
+    "budget_setting": "operational",
+    "task_id": "uncued_006_hidden",
+    "prompt_condition": "standard_answer",
+    "content": "{\n  \"claim_verdict\": \"supported\",\n  \"confidence\": 0.7,\n  \"supporting_evidence\": [\"doc_002\"],\n  \"rejected_evidence\": [\"doc_003\", \"doc_004\", \"doc_001\"],\n  \"selected_doc_ids\": [\"doc_002\", \"doc_003\", \"doc_004\"],\n  \"actions\": [\n    {\"action\": \"trace_source\", \"target\": \"doc_002\", \"rationale\": \"Verify the monthly ledger entry against the original work order record to confirm the 184 count.\"},\n    {\"action\": \"search_primary\", \"target\": \"Northline March 2025 Atlas valve closing ledger\", \"rationale\": \"Locate the primary monthly close report to corroborate the figure independently.\"}\n  ],\n  \"evidence_environment_assessment\": \"Only doc_002 reports a numeric tally (184) for Atlas valve checks at Northline in March 2025. The other three documents (doc_001, doc_003, doc_004) describe routing, planning, and shift handoff context but explicitly lack a closing count, so they neither corroborate nor contradict the figure. No contradicting source is present, but there is also no independent confirmation of the ledger entry. Source diversity is low.\",\n  \"answer\": \"Evidence supports the claim: doc_002's monthly ledger records 184 completed Atlas valve checks at Northline in March 2025. Supporting documentation is single-sourced; doc_001, doc_003, and doc_004 provide consistent context (site, workstream, timing) but no counts. Confidence is moderate pending primary-source verification.\"\n}",
+    "usage": {
+      "completion_tokens": 521,
+      "prompt_tokens": 1472,
+      "total_tokens": 1993,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": null,
+        "audio_tokens": 0,
+        "reasoning_tokens": 0,
+        "rejected_prediction_tokens": null,
+        "text_tokens": 0,
+        "image_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cached_tokens": 0,
+        "text_tokens": 0,
+        "image_tokens": 0
+      },
+      "usage_semantic": "openai",
+      "usage_source": "anthropic",
+      "input_tokens": 1472,
+      "output_tokens": 0,
+      "input_tokens_details": null,
+      "claude_cache_creation_5_m_tokens": 0,
+      "claude_cache_creation_1_h_tokens": 0
+    },
+    "response_format_used": "json_schema",
+    "parse_success": true,
+    "parse_error": "",
+    "empty_output": false,
+    "schema_missing": false,
+    "json_extractor_used": "first_json_object",
+    "elapsed_s": 9.809,
+    "cost_usd": 0.00141
+  }
+}

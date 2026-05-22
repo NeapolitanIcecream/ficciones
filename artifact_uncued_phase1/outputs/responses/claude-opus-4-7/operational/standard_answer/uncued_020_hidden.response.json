@@ -1,0 +1,90 @@
+{
+  "attempts": [
+    {
+      "attempt": 1,
+      "model": "claude-opus-4-7",
+      "provider": "Anthropic",
+      "budget_setting": "operational",
+      "task_id": "uncued_020_hidden",
+      "prompt_condition": "standard_answer",
+      "content": "{\n  \"claim_verdict\": \"refuted\",\n  \"confidence\": 0.78,\n  \"supporting_evidence\": [\"doc_001\"],\n  \"rejected_evidence\": [\"doc_004\"],\n  \"selected_doc_ids\": [\"doc_001\", \"doc_004\", \"doc_003\"],\n  \"actions\": [\n    {\"action\": \"trace_source\", \"target\": \"doc_004\", \"rationale\": \"doc_004 cites doc_003, but doc_003 contains no count, so the 124 figure lacks primary backing.\"},\n    {\"action\": \"compare_versions\", \"target\": \"doc_001 vs doc_004\", \"rationale\": \"Ledger row (97) conflicts with digest (124); the ledger is the authoritative month-close record.\"}\n  ],\n  \"evidence_environment_assessment\": \"Four documents share site, workstream, and close date. doc_001 is a month-close ledger giving 97 closed tickets. doc_004 is a digest asserting 124 but cites only doc_003, a routing note with no total. doc_002 is a scheduling memo without figures. The digest's citation chain dead-ends at chronology, leaving its 124 unsupported, while the ledger provides a direct contradicting count.\",\n  \"answer\": \"No. The Westhaven month-close ledger (doc_001) records 97 closed Mira sensor recalibration tickets for May 2025, not 124. The digest claiming 124 (doc_004) cites only doc_003, a routing note that contains no total, so its figure is unsupported. The ledger refutes the claim.\"\n}",
+      "usage": {
+        "completion_tokens": 510,
+        "prompt_tokens": 1476,
+        "total_tokens": 1986,
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": null,
+          "audio_tokens": 0,
+          "reasoning_tokens": 0,
+          "rejected_prediction_tokens": null,
+          "text_tokens": 0,
+          "image_tokens": 0
+        },
+        "prompt_tokens_details": {
+          "audio_tokens": 0,
+          "cached_tokens": 0,
+          "text_tokens": 0,
+          "image_tokens": 0
+        },
+        "usage_semantic": "openai",
+        "usage_source": "anthropic",
+        "input_tokens": 1476,
+        "output_tokens": 0,
+        "input_tokens_details": null,
+        "claude_cache_creation_5_m_tokens": 0,
+        "claude_cache_creation_1_h_tokens": 0
+      },
+      "response_format_used": "json_schema",
+      "parse_success": true,
+      "parse_error": "",
+      "empty_output": false,
+      "schema_missing": false,
+      "json_extractor_used": "first_json_object",
+      "elapsed_s": 7.237,
+      "cost_usd": 0.001389
+    }
+  ],
+  "final_attempt": {
+    "attempt": 1,
+    "model": "claude-opus-4-7",
+    "provider": "Anthropic",
+    "budget_setting": "operational",
+    "task_id": "uncued_020_hidden",
+    "prompt_condition": "standard_answer",
+    "content": "{\n  \"claim_verdict\": \"refuted\",\n  \"confidence\": 0.78,\n  \"supporting_evidence\": [\"doc_001\"],\n  \"rejected_evidence\": [\"doc_004\"],\n  \"selected_doc_ids\": [\"doc_001\", \"doc_004\", \"doc_003\"],\n  \"actions\": [\n    {\"action\": \"trace_source\", \"target\": \"doc_004\", \"rationale\": \"doc_004 cites doc_003, but doc_003 contains no count, so the 124 figure lacks primary backing.\"},\n    {\"action\": \"compare_versions\", \"target\": \"doc_001 vs doc_004\", \"rationale\": \"Ledger row (97) conflicts with digest (124); the ledger is the authoritative month-close record.\"}\n  ],\n  \"evidence_environment_assessment\": \"Four documents share site, workstream, and close date. doc_001 is a month-close ledger giving 97 closed tickets. doc_004 is a digest asserting 124 but cites only doc_003, a routing note with no total. doc_002 is a scheduling memo without figures. The digest's citation chain dead-ends at chronology, leaving its 124 unsupported, while the ledger provides a direct contradicting count.\",\n  \"answer\": \"No. The Westhaven month-close ledger (doc_001) records 97 closed Mira sensor recalibration tickets for May 2025, not 124. The digest claiming 124 (doc_004) cites only doc_003, a routing note that contains no total, so its figure is unsupported. The ledger refutes the claim.\"\n}",
+    "usage": {
+      "completion_tokens": 510,
+      "prompt_tokens": 1476,
+      "total_tokens": 1986,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": null,
+        "audio_tokens": 0,
+        "reasoning_tokens": 0,
+        "rejected_prediction_tokens": null,
+        "text_tokens": 0,
+        "image_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cached_tokens": 0,
+        "text_tokens": 0,
+        "image_tokens": 0
+      },
+      "usage_semantic": "openai",
+      "usage_source": "anthropic",
+      "input_tokens": 1476,
+      "output_tokens": 0,
+      "input_tokens_details": null,
+      "claude_cache_creation_5_m_tokens": 0,
+      "claude_cache_creation_1_h_tokens": 0
+    },
+    "response_format_used": "json_schema",
+    "parse_success": true,
+    "parse_error": "",
+    "empty_output": false,
+    "schema_missing": false,
+    "json_extractor_used": "first_json_object",
+    "elapsed_s": 7.237,
+    "cost_usd": 0.001389
+  }
+}

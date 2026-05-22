@@ -1,0 +1,90 @@
+{
+  "attempts": [
+    {
+      "attempt": 1,
+      "model": "claude-opus-4-7",
+      "provider": "Anthropic",
+      "budget_setting": "operational",
+      "task_id": "uncued_047_visible",
+      "prompt_condition": "standard_answer",
+      "content": "{\n  \"claim_verdict\": \"supported\",\n  \"confidence\": 0.7,\n  \"supporting_evidence\": [\"doc_001\"],\n  \"rejected_evidence\": [\"doc_004\"],\n  \"selected_doc_ids\": [\"doc_001\", \"doc_004\", \"doc_003\"],\n  \"actions\": [\n    {\"action\": \"trace_source\", \"target\": \"doc_001\", \"rationale\": \"Confirm the closeout ledger row is the authoritative final count rather than a draft.\"},\n    {\"action\": \"search_contradiction\", \"target\": \"doc_004\", \"rationale\": \"Reconcile the 101 running estimate against the 76 closeout figure.\"}\n  ],\n  \"evidence_environment_assessment\": \"Four documents share labels but differ in stage. doc_001 is a closeout ledger entry citing 76 approved checks—the only final, dated close figure. doc_003 is a pre-close planning memo with no number. doc_004 offers 101 as a running estimate sourced from the planning memo, so it is preliminary and should not override the close. doc_002 is a handoff note with no count. Timestamps are all March 2025, predating the August 2025 close they describe, which is unusual but consistent across the packet. The closeout ledger is the strongest artifact; the estimate is the main contradicting signal but is explicitly non-final.\",\n  \"answer\": \"Yes. doc_001, the closeout ledger, records 76 approved checks for Kestrel firmware checks in August 2025. The competing figure of 101 in doc_004 is explicitly a running estimate tied to the pre-close planning memo (doc_003) and is therefore non-authoritative. doc_002 contains no count. Confidence is moderate because all documents are dated March 2025 and only one final-stage artifact is available; tracing the ledger source would strengthen the verdict.\"\n}",
+      "usage": {
+        "completion_tokens": 605,
+        "prompt_tokens": 1482,
+        "total_tokens": 2087,
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": null,
+          "audio_tokens": 0,
+          "reasoning_tokens": 0,
+          "rejected_prediction_tokens": null,
+          "text_tokens": 0,
+          "image_tokens": 0
+        },
+        "prompt_tokens_details": {
+          "audio_tokens": 0,
+          "cached_tokens": 0,
+          "text_tokens": 0,
+          "image_tokens": 0
+        },
+        "usage_semantic": "openai",
+        "usage_source": "anthropic",
+        "input_tokens": 1482,
+        "output_tokens": 0,
+        "input_tokens_details": null,
+        "claude_cache_creation_5_m_tokens": 0,
+        "claude_cache_creation_1_h_tokens": 0
+      },
+      "response_format_used": "json_schema",
+      "parse_success": true,
+      "parse_error": "",
+      "empty_output": false,
+      "schema_missing": false,
+      "json_extractor_used": "first_json_object",
+      "elapsed_s": 8.954,
+      "cost_usd": 0.0015804999999999999
+    }
+  ],
+  "final_attempt": {
+    "attempt": 1,
+    "model": "claude-opus-4-7",
+    "provider": "Anthropic",
+    "budget_setting": "operational",
+    "task_id": "uncued_047_visible",
+    "prompt_condition": "standard_answer",
+    "content": "{\n  \"claim_verdict\": \"supported\",\n  \"confidence\": 0.7,\n  \"supporting_evidence\": [\"doc_001\"],\n  \"rejected_evidence\": [\"doc_004\"],\n  \"selected_doc_ids\": [\"doc_001\", \"doc_004\", \"doc_003\"],\n  \"actions\": [\n    {\"action\": \"trace_source\", \"target\": \"doc_001\", \"rationale\": \"Confirm the closeout ledger row is the authoritative final count rather than a draft.\"},\n    {\"action\": \"search_contradiction\", \"target\": \"doc_004\", \"rationale\": \"Reconcile the 101 running estimate against the 76 closeout figure.\"}\n  ],\n  \"evidence_environment_assessment\": \"Four documents share labels but differ in stage. doc_001 is a closeout ledger entry citing 76 approved checks—the only final, dated close figure. doc_003 is a pre-close planning memo with no number. doc_004 offers 101 as a running estimate sourced from the planning memo, so it is preliminary and should not override the close. doc_002 is a handoff note with no count. Timestamps are all March 2025, predating the August 2025 close they describe, which is unusual but consistent across the packet. The closeout ledger is the strongest artifact; the estimate is the main contradicting signal but is explicitly non-final.\",\n  \"answer\": \"Yes. doc_001, the closeout ledger, records 76 approved checks for Kestrel firmware checks in August 2025. The competing figure of 101 in doc_004 is explicitly a running estimate tied to the pre-close planning memo (doc_003) and is therefore non-authoritative. doc_002 contains no count. Confidence is moderate because all documents are dated March 2025 and only one final-stage artifact is available; tracing the ledger source would strengthen the verdict.\"\n}",
+    "usage": {
+      "completion_tokens": 605,
+      "prompt_tokens": 1482,
+      "total_tokens": 2087,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": null,
+        "audio_tokens": 0,
+        "reasoning_tokens": 0,
+        "rejected_prediction_tokens": null,
+        "text_tokens": 0,
+        "image_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cached_tokens": 0,
+        "text_tokens": 0,
+        "image_tokens": 0
+      },
+      "usage_semantic": "openai",
+      "usage_source": "anthropic",
+      "input_tokens": 1482,
+      "output_tokens": 0,
+      "input_tokens_details": null,
+      "claude_cache_creation_5_m_tokens": 0,
+      "claude_cache_creation_1_h_tokens": 0
+    },
+    "response_format_used": "json_schema",
+    "parse_success": true,
+    "parse_error": "",
+    "empty_output": false,
+    "schema_missing": false,
+    "json_extractor_used": "first_json_object",
+    "elapsed_s": 8.954,
+    "cost_usd": 0.0015804999999999999
+  }
+}

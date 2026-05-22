@@ -1,0 +1,90 @@
+{
+  "attempts": [
+    {
+      "attempt": 1,
+      "model": "claude-opus-4-7",
+      "provider": "Anthropic",
+      "budget_setting": "operational",
+      "task_id": "uncued_029_hidden",
+      "prompt_condition": "standard_answer",
+      "content": "{\n  \"claim_verdict\": \"insufficient\",\n  \"confidence\": 0.4,\n  \"supporting_evidence\": [\"doc_002\", \"doc_001\"],\n  \"rejected_evidence\": [\"doc_004\"],\n  \"selected_doc_ids\": [\"doc_003\", \"doc_002\", \"doc_001\"],\n  \"actions\": [\n    {\"action\": \"trace_source\", \"target\": \"doc_002\", \"rationale\": \"The 101 figure traces through doc_001 → doc_002 → an earlier bulletin not in the packet. Tracing to the original bulletin is needed to confirm whether 101 is independently sourced.\"},\n    {\"action\": \"search_primary\", \"target\": \"Ridgeway bench closing ledger August 2025\", \"rationale\": \"doc_003 is a ledger giving 76, conflicting with the circular 101. A primary count sheet or signed ledger is needed to adjudicate.\"}\n  ],\n  \"evidence_environment_assessment\": \"Two notes (doc_002, doc_001) cite the same 101 figure but form a citation loop pointing back to an unseen bulletin, so they are not independent. doc_003, a closing ledger, gives a different final count (76) and is the only ledger-type record visible. doc_004 lacks a count. The packet thus contains one circular repeated claim and one conflicting ledger value, with no primary source visible to resolve the discrepancy.\",\n  \"answer\": \"Evidence is insufficient to confirm 101 approved checks. The 101 figure appears in doc_002 and doc_001, but these cite each other and an unseen bulletin, forming a circular chain rather than independent confirmation. Meanwhile, doc_003, the closing ledger, records 76 approved checks for the same workstream and month, directly conflicting with 101. doc_004 provides no count. Without access to the underlying bulletin or a primary count sheet, the claim cannot be supported, and the ledger value actually weighs against it.\"\n}",
+      "usage": {
+        "completion_tokens": 644,
+        "prompt_tokens": 1491,
+        "total_tokens": 2135,
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": null,
+          "audio_tokens": 0,
+          "reasoning_tokens": 0,
+          "rejected_prediction_tokens": null,
+          "text_tokens": 0,
+          "image_tokens": 0
+        },
+        "prompt_tokens_details": {
+          "audio_tokens": 0,
+          "cached_tokens": 0,
+          "text_tokens": 0,
+          "image_tokens": 0
+        },
+        "usage_semantic": "openai",
+        "usage_source": "anthropic",
+        "input_tokens": 1491,
+        "output_tokens": 0,
+        "input_tokens_details": null,
+        "claude_cache_creation_5_m_tokens": 0,
+        "claude_cache_creation_1_h_tokens": 0
+      },
+      "response_format_used": "json_schema",
+      "parse_success": true,
+      "parse_error": "",
+      "empty_output": false,
+      "schema_missing": false,
+      "json_extractor_used": "first_json_object",
+      "elapsed_s": 9.275,
+      "cost_usd": 0.0016607500000000001
+    }
+  ],
+  "final_attempt": {
+    "attempt": 1,
+    "model": "claude-opus-4-7",
+    "provider": "Anthropic",
+    "budget_setting": "operational",
+    "task_id": "uncued_029_hidden",
+    "prompt_condition": "standard_answer",
+    "content": "{\n  \"claim_verdict\": \"insufficient\",\n  \"confidence\": 0.4,\n  \"supporting_evidence\": [\"doc_002\", \"doc_001\"],\n  \"rejected_evidence\": [\"doc_004\"],\n  \"selected_doc_ids\": [\"doc_003\", \"doc_002\", \"doc_001\"],\n  \"actions\": [\n    {\"action\": \"trace_source\", \"target\": \"doc_002\", \"rationale\": \"The 101 figure traces through doc_001 → doc_002 → an earlier bulletin not in the packet. Tracing to the original bulletin is needed to confirm whether 101 is independently sourced.\"},\n    {\"action\": \"search_primary\", \"target\": \"Ridgeway bench closing ledger August 2025\", \"rationale\": \"doc_003 is a ledger giving 76, conflicting with the circular 101. A primary count sheet or signed ledger is needed to adjudicate.\"}\n  ],\n  \"evidence_environment_assessment\": \"Two notes (doc_002, doc_001) cite the same 101 figure but form a citation loop pointing back to an unseen bulletin, so they are not independent. doc_003, a closing ledger, gives a different final count (76) and is the only ledger-type record visible. doc_004 lacks a count. The packet thus contains one circular repeated claim and one conflicting ledger value, with no primary source visible to resolve the discrepancy.\",\n  \"answer\": \"Evidence is insufficient to confirm 101 approved checks. The 101 figure appears in doc_002 and doc_001, but these cite each other and an unseen bulletin, forming a circular chain rather than independent confirmation. Meanwhile, doc_003, the closing ledger, records 76 approved checks for the same workstream and month, directly conflicting with 101. doc_004 provides no count. Without access to the underlying bulletin or a primary count sheet, the claim cannot be supported, and the ledger value actually weighs against it.\"\n}",
+    "usage": {
+      "completion_tokens": 644,
+      "prompt_tokens": 1491,
+      "total_tokens": 2135,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": null,
+        "audio_tokens": 0,
+        "reasoning_tokens": 0,
+        "rejected_prediction_tokens": null,
+        "text_tokens": 0,
+        "image_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cached_tokens": 0,
+        "text_tokens": 0,
+        "image_tokens": 0
+      },
+      "usage_semantic": "openai",
+      "usage_source": "anthropic",
+      "input_tokens": 1491,
+      "output_tokens": 0,
+      "input_tokens_details": null,
+      "claude_cache_creation_5_m_tokens": 0,
+      "claude_cache_creation_1_h_tokens": 0
+    },
+    "response_format_used": "json_schema",
+    "parse_success": true,
+    "parse_error": "",
+    "empty_output": false,
+    "schema_missing": false,
+    "json_extractor_used": "first_json_object",
+    "elapsed_s": 9.275,
+    "cost_usd": 0.0016607500000000001
+  }
+}

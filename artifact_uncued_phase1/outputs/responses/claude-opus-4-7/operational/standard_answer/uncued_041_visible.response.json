@@ -1,0 +1,90 @@
+{
+  "attempts": [
+    {
+      "attempt": 1,
+      "model": "claude-opus-4-7",
+      "provider": "Anthropic",
+      "budget_setting": "operational",
+      "task_id": "uncued_041_visible",
+      "prompt_condition": "standard_answer",
+      "content": "{\n  \"claim_verdict\": \"supported\",\n  \"confidence\": 0.78,\n  \"supporting_evidence\": [\"doc_003\"],\n  \"rejected_evidence\": [\"doc_004\", \"doc_002\"],\n  \"selected_doc_ids\": [\"doc_003\", \"doc_004\", \"doc_002\"],\n  \"actions\": [\n    {\"action\": \"compare_versions\", \"target\": \"doc_003 vs doc_004\", \"rationale\": \"Reconcile the closeout ledger's 76 against the earlier digest estimate of 101 to confirm the final figure.\"},\n    {\"action\": \"trace_source\", \"target\": \"doc_003\", \"rationale\": \"Verify the closeout ledger as the authoritative final-close record.\"}\n  ],\n  \"evidence_environment_assessment\": \"Four documents share labels, so judgment depends on stated values and document role. doc_002 is a pre-close planning memo with no final number. doc_004 is a mid-cycle digest offering a running estimate (101) citing the planning memo, not a closeout. doc_001 lacks a count. doc_003 is described as the closeout ledger using the final close date, which is the appropriate authority for an approved monthly count. The conflict between 76 (closeout) and 101 (estimate) is resolved by document role: closeout supersedes estimate.\",\n  \"answer\": \"Yes. The closeout ledger (doc_003) records 76 approved checks for Kestrel firmware checks in August 2025. The competing figure of 101 in doc_004 is explicitly a running estimate tied to the pre-close planning memo (doc_002), not a final count, so it does not override the closeout entry.\"\n}",
+      "usage": {
+        "completion_tokens": 541,
+        "prompt_tokens": 1484,
+        "total_tokens": 2025,
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": null,
+          "audio_tokens": 0,
+          "reasoning_tokens": 0,
+          "rejected_prediction_tokens": null,
+          "text_tokens": 0,
+          "image_tokens": 0
+        },
+        "prompt_tokens_details": {
+          "audio_tokens": 0,
+          "cached_tokens": 0,
+          "text_tokens": 0,
+          "image_tokens": 0
+        },
+        "usage_semantic": "openai",
+        "usage_source": "anthropic",
+        "input_tokens": 1484,
+        "output_tokens": 0,
+        "input_tokens_details": null,
+        "claude_cache_creation_5_m_tokens": 0,
+        "claude_cache_creation_1_h_tokens": 0
+      },
+      "response_format_used": "json_schema",
+      "parse_success": true,
+      "parse_error": "",
+      "empty_output": false,
+      "schema_missing": false,
+      "json_extractor_used": "first_json_object",
+      "elapsed_s": 28.095,
+      "cost_usd": 0.001453
+    }
+  ],
+  "final_attempt": {
+    "attempt": 1,
+    "model": "claude-opus-4-7",
+    "provider": "Anthropic",
+    "budget_setting": "operational",
+    "task_id": "uncued_041_visible",
+    "prompt_condition": "standard_answer",
+    "content": "{\n  \"claim_verdict\": \"supported\",\n  \"confidence\": 0.78,\n  \"supporting_evidence\": [\"doc_003\"],\n  \"rejected_evidence\": [\"doc_004\", \"doc_002\"],\n  \"selected_doc_ids\": [\"doc_003\", \"doc_004\", \"doc_002\"],\n  \"actions\": [\n    {\"action\": \"compare_versions\", \"target\": \"doc_003 vs doc_004\", \"rationale\": \"Reconcile the closeout ledger's 76 against the earlier digest estimate of 101 to confirm the final figure.\"},\n    {\"action\": \"trace_source\", \"target\": \"doc_003\", \"rationale\": \"Verify the closeout ledger as the authoritative final-close record.\"}\n  ],\n  \"evidence_environment_assessment\": \"Four documents share labels, so judgment depends on stated values and document role. doc_002 is a pre-close planning memo with no final number. doc_004 is a mid-cycle digest offering a running estimate (101) citing the planning memo, not a closeout. doc_001 lacks a count. doc_003 is described as the closeout ledger using the final close date, which is the appropriate authority for an approved monthly count. The conflict between 76 (closeout) and 101 (estimate) is resolved by document role: closeout supersedes estimate.\",\n  \"answer\": \"Yes. The closeout ledger (doc_003) records 76 approved checks for Kestrel firmware checks in August 2025. The competing figure of 101 in doc_004 is explicitly a running estimate tied to the pre-close planning memo (doc_002), not a final count, so it does not override the closeout entry.\"\n}",
+    "usage": {
+      "completion_tokens": 541,
+      "prompt_tokens": 1484,
+      "total_tokens": 2025,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": null,
+        "audio_tokens": 0,
+        "reasoning_tokens": 0,
+        "rejected_prediction_tokens": null,
+        "text_tokens": 0,
+        "image_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cached_tokens": 0,
+        "text_tokens": 0,
+        "image_tokens": 0
+      },
+      "usage_semantic": "openai",
+      "usage_source": "anthropic",
+      "input_tokens": 1484,
+      "output_tokens": 0,
+      "input_tokens_details": null,
+      "claude_cache_creation_5_m_tokens": 0,
+      "claude_cache_creation_1_h_tokens": 0
+    },
+    "response_format_used": "json_schema",
+    "parse_success": true,
+    "parse_error": "",
+    "empty_output": false,
+    "schema_missing": false,
+    "json_extractor_used": "first_json_object",
+    "elapsed_s": 28.095,
+    "cost_usd": 0.001453
+  }
+}

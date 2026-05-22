@@ -1,0 +1,72 @@
+{
+  "attempts": [
+    {
+      "attempt": 1,
+      "model": "deepseek-v4-pro",
+      "provider": "DeepSeek",
+      "budget_setting": "operational",
+      "task_id": "uncued_041_hidden",
+      "prompt_condition": "standard_answer",
+      "content": "{\n  \"claim_verdict\": \"supported\",\n  \"confidence\": 0.95,\n  \"supporting_evidence\": [\"doc_004\"],\n  \"rejected_evidence\": [\"doc_003\"],\n  \"selected_doc_ids\": [\"doc_004\", \"doc_003\", \"doc_001\"],\n  \"actions\": [\n    {\n      \"action\": \"open\",\n      \"target\": \"doc_004\",\n      \"rationale\": \"Examine the closeout ledger to verify it states exactly 76 approved checks for the specified month and workstream.\"\n    },\n    {\n      \"action\": \"compare_versions\",\n      \"target\": \"doc_003\",\n      \"rationale\": \"Compare the running estimate (101) with the final ledger (76) to note the discrepancy and confirm the ledger overrides the earlier estimate.\"\n    }\n  ],\n  \"evidence_environment_assessment\": \"The environment includes four documents: planning memo (no final count), handoff note (no count), digest (estimate of 101), and a closeout ledger showing 76. The ledger is the only final record, directly supporting the claim. The estimate contradicts but is explicitly not final. No redactions or inconsistencies in site codes. The evidence appears consistent with a standard monthly close process.\",\n  \"answer\": \"The closeout ledger (doc_004) explicitly lists 76 approved checks for Kestrel firmware checks in August 2025. Although an earlier digest (doc_003) estimated 101, the ledger represents the final, approved count. No other document provides a conflicting final number. Therefore, the claim is supported.\"\n}",
+      "usage": {
+        "completion_tokens": 1180,
+        "prompt_tokens": 1043,
+        "total_tokens": 2223,
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": null,
+          "audio_tokens": null,
+          "reasoning_tokens": 843,
+          "rejected_prediction_tokens": null
+        },
+        "prompt_tokens_details": {
+          "audio_tokens": null,
+          "cached_tokens": 0
+        },
+        "prompt_cache_hit_tokens": 0,
+        "prompt_cache_miss_tokens": 1043
+      },
+      "response_format_used": "json_object",
+      "parse_success": true,
+      "parse_error": "",
+      "empty_output": false,
+      "schema_missing": false,
+      "json_extractor_used": "first_json_object",
+      "elapsed_s": 31.377,
+      "cost_usd": 0.0026207500000000002
+    }
+  ],
+  "final_attempt": {
+    "attempt": 1,
+    "model": "deepseek-v4-pro",
+    "provider": "DeepSeek",
+    "budget_setting": "operational",
+    "task_id": "uncued_041_hidden",
+    "prompt_condition": "standard_answer",
+    "content": "{\n  \"claim_verdict\": \"supported\",\n  \"confidence\": 0.95,\n  \"supporting_evidence\": [\"doc_004\"],\n  \"rejected_evidence\": [\"doc_003\"],\n  \"selected_doc_ids\": [\"doc_004\", \"doc_003\", \"doc_001\"],\n  \"actions\": [\n    {\n      \"action\": \"open\",\n      \"target\": \"doc_004\",\n      \"rationale\": \"Examine the closeout ledger to verify it states exactly 76 approved checks for the specified month and workstream.\"\n    },\n    {\n      \"action\": \"compare_versions\",\n      \"target\": \"doc_003\",\n      \"rationale\": \"Compare the running estimate (101) with the final ledger (76) to note the discrepancy and confirm the ledger overrides the earlier estimate.\"\n    }\n  ],\n  \"evidence_environment_assessment\": \"The environment includes four documents: planning memo (no final count), handoff note (no count), digest (estimate of 101), and a closeout ledger showing 76. The ledger is the only final record, directly supporting the claim. The estimate contradicts but is explicitly not final. No redactions or inconsistencies in site codes. The evidence appears consistent with a standard monthly close process.\",\n  \"answer\": \"The closeout ledger (doc_004) explicitly lists 76 approved checks for Kestrel firmware checks in August 2025. Although an earlier digest (doc_003) estimated 101, the ledger represents the final, approved count. No other document provides a conflicting final number. Therefore, the claim is supported.\"\n}",
+    "usage": {
+      "completion_tokens": 1180,
+      "prompt_tokens": 1043,
+      "total_tokens": 2223,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": null,
+        "audio_tokens": null,
+        "reasoning_tokens": 843,
+        "rejected_prediction_tokens": null
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": null,
+        "cached_tokens": 0
+      },
+      "prompt_cache_hit_tokens": 0,
+      "prompt_cache_miss_tokens": 1043
+    },
+    "response_format_used": "json_object",
+    "parse_success": true,
+    "parse_error": "",
+    "empty_output": false,
+    "schema_missing": false,
+    "json_extractor_used": "first_json_object",
+    "elapsed_s": 31.377,
+    "cost_usd": 0.0026207500000000002
+  }
+}

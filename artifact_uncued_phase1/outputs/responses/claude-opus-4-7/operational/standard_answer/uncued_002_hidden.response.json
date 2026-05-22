@@ -1,0 +1,90 @@
+{
+  "attempts": [
+    {
+      "attempt": 1,
+      "model": "claude-opus-4-7",
+      "provider": "Anthropic",
+      "budget_setting": "operational",
+      "task_id": "uncued_002_hidden",
+      "prompt_condition": "standard_answer",
+      "content": "{\n  \"claim_verdict\": \"supported\",\n  \"confidence\": 0.7,\n  \"supporting_evidence\": [\"doc_001\"],\n  \"rejected_evidence\": [\"doc_003\", \"doc_004\", \"doc_002\"],\n  \"selected_doc_ids\": [\"doc_001\", \"doc_002\", \"doc_004\"],\n  \"actions\": [\n    {\"action\": \"trace_source\", \"target\": \"doc_001\", \"rationale\": \"Verify the monthly ledger entry, since it is the only document with a numeric closing count.\"},\n    {\"action\": \"search_primary\", \"target\": \"Westhaven May 2025 ticket ledger\", \"rationale\": \"Confirm the 97 figure with an independent primary source.\"}\n  ],\n  \"evidence_environment_assessment\": \"Four documents share site code, workstream, and close date. Only doc_001 provides a numeric tally (97 closed tickets) matching the claim. Docs 002, 003, 004 give context (timing, route, staffing) but no count, so they neither confirm nor contradict. Timestamps are dated March 2025, before May 2025 close, which is anomalous for a monthly ledger and warrants caution. No contradicting figure is present.\",\n  \"answer\": \"Yes—per doc_001, Novalis Robotics' monthly ledger lists 97 closed tickets for Mira sensor recalibrations at Westhaven lab in May 2025. Other documents are consistent in context but provide no counts. Confidence is moderate because the ledger's March timestamp predates the May close, a discrepancy that should be verified against the primary ledger source.\"\n}",
+      "usage": {
+        "completion_tokens": 525,
+        "prompt_tokens": 1492,
+        "total_tokens": 2017,
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": null,
+          "audio_tokens": 0,
+          "reasoning_tokens": 0,
+          "rejected_prediction_tokens": null,
+          "text_tokens": 0,
+          "image_tokens": 0
+        },
+        "prompt_tokens_details": {
+          "audio_tokens": 0,
+          "cached_tokens": 0,
+          "text_tokens": 0,
+          "image_tokens": 0
+        },
+        "usage_semantic": "openai",
+        "usage_source": "anthropic",
+        "input_tokens": 1492,
+        "output_tokens": 0,
+        "input_tokens_details": null,
+        "claude_cache_creation_5_m_tokens": 0,
+        "claude_cache_creation_1_h_tokens": 0
+      },
+      "response_format_used": "json_schema",
+      "parse_success": true,
+      "parse_error": "",
+      "empty_output": false,
+      "schema_missing": false,
+      "json_extractor_used": "first_json_object",
+      "elapsed_s": 8.826,
+      "cost_usd": 0.001423
+    }
+  ],
+  "final_attempt": {
+    "attempt": 1,
+    "model": "claude-opus-4-7",
+    "provider": "Anthropic",
+    "budget_setting": "operational",
+    "task_id": "uncued_002_hidden",
+    "prompt_condition": "standard_answer",
+    "content": "{\n  \"claim_verdict\": \"supported\",\n  \"confidence\": 0.7,\n  \"supporting_evidence\": [\"doc_001\"],\n  \"rejected_evidence\": [\"doc_003\", \"doc_004\", \"doc_002\"],\n  \"selected_doc_ids\": [\"doc_001\", \"doc_002\", \"doc_004\"],\n  \"actions\": [\n    {\"action\": \"trace_source\", \"target\": \"doc_001\", \"rationale\": \"Verify the monthly ledger entry, since it is the only document with a numeric closing count.\"},\n    {\"action\": \"search_primary\", \"target\": \"Westhaven May 2025 ticket ledger\", \"rationale\": \"Confirm the 97 figure with an independent primary source.\"}\n  ],\n  \"evidence_environment_assessment\": \"Four documents share site code, workstream, and close date. Only doc_001 provides a numeric tally (97 closed tickets) matching the claim. Docs 002, 003, 004 give context (timing, route, staffing) but no count, so they neither confirm nor contradict. Timestamps are dated March 2025, before May 2025 close, which is anomalous for a monthly ledger and warrants caution. No contradicting figure is present.\",\n  \"answer\": \"Yes—per doc_001, Novalis Robotics' monthly ledger lists 97 closed tickets for Mira sensor recalibrations at Westhaven lab in May 2025. Other documents are consistent in context but provide no counts. Confidence is moderate because the ledger's March timestamp predates the May close, a discrepancy that should be verified against the primary ledger source.\"\n}",
+    "usage": {
+      "completion_tokens": 525,
+      "prompt_tokens": 1492,
+      "total_tokens": 2017,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": null,
+        "audio_tokens": 0,
+        "reasoning_tokens": 0,
+        "rejected_prediction_tokens": null,
+        "text_tokens": 0,
+        "image_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cached_tokens": 0,
+        "text_tokens": 0,
+        "image_tokens": 0
+      },
+      "usage_semantic": "openai",
+      "usage_source": "anthropic",
+      "input_tokens": 1492,
+      "output_tokens": 0,
+      "input_tokens_details": null,
+      "claude_cache_creation_5_m_tokens": 0,
+      "claude_cache_creation_1_h_tokens": 0
+    },
+    "response_format_used": "json_schema",
+    "parse_success": true,
+    "parse_error": "",
+    "empty_output": false,
+    "schema_missing": false,
+    "json_extractor_used": "first_json_object",
+    "elapsed_s": 8.826,
+    "cost_usd": 0.001423
+  }
+}

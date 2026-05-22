@@ -1,0 +1,72 @@
+{
+  "attempts": [
+    {
+      "attempt": 1,
+      "model": "deepseek-v4-pro",
+      "provider": "DeepSeek",
+      "budget_setting": "operational",
+      "task_id": "uncued_012_visible",
+      "prompt_condition": "standard_answer",
+      "content": "{\n  \"claim_verdict\": \"insufficient\",\n  \"confidence\": 0.3,\n  \"supporting_evidence\": [\"doc_002\"],\n  \"rejected_evidence\": [\"doc_001\"],\n  \"selected_doc_ids\": [\"doc_002\", \"doc_001\", \"doc_004\"],\n  \"actions\": [\n    {\n      \"action\": \"trace_source\",\n      \"target\": \"doc_002\",\n      \"rationale\": \"doc_002 claims 211 but cites doc_004, which provides no count. Tracing the source may reveal the basis for the 211 figure.\"\n    },\n    {\n      \"action\": \"compare_versions\",\n      \"target\": \"doc_002 and doc_001\",\n      \"rationale\": \"Directly conflicting counts (211 vs 184) require comparison to determine which record is authoritative.\"\n    }\n  ],\n  \"evidence_environment_assessment\": \"The environment contains a direct contradiction: doc_002 states 211 completed checks, while doc_001 states 184. doc_002 cites doc_004, but doc_004 lacks a count. doc_003 is unrelated. No primary ledger is provided. The conflict cannot be resolved with the given documents.\",\n  \"answer\": \"The evidence is insufficient to confirm or refute the claim. One document (doc_002) reports 211 completed checks, but its cited source (doc_004) does not contain that number. Another document (doc_001) reports 184 checks from the month-close ledger. This contradiction cannot be resolved with the available information.\"\n}",
+      "usage": {
+        "completion_tokens": 1835,
+        "prompt_tokens": 1050,
+        "total_tokens": 2885,
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": null,
+          "audio_tokens": null,
+          "reasoning_tokens": 1507,
+          "rejected_prediction_tokens": null
+        },
+        "prompt_tokens_details": {
+          "audio_tokens": null,
+          "cached_tokens": 0
+        },
+        "prompt_cache_hit_tokens": 0,
+        "prompt_cache_miss_tokens": 1050
+      },
+      "response_format_used": "json_object",
+      "parse_success": true,
+      "parse_error": "",
+      "empty_output": false,
+      "schema_missing": false,
+      "json_extractor_used": "first_json_object",
+      "elapsed_s": 42.987,
+      "cost_usd": 0.0039325
+    }
+  ],
+  "final_attempt": {
+    "attempt": 1,
+    "model": "deepseek-v4-pro",
+    "provider": "DeepSeek",
+    "budget_setting": "operational",
+    "task_id": "uncued_012_visible",
+    "prompt_condition": "standard_answer",
+    "content": "{\n  \"claim_verdict\": \"insufficient\",\n  \"confidence\": 0.3,\n  \"supporting_evidence\": [\"doc_002\"],\n  \"rejected_evidence\": [\"doc_001\"],\n  \"selected_doc_ids\": [\"doc_002\", \"doc_001\", \"doc_004\"],\n  \"actions\": [\n    {\n      \"action\": \"trace_source\",\n      \"target\": \"doc_002\",\n      \"rationale\": \"doc_002 claims 211 but cites doc_004, which provides no count. Tracing the source may reveal the basis for the 211 figure.\"\n    },\n    {\n      \"action\": \"compare_versions\",\n      \"target\": \"doc_002 and doc_001\",\n      \"rationale\": \"Directly conflicting counts (211 vs 184) require comparison to determine which record is authoritative.\"\n    }\n  ],\n  \"evidence_environment_assessment\": \"The environment contains a direct contradiction: doc_002 states 211 completed checks, while doc_001 states 184. doc_002 cites doc_004, but doc_004 lacks a count. doc_003 is unrelated. No primary ledger is provided. The conflict cannot be resolved with the given documents.\",\n  \"answer\": \"The evidence is insufficient to confirm or refute the claim. One document (doc_002) reports 211 completed checks, but its cited source (doc_004) does not contain that number. Another document (doc_001) reports 184 checks from the month-close ledger. This contradiction cannot be resolved with the available information.\"\n}",
+    "usage": {
+      "completion_tokens": 1835,
+      "prompt_tokens": 1050,
+      "total_tokens": 2885,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": null,
+        "audio_tokens": null,
+        "reasoning_tokens": 1507,
+        "rejected_prediction_tokens": null
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": null,
+        "cached_tokens": 0
+      },
+      "prompt_cache_hit_tokens": 0,
+      "prompt_cache_miss_tokens": 1050
+    },
+    "response_format_used": "json_object",
+    "parse_success": true,
+    "parse_error": "",
+    "empty_output": false,
+    "schema_missing": false,
+    "json_extractor_used": "first_json_object",
+    "elapsed_s": 42.987,
+    "cost_usd": 0.0039325
+  }
+}

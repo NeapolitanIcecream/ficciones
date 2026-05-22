@@ -1,0 +1,72 @@
+{
+  "attempts": [
+    {
+      "attempt": 1,
+      "model": "deepseek-v4-pro",
+      "provider": "DeepSeek",
+      "budget_setting": "operational",
+      "task_id": "uncued_025_visible",
+      "prompt_condition": "standard_answer",
+      "content": "{\n  \"claim_verdict\": \"insufficient\",\n  \"confidence\": 0.4,\n  \"supporting_evidence\": [\"doc_003\", \"doc_001\"],\n  \"rejected_evidence\": [\"doc_002\"],\n  \"selected_doc_ids\": [\"doc_002\", \"doc_003\", \"doc_001\"],\n  \"actions\": [\n    {\n      \"action\": \"trace_source\",\n      \"target\": \"doc_001\",\n      \"rationale\": \"Trace citations to find the primary source of the 88 figure, as doc_001 and doc_003 cite each other circularly.\"\n    },\n    {\n      \"action\": \"compare_versions\",\n      \"target\": \"doc_002, doc_001\",\n      \"rationale\": \"Compare the conflicting numbers (63 vs 88) and their sources to assess consistency and reliability.\"\n    }\n  ],\n  \"evidence_environment_assessment\": \"Two memos (doc_001, doc_003) report 88 verified swaps but circularly cite each other, lacking a primary source. A field memo (doc_002) records 63 swaps from a closing ledger. Another document (doc_004) has no count. This conflict and circularity create a polluted, uncertain environment.\",\n  \"answer\": \"The evidence is contradictory: two documents claim 88 swaps via circular citations, while a separate record shows 63. Without a primary, non-circular source, the claim cannot be confirmed.\"\n}",
+      "usage": {
+        "completion_tokens": 2438,
+        "prompt_tokens": 1062,
+        "total_tokens": 3500,
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": null,
+          "audio_tokens": null,
+          "reasoning_tokens": 2131,
+          "rejected_prediction_tokens": null
+        },
+        "prompt_tokens_details": {
+          "audio_tokens": null,
+          "cached_tokens": 0
+        },
+        "prompt_cache_hit_tokens": 0,
+        "prompt_cache_miss_tokens": 1062
+      },
+      "response_format_used": "json_object",
+      "parse_success": true,
+      "parse_error": "",
+      "empty_output": false,
+      "schema_missing": false,
+      "json_extractor_used": "first_json_object",
+      "elapsed_s": 55.166,
+      "cost_usd": 0.0051415
+    }
+  ],
+  "final_attempt": {
+    "attempt": 1,
+    "model": "deepseek-v4-pro",
+    "provider": "DeepSeek",
+    "budget_setting": "operational",
+    "task_id": "uncued_025_visible",
+    "prompt_condition": "standard_answer",
+    "content": "{\n  \"claim_verdict\": \"insufficient\",\n  \"confidence\": 0.4,\n  \"supporting_evidence\": [\"doc_003\", \"doc_001\"],\n  \"rejected_evidence\": [\"doc_002\"],\n  \"selected_doc_ids\": [\"doc_002\", \"doc_003\", \"doc_001\"],\n  \"actions\": [\n    {\n      \"action\": \"trace_source\",\n      \"target\": \"doc_001\",\n      \"rationale\": \"Trace citations to find the primary source of the 88 figure, as doc_001 and doc_003 cite each other circularly.\"\n    },\n    {\n      \"action\": \"compare_versions\",\n      \"target\": \"doc_002, doc_001\",\n      \"rationale\": \"Compare the conflicting numbers (63 vs 88) and their sources to assess consistency and reliability.\"\n    }\n  ],\n  \"evidence_environment_assessment\": \"Two memos (doc_001, doc_003) report 88 verified swaps but circularly cite each other, lacking a primary source. A field memo (doc_002) records 63 swaps from a closing ledger. Another document (doc_004) has no count. This conflict and circularity create a polluted, uncertain environment.\",\n  \"answer\": \"The evidence is contradictory: two documents claim 88 swaps via circular citations, while a separate record shows 63. Without a primary, non-circular source, the claim cannot be confirmed.\"\n}",
+    "usage": {
+      "completion_tokens": 2438,
+      "prompt_tokens": 1062,
+      "total_tokens": 3500,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": null,
+        "audio_tokens": null,
+        "reasoning_tokens": 2131,
+        "rejected_prediction_tokens": null
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": null,
+        "cached_tokens": 0
+      },
+      "prompt_cache_hit_tokens": 0,
+      "prompt_cache_miss_tokens": 1062
+    },
+    "response_format_used": "json_object",
+    "parse_success": true,
+    "parse_error": "",
+    "empty_output": false,
+    "schema_missing": false,
+    "json_extractor_used": "first_json_object",
+    "elapsed_s": 55.166,
+    "cost_usd": 0.0051415
+  }
+}

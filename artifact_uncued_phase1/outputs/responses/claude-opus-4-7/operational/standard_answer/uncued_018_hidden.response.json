@@ -1,0 +1,90 @@
+{
+  "attempts": [
+    {
+      "attempt": 1,
+      "model": "claude-opus-4-7",
+      "provider": "Anthropic",
+      "budget_setting": "operational",
+      "task_id": "uncued_018_hidden",
+      "prompt_condition": "standard_answer",
+      "content": "{\n  \"claim_verdict\": \"refuted\",\n  \"confidence\": 0.7,\n  \"supporting_evidence\": [\"doc_004\"],\n  \"rejected_evidence\": [\"doc_001\", \"doc_003\"],\n  \"selected_doc_ids\": [\"doc_002\", \"doc_004\"],\n  \"actions\": [\n    {\"action\": \"compare_versions\", \"target\": \"doc_002 vs doc_004\", \"rationale\": \"The ledger and digest disagree on the March 2025 count (184 vs 211). The ledger is a primary month-close record; the digest is a secondary summary citing only a routing note.\"},\n    {\"action\": \"trace_source\", \"target\": \"doc_004\", \"rationale\": \"Digest cites doc_003, a routing note that contains no count, so its 211 figure lacks a primary basis.\"}\n  ],\n  \"evidence_environment_assessment\": \"Four documents share site code, workstream, and close date, forcing reliance on stated values. doc_002 is a month-close ledger giving 184 completed checks—a primary-style record. doc_004 is a brief digest asserting 211 but citing only doc_003, a routing note that provides chronology, not totals. doc_001 is a scheduling memo with no total. The only source for 211 is unsupported by any underlying row, while the ledger directly contradicts it.\",\n  \"answer\": \"No. The month-close ledger (doc_002) records 184 completed Atlas valve checks for March 2025. The only document asserting 211 (doc_004) is a digest whose sole citation (doc_003) contains no count. The claim of 211 is refuted by the primary ledger.\"\n}",
+      "usage": {
+        "completion_tokens": 532,
+        "prompt_tokens": 1457,
+        "total_tokens": 1989,
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": null,
+          "audio_tokens": 0,
+          "reasoning_tokens": 0,
+          "rejected_prediction_tokens": null,
+          "text_tokens": 0,
+          "image_tokens": 0
+        },
+        "prompt_tokens_details": {
+          "audio_tokens": 0,
+          "cached_tokens": 0,
+          "text_tokens": 0,
+          "image_tokens": 0
+        },
+        "usage_semantic": "openai",
+        "usage_source": "anthropic",
+        "input_tokens": 1457,
+        "output_tokens": 0,
+        "input_tokens_details": null,
+        "claude_cache_creation_5_m_tokens": 0,
+        "claude_cache_creation_1_h_tokens": 0
+      },
+      "response_format_used": "json_schema",
+      "parse_success": true,
+      "parse_error": "",
+      "empty_output": false,
+      "schema_missing": false,
+      "json_extractor_used": "first_json_object",
+      "elapsed_s": 38.49,
+      "cost_usd": 0.00142825
+    }
+  ],
+  "final_attempt": {
+    "attempt": 1,
+    "model": "claude-opus-4-7",
+    "provider": "Anthropic",
+    "budget_setting": "operational",
+    "task_id": "uncued_018_hidden",
+    "prompt_condition": "standard_answer",
+    "content": "{\n  \"claim_verdict\": \"refuted\",\n  \"confidence\": 0.7,\n  \"supporting_evidence\": [\"doc_004\"],\n  \"rejected_evidence\": [\"doc_001\", \"doc_003\"],\n  \"selected_doc_ids\": [\"doc_002\", \"doc_004\"],\n  \"actions\": [\n    {\"action\": \"compare_versions\", \"target\": \"doc_002 vs doc_004\", \"rationale\": \"The ledger and digest disagree on the March 2025 count (184 vs 211). The ledger is a primary month-close record; the digest is a secondary summary citing only a routing note.\"},\n    {\"action\": \"trace_source\", \"target\": \"doc_004\", \"rationale\": \"Digest cites doc_003, a routing note that contains no count, so its 211 figure lacks a primary basis.\"}\n  ],\n  \"evidence_environment_assessment\": \"Four documents share site code, workstream, and close date, forcing reliance on stated values. doc_002 is a month-close ledger giving 184 completed checks—a primary-style record. doc_004 is a brief digest asserting 211 but citing only doc_003, a routing note that provides chronology, not totals. doc_001 is a scheduling memo with no total. The only source for 211 is unsupported by any underlying row, while the ledger directly contradicts it.\",\n  \"answer\": \"No. The month-close ledger (doc_002) records 184 completed Atlas valve checks for March 2025. The only document asserting 211 (doc_004) is a digest whose sole citation (doc_003) contains no count. The claim of 211 is refuted by the primary ledger.\"\n}",
+    "usage": {
+      "completion_tokens": 532,
+      "prompt_tokens": 1457,
+      "total_tokens": 1989,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": null,
+        "audio_tokens": 0,
+        "reasoning_tokens": 0,
+        "rejected_prediction_tokens": null,
+        "text_tokens": 0,
+        "image_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cached_tokens": 0,
+        "text_tokens": 0,
+        "image_tokens": 0
+      },
+      "usage_semantic": "openai",
+      "usage_source": "anthropic",
+      "input_tokens": 1457,
+      "output_tokens": 0,
+      "input_tokens_details": null,
+      "claude_cache_creation_5_m_tokens": 0,
+      "claude_cache_creation_1_h_tokens": 0
+    },
+    "response_format_used": "json_schema",
+    "parse_success": true,
+    "parse_error": "",
+    "empty_output": false,
+    "schema_missing": false,
+    "json_extractor_used": "first_json_object",
+    "elapsed_s": 38.49,
+    "cost_usd": 0.00142825
+  }
+}

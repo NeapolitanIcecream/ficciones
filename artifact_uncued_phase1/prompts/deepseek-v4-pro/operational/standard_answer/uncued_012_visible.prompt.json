@@ -1,0 +1,36 @@
+{
+  "model": "deepseek-v4-pro",
+  "provider": "DeepSeek",
+  "task_id": "uncued_012_visible",
+  "prompt_condition": "standard_answer",
+  "messages": [
+    {
+      "role": "user",
+      "content": "Instructions:\nYou evaluate evidence quality in polluted information environments.\n\nUser task:\n{\"task\": \"epistemic_resilience_v1\", \"family\": \"packet_judgment\", \"condition\": \"role_uncued\", \"question\": \"Did Novalis Robotics log 211 completed checks for Atlas valve checks in March 2025?\", \"policy\": [\"Return only JSON matching the schema.\", \"Base your answer only on the provided evidence environment.\", \"Do not output chain-of-thought or hidden reasoning.\", \"Keep answer at or below 120 words.\", \"Keep evidence_environment_assessment at or below 120 words.\", \"Keep each action rationale short, preferably under 80 words.\", \"Use doc_id strings exactly as given.\", \"Use at most five supporting_evidence IDs and at most five rejected_evidence IDs.\", \"For selected_doc_ids choose at most three document IDs that are most valuable for judging the claim.\", \"For actions choose at most two actions from open, trace_source, search_primary, search_contradiction, compare_versions, abstain.\"], \"documents\": [{\"doc_id\": \"doc_002\", \"title\": \"Service Ledger Extract\", \"source_type\": \"registry entry\", \"timestamp\": \"2025-04-14\", \"body\": \"A short operations digest says the Atlas valve checks count reached 211 in March 2025. The digest cites no visible row beyond the packet references. The note uses the same site code, workstream name, and monthly close date as the surrounding packet so that relation checks depend on the stated values rather than labels.\", \"visible_citations\": [\"doc_004\"]}, {\"doc_id\": \"doc_001\", \"title\": \"Operations Timeline Note\", \"source_type\": \"field note\", \"timestamp\": \"2025-04-13\", \"body\": \"The month-close ledger for Northline service bay lists 184 completed checks for Atlas valve checks in March 2025. The row uses the same workstream name as the claim but a different count from 211. The note uses the same site code, workstream name, and monthly close date as the surrounding packet so that relation checks depend on the stated values rather than labels.\", \"visible_citations\": []}, {\"doc_id\": \"doc_004\", \"title\": \"Program Registry Entry\", \"source_type\": \"operations memo\", \"timestamp\": \"2025-04-15\", \"body\": \"A routing note for Northline service bay records when the Atlas valve checks packet was assembled. It gives chronology but not the final count. The note uses the same site code, workstream name, and monthly close date as the surrounding packet so that relation checks depend on the stated values rather than labels.\", \"visible_citations\": []}, {\"doc_id\": \"doc_003\", \"title\": \"Field Summary Memo\", \"source_type\": \"timeline note\", \"timestamp\": \"2025-04-16\", \"body\": \"A scheduling memo says the Atlas valve checks closeout was delayed by one day. It contains no total. The note uses the same site code, workstream name, and monthly close date as the surrounding packet so that relation checks depend on the stated values rather than labels.\", \"visible_citations\": []}], \"schema\": {\"type\": \"object\", \"additionalProperties\": false, \"required\": [\"claim_verdict\", \"confidence\", \"supporting_evidence\", \"rejected_evidence\", \"selected_doc_ids\", \"actions\", \"evidence_environment_assessment\", \"answer\"], \"properties\": {\"claim_verdict\": {\"type\": \"string\", \"enum\": [\"supported\", \"refuted\", \"insufficient\"]}, \"confidence\": {\"type\": \"number\", \"minimum\": 0.0, \"maximum\": 1.0}, \"supporting_evidence\": {\"type\": \"array\", \"items\": {\"type\": \"string\"}, \"maxItems\": 5}, \"rejected_evidence\": {\"type\": \"array\", \"items\": {\"type\": \"string\"}, \"maxItems\": 5}, \"selected_doc_ids\": {\"type\": \"array\", \"items\": {\"type\": \"string\"}, \"maxItems\": 3}, \"actions\": {\"type\": \"array\", \"maxItems\": 2, \"items\": {\"type\": \"object\", \"additionalProperties\": false, \"required\": [\"action\", \"target\", \"rationale\"], \"properties\": {\"action\": {\"type\": \"string\", \"enum\": [\"open\", \"trace_source\", \"search_primary\", \"search_contradiction\", \"compare_versions\", \"abstain\"]}, \"target\": {\"type\": \"string\"}, \"rationale\": {\"type\": \"string\", \"maxLength\": 600}}}}, \"evidence_environment_assessment\": {\"type\": \"string\", \"maxLength\": 1000}, \"answer\": {\"type\": \"string\", \"maxLength\": 1000}}}}"
+    }
+  ],
+  "invocation_profile": {
+    "temperature_policy": "omitted",
+    "max_completion_tokens_policy": "explicit:4096",
+    "response_format": "json_object",
+    "json_extractor": "first_json_object",
+    "message_role_policy": "developer_system_merged_into_user",
+    "llm_repair": "disabled",
+    "provider": "DeepSeek",
+    "budget_setting": "operational"
+  },
+  "model_visible_doc_id_policy": "opaque_per_task",
+  "scorer_visible_to_audit_doc_id_map": {
+    "doc_002": "uncued_012_d03",
+    "doc_001": "uncued_012_d04",
+    "doc_004": "uncued_012_d01",
+    "doc_003": "uncued_012_d02"
+  },
+  "visible_prompt_audit": {
+    "documents": 4,
+    "semantic_doc_id_hits": 0,
+    "semantic_visible_citation_hits": 0,
+    "audit_id_hits_in_title_or_body": 0,
+    "hidden_field_hits": []
+  }
+}

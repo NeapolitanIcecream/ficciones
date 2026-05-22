@@ -1012,13 +1012,13 @@ The runbook is complete when all of these are true:
 - paper draft is rewritten around uncued results;
 - final handoff records exact state, cost, tests, and remaining risks.
 
-## Execution Status: Advanced To Phase 15
+## Execution Status: Advanced To Phase 16
 
 Status date: 2026-05-22
 
-This runbook has been advanced through Phase 15. Phases 16-19 have not been started. The four-model Phase 12 pilot run is complete, the Phase 13 scored report tables have been generated, the Phase 14 scorer audit is complete, and the optional Phase 15 schema-ablation mini-slice has been explicitly skipped under the runbook skip rule and deferred to Phase 1.1.
+This runbook has been advanced through Phase 16. Phases 17-19 have not been started. The four-model Phase 12 pilot run is complete, the Phase 13 scored report tables have been generated, the Phase 14 scorer audit is complete, the optional Phase 15 schema-ablation mini-slice has been explicitly skipped under the runbook skip rule and deferred to Phase 1.1, and the role-uncued Phase 1 artifact package has been generated.
 
-Completed Phase 0-15 artifacts:
+Completed Phase 0-16 artifacts:
 
 - Phase 0 start state: `reports/eha-uncued-phase1-start-state-2026-05-22.md`.
 - Phase 1 cued quarantine: `artifact/CUED_INTERNAL_ONLY.md`, `artifact/manifest.json`, `reports/eha-cued-artifact-quarantine-2026-05-22.md`.
@@ -1037,6 +1037,7 @@ Completed Phase 0-15 artifacts:
 - Phase 13 pilot scoring/reporting: `reports/eha_uncued_pilot_results.json`, `reports/eha-uncued-pilot-results-2026-05-22.md`, `eha-mvp/results/reports-eha-uncued-pilot-2026-05-22/uncued_pilot_scored_predictions.csv`, `uncued_pilot_metrics_by_model.csv`, `uncued_pilot_metrics_by_view.csv`, `uncued_pilot_metrics_by_condition.csv`, `uncued_pilot_metrics_by_family.csv`, `uncued_pilot_metrics_by_model_view.csv`, `uncued_pilot_metrics_by_model_condition.csv`, `uncued_pilot_baselines_vs_models.csv`, `uncued_pilot_active_verification_action_metrics.csv`, `uncued_pilot_acceptance_diagnostics.json`, `report_manifest.json`, `summary.md`.
 - Phase 14 scorer audit: `reports/eha_uncued_scorer_audit.json`, `reports/eha-uncued-scorer-audit-2026-05-22.md`, `reports/uncued_scorer_audit_rows.csv`, `eha-mvp/results/reports-eha-uncued-pilot-2026-05-22/uncued_scorer_audit_rows.csv`, `uncued_scorer_audit_summary.json`.
 - Phase 15 schema-ablation decision: `reports/eha_uncued_schema_ablation_plan.json`, `reports/eha-uncued-schema-ablation-plan-2026-05-22.md`.
+- Phase 16 artifact package: `artifact_uncued_phase1/README.md`, `manifest.json`, `data/`, `prompts/`, `schemas/`, `scorer/`, `outputs/`, `baselines/`, `audits/`, `examples/`, `reproduce_minimal.sh`, and `verify_uncued_phase1.sh`.
 
 Phase 8 gate evidence:
 
@@ -1224,6 +1225,34 @@ Phase 15 schema-ablation decision evidence:
 - Schema-ablation report hash: `91cec9ec4912896a375169879cd564b3c158adbeb26ca45f55db6a5055b6fbfa`.
 - Phase 15 decision: deferred; proceed to Phase 16 packaging.
 
+Phase 16 artifact package evidence:
+
+- Command: `uv run eha-package-uncued-phase1 --dataset-dir data/uncued-pilot-v1 --run-dir results/reports-eha-uncued-pilot-2026-05-22 --out-dir ../artifact_uncued_phase1`.
+- Artifact root: `artifact_uncued_phase1/`.
+- Scientific status: `role_uncued_phase1_pilot_artifact`.
+- Package phase: 16.
+- Total package files: 1023, including `manifest.json`.
+- Manifest-hashed files: 1022.
+- Prompt files packaged: 480.
+- Response files packaged: 480.
+- Required package inputs missing: none.
+- Cued artifacts included: false.
+- Model-visible policy: visible data and prompts must exclude hidden labels, gold verdicts, and construction roles.
+- Data included: tasks, neutral visible documents, neutral hidden documents, gold labels, dependency edges, action gold, and dataset manifest.
+- Prompts included: all Phase 12 prompt JSON artifacts under `prompts/`.
+- Schemas included: epistemic prediction schema and uncued data contract.
+- Scorer included: scoring contract plus scorer/report source files.
+- Outputs included: predictions, invocation profiles, run summaries, cost report, scored tables, active-verification action metrics, and scorer-audit output copies.
+- Baselines included: pilot baseline JSON, markdown report, row CSV, and aggregate CSV.
+- Audits included: pilot leakage report, human leakage review validation, scorer audit, scorer-audit worksheet, and Phase 15 schema-ablation skip record.
+- Minimal local smoke check: `bash artifact_uncued_phase1/reproduce_minimal.sh` returned `minimal uncued phase1 artifact files present`.
+- Full artifact verifier smoke check: returned `decision=pass`; the readiness files are recorded in Phase 17.
+- Manifest hash: `bb29d19c5a9e6bcc122286f69385b01493fd17f8856b04bc2f7cad77d5241fb5`.
+- README hash: `13a896c79c0244dc0717268ecf763102f48beaf2e1a950e31006d02dd23e3310`.
+- Minimal reproduction script hash: `2012bbbaa77676ca69b8a06f874101375a1dbd7270704a067490fb0495e3be80`.
+- Artifact verifier script hash: `099cd6fd2a3af4b480b33fdc47a409739f1193c5305a1d6c8793d152b6e49020`.
+- Phase 16 decision: pass; proceed to Phase 17 final verification.
+
 Commands verified:
 
 ```bash
@@ -1238,6 +1267,9 @@ uv run eha-run-uncued-pilot --help
 uv run eha-report-uncued-pilot --help
 uv run eha-package-uncued-phase1 --help
 uv run eha-verify-uncued-phase1 --help
+uv run eha-package-uncued-phase1 --dataset-dir data/uncued-pilot-v1 --run-dir results/reports-eha-uncued-pilot-2026-05-22 --out-dir ../artifact_uncued_phase1
+cd /Users/chenmohan/gits/ficciones
+bash artifact_uncued_phase1/reproduce_minimal.sh
 ```
 
 Verification:
@@ -1252,6 +1284,8 @@ uv run pytest tests/test_uncued_report.py -q
 # 1 passed in 0.32s
 uv run pytest tests/test_uncued_scorer_audit.py -q
 # 2 passed in 0.36s
+uv run pytest tests/test_uncued_release.py -q
+# 4 passed in 0.25s
 cd /Users/chenmohan/gits/ficciones
 git diff --check
 # passed
@@ -1259,4 +1293,4 @@ git diff --check
 
 Next required phase:
 
-- Start Phase 16 package generation for `artifact_uncued_phase1/`.
+- Start Phase 17 final verification and freeze `reports/eha_uncued_phase1_readiness.json`.
