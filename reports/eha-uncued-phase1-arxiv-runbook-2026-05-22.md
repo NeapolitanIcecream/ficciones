@@ -97,6 +97,7 @@ reports/eha_uncued_human_leakage_review_validation.json
 reports/eha-uncued-human-leakage-review-2026-05-22.md
 reports/eha_uncued_pilot_run.json
 reports/eha-uncued-pilot-run-2026-05-22.md
+reports/eha_uncued_pilot_results.json
 reports/eha-uncued-pilot-results-2026-05-22.md
 reports/eha-uncued-phase1-readiness-2026-05-22.md
 ```
@@ -1008,13 +1009,13 @@ The runbook is complete when all of these are true:
 - paper draft is rewritten around uncued results;
 - final handoff records exact state, cost, tests, and remaining risks.
 
-## Execution Status: Advanced To Phase 12
+## Execution Status: Advanced To Phase 13
 
 Status date: 2026-05-22
 
-This runbook has been advanced through Phase 12. Phases 13-19 have not been started. The four-model Phase 12 pilot run is complete and ready for scoring/reporting.
+This runbook has been advanced through Phase 13. Phases 14-19 have not been started. The four-model Phase 12 pilot run is complete, and the Phase 13 scored report tables have been generated.
 
-Completed Phase 0-12 artifacts:
+Completed Phase 0-13 artifacts:
 
 - Phase 0 start state: `reports/eha-uncued-phase1-start-state-2026-05-22.md`.
 - Phase 1 cued quarantine: `artifact/CUED_INTERNAL_ONLY.md`, `artifact/manifest.json`, `reports/eha-cued-artifact-quarantine-2026-05-22.md`.
@@ -1030,6 +1031,7 @@ Completed Phase 0-12 artifacts:
 - Phase 11 model preflight: `reports/eha_uncued_model_preflight.json`, `reports/eha-uncued-model-preflight-2026-05-22.md`, `eha-mvp/results/reports-eha-uncued-model-preflight-2026-05-22/preflight_predictions.jsonl`, `preflight_rows.csv`, `preflight_summary.csv`, `cohort_decision.md`, `cohort_decision.csv`, `cohort_decision.json`, `cost_report.json`, `audit_manifest.json`.
 - Phase 11 DeepSeek retry: `reports/eha_uncued_model_preflight_deepseek_retry.json`, `reports/eha-uncued-model-preflight-deepseek-retry-2026-05-22.md`, `eha-mvp/results/reports-eha-uncued-model-preflight-deepseek-retry-2026-05-22/preflight_predictions.jsonl`, `preflight_rows.csv`, `preflight_summary.csv`, `cohort_decision.md`, `cohort_decision.csv`, `cohort_decision.json`, `cost_report.json`, `audit_manifest.json`.
 - Phase 12 pilot run: `reports/eha_uncued_pilot_run.json`, `reports/eha-uncued-pilot-run-2026-05-22.md`, `eha-mvp/results/reports-eha-uncued-pilot-2026-05-22/predictions.jsonl`, `run_manifest.json`, `invocation_profiles.json`, `run_summary_by_model.csv`, `prompt_audit_summary.json`, `stored_hidden_label_audit.json`, `cost_report.json`, `phase12_run_summary.md`.
+- Phase 13 pilot scoring/reporting: `reports/eha_uncued_pilot_results.json`, `reports/eha-uncued-pilot-results-2026-05-22.md`, `eha-mvp/results/reports-eha-uncued-pilot-2026-05-22/uncued_pilot_scored_predictions.csv`, `uncued_pilot_metrics_by_model.csv`, `uncued_pilot_metrics_by_view.csv`, `uncued_pilot_metrics_by_condition.csv`, `uncued_pilot_metrics_by_family.csv`, `uncued_pilot_metrics_by_model_view.csv`, `uncued_pilot_metrics_by_model_condition.csv`, `uncued_pilot_baselines_vs_models.csv`, `uncued_pilot_active_verification_action_metrics.csv`, `uncued_pilot_acceptance_diagnostics.json`, `report_manifest.json`, `summary.md`.
 
 Phase 8 gate evidence:
 
@@ -1146,6 +1148,36 @@ Phase 12 pilot run evidence:
 - Run manifest hash: `913ae8be97d394ace5904209f4d0beb2aa29f2b3c7b3e4c29622b442eb412572`.
 - Phase 12 decision: pass; proceed to Phase 13 scoring/reporting.
 
+Phase 13 pilot scoring/reporting evidence:
+
+- Command included explicit `--dataset-dir data/uncued-pilot-v1`.
+- Run directory: `results/reports-eha-uncued-pilot-2026-05-22`.
+- Prediction records loaded: 480.
+- Scored rows: 480.
+- Required tables present: true.
+- Required metrics present: operational escape, parse success, belief correctness, evidence precision, clean support recall, polluted support rate, rejected pollutant rate, dual-role rate, support-empty rate, uncertainty discipline, verification action score, exact target rate, required action recall, and cost.
+- Required tables generated: by model, by view, by condition, by family, by model x view, by model x condition, baselines vs models, and active-verification action metrics.
+- Clean acceptance: at least one model reaches clean operational escape >= 0.75 (`gpt-5.5` clean = 0.958; `claude-opus-4-7` clean = 0.792).
+- Polluted acceptance: no model reaches 1.0 operational escape across all polluted conditions.
+- Generated-lore separation: belief correctness 0.938, operational escape 0.125, gap 0.8125.
+- Buried-primary separation: belief correctness 0.979, operational escape 0.490, gap 0.4896.
+- Metadata-hidden and metadata-visible tables are reported separately.
+- Simple heuristic comparison: positive margins for `gpt-5.5` and `gemini-3.1-pro-preview` in both views; nonpositive margins for `claude-opus-4-7` and `deepseek-v4-pro` in both views. Do not state that all model-view pairs beat the heuristic.
+- Phase 13 acceptance diagnostic: `phase13_acceptance_passed=true`.
+- Scored predictions hash: `5d77f0f93eeb80cc42c2e1f9b91f949d9a9e193b07f20e6f14affd1710025a3b`.
+- Metrics by model hash: `19186f4acbb85e1634817681ad7a8ee90072db2dc3e7e78b1bc3ab93a36b7433`.
+- Metrics by view hash: `9de9fd1b6ab1eb71d82f21984e6162cd5bf06a725eb094d535014af6cb96b451`.
+- Metrics by condition hash: `53fa5349b5d866461c77df1cd48aeb07cfe9344010c00245f2edc511da823e77`.
+- Metrics by family hash: `81b2c7d5a3fd6e7c7de8be614e2fab4b6c07df2c066ff79f972747a732e52526`.
+- Metrics by model x view hash: `ec75f9bfaed08c4db668b71ecd79f228ce210d7ec2550b2c9a7e21478bdc3e2b`.
+- Metrics by model x condition hash: `a5f7da11a1a1320cc196ac27d83a9034264f3ca3886ea19dbd389c044ea85aa8`.
+- Baselines vs models hash: `b2347b9fb9fdbe09464f52b2c133838acdebe78b2cf497c4c4e01feddbdcf397`.
+- Active-verification action metrics hash: `176d40d715c32105e80e8f6d83c7ecdf963b480b1f546ceb485aecb968c49615`.
+- Acceptance diagnostics hash: `acf90690d6cd40897db176b77c02a779c85ea4967e09e537a71f69db87c5bc88`.
+- Report manifest hash: `62eeddd0eba886c9997e3894300cf0e5fac66fcc3f8af8eca52cf6fd659e2fc6`.
+- Summary hash: `d593fdf80f71b42ae70311a825d432b7b6f9146ebe76fb7956ec827587c8bde9`.
+- Phase 13 decision: pass; proceed to Phase 14 manual scorer audit.
+
 Commands verified:
 
 ```bash
@@ -1167,9 +1199,11 @@ Verification:
 ```bash
 cd /Users/chenmohan/gits/ficciones/eha-mvp
 uv run pytest -q
-# 215 passed in 6.56s
+# 219 passed in 5.99s
 uv run pytest tests/test_uncued_run.py tests/test_epistemic_frontier_main.py tests/test_epistemic_model_preflight.py -q
 # 20 passed in 0.42s
+uv run pytest tests/test_uncued_report.py -q
+# 1 passed in 0.32s
 cd /Users/chenmohan/gits/ficciones
 git diff --check
 # passed
@@ -1177,4 +1211,4 @@ git diff --check
 
 Next required phase:
 
-- Start Phase 13 scoring/reporting with `uv run eha-report-uncued-pilot --dataset-dir data/uncued-pilot-v1 --run-dir results/reports-eha-uncued-pilot-2026-05-22 --out-dir results/reports-eha-uncued-pilot-2026-05-22`.
+- Start Phase 14 manual scorer audit with a balanced 30-50 row scorer-audit sample.

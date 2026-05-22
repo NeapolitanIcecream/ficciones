@@ -1,0 +1,96 @@
+{
+  "phase": 13,
+  "status": "passed",
+  "date": "2026-05-22",
+  "dataset_dir": "eha-mvp/data/uncued-pilot-v1",
+  "run_dir": "eha-mvp/results/reports-eha-uncued-pilot-2026-05-22",
+  "command": "uv run eha-report-uncued-pilot --dataset-dir data/uncued-pilot-v1 --run-dir results/reports-eha-uncued-pilot-2026-05-22 --out-dir results/reports-eha-uncued-pilot-2026-05-22",
+  "prediction_count": 480,
+  "scored_rows": 480,
+  "required_tables_present": true,
+  "metrics": [
+    "operational_epistemic_escape",
+    "conditional_epistemic_escape",
+    "parse_success",
+    "belief_correctness",
+    "evidence_precision",
+    "clean_support_recall",
+    "polluted_support_rate",
+    "rejected_pollutant_rate",
+    "dual_role_rate",
+    "support_empty_rate",
+    "uncertainty_discipline",
+    "verification_action_score",
+    "exact_target_rate",
+    "required_action_recall",
+    "cost_usd"
+  ],
+  "by_model": {
+    "claude-opus-4-7": {
+      "n": 120,
+      "operational_epistemic_escape": 0.31666666666666665,
+      "parse_success": 1.0,
+      "belief_correctness": 0.9333333333333333,
+      "evidence_precision": 0.4807692307692308,
+      "clean_support_recall": 0.5208333333333334,
+      "polluted_support_rate": 0.45,
+      "required_action_recall": 0.875
+    },
+    "deepseek-v4-pro": {
+      "n": 120,
+      "operational_epistemic_escape": 0.23333333333333334,
+      "parse_success": 1.0,
+      "belief_correctness": 0.6583333333333333,
+      "evidence_precision": 0.44144144144144143,
+      "clean_support_recall": 0.5208333333333334,
+      "polluted_support_rate": 0.5166666666666667,
+      "required_action_recall": 0.6875
+    },
+    "gemini-3.1-pro-preview": {
+      "n": 120,
+      "operational_epistemic_escape": 0.43333333333333335,
+      "parse_success": 1.0,
+      "belief_correctness": 0.9166666666666666,
+      "evidence_precision": 0.8428571428571429,
+      "clean_support_recall": 0.9375,
+      "polluted_support_rate": 0.125,
+      "required_action_recall": 0.8125
+    },
+    "gpt-5.5": {
+      "n": 120,
+      "operational_epistemic_escape": 0.525,
+      "parse_success": 1.0,
+      "belief_correctness": 0.9916666666666667,
+      "evidence_precision": 0.7541666666666667,
+      "clean_support_recall": 1.0,
+      "polluted_support_rate": 0.16666666666666666,
+      "required_action_recall": 0.7916666666666666
+    }
+  },
+  "acceptance": {
+    "clean_operational_escape_at_least_075_for_one_model": true,
+    "models_with_perfect_polluted_operational_escape": [],
+    "no_model_perfect_across_polluted_conditions": true,
+    "generated_lore_gap": 0.8125,
+    "buried_primary_gap": 0.4895833333333333,
+    "metadata_hidden_reported_separately": true,
+    "simple_heuristic_below_frontier_on_operational_and_evidence_metric": true,
+    "simple_heuristic_below_all_model_views_on_operational_and_evidence_metric": false,
+    "simple_heuristic_positive_model_view_count": 4,
+    "phase13_acceptance_passed": true
+  },
+  "hashes": {
+    "uncued_pilot_scored_predictions_csv": "5d77f0f93eeb80cc42c2e1f9b91f949d9a9e193b07f20e6f14affd1710025a3b",
+    "uncued_pilot_metrics_by_model_csv": "19186f4acbb85e1634817681ad7a8ee90072db2dc3e7e78b1bc3ab93a36b7433",
+    "uncued_pilot_metrics_by_view_csv": "9de9fd1b6ab1eb71d82f21984e6162cd5bf06a725eb094d535014af6cb96b451",
+    "uncued_pilot_metrics_by_condition_csv": "53fa5349b5d866461c77df1cd48aeb07cfe9344010c00245f2edc511da823e77",
+    "uncued_pilot_metrics_by_family_csv": "81b2c7d5a3fd6e7c7de8be614e2fab4b6c07df2c066ff79f972747a732e52526",
+    "uncued_pilot_metrics_by_model_view_csv": "ec75f9bfaed08c4db668b71ecd79f228ce210d7ec2550b2c9a7e21478bdc3e2b",
+    "uncued_pilot_metrics_by_model_condition_csv": "a5f7da11a1a1320cc196ac27d83a9034264f3ca3886ea19dbd389c044ea85aa8",
+    "uncued_pilot_baselines_vs_models_csv": "b2347b9fb9fdbe09464f52b2c133838acdebe78b2cf497c4c4e01feddbdcf397",
+    "uncued_pilot_active_verification_action_metrics_csv": "176d40d715c32105e80e8f6d83c7ecdf963b480b1f546ceb485aecb968c49615",
+    "uncued_pilot_acceptance_diagnostics_json": "acf90690d6cd40897db176b77c02a779c85ea4967e09e537a71f69db87c5bc88",
+    "report_manifest_json": "62eeddd0eba886c9997e3894300cf0e5fac66fcc3f8af8eca52cf6fd659e2fc6",
+    "summary_md": "d593fdf80f71b42ae70311a825d432b7b6f9146ebe76fb7956ec827587c8bde9"
+  }
+}
