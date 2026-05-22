@@ -1012,13 +1012,13 @@ The runbook is complete when all of these are true:
 - paper draft is rewritten around uncued results;
 - final handoff records exact state, cost, tests, and remaining risks.
 
-## Execution Status: Advanced To Phase 18
+## Execution Status: Complete Through Phase 19
 
 Status date: 2026-05-22
 
-This runbook has been advanced through Phase 18. Phase 19 has not been started. The four-model Phase 12 pilot run is complete, the Phase 13 scored report tables have been generated, the Phase 14 scorer audit is complete, the optional Phase 15 schema-ablation mini-slice has been explicitly skipped under the runbook skip rule and deferred to Phase 1.1, the role-uncued Phase 1 artifact package has been generated, the artifact/readiness verifier passes, and the paper has been rewritten around the role-uncued pilot.
+This runbook is complete through Phase 19. The four-model Phase 12 pilot run is complete, the Phase 13 scored report tables have been generated, the Phase 14 scorer audit is complete, the optional Phase 15 schema-ablation mini-slice has been explicitly skipped under the runbook skip rule and deferred to Phase 1.1, the role-uncued Phase 1 artifact package has been generated, the artifact/readiness verifier passes, the paper has been rewritten around the role-uncued pilot, and the final handoff has been written.
 
-Completed Phase 0-18 artifacts:
+Completed Phase 0-19 artifacts:
 
 - Phase 0 start state: `reports/eha-uncued-phase1-start-state-2026-05-22.md`.
 - Phase 1 cued quarantine: `artifact/CUED_INTERNAL_ONLY.md`, `artifact/manifest.json`, `reports/eha-cued-artifact-quarantine-2026-05-22.md`.
@@ -1040,6 +1040,7 @@ Completed Phase 0-18 artifacts:
 - Phase 16 artifact package: `artifact_uncued_phase1/README.md`, `manifest.json`, `data/`, `prompts/`, `schemas/`, `scorer/`, `outputs/`, `baselines/`, `audits/`, `examples/`, `reproduce_minimal.sh`, and `verify_uncued_phase1.sh`.
 - Phase 17 readiness verification: `reports/eha_uncued_phase1_readiness.json`, `reports/eha-uncued-phase1-readiness-2026-05-22.md`.
 - Phase 18 paper rewrite: `paper/main.tex`, `paper/main.pdf`, rewritten `paper/sections/`, and uncued result tables under `paper/tables/`.
+- Phase 19 final handoff: `reports/eha-uncued-phase1-final-handoff-2026-05-22.md`.
 
 Phase 8 gate evidence:
 
@@ -1304,11 +1305,26 @@ Phase 18 paper rewrite evidence:
 - Source audit: no old `gpt-5.4`, `kimi-k2.6`, `opaque main`, `1000`, or `100 tasks` main-result references remain in paper source.
 - PDF text audit: no old `gpt-5.4`, `kimi-k2.6`, `opaque main`, `1000`, or `100 tasks` references remain; the only `artifact/` hit is the explicit quarantine sentence.
 - `paper/main.tex` hash: `4809e28a9aad98d63d92df6b1570712541c3bc5195d8179459bfec76fd7c245d`.
-- `paper/main.pdf` hash: `4a3559a525006302662615b3159f45c90f32640c9d0655b3c1370fbaa18ad7c0`.
+- `paper/main.pdf` hash: `6dc2c718dba4adbdf650b6d4f7074c6590070bfe791ad67223b94616876f3eae`.
 - Abstract hash: `1e9740ea7b3b2f377da4b4416400d561458721f96f5f2d2e09ecee227dbbf125`.
 - Results section hash: `4940c13ee05d6c499bc4314eecdf37db13526ae683e372a2179cd995d82c0f07`.
 - Artifact section hash: `f2601304f2dbb0b4bc30099a14533ca5e26e2195af19cdb819c7485caba7ac93`.
 - Phase 18 decision: pass; proceed to Phase 19 final handoff.
+
+Phase 19 final handoff evidence:
+
+- Handoff file: `reports/eha-uncued-phase1-final-handoff-2026-05-22.md`.
+- Handoff scope: what was built, phase commits, final commands, test outcomes, model-call cost, gate table, paper status, remaining risks, and recommended next step.
+- Handoff length: 119 lines.
+- Fresh-agent readability target: less than 10 minutes.
+- Final artifact readiness verifier: pass.
+- Final full test suite: `223 passed in 6.82s`.
+- Final paper compile: pass; only a bibliography underfull-box warning remains.
+- Final paper source/PDF old-result audit: no hits for old `gpt-5.4`, `kimi-k2.6`, `opaque main`, `1000`, or `100 tasks` result strings.
+- Final `git diff --check`: pass.
+- Total recorded model/API spend through Phase 12: USD 4.504582.
+- Handoff hash: `659dae8ca702020216a603eb41693f73d0ef93fb323ab0bff03969ef6e9ae8bc`.
+- Phase 19 decision: complete.
 
 Commands verified:
 
@@ -1330,6 +1346,8 @@ cd /Users/chenmohan/gits/ficciones
 bash artifact_uncued_phase1/reproduce_minimal.sh
 cd /Users/chenmohan/gits/ficciones/paper
 make pdf
+cd /Users/chenmohan/gits/ficciones/eha-mvp
+uv run eha-verify-uncued-phase1 --artifact-dir ../artifact_uncued_phase1 --reports-dir ../reports --out-dir ../reports
 ```
 
 Verification:
@@ -1347,7 +1365,7 @@ uv run pytest tests/test_uncued_scorer_audit.py -q
 uv run pytest tests/test_uncued_release.py -q
 # 4 passed in 0.25s
 uv run pytest -q
-# 223 passed in 5.65s
+# 223 passed in 6.82s
 cd /Users/chenmohan/gits/ficciones
 git diff --check
 # passed
@@ -1355,6 +1373,6 @@ pdftotext paper/main.pdf - | rg -n "gpt-5\\.4|kimi-k2\\.6|opaque main|1000|100 t
 # no hits
 ```
 
-Next required phase:
+Completion decision:
 
-- Start Phase 19 final handoff and final audit.
+- Phase 0-19 complete.
