@@ -95,6 +95,8 @@ reports/eha_uncued_baselines_micro.json
 reports/eha-uncued-baselines-micro-2026-05-22.md
 reports/eha_uncued_human_leakage_review_validation.json
 reports/eha-uncued-human-leakage-review-2026-05-22.md
+reports/eha_uncued_pilot_run.json
+reports/eha-uncued-pilot-run-2026-05-22.md
 reports/eha-uncued-pilot-results-2026-05-22.md
 reports/eha-uncued-phase1-readiness-2026-05-22.md
 ```
@@ -1006,13 +1008,13 @@ The runbook is complete when all of these are true:
 - paper draft is rewritten around uncued results;
 - final handoff records exact state, cost, tests, and remaining risks.
 
-## Execution Status: Advanced To Phase 11
+## Execution Status: Advanced To Phase 12
 
 Status date: 2026-05-22
 
-This runbook has been advanced through Phase 11. Phases 12-19 have not been started. Frontier/API model calls have only been made for the Phase 11 structured-output preflight.
+This runbook has been advanced through Phase 12. Phases 13-19 have not been started. The four-model Phase 12 pilot run is complete and ready for scoring/reporting.
 
-Completed Phase 0-11 artifacts:
+Completed Phase 0-12 artifacts:
 
 - Phase 0 start state: `reports/eha-uncued-phase1-start-state-2026-05-22.md`.
 - Phase 1 cued quarantine: `artifact/CUED_INTERNAL_ONLY.md`, `artifact/manifest.json`, `reports/eha-cued-artifact-quarantine-2026-05-22.md`.
@@ -1027,6 +1029,7 @@ Completed Phase 0-11 artifacts:
 - Phase 10 pilot gates: `reports/eha_uncued_leakage_pilot.json`, `reports/eha-uncued-leakage-pilot-2026-05-22.md`, `reports/uncued_leakage_pilot_rows.csv`, `reports/eha_uncued_baselines_pilot.json`, `reports/eha-uncued-baselines-pilot-2026-05-22.md`, `reports/uncued_baseline_rows_pilot.csv`, `reports/uncued_baseline_aggregate_pilot.csv`, `reports/uncued_human_leakage_review_pilot.csv`, `reports/eha_uncued_human_leakage_review_pilot_validation.json`, `reports/eha-uncued-human-leakage-review-pilot-2026-05-22.md`, `reports/eha_uncued_pilot_gates.json`, `reports/eha-uncued-pilot-gates-2026-05-22.md`.
 - Phase 11 model preflight: `reports/eha_uncued_model_preflight.json`, `reports/eha-uncued-model-preflight-2026-05-22.md`, `eha-mvp/results/reports-eha-uncued-model-preflight-2026-05-22/preflight_predictions.jsonl`, `preflight_rows.csv`, `preflight_summary.csv`, `cohort_decision.md`, `cohort_decision.csv`, `cohort_decision.json`, `cost_report.json`, `audit_manifest.json`.
 - Phase 11 DeepSeek retry: `reports/eha_uncued_model_preflight_deepseek_retry.json`, `reports/eha-uncued-model-preflight-deepseek-retry-2026-05-22.md`, `eha-mvp/results/reports-eha-uncued-model-preflight-deepseek-retry-2026-05-22/preflight_predictions.jsonl`, `preflight_rows.csv`, `preflight_summary.csv`, `cohort_decision.md`, `cohort_decision.csv`, `cohort_decision.json`, `cost_report.json`, `audit_manifest.json`.
+- Phase 12 pilot run: `reports/eha_uncued_pilot_run.json`, `reports/eha-uncued-pilot-run-2026-05-22.md`, `eha-mvp/results/reports-eha-uncued-pilot-2026-05-22/predictions.jsonl`, `run_manifest.json`, `invocation_profiles.json`, `run_summary_by_model.csv`, `prompt_audit_summary.json`, `stored_hidden_label_audit.json`, `cost_report.json`, `phase12_run_summary.md`.
 
 Phase 8 gate evidence:
 
@@ -1113,6 +1116,36 @@ Phase 11 DeepSeek retry evidence:
 - Total Phase 11 model-call cost after retry: USD 0.740575.
 - Phase 12 status after retry: allowed for the four-model cohort, with the DeepSeek timeout caveat preserved.
 
+Phase 12 pilot run evidence:
+
+- Command included explicit `--dataset-dir data/uncued-pilot-v1`.
+- Models requested: `gpt-5.5`, `claude-opus-4-7`, `gemini-3.1-pro-preview`, `deepseek-v4-pro`.
+- Views requested: `neutral_metadata_visible`, `neutral_metadata_hidden`.
+- Prompt condition: `standard_answer`.
+- Schema variant: `clarified`.
+- Expected records: 480 = 60 latent tasks x 2 views x 4 models x 1 prompt.
+- Actual records: 480.
+- Unique model/task/prompt/budget keys: 480.
+- Duplicate keys: 0.
+- View counts: 240 visible records and 240 hidden records.
+- Prompt audit: `passed=true`, `semantic_doc_id_hits=0`, `semantic_visible_citation_hits=0`, `audit_id_hits_in_title_or_body=0`, `hidden_field_hit_count=0`.
+- Stored hidden-label audit: `passed=true`, `prompt_hit_count=0`, `output_hit_count=0`.
+- Cost status: not aborted; record cost USD 3.759681; spent USD 3.764007; hard cap USD 15; abort cap USD 20.
+- `gpt-5.5`: 120/120 parse success, 0 empty outputs, 0 schema-missing rows, cost USD 2.597870.
+- `claude-opus-4-7`: 120/120 parse success, 0 empty outputs, 0 schema-missing rows, cost USD 0.177029.
+- `gemini-3.1-pro-preview`: 120/120 parse success, 0 empty outputs, 0 schema-missing rows, cost USD 0.475382.
+- `deepseek-v4-pro`: 120/120 parse success, 0 empty outputs, 0 schema-missing rows, cost USD 0.509400.
+- DeepSeek Phase 12 invocation profile: temperature omitted, `max_completion_tokens=4096`, `response_format=json_object`, `json_extractor=first_json_object`, developer/system merged into user, LLM repair disabled, max attempts 2, timeout 240 seconds.
+- DeepSeek invocation profile artifact: `eha-mvp/results/reports-eha-uncued-pilot-2026-05-22/invocation_profiles.json`.
+- Pilot predictions hash: `e0d6f072c4e260997b68a6055c1583331aa6a355981a2d9f417cf893ed705ca4`.
+- Pilot run summary hash: `74a55842eef9c8da2a9a18b90a41919ee71001817cdb4cf9f8405f77a63ee4ac`.
+- Prompt audit summary hash: `4110a36d1b165761ff326f862787c89efedc2ff44ceddf5985a29ef31b0ecf2d`.
+- Stored hidden-label audit hash: `5069bd02061d2ff590349a12f9cb2922f62f106081445609195fb2c80e845156`.
+- Cost report hash: `5d7291ae05a819f20ece4b287261bc4ccf17736e8c8244554ce00ad40728274b`.
+- Invocation profiles hash: `d806153c5a797d738bc3fb7e648a8f1c3d8a34a62260fb47474627a4b9783670`.
+- Run manifest hash: `913ae8be97d394ace5904209f4d0beb2aa29f2b3c7b3e4c29622b442eb412572`.
+- Phase 12 decision: pass; proceed to Phase 13 scoring/reporting.
+
 Commands verified:
 
 ```bash
@@ -1135,6 +1168,8 @@ Verification:
 cd /Users/chenmohan/gits/ficciones/eha-mvp
 uv run pytest -q
 # 215 passed in 6.56s
+uv run pytest tests/test_uncued_run.py tests/test_epistemic_frontier_main.py tests/test_epistemic_model_preflight.py -q
+# 20 passed in 0.42s
 cd /Users/chenmohan/gits/ficciones
 git diff --check
 # passed
@@ -1142,4 +1177,4 @@ git diff --check
 
 Next required phase:
 
-- Start Phase 12 with the four-model pilot cohort: `gpt-5.5`, `claude-opus-4-7`, `gemini-3.1-pro-preview`, and `deepseek-v4-pro`. Use the documented DeepSeek retry invocation profile unless Phase 12 explicitly tests another profile.
+- Start Phase 13 scoring/reporting with `uv run eha-report-uncued-pilot --dataset-dir data/uncued-pilot-v1 --run-dir results/reports-eha-uncued-pilot-2026-05-22 --out-dir results/reports-eha-uncued-pilot-2026-05-22`.

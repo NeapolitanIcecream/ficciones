@@ -1,0 +1,90 @@
+{
+  "attempts": [
+    {
+      "attempt": 1,
+      "model": "claude-opus-4-7",
+      "provider": "Anthropic",
+      "budget_setting": "operational",
+      "task_id": "uncued_018_visible",
+      "prompt_condition": "standard_answer",
+      "content": "{\n  \"claim_verdict\": \"refuted\",\n  \"confidence\": 0.7,\n  \"supporting_evidence\": [\"doc_004\"],\n  \"rejected_evidence\": [\"doc_003\", \"doc_001\"],\n  \"selected_doc_ids\": [\"doc_002\", \"doc_004\", \"doc_001\"],\n  \"actions\": [\n    {\"action\": \"trace_source\", \"target\": \"doc_004\", \"rationale\": \"doc_004 cites doc_001, but doc_001 contains no count, so the 211 figure lacks a primary source.\"},\n    {\"action\": \"compare_versions\", \"target\": \"doc_002 vs doc_004\", \"rationale\": \"Registry ledger shows 184; digest claims 211. Reconcile which is the authoritative month-close count.\"}\n  ],\n  \"evidence_environment_assessment\": \"Four documents share site code, workstream, and close date. doc_002 is a month-close registry entry giving 184 completed checks. doc_004 (a digest) asserts 211 but cites doc_001, which contains only chronology and no total—a broken citation chain. doc_003 notes a one-day delay without totals. The registry entry is the most authoritative source type for completion counts; the digest's number is unsupported by its own cited document.\",\n  \"answer\": \"The claim is refuted. The month-close registry (doc_002) records 184 completed Atlas valve checks for March 2025, not 211. The 211 figure appears only in a digest (doc_004) that cites doc_001, but doc_001 provides only assembly chronology and no count, leaving the 211 claim without primary support. The authoritative ledger value is 184.\"\n}",
+      "usage": {
+        "completion_tokens": 535,
+        "prompt_tokens": 1485,
+        "total_tokens": 2020,
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": null,
+          "audio_tokens": 0,
+          "reasoning_tokens": 0,
+          "rejected_prediction_tokens": null,
+          "text_tokens": 0,
+          "image_tokens": 0
+        },
+        "prompt_tokens_details": {
+          "audio_tokens": 0,
+          "cached_tokens": 0,
+          "text_tokens": 0,
+          "image_tokens": 0
+        },
+        "usage_semantic": "openai",
+        "usage_source": "anthropic",
+        "input_tokens": 1485,
+        "output_tokens": 0,
+        "input_tokens_details": null,
+        "claude_cache_creation_5_m_tokens": 0,
+        "claude_cache_creation_1_h_tokens": 0
+      },
+      "response_format_used": "json_schema",
+      "parse_success": true,
+      "parse_error": "",
+      "empty_output": false,
+      "schema_missing": false,
+      "json_extractor_used": "first_json_object",
+      "elapsed_s": 7.398,
+      "cost_usd": 0.00144125
+    }
+  ],
+  "final_attempt": {
+    "attempt": 1,
+    "model": "claude-opus-4-7",
+    "provider": "Anthropic",
+    "budget_setting": "operational",
+    "task_id": "uncued_018_visible",
+    "prompt_condition": "standard_answer",
+    "content": "{\n  \"claim_verdict\": \"refuted\",\n  \"confidence\": 0.7,\n  \"supporting_evidence\": [\"doc_004\"],\n  \"rejected_evidence\": [\"doc_003\", \"doc_001\"],\n  \"selected_doc_ids\": [\"doc_002\", \"doc_004\", \"doc_001\"],\n  \"actions\": [\n    {\"action\": \"trace_source\", \"target\": \"doc_004\", \"rationale\": \"doc_004 cites doc_001, but doc_001 contains no count, so the 211 figure lacks a primary source.\"},\n    {\"action\": \"compare_versions\", \"target\": \"doc_002 vs doc_004\", \"rationale\": \"Registry ledger shows 184; digest claims 211. Reconcile which is the authoritative month-close count.\"}\n  ],\n  \"evidence_environment_assessment\": \"Four documents share site code, workstream, and close date. doc_002 is a month-close registry entry giving 184 completed checks. doc_004 (a digest) asserts 211 but cites doc_001, which contains only chronology and no total—a broken citation chain. doc_003 notes a one-day delay without totals. The registry entry is the most authoritative source type for completion counts; the digest's number is unsupported by its own cited document.\",\n  \"answer\": \"The claim is refuted. The month-close registry (doc_002) records 184 completed Atlas valve checks for March 2025, not 211. The 211 figure appears only in a digest (doc_004) that cites doc_001, but doc_001 provides only assembly chronology and no count, leaving the 211 claim without primary support. The authoritative ledger value is 184.\"\n}",
+    "usage": {
+      "completion_tokens": 535,
+      "prompt_tokens": 1485,
+      "total_tokens": 2020,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": null,
+        "audio_tokens": 0,
+        "reasoning_tokens": 0,
+        "rejected_prediction_tokens": null,
+        "text_tokens": 0,
+        "image_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cached_tokens": 0,
+        "text_tokens": 0,
+        "image_tokens": 0
+      },
+      "usage_semantic": "openai",
+      "usage_source": "anthropic",
+      "input_tokens": 1485,
+      "output_tokens": 0,
+      "input_tokens_details": null,
+      "claude_cache_creation_5_m_tokens": 0,
+      "claude_cache_creation_1_h_tokens": 0
+    },
+    "response_format_used": "json_schema",
+    "parse_success": true,
+    "parse_error": "",
+    "empty_output": false,
+    "schema_missing": false,
+    "json_extractor_used": "first_json_object",
+    "elapsed_s": 7.398,
+    "cost_usd": 0.00144125
+  }
+}

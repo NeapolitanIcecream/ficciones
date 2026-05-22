@@ -1,0 +1,86 @@
+{
+  "attempts": [
+    {
+      "attempt": 1,
+      "model": "gemini-3.1-pro-preview",
+      "provider": "Google",
+      "budget_setting": "operational",
+      "task_id": "uncued_023_hidden",
+      "prompt_condition": "standard_answer",
+      "content": "{\n  \"claim_verdict\": \"refuted\",\n  \"confidence\": 0.9,\n  \"supporting_evidence\": [\n    \"doc_002\"\n  ],\n  \"rejected_evidence\": [\n    \"doc_003\"\n  ],\n  \"selected_doc_ids\": [\n    \"doc_001\",\n    \"doc_002\",\n    \"doc_003\"\n  ],\n  \"actions\": [\n    {\n      \"action\": \"trace_source\",\n      \"target\": \"doc_003\",\n      \"rationale\": \"Trace the operations digest to determine how it arrived at a count of 101 when its cited source contains no total.\"\n    },\n    {\n      \"action\": \"compare_versions\",\n      \"target\": \"doc_002 and doc_003\",\n      \"rationale\": \"Compare the month-close ledger and the operations digest to resolve the discrepancy between the 76 and 101 figures.\"\n    }\n  ],\n  \"evidence_environment_assessment\": \"The environment presents conflicting numerical claims. A primary-style ledger (doc_002) states there were 76 approved checks, which directly contradicts the claim. An operations digest (doc_003) supports the 101 count but cites a routing note (doc_001) that contains no final count, undermining its reliability. Documents 001 and 004 provide contextual but non-numerical information. The primary ledger record is deemed more reliable, refuting the claim.\",\n  \"answer\": \"The claim that 101 approved checks for Kestrel firmware checks were logged in August 2025 is refuted. The primary month-close ledger (doc_002) explicitly lists 76 approved checks for that period. While an operations digest (doc_003) mentions the 101 count, it is considered unreliable because it cites a routing note (doc_001) that does not contain a final count. Therefore, the most reliable evidence available contradicts the claim.\"\n}",
+      "usage": {
+        "completion_tokens": 1174,
+        "prompt_tokens": 1553,
+        "total_tokens": 2727,
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": null,
+          "audio_tokens": 0,
+          "reasoning_tokens": 707,
+          "rejected_prediction_tokens": null,
+          "text_tokens": 467,
+          "image_tokens": 0
+        },
+        "prompt_tokens_details": {
+          "audio_tokens": 0,
+          "cached_tokens": 0,
+          "text_tokens": 1553,
+          "image_tokens": 0
+        },
+        "input_tokens": 0,
+        "output_tokens": 0,
+        "input_tokens_details": null,
+        "claude_cache_creation_5_m_tokens": 0,
+        "claude_cache_creation_1_h_tokens": 0
+      },
+      "response_format_used": "json_schema",
+      "parse_success": true,
+      "parse_error": "",
+      "empty_output": false,
+      "schema_missing": false,
+      "json_extractor_used": "first_json_object",
+      "elapsed_s": 10.81,
+      "cost_usd": 0.00273625
+    }
+  ],
+  "final_attempt": {
+    "attempt": 1,
+    "model": "gemini-3.1-pro-preview",
+    "provider": "Google",
+    "budget_setting": "operational",
+    "task_id": "uncued_023_hidden",
+    "prompt_condition": "standard_answer",
+    "content": "{\n  \"claim_verdict\": \"refuted\",\n  \"confidence\": 0.9,\n  \"supporting_evidence\": [\n    \"doc_002\"\n  ],\n  \"rejected_evidence\": [\n    \"doc_003\"\n  ],\n  \"selected_doc_ids\": [\n    \"doc_001\",\n    \"doc_002\",\n    \"doc_003\"\n  ],\n  \"actions\": [\n    {\n      \"action\": \"trace_source\",\n      \"target\": \"doc_003\",\n      \"rationale\": \"Trace the operations digest to determine how it arrived at a count of 101 when its cited source contains no total.\"\n    },\n    {\n      \"action\": \"compare_versions\",\n      \"target\": \"doc_002 and doc_003\",\n      \"rationale\": \"Compare the month-close ledger and the operations digest to resolve the discrepancy between the 76 and 101 figures.\"\n    }\n  ],\n  \"evidence_environment_assessment\": \"The environment presents conflicting numerical claims. A primary-style ledger (doc_002) states there were 76 approved checks, which directly contradicts the claim. An operations digest (doc_003) supports the 101 count but cites a routing note (doc_001) that contains no final count, undermining its reliability. Documents 001 and 004 provide contextual but non-numerical information. The primary ledger record is deemed more reliable, refuting the claim.\",\n  \"answer\": \"The claim that 101 approved checks for Kestrel firmware checks were logged in August 2025 is refuted. The primary month-close ledger (doc_002) explicitly lists 76 approved checks for that period. While an operations digest (doc_003) mentions the 101 count, it is considered unreliable because it cites a routing note (doc_001) that does not contain a final count. Therefore, the most reliable evidence available contradicts the claim.\"\n}",
+    "usage": {
+      "completion_tokens": 1174,
+      "prompt_tokens": 1553,
+      "total_tokens": 2727,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": null,
+        "audio_tokens": 0,
+        "reasoning_tokens": 707,
+        "rejected_prediction_tokens": null,
+        "text_tokens": 467,
+        "image_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cached_tokens": 0,
+        "text_tokens": 1553,
+        "image_tokens": 0
+      },
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "input_tokens_details": null,
+      "claude_cache_creation_5_m_tokens": 0,
+      "claude_cache_creation_1_h_tokens": 0
+    },
+    "response_format_used": "json_schema",
+    "parse_success": true,
+    "parse_error": "",
+    "empty_output": false,
+    "schema_missing": false,
+    "json_extractor_used": "first_json_object",
+    "elapsed_s": 10.81,
+    "cost_usd": 0.00273625
+  }
+}

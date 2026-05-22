@@ -1,0 +1,72 @@
+{
+  "attempts": [
+    {
+      "attempt": 1,
+      "model": "deepseek-v4-pro",
+      "provider": "DeepSeek",
+      "budget_setting": "operational",
+      "task_id": "uncued_014_hidden",
+      "prompt_condition": "standard_answer",
+      "content": "{\n  \"claim_verdict\": \"refuted\",\n  \"confidence\": 0.95,\n  \"supporting_evidence\": [\"doc_004\"],\n  \"rejected_evidence\": [\"doc_002\"],\n  \"selected_doc_ids\": [\"doc_002\", \"doc_004\", \"doc_003\"],\n  \"actions\": [\n    {\n      \"action\": \"trace_source\",\n      \"target\": \"doc_003\",\n      \"rationale\": \"Trace the citation in doc_002 to verify the claimed count. The cited routing note contains no total, so the 124 figure is unsupported.\"\n    },\n    {\n      \"action\": \"compare_versions\",\n      \"target\": \"doc_002 and doc_004\",\n      \"rationale\": \"Compare the digest's claim of 124 with the month-close ledger's 97. The ledger is a primary record and contradicts the digest, indicating the claim is incorrect.\"\n    }\n  ],\n  \"evidence_environment_assessment\": \"The evidence set includes a digest (doc_002) stating 124, a routing note (doc_003) cited by it but containing no count, a month-close ledger (doc_004) listing 97, and a scheduling memo about delays. The ledger is a formal, detailed record that directly contradicts the claim, while the digest lacks substantive support. This creates a clear contradiction in favor of the ledger.\",\n  \"answer\": \"The month-close ledger (doc_004) records 97 closed tickets, directly refuting the claim of 124. The digest's claim is unsupported by its cited source (doc_003).\"\n}",
+      "usage": {
+        "completion_tokens": 2005,
+        "prompt_tokens": 1051,
+        "total_tokens": 3056,
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": null,
+          "audio_tokens": null,
+          "reasoning_tokens": 1665,
+          "rejected_prediction_tokens": null
+        },
+        "prompt_tokens_details": {
+          "audio_tokens": null,
+          "cached_tokens": 0
+        },
+        "prompt_cache_hit_tokens": 0,
+        "prompt_cache_miss_tokens": 1051
+      },
+      "response_format_used": "json_object",
+      "parse_success": true,
+      "parse_error": "",
+      "empty_output": false,
+      "schema_missing": false,
+      "json_extractor_used": "first_json_object",
+      "elapsed_s": 42.48,
+      "cost_usd": 0.00427275
+    }
+  ],
+  "final_attempt": {
+    "attempt": 1,
+    "model": "deepseek-v4-pro",
+    "provider": "DeepSeek",
+    "budget_setting": "operational",
+    "task_id": "uncued_014_hidden",
+    "prompt_condition": "standard_answer",
+    "content": "{\n  \"claim_verdict\": \"refuted\",\n  \"confidence\": 0.95,\n  \"supporting_evidence\": [\"doc_004\"],\n  \"rejected_evidence\": [\"doc_002\"],\n  \"selected_doc_ids\": [\"doc_002\", \"doc_004\", \"doc_003\"],\n  \"actions\": [\n    {\n      \"action\": \"trace_source\",\n      \"target\": \"doc_003\",\n      \"rationale\": \"Trace the citation in doc_002 to verify the claimed count. The cited routing note contains no total, so the 124 figure is unsupported.\"\n    },\n    {\n      \"action\": \"compare_versions\",\n      \"target\": \"doc_002 and doc_004\",\n      \"rationale\": \"Compare the digest's claim of 124 with the month-close ledger's 97. The ledger is a primary record and contradicts the digest, indicating the claim is incorrect.\"\n    }\n  ],\n  \"evidence_environment_assessment\": \"The evidence set includes a digest (doc_002) stating 124, a routing note (doc_003) cited by it but containing no count, a month-close ledger (doc_004) listing 97, and a scheduling memo about delays. The ledger is a formal, detailed record that directly contradicts the claim, while the digest lacks substantive support. This creates a clear contradiction in favor of the ledger.\",\n  \"answer\": \"The month-close ledger (doc_004) records 97 closed tickets, directly refuting the claim of 124. The digest's claim is unsupported by its cited source (doc_003).\"\n}",
+    "usage": {
+      "completion_tokens": 2005,
+      "prompt_tokens": 1051,
+      "total_tokens": 3056,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": null,
+        "audio_tokens": null,
+        "reasoning_tokens": 1665,
+        "rejected_prediction_tokens": null
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": null,
+        "cached_tokens": 0
+      },
+      "prompt_cache_hit_tokens": 0,
+      "prompt_cache_miss_tokens": 1051
+    },
+    "response_format_used": "json_object",
+    "parse_success": true,
+    "parse_error": "",
+    "empty_output": false,
+    "schema_missing": false,
+    "json_extractor_used": "first_json_object",
+    "elapsed_s": 42.48,
+    "cost_usd": 0.00427275
+  }
+}

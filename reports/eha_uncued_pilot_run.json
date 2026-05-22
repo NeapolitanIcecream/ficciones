@@ -1,0 +1,97 @@
+{
+  "phase": 12,
+  "status": "passed",
+  "date": "2026-05-22",
+  "dataset_dir": "eha-mvp/data/uncued-pilot-v1",
+  "run_dir": "eha-mvp/results/reports-eha-uncued-pilot-2026-05-22",
+  "command": "uv run eha-run-uncued-pilot --dataset-dir data/uncued-pilot-v1 --out-dir results/reports-eha-uncued-pilot-2026-05-22 --models gpt-5.5,claude-opus-4-7,gemini-3.1-pro-preview,deepseek-v4-pro --views neutral_metadata_visible,neutral_metadata_hidden --schema clarified --prompt standard_answer --hard-cap-usd 15 --soft-cap-usd 10 --abort-cap-usd 20 --max-output-tokens 4096 --timeout-s 240 --parallel-models 4 --max-attempts 2 --deepseek-response-format json_object",
+  "expected_records": 480,
+  "actual_records": 480,
+  "unique_record_keys": 480,
+  "duplicate_record_keys": 0,
+  "views": {
+    "hidden": 240,
+    "visible": 240
+  },
+  "models": {
+    "claude-opus-4-7": {
+      "provider": "Anthropic",
+      "records": 120,
+      "parse_success_rate": 1.0,
+      "empty_output_count": 0,
+      "schema_missing_count": 0,
+      "timeout_count": 0,
+      "cost_usd": 0.177029
+    },
+    "deepseek-v4-pro": {
+      "provider": "DeepSeek",
+      "records": 120,
+      "parse_success_rate": 1.0,
+      "empty_output_count": 0,
+      "schema_missing_count": 0,
+      "timeout_count": 0,
+      "cost_usd": 0.5094
+    },
+    "gemini-3.1-pro-preview": {
+      "provider": "Google",
+      "records": 120,
+      "parse_success_rate": 1.0,
+      "empty_output_count": 0,
+      "schema_missing_count": 0,
+      "timeout_count": 0,
+      "cost_usd": 0.475382
+    },
+    "gpt-5.5": {
+      "provider": "OpenAI",
+      "records": 120,
+      "parse_success_rate": 1.0,
+      "empty_output_count": 0,
+      "schema_missing_count": 0,
+      "timeout_count": 0,
+      "cost_usd": 2.59787
+    }
+  },
+  "prompt_audit": {
+    "records": 480,
+    "semantic_doc_id_hits": 0,
+    "semantic_visible_citation_hits": 0,
+    "audit_id_hits_in_title_or_body": 0,
+    "hidden_field_hit_count": 0,
+    "passed": true
+  },
+  "stored_hidden_label_audit": {
+    "prompt_hit_count": 0,
+    "output_hit_count": 0,
+    "passed": true
+  },
+  "cost": {
+    "aborted": false,
+    "record_cost_usd": 3.759681,
+    "spent_usd": 3.764007,
+    "soft_cap_usd": 10.0,
+    "hard_cap_usd": 15.0,
+    "abort_cap_usd": 20.0
+  },
+  "deepseek_invocation_profile": {
+    "temperature_policy": "omitted",
+    "max_completion_tokens_policy": "explicit:4096",
+    "response_format": "json_object",
+    "json_extractor": "first_json_object",
+    "message_role_policy": "developer_system_merged_into_user",
+    "llm_repair": "disabled",
+    "provider": "DeepSeek",
+    "budget_setting": "operational",
+    "max_attempts": 2,
+    "timeout_s": 240.0
+  },
+  "hashes": {
+    "predictions_jsonl": "e0d6f072c4e260997b68a6055c1583331aa6a355981a2d9f417cf893ed705ca4",
+    "run_summary_by_model_csv": "74a55842eef9c8da2a9a18b90a41919ee71001817cdb4cf9f8405f77a63ee4ac",
+    "prompt_audit_summary_json": "4110a36d1b165761ff326f862787c89efedc2ff44ceddf5985a29ef31b0ecf2d",
+    "stored_hidden_label_audit_json": "5069bd02061d2ff590349a12f9cb2922f62f106081445609195fb2c80e845156",
+    "cost_report_json": "5d7291ae05a819f20ece4b287261bc4ccf17736e8c8244554ce00ad40728274b",
+    "invocation_profiles_json": "d806153c5a797d738bc3fb7e648a8f1c3d8a34a62260fb47474627a4b9783670",
+    "run_manifest_json": "913ae8be97d394ace5904209f4d0beb2aa29f2b3c7b3e4c29622b442eb412572"
+  },
+  "phase13_status": "not_started"
+}

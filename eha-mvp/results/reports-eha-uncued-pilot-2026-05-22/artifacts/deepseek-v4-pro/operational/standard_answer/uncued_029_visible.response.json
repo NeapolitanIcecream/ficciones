@@ -1,0 +1,72 @@
+{
+  "attempts": [
+    {
+      "attempt": 1,
+      "model": "deepseek-v4-pro",
+      "provider": "DeepSeek",
+      "budget_setting": "operational",
+      "task_id": "uncued_029_visible",
+      "prompt_condition": "standard_answer",
+      "content": "{\n  \"claim_verdict\": \"insufficient\",\n  \"confidence\": 0.8,\n  \"supporting_evidence\": [\"doc_001\", \"doc_002\"],\n  \"rejected_evidence\": [\"doc_003\"],\n  \"selected_doc_ids\": [\"doc_003\", \"doc_001\", \"doc_002\"],\n  \"actions\": [\n    {\n      \"action\": \"trace_source\",\n      \"target\": \"doc_001\",\n      \"rationale\": \"The weekly digest in doc_001 cites an earlier bulletin; tracing that source is needed to verify the 101 claim.\"\n    },\n    {\n      \"action\": \"search_primary\",\n      \"target\": \"Kestrel firmware checks August 2025 closing ledger\",\n      \"rationale\": \"Finding the actual closing ledger would resolve the conflict with the 76 count reported in doc_003.\"\n    }\n  ],\n  \"evidence_environment_assessment\": \"Two documents (doc_001, doc_002) claim 101 approved checks but form a circular citation chain. A third document (doc_003) reports 76 from a closing ledger, claiming it is the only differing count. A fourth document (doc_004) lacks a count. The contradiction and lack of independent support make the environment unreliable.\",\n  \"answer\": \"The evidence is conflicting. Circular reports support 101 checks, but a closing ledger entry indicates 76. Without primary sources, the claim cannot be verified.\"\n}",
+      "usage": {
+        "completion_tokens": 2239,
+        "prompt_tokens": 1068,
+        "total_tokens": 3307,
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": null,
+          "audio_tokens": null,
+          "reasoning_tokens": 1935,
+          "rejected_prediction_tokens": null
+        },
+        "prompt_tokens_details": {
+          "audio_tokens": null,
+          "cached_tokens": 256
+        },
+        "prompt_cache_hit_tokens": 256,
+        "prompt_cache_miss_tokens": 812
+      },
+      "response_format_used": "json_object",
+      "parse_success": true,
+      "parse_error": "",
+      "empty_output": false,
+      "schema_missing": false,
+      "json_extractor_used": "first_json_object",
+      "elapsed_s": 48.416,
+      "cost_usd": 0.004745
+    }
+  ],
+  "final_attempt": {
+    "attempt": 1,
+    "model": "deepseek-v4-pro",
+    "provider": "DeepSeek",
+    "budget_setting": "operational",
+    "task_id": "uncued_029_visible",
+    "prompt_condition": "standard_answer",
+    "content": "{\n  \"claim_verdict\": \"insufficient\",\n  \"confidence\": 0.8,\n  \"supporting_evidence\": [\"doc_001\", \"doc_002\"],\n  \"rejected_evidence\": [\"doc_003\"],\n  \"selected_doc_ids\": [\"doc_003\", \"doc_001\", \"doc_002\"],\n  \"actions\": [\n    {\n      \"action\": \"trace_source\",\n      \"target\": \"doc_001\",\n      \"rationale\": \"The weekly digest in doc_001 cites an earlier bulletin; tracing that source is needed to verify the 101 claim.\"\n    },\n    {\n      \"action\": \"search_primary\",\n      \"target\": \"Kestrel firmware checks August 2025 closing ledger\",\n      \"rationale\": \"Finding the actual closing ledger would resolve the conflict with the 76 count reported in doc_003.\"\n    }\n  ],\n  \"evidence_environment_assessment\": \"Two documents (doc_001, doc_002) claim 101 approved checks but form a circular citation chain. A third document (doc_003) reports 76 from a closing ledger, claiming it is the only differing count. A fourth document (doc_004) lacks a count. The contradiction and lack of independent support make the environment unreliable.\",\n  \"answer\": \"The evidence is conflicting. Circular reports support 101 checks, but a closing ledger entry indicates 76. Without primary sources, the claim cannot be verified.\"\n}",
+    "usage": {
+      "completion_tokens": 2239,
+      "prompt_tokens": 1068,
+      "total_tokens": 3307,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": null,
+        "audio_tokens": null,
+        "reasoning_tokens": 1935,
+        "rejected_prediction_tokens": null
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": null,
+        "cached_tokens": 256
+      },
+      "prompt_cache_hit_tokens": 256,
+      "prompt_cache_miss_tokens": 812
+    },
+    "response_format_used": "json_object",
+    "parse_success": true,
+    "parse_error": "",
+    "empty_output": false,
+    "schema_missing": false,
+    "json_extractor_used": "first_json_object",
+    "elapsed_s": 48.416,
+    "cost_usd": 0.004745
+  }
+}

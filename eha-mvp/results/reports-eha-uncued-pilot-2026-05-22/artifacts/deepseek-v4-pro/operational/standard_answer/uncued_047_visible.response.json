@@ -1,0 +1,72 @@
+{
+  "attempts": [
+    {
+      "attempt": 1,
+      "model": "deepseek-v4-pro",
+      "provider": "DeepSeek",
+      "budget_setting": "operational",
+      "task_id": "uncued_047_visible",
+      "prompt_condition": "standard_answer",
+      "content": "{\n  \"claim_verdict\": \"supported\",\n  \"confidence\": 0.85,\n  \"supporting_evidence\": [\"doc_001\"],\n  \"rejected_evidence\": [\"doc_004\"],\n  \"selected_doc_ids\": [\"doc_001\", \"doc_004\", \"doc_003\"],\n  \"actions\": [\n    {\n      \"action\": \"compare_versions\",\n      \"target\": \"doc_001 and doc_004\",\n      \"rationale\": \"The closeout ledger claims 76 checks while the digest estimates 101; comparing these versions can clarify which is the final approved count.\"\n    },\n    {\n      \"action\": \"search_contradiction\",\n      \"target\": \"doc_004\",\n      \"rationale\": \"Search for any revision or discrepancy notes that address the discrepancy between the running estimate and the final ledger.\"\n    }\n  ],\n  \"evidence_environment_assessment\": \"The evidence includes a closeout ledger listing 76 approved checks (doc_001), a handoff note without a count (doc_002), a planning memo (doc_003), and a running digest estimating 101 checks (doc_004). The ledger is the final record and carries more weight, though an earlier estimate conflicts. The environment shows a typical workflow from planning to final close, with the final tally being 76.\",\n  \"answer\": \"Yes, Novalis Robotics logged 76 approved checks for Kestrel firmware checks in August 2025, as indicated by the closeout ledger (doc_001). An earlier digest estimated 101, but that was a running estimate, not a final log.\"\n}",
+      "usage": {
+        "completion_tokens": 1724,
+        "prompt_tokens": 1051,
+        "total_tokens": 2775,
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": null,
+          "audio_tokens": null,
+          "reasoning_tokens": 1386,
+          "rejected_prediction_tokens": null
+        },
+        "prompt_tokens_details": {
+          "audio_tokens": null,
+          "cached_tokens": 0
+        },
+        "prompt_cache_hit_tokens": 0,
+        "prompt_cache_miss_tokens": 1051
+      },
+      "response_format_used": "json_object",
+      "parse_success": true,
+      "parse_error": "",
+      "empty_output": false,
+      "schema_missing": false,
+      "json_extractor_used": "first_json_object",
+      "elapsed_s": 41.201,
+      "cost_usd": 0.00371075
+    }
+  ],
+  "final_attempt": {
+    "attempt": 1,
+    "model": "deepseek-v4-pro",
+    "provider": "DeepSeek",
+    "budget_setting": "operational",
+    "task_id": "uncued_047_visible",
+    "prompt_condition": "standard_answer",
+    "content": "{\n  \"claim_verdict\": \"supported\",\n  \"confidence\": 0.85,\n  \"supporting_evidence\": [\"doc_001\"],\n  \"rejected_evidence\": [\"doc_004\"],\n  \"selected_doc_ids\": [\"doc_001\", \"doc_004\", \"doc_003\"],\n  \"actions\": [\n    {\n      \"action\": \"compare_versions\",\n      \"target\": \"doc_001 and doc_004\",\n      \"rationale\": \"The closeout ledger claims 76 checks while the digest estimates 101; comparing these versions can clarify which is the final approved count.\"\n    },\n    {\n      \"action\": \"search_contradiction\",\n      \"target\": \"doc_004\",\n      \"rationale\": \"Search for any revision or discrepancy notes that address the discrepancy between the running estimate and the final ledger.\"\n    }\n  ],\n  \"evidence_environment_assessment\": \"The evidence includes a closeout ledger listing 76 approved checks (doc_001), a handoff note without a count (doc_002), a planning memo (doc_003), and a running digest estimating 101 checks (doc_004). The ledger is the final record and carries more weight, though an earlier estimate conflicts. The environment shows a typical workflow from planning to final close, with the final tally being 76.\",\n  \"answer\": \"Yes, Novalis Robotics logged 76 approved checks for Kestrel firmware checks in August 2025, as indicated by the closeout ledger (doc_001). An earlier digest estimated 101, but that was a running estimate, not a final log.\"\n}",
+    "usage": {
+      "completion_tokens": 1724,
+      "prompt_tokens": 1051,
+      "total_tokens": 2775,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": null,
+        "audio_tokens": null,
+        "reasoning_tokens": 1386,
+        "rejected_prediction_tokens": null
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": null,
+        "cached_tokens": 0
+      },
+      "prompt_cache_hit_tokens": 0,
+      "prompt_cache_miss_tokens": 1051
+    },
+    "response_format_used": "json_object",
+    "parse_success": true,
+    "parse_error": "",
+    "empty_output": false,
+    "schema_missing": false,
+    "json_extractor_used": "first_json_object",
+    "elapsed_s": 41.201,
+    "cost_usd": 0.00371075
+  }
+}

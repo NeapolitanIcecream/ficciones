@@ -1,0 +1,90 @@
+{
+  "attempts": [
+    {
+      "attempt": 1,
+      "model": "claude-opus-4-7",
+      "provider": "Anthropic",
+      "budget_setting": "operational",
+      "task_id": "uncued_038_hidden",
+      "prompt_condition": "standard_answer",
+      "content": "{\n  \"claim_verdict\": \"supported\",\n  \"confidence\": 0.78,\n  \"supporting_evidence\": [\"doc_002\"],\n  \"rejected_evidence\": [\"doc_003\", \"doc_004\"],\n  \"selected_doc_ids\": [\"doc_002\", \"doc_003\", \"doc_004\"],\n  \"actions\": [\n    {\"action\": \"compare_versions\", \"target\": \"doc_002 vs doc_003\", \"rationale\": \"Reconcile the closeout ledger's 97 with the digest's running estimate of 124.\"},\n    {\"action\": \"trace_source\", \"target\": \"doc_002\", \"rationale\": \"Confirm the closeout ledger is the authoritative final record for May 2025.\"}\n  ],\n  \"evidence_environment_assessment\": \"Four documents share site code, workstream, and close date, so labels alone don't disambiguate. doc_004 is a pre-close planning memo with no final count. doc_003 is a running estimate (124) citing the planning memo, not a final ledger. doc_001 is a handoff note without counts. doc_002 is the closeout ledger with the final close date listing 97. The ledger postdates and supersedes the estimate, making it the authoritative source. Timestamps are all March 2025, which is suspicious for May 2025 reporting, but relative ordering favors doc_002.\",\n  \"answer\": \"Yes. The closeout ledger (doc_002) records 97 closed tickets for Mira sensor recalibrations in May 2025, using the final close date. The competing figure of 124 (doc_003) is explicitly a running estimate based on a pre-close planning memo (doc_004), so it is superseded by the ledger. Confidence is tempered by the unusual March timestamps relative to a May 2025 reporting period.\"\n}",
+      "usage": {
+        "completion_tokens": 580,
+        "prompt_tokens": 1462,
+        "total_tokens": 2042,
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": null,
+          "audio_tokens": 0,
+          "reasoning_tokens": 0,
+          "rejected_prediction_tokens": null,
+          "text_tokens": 0,
+          "image_tokens": 0
+        },
+        "prompt_tokens_details": {
+          "audio_tokens": 0,
+          "cached_tokens": 0,
+          "text_tokens": 0,
+          "image_tokens": 0
+        },
+        "usage_semantic": "openai",
+        "usage_source": "anthropic",
+        "input_tokens": 1462,
+        "output_tokens": 0,
+        "input_tokens_details": null,
+        "claude_cache_creation_5_m_tokens": 0,
+        "claude_cache_creation_1_h_tokens": 0
+      },
+      "response_format_used": "json_schema",
+      "parse_success": true,
+      "parse_error": "",
+      "empty_output": false,
+      "schema_missing": false,
+      "json_extractor_used": "first_json_object",
+      "elapsed_s": 7.662,
+      "cost_usd": 0.0015255
+    }
+  ],
+  "final_attempt": {
+    "attempt": 1,
+    "model": "claude-opus-4-7",
+    "provider": "Anthropic",
+    "budget_setting": "operational",
+    "task_id": "uncued_038_hidden",
+    "prompt_condition": "standard_answer",
+    "content": "{\n  \"claim_verdict\": \"supported\",\n  \"confidence\": 0.78,\n  \"supporting_evidence\": [\"doc_002\"],\n  \"rejected_evidence\": [\"doc_003\", \"doc_004\"],\n  \"selected_doc_ids\": [\"doc_002\", \"doc_003\", \"doc_004\"],\n  \"actions\": [\n    {\"action\": \"compare_versions\", \"target\": \"doc_002 vs doc_003\", \"rationale\": \"Reconcile the closeout ledger's 97 with the digest's running estimate of 124.\"},\n    {\"action\": \"trace_source\", \"target\": \"doc_002\", \"rationale\": \"Confirm the closeout ledger is the authoritative final record for May 2025.\"}\n  ],\n  \"evidence_environment_assessment\": \"Four documents share site code, workstream, and close date, so labels alone don't disambiguate. doc_004 is a pre-close planning memo with no final count. doc_003 is a running estimate (124) citing the planning memo, not a final ledger. doc_001 is a handoff note without counts. doc_002 is the closeout ledger with the final close date listing 97. The ledger postdates and supersedes the estimate, making it the authoritative source. Timestamps are all March 2025, which is suspicious for May 2025 reporting, but relative ordering favors doc_002.\",\n  \"answer\": \"Yes. The closeout ledger (doc_002) records 97 closed tickets for Mira sensor recalibrations in May 2025, using the final close date. The competing figure of 124 (doc_003) is explicitly a running estimate based on a pre-close planning memo (doc_004), so it is superseded by the ledger. Confidence is tempered by the unusual March timestamps relative to a May 2025 reporting period.\"\n}",
+    "usage": {
+      "completion_tokens": 580,
+      "prompt_tokens": 1462,
+      "total_tokens": 2042,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": null,
+        "audio_tokens": 0,
+        "reasoning_tokens": 0,
+        "rejected_prediction_tokens": null,
+        "text_tokens": 0,
+        "image_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cached_tokens": 0,
+        "text_tokens": 0,
+        "image_tokens": 0
+      },
+      "usage_semantic": "openai",
+      "usage_source": "anthropic",
+      "input_tokens": 1462,
+      "output_tokens": 0,
+      "input_tokens_details": null,
+      "claude_cache_creation_5_m_tokens": 0,
+      "claude_cache_creation_1_h_tokens": 0
+    },
+    "response_format_used": "json_schema",
+    "parse_success": true,
+    "parse_error": "",
+    "empty_output": false,
+    "schema_missing": false,
+    "json_extractor_used": "first_json_object",
+    "elapsed_s": 7.662,
+    "cost_usd": 0.0015255
+  }
+}

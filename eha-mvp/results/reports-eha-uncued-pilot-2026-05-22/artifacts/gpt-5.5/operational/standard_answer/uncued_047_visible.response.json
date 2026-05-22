@@ -1,0 +1,90 @@
+{
+  "attempts": [
+    {
+      "attempt": 1,
+      "model": "gpt-5.5",
+      "provider": "OpenAI",
+      "budget_setting": "operational",
+      "task_id": "uncued_047_visible",
+      "prompt_condition": "standard_answer",
+      "content": "{\"actions\":[{\"action\":\"compare_versions\",\"rationale\":\"Compare the final closeout count against the running estimate for the same workstream and month.\",\"target\":\"doc_001 vs doc_004\"},{\"action\":\"trace_source\",\"rationale\":\"Check that the 101 figure is only an estimate sourced to planning, not a final closeout count.\",\"target\":\"doc_004 -> doc_003\"}],\"answer\":\"Supported. doc_001 directly states that the closeout ledger lists 76 approved checks for Kestrel firmware checks in August 2025. The conflicting 101 figure in doc_004 is only a running estimate tied to planning, not a final number. The documents do not explicitly name Novalis Robotics, which slightly lowers confidence.\",\"claim_verdict\":\"supported\",\"confidence\":0.82,\"evidence_environment_assessment\":\"The environment contains one direct final-count statement and several weaker planning or estimate records. doc_004 gives a contradictory 101 count, but it is framed as a running estimate and cites a planning memo with no final number. Source labels and dates are somewhat noisy, and Novalis Robotics is not explicitly named in the provided bodies, so confidence is not maximal.\",\"rejected_evidence\":[\"doc_004\",\"doc_003\",\"doc_002\"],\"selected_doc_ids\":[\"doc_001\",\"doc_004\",\"doc_003\"],\"supporting_evidence\":[\"doc_001\"]}",
+      "usage": {
+        "completion_tokens": 702,
+        "prompt_tokens": 1192,
+        "total_tokens": 1894,
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": 0,
+          "audio_tokens": 0,
+          "reasoning_tokens": 401,
+          "rejected_prediction_tokens": 0
+        },
+        "prompt_tokens_details": {
+          "audio_tokens": 0,
+          "cached_tokens": 0
+        },
+        "latency_checkpoint": {
+          "engine_tbt_ms": 30,
+          "engine_ttft_ms": 343,
+          "engine_ttlt_ms": 21539,
+          "pre_inference_ms": 94,
+          "service_tbt_ms": 30,
+          "service_ttft_ms": 663,
+          "service_ttlt_ms": 21857,
+          "total_duration_ms": 21773,
+          "user_visible_ttft_ms": 569
+        }
+      },
+      "response_format_used": "json_schema",
+      "parse_success": true,
+      "parse_error": "",
+      "empty_output": false,
+      "schema_missing": false,
+      "json_extractor_used": "first_json_object",
+      "elapsed_s": 23.398,
+      "cost_usd": 0.027020000000000002
+    }
+  ],
+  "final_attempt": {
+    "attempt": 1,
+    "model": "gpt-5.5",
+    "provider": "OpenAI",
+    "budget_setting": "operational",
+    "task_id": "uncued_047_visible",
+    "prompt_condition": "standard_answer",
+    "content": "{\"actions\":[{\"action\":\"compare_versions\",\"rationale\":\"Compare the final closeout count against the running estimate for the same workstream and month.\",\"target\":\"doc_001 vs doc_004\"},{\"action\":\"trace_source\",\"rationale\":\"Check that the 101 figure is only an estimate sourced to planning, not a final closeout count.\",\"target\":\"doc_004 -> doc_003\"}],\"answer\":\"Supported. doc_001 directly states that the closeout ledger lists 76 approved checks for Kestrel firmware checks in August 2025. The conflicting 101 figure in doc_004 is only a running estimate tied to planning, not a final number. The documents do not explicitly name Novalis Robotics, which slightly lowers confidence.\",\"claim_verdict\":\"supported\",\"confidence\":0.82,\"evidence_environment_assessment\":\"The environment contains one direct final-count statement and several weaker planning or estimate records. doc_004 gives a contradictory 101 count, but it is framed as a running estimate and cites a planning memo with no final number. Source labels and dates are somewhat noisy, and Novalis Robotics is not explicitly named in the provided bodies, so confidence is not maximal.\",\"rejected_evidence\":[\"doc_004\",\"doc_003\",\"doc_002\"],\"selected_doc_ids\":[\"doc_001\",\"doc_004\",\"doc_003\"],\"supporting_evidence\":[\"doc_001\"]}",
+    "usage": {
+      "completion_tokens": 702,
+      "prompt_tokens": 1192,
+      "total_tokens": 1894,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": 0,
+        "audio_tokens": 0,
+        "reasoning_tokens": 401,
+        "rejected_prediction_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cached_tokens": 0
+      },
+      "latency_checkpoint": {
+        "engine_tbt_ms": 30,
+        "engine_ttft_ms": 343,
+        "engine_ttlt_ms": 21539,
+        "pre_inference_ms": 94,
+        "service_tbt_ms": 30,
+        "service_ttft_ms": 663,
+        "service_ttlt_ms": 21857,
+        "total_duration_ms": 21773,
+        "user_visible_ttft_ms": 569
+      }
+    },
+    "response_format_used": "json_schema",
+    "parse_success": true,
+    "parse_error": "",
+    "empty_output": false,
+    "schema_missing": false,
+    "json_extractor_used": "first_json_object",
+    "elapsed_s": 23.398,
+    "cost_usd": 0.027020000000000002
+  }
+}

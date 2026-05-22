@@ -1,0 +1,90 @@
+{
+  "attempts": [
+    {
+      "attempt": 1,
+      "model": "gpt-5.5",
+      "provider": "OpenAI",
+      "budget_setting": "operational",
+      "task_id": "uncued_008_visible",
+      "prompt_condition": "standard_answer",
+      "content": "{\"actions\":[{\"action\":\"open\",\"rationale\":\"Contains the only explicit monthly ledger count matching the claim.\",\"target\":\"doc_004\"},{\"action\":\"search_contradiction\",\"rationale\":\"Check whether other provided documents give a conflicting May 2025 close count.\",\"target\":\"doc_001, doc_002, doc_003\"}],\"answer\":\"Supported. The provided environment includes one document stating the monthly ledger lists 97 closed tickets for Mira sensor recalibrations in May 2025; no provided document contradicts that count.\",\"claim_verdict\":\"supported\",\"confidence\":0.86,\"evidence_environment_assessment\":\"The evidence set is small and somewhat noisy: most documents share similar contextual wording but do not provide counts. The key item, doc_004, directly states the claimed number in a monthly ledger entry dated after month close. No contradictions appear, though the source_type/title metadata are imperfectly aligned, limiting certainty.\",\"rejected_evidence\":[\"doc_001\",\"doc_002\",\"doc_003\"],\"selected_doc_ids\":[\"doc_004\",\"doc_001\",\"doc_002\"],\"supporting_evidence\":[\"doc_004\"]}",
+      "usage": {
+        "completion_tokens": 244,
+        "prompt_tokens": 1210,
+        "total_tokens": 1454,
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": 0,
+          "audio_tokens": 0,
+          "reasoning_tokens": 0,
+          "rejected_prediction_tokens": 0
+        },
+        "prompt_tokens_details": {
+          "audio_tokens": 0,
+          "cached_tokens": 0
+        },
+        "latency_checkpoint": {
+          "engine_tbt_ms": 21,
+          "engine_ttft_ms": 589,
+          "engine_ttlt_ms": 5597,
+          "pre_inference_ms": 198,
+          "service_tbt_ms": 21,
+          "service_ttft_ms": 1046,
+          "service_ttlt_ms": 6053,
+          "total_duration_ms": 5854,
+          "user_visible_ttft_ms": 848
+        }
+      },
+      "response_format_used": "json_schema",
+      "parse_success": true,
+      "parse_error": "",
+      "empty_output": false,
+      "schema_missing": false,
+      "json_extractor_used": "first_json_object",
+      "elapsed_s": 8.028,
+      "cost_usd": 0.01337
+    }
+  ],
+  "final_attempt": {
+    "attempt": 1,
+    "model": "gpt-5.5",
+    "provider": "OpenAI",
+    "budget_setting": "operational",
+    "task_id": "uncued_008_visible",
+    "prompt_condition": "standard_answer",
+    "content": "{\"actions\":[{\"action\":\"open\",\"rationale\":\"Contains the only explicit monthly ledger count matching the claim.\",\"target\":\"doc_004\"},{\"action\":\"search_contradiction\",\"rationale\":\"Check whether other provided documents give a conflicting May 2025 close count.\",\"target\":\"doc_001, doc_002, doc_003\"}],\"answer\":\"Supported. The provided environment includes one document stating the monthly ledger lists 97 closed tickets for Mira sensor recalibrations in May 2025; no provided document contradicts that count.\",\"claim_verdict\":\"supported\",\"confidence\":0.86,\"evidence_environment_assessment\":\"The evidence set is small and somewhat noisy: most documents share similar contextual wording but do not provide counts. The key item, doc_004, directly states the claimed number in a monthly ledger entry dated after month close. No contradictions appear, though the source_type/title metadata are imperfectly aligned, limiting certainty.\",\"rejected_evidence\":[\"doc_001\",\"doc_002\",\"doc_003\"],\"selected_doc_ids\":[\"doc_004\",\"doc_001\",\"doc_002\"],\"supporting_evidence\":[\"doc_004\"]}",
+    "usage": {
+      "completion_tokens": 244,
+      "prompt_tokens": 1210,
+      "total_tokens": 1454,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": 0,
+        "audio_tokens": 0,
+        "reasoning_tokens": 0,
+        "rejected_prediction_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cached_tokens": 0
+      },
+      "latency_checkpoint": {
+        "engine_tbt_ms": 21,
+        "engine_ttft_ms": 589,
+        "engine_ttlt_ms": 5597,
+        "pre_inference_ms": 198,
+        "service_tbt_ms": 21,
+        "service_ttft_ms": 1046,
+        "service_ttlt_ms": 6053,
+        "total_duration_ms": 5854,
+        "user_visible_ttft_ms": 848
+      }
+    },
+    "response_format_used": "json_schema",
+    "parse_success": true,
+    "parse_error": "",
+    "empty_output": false,
+    "schema_missing": false,
+    "json_extractor_used": "first_json_object",
+    "elapsed_s": 8.028,
+    "cost_usd": 0.01337
+  }
+}

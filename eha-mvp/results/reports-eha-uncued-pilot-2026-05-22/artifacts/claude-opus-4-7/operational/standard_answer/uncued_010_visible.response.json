@@ -1,0 +1,90 @@
+{
+  "attempts": [
+    {
+      "attempt": 1,
+      "model": "claude-opus-4-7",
+      "provider": "Anthropic",
+      "budget_setting": "operational",
+      "task_id": "uncued_010_visible",
+      "prompt_condition": "standard_answer",
+      "content": "{\n  \"claim_verdict\": \"supported\",\n  \"confidence\": 0.7,\n  \"supporting_evidence\": [\"doc_004\"],\n  \"rejected_evidence\": [\"doc_001\", \"doc_002\", \"doc_003\"],\n  \"selected_doc_ids\": [\"doc_004\", \"doc_003\", \"doc_001\"],\n  \"actions\": [\n    {\"action\": \"trace_source\", \"target\": \"doc_004\", \"rationale\": \"Verify the monthly ledger entry's provenance since it is the only document stating the 118 count.\"},\n    {\"action\": \"search_primary\", \"target\": \"Harbor Annex July 2025 Nova pump refurbishment ledger\", \"rationale\": \"Locate the underlying primary ledger to corroborate the count beyond the field summary memo.\"}\n  ],\n  \"evidence_environment_assessment\": \"Four documents share the same site code, workstream, and close date. Three (doc_001, doc_002, doc_003) provide context (timing, routing, staffing) but no counts. Only doc_004 states a numeric tally (118) and is dated after month close, consistent with a closing record. No contradicting figure appears, but absence of a second corroborating count limits confidence. Timestamps in February 2025 predate the July 2025 period referenced, which is unusual and warrants source tracing.\",\n  \"answer\": \"Yes—doc_004 (Field Summary Memo) records 118 completed Nova pump refurbishments at Harbor Annex for July 2025, and no document contradicts this figure. Other documents corroborate the workstream and site context but lack counts. Confidence is moderate because only one document supplies the number and document timestamps predate the reporting period, so primary ledger verification is advisable.\"\n}",
+      "usage": {
+        "completion_tokens": 564,
+        "prompt_tokens": 1517,
+        "total_tokens": 2081,
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": null,
+          "audio_tokens": 0,
+          "reasoning_tokens": 0,
+          "rejected_prediction_tokens": null,
+          "text_tokens": 0,
+          "image_tokens": 0
+        },
+        "prompt_tokens_details": {
+          "audio_tokens": 0,
+          "cached_tokens": 0,
+          "text_tokens": 0,
+          "image_tokens": 0
+        },
+        "usage_semantic": "openai",
+        "usage_source": "anthropic",
+        "input_tokens": 1517,
+        "output_tokens": 0,
+        "input_tokens_details": null,
+        "claude_cache_creation_5_m_tokens": 0,
+        "claude_cache_creation_1_h_tokens": 0
+      },
+      "response_format_used": "json_schema",
+      "parse_success": true,
+      "parse_error": "",
+      "empty_output": false,
+      "schema_missing": false,
+      "json_extractor_used": "first_json_object",
+      "elapsed_s": 14.706,
+      "cost_usd": 0.0015072500000000001
+    }
+  ],
+  "final_attempt": {
+    "attempt": 1,
+    "model": "claude-opus-4-7",
+    "provider": "Anthropic",
+    "budget_setting": "operational",
+    "task_id": "uncued_010_visible",
+    "prompt_condition": "standard_answer",
+    "content": "{\n  \"claim_verdict\": \"supported\",\n  \"confidence\": 0.7,\n  \"supporting_evidence\": [\"doc_004\"],\n  \"rejected_evidence\": [\"doc_001\", \"doc_002\", \"doc_003\"],\n  \"selected_doc_ids\": [\"doc_004\", \"doc_003\", \"doc_001\"],\n  \"actions\": [\n    {\"action\": \"trace_source\", \"target\": \"doc_004\", \"rationale\": \"Verify the monthly ledger entry's provenance since it is the only document stating the 118 count.\"},\n    {\"action\": \"search_primary\", \"target\": \"Harbor Annex July 2025 Nova pump refurbishment ledger\", \"rationale\": \"Locate the underlying primary ledger to corroborate the count beyond the field summary memo.\"}\n  ],\n  \"evidence_environment_assessment\": \"Four documents share the same site code, workstream, and close date. Three (doc_001, doc_002, doc_003) provide context (timing, routing, staffing) but no counts. Only doc_004 states a numeric tally (118) and is dated after month close, consistent with a closing record. No contradicting figure appears, but absence of a second corroborating count limits confidence. Timestamps in February 2025 predate the July 2025 period referenced, which is unusual and warrants source tracing.\",\n  \"answer\": \"Yes—doc_004 (Field Summary Memo) records 118 completed Nova pump refurbishments at Harbor Annex for July 2025, and no document contradicts this figure. Other documents corroborate the workstream and site context but lack counts. Confidence is moderate because only one document supplies the number and document timestamps predate the reporting period, so primary ledger verification is advisable.\"\n}",
+    "usage": {
+      "completion_tokens": 564,
+      "prompt_tokens": 1517,
+      "total_tokens": 2081,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": null,
+        "audio_tokens": 0,
+        "reasoning_tokens": 0,
+        "rejected_prediction_tokens": null,
+        "text_tokens": 0,
+        "image_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cached_tokens": 0,
+        "text_tokens": 0,
+        "image_tokens": 0
+      },
+      "usage_semantic": "openai",
+      "usage_source": "anthropic",
+      "input_tokens": 1517,
+      "output_tokens": 0,
+      "input_tokens_details": null,
+      "claude_cache_creation_5_m_tokens": 0,
+      "claude_cache_creation_1_h_tokens": 0
+    },
+    "response_format_used": "json_schema",
+    "parse_success": true,
+    "parse_error": "",
+    "empty_output": false,
+    "schema_missing": false,
+    "json_extractor_used": "first_json_object",
+    "elapsed_s": 14.706,
+    "cost_usd": 0.0015072500000000001
+  }
+}

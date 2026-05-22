@@ -1,0 +1,72 @@
+{
+  "attempts": [
+    {
+      "attempt": 1,
+      "model": "deepseek-v4-pro",
+      "provider": "DeepSeek",
+      "budget_setting": "operational",
+      "task_id": "uncued_040_visible",
+      "prompt_condition": "standard_answer",
+      "content": "{\n  \"claim_verdict\": \"supported\",\n  \"confidence\": 0.9,\n  \"supporting_evidence\": [\"doc_002\"],\n  \"rejected_evidence\": [\"doc_003\"],\n  \"selected_doc_ids\": [\"doc_002\", \"doc_003\", \"doc_001\"],\n  \"actions\": [\n    {\n      \"action\": \"open\",\n      \"target\": \"doc_002\",\n      \"rationale\": \"Verify the closeout ledger entry stating 118 completed refurbishments.\"\n    },\n    {\n      \"action\": \"compare_versions\",\n      \"target\": \"doc_002, doc_003\",\n      \"rationale\": \"Compare the final ledger count with the earlier estimate to confirm the finalized figure.\"\n    }\n  ],\n  \"evidence_environment_assessment\": \"Environment contains conflicting counts: an estimate of 139 (doc_003) and a final ledger of 118 (doc_002). The ledger is later and authoritative, so it supports the claim.\",\n  \"answer\": \"Yes, based on the closeout ledger (doc_002) listing 118 completed refurbishments for Nova pump refurbishments in July 2025.\"\n}",
+      "usage": {
+        "completion_tokens": 1316,
+        "prompt_tokens": 1050,
+        "total_tokens": 2366,
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": null,
+          "audio_tokens": null,
+          "reasoning_tokens": 1071,
+          "rejected_prediction_tokens": null
+        },
+        "prompt_tokens_details": {
+          "audio_tokens": null,
+          "cached_tokens": 256
+        },
+        "prompt_cache_hit_tokens": 256,
+        "prompt_cache_miss_tokens": 794
+      },
+      "response_format_used": "json_object",
+      "parse_success": true,
+      "parse_error": "",
+      "empty_output": false,
+      "schema_missing": false,
+      "json_extractor_used": "first_json_object",
+      "elapsed_s": 27.944,
+      "cost_usd": 0.0028945
+    }
+  ],
+  "final_attempt": {
+    "attempt": 1,
+    "model": "deepseek-v4-pro",
+    "provider": "DeepSeek",
+    "budget_setting": "operational",
+    "task_id": "uncued_040_visible",
+    "prompt_condition": "standard_answer",
+    "content": "{\n  \"claim_verdict\": \"supported\",\n  \"confidence\": 0.9,\n  \"supporting_evidence\": [\"doc_002\"],\n  \"rejected_evidence\": [\"doc_003\"],\n  \"selected_doc_ids\": [\"doc_002\", \"doc_003\", \"doc_001\"],\n  \"actions\": [\n    {\n      \"action\": \"open\",\n      \"target\": \"doc_002\",\n      \"rationale\": \"Verify the closeout ledger entry stating 118 completed refurbishments.\"\n    },\n    {\n      \"action\": \"compare_versions\",\n      \"target\": \"doc_002, doc_003\",\n      \"rationale\": \"Compare the final ledger count with the earlier estimate to confirm the finalized figure.\"\n    }\n  ],\n  \"evidence_environment_assessment\": \"Environment contains conflicting counts: an estimate of 139 (doc_003) and a final ledger of 118 (doc_002). The ledger is later and authoritative, so it supports the claim.\",\n  \"answer\": \"Yes, based on the closeout ledger (doc_002) listing 118 completed refurbishments for Nova pump refurbishments in July 2025.\"\n}",
+    "usage": {
+      "completion_tokens": 1316,
+      "prompt_tokens": 1050,
+      "total_tokens": 2366,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": null,
+        "audio_tokens": null,
+        "reasoning_tokens": 1071,
+        "rejected_prediction_tokens": null
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": null,
+        "cached_tokens": 256
+      },
+      "prompt_cache_hit_tokens": 256,
+      "prompt_cache_miss_tokens": 794
+    },
+    "response_format_used": "json_object",
+    "parse_success": true,
+    "parse_error": "",
+    "empty_output": false,
+    "schema_missing": false,
+    "json_extractor_used": "first_json_object",
+    "elapsed_s": 27.944,
+    "cost_usd": 0.0028945
+  }
+}

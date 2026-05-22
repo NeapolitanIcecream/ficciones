@@ -1,0 +1,90 @@
+{
+  "attempts": [
+    {
+      "attempt": 1,
+      "model": "gpt-5.5",
+      "provider": "OpenAI",
+      "budget_setting": "operational",
+      "task_id": "uncued_015_visible",
+      "prompt_condition": "standard_answer",
+      "content": "{\"actions\":[{\"action\":\"trace_source\",\"rationale\":\"The 57-count digest cites doc_001, but that note contains chronology only and no final count.\",\"target\":\"doc_004 -> doc_001\"},{\"action\":\"search_contradiction\",\"rationale\":\"doc_003 gives a directly conflicting month-close ledger total for the same workstream and month.\",\"target\":\"doc_003\"}],\"answer\":\"The claim is refuted on the provided evidence. The only document asserting 57 is a weak digest with no visible row and a citation to a note that does not contain a count. The stronger month-close ledger evidence states 42 accepted inspections for Vega rail inspections in June 2025, not 57.\",\"claim_verdict\":\"refuted\",\"confidence\":0.74,\"evidence_environment_assessment\":\"The environment contains a likely citation-quality problem: doc_004 asserts 57 but relies on doc_001, which has no count. doc_003 is a more direct month-close ledger statement and contradicts the claim with 42. No primary Novalis Robotics source is provided.\",\"rejected_evidence\":[\"doc_004\",\"doc_001\"],\"selected_doc_ids\":[\"doc_003\",\"doc_004\",\"doc_001\"],\"supporting_evidence\":[\"doc_003\"]}",
+      "usage": {
+        "completion_tokens": 594,
+        "prompt_tokens": 1188,
+        "total_tokens": 1782,
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": 0,
+          "audio_tokens": 0,
+          "reasoning_tokens": 317,
+          "rejected_prediction_tokens": 0
+        },
+        "prompt_tokens_details": {
+          "audio_tokens": 0,
+          "cached_tokens": 0
+        },
+        "latency_checkpoint": {
+          "engine_tbt_ms": 18,
+          "engine_ttft_ms": 224,
+          "engine_ttlt_ms": 10996,
+          "pre_inference_ms": 120,
+          "service_tbt_ms": 18,
+          "service_ttft_ms": 765,
+          "service_ttlt_ms": 11532,
+          "total_duration_ms": 11422,
+          "user_visible_ttft_ms": 645
+        }
+      },
+      "response_format_used": "json_schema",
+      "parse_success": true,
+      "parse_error": "",
+      "empty_output": false,
+      "schema_missing": false,
+      "json_extractor_used": "first_json_object",
+      "elapsed_s": 13.192,
+      "cost_usd": 0.02376
+    }
+  ],
+  "final_attempt": {
+    "attempt": 1,
+    "model": "gpt-5.5",
+    "provider": "OpenAI",
+    "budget_setting": "operational",
+    "task_id": "uncued_015_visible",
+    "prompt_condition": "standard_answer",
+    "content": "{\"actions\":[{\"action\":\"trace_source\",\"rationale\":\"The 57-count digest cites doc_001, but that note contains chronology only and no final count.\",\"target\":\"doc_004 -> doc_001\"},{\"action\":\"search_contradiction\",\"rationale\":\"doc_003 gives a directly conflicting month-close ledger total for the same workstream and month.\",\"target\":\"doc_003\"}],\"answer\":\"The claim is refuted on the provided evidence. The only document asserting 57 is a weak digest with no visible row and a citation to a note that does not contain a count. The stronger month-close ledger evidence states 42 accepted inspections for Vega rail inspections in June 2025, not 57.\",\"claim_verdict\":\"refuted\",\"confidence\":0.74,\"evidence_environment_assessment\":\"The environment contains a likely citation-quality problem: doc_004 asserts 57 but relies on doc_001, which has no count. doc_003 is a more direct month-close ledger statement and contradicts the claim with 42. No primary Novalis Robotics source is provided.\",\"rejected_evidence\":[\"doc_004\",\"doc_001\"],\"selected_doc_ids\":[\"doc_003\",\"doc_004\",\"doc_001\"],\"supporting_evidence\":[\"doc_003\"]}",
+    "usage": {
+      "completion_tokens": 594,
+      "prompt_tokens": 1188,
+      "total_tokens": 1782,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": 0,
+        "audio_tokens": 0,
+        "reasoning_tokens": 317,
+        "rejected_prediction_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cached_tokens": 0
+      },
+      "latency_checkpoint": {
+        "engine_tbt_ms": 18,
+        "engine_ttft_ms": 224,
+        "engine_ttlt_ms": 10996,
+        "pre_inference_ms": 120,
+        "service_tbt_ms": 18,
+        "service_ttft_ms": 765,
+        "service_ttlt_ms": 11532,
+        "total_duration_ms": 11422,
+        "user_visible_ttft_ms": 645
+      }
+    },
+    "response_format_used": "json_schema",
+    "parse_success": true,
+    "parse_error": "",
+    "empty_output": false,
+    "schema_missing": false,
+    "json_extractor_used": "first_json_object",
+    "elapsed_s": 13.192,
+    "cost_usd": 0.02376
+  }
+}

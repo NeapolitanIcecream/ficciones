@@ -1,0 +1,90 @@
+{
+  "attempts": [
+    {
+      "attempt": 1,
+      "model": "claude-opus-4-7",
+      "provider": "Anthropic",
+      "budget_setting": "operational",
+      "task_id": "uncued_009_visible",
+      "prompt_condition": "standard_answer",
+      "content": "{\n  \"claim_verdict\": \"refuted\",\n  \"confidence\": 0.85,\n  \"supporting_evidence\": [],\n  \"rejected_evidence\": [\"doc_002\", \"doc_003\", \"doc_004\"],\n  \"selected_doc_ids\": [\"doc_001\"],\n  \"actions\": [\n    {\n      \"action\": \"trace_source\",\n      \"target\": \"doc_001\",\n      \"rationale\": \"Confirm the ledger entry of 42 accepted inspections against the primary monthly ledger for South Gate workshop.\"\n    },\n    {\n      \"action\": \"search_contradiction\",\n      \"target\": \"57 accepted inspections Vega June 2025\",\n      \"rationale\": \"Check whether any other record reports 57 to rule out version conflicts.\"\n    }\n  ],\n  \"evidence_environment_assessment\": \"Four documents share identical site code, workstream, and close date. Only doc_001 provides a numeric count (42), explicitly noting no line lists 57. Docs 002, 003, 004 mention the workstream but omit counts, offering no corroboration for either figure. No contradicting source supports 57. Environment is low-noise but sparse; the single quantitative anchor is doc_001.\",\n  \"answer\": \"No. The only document reporting a count (doc_001) states the June 2025 monthly ledger lists 42 accepted Vega rail inspections at South Gate, and explicitly notes no line shows 57. The other documents reference the same workstream and month but provide no count, so they neither support nor contradict. The claim of 57 is refuted by the available evidence.\"\n}",
+      "usage": {
+        "completion_tokens": 514,
+        "prompt_tokens": 1447,
+        "total_tokens": 1961,
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": null,
+          "audio_tokens": 0,
+          "reasoning_tokens": 0,
+          "rejected_prediction_tokens": null,
+          "text_tokens": 0,
+          "image_tokens": 0
+        },
+        "prompt_tokens_details": {
+          "audio_tokens": 0,
+          "cached_tokens": 0,
+          "text_tokens": 0,
+          "image_tokens": 0
+        },
+        "usage_semantic": "openai",
+        "usage_source": "anthropic",
+        "input_tokens": 1447,
+        "output_tokens": 0,
+        "input_tokens_details": null,
+        "claude_cache_creation_5_m_tokens": 0,
+        "claude_cache_creation_1_h_tokens": 0
+      },
+      "response_format_used": "json_schema",
+      "parse_success": true,
+      "parse_error": "",
+      "empty_output": false,
+      "schema_missing": false,
+      "json_extractor_used": "first_json_object",
+      "elapsed_s": 7.77,
+      "cost_usd": 0.00138975
+    }
+  ],
+  "final_attempt": {
+    "attempt": 1,
+    "model": "claude-opus-4-7",
+    "provider": "Anthropic",
+    "budget_setting": "operational",
+    "task_id": "uncued_009_visible",
+    "prompt_condition": "standard_answer",
+    "content": "{\n  \"claim_verdict\": \"refuted\",\n  \"confidence\": 0.85,\n  \"supporting_evidence\": [],\n  \"rejected_evidence\": [\"doc_002\", \"doc_003\", \"doc_004\"],\n  \"selected_doc_ids\": [\"doc_001\"],\n  \"actions\": [\n    {\n      \"action\": \"trace_source\",\n      \"target\": \"doc_001\",\n      \"rationale\": \"Confirm the ledger entry of 42 accepted inspections against the primary monthly ledger for South Gate workshop.\"\n    },\n    {\n      \"action\": \"search_contradiction\",\n      \"target\": \"57 accepted inspections Vega June 2025\",\n      \"rationale\": \"Check whether any other record reports 57 to rule out version conflicts.\"\n    }\n  ],\n  \"evidence_environment_assessment\": \"Four documents share identical site code, workstream, and close date. Only doc_001 provides a numeric count (42), explicitly noting no line lists 57. Docs 002, 003, 004 mention the workstream but omit counts, offering no corroboration for either figure. No contradicting source supports 57. Environment is low-noise but sparse; the single quantitative anchor is doc_001.\",\n  \"answer\": \"No. The only document reporting a count (doc_001) states the June 2025 monthly ledger lists 42 accepted Vega rail inspections at South Gate, and explicitly notes no line shows 57. The other documents reference the same workstream and month but provide no count, so they neither support nor contradict. The claim of 57 is refuted by the available evidence.\"\n}",
+    "usage": {
+      "completion_tokens": 514,
+      "prompt_tokens": 1447,
+      "total_tokens": 1961,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": null,
+        "audio_tokens": 0,
+        "reasoning_tokens": 0,
+        "rejected_prediction_tokens": null,
+        "text_tokens": 0,
+        "image_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cached_tokens": 0,
+        "text_tokens": 0,
+        "image_tokens": 0
+      },
+      "usage_semantic": "openai",
+      "usage_source": "anthropic",
+      "input_tokens": 1447,
+      "output_tokens": 0,
+      "input_tokens_details": null,
+      "claude_cache_creation_5_m_tokens": 0,
+      "claude_cache_creation_1_h_tokens": 0
+    },
+    "response_format_used": "json_schema",
+    "parse_success": true,
+    "parse_error": "",
+    "empty_output": false,
+    "schema_missing": false,
+    "json_extractor_used": "first_json_object",
+    "elapsed_s": 7.77,
+    "cost_usd": 0.00138975
+  }
+}

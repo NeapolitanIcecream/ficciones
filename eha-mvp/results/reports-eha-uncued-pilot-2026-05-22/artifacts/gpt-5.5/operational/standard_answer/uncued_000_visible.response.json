@@ -1,0 +1,90 @@
+{
+  "attempts": [
+    {
+      "attempt": 1,
+      "model": "gpt-5.5",
+      "provider": "OpenAI",
+      "budget_setting": "operational",
+      "task_id": "uncued_000_visible",
+      "prompt_condition": "standard_answer",
+      "content": "{\"actions\":[{\"action\":\"open\",\"rationale\":\"Check the only document that states a completed-check count for the relevant workstream and month.\",\"target\":\"doc_003\"},{\"action\":\"search_contradiction\",\"rationale\":\"Review surrounding documents for contrary counts or missing entity linkage.\",\"target\":\"doc_001, doc_002, doc_004\"}],\"answer\":\"Insufficient. doc_003 states that a monthly ledger for Northline service bay lists 184 completed checks for Atlas valve checks in March 2025, and no provided document contradicts that count. However, the evidence does not explicitly identify Novalis Robotics as the entity that logged the ledger entry, so the full claim is not established from the packet alone.\",\"claim_verdict\":\"insufficient\",\"confidence\":0.72,\"evidence_environment_assessment\":\"The packet contains one directly relevant count statement and several context-only notes. Titles/source-type labels are inconsistent or generic, so the body text is more useful than labels. The count, workstream, and month are supported by doc_003, but the named actor Novalis Robotics is absent across the provided evidence.\",\"rejected_evidence\":[\"doc_001\",\"doc_002\",\"doc_004\"],\"selected_doc_ids\":[\"doc_003\",\"doc_001\",\"doc_002\"],\"supporting_evidence\":[\"doc_003\"]}",
+      "usage": {
+        "completion_tokens": 801,
+        "prompt_tokens": 1204,
+        "total_tokens": 2005,
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": 0,
+          "audio_tokens": 0,
+          "reasoning_tokens": 512,
+          "rejected_prediction_tokens": 0
+        },
+        "prompt_tokens_details": {
+          "audio_tokens": 0,
+          "cached_tokens": 0
+        },
+        "latency_checkpoint": {
+          "engine_tbt_ms": 26,
+          "engine_ttft_ms": 543,
+          "engine_ttlt_ms": 21494,
+          "pre_inference_ms": 130,
+          "service_tbt_ms": 26,
+          "service_ttft_ms": 902,
+          "service_ttlt_ms": 21855,
+          "total_duration_ms": 21729,
+          "user_visible_ttft_ms": 772
+        }
+      },
+      "response_format_used": "json_schema",
+      "parse_success": true,
+      "parse_error": "",
+      "empty_output": false,
+      "schema_missing": false,
+      "json_extractor_used": "first_json_object",
+      "elapsed_s": 24.625,
+      "cost_usd": 0.03005
+    }
+  ],
+  "final_attempt": {
+    "attempt": 1,
+    "model": "gpt-5.5",
+    "provider": "OpenAI",
+    "budget_setting": "operational",
+    "task_id": "uncued_000_visible",
+    "prompt_condition": "standard_answer",
+    "content": "{\"actions\":[{\"action\":\"open\",\"rationale\":\"Check the only document that states a completed-check count for the relevant workstream and month.\",\"target\":\"doc_003\"},{\"action\":\"search_contradiction\",\"rationale\":\"Review surrounding documents for contrary counts or missing entity linkage.\",\"target\":\"doc_001, doc_002, doc_004\"}],\"answer\":\"Insufficient. doc_003 states that a monthly ledger for Northline service bay lists 184 completed checks for Atlas valve checks in March 2025, and no provided document contradicts that count. However, the evidence does not explicitly identify Novalis Robotics as the entity that logged the ledger entry, so the full claim is not established from the packet alone.\",\"claim_verdict\":\"insufficient\",\"confidence\":0.72,\"evidence_environment_assessment\":\"The packet contains one directly relevant count statement and several context-only notes. Titles/source-type labels are inconsistent or generic, so the body text is more useful than labels. The count, workstream, and month are supported by doc_003, but the named actor Novalis Robotics is absent across the provided evidence.\",\"rejected_evidence\":[\"doc_001\",\"doc_002\",\"doc_004\"],\"selected_doc_ids\":[\"doc_003\",\"doc_001\",\"doc_002\"],\"supporting_evidence\":[\"doc_003\"]}",
+    "usage": {
+      "completion_tokens": 801,
+      "prompt_tokens": 1204,
+      "total_tokens": 2005,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": 0,
+        "audio_tokens": 0,
+        "reasoning_tokens": 512,
+        "rejected_prediction_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cached_tokens": 0
+      },
+      "latency_checkpoint": {
+        "engine_tbt_ms": 26,
+        "engine_ttft_ms": 543,
+        "engine_ttlt_ms": 21494,
+        "pre_inference_ms": 130,
+        "service_tbt_ms": 26,
+        "service_ttft_ms": 902,
+        "service_ttlt_ms": 21855,
+        "total_duration_ms": 21729,
+        "user_visible_ttft_ms": 772
+      }
+    },
+    "response_format_used": "json_schema",
+    "parse_success": true,
+    "parse_error": "",
+    "empty_output": false,
+    "schema_missing": false,
+    "json_extractor_used": "first_json_object",
+    "elapsed_s": 24.625,
+    "cost_usd": 0.03005
+  }
+}

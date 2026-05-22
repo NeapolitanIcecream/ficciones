@@ -1,0 +1,90 @@
+{
+  "attempts": [
+    {
+      "attempt": 1,
+      "model": "claude-opus-4-7",
+      "provider": "Anthropic",
+      "budget_setting": "operational",
+      "task_id": "uncued_014_visible",
+      "prompt_condition": "standard_answer",
+      "content": "{\n  \"claim_verdict\": \"refuted\",\n  \"confidence\": 0.7,\n  \"supporting_evidence\": [\"doc_003\"],\n  \"rejected_evidence\": [\"doc_001\"],\n  \"selected_doc_ids\": [\"doc_003\", \"doc_001\", \"doc_002\"],\n  \"actions\": [\n    {\"action\": \"trace_source\", \"target\": \"doc_001\", \"rationale\": \"doc_001 asserts 124 but cites only doc_002, which contains no count. Tracing reveals an unsupported citation chain.\"},\n    {\"action\": \"compare_versions\", \"target\": \"doc_003 vs doc_001\", \"rationale\": \"Compare the primary month-close ledger figure (97) against the digest figure (124) to resolve the discrepancy.\"}\n  ],\n  \"evidence_environment_assessment\": \"Four documents share site, workstream, and close-date labels, forcing reliance on stated values. doc_001 (registry digest) asserts 124 but cites doc_002, which only documents packet assembly chronology and contains no count—an empty citation chain. doc_003 is a field-level month-close ledger giving 97 closed tickets, the most primary-looking source. doc_004 reports a one-day closeout delay with no total. The environment shows one unsupported claim (124) versus one ledger figure (97), with the higher figure lacking traceable backing.\",\n  \"answer\": \"No. The only document supporting 124 (doc_001) cites doc_002, which contains no count, leaving the figure unsubstantiated. The month-close ledger (doc_003) records 97 closed Mira sensor recalibration tickets for Westhaven lab in May 2025. Based on the provided evidence, the 124 claim is refuted by the primary ledger figure, though confidence is tempered by the small, label-collided evidence set.\"\n}",
+      "usage": {
+        "completion_tokens": 600,
+        "prompt_tokens": 1504,
+        "total_tokens": 2104,
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": null,
+          "audio_tokens": 0,
+          "reasoning_tokens": 0,
+          "rejected_prediction_tokens": null,
+          "text_tokens": 0,
+          "image_tokens": 0
+        },
+        "prompt_tokens_details": {
+          "audio_tokens": 0,
+          "cached_tokens": 0,
+          "text_tokens": 0,
+          "image_tokens": 0
+        },
+        "usage_semantic": "openai",
+        "usage_source": "anthropic",
+        "input_tokens": 1504,
+        "output_tokens": 0,
+        "input_tokens_details": null,
+        "claude_cache_creation_5_m_tokens": 0,
+        "claude_cache_creation_1_h_tokens": 0
+      },
+      "response_format_used": "json_schema",
+      "parse_success": true,
+      "parse_error": "",
+      "empty_output": false,
+      "schema_missing": false,
+      "json_extractor_used": "first_json_object",
+      "elapsed_s": 12.143,
+      "cost_usd": 0.001576
+    }
+  ],
+  "final_attempt": {
+    "attempt": 1,
+    "model": "claude-opus-4-7",
+    "provider": "Anthropic",
+    "budget_setting": "operational",
+    "task_id": "uncued_014_visible",
+    "prompt_condition": "standard_answer",
+    "content": "{\n  \"claim_verdict\": \"refuted\",\n  \"confidence\": 0.7,\n  \"supporting_evidence\": [\"doc_003\"],\n  \"rejected_evidence\": [\"doc_001\"],\n  \"selected_doc_ids\": [\"doc_003\", \"doc_001\", \"doc_002\"],\n  \"actions\": [\n    {\"action\": \"trace_source\", \"target\": \"doc_001\", \"rationale\": \"doc_001 asserts 124 but cites only doc_002, which contains no count. Tracing reveals an unsupported citation chain.\"},\n    {\"action\": \"compare_versions\", \"target\": \"doc_003 vs doc_001\", \"rationale\": \"Compare the primary month-close ledger figure (97) against the digest figure (124) to resolve the discrepancy.\"}\n  ],\n  \"evidence_environment_assessment\": \"Four documents share site, workstream, and close-date labels, forcing reliance on stated values. doc_001 (registry digest) asserts 124 but cites doc_002, which only documents packet assembly chronology and contains no count—an empty citation chain. doc_003 is a field-level month-close ledger giving 97 closed tickets, the most primary-looking source. doc_004 reports a one-day closeout delay with no total. The environment shows one unsupported claim (124) versus one ledger figure (97), with the higher figure lacking traceable backing.\",\n  \"answer\": \"No. The only document supporting 124 (doc_001) cites doc_002, which contains no count, leaving the figure unsubstantiated. The month-close ledger (doc_003) records 97 closed Mira sensor recalibration tickets for Westhaven lab in May 2025. Based on the provided evidence, the 124 claim is refuted by the primary ledger figure, though confidence is tempered by the small, label-collided evidence set.\"\n}",
+    "usage": {
+      "completion_tokens": 600,
+      "prompt_tokens": 1504,
+      "total_tokens": 2104,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": null,
+        "audio_tokens": 0,
+        "reasoning_tokens": 0,
+        "rejected_prediction_tokens": null,
+        "text_tokens": 0,
+        "image_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cached_tokens": 0,
+        "text_tokens": 0,
+        "image_tokens": 0
+      },
+      "usage_semantic": "openai",
+      "usage_source": "anthropic",
+      "input_tokens": 1504,
+      "output_tokens": 0,
+      "input_tokens_details": null,
+      "claude_cache_creation_5_m_tokens": 0,
+      "claude_cache_creation_1_h_tokens": 0
+    },
+    "response_format_used": "json_schema",
+    "parse_success": true,
+    "parse_error": "",
+    "empty_output": false,
+    "schema_missing": false,
+    "json_extractor_used": "first_json_object",
+    "elapsed_s": 12.143,
+    "cost_usd": 0.001576
+  }
+}

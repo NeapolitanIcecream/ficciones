@@ -1,0 +1,72 @@
+{
+  "attempts": [
+    {
+      "attempt": 1,
+      "model": "deepseek-v4-pro",
+      "provider": "DeepSeek",
+      "budget_setting": "operational",
+      "task_id": "uncued_020_visible",
+      "prompt_condition": "standard_answer",
+      "content": "{\n  \"claim_verdict\": \"refuted\",\n  \"confidence\": 0.7,\n  \"supporting_evidence\": [\"doc_001\"],\n  \"rejected_evidence\": [\"doc_002\"],\n  \"selected_doc_ids\": [\"doc_001\", \"doc_002\"],\n  \"actions\": [\n    {\n      \"action\": \"compare_versions\",\n      \"target\": \"doc_001, doc_002\",\n      \"rationale\": \"The two documents give contradictory counts (124 vs 97). Comparing their context and reliability may reveal which is correct.\"\n    },\n    {\n      \"action\": \"trace_source\",\n      \"target\": \"doc_001\",\n      \"rationale\": \"doc_001 cites doc_003, which contains no count. Tracing the source may clarify the origin of the 124 figure.\"\n    }\n  ],\n  \"evidence_environment_assessment\": \"The environment contains four documents. doc_001 states the count is 124, while doc_002 lists 97 closed tickets. The other two documents (doc_003, doc_004) provide contextual details but no totals. The direct contradiction between the two count-bearing documents makes the claim's truth uncertain without further verification.\",\n  \"answer\": \"The claim is refuted because doc_002, a month-close ledger, reports only 97 closed tickets for Mira sensor recalibrations in May 2025, contradicting doc_001's assertion of 124. The conflicting counts prevent support for the claim.\"\n}",
+      "usage": {
+        "completion_tokens": 2261,
+        "prompt_tokens": 1056,
+        "total_tokens": 3317,
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": null,
+          "audio_tokens": null,
+          "reasoning_tokens": 1949,
+          "rejected_prediction_tokens": null
+        },
+        "prompt_tokens_details": {
+          "audio_tokens": null,
+          "cached_tokens": 0
+        },
+        "prompt_cache_hit_tokens": 0,
+        "prompt_cache_miss_tokens": 1056
+      },
+      "response_format_used": "json_object",
+      "parse_success": true,
+      "parse_error": "",
+      "empty_output": false,
+      "schema_missing": false,
+      "json_extractor_used": "first_json_object",
+      "elapsed_s": 47.395,
+      "cost_usd": 0.004786
+    }
+  ],
+  "final_attempt": {
+    "attempt": 1,
+    "model": "deepseek-v4-pro",
+    "provider": "DeepSeek",
+    "budget_setting": "operational",
+    "task_id": "uncued_020_visible",
+    "prompt_condition": "standard_answer",
+    "content": "{\n  \"claim_verdict\": \"refuted\",\n  \"confidence\": 0.7,\n  \"supporting_evidence\": [\"doc_001\"],\n  \"rejected_evidence\": [\"doc_002\"],\n  \"selected_doc_ids\": [\"doc_001\", \"doc_002\"],\n  \"actions\": [\n    {\n      \"action\": \"compare_versions\",\n      \"target\": \"doc_001, doc_002\",\n      \"rationale\": \"The two documents give contradictory counts (124 vs 97). Comparing their context and reliability may reveal which is correct.\"\n    },\n    {\n      \"action\": \"trace_source\",\n      \"target\": \"doc_001\",\n      \"rationale\": \"doc_001 cites doc_003, which contains no count. Tracing the source may clarify the origin of the 124 figure.\"\n    }\n  ],\n  \"evidence_environment_assessment\": \"The environment contains four documents. doc_001 states the count is 124, while doc_002 lists 97 closed tickets. The other two documents (doc_003, doc_004) provide contextual details but no totals. The direct contradiction between the two count-bearing documents makes the claim's truth uncertain without further verification.\",\n  \"answer\": \"The claim is refuted because doc_002, a month-close ledger, reports only 97 closed tickets for Mira sensor recalibrations in May 2025, contradicting doc_001's assertion of 124. The conflicting counts prevent support for the claim.\"\n}",
+    "usage": {
+      "completion_tokens": 2261,
+      "prompt_tokens": 1056,
+      "total_tokens": 3317,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": null,
+        "audio_tokens": null,
+        "reasoning_tokens": 1949,
+        "rejected_prediction_tokens": null
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": null,
+        "cached_tokens": 0
+      },
+      "prompt_cache_hit_tokens": 0,
+      "prompt_cache_miss_tokens": 1056
+    },
+    "response_format_used": "json_object",
+    "parse_success": true,
+    "parse_error": "",
+    "empty_output": false,
+    "schema_missing": false,
+    "json_extractor_used": "first_json_object",
+    "elapsed_s": 47.395,
+    "cost_usd": 0.004786
+  }
+}

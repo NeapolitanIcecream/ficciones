@@ -1,0 +1,72 @@
+{
+  "attempts": [
+    {
+      "attempt": 1,
+      "model": "deepseek-v4-pro",
+      "provider": "DeepSeek",
+      "budget_setting": "operational",
+      "task_id": "uncued_001_hidden",
+      "prompt_condition": "standard_answer",
+      "content": "{\n  \"claim_verdict\": \"refuted\",\n  \"confidence\": 0.95,\n  \"supporting_evidence\": [\"doc_001\"],\n  \"rejected_evidence\": [\"doc_002\", \"doc_004\", \"doc_003\"],\n  \"selected_doc_ids\": [\"doc_001\"],\n  \"actions\": [\n    {\n      \"action\": \"open\",\n      \"target\": \"doc_001\",\n      \"rationale\": \"Examine the ledger to verify the reported swap count of 63 and the statement that no line shows 88.\"\n    },\n    {\n      \"action\": \"search_contradiction\",\n      \"target\": \"Orion battery swaps April 2025 88\",\n      \"rationale\": \"Look for any other documents claiming 88 swaps to see if the claim has any basis.\"\n    }\n  ],\n  \"evidence_environment_assessment\": \"Only one document provides a number: doc_001 reports 63 verified swaps and explicitly denies 88. The other three documents mention the same workstream but give no count. No document supports the 88 figure. The environment lacks any source for the claimed 88, making the claim unsupported and directly refuted by the sole numerical record.\",\n  \"answer\": \"The claim is refuted. The only document with a swap count states 63 verified swaps for Orion battery swaps in April 2025 and explicitly says no line lists 88. Other documents provide no numbers.\"\n}",
+      "usage": {
+        "completion_tokens": 1356,
+        "prompt_tokens": 1020,
+        "total_tokens": 2376,
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": null,
+          "audio_tokens": null,
+          "reasoning_tokens": 1051,
+          "rejected_prediction_tokens": null
+        },
+        "prompt_tokens_details": {
+          "audio_tokens": null,
+          "cached_tokens": 0
+        },
+        "prompt_cache_hit_tokens": 0,
+        "prompt_cache_miss_tokens": 1020
+      },
+      "response_format_used": "json_object",
+      "parse_success": true,
+      "parse_error": "",
+      "empty_output": false,
+      "schema_missing": false,
+      "json_extractor_used": "first_json_object",
+      "elapsed_s": 42.169,
+      "cost_usd": 0.002967
+    }
+  ],
+  "final_attempt": {
+    "attempt": 1,
+    "model": "deepseek-v4-pro",
+    "provider": "DeepSeek",
+    "budget_setting": "operational",
+    "task_id": "uncued_001_hidden",
+    "prompt_condition": "standard_answer",
+    "content": "{\n  \"claim_verdict\": \"refuted\",\n  \"confidence\": 0.95,\n  \"supporting_evidence\": [\"doc_001\"],\n  \"rejected_evidence\": [\"doc_002\", \"doc_004\", \"doc_003\"],\n  \"selected_doc_ids\": [\"doc_001\"],\n  \"actions\": [\n    {\n      \"action\": \"open\",\n      \"target\": \"doc_001\",\n      \"rationale\": \"Examine the ledger to verify the reported swap count of 63 and the statement that no line shows 88.\"\n    },\n    {\n      \"action\": \"search_contradiction\",\n      \"target\": \"Orion battery swaps April 2025 88\",\n      \"rationale\": \"Look for any other documents claiming 88 swaps to see if the claim has any basis.\"\n    }\n  ],\n  \"evidence_environment_assessment\": \"Only one document provides a number: doc_001 reports 63 verified swaps and explicitly denies 88. The other three documents mention the same workstream but give no count. No document supports the 88 figure. The environment lacks any source for the claimed 88, making the claim unsupported and directly refuted by the sole numerical record.\",\n  \"answer\": \"The claim is refuted. The only document with a swap count states 63 verified swaps for Orion battery swaps in April 2025 and explicitly says no line lists 88. Other documents provide no numbers.\"\n}",
+    "usage": {
+      "completion_tokens": 1356,
+      "prompt_tokens": 1020,
+      "total_tokens": 2376,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": null,
+        "audio_tokens": null,
+        "reasoning_tokens": 1051,
+        "rejected_prediction_tokens": null
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": null,
+        "cached_tokens": 0
+      },
+      "prompt_cache_hit_tokens": 0,
+      "prompt_cache_miss_tokens": 1020
+    },
+    "response_format_used": "json_object",
+    "parse_success": true,
+    "parse_error": "",
+    "empty_output": false,
+    "schema_missing": false,
+    "json_extractor_used": "first_json_object",
+    "elapsed_s": 42.169,
+    "cost_usd": 0.002967
+  }
+}

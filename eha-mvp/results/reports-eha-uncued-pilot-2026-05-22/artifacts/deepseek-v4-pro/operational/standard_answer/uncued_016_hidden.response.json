@@ -1,0 +1,72 @@
+{
+  "attempts": [
+    {
+      "attempt": 1,
+      "model": "deepseek-v4-pro",
+      "provider": "DeepSeek",
+      "budget_setting": "operational",
+      "task_id": "uncued_016_hidden",
+      "prompt_condition": "standard_answer",
+      "content": "{\n  \"claim_verdict\": \"insufficient\",\n  \"confidence\": 0.4,\n  \"supporting_evidence\": [\"doc_001\"],\n  \"rejected_evidence\": [\"doc_004\"],\n  \"selected_doc_ids\": [\"doc_001\", \"doc_004\"],\n  \"actions\": [\n    {\n      \"action\": \"search_contradiction\",\n      \"target\": \"doc_004\",\n      \"rationale\": \"Searching for contradictions uncovered a month-close ledger reporting 118 completed refurbishments, directly conflicting with the claim of 139.\"\n    },\n    {\n      \"action\": \"search_primary\",\n      \"target\": \"month-close ledger\",\n      \"rationale\": \"Seeking the primary official record yielded the ledger, which is typically more authoritative than an operations digest.\"\n    }\n  ],\n  \"evidence_environment_assessment\": \"The environment contains one document supporting the claim (139 in an operations digest) and one contradicting it (118 in a formal month-close ledger). Two other documents provide no count. The contradiction between a digest citing a routing note and a ledger reduces confidence.\",\n  \"answer\": \"The evidence is contradictory. Doc_001 states 139 completed refurbishments, while doc_004, a month-close ledger, reports 118. Without additional context, it is unclear which figure is correct, so the claim cannot be definitively supported or refuted.\"\n}",
+      "usage": {
+        "completion_tokens": 2144,
+        "prompt_tokens": 1046,
+        "total_tokens": 3190,
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": null,
+          "audio_tokens": null,
+          "reasoning_tokens": 1848,
+          "rejected_prediction_tokens": null
+        },
+        "prompt_tokens_details": {
+          "audio_tokens": null,
+          "cached_tokens": 0
+        },
+        "prompt_cache_hit_tokens": 0,
+        "prompt_cache_miss_tokens": 1046
+      },
+      "response_format_used": "json_object",
+      "parse_success": true,
+      "parse_error": "",
+      "empty_output": false,
+      "schema_missing": false,
+      "json_extractor_used": "first_json_object",
+      "elapsed_s": 47.827,
+      "cost_usd": 0.0045495
+    }
+  ],
+  "final_attempt": {
+    "attempt": 1,
+    "model": "deepseek-v4-pro",
+    "provider": "DeepSeek",
+    "budget_setting": "operational",
+    "task_id": "uncued_016_hidden",
+    "prompt_condition": "standard_answer",
+    "content": "{\n  \"claim_verdict\": \"insufficient\",\n  \"confidence\": 0.4,\n  \"supporting_evidence\": [\"doc_001\"],\n  \"rejected_evidence\": [\"doc_004\"],\n  \"selected_doc_ids\": [\"doc_001\", \"doc_004\"],\n  \"actions\": [\n    {\n      \"action\": \"search_contradiction\",\n      \"target\": \"doc_004\",\n      \"rationale\": \"Searching for contradictions uncovered a month-close ledger reporting 118 completed refurbishments, directly conflicting with the claim of 139.\"\n    },\n    {\n      \"action\": \"search_primary\",\n      \"target\": \"month-close ledger\",\n      \"rationale\": \"Seeking the primary official record yielded the ledger, which is typically more authoritative than an operations digest.\"\n    }\n  ],\n  \"evidence_environment_assessment\": \"The environment contains one document supporting the claim (139 in an operations digest) and one contradicting it (118 in a formal month-close ledger). Two other documents provide no count. The contradiction between a digest citing a routing note and a ledger reduces confidence.\",\n  \"answer\": \"The evidence is contradictory. Doc_001 states 139 completed refurbishments, while doc_004, a month-close ledger, reports 118. Without additional context, it is unclear which figure is correct, so the claim cannot be definitively supported or refuted.\"\n}",
+    "usage": {
+      "completion_tokens": 2144,
+      "prompt_tokens": 1046,
+      "total_tokens": 3190,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": null,
+        "audio_tokens": null,
+        "reasoning_tokens": 1848,
+        "rejected_prediction_tokens": null
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": null,
+        "cached_tokens": 0
+      },
+      "prompt_cache_hit_tokens": 0,
+      "prompt_cache_miss_tokens": 1046
+    },
+    "response_format_used": "json_object",
+    "parse_success": true,
+    "parse_error": "",
+    "empty_output": false,
+    "schema_missing": false,
+    "json_extractor_used": "first_json_object",
+    "elapsed_s": 47.827,
+    "cost_usd": 0.0045495
+  }
+}

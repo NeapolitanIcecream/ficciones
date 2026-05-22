@@ -1,0 +1,90 @@
+{
+  "attempts": [
+    {
+      "attempt": 1,
+      "model": "claude-opus-4-7",
+      "provider": "Anthropic",
+      "budget_setting": "operational",
+      "task_id": "uncued_000_hidden",
+      "prompt_condition": "standard_answer",
+      "content": "{\n  \"claim_verdict\": \"supported\",\n  \"confidence\": 0.78,\n  \"supporting_evidence\": [\"doc_004\"],\n  \"rejected_evidence\": [\"doc_002\", \"doc_003\", \"doc_001\"],\n  \"selected_doc_ids\": [\"doc_004\", \"doc_002\", \"doc_003\"],\n  \"actions\": [\n    {\"action\": \"trace_source\", \"target\": \"doc_004\", \"rationale\": \"Verify the monthly ledger entry's provenance since its timestamp predates the March 2025 close date it references.\"},\n    {\"action\": \"search_primary\", \"target\": \"Northline March 2025 close report\", \"rationale\": \"Confirm the 184 figure against an independent primary close record.\"}\n  ],\n  \"evidence_environment_assessment\": \"Four documents share site code, workstream, and monthly close labels, so identity checks rely on stated values. Only doc_004 provides a numeric tally (184) matching the claim; doc_001-003 give routing, planning, and shift context without counts. A timestamp anomaly exists: doc_004 is dated 2025-01-13 yet describes a March 2025 close, suggesting metadata inconsistency worth tracing. No contradicting count appears in the packet.\",\n  \"answer\": \"Yes—doc_004, the monthly ledger for Northline service bay, records 184 completed Atlas valve checks for March 2025. The other documents corroborate the site and workstream context but do not provide tallies. Confidence is moderate because doc_004's file timestamp (Jan 13) precedes the period it reports, an inconsistency that warrants source tracing before fully relying on the figure.\"\n}",
+      "usage": {
+        "completion_tokens": 541,
+        "prompt_tokens": 1472,
+        "total_tokens": 2013,
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": null,
+          "audio_tokens": 0,
+          "reasoning_tokens": 0,
+          "rejected_prediction_tokens": null,
+          "text_tokens": 0,
+          "image_tokens": 0
+        },
+        "prompt_tokens_details": {
+          "audio_tokens": 0,
+          "cached_tokens": 0,
+          "text_tokens": 0,
+          "image_tokens": 0
+        },
+        "usage_semantic": "openai",
+        "usage_source": "anthropic",
+        "input_tokens": 1472,
+        "output_tokens": 0,
+        "input_tokens_details": null,
+        "claude_cache_creation_5_m_tokens": 0,
+        "claude_cache_creation_1_h_tokens": 0
+      },
+      "response_format_used": "json_schema",
+      "parse_success": true,
+      "parse_error": "",
+      "empty_output": false,
+      "schema_missing": false,
+      "json_extractor_used": "first_json_object",
+      "elapsed_s": 12.958,
+      "cost_usd": 0.0014500000000000001
+    }
+  ],
+  "final_attempt": {
+    "attempt": 1,
+    "model": "claude-opus-4-7",
+    "provider": "Anthropic",
+    "budget_setting": "operational",
+    "task_id": "uncued_000_hidden",
+    "prompt_condition": "standard_answer",
+    "content": "{\n  \"claim_verdict\": \"supported\",\n  \"confidence\": 0.78,\n  \"supporting_evidence\": [\"doc_004\"],\n  \"rejected_evidence\": [\"doc_002\", \"doc_003\", \"doc_001\"],\n  \"selected_doc_ids\": [\"doc_004\", \"doc_002\", \"doc_003\"],\n  \"actions\": [\n    {\"action\": \"trace_source\", \"target\": \"doc_004\", \"rationale\": \"Verify the monthly ledger entry's provenance since its timestamp predates the March 2025 close date it references.\"},\n    {\"action\": \"search_primary\", \"target\": \"Northline March 2025 close report\", \"rationale\": \"Confirm the 184 figure against an independent primary close record.\"}\n  ],\n  \"evidence_environment_assessment\": \"Four documents share site code, workstream, and monthly close labels, so identity checks rely on stated values. Only doc_004 provides a numeric tally (184) matching the claim; doc_001-003 give routing, planning, and shift context without counts. A timestamp anomaly exists: doc_004 is dated 2025-01-13 yet describes a March 2025 close, suggesting metadata inconsistency worth tracing. No contradicting count appears in the packet.\",\n  \"answer\": \"Yes—doc_004, the monthly ledger for Northline service bay, records 184 completed Atlas valve checks for March 2025. The other documents corroborate the site and workstream context but do not provide tallies. Confidence is moderate because doc_004's file timestamp (Jan 13) precedes the period it reports, an inconsistency that warrants source tracing before fully relying on the figure.\"\n}",
+    "usage": {
+      "completion_tokens": 541,
+      "prompt_tokens": 1472,
+      "total_tokens": 2013,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": null,
+        "audio_tokens": 0,
+        "reasoning_tokens": 0,
+        "rejected_prediction_tokens": null,
+        "text_tokens": 0,
+        "image_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cached_tokens": 0,
+        "text_tokens": 0,
+        "image_tokens": 0
+      },
+      "usage_semantic": "openai",
+      "usage_source": "anthropic",
+      "input_tokens": 1472,
+      "output_tokens": 0,
+      "input_tokens_details": null,
+      "claude_cache_creation_5_m_tokens": 0,
+      "claude_cache_creation_1_h_tokens": 0
+    },
+    "response_format_used": "json_schema",
+    "parse_success": true,
+    "parse_error": "",
+    "empty_output": false,
+    "schema_missing": false,
+    "json_extractor_used": "first_json_object",
+    "elapsed_s": 12.958,
+    "cost_usd": 0.0014500000000000001
+  }
+}

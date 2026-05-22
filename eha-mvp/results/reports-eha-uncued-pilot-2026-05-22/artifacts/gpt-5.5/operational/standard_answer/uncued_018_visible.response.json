@@ -1,0 +1,90 @@
+{
+  "attempts": [
+    {
+      "attempt": 1,
+      "model": "gpt-5.5",
+      "provider": "OpenAI",
+      "budget_setting": "operational",
+      "task_id": "uncued_018_visible",
+      "prompt_condition": "standard_answer",
+      "content": "{\"actions\":[{\"action\":\"trace_source\",\"rationale\":\"The 211 claim in doc_004 cites doc_001, but doc_001 contains chronology only and no final count.\",\"target\":\"doc_004 -> doc_001\"},{\"action\":\"compare_versions\",\"rationale\":\"doc_002 is a month-close ledger row for the same workstream and month and gives a conflicting count of 184.\",\"target\":\"doc_002 vs doc_004\"}],\"answer\":\"No. The best available evidence does not support 211 completed checks. The month-close ledger entry for the same Atlas valve checks in March 2025 lists 184 completed checks. The only document stating 211 is an operations digest with no visible underlying row, and its citation points to a memo that does not provide a count.\",\"claim_verdict\":\"refuted\",\"confidence\":0.78,\"evidence_environment_assessment\":\"The environment contains a direct conflict. doc_002 is the strongest evidence because it is described as a month-close ledger row and gives the same workstream/month with count 184. doc_004 states 211 but is weaker: it is a digest, lacks a visible row, and cites doc_001, which has no count. doc_003 is not probative on totals.\",\"rejected_evidence\":[\"doc_004\",\"doc_001\",\"doc_003\"],\"selected_doc_ids\":[\"doc_002\",\"doc_004\",\"doc_001\"],\"supporting_evidence\":[\"doc_002\"]}",
+      "usage": {
+        "completion_tokens": 550,
+        "prompt_tokens": 1189,
+        "total_tokens": 1739,
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": 0,
+          "audio_tokens": 0,
+          "reasoning_tokens": 232,
+          "rejected_prediction_tokens": 0
+        },
+        "prompt_tokens_details": {
+          "audio_tokens": 0,
+          "cached_tokens": 0
+        },
+        "latency_checkpoint": {
+          "engine_tbt_ms": 24,
+          "engine_ttft_ms": 330,
+          "engine_ttlt_ms": 13411,
+          "pre_inference_ms": 160,
+          "service_tbt_ms": 24,
+          "service_ttft_ms": 725,
+          "service_ttlt_ms": 13794,
+          "total_duration_ms": 13654,
+          "user_visible_ttft_ms": 565
+        }
+      },
+      "response_format_used": "json_schema",
+      "parse_success": true,
+      "parse_error": "",
+      "empty_output": false,
+      "schema_missing": false,
+      "json_extractor_used": "first_json_object",
+      "elapsed_s": 15.437,
+      "cost_usd": 0.022445
+    }
+  ],
+  "final_attempt": {
+    "attempt": 1,
+    "model": "gpt-5.5",
+    "provider": "OpenAI",
+    "budget_setting": "operational",
+    "task_id": "uncued_018_visible",
+    "prompt_condition": "standard_answer",
+    "content": "{\"actions\":[{\"action\":\"trace_source\",\"rationale\":\"The 211 claim in doc_004 cites doc_001, but doc_001 contains chronology only and no final count.\",\"target\":\"doc_004 -> doc_001\"},{\"action\":\"compare_versions\",\"rationale\":\"doc_002 is a month-close ledger row for the same workstream and month and gives a conflicting count of 184.\",\"target\":\"doc_002 vs doc_004\"}],\"answer\":\"No. The best available evidence does not support 211 completed checks. The month-close ledger entry for the same Atlas valve checks in March 2025 lists 184 completed checks. The only document stating 211 is an operations digest with no visible underlying row, and its citation points to a memo that does not provide a count.\",\"claim_verdict\":\"refuted\",\"confidence\":0.78,\"evidence_environment_assessment\":\"The environment contains a direct conflict. doc_002 is the strongest evidence because it is described as a month-close ledger row and gives the same workstream/month with count 184. doc_004 states 211 but is weaker: it is a digest, lacks a visible row, and cites doc_001, which has no count. doc_003 is not probative on totals.\",\"rejected_evidence\":[\"doc_004\",\"doc_001\",\"doc_003\"],\"selected_doc_ids\":[\"doc_002\",\"doc_004\",\"doc_001\"],\"supporting_evidence\":[\"doc_002\"]}",
+    "usage": {
+      "completion_tokens": 550,
+      "prompt_tokens": 1189,
+      "total_tokens": 1739,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": 0,
+        "audio_tokens": 0,
+        "reasoning_tokens": 232,
+        "rejected_prediction_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cached_tokens": 0
+      },
+      "latency_checkpoint": {
+        "engine_tbt_ms": 24,
+        "engine_ttft_ms": 330,
+        "engine_ttlt_ms": 13411,
+        "pre_inference_ms": 160,
+        "service_tbt_ms": 24,
+        "service_ttft_ms": 725,
+        "service_ttlt_ms": 13794,
+        "total_duration_ms": 13654,
+        "user_visible_ttft_ms": 565
+      }
+    },
+    "response_format_used": "json_schema",
+    "parse_success": true,
+    "parse_error": "",
+    "empty_output": false,
+    "schema_missing": false,
+    "json_extractor_used": "first_json_object",
+    "elapsed_s": 15.437,
+    "cost_usd": 0.022445
+  }
+}

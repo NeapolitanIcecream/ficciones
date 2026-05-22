@@ -15,7 +15,7 @@ from rich.console import Console
 
 from .cost_guard import BudgetExceeded, CostGuard
 from .cost_guard import estimate_tokens
-from .epistemic_model_preflight import complete_with_process_timeout, parse_prediction_with_diagnostics, safe_model_dir, select_preflight_tasks
+from .epistemic_model_preflight import complete_with_process_timeout, model_visible_task, parse_prediction_with_diagnostics, safe_model_dir, select_preflight_tasks
 from .epistemic_resilience import (
     EpistemicPrediction,
     EpistemicRunRecord,
@@ -255,7 +255,7 @@ def run_single_job(
     cost_lock: threading.Lock,
 ) -> EpistemicRunRecord:
     doc_id_view = opaque_doc_id_view(task)
-    base_messages = build_messages(task, prompt_condition, opaque_doc_ids=True, scrub_audit_labels=True)
+    base_messages = build_messages(model_visible_task(task), prompt_condition, opaque_doc_ids=True, scrub_audit_labels=True)
     messages = portable_chat_messages(base_messages)
     prompt_payload = json.loads(base_messages[-1]["content"])
     prompt_audit = visible_payload_audit(prompt_payload.get("documents", []))

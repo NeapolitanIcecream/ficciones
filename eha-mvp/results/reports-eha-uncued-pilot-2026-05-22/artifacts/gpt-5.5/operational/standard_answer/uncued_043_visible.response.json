@@ -1,0 +1,90 @@
+{
+  "attempts": [
+    {
+      "attempt": 1,
+      "model": "gpt-5.5",
+      "provider": "OpenAI",
+      "budget_setting": "operational",
+      "task_id": "uncued_043_visible",
+      "prompt_condition": "standard_answer",
+      "content": "{\"actions\":[{\"action\":\"compare_versions\",\"rationale\":\"Compare the final closeout count against the conflicting running estimate.\",\"target\":\"doc_001 vs doc_002\"},{\"action\":\"trace_source\",\"rationale\":\"Check whether the 88 estimate rests on a source with a final count.\",\"target\":\"doc_002 -> doc_004\"}],\"answer\":\"Yes. The best evidence provided is doc_001, which states that the closeout ledger lists 63 verified swaps for Orion battery swaps in April 2025. The conflicting 88 figure is only a running estimate tied to a planning memo with no final number.\",\"claim_verdict\":\"supported\",\"confidence\":0.74,\"evidence_environment_assessment\":\"The environment contains a direct final-close statement and a conflicting estimate. Doc_001 is most probative because it refers to a closeout ledger and final close date. Doc_002 is weaker because it is framed as a running estimate and cites doc_004, a pre-close planning memo with no final number. No document explicitly mentions Novalis Robotics, limiting certainty.\",\"rejected_evidence\":[\"doc_002\",\"doc_004\",\"doc_003\"],\"selected_doc_ids\":[\"doc_001\",\"doc_002\",\"doc_004\"],\"supporting_evidence\":[\"doc_001\"]}",
+      "usage": {
+        "completion_tokens": 654,
+        "prompt_tokens": 1184,
+        "total_tokens": 1838,
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": 0,
+          "audio_tokens": 0,
+          "reasoning_tokens": 377,
+          "rejected_prediction_tokens": 0
+        },
+        "prompt_tokens_details": {
+          "audio_tokens": 0,
+          "cached_tokens": 0
+        },
+        "latency_checkpoint": {
+          "engine_tbt_ms": 24,
+          "engine_ttft_ms": 321,
+          "engine_ttlt_ms": 16262,
+          "pre_inference_ms": 171,
+          "service_tbt_ms": 24,
+          "service_ttft_ms": 730,
+          "service_ttlt_ms": 16700,
+          "total_duration_ms": 16533,
+          "user_visible_ttft_ms": 559
+        }
+      },
+      "response_format_used": "json_schema",
+      "parse_success": true,
+      "parse_error": "",
+      "empty_output": false,
+      "schema_missing": false,
+      "json_extractor_used": "first_json_object",
+      "elapsed_s": 19.175,
+      "cost_usd": 0.02554
+    }
+  ],
+  "final_attempt": {
+    "attempt": 1,
+    "model": "gpt-5.5",
+    "provider": "OpenAI",
+    "budget_setting": "operational",
+    "task_id": "uncued_043_visible",
+    "prompt_condition": "standard_answer",
+    "content": "{\"actions\":[{\"action\":\"compare_versions\",\"rationale\":\"Compare the final closeout count against the conflicting running estimate.\",\"target\":\"doc_001 vs doc_002\"},{\"action\":\"trace_source\",\"rationale\":\"Check whether the 88 estimate rests on a source with a final count.\",\"target\":\"doc_002 -> doc_004\"}],\"answer\":\"Yes. The best evidence provided is doc_001, which states that the closeout ledger lists 63 verified swaps for Orion battery swaps in April 2025. The conflicting 88 figure is only a running estimate tied to a planning memo with no final number.\",\"claim_verdict\":\"supported\",\"confidence\":0.74,\"evidence_environment_assessment\":\"The environment contains a direct final-close statement and a conflicting estimate. Doc_001 is most probative because it refers to a closeout ledger and final close date. Doc_002 is weaker because it is framed as a running estimate and cites doc_004, a pre-close planning memo with no final number. No document explicitly mentions Novalis Robotics, limiting certainty.\",\"rejected_evidence\":[\"doc_002\",\"doc_004\",\"doc_003\"],\"selected_doc_ids\":[\"doc_001\",\"doc_002\",\"doc_004\"],\"supporting_evidence\":[\"doc_001\"]}",
+    "usage": {
+      "completion_tokens": 654,
+      "prompt_tokens": 1184,
+      "total_tokens": 1838,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": 0,
+        "audio_tokens": 0,
+        "reasoning_tokens": 377,
+        "rejected_prediction_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cached_tokens": 0
+      },
+      "latency_checkpoint": {
+        "engine_tbt_ms": 24,
+        "engine_ttft_ms": 321,
+        "engine_ttlt_ms": 16262,
+        "pre_inference_ms": 171,
+        "service_tbt_ms": 24,
+        "service_ttft_ms": 730,
+        "service_ttlt_ms": 16700,
+        "total_duration_ms": 16533,
+        "user_visible_ttft_ms": 559
+      }
+    },
+    "response_format_used": "json_schema",
+    "parse_success": true,
+    "parse_error": "",
+    "empty_output": false,
+    "schema_missing": false,
+    "json_extractor_used": "first_json_object",
+    "elapsed_s": 19.175,
+    "cost_usd": 0.02554
+  }
+}

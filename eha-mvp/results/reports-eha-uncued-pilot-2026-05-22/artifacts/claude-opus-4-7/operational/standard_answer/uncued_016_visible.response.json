@@ -1,0 +1,90 @@
+{
+  "attempts": [
+    {
+      "attempt": 1,
+      "model": "claude-opus-4-7",
+      "provider": "Anthropic",
+      "budget_setting": "operational",
+      "task_id": "uncued_016_visible",
+      "prompt_condition": "standard_answer",
+      "content": "{\n  \"claim_verdict\": \"refuted\",\n  \"confidence\": 0.78,\n  \"supporting_evidence\": [\"doc_003\"],\n  \"rejected_evidence\": [\"doc_002\", \"doc_004\"],\n  \"selected_doc_ids\": [\"doc_001\", \"doc_003\"],\n  \"actions\": [\n    {\"action\": \"trace_source\", \"target\": \"doc_003\", \"rationale\": \"The digest asserts 139 but cites only doc_004, a routing note with no count. Tracing reveals no primary basis for 139.\"},\n    {\"action\": \"compare_versions\", \"target\": \"doc_001\", \"rationale\": \"The month-close ledger lists 118 for the same workstream and month, directly contradicting the 139 figure.\"}\n  ],\n  \"evidence_environment_assessment\": \"Four documents share site code, workstream, and close date. Only doc_001 (month-close ledger) provides a primary count: 118. doc_003 cites 139 but its only citation (doc_004) contains chronology, not totals. doc_002 notes a one-day delay with no total. The packet exhibits a citation that does not substantiate its number, while the ledger entry gives a different, sourced figure.\",\n  \"answer\": \"No. The month-close ledger (doc_001) records 118 completed Nova pump refurbishments for July 2025. The 139 figure appears only in a digest (doc_003) whose cited source (doc_004) contains no count. The claim of 139 is refuted by the primary ledger and unsupported by traceable evidence.\"\n}",
+      "usage": {
+        "completion_tokens": 501,
+        "prompt_tokens": 1503,
+        "total_tokens": 2004,
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": null,
+          "audio_tokens": 0,
+          "reasoning_tokens": 0,
+          "rejected_prediction_tokens": null,
+          "text_tokens": 0,
+          "image_tokens": 0
+        },
+        "prompt_tokens_details": {
+          "audio_tokens": 0,
+          "cached_tokens": 0,
+          "text_tokens": 0,
+          "image_tokens": 0
+        },
+        "usage_semantic": "openai",
+        "usage_source": "anthropic",
+        "input_tokens": 1503,
+        "output_tokens": 0,
+        "input_tokens_details": null,
+        "claude_cache_creation_5_m_tokens": 0,
+        "claude_cache_creation_1_h_tokens": 0
+      },
+      "response_format_used": "json_schema",
+      "parse_success": true,
+      "parse_error": "",
+      "empty_output": false,
+      "schema_missing": false,
+      "json_extractor_used": "first_json_object",
+      "elapsed_s": 11.746,
+      "cost_usd": 0.00137775
+    }
+  ],
+  "final_attempt": {
+    "attempt": 1,
+    "model": "claude-opus-4-7",
+    "provider": "Anthropic",
+    "budget_setting": "operational",
+    "task_id": "uncued_016_visible",
+    "prompt_condition": "standard_answer",
+    "content": "{\n  \"claim_verdict\": \"refuted\",\n  \"confidence\": 0.78,\n  \"supporting_evidence\": [\"doc_003\"],\n  \"rejected_evidence\": [\"doc_002\", \"doc_004\"],\n  \"selected_doc_ids\": [\"doc_001\", \"doc_003\"],\n  \"actions\": [\n    {\"action\": \"trace_source\", \"target\": \"doc_003\", \"rationale\": \"The digest asserts 139 but cites only doc_004, a routing note with no count. Tracing reveals no primary basis for 139.\"},\n    {\"action\": \"compare_versions\", \"target\": \"doc_001\", \"rationale\": \"The month-close ledger lists 118 for the same workstream and month, directly contradicting the 139 figure.\"}\n  ],\n  \"evidence_environment_assessment\": \"Four documents share site code, workstream, and close date. Only doc_001 (month-close ledger) provides a primary count: 118. doc_003 cites 139 but its only citation (doc_004) contains chronology, not totals. doc_002 notes a one-day delay with no total. The packet exhibits a citation that does not substantiate its number, while the ledger entry gives a different, sourced figure.\",\n  \"answer\": \"No. The month-close ledger (doc_001) records 118 completed Nova pump refurbishments for July 2025. The 139 figure appears only in a digest (doc_003) whose cited source (doc_004) contains no count. The claim of 139 is refuted by the primary ledger and unsupported by traceable evidence.\"\n}",
+    "usage": {
+      "completion_tokens": 501,
+      "prompt_tokens": 1503,
+      "total_tokens": 2004,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": null,
+        "audio_tokens": 0,
+        "reasoning_tokens": 0,
+        "rejected_prediction_tokens": null,
+        "text_tokens": 0,
+        "image_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cached_tokens": 0,
+        "text_tokens": 0,
+        "image_tokens": 0
+      },
+      "usage_semantic": "openai",
+      "usage_source": "anthropic",
+      "input_tokens": 1503,
+      "output_tokens": 0,
+      "input_tokens_details": null,
+      "claude_cache_creation_5_m_tokens": 0,
+      "claude_cache_creation_1_h_tokens": 0
+    },
+    "response_format_used": "json_schema",
+    "parse_success": true,
+    "parse_error": "",
+    "empty_output": false,
+    "schema_missing": false,
+    "json_extractor_used": "first_json_object",
+    "elapsed_s": 11.746,
+    "cost_usd": 0.00137775
+  }
+}

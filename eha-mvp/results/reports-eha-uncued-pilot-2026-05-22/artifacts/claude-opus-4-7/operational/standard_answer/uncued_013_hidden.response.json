@@ -1,0 +1,90 @@
+{
+  "attempts": [
+    {
+      "attempt": 1,
+      "model": "claude-opus-4-7",
+      "provider": "Anthropic",
+      "budget_setting": "operational",
+      "task_id": "uncued_013_hidden",
+      "prompt_condition": "standard_answer",
+      "content": "{\n  \"claim_verdict\": \"refuted\",\n  \"confidence\": 0.78,\n  \"supporting_evidence\": [\"doc_004\"],\n  \"rejected_evidence\": [\"doc_003\"],\n  \"selected_doc_ids\": [\"doc_003\", \"doc_004\", \"doc_002\"],\n  \"actions\": [\n    {\"action\": \"trace_source\", \"target\": \"doc_004\", \"rationale\": \"Digest cites doc_002, but doc_002 lacks a final count, so the 88 figure has no primary backing.\"},\n    {\"action\": \"compare_versions\", \"target\": \"doc_003\", \"rationale\": \"Month-close ledger gives 63, conflicting with the digest's 88; ledger is the authoritative primary record.\"}\n  ],\n  \"evidence_environment_assessment\": \"Four documents share site code, workstream, and close date. Only two carry counts: doc_004 (digest) asserts 88 but cites doc_002, which contains chronology only and no total. doc_003 is the month-close ledger and reports 63 verified swaps. doc_001 notes a one-day closeout delay without figures. The digest's citation chain does not resolve to a primary source supporting 88, while the ledger directly contradicts it. Authoritative weight favors the ledger over a derivative digest with a broken citation.\",\n  \"answer\": \"No. The month-close ledger (doc_003) records 63 verified Orion battery swaps for April 2025. The only document citing 88 is a digest (doc_004) whose visible citation (doc_002) contains chronology but no total, leaving the 88 figure unsupported by any primary record. The ledger refutes the claim.\"\n}",
+      "usage": {
+        "completion_tokens": 540,
+        "prompt_tokens": 1459,
+        "total_tokens": 1999,
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": null,
+          "audio_tokens": 0,
+          "reasoning_tokens": 0,
+          "rejected_prediction_tokens": null,
+          "text_tokens": 0,
+          "image_tokens": 0
+        },
+        "prompt_tokens_details": {
+          "audio_tokens": 0,
+          "cached_tokens": 0,
+          "text_tokens": 0,
+          "image_tokens": 0
+        },
+        "usage_semantic": "openai",
+        "usage_source": "anthropic",
+        "input_tokens": 1459,
+        "output_tokens": 0,
+        "input_tokens_details": null,
+        "claude_cache_creation_5_m_tokens": 0,
+        "claude_cache_creation_1_h_tokens": 0
+      },
+      "response_format_used": "json_schema",
+      "parse_success": true,
+      "parse_error": "",
+      "empty_output": false,
+      "schema_missing": false,
+      "json_extractor_used": "first_json_object",
+      "elapsed_s": 7.482,
+      "cost_usd": 0.00144475
+    }
+  ],
+  "final_attempt": {
+    "attempt": 1,
+    "model": "claude-opus-4-7",
+    "provider": "Anthropic",
+    "budget_setting": "operational",
+    "task_id": "uncued_013_hidden",
+    "prompt_condition": "standard_answer",
+    "content": "{\n  \"claim_verdict\": \"refuted\",\n  \"confidence\": 0.78,\n  \"supporting_evidence\": [\"doc_004\"],\n  \"rejected_evidence\": [\"doc_003\"],\n  \"selected_doc_ids\": [\"doc_003\", \"doc_004\", \"doc_002\"],\n  \"actions\": [\n    {\"action\": \"trace_source\", \"target\": \"doc_004\", \"rationale\": \"Digest cites doc_002, but doc_002 lacks a final count, so the 88 figure has no primary backing.\"},\n    {\"action\": \"compare_versions\", \"target\": \"doc_003\", \"rationale\": \"Month-close ledger gives 63, conflicting with the digest's 88; ledger is the authoritative primary record.\"}\n  ],\n  \"evidence_environment_assessment\": \"Four documents share site code, workstream, and close date. Only two carry counts: doc_004 (digest) asserts 88 but cites doc_002, which contains chronology only and no total. doc_003 is the month-close ledger and reports 63 verified swaps. doc_001 notes a one-day closeout delay without figures. The digest's citation chain does not resolve to a primary source supporting 88, while the ledger directly contradicts it. Authoritative weight favors the ledger over a derivative digest with a broken citation.\",\n  \"answer\": \"No. The month-close ledger (doc_003) records 63 verified Orion battery swaps for April 2025. The only document citing 88 is a digest (doc_004) whose visible citation (doc_002) contains chronology but no total, leaving the 88 figure unsupported by any primary record. The ledger refutes the claim.\"\n}",
+    "usage": {
+      "completion_tokens": 540,
+      "prompt_tokens": 1459,
+      "total_tokens": 1999,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": null,
+        "audio_tokens": 0,
+        "reasoning_tokens": 0,
+        "rejected_prediction_tokens": null,
+        "text_tokens": 0,
+        "image_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cached_tokens": 0,
+        "text_tokens": 0,
+        "image_tokens": 0
+      },
+      "usage_semantic": "openai",
+      "usage_source": "anthropic",
+      "input_tokens": 1459,
+      "output_tokens": 0,
+      "input_tokens_details": null,
+      "claude_cache_creation_5_m_tokens": 0,
+      "claude_cache_creation_1_h_tokens": 0
+    },
+    "response_format_used": "json_schema",
+    "parse_success": true,
+    "parse_error": "",
+    "empty_output": false,
+    "schema_missing": false,
+    "json_extractor_used": "first_json_object",
+    "elapsed_s": 7.482,
+    "cost_usd": 0.00144475
+  }
+}

@@ -1,0 +1,90 @@
+{
+  "attempts": [
+    {
+      "attempt": 1,
+      "model": "claude-opus-4-7",
+      "provider": "Anthropic",
+      "budget_setting": "operational",
+      "task_id": "uncued_044_hidden",
+      "prompt_condition": "standard_answer",
+      "content": "{\n  \"claim_verdict\": \"supported\",\n  \"confidence\": 0.78,\n  \"supporting_evidence\": [\"doc_002\"],\n  \"rejected_evidence\": [\"doc_004\"],\n  \"selected_doc_ids\": [\"doc_002\", \"doc_004\", \"doc_001\"],\n  \"actions\": [\n    {\"action\": \"compare_versions\", \"target\": \"doc_002 vs doc_004\", \"rationale\": \"Two documents give conflicting counts (97 vs 124); compare to determine authoritative figure.\"},\n    {\"action\": \"trace_source\", \"target\": \"doc_002\", \"rationale\": \"Confirm the closeout ledger is the final source of record postdating the planning estimate.\"}\n  ],\n  \"evidence_environment_assessment\": \"Four documents share workstream/site labels, so distinctions rest on stated values and document type. doc_001 is a pre-close planning memo with no figure. doc_003 is a handoff note with no count. doc_004 is a digest dated 2025-09-14 giving an estimated 124, explicitly framed as a running estimate referencing the planning memo. doc_002 is a closeout ledger dated 2025-09-16 listing 97 closed tickets at the final close date. The ledger postdates and supersedes the estimate, making it the more authoritative record.\",\n  \"answer\": \"Yes. The closeout ledger (doc_002), dated after the digest estimate and tied to the final close date, records 97 closed tickets for Mira sensor recalibrations in May 2025. The conflicting 124 in doc_004 is explicitly a running estimate predating closeout and is superseded.\"\n}",
+      "usage": {
+        "completion_tokens": 534,
+        "prompt_tokens": 1462,
+        "total_tokens": 1996,
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": null,
+          "audio_tokens": 0,
+          "reasoning_tokens": 0,
+          "rejected_prediction_tokens": null,
+          "text_tokens": 0,
+          "image_tokens": 0
+        },
+        "prompt_tokens_details": {
+          "audio_tokens": 0,
+          "cached_tokens": 0,
+          "text_tokens": 0,
+          "image_tokens": 0
+        },
+        "usage_semantic": "openai",
+        "usage_source": "anthropic",
+        "input_tokens": 1462,
+        "output_tokens": 0,
+        "input_tokens_details": null,
+        "claude_cache_creation_5_m_tokens": 0,
+        "claude_cache_creation_1_h_tokens": 0
+      },
+      "response_format_used": "json_schema",
+      "parse_success": true,
+      "parse_error": "",
+      "empty_output": false,
+      "schema_missing": false,
+      "json_extractor_used": "first_json_object",
+      "elapsed_s": 7.073,
+      "cost_usd": 0.0014334999999999999
+    }
+  ],
+  "final_attempt": {
+    "attempt": 1,
+    "model": "claude-opus-4-7",
+    "provider": "Anthropic",
+    "budget_setting": "operational",
+    "task_id": "uncued_044_hidden",
+    "prompt_condition": "standard_answer",
+    "content": "{\n  \"claim_verdict\": \"supported\",\n  \"confidence\": 0.78,\n  \"supporting_evidence\": [\"doc_002\"],\n  \"rejected_evidence\": [\"doc_004\"],\n  \"selected_doc_ids\": [\"doc_002\", \"doc_004\", \"doc_001\"],\n  \"actions\": [\n    {\"action\": \"compare_versions\", \"target\": \"doc_002 vs doc_004\", \"rationale\": \"Two documents give conflicting counts (97 vs 124); compare to determine authoritative figure.\"},\n    {\"action\": \"trace_source\", \"target\": \"doc_002\", \"rationale\": \"Confirm the closeout ledger is the final source of record postdating the planning estimate.\"}\n  ],\n  \"evidence_environment_assessment\": \"Four documents share workstream/site labels, so distinctions rest on stated values and document type. doc_001 is a pre-close planning memo with no figure. doc_003 is a handoff note with no count. doc_004 is a digest dated 2025-09-14 giving an estimated 124, explicitly framed as a running estimate referencing the planning memo. doc_002 is a closeout ledger dated 2025-09-16 listing 97 closed tickets at the final close date. The ledger postdates and supersedes the estimate, making it the more authoritative record.\",\n  \"answer\": \"Yes. The closeout ledger (doc_002), dated after the digest estimate and tied to the final close date, records 97 closed tickets for Mira sensor recalibrations in May 2025. The conflicting 124 in doc_004 is explicitly a running estimate predating closeout and is superseded.\"\n}",
+    "usage": {
+      "completion_tokens": 534,
+      "prompt_tokens": 1462,
+      "total_tokens": 1996,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": null,
+        "audio_tokens": 0,
+        "reasoning_tokens": 0,
+        "rejected_prediction_tokens": null,
+        "text_tokens": 0,
+        "image_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cached_tokens": 0,
+        "text_tokens": 0,
+        "image_tokens": 0
+      },
+      "usage_semantic": "openai",
+      "usage_source": "anthropic",
+      "input_tokens": 1462,
+      "output_tokens": 0,
+      "input_tokens_details": null,
+      "claude_cache_creation_5_m_tokens": 0,
+      "claude_cache_creation_1_h_tokens": 0
+    },
+    "response_format_used": "json_schema",
+    "parse_success": true,
+    "parse_error": "",
+    "empty_output": false,
+    "schema_missing": false,
+    "json_extractor_used": "first_json_object",
+    "elapsed_s": 7.073,
+    "cost_usd": 0.0014334999999999999
+  }
+}

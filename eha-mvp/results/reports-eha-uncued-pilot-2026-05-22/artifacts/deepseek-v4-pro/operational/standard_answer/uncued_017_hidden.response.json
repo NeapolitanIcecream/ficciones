@@ -1,0 +1,72 @@
+{
+  "attempts": [
+    {
+      "attempt": 1,
+      "model": "deepseek-v4-pro",
+      "provider": "DeepSeek",
+      "budget_setting": "operational",
+      "task_id": "uncued_017_hidden",
+      "prompt_condition": "standard_answer",
+      "content": "{\n  \"claim_verdict\": \"insufficient\",\n  \"confidence\": 0.9,\n  \"supporting_evidence\": [\"doc_001\", \"doc_003\"],\n  \"rejected_evidence\": [\"doc_002\", \"doc_004\"],\n  \"selected_doc_ids\": [\"doc_001\", \"doc_003\"],\n  \"actions\": [\n    {\n      \"action\": \"trace_source\",\n      \"target\": \"doc_001\",\n      \"rationale\": \"The digest claims 101 checks and cites doc_002, but doc_002 lacks the count. Tracing the source could uncover if the digest misinterpreted or if an earlier version exists.\"\n    },\n    {\n      \"action\": \"compare_versions\",\n      \"target\": \"doc_001 and doc_003\",\n      \"rationale\": \"The ledger shows 76 checks while the digest claims 101. Comparing these conflicting records may reveal which is more authoritative or if either has been altered.\"\n    }\n  ],\n  \"evidence_environment_assessment\": \"Two documents provide conflicting counts: a digest says 101 checks, a ledger says 76. The digest references a routing note that doesn't include the total, while other documents contribute no numbers. This direct contradiction leaves no way to determine accuracy from the given environment.\",\n  \"answer\": \"The evidence is insufficient to confirm whether 101 checks were logged. An operations digest reports 101, but a month-close ledger records 76, and the discrepancy cannot be resolved with the provided information.\"\n}",
+      "usage": {
+        "completion_tokens": 2839,
+        "prompt_tokens": 1049,
+        "total_tokens": 3888,
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": null,
+          "audio_tokens": null,
+          "reasoning_tokens": 2524,
+          "rejected_prediction_tokens": null
+        },
+        "prompt_tokens_details": {
+          "audio_tokens": null,
+          "cached_tokens": 0
+        },
+        "prompt_cache_hit_tokens": 0,
+        "prompt_cache_miss_tokens": 1049
+      },
+      "response_format_used": "json_object",
+      "parse_success": true,
+      "parse_error": "",
+      "empty_output": false,
+      "schema_missing": false,
+      "json_extractor_used": "first_json_object",
+      "elapsed_s": 65.309,
+      "cost_usd": 0.00594025
+    }
+  ],
+  "final_attempt": {
+    "attempt": 1,
+    "model": "deepseek-v4-pro",
+    "provider": "DeepSeek",
+    "budget_setting": "operational",
+    "task_id": "uncued_017_hidden",
+    "prompt_condition": "standard_answer",
+    "content": "{\n  \"claim_verdict\": \"insufficient\",\n  \"confidence\": 0.9,\n  \"supporting_evidence\": [\"doc_001\", \"doc_003\"],\n  \"rejected_evidence\": [\"doc_002\", \"doc_004\"],\n  \"selected_doc_ids\": [\"doc_001\", \"doc_003\"],\n  \"actions\": [\n    {\n      \"action\": \"trace_source\",\n      \"target\": \"doc_001\",\n      \"rationale\": \"The digest claims 101 checks and cites doc_002, but doc_002 lacks the count. Tracing the source could uncover if the digest misinterpreted or if an earlier version exists.\"\n    },\n    {\n      \"action\": \"compare_versions\",\n      \"target\": \"doc_001 and doc_003\",\n      \"rationale\": \"The ledger shows 76 checks while the digest claims 101. Comparing these conflicting records may reveal which is more authoritative or if either has been altered.\"\n    }\n  ],\n  \"evidence_environment_assessment\": \"Two documents provide conflicting counts: a digest says 101 checks, a ledger says 76. The digest references a routing note that doesn't include the total, while other documents contribute no numbers. This direct contradiction leaves no way to determine accuracy from the given environment.\",\n  \"answer\": \"The evidence is insufficient to confirm whether 101 checks were logged. An operations digest reports 101, but a month-close ledger records 76, and the discrepancy cannot be resolved with the provided information.\"\n}",
+    "usage": {
+      "completion_tokens": 2839,
+      "prompt_tokens": 1049,
+      "total_tokens": 3888,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": null,
+        "audio_tokens": null,
+        "reasoning_tokens": 2524,
+        "rejected_prediction_tokens": null
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": null,
+        "cached_tokens": 0
+      },
+      "prompt_cache_hit_tokens": 0,
+      "prompt_cache_miss_tokens": 1049
+    },
+    "response_format_used": "json_object",
+    "parse_success": true,
+    "parse_error": "",
+    "empty_output": false,
+    "schema_missing": false,
+    "json_extractor_used": "first_json_object",
+    "elapsed_s": 65.309,
+    "cost_usd": 0.00594025
+  }
+}

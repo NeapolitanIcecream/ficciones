@@ -1,0 +1,90 @@
+{
+  "attempts": [
+    {
+      "attempt": 1,
+      "model": "gpt-5.5",
+      "provider": "OpenAI",
+      "budget_setting": "operational",
+      "task_id": "uncued_029_visible",
+      "prompt_condition": "standard_answer",
+      "content": "{\"actions\":[{\"action\":\"trace_source\",\"rationale\":\"The two 101-count documents cite each other rather than an independent count sheet.\",\"target\":\"doc_001, doc_002\"},{\"action\":\"search_contradiction\",\"rationale\":\"A separate field note reports a different closing-ledger count of 76.\",\"target\":\"doc_003\"}],\"answer\":\"The claim is refuted by the best available evidence. The only document describing a closing ledger count says Kestrel firmware checks had 76 approved checks in August 2025, not 101. The 101 figure appears only in mutually dependent secondary summaries, so it is not reliable enough to override the conflicting ledger note.\",\"claim_verdict\":\"refuted\",\"confidence\":0.72,\"evidence_environment_assessment\":\"The environment is polluted by circular reporting: doc_001 and doc_002 both repeat the 101 figure while citing each other rather than a primary count sheet. doc_004 has no count. doc_003 is the strongest available evidence because it references a closing ledger and gives a conflicting final count of 76.\",\"rejected_evidence\":[\"doc_001\",\"doc_002\",\"doc_004\"],\"selected_doc_ids\":[\"doc_003\",\"doc_001\",\"doc_002\"],\"supporting_evidence\":[\"doc_003\"]}",
+      "usage": {
+        "completion_tokens": 601,
+        "prompt_tokens": 1210,
+        "total_tokens": 1811,
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": 0,
+          "audio_tokens": 0,
+          "reasoning_tokens": 319,
+          "rejected_prediction_tokens": 0
+        },
+        "prompt_tokens_details": {
+          "audio_tokens": 0,
+          "cached_tokens": 0
+        },
+        "latency_checkpoint": {
+          "engine_tbt_ms": 24,
+          "engine_ttft_ms": 4553,
+          "engine_ttlt_ms": 19025,
+          "pre_inference_ms": 122,
+          "service_tbt_ms": 24,
+          "service_ttft_ms": 4914,
+          "service_ttlt_ms": 19372,
+          "total_duration_ms": 19268,
+          "user_visible_ttft_ms": 4791
+        }
+      },
+      "response_format_used": "json_schema",
+      "parse_success": true,
+      "parse_error": "",
+      "empty_output": false,
+      "schema_missing": false,
+      "json_extractor_used": "first_json_object",
+      "elapsed_s": 20.867,
+      "cost_usd": 0.024079999999999997
+    }
+  ],
+  "final_attempt": {
+    "attempt": 1,
+    "model": "gpt-5.5",
+    "provider": "OpenAI",
+    "budget_setting": "operational",
+    "task_id": "uncued_029_visible",
+    "prompt_condition": "standard_answer",
+    "content": "{\"actions\":[{\"action\":\"trace_source\",\"rationale\":\"The two 101-count documents cite each other rather than an independent count sheet.\",\"target\":\"doc_001, doc_002\"},{\"action\":\"search_contradiction\",\"rationale\":\"A separate field note reports a different closing-ledger count of 76.\",\"target\":\"doc_003\"}],\"answer\":\"The claim is refuted by the best available evidence. The only document describing a closing ledger count says Kestrel firmware checks had 76 approved checks in August 2025, not 101. The 101 figure appears only in mutually dependent secondary summaries, so it is not reliable enough to override the conflicting ledger note.\",\"claim_verdict\":\"refuted\",\"confidence\":0.72,\"evidence_environment_assessment\":\"The environment is polluted by circular reporting: doc_001 and doc_002 both repeat the 101 figure while citing each other rather than a primary count sheet. doc_004 has no count. doc_003 is the strongest available evidence because it references a closing ledger and gives a conflicting final count of 76.\",\"rejected_evidence\":[\"doc_001\",\"doc_002\",\"doc_004\"],\"selected_doc_ids\":[\"doc_003\",\"doc_001\",\"doc_002\"],\"supporting_evidence\":[\"doc_003\"]}",
+    "usage": {
+      "completion_tokens": 601,
+      "prompt_tokens": 1210,
+      "total_tokens": 1811,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": 0,
+        "audio_tokens": 0,
+        "reasoning_tokens": 319,
+        "rejected_prediction_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cached_tokens": 0
+      },
+      "latency_checkpoint": {
+        "engine_tbt_ms": 24,
+        "engine_ttft_ms": 4553,
+        "engine_ttlt_ms": 19025,
+        "pre_inference_ms": 122,
+        "service_tbt_ms": 24,
+        "service_ttft_ms": 4914,
+        "service_ttlt_ms": 19372,
+        "total_duration_ms": 19268,
+        "user_visible_ttft_ms": 4791
+      }
+    },
+    "response_format_used": "json_schema",
+    "parse_success": true,
+    "parse_error": "",
+    "empty_output": false,
+    "schema_missing": false,
+    "json_extractor_used": "first_json_object",
+    "elapsed_s": 20.867,
+    "cost_usd": 0.024079999999999997
+  }
+}

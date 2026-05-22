@@ -1,0 +1,90 @@
+{
+  "attempts": [
+    {
+      "attempt": 1,
+      "model": "claude-opus-4-7",
+      "provider": "Anthropic",
+      "budget_setting": "operational",
+      "task_id": "uncued_028_hidden",
+      "prompt_condition": "standard_answer",
+      "content": "{\n  \"claim_verdict\": \"insufficient\",\n  \"confidence\": 0.45,\n  \"supporting_evidence\": [\"doc_002\", \"doc_004\"],\n  \"rejected_evidence\": [\"doc_001\"],\n  \"selected_doc_ids\": [\"doc_001\", \"doc_002\", \"doc_004\"],\n  \"actions\": [\n    {\"action\": \"trace_source\", \"target\": \"doc_004\", \"rationale\": \"doc_002 and doc_004 cite each other circularly; need the original bulletin to confirm 139.\"},\n    {\"action\": \"search_primary\", \"target\": \"Harbor Annex closing ledger July 2025\", \"rationale\": \"doc_001 reports 118 from a closing ledger, which would be authoritative if verified against primary records.\"}\n  ],\n  \"evidence_environment_assessment\": \"The packet contains a circular citation loop: doc_002 cites doc_004, and doc_004 cites doc_002, both repeating 139 without a primary source. doc_001 offers a contradicting figure (118) attributed to a closing ledger, which is typically more authoritative than digests or partner summaries, but no primary ledger is directly provided. doc_003 is non-informative. The two 139 mentions inflate apparent corroboration without independent grounding.\",\n  \"answer\": \"Evidence is insufficient to confirm 139. The two documents reporting 139 (doc_002, doc_004) form a circular citation pair with no primary source. doc_001 cites a closing ledger giving 118, which contradicts the claim and would normally outrank digest-based figures, but the underlying ledger is not directly shown. Without a verified primary record, the claim cannot be reliably supported or refuted.\"\n}",
+      "usage": {
+        "completion_tokens": 558,
+        "prompt_tokens": 1498,
+        "total_tokens": 2056,
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": null,
+          "audio_tokens": 0,
+          "reasoning_tokens": 0,
+          "rejected_prediction_tokens": null,
+          "text_tokens": 0,
+          "image_tokens": 0
+        },
+        "prompt_tokens_details": {
+          "audio_tokens": 0,
+          "cached_tokens": 0,
+          "text_tokens": 0,
+          "image_tokens": 0
+        },
+        "usage_semantic": "openai",
+        "usage_source": "anthropic",
+        "input_tokens": 1498,
+        "output_tokens": 0,
+        "input_tokens_details": null,
+        "claude_cache_creation_5_m_tokens": 0,
+        "claude_cache_creation_1_h_tokens": 0
+      },
+      "response_format_used": "json_schema",
+      "parse_success": true,
+      "parse_error": "",
+      "empty_output": false,
+      "schema_missing": false,
+      "json_extractor_used": "first_json_object",
+      "elapsed_s": 10.4,
+      "cost_usd": 0.0014905
+    }
+  ],
+  "final_attempt": {
+    "attempt": 1,
+    "model": "claude-opus-4-7",
+    "provider": "Anthropic",
+    "budget_setting": "operational",
+    "task_id": "uncued_028_hidden",
+    "prompt_condition": "standard_answer",
+    "content": "{\n  \"claim_verdict\": \"insufficient\",\n  \"confidence\": 0.45,\n  \"supporting_evidence\": [\"doc_002\", \"doc_004\"],\n  \"rejected_evidence\": [\"doc_001\"],\n  \"selected_doc_ids\": [\"doc_001\", \"doc_002\", \"doc_004\"],\n  \"actions\": [\n    {\"action\": \"trace_source\", \"target\": \"doc_004\", \"rationale\": \"doc_002 and doc_004 cite each other circularly; need the original bulletin to confirm 139.\"},\n    {\"action\": \"search_primary\", \"target\": \"Harbor Annex closing ledger July 2025\", \"rationale\": \"doc_001 reports 118 from a closing ledger, which would be authoritative if verified against primary records.\"}\n  ],\n  \"evidence_environment_assessment\": \"The packet contains a circular citation loop: doc_002 cites doc_004, and doc_004 cites doc_002, both repeating 139 without a primary source. doc_001 offers a contradicting figure (118) attributed to a closing ledger, which is typically more authoritative than digests or partner summaries, but no primary ledger is directly provided. doc_003 is non-informative. The two 139 mentions inflate apparent corroboration without independent grounding.\",\n  \"answer\": \"Evidence is insufficient to confirm 139. The two documents reporting 139 (doc_002, doc_004) form a circular citation pair with no primary source. doc_001 cites a closing ledger giving 118, which contradicts the claim and would normally outrank digest-based figures, but the underlying ledger is not directly shown. Without a verified primary record, the claim cannot be reliably supported or refuted.\"\n}",
+    "usage": {
+      "completion_tokens": 558,
+      "prompt_tokens": 1498,
+      "total_tokens": 2056,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": null,
+        "audio_tokens": 0,
+        "reasoning_tokens": 0,
+        "rejected_prediction_tokens": null,
+        "text_tokens": 0,
+        "image_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cached_tokens": 0,
+        "text_tokens": 0,
+        "image_tokens": 0
+      },
+      "usage_semantic": "openai",
+      "usage_source": "anthropic",
+      "input_tokens": 1498,
+      "output_tokens": 0,
+      "input_tokens_details": null,
+      "claude_cache_creation_5_m_tokens": 0,
+      "claude_cache_creation_1_h_tokens": 0
+    },
+    "response_format_used": "json_schema",
+    "parse_success": true,
+    "parse_error": "",
+    "empty_output": false,
+    "schema_missing": false,
+    "json_extractor_used": "first_json_object",
+    "elapsed_s": 10.4,
+    "cost_usd": 0.0014905
+  }
+}

@@ -1,0 +1,90 @@
+{
+  "attempts": [
+    {
+      "attempt": 1,
+      "model": "claude-opus-4-7",
+      "provider": "Anthropic",
+      "budget_setting": "operational",
+      "task_id": "uncued_019_hidden",
+      "prompt_condition": "standard_answer",
+      "content": "{\n  \"claim_verdict\": \"refuted\",\n  \"confidence\": 0.78,\n  \"supporting_evidence\": [\"doc_002\"],\n  \"rejected_evidence\": [\"doc_003\"],\n  \"selected_doc_ids\": [\"doc_002\", \"doc_003\"],\n  \"actions\": [\n    {\"action\": \"trace_source\", \"target\": \"doc_003\", \"rationale\": \"The digest asserts 88 but cites only a routing note (doc_004) that contains no count. Tracing confirms it lacks primary support.\"},\n    {\"action\": \"compare_versions\", \"target\": \"doc_002\", \"rationale\": \"The month-close ledger is the authoritative row and lists 63, directly contradicting the 88 figure.\"}\n  ],\n  \"evidence_environment_assessment\": \"Four documents share site code, workstream, and close date, so labels alone cannot adjudicate. Only doc_002 (month-close ledger) provides a primary verified count: 63. doc_003 asserts 88 but cites doc_004, a routing note with chronology only and no total. doc_001 is a scheduling memo without figures. The ledger outranks the digest as a primary source, and the digest's citation chain does not substantiate 88.\",\n  \"answer\": \"No. The East Yard month-close ledger (doc_002) records 63 verified Orion battery swaps for April 2025. The operations digest (doc_003) claiming 88 cites only a routing note (doc_004) that provides chronology but no count, so its figure is unsupported. The claim of 88 is refuted by the primary ledger entry.\"\n}",
+      "usage": {
+        "completion_tokens": 516,
+        "prompt_tokens": 1459,
+        "total_tokens": 1975,
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": null,
+          "audio_tokens": 0,
+          "reasoning_tokens": 0,
+          "rejected_prediction_tokens": null,
+          "text_tokens": 0,
+          "image_tokens": 0
+        },
+        "prompt_tokens_details": {
+          "audio_tokens": 0,
+          "cached_tokens": 0,
+          "text_tokens": 0,
+          "image_tokens": 0
+        },
+        "usage_semantic": "openai",
+        "usage_source": "anthropic",
+        "input_tokens": 1459,
+        "output_tokens": 0,
+        "input_tokens_details": null,
+        "claude_cache_creation_5_m_tokens": 0,
+        "claude_cache_creation_1_h_tokens": 0
+      },
+      "response_format_used": "json_schema",
+      "parse_success": true,
+      "parse_error": "",
+      "empty_output": false,
+      "schema_missing": false,
+      "json_extractor_used": "first_json_object",
+      "elapsed_s": 7.513,
+      "cost_usd": 0.00139675
+    }
+  ],
+  "final_attempt": {
+    "attempt": 1,
+    "model": "claude-opus-4-7",
+    "provider": "Anthropic",
+    "budget_setting": "operational",
+    "task_id": "uncued_019_hidden",
+    "prompt_condition": "standard_answer",
+    "content": "{\n  \"claim_verdict\": \"refuted\",\n  \"confidence\": 0.78,\n  \"supporting_evidence\": [\"doc_002\"],\n  \"rejected_evidence\": [\"doc_003\"],\n  \"selected_doc_ids\": [\"doc_002\", \"doc_003\"],\n  \"actions\": [\n    {\"action\": \"trace_source\", \"target\": \"doc_003\", \"rationale\": \"The digest asserts 88 but cites only a routing note (doc_004) that contains no count. Tracing confirms it lacks primary support.\"},\n    {\"action\": \"compare_versions\", \"target\": \"doc_002\", \"rationale\": \"The month-close ledger is the authoritative row and lists 63, directly contradicting the 88 figure.\"}\n  ],\n  \"evidence_environment_assessment\": \"Four documents share site code, workstream, and close date, so labels alone cannot adjudicate. Only doc_002 (month-close ledger) provides a primary verified count: 63. doc_003 asserts 88 but cites doc_004, a routing note with chronology only and no total. doc_001 is a scheduling memo without figures. The ledger outranks the digest as a primary source, and the digest's citation chain does not substantiate 88.\",\n  \"answer\": \"No. The East Yard month-close ledger (doc_002) records 63 verified Orion battery swaps for April 2025. The operations digest (doc_003) claiming 88 cites only a routing note (doc_004) that provides chronology but no count, so its figure is unsupported. The claim of 88 is refuted by the primary ledger entry.\"\n}",
+    "usage": {
+      "completion_tokens": 516,
+      "prompt_tokens": 1459,
+      "total_tokens": 1975,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": null,
+        "audio_tokens": 0,
+        "reasoning_tokens": 0,
+        "rejected_prediction_tokens": null,
+        "text_tokens": 0,
+        "image_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cached_tokens": 0,
+        "text_tokens": 0,
+        "image_tokens": 0
+      },
+      "usage_semantic": "openai",
+      "usage_source": "anthropic",
+      "input_tokens": 1459,
+      "output_tokens": 0,
+      "input_tokens_details": null,
+      "claude_cache_creation_5_m_tokens": 0,
+      "claude_cache_creation_1_h_tokens": 0
+    },
+    "response_format_used": "json_schema",
+    "parse_success": true,
+    "parse_error": "",
+    "empty_output": false,
+    "schema_missing": false,
+    "json_extractor_used": "first_json_object",
+    "elapsed_s": 7.513,
+    "cost_usd": 0.00139675
+  }
+}

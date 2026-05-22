@@ -1,0 +1,90 @@
+{
+  "attempts": [
+    {
+      "attempt": 1,
+      "model": "claude-opus-4-7",
+      "provider": "Anthropic",
+      "budget_setting": "operational",
+      "task_id": "uncued_053_visible",
+      "prompt_condition": "standard_answer",
+      "content": "{\n  \"claim_verdict\": \"insufficient\",\n  \"confidence\": 0.3,\n  \"supporting_evidence\": [\"doc_001\", \"doc_002\"],\n  \"rejected_evidence\": [\"doc_003\", \"doc_004\"],\n  \"selected_doc_ids\": [\"doc_001\", \"doc_002\", \"doc_004\"],\n  \"actions\": [\n    {\"action\": \"trace_source\", \"target\": \"doc_001\", \"rationale\": \"doc_002 cites doc_001, but doc_001 is an unsourced community roundup with no operational record. Tracing for a primary source is needed.\"},\n    {\"action\": \"search_primary\", \"target\": \"Novalis Robotics SolaceGrid launch records\", \"rationale\": \"No primary registry or operational record confirms the launch; adjacent memos list only Kestrel firmware checks.\"}\n  ],\n  \"evidence_environment_assessment\": \"Two documents assert the launch but form a citation loop: doc_002 merely repeats doc_001, an unsourced roundup. The remaining documents (doc_003, doc_004) cover the same site and month but list only Kestrel firmware checks, neither confirming nor explicitly denying SolaceGrid. No primary registry, press release, or operational ledger entry is present. The packet shares site code, workstream, and close date across items, so label-based inference is unreliable.\",\n  \"answer\": \"Evidence is insufficient to confirm that Novalis Robotics launched the SolaceGrid repair exchange in August 2025. The only affirmative items (doc_001, doc_002) form a single-source loop with no primary record, while contemporaneous operations memos mention only Kestrel firmware checks without addressing SolaceGrid. A primary source trace is required.\"\n}",
+      "usage": {
+        "completion_tokens": 572,
+        "prompt_tokens": 1487,
+        "total_tokens": 2059,
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": null,
+          "audio_tokens": 0,
+          "reasoning_tokens": 0,
+          "rejected_prediction_tokens": null,
+          "text_tokens": 0,
+          "image_tokens": 0
+        },
+        "prompt_tokens_details": {
+          "audio_tokens": 0,
+          "cached_tokens": 0,
+          "text_tokens": 0,
+          "image_tokens": 0
+        },
+        "usage_semantic": "openai",
+        "usage_source": "anthropic",
+        "input_tokens": 1487,
+        "output_tokens": 0,
+        "input_tokens_details": null,
+        "claude_cache_creation_5_m_tokens": 0,
+        "claude_cache_creation_1_h_tokens": 0
+      },
+      "response_format_used": "json_schema",
+      "parse_success": true,
+      "parse_error": "",
+      "empty_output": false,
+      "schema_missing": false,
+      "json_extractor_used": "first_json_object",
+      "elapsed_s": 9.622,
+      "cost_usd": 0.0015157500000000002
+    }
+  ],
+  "final_attempt": {
+    "attempt": 1,
+    "model": "claude-opus-4-7",
+    "provider": "Anthropic",
+    "budget_setting": "operational",
+    "task_id": "uncued_053_visible",
+    "prompt_condition": "standard_answer",
+    "content": "{\n  \"claim_verdict\": \"insufficient\",\n  \"confidence\": 0.3,\n  \"supporting_evidence\": [\"doc_001\", \"doc_002\"],\n  \"rejected_evidence\": [\"doc_003\", \"doc_004\"],\n  \"selected_doc_ids\": [\"doc_001\", \"doc_002\", \"doc_004\"],\n  \"actions\": [\n    {\"action\": \"trace_source\", \"target\": \"doc_001\", \"rationale\": \"doc_002 cites doc_001, but doc_001 is an unsourced community roundup with no operational record. Tracing for a primary source is needed.\"},\n    {\"action\": \"search_primary\", \"target\": \"Novalis Robotics SolaceGrid launch records\", \"rationale\": \"No primary registry or operational record confirms the launch; adjacent memos list only Kestrel firmware checks.\"}\n  ],\n  \"evidence_environment_assessment\": \"Two documents assert the launch but form a citation loop: doc_002 merely repeats doc_001, an unsourced roundup. The remaining documents (doc_003, doc_004) cover the same site and month but list only Kestrel firmware checks, neither confirming nor explicitly denying SolaceGrid. No primary registry, press release, or operational ledger entry is present. The packet shares site code, workstream, and close date across items, so label-based inference is unreliable.\",\n  \"answer\": \"Evidence is insufficient to confirm that Novalis Robotics launched the SolaceGrid repair exchange in August 2025. The only affirmative items (doc_001, doc_002) form a single-source loop with no primary record, while contemporaneous operations memos mention only Kestrel firmware checks without addressing SolaceGrid. A primary source trace is required.\"\n}",
+    "usage": {
+      "completion_tokens": 572,
+      "prompt_tokens": 1487,
+      "total_tokens": 2059,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": null,
+        "audio_tokens": 0,
+        "reasoning_tokens": 0,
+        "rejected_prediction_tokens": null,
+        "text_tokens": 0,
+        "image_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cached_tokens": 0,
+        "text_tokens": 0,
+        "image_tokens": 0
+      },
+      "usage_semantic": "openai",
+      "usage_source": "anthropic",
+      "input_tokens": 1487,
+      "output_tokens": 0,
+      "input_tokens_details": null,
+      "claude_cache_creation_5_m_tokens": 0,
+      "claude_cache_creation_1_h_tokens": 0
+    },
+    "response_format_used": "json_schema",
+    "parse_success": true,
+    "parse_error": "",
+    "empty_output": false,
+    "schema_missing": false,
+    "json_extractor_used": "first_json_object",
+    "elapsed_s": 9.622,
+    "cost_usd": 0.0015157500000000002
+  }
+}

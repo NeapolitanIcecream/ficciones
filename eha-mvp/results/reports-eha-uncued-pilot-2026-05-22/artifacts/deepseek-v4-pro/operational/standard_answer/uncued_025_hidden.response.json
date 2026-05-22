@@ -1,0 +1,72 @@
+{
+  "attempts": [
+    {
+      "attempt": 1,
+      "model": "deepseek-v4-pro",
+      "provider": "DeepSeek",
+      "budget_setting": "operational",
+      "task_id": "uncued_025_hidden",
+      "prompt_condition": "standard_answer",
+      "content": "{\n  \"claim_verdict\": \"refuted\",\n  \"confidence\": 0.9,\n  \"supporting_evidence\": [\"doc_003\"],\n  \"rejected_evidence\": [\"doc_001\", \"doc_002\"],\n  \"selected_doc_ids\": [\"doc_001\", \"doc_002\", \"doc_003\"],\n  \"actions\": [\n    {\n      \"action\": \"trace_source\",\n      \"target\": \"doc_001\",\n      \"rationale\": \"doc_001 cites doc_002, which cites doc_001, forming a loop. Tracing backsources may expose fabrication.\"\n    },\n    {\n      \"action\": \"search_contradiction\",\n      \"target\": \"Orion battery swaps April 2025\",\n      \"rationale\": \"Search for independent records to verify the 63 count, given the circular citation among documents claiming 88.\"\n    }\n  ],\n  \"evidence_environment_assessment\": \"Conflicting data: doc_003 (closing ledger) reports 63 swaps; doc_001 and doc_002 claim 88 but cite each other circularly, undermining reliability. doc_004 lacks count. The circular citation pattern raises concerns of coordination or fabrication, leaving the ledger as the more credible source.\",\n  \"answer\": \"No, the closing ledger (doc_003) records 63 verified swaps, refuting the 88 claim. The other documents supporting 88 rely on a circular citation, making them unreliable.\"\n}",
+      "usage": {
+        "completion_tokens": 2528,
+        "prompt_tokens": 1055,
+        "total_tokens": 3583,
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": null,
+          "audio_tokens": null,
+          "reasoning_tokens": 2223,
+          "rejected_prediction_tokens": null
+        },
+        "prompt_tokens_details": {
+          "audio_tokens": null,
+          "cached_tokens": 0
+        },
+        "prompt_cache_hit_tokens": 0,
+        "prompt_cache_miss_tokens": 1055
+      },
+      "response_format_used": "json_object",
+      "parse_success": true,
+      "parse_error": "",
+      "empty_output": false,
+      "schema_missing": false,
+      "json_extractor_used": "first_json_object",
+      "elapsed_s": 65.34,
+      "cost_usd": 0.00531975
+    }
+  ],
+  "final_attempt": {
+    "attempt": 1,
+    "model": "deepseek-v4-pro",
+    "provider": "DeepSeek",
+    "budget_setting": "operational",
+    "task_id": "uncued_025_hidden",
+    "prompt_condition": "standard_answer",
+    "content": "{\n  \"claim_verdict\": \"refuted\",\n  \"confidence\": 0.9,\n  \"supporting_evidence\": [\"doc_003\"],\n  \"rejected_evidence\": [\"doc_001\", \"doc_002\"],\n  \"selected_doc_ids\": [\"doc_001\", \"doc_002\", \"doc_003\"],\n  \"actions\": [\n    {\n      \"action\": \"trace_source\",\n      \"target\": \"doc_001\",\n      \"rationale\": \"doc_001 cites doc_002, which cites doc_001, forming a loop. Tracing backsources may expose fabrication.\"\n    },\n    {\n      \"action\": \"search_contradiction\",\n      \"target\": \"Orion battery swaps April 2025\",\n      \"rationale\": \"Search for independent records to verify the 63 count, given the circular citation among documents claiming 88.\"\n    }\n  ],\n  \"evidence_environment_assessment\": \"Conflicting data: doc_003 (closing ledger) reports 63 swaps; doc_001 and doc_002 claim 88 but cite each other circularly, undermining reliability. doc_004 lacks count. The circular citation pattern raises concerns of coordination or fabrication, leaving the ledger as the more credible source.\",\n  \"answer\": \"No, the closing ledger (doc_003) records 63 verified swaps, refuting the 88 claim. The other documents supporting 88 rely on a circular citation, making them unreliable.\"\n}",
+    "usage": {
+      "completion_tokens": 2528,
+      "prompt_tokens": 1055,
+      "total_tokens": 3583,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": null,
+        "audio_tokens": null,
+        "reasoning_tokens": 2223,
+        "rejected_prediction_tokens": null
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": null,
+        "cached_tokens": 0
+      },
+      "prompt_cache_hit_tokens": 0,
+      "prompt_cache_miss_tokens": 1055
+    },
+    "response_format_used": "json_object",
+    "parse_success": true,
+    "parse_error": "",
+    "empty_output": false,
+    "schema_missing": false,
+    "json_extractor_used": "first_json_object",
+    "elapsed_s": 65.34,
+    "cost_usd": 0.00531975
+  }
+}

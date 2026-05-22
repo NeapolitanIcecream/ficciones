@@ -1,0 +1,90 @@
+{
+  "attempts": [
+    {
+      "attempt": 1,
+      "model": "claude-opus-4-7",
+      "provider": "Anthropic",
+      "budget_setting": "operational",
+      "task_id": "uncued_004_hidden",
+      "prompt_condition": "standard_answer",
+      "content": "{\n  \"claim_verdict\": \"supported\",\n  \"confidence\": 0.6,\n  \"supporting_evidence\": [\"doc_001\"],\n  \"rejected_evidence\": [\"doc_002\", \"doc_003\", \"doc_004\"],\n  \"selected_doc_ids\": [\"doc_001\", \"doc_002\", \"doc_003\"],\n  \"actions\": [\n    {\"action\": \"trace_source\", \"target\": \"doc_001\", \"rationale\": \"Verify the Harbor Annex monthly ledger entry against a primary source since it is the sole document providing the 118 figure.\"},\n    {\"action\": \"search_primary\", \"target\": \"Novalis Robotics July 2025 Nova pump refurbishment closing report\", \"rationale\": \"Confirm the count via an authoritative monthly close report rather than relying on a single ledger entry.\"}\n  ],\n  \"evidence_environment_assessment\": \"Only doc_001 provides the specific count of 118; doc_002, doc_003, and doc_004 give context (timing, route, site) but no tally. All documents are timestamped May 2025, predating the July 2025 period they describe, which is suspicious. No contradicting figure appears, but corroboration from a second independent source is absent.\",\n  \"answer\": \"Doc_001 states the Harbor Annex ledger logged 118 completed Nova pump refurbishments in July 2025, supporting the claim. Other documents provide consistent context but no counts. Confidence is moderate because only one document supplies the figure and timestamps predate the reporting period; primary-source verification is recommended.\"\n}",
+      "usage": {
+        "completion_tokens": 509,
+        "prompt_tokens": 1491,
+        "total_tokens": 2000,
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": null,
+          "audio_tokens": 0,
+          "reasoning_tokens": 0,
+          "rejected_prediction_tokens": null,
+          "text_tokens": 0,
+          "image_tokens": 0
+        },
+        "prompt_tokens_details": {
+          "audio_tokens": 0,
+          "cached_tokens": 0,
+          "text_tokens": 0,
+          "image_tokens": 0
+        },
+        "usage_semantic": "openai",
+        "usage_source": "anthropic",
+        "input_tokens": 1491,
+        "output_tokens": 0,
+        "input_tokens_details": null,
+        "claude_cache_creation_5_m_tokens": 0,
+        "claude_cache_creation_1_h_tokens": 0
+      },
+      "response_format_used": "json_schema",
+      "parse_success": true,
+      "parse_error": "",
+      "empty_output": false,
+      "schema_missing": false,
+      "json_extractor_used": "first_json_object",
+      "elapsed_s": 7.437,
+      "cost_usd": 0.00139075
+    }
+  ],
+  "final_attempt": {
+    "attempt": 1,
+    "model": "claude-opus-4-7",
+    "provider": "Anthropic",
+    "budget_setting": "operational",
+    "task_id": "uncued_004_hidden",
+    "prompt_condition": "standard_answer",
+    "content": "{\n  \"claim_verdict\": \"supported\",\n  \"confidence\": 0.6,\n  \"supporting_evidence\": [\"doc_001\"],\n  \"rejected_evidence\": [\"doc_002\", \"doc_003\", \"doc_004\"],\n  \"selected_doc_ids\": [\"doc_001\", \"doc_002\", \"doc_003\"],\n  \"actions\": [\n    {\"action\": \"trace_source\", \"target\": \"doc_001\", \"rationale\": \"Verify the Harbor Annex monthly ledger entry against a primary source since it is the sole document providing the 118 figure.\"},\n    {\"action\": \"search_primary\", \"target\": \"Novalis Robotics July 2025 Nova pump refurbishment closing report\", \"rationale\": \"Confirm the count via an authoritative monthly close report rather than relying on a single ledger entry.\"}\n  ],\n  \"evidence_environment_assessment\": \"Only doc_001 provides the specific count of 118; doc_002, doc_003, and doc_004 give context (timing, route, site) but no tally. All documents are timestamped May 2025, predating the July 2025 period they describe, which is suspicious. No contradicting figure appears, but corroboration from a second independent source is absent.\",\n  \"answer\": \"Doc_001 states the Harbor Annex ledger logged 118 completed Nova pump refurbishments in July 2025, supporting the claim. Other documents provide consistent context but no counts. Confidence is moderate because only one document supplies the figure and timestamps predate the reporting period; primary-source verification is recommended.\"\n}",
+    "usage": {
+      "completion_tokens": 509,
+      "prompt_tokens": 1491,
+      "total_tokens": 2000,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": null,
+        "audio_tokens": 0,
+        "reasoning_tokens": 0,
+        "rejected_prediction_tokens": null,
+        "text_tokens": 0,
+        "image_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cached_tokens": 0,
+        "text_tokens": 0,
+        "image_tokens": 0
+      },
+      "usage_semantic": "openai",
+      "usage_source": "anthropic",
+      "input_tokens": 1491,
+      "output_tokens": 0,
+      "input_tokens_details": null,
+      "claude_cache_creation_5_m_tokens": 0,
+      "claude_cache_creation_1_h_tokens": 0
+    },
+    "response_format_used": "json_schema",
+    "parse_success": true,
+    "parse_error": "",
+    "empty_output": false,
+    "schema_missing": false,
+    "json_extractor_used": "first_json_object",
+    "elapsed_s": 7.437,
+    "cost_usd": 0.00139075
+  }
+}

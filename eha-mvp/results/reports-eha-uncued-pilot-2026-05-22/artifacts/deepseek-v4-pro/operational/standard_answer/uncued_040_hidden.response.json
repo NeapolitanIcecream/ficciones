@@ -1,0 +1,72 @@
+{
+  "attempts": [
+    {
+      "attempt": 1,
+      "model": "deepseek-v4-pro",
+      "provider": "DeepSeek",
+      "budget_setting": "operational",
+      "task_id": "uncued_040_hidden",
+      "prompt_condition": "standard_answer",
+      "content": "{\"claim_verdict\": \"supported\", \"confidence\": 0.85, \"supporting_evidence\": [\"doc_004\"], \"rejected_evidence\": [\"doc_001\", \"doc_002\", \"doc_003\"], \"selected_doc_ids\": [\"doc_004\", \"doc_001\"], \"actions\": [{\"action\": \"open\", \"target\": \"doc_004\", \"rationale\": \"Verify the closeout ledger entry stating 118 completed refurbishments.\"}, {\"action\": \"compare_versions\", \"target\": \"doc_001, doc_004\", \"rationale\": \"Assess discrepancy between the estimate of 139 and the final ledger of 118.\"}], \"evidence_environment_assessment\": \"The environment contains one document (doc_004) claiming 118 completed refurbishments from a closeout ledger, one estimate (doc_001) of 139, and two documents without final numbers (doc_002, doc_003). The estimate references a planning memo (doc_003) that predates the close. The closeout ledger is a later, more authoritative record, suggesting the estimate was superseded. Contradiction exists but the ledger is likely reliable given its role.\", \"answer\": \"Yes, according to the closeout ledger (doc_004), Novalis Robotics logged 118 completed refurbishments for Nova pump refurbishments in July 2025.\"}",
+      "usage": {
+        "completion_tokens": 1872,
+        "prompt_tokens": 1043,
+        "total_tokens": 2915,
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": null,
+          "audio_tokens": null,
+          "reasoning_tokens": 1581,
+          "rejected_prediction_tokens": null
+        },
+        "prompt_tokens_details": {
+          "audio_tokens": null,
+          "cached_tokens": 256
+        },
+        "prompt_cache_hit_tokens": 256,
+        "prompt_cache_miss_tokens": 787
+      },
+      "response_format_used": "json_object",
+      "parse_success": true,
+      "parse_error": "",
+      "empty_output": false,
+      "schema_missing": false,
+      "json_extractor_used": "first_json_object",
+      "elapsed_s": 38.109,
+      "cost_usd": 0.00400475
+    }
+  ],
+  "final_attempt": {
+    "attempt": 1,
+    "model": "deepseek-v4-pro",
+    "provider": "DeepSeek",
+    "budget_setting": "operational",
+    "task_id": "uncued_040_hidden",
+    "prompt_condition": "standard_answer",
+    "content": "{\"claim_verdict\": \"supported\", \"confidence\": 0.85, \"supporting_evidence\": [\"doc_004\"], \"rejected_evidence\": [\"doc_001\", \"doc_002\", \"doc_003\"], \"selected_doc_ids\": [\"doc_004\", \"doc_001\"], \"actions\": [{\"action\": \"open\", \"target\": \"doc_004\", \"rationale\": \"Verify the closeout ledger entry stating 118 completed refurbishments.\"}, {\"action\": \"compare_versions\", \"target\": \"doc_001, doc_004\", \"rationale\": \"Assess discrepancy between the estimate of 139 and the final ledger of 118.\"}], \"evidence_environment_assessment\": \"The environment contains one document (doc_004) claiming 118 completed refurbishments from a closeout ledger, one estimate (doc_001) of 139, and two documents without final numbers (doc_002, doc_003). The estimate references a planning memo (doc_003) that predates the close. The closeout ledger is a later, more authoritative record, suggesting the estimate was superseded. Contradiction exists but the ledger is likely reliable given its role.\", \"answer\": \"Yes, according to the closeout ledger (doc_004), Novalis Robotics logged 118 completed refurbishments for Nova pump refurbishments in July 2025.\"}",
+    "usage": {
+      "completion_tokens": 1872,
+      "prompt_tokens": 1043,
+      "total_tokens": 2915,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": null,
+        "audio_tokens": null,
+        "reasoning_tokens": 1581,
+        "rejected_prediction_tokens": null
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": null,
+        "cached_tokens": 256
+      },
+      "prompt_cache_hit_tokens": 256,
+      "prompt_cache_miss_tokens": 787
+    },
+    "response_format_used": "json_object",
+    "parse_success": true,
+    "parse_error": "",
+    "empty_output": false,
+    "schema_missing": false,
+    "json_extractor_used": "first_json_object",
+    "elapsed_s": 38.109,
+    "cost_usd": 0.00400475
+  }
+}

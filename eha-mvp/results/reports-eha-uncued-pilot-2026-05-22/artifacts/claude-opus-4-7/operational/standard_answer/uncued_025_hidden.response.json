@@ -1,0 +1,90 @@
+{
+  "attempts": [
+    {
+      "attempt": 1,
+      "model": "claude-opus-4-7",
+      "provider": "Anthropic",
+      "budget_setting": "operational",
+      "task_id": "uncued_025_hidden",
+      "prompt_condition": "standard_answer",
+      "content": "{\n  \"claim_verdict\": \"insufficient\",\n  \"confidence\": 0.55,\n  \"supporting_evidence\": [\"doc_001\", \"doc_002\"],\n  \"rejected_evidence\": [\"doc_003\"],\n  \"selected_doc_ids\": [\"doc_003\", \"doc_002\", \"doc_001\"],\n  \"actions\": [\n    {\"action\": \"trace_source\", \"target\": \"doc_002\", \"rationale\": \"The partner summary (doc_001) and weekly digest (doc_002) cite each other circularly; tracing to a primary count sheet is needed to verify the 88 figure.\"},\n    {\"action\": \"search_primary\", \"target\": \"East Yard depot closing ledger\", \"rationale\": \"doc_003 is a closing ledger giving 63, which typically outranks summaries. A primary ledger source should be located to resolve the conflict.\"}\n  ],\n  \"evidence_environment_assessment\": \"The packet contains a circular citation loop: doc_001 cites doc_002, which cites doc_001, both reporting 88. doc_003, a closing ledger, reports 63 and is the only independent count. doc_004 lacks a count. Summaries citing each other do not constitute independent corroboration, while a ledger is typically a higher-tier source. Evidence is conflicting, with the more authoritative document refuting the claim, but no truly primary source is visible.\",\n  \"answer\": \"Evidence is conflicting and insufficient to confirm 88. Two notes (doc_001, doc_002) report 88 but cite each other circularly, providing no independent corroboration. The closing ledger (doc_003) reports 63 verified swaps, which is normally a more authoritative source. Without access to a primary count sheet, the 88 figure cannot be verified and is contradicted by the ledger.\"\n}",
+      "usage": {
+        "completion_tokens": 587,
+        "prompt_tokens": 1482,
+        "total_tokens": 2069,
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": null,
+          "audio_tokens": 0,
+          "reasoning_tokens": 0,
+          "rejected_prediction_tokens": null,
+          "text_tokens": 0,
+          "image_tokens": 0
+        },
+        "prompt_tokens_details": {
+          "audio_tokens": 0,
+          "cached_tokens": 0,
+          "text_tokens": 0,
+          "image_tokens": 0
+        },
+        "usage_semantic": "openai",
+        "usage_source": "anthropic",
+        "input_tokens": 1482,
+        "output_tokens": 0,
+        "input_tokens_details": null,
+        "claude_cache_creation_5_m_tokens": 0,
+        "claude_cache_creation_1_h_tokens": 0
+      },
+      "response_format_used": "json_schema",
+      "parse_success": true,
+      "parse_error": "",
+      "empty_output": false,
+      "schema_missing": false,
+      "json_extractor_used": "first_json_object",
+      "elapsed_s": 9.512,
+      "cost_usd": 0.0015444999999999999
+    }
+  ],
+  "final_attempt": {
+    "attempt": 1,
+    "model": "claude-opus-4-7",
+    "provider": "Anthropic",
+    "budget_setting": "operational",
+    "task_id": "uncued_025_hidden",
+    "prompt_condition": "standard_answer",
+    "content": "{\n  \"claim_verdict\": \"insufficient\",\n  \"confidence\": 0.55,\n  \"supporting_evidence\": [\"doc_001\", \"doc_002\"],\n  \"rejected_evidence\": [\"doc_003\"],\n  \"selected_doc_ids\": [\"doc_003\", \"doc_002\", \"doc_001\"],\n  \"actions\": [\n    {\"action\": \"trace_source\", \"target\": \"doc_002\", \"rationale\": \"The partner summary (doc_001) and weekly digest (doc_002) cite each other circularly; tracing to a primary count sheet is needed to verify the 88 figure.\"},\n    {\"action\": \"search_primary\", \"target\": \"East Yard depot closing ledger\", \"rationale\": \"doc_003 is a closing ledger giving 63, which typically outranks summaries. A primary ledger source should be located to resolve the conflict.\"}\n  ],\n  \"evidence_environment_assessment\": \"The packet contains a circular citation loop: doc_001 cites doc_002, which cites doc_001, both reporting 88. doc_003, a closing ledger, reports 63 and is the only independent count. doc_004 lacks a count. Summaries citing each other do not constitute independent corroboration, while a ledger is typically a higher-tier source. Evidence is conflicting, with the more authoritative document refuting the claim, but no truly primary source is visible.\",\n  \"answer\": \"Evidence is conflicting and insufficient to confirm 88. Two notes (doc_001, doc_002) report 88 but cite each other circularly, providing no independent corroboration. The closing ledger (doc_003) reports 63 verified swaps, which is normally a more authoritative source. Without access to a primary count sheet, the 88 figure cannot be verified and is contradicted by the ledger.\"\n}",
+    "usage": {
+      "completion_tokens": 587,
+      "prompt_tokens": 1482,
+      "total_tokens": 2069,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": null,
+        "audio_tokens": 0,
+        "reasoning_tokens": 0,
+        "rejected_prediction_tokens": null,
+        "text_tokens": 0,
+        "image_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cached_tokens": 0,
+        "text_tokens": 0,
+        "image_tokens": 0
+      },
+      "usage_semantic": "openai",
+      "usage_source": "anthropic",
+      "input_tokens": 1482,
+      "output_tokens": 0,
+      "input_tokens_details": null,
+      "claude_cache_creation_5_m_tokens": 0,
+      "claude_cache_creation_1_h_tokens": 0
+    },
+    "response_format_used": "json_schema",
+    "parse_success": true,
+    "parse_error": "",
+    "empty_output": false,
+    "schema_missing": false,
+    "json_extractor_used": "first_json_object",
+    "elapsed_s": 9.512,
+    "cost_usd": 0.0015444999999999999
+  }
+}

@@ -1,0 +1,90 @@
+{
+  "attempts": [
+    {
+      "attempt": 1,
+      "model": "claude-opus-4-7",
+      "provider": "Anthropic",
+      "budget_setting": "operational",
+      "task_id": "uncued_036_hidden",
+      "prompt_condition": "standard_answer",
+      "content": "{\n  \"claim_verdict\": \"supported\",\n  \"confidence\": 0.82,\n  \"supporting_evidence\": [\"doc_002\"],\n  \"rejected_evidence\": [\"doc_004\", \"doc_003\", \"doc_001\"],\n  \"selected_doc_ids\": [\"doc_002\", \"doc_004\", \"doc_003\"],\n  \"actions\": [\n    {\"action\": \"trace_source\", \"target\": \"doc_002\", \"rationale\": \"Confirm the closeout ledger is the authoritative final record for the March 2025 close.\"},\n    {\"action\": \"compare_versions\", \"target\": \"doc_004 vs doc_002\", \"rationale\": \"Reconcile the 211 running estimate against the 184 final ledger figure.\"}\n  ],\n  \"evidence_environment_assessment\": \"Four documents share site code, workstream, and close date. doc_002 is a closeout ledger dated at monthly close with a definitive 184 figure. doc_004 offers a competing 211 figure but explicitly frames itself as a running estimate citing a pre-close planning memo (doc_003), which itself disclaims having a final number. doc_001 is a handoff note with no count. The ledger outranks estimates and planning notes for a closed-month count, so the environment supports the claim despite a superficially conflicting estimate.\",\n  \"answer\": \"Yes. The closeout ledger (doc_002) records 184 completed Atlas valve checks for March 2025. The 211 figure in doc_004 is a pre-close running estimate derived from planning memo doc_003, which lacks a final number, so it does not override the ledger.\"\n}",
+      "usage": {
+        "completion_tokens": 522,
+        "prompt_tokens": 1446,
+        "total_tokens": 1968,
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": null,
+          "audio_tokens": 0,
+          "reasoning_tokens": 0,
+          "rejected_prediction_tokens": null,
+          "text_tokens": 0,
+          "image_tokens": 0
+        },
+        "prompt_tokens_details": {
+          "audio_tokens": 0,
+          "cached_tokens": 0,
+          "text_tokens": 0,
+          "image_tokens": 0
+        },
+        "usage_semantic": "openai",
+        "usage_source": "anthropic",
+        "input_tokens": 1446,
+        "output_tokens": 0,
+        "input_tokens_details": null,
+        "claude_cache_creation_5_m_tokens": 0,
+        "claude_cache_creation_1_h_tokens": 0
+      },
+      "response_format_used": "json_schema",
+      "parse_success": true,
+      "parse_error": "",
+      "empty_output": false,
+      "schema_missing": false,
+      "json_extractor_used": "first_json_object",
+      "elapsed_s": 11.455,
+      "cost_usd": 0.0014055
+    }
+  ],
+  "final_attempt": {
+    "attempt": 1,
+    "model": "claude-opus-4-7",
+    "provider": "Anthropic",
+    "budget_setting": "operational",
+    "task_id": "uncued_036_hidden",
+    "prompt_condition": "standard_answer",
+    "content": "{\n  \"claim_verdict\": \"supported\",\n  \"confidence\": 0.82,\n  \"supporting_evidence\": [\"doc_002\"],\n  \"rejected_evidence\": [\"doc_004\", \"doc_003\", \"doc_001\"],\n  \"selected_doc_ids\": [\"doc_002\", \"doc_004\", \"doc_003\"],\n  \"actions\": [\n    {\"action\": \"trace_source\", \"target\": \"doc_002\", \"rationale\": \"Confirm the closeout ledger is the authoritative final record for the March 2025 close.\"},\n    {\"action\": \"compare_versions\", \"target\": \"doc_004 vs doc_002\", \"rationale\": \"Reconcile the 211 running estimate against the 184 final ledger figure.\"}\n  ],\n  \"evidence_environment_assessment\": \"Four documents share site code, workstream, and close date. doc_002 is a closeout ledger dated at monthly close with a definitive 184 figure. doc_004 offers a competing 211 figure but explicitly frames itself as a running estimate citing a pre-close planning memo (doc_003), which itself disclaims having a final number. doc_001 is a handoff note with no count. The ledger outranks estimates and planning notes for a closed-month count, so the environment supports the claim despite a superficially conflicting estimate.\",\n  \"answer\": \"Yes. The closeout ledger (doc_002) records 184 completed Atlas valve checks for March 2025. The 211 figure in doc_004 is a pre-close running estimate derived from planning memo doc_003, which lacks a final number, so it does not override the ledger.\"\n}",
+    "usage": {
+      "completion_tokens": 522,
+      "prompt_tokens": 1446,
+      "total_tokens": 1968,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": null,
+        "audio_tokens": 0,
+        "reasoning_tokens": 0,
+        "rejected_prediction_tokens": null,
+        "text_tokens": 0,
+        "image_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cached_tokens": 0,
+        "text_tokens": 0,
+        "image_tokens": 0
+      },
+      "usage_semantic": "openai",
+      "usage_source": "anthropic",
+      "input_tokens": 1446,
+      "output_tokens": 0,
+      "input_tokens_details": null,
+      "claude_cache_creation_5_m_tokens": 0,
+      "claude_cache_creation_1_h_tokens": 0
+    },
+    "response_format_used": "json_schema",
+    "parse_success": true,
+    "parse_error": "",
+    "empty_output": false,
+    "schema_missing": false,
+    "json_extractor_used": "first_json_object",
+    "elapsed_s": 11.455,
+    "cost_usd": 0.0014055
+  }
+}

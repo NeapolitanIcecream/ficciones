@@ -1,0 +1,90 @@
+{
+  "attempts": [
+    {
+      "attempt": 1,
+      "model": "claude-opus-4-7",
+      "provider": "Anthropic",
+      "budget_setting": "operational",
+      "task_id": "uncued_015_hidden",
+      "prompt_condition": "standard_answer",
+      "content": "{\n  \"claim_verdict\": \"refuted\",\n  \"confidence\": 0.7,\n  \"supporting_evidence\": [\"doc_002\"],\n  \"rejected_evidence\": [\"doc_004\"],\n  \"selected_doc_ids\": [\"doc_004\", \"doc_002\", \"doc_001\"],\n  \"actions\": [\n    {\"action\": \"trace_source\", \"target\": \"doc_002\", \"rationale\": \"Digest claiming 57 cites doc_001, which is only a routing note without a count, so the 57 figure lacks primary support.\"},\n    {\"action\": \"compare_versions\", \"target\": \"doc_004\", \"rationale\": \"Month-close ledger gives 42, the most authoritative figure; compare against the digest's 57 to resolve the conflict.\"}\n  ],\n  \"evidence_environment_assessment\": \"Four documents share site code, workstream, and close date. Doc_004 is a month-close ledger (primary-like) stating 42 accepted inspections. Doc_002 is an operations digest stating 57 but cites only doc_001, a routing note that contains no total. Doc_003 is a scheduling memo with no count. The 57 figure has no traceable primary source; the ledger figure of 42 is the strongest evidence. The environment is mildly polluted: a derivative digest contradicts a ledger via an empty citation chain.\",\n  \"answer\": \"No. The month-close ledger (doc_004) records 42 accepted Vega rail inspections for June 2025, not 57. The only document asserting 57 (doc_002) is a brief operations digest whose sole citation (doc_001) is a routing note containing no count, leaving the 57 figure unsupported by any primary record. The claim is refuted by the ledger.\"\n}",
+      "usage": {
+        "completion_tokens": 563,
+        "prompt_tokens": 1463,
+        "total_tokens": 2026,
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": null,
+          "audio_tokens": 0,
+          "reasoning_tokens": 0,
+          "rejected_prediction_tokens": null,
+          "text_tokens": 0,
+          "image_tokens": 0
+        },
+        "prompt_tokens_details": {
+          "audio_tokens": 0,
+          "cached_tokens": 0,
+          "text_tokens": 0,
+          "image_tokens": 0
+        },
+        "usage_semantic": "openai",
+        "usage_source": "anthropic",
+        "input_tokens": 1463,
+        "output_tokens": 0,
+        "input_tokens_details": null,
+        "claude_cache_creation_5_m_tokens": 0,
+        "claude_cache_creation_1_h_tokens": 0
+      },
+      "response_format_used": "json_schema",
+      "parse_success": true,
+      "parse_error": "",
+      "empty_output": false,
+      "schema_missing": false,
+      "json_extractor_used": "first_json_object",
+      "elapsed_s": 14.065,
+      "cost_usd": 0.00149175
+    }
+  ],
+  "final_attempt": {
+    "attempt": 1,
+    "model": "claude-opus-4-7",
+    "provider": "Anthropic",
+    "budget_setting": "operational",
+    "task_id": "uncued_015_hidden",
+    "prompt_condition": "standard_answer",
+    "content": "{\n  \"claim_verdict\": \"refuted\",\n  \"confidence\": 0.7,\n  \"supporting_evidence\": [\"doc_002\"],\n  \"rejected_evidence\": [\"doc_004\"],\n  \"selected_doc_ids\": [\"doc_004\", \"doc_002\", \"doc_001\"],\n  \"actions\": [\n    {\"action\": \"trace_source\", \"target\": \"doc_002\", \"rationale\": \"Digest claiming 57 cites doc_001, which is only a routing note without a count, so the 57 figure lacks primary support.\"},\n    {\"action\": \"compare_versions\", \"target\": \"doc_004\", \"rationale\": \"Month-close ledger gives 42, the most authoritative figure; compare against the digest's 57 to resolve the conflict.\"}\n  ],\n  \"evidence_environment_assessment\": \"Four documents share site code, workstream, and close date. Doc_004 is a month-close ledger (primary-like) stating 42 accepted inspections. Doc_002 is an operations digest stating 57 but cites only doc_001, a routing note that contains no total. Doc_003 is a scheduling memo with no count. The 57 figure has no traceable primary source; the ledger figure of 42 is the strongest evidence. The environment is mildly polluted: a derivative digest contradicts a ledger via an empty citation chain.\",\n  \"answer\": \"No. The month-close ledger (doc_004) records 42 accepted Vega rail inspections for June 2025, not 57. The only document asserting 57 (doc_002) is a brief operations digest whose sole citation (doc_001) is a routing note containing no count, leaving the 57 figure unsupported by any primary record. The claim is refuted by the ledger.\"\n}",
+    "usage": {
+      "completion_tokens": 563,
+      "prompt_tokens": 1463,
+      "total_tokens": 2026,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": null,
+        "audio_tokens": 0,
+        "reasoning_tokens": 0,
+        "rejected_prediction_tokens": null,
+        "text_tokens": 0,
+        "image_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cached_tokens": 0,
+        "text_tokens": 0,
+        "image_tokens": 0
+      },
+      "usage_semantic": "openai",
+      "usage_source": "anthropic",
+      "input_tokens": 1463,
+      "output_tokens": 0,
+      "input_tokens_details": null,
+      "claude_cache_creation_5_m_tokens": 0,
+      "claude_cache_creation_1_h_tokens": 0
+    },
+    "response_format_used": "json_schema",
+    "parse_success": true,
+    "parse_error": "",
+    "empty_output": false,
+    "schema_missing": false,
+    "json_extractor_used": "first_json_object",
+    "elapsed_s": 14.065,
+    "cost_usd": 0.00149175
+  }
+}

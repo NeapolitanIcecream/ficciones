@@ -1,0 +1,90 @@
+{
+  "attempts": [
+    {
+      "attempt": 1,
+      "model": "gpt-5.5",
+      "provider": "OpenAI",
+      "budget_setting": "operational",
+      "task_id": "uncued_002_visible",
+      "prompt_condition": "standard_answer",
+      "content": "{\"actions\":[{\"action\":\"open\",\"rationale\":\"Most directly states the monthly ledger count for the relevant workstream and month.\",\"target\":\"doc_003\"},{\"action\":\"search_contradiction\",\"rationale\":\"Check remaining packet items for conflicting final counts; none provide a count.\",\"target\":\"doc_001, doc_002, doc_004\"}],\"answer\":\"Yes. The claim is supported: doc_003 states that the monthly ledger for Westhaven lab lists 97 closed tickets for Mira sensor recalibrations in May 2025. Other documents provide context but no conflicting count.\",\"claim_verdict\":\"supported\",\"confidence\":0.84,\"evidence_environment_assessment\":\"The environment contains one directly relevant ledger-like statement and three contextual notes that explicitly lack final counts. There is no contradiction, but the strongest evidence is a field summary memo describing a monthly ledger rather than the ledger itself, so confidence is high but not maximal.\",\"rejected_evidence\":[\"doc_001\",\"doc_002\",\"doc_004\"],\"selected_doc_ids\":[\"doc_003\",\"doc_001\",\"doc_002\"],\"supporting_evidence\":[\"doc_003\"]}",
+      "usage": {
+        "completion_tokens": 244,
+        "prompt_tokens": 1211,
+        "total_tokens": 1455,
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": 0,
+          "audio_tokens": 0,
+          "reasoning_tokens": 0,
+          "rejected_prediction_tokens": 0
+        },
+        "prompt_tokens_details": {
+          "audio_tokens": 0,
+          "cached_tokens": 0
+        },
+        "latency_checkpoint": {
+          "engine_tbt_ms": 18,
+          "engine_ttft_ms": 934,
+          "engine_ttlt_ms": 5219,
+          "pre_inference_ms": 136,
+          "service_tbt_ms": 18,
+          "service_ttft_ms": 1306,
+          "service_ttlt_ms": 5590,
+          "total_duration_ms": 5460,
+          "user_visible_ttft_ms": 1170
+        }
+      },
+      "response_format_used": "json_schema",
+      "parse_success": true,
+      "parse_error": "",
+      "empty_output": false,
+      "schema_missing": false,
+      "json_extractor_used": "first_json_object",
+      "elapsed_s": 7.223,
+      "cost_usd": 0.013375000000000001
+    }
+  ],
+  "final_attempt": {
+    "attempt": 1,
+    "model": "gpt-5.5",
+    "provider": "OpenAI",
+    "budget_setting": "operational",
+    "task_id": "uncued_002_visible",
+    "prompt_condition": "standard_answer",
+    "content": "{\"actions\":[{\"action\":\"open\",\"rationale\":\"Most directly states the monthly ledger count for the relevant workstream and month.\",\"target\":\"doc_003\"},{\"action\":\"search_contradiction\",\"rationale\":\"Check remaining packet items for conflicting final counts; none provide a count.\",\"target\":\"doc_001, doc_002, doc_004\"}],\"answer\":\"Yes. The claim is supported: doc_003 states that the monthly ledger for Westhaven lab lists 97 closed tickets for Mira sensor recalibrations in May 2025. Other documents provide context but no conflicting count.\",\"claim_verdict\":\"supported\",\"confidence\":0.84,\"evidence_environment_assessment\":\"The environment contains one directly relevant ledger-like statement and three contextual notes that explicitly lack final counts. There is no contradiction, but the strongest evidence is a field summary memo describing a monthly ledger rather than the ledger itself, so confidence is high but not maximal.\",\"rejected_evidence\":[\"doc_001\",\"doc_002\",\"doc_004\"],\"selected_doc_ids\":[\"doc_003\",\"doc_001\",\"doc_002\"],\"supporting_evidence\":[\"doc_003\"]}",
+    "usage": {
+      "completion_tokens": 244,
+      "prompt_tokens": 1211,
+      "total_tokens": 1455,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": 0,
+        "audio_tokens": 0,
+        "reasoning_tokens": 0,
+        "rejected_prediction_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cached_tokens": 0
+      },
+      "latency_checkpoint": {
+        "engine_tbt_ms": 18,
+        "engine_ttft_ms": 934,
+        "engine_ttlt_ms": 5219,
+        "pre_inference_ms": 136,
+        "service_tbt_ms": 18,
+        "service_ttft_ms": 1306,
+        "service_ttlt_ms": 5590,
+        "total_duration_ms": 5460,
+        "user_visible_ttft_ms": 1170
+      }
+    },
+    "response_format_used": "json_schema",
+    "parse_success": true,
+    "parse_error": "",
+    "empty_output": false,
+    "schema_missing": false,
+    "json_extractor_used": "first_json_object",
+    "elapsed_s": 7.223,
+    "cost_usd": 0.013375000000000001
+  }
+}

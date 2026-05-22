@@ -1,0 +1,90 @@
+{
+  "attempts": [
+    {
+      "attempt": 1,
+      "model": "claude-opus-4-7",
+      "provider": "Anthropic",
+      "budget_setting": "operational",
+      "task_id": "uncued_046_hidden",
+      "prompt_condition": "standard_answer",
+      "content": "{\n  \"claim_verdict\": \"supported\",\n  \"confidence\": 0.82,\n  \"supporting_evidence\": [\"doc_002\"],\n  \"rejected_evidence\": [\"doc_004\"],\n  \"selected_doc_ids\": [\"doc_002\", \"doc_004\", \"doc_001\"],\n  \"actions\": [\n    {\"action\": \"compare_versions\", \"target\": \"doc_002 vs doc_004\", \"rationale\": \"Closeout ledger (118) postdates the digest estimate (139) and reflects the final close, making it the authoritative figure.\"},\n    {\"action\": \"trace_source\", \"target\": \"doc_004\", \"rationale\": \"Digest cites doc_001, a planning memo with no final number, so its 139 estimate lacks primary support.\"}\n  ],\n  \"evidence_environment_assessment\": \"Four documents share labels but differ in authority and timing. doc_001 (planning memo) and doc_003 (handoff) carry no counts. doc_004 is a pre-close digest estimate (139) sourced to the planning memo. doc_002 is the closeout ledger with the final close date showing 118. The ledger is the appropriate primary record for completed counts; the digest is explicitly an estimate. Conflict resolves in favor of the closeout ledger.\",\n  \"answer\": \"Yes. The closeout ledger (doc_002) records 118 completed Nova pump refurbishments for July 2025. The competing 139 figure in doc_004 is a pre-close running estimate citing only the planning memo (doc_001), which contains no final number. The ledger's later timestamp and role as the closing record make 118 the authoritative count.\"\n}",
+      "usage": {
+        "completion_tokens": 536,
+        "prompt_tokens": 1462,
+        "total_tokens": 1998,
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": null,
+          "audio_tokens": 0,
+          "reasoning_tokens": 0,
+          "rejected_prediction_tokens": null,
+          "text_tokens": 0,
+          "image_tokens": 0
+        },
+        "prompt_tokens_details": {
+          "audio_tokens": 0,
+          "cached_tokens": 0,
+          "text_tokens": 0,
+          "image_tokens": 0
+        },
+        "usage_semantic": "openai",
+        "usage_source": "anthropic",
+        "input_tokens": 1462,
+        "output_tokens": 0,
+        "input_tokens_details": null,
+        "claude_cache_creation_5_m_tokens": 0,
+        "claude_cache_creation_1_h_tokens": 0
+      },
+      "response_format_used": "json_schema",
+      "parse_success": true,
+      "parse_error": "",
+      "empty_output": false,
+      "schema_missing": false,
+      "json_extractor_used": "first_json_object",
+      "elapsed_s": 24.817,
+      "cost_usd": 0.0014375
+    }
+  ],
+  "final_attempt": {
+    "attempt": 1,
+    "model": "claude-opus-4-7",
+    "provider": "Anthropic",
+    "budget_setting": "operational",
+    "task_id": "uncued_046_hidden",
+    "prompt_condition": "standard_answer",
+    "content": "{\n  \"claim_verdict\": \"supported\",\n  \"confidence\": 0.82,\n  \"supporting_evidence\": [\"doc_002\"],\n  \"rejected_evidence\": [\"doc_004\"],\n  \"selected_doc_ids\": [\"doc_002\", \"doc_004\", \"doc_001\"],\n  \"actions\": [\n    {\"action\": \"compare_versions\", \"target\": \"doc_002 vs doc_004\", \"rationale\": \"Closeout ledger (118) postdates the digest estimate (139) and reflects the final close, making it the authoritative figure.\"},\n    {\"action\": \"trace_source\", \"target\": \"doc_004\", \"rationale\": \"Digest cites doc_001, a planning memo with no final number, so its 139 estimate lacks primary support.\"}\n  ],\n  \"evidence_environment_assessment\": \"Four documents share labels but differ in authority and timing. doc_001 (planning memo) and doc_003 (handoff) carry no counts. doc_004 is a pre-close digest estimate (139) sourced to the planning memo. doc_002 is the closeout ledger with the final close date showing 118. The ledger is the appropriate primary record for completed counts; the digest is explicitly an estimate. Conflict resolves in favor of the closeout ledger.\",\n  \"answer\": \"Yes. The closeout ledger (doc_002) records 118 completed Nova pump refurbishments for July 2025. The competing 139 figure in doc_004 is a pre-close running estimate citing only the planning memo (doc_001), which contains no final number. The ledger's later timestamp and role as the closing record make 118 the authoritative count.\"\n}",
+    "usage": {
+      "completion_tokens": 536,
+      "prompt_tokens": 1462,
+      "total_tokens": 1998,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": null,
+        "audio_tokens": 0,
+        "reasoning_tokens": 0,
+        "rejected_prediction_tokens": null,
+        "text_tokens": 0,
+        "image_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cached_tokens": 0,
+        "text_tokens": 0,
+        "image_tokens": 0
+      },
+      "usage_semantic": "openai",
+      "usage_source": "anthropic",
+      "input_tokens": 1462,
+      "output_tokens": 0,
+      "input_tokens_details": null,
+      "claude_cache_creation_5_m_tokens": 0,
+      "claude_cache_creation_1_h_tokens": 0
+    },
+    "response_format_used": "json_schema",
+    "parse_success": true,
+    "parse_error": "",
+    "empty_output": false,
+    "schema_missing": false,
+    "json_extractor_used": "first_json_object",
+    "elapsed_s": 24.817,
+    "cost_usd": 0.0014375
+  }
+}

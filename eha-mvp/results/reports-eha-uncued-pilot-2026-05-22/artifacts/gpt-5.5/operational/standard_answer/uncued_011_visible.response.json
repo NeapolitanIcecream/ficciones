@@ -1,0 +1,90 @@
+{
+  "attempts": [
+    {
+      "attempt": 1,
+      "model": "gpt-5.5",
+      "provider": "OpenAI",
+      "budget_setting": "operational",
+      "task_id": "uncued_011_visible",
+      "prompt_condition": "standard_answer",
+      "content": "{\"actions\":[{\"action\":\"open\",\"rationale\":\"Inspect the only document reporting a final count for the Kestrel firmware checks.\",\"target\":\"doc_002\"},{\"action\":\"search_contradiction\",\"rationale\":\"Check whether any provided document supports the 101-count claim.\",\"target\":\"provided document set\"}],\"answer\":\"No. The provided evidence refutes the claim: doc_002 reports 76 approved checks for Kestrel firmware checks in August 2025 and explicitly says no line in the packet lists 101 for this workstream.\",\"claim_verdict\":\"refuted\",\"confidence\":0.9,\"evidence_environment_assessment\":\"The environment is small and mostly indirect. Only doc_002 reports a numerical closing count, while doc_001, doc_003, and doc_004 share contextual identifiers but omit the final count. No document supports 101; the single count-bearing document directly contradicts it.\",\"rejected_evidence\":[\"doc_001\",\"doc_003\",\"doc_004\"],\"selected_doc_ids\":[\"doc_002\",\"doc_001\",\"doc_003\"],\"supporting_evidence\":[\"doc_002\"]}",
+      "usage": {
+        "completion_tokens": 387,
+        "prompt_tokens": 1175,
+        "total_tokens": 1562,
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": 0,
+          "audio_tokens": 0,
+          "reasoning_tokens": 140,
+          "rejected_prediction_tokens": 0
+        },
+        "prompt_tokens_details": {
+          "audio_tokens": 0,
+          "cached_tokens": 0
+        },
+        "latency_checkpoint": {
+          "engine_tbt_ms": 27,
+          "engine_ttft_ms": 517,
+          "engine_ttlt_ms": 11062,
+          "pre_inference_ms": 115,
+          "service_tbt_ms": 27,
+          "service_ttft_ms": 761,
+          "service_ttlt_ms": 11314,
+          "total_duration_ms": 11199,
+          "user_visible_ttft_ms": 646
+        }
+      },
+      "response_format_used": "json_schema",
+      "parse_success": true,
+      "parse_error": "",
+      "empty_output": false,
+      "schema_missing": false,
+      "json_extractor_used": "first_json_object",
+      "elapsed_s": 12.672,
+      "cost_usd": 0.017485
+    }
+  ],
+  "final_attempt": {
+    "attempt": 1,
+    "model": "gpt-5.5",
+    "provider": "OpenAI",
+    "budget_setting": "operational",
+    "task_id": "uncued_011_visible",
+    "prompt_condition": "standard_answer",
+    "content": "{\"actions\":[{\"action\":\"open\",\"rationale\":\"Inspect the only document reporting a final count for the Kestrel firmware checks.\",\"target\":\"doc_002\"},{\"action\":\"search_contradiction\",\"rationale\":\"Check whether any provided document supports the 101-count claim.\",\"target\":\"provided document set\"}],\"answer\":\"No. The provided evidence refutes the claim: doc_002 reports 76 approved checks for Kestrel firmware checks in August 2025 and explicitly says no line in the packet lists 101 for this workstream.\",\"claim_verdict\":\"refuted\",\"confidence\":0.9,\"evidence_environment_assessment\":\"The environment is small and mostly indirect. Only doc_002 reports a numerical closing count, while doc_001, doc_003, and doc_004 share contextual identifiers but omit the final count. No document supports 101; the single count-bearing document directly contradicts it.\",\"rejected_evidence\":[\"doc_001\",\"doc_003\",\"doc_004\"],\"selected_doc_ids\":[\"doc_002\",\"doc_001\",\"doc_003\"],\"supporting_evidence\":[\"doc_002\"]}",
+    "usage": {
+      "completion_tokens": 387,
+      "prompt_tokens": 1175,
+      "total_tokens": 1562,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": 0,
+        "audio_tokens": 0,
+        "reasoning_tokens": 140,
+        "rejected_prediction_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cached_tokens": 0
+      },
+      "latency_checkpoint": {
+        "engine_tbt_ms": 27,
+        "engine_ttft_ms": 517,
+        "engine_ttlt_ms": 11062,
+        "pre_inference_ms": 115,
+        "service_tbt_ms": 27,
+        "service_ttft_ms": 761,
+        "service_ttlt_ms": 11314,
+        "total_duration_ms": 11199,
+        "user_visible_ttft_ms": 646
+      }
+    },
+    "response_format_used": "json_schema",
+    "parse_success": true,
+    "parse_error": "",
+    "empty_output": false,
+    "schema_missing": false,
+    "json_extractor_used": "first_json_object",
+    "elapsed_s": 12.672,
+    "cost_usd": 0.017485
+  }
+}

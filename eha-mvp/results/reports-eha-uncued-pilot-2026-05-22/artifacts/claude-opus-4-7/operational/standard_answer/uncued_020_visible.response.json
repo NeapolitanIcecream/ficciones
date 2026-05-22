@@ -1,0 +1,90 @@
+{
+  "attempts": [
+    {
+      "attempt": 1,
+      "model": "claude-opus-4-7",
+      "provider": "Anthropic",
+      "budget_setting": "operational",
+      "task_id": "uncued_020_visible",
+      "prompt_condition": "standard_answer",
+      "content": "{\n  \"claim_verdict\": \"refuted\",\n  \"confidence\": 0.62,\n  \"supporting_evidence\": [\"doc_001\"],\n  \"rejected_evidence\": [\"doc_002\"],\n  \"selected_doc_ids\": [\"doc_002\", \"doc_001\", \"doc_003\"],\n  \"actions\": [\n    {\"action\": \"trace_source\", \"target\": \"doc_001\", \"rationale\": \"doc_001 asserts 124 but cites only doc_003, which lacks a final count. Tracing exposes the lack of primary support.\"},\n    {\"action\": \"search_primary\", \"target\": \"Westhaven month-close ledger\", \"rationale\": \"The ledger row in doc_002 is the closest primary record; confirming it would settle the count.\"}\n  ],\n  \"evidence_environment_assessment\": \"Four documents share site code, workstream, and close date, making label-based checks unreliable. doc_001 states 124 but cites doc_003, a chronology note with no total. doc_002 is a month-close ledger row giving 97, the most primary-looking artifact. doc_004 only addresses scheduling. The 124 figure lacks a verifiable primary source, while 97 is anchored to a ledger row, indicating the 124 claim is likely an unsupported restatement.\",\n  \"answer\": \"The claim that 124 tickets were closed is not supported by primary evidence. The month-close ledger (doc_002) records 97 closed Mira sensor recalibration tickets for Westhaven in May 2025. The only document citing 124 (doc_001) traces back to doc_003, which contains chronology but no final count. Based on the available evidence, the 124 figure is refuted by the ledger row, though confirmation of the ledger as authoritative would strengthen the verdict.\"\n}",
+      "usage": {
+        "completion_tokens": 577,
+        "prompt_tokens": 1504,
+        "total_tokens": 2081,
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": null,
+          "audio_tokens": 0,
+          "reasoning_tokens": 0,
+          "rejected_prediction_tokens": null,
+          "text_tokens": 0,
+          "image_tokens": 0
+        },
+        "prompt_tokens_details": {
+          "audio_tokens": 0,
+          "cached_tokens": 0,
+          "text_tokens": 0,
+          "image_tokens": 0
+        },
+        "usage_semantic": "openai",
+        "usage_source": "anthropic",
+        "input_tokens": 1504,
+        "output_tokens": 0,
+        "input_tokens_details": null,
+        "claude_cache_creation_5_m_tokens": 0,
+        "claude_cache_creation_1_h_tokens": 0
+      },
+      "response_format_used": "json_schema",
+      "parse_success": true,
+      "parse_error": "",
+      "empty_output": false,
+      "schema_missing": false,
+      "json_extractor_used": "first_json_object",
+      "elapsed_s": 10.637,
+      "cost_usd": 0.0015300000000000001
+    }
+  ],
+  "final_attempt": {
+    "attempt": 1,
+    "model": "claude-opus-4-7",
+    "provider": "Anthropic",
+    "budget_setting": "operational",
+    "task_id": "uncued_020_visible",
+    "prompt_condition": "standard_answer",
+    "content": "{\n  \"claim_verdict\": \"refuted\",\n  \"confidence\": 0.62,\n  \"supporting_evidence\": [\"doc_001\"],\n  \"rejected_evidence\": [\"doc_002\"],\n  \"selected_doc_ids\": [\"doc_002\", \"doc_001\", \"doc_003\"],\n  \"actions\": [\n    {\"action\": \"trace_source\", \"target\": \"doc_001\", \"rationale\": \"doc_001 asserts 124 but cites only doc_003, which lacks a final count. Tracing exposes the lack of primary support.\"},\n    {\"action\": \"search_primary\", \"target\": \"Westhaven month-close ledger\", \"rationale\": \"The ledger row in doc_002 is the closest primary record; confirming it would settle the count.\"}\n  ],\n  \"evidence_environment_assessment\": \"Four documents share site code, workstream, and close date, making label-based checks unreliable. doc_001 states 124 but cites doc_003, a chronology note with no total. doc_002 is a month-close ledger row giving 97, the most primary-looking artifact. doc_004 only addresses scheduling. The 124 figure lacks a verifiable primary source, while 97 is anchored to a ledger row, indicating the 124 claim is likely an unsupported restatement.\",\n  \"answer\": \"The claim that 124 tickets were closed is not supported by primary evidence. The month-close ledger (doc_002) records 97 closed Mira sensor recalibration tickets for Westhaven in May 2025. The only document citing 124 (doc_001) traces back to doc_003, which contains chronology but no final count. Based on the available evidence, the 124 figure is refuted by the ledger row, though confirmation of the ledger as authoritative would strengthen the verdict.\"\n}",
+    "usage": {
+      "completion_tokens": 577,
+      "prompt_tokens": 1504,
+      "total_tokens": 2081,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": null,
+        "audio_tokens": 0,
+        "reasoning_tokens": 0,
+        "rejected_prediction_tokens": null,
+        "text_tokens": 0,
+        "image_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cached_tokens": 0,
+        "text_tokens": 0,
+        "image_tokens": 0
+      },
+      "usage_semantic": "openai",
+      "usage_source": "anthropic",
+      "input_tokens": 1504,
+      "output_tokens": 0,
+      "input_tokens_details": null,
+      "claude_cache_creation_5_m_tokens": 0,
+      "claude_cache_creation_1_h_tokens": 0
+    },
+    "response_format_used": "json_schema",
+    "parse_success": true,
+    "parse_error": "",
+    "empty_output": false,
+    "schema_missing": false,
+    "json_extractor_used": "first_json_object",
+    "elapsed_s": 10.637,
+    "cost_usd": 0.0015300000000000001
+  }
+}

@@ -1,0 +1,90 @@
+{
+  "attempts": [
+    {
+      "attempt": 1,
+      "model": "claude-opus-4-7",
+      "provider": "Anthropic",
+      "budget_setting": "operational",
+      "task_id": "uncued_012_visible",
+      "prompt_condition": "standard_answer",
+      "content": "{\n  \"claim_verdict\": \"refuted\",\n  \"confidence\": 0.7,\n  \"supporting_evidence\": [\"doc_002\"],\n  \"rejected_evidence\": [\"doc_001\"],\n  \"selected_doc_ids\": [\"doc_001\", \"doc_002\", \"doc_004\"],\n  \"actions\": [\n    {\"action\": \"trace_source\", \"target\": \"doc_002\", \"rationale\": \"doc_002 cites doc_004, but doc_004 contains only chronology and no count, weakening the 211 claim.\"},\n    {\"action\": \"compare_versions\", \"target\": \"doc_001 vs doc_002\", \"rationale\": \"Direct numeric conflict (184 vs 211) for the same workstream, site, and close date requires reconciliation.\"}\n  ],\n  \"evidence_environment_assessment\": \"Two documents give conflicting totals for Atlas valve checks in March 2025: doc_001 (field note) reports 184, while doc_002 (registry digest) reports 211. doc_002 cites doc_004, but doc_004 provides only routing chronology and no count, so its citation chain is unsupported. doc_003 adds no total. The ledger-style field note (doc_001) is more concrete than the digest, and the digest's citation does not substantiate 211. Labels are uniform across documents, so the conflict turns on stated values.\",\n  \"answer\": \"The claim that Novalis Robotics logged 211 completed Atlas valve checks in March 2025 is refuted by the available evidence. The month-close ledger note (doc_001) records 184 completed checks for the same workstream, site, and close date. The 211 figure appears only in a digest (doc_002) whose cited source (doc_004) provides chronology, not a count, leaving the higher figure unsupported. Absent a primary ledger row corroborating 211, the ledger-level 184 prevails.\"\n}",
+      "usage": {
+        "completion_tokens": 611,
+        "prompt_tokens": 1485,
+        "total_tokens": 2096,
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": null,
+          "audio_tokens": 0,
+          "reasoning_tokens": 0,
+          "rejected_prediction_tokens": null,
+          "text_tokens": 0,
+          "image_tokens": 0
+        },
+        "prompt_tokens_details": {
+          "audio_tokens": 0,
+          "cached_tokens": 0,
+          "text_tokens": 0,
+          "image_tokens": 0
+        },
+        "usage_semantic": "openai",
+        "usage_source": "anthropic",
+        "input_tokens": 1485,
+        "output_tokens": 0,
+        "input_tokens_details": null,
+        "claude_cache_creation_5_m_tokens": 0,
+        "claude_cache_creation_1_h_tokens": 0
+      },
+      "response_format_used": "json_schema",
+      "parse_success": true,
+      "parse_error": "",
+      "empty_output": false,
+      "schema_missing": false,
+      "json_extractor_used": "first_json_object",
+      "elapsed_s": 18.383,
+      "cost_usd": 0.00159325
+    }
+  ],
+  "final_attempt": {
+    "attempt": 1,
+    "model": "claude-opus-4-7",
+    "provider": "Anthropic",
+    "budget_setting": "operational",
+    "task_id": "uncued_012_visible",
+    "prompt_condition": "standard_answer",
+    "content": "{\n  \"claim_verdict\": \"refuted\",\n  \"confidence\": 0.7,\n  \"supporting_evidence\": [\"doc_002\"],\n  \"rejected_evidence\": [\"doc_001\"],\n  \"selected_doc_ids\": [\"doc_001\", \"doc_002\", \"doc_004\"],\n  \"actions\": [\n    {\"action\": \"trace_source\", \"target\": \"doc_002\", \"rationale\": \"doc_002 cites doc_004, but doc_004 contains only chronology and no count, weakening the 211 claim.\"},\n    {\"action\": \"compare_versions\", \"target\": \"doc_001 vs doc_002\", \"rationale\": \"Direct numeric conflict (184 vs 211) for the same workstream, site, and close date requires reconciliation.\"}\n  ],\n  \"evidence_environment_assessment\": \"Two documents give conflicting totals for Atlas valve checks in March 2025: doc_001 (field note) reports 184, while doc_002 (registry digest) reports 211. doc_002 cites doc_004, but doc_004 provides only routing chronology and no count, so its citation chain is unsupported. doc_003 adds no total. The ledger-style field note (doc_001) is more concrete than the digest, and the digest's citation does not substantiate 211. Labels are uniform across documents, so the conflict turns on stated values.\",\n  \"answer\": \"The claim that Novalis Robotics logged 211 completed Atlas valve checks in March 2025 is refuted by the available evidence. The month-close ledger note (doc_001) records 184 completed checks for the same workstream, site, and close date. The 211 figure appears only in a digest (doc_002) whose cited source (doc_004) provides chronology, not a count, leaving the higher figure unsupported. Absent a primary ledger row corroborating 211, the ledger-level 184 prevails.\"\n}",
+    "usage": {
+      "completion_tokens": 611,
+      "prompt_tokens": 1485,
+      "total_tokens": 2096,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": null,
+        "audio_tokens": 0,
+        "reasoning_tokens": 0,
+        "rejected_prediction_tokens": null,
+        "text_tokens": 0,
+        "image_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cached_tokens": 0,
+        "text_tokens": 0,
+        "image_tokens": 0
+      },
+      "usage_semantic": "openai",
+      "usage_source": "anthropic",
+      "input_tokens": 1485,
+      "output_tokens": 0,
+      "input_tokens_details": null,
+      "claude_cache_creation_5_m_tokens": 0,
+      "claude_cache_creation_1_h_tokens": 0
+    },
+    "response_format_used": "json_schema",
+    "parse_success": true,
+    "parse_error": "",
+    "empty_output": false,
+    "schema_missing": false,
+    "json_extractor_used": "first_json_object",
+    "elapsed_s": 18.383,
+    "cost_usd": 0.00159325
+  }
+}

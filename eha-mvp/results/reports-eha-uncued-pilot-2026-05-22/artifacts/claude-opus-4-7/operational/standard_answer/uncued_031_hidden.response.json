@@ -1,0 +1,90 @@
+{
+  "attempts": [
+    {
+      "attempt": 1,
+      "model": "claude-opus-4-7",
+      "provider": "Anthropic",
+      "budget_setting": "operational",
+      "task_id": "uncued_031_hidden",
+      "prompt_condition": "standard_answer",
+      "content": "{\n  \"claim_verdict\": \"refuted\",\n  \"confidence\": 0.78,\n  \"supporting_evidence\": [],\n  \"rejected_evidence\": [\"doc_002\", \"doc_004\"],\n  \"selected_doc_ids\": [\"doc_003\", \"doc_002\", \"doc_004\"],\n  \"actions\": [\n    {\"action\": \"trace_source\", \"target\": \"doc_004\", \"rationale\": \"Partner summary cites the digest (doc_002), which itself cites doc_004 — a circular citation loop, not independent corroboration.\"},\n    {\"action\": \"compare_versions\", \"target\": \"doc_003\", \"rationale\": \"The closing ledger is the authoritative final count and conflicts with the 88 figure; verifying its provenance settles the discrepancy.\"}\n  ],\n  \"evidence_environment_assessment\": \"The packet contains one authoritative closing ledger (doc_003) reporting 63 verified swaps, and two documents (doc_002, doc_004) repeating 88 in a circular citation loop where each points to the other rather than a primary count sheet. doc_001 is a label-only memo with no count. Independent corroboration for 88 is absent; the only primary-style record gives 63.\",\n  \"answer\": \"No. The closing ledger for East Yard (doc_003) records 63 verified Orion battery swaps for April 2025, not 88. The two documents citing 88 (doc_002 and doc_004) form a circular citation loop and trace to no independent primary source. The claim of 88 verified swaps is refuted by the ledger.\"\n}",
+      "usage": {
+        "completion_tokens": 508,
+        "prompt_tokens": 1482,
+        "total_tokens": 1990,
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": null,
+          "audio_tokens": 0,
+          "reasoning_tokens": 0,
+          "rejected_prediction_tokens": null,
+          "text_tokens": 0,
+          "image_tokens": 0
+        },
+        "prompt_tokens_details": {
+          "audio_tokens": 0,
+          "cached_tokens": 0,
+          "text_tokens": 0,
+          "image_tokens": 0
+        },
+        "usage_semantic": "openai",
+        "usage_source": "anthropic",
+        "input_tokens": 1482,
+        "output_tokens": 0,
+        "input_tokens_details": null,
+        "claude_cache_creation_5_m_tokens": 0,
+        "claude_cache_creation_1_h_tokens": 0
+      },
+      "response_format_used": "json_schema",
+      "parse_success": true,
+      "parse_error": "",
+      "empty_output": false,
+      "schema_missing": false,
+      "json_extractor_used": "first_json_object",
+      "elapsed_s": 7.559,
+      "cost_usd": 0.0013865
+    }
+  ],
+  "final_attempt": {
+    "attempt": 1,
+    "model": "claude-opus-4-7",
+    "provider": "Anthropic",
+    "budget_setting": "operational",
+    "task_id": "uncued_031_hidden",
+    "prompt_condition": "standard_answer",
+    "content": "{\n  \"claim_verdict\": \"refuted\",\n  \"confidence\": 0.78,\n  \"supporting_evidence\": [],\n  \"rejected_evidence\": [\"doc_002\", \"doc_004\"],\n  \"selected_doc_ids\": [\"doc_003\", \"doc_002\", \"doc_004\"],\n  \"actions\": [\n    {\"action\": \"trace_source\", \"target\": \"doc_004\", \"rationale\": \"Partner summary cites the digest (doc_002), which itself cites doc_004 — a circular citation loop, not independent corroboration.\"},\n    {\"action\": \"compare_versions\", \"target\": \"doc_003\", \"rationale\": \"The closing ledger is the authoritative final count and conflicts with the 88 figure; verifying its provenance settles the discrepancy.\"}\n  ],\n  \"evidence_environment_assessment\": \"The packet contains one authoritative closing ledger (doc_003) reporting 63 verified swaps, and two documents (doc_002, doc_004) repeating 88 in a circular citation loop where each points to the other rather than a primary count sheet. doc_001 is a label-only memo with no count. Independent corroboration for 88 is absent; the only primary-style record gives 63.\",\n  \"answer\": \"No. The closing ledger for East Yard (doc_003) records 63 verified Orion battery swaps for April 2025, not 88. The two documents citing 88 (doc_002 and doc_004) form a circular citation loop and trace to no independent primary source. The claim of 88 verified swaps is refuted by the ledger.\"\n}",
+    "usage": {
+      "completion_tokens": 508,
+      "prompt_tokens": 1482,
+      "total_tokens": 1990,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": null,
+        "audio_tokens": 0,
+        "reasoning_tokens": 0,
+        "rejected_prediction_tokens": null,
+        "text_tokens": 0,
+        "image_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cached_tokens": 0,
+        "text_tokens": 0,
+        "image_tokens": 0
+      },
+      "usage_semantic": "openai",
+      "usage_source": "anthropic",
+      "input_tokens": 1482,
+      "output_tokens": 0,
+      "input_tokens_details": null,
+      "claude_cache_creation_5_m_tokens": 0,
+      "claude_cache_creation_1_h_tokens": 0
+    },
+    "response_format_used": "json_schema",
+    "parse_success": true,
+    "parse_error": "",
+    "empty_output": false,
+    "schema_missing": false,
+    "json_extractor_used": "first_json_object",
+    "elapsed_s": 7.559,
+    "cost_usd": 0.0013865
+  }
+}

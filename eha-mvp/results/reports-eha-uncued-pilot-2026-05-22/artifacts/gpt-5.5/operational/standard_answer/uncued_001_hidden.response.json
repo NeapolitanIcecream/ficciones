@@ -1,0 +1,90 @@
+{
+  "attempts": [
+    {
+      "attempt": 1,
+      "model": "gpt-5.5",
+      "provider": "OpenAI",
+      "budget_setting": "operational",
+      "task_id": "uncued_001_hidden",
+      "prompt_condition": "standard_answer",
+      "content": "{\"actions\":[{\"action\":\"open\",\"rationale\":\"Use the only document that states a closing count for the relevant workstream/month.\",\"target\":\"doc_001\"},{\"action\":\"search_contradiction\",\"rationale\":\"Check whether any packet document supports the claimed count of 88.\",\"target\":\"provided documents\"}],\"answer\":\"No. The provided packet refutes the claim: doc_001 says the monthly ledger lists 63 verified swaps for Orion battery swaps in April 2025 and explicitly says no line in the packet lists 88 for this workstream. Other documents do not provide a closing count.\",\"claim_verdict\":\"refuted\",\"confidence\":0.94,\"evidence_environment_assessment\":\"The evidence set is small and internally simple. Only doc_001 states a verified swap count, and it directly addresses the queried workstream and month while explicitly denying any packet line lists 88. The other documents are relevant context but omit the final count, so they neither support nor materially contradict doc_001.\",\"rejected_evidence\":[\"doc_002\",\"doc_004\",\"doc_003\"],\"selected_doc_ids\":[\"doc_001\",\"doc_002\",\"doc_004\"],\"supporting_evidence\":[\"doc_001\"]}",
+      "usage": {
+        "completion_tokens": 258,
+        "prompt_tokens": 1164,
+        "total_tokens": 1422,
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": 0,
+          "audio_tokens": 0,
+          "reasoning_tokens": 0,
+          "rejected_prediction_tokens": 0
+        },
+        "prompt_tokens_details": {
+          "audio_tokens": 0,
+          "cached_tokens": 0
+        },
+        "latency_checkpoint": {
+          "engine_tbt_ms": 22,
+          "engine_ttft_ms": 338,
+          "engine_ttlt_ms": 5965,
+          "pre_inference_ms": 139,
+          "service_tbt_ms": 22,
+          "service_ttft_ms": 719,
+          "service_ttlt_ms": 6344,
+          "total_duration_ms": 6213,
+          "user_visible_ttft_ms": 580
+        }
+      },
+      "response_format_used": "json_schema",
+      "parse_success": true,
+      "parse_error": "",
+      "empty_output": false,
+      "schema_missing": false,
+      "json_extractor_used": "first_json_object",
+      "elapsed_s": 7.84,
+      "cost_usd": 0.01356
+    }
+  ],
+  "final_attempt": {
+    "attempt": 1,
+    "model": "gpt-5.5",
+    "provider": "OpenAI",
+    "budget_setting": "operational",
+    "task_id": "uncued_001_hidden",
+    "prompt_condition": "standard_answer",
+    "content": "{\"actions\":[{\"action\":\"open\",\"rationale\":\"Use the only document that states a closing count for the relevant workstream/month.\",\"target\":\"doc_001\"},{\"action\":\"search_contradiction\",\"rationale\":\"Check whether any packet document supports the claimed count of 88.\",\"target\":\"provided documents\"}],\"answer\":\"No. The provided packet refutes the claim: doc_001 says the monthly ledger lists 63 verified swaps for Orion battery swaps in April 2025 and explicitly says no line in the packet lists 88 for this workstream. Other documents do not provide a closing count.\",\"claim_verdict\":\"refuted\",\"confidence\":0.94,\"evidence_environment_assessment\":\"The evidence set is small and internally simple. Only doc_001 states a verified swap count, and it directly addresses the queried workstream and month while explicitly denying any packet line lists 88. The other documents are relevant context but omit the final count, so they neither support nor materially contradict doc_001.\",\"rejected_evidence\":[\"doc_002\",\"doc_004\",\"doc_003\"],\"selected_doc_ids\":[\"doc_001\",\"doc_002\",\"doc_004\"],\"supporting_evidence\":[\"doc_001\"]}",
+    "usage": {
+      "completion_tokens": 258,
+      "prompt_tokens": 1164,
+      "total_tokens": 1422,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": 0,
+        "audio_tokens": 0,
+        "reasoning_tokens": 0,
+        "rejected_prediction_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cached_tokens": 0
+      },
+      "latency_checkpoint": {
+        "engine_tbt_ms": 22,
+        "engine_ttft_ms": 338,
+        "engine_ttlt_ms": 5965,
+        "pre_inference_ms": 139,
+        "service_tbt_ms": 22,
+        "service_ttft_ms": 719,
+        "service_ttlt_ms": 6344,
+        "total_duration_ms": 6213,
+        "user_visible_ttft_ms": 580
+      }
+    },
+    "response_format_used": "json_schema",
+    "parse_success": true,
+    "parse_error": "",
+    "empty_output": false,
+    "schema_missing": false,
+    "json_extractor_used": "first_json_object",
+    "elapsed_s": 7.84,
+    "cost_usd": 0.01356
+  }
+}

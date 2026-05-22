@@ -1,0 +1,90 @@
+{
+  "attempts": [
+    {
+      "attempt": 1,
+      "model": "claude-opus-4-7",
+      "provider": "Anthropic",
+      "budget_setting": "operational",
+      "task_id": "uncued_039_visible",
+      "prompt_condition": "standard_answer",
+      "content": "{\n  \"claim_verdict\": \"supported\",\n  \"confidence\": 0.72,\n  \"supporting_evidence\": [\"doc_001\"],\n  \"rejected_evidence\": [\"doc_003\", \"doc_004\"],\n  \"selected_doc_ids\": [\"doc_001\", \"doc_003\", \"doc_002\"],\n  \"actions\": [\n    {\"action\": \"compare_versions\", \"target\": \"doc_001 vs doc_003\", \"rationale\": \"Two conflicting counts (42 vs 57); compare timestamps and document roles to determine authoritative closeout figure.\"},\n    {\"action\": \"trace_source\", \"target\": \"doc_003\", \"rationale\": \"doc_003 cites doc_004, a pre-close planning memo with no final number, weakening its 57 estimate.\"}\n  ],\n  \"evidence_environment_assessment\": \"The packet contains one closeout ledger (doc_001) listing 42 accepted inspections, dated latest and described as the final close. doc_003 offers a conflicting estimate of 57 but is explicitly framed as a running estimate citing doc_004, a pre-close planning memo without final figures. doc_002 names the workstream but lacks counts. The closeout ledger outranks running estimates and planning memos for a final monthly count, so the 42 figure is the most authoritative.\",\n  \"answer\": \"Yes. The closeout ledger (doc_001) records 42 accepted inspections for Vega rail inspections in June 2025, using the final close date. The competing 57 figure in doc_003 is a pre-close running estimate sourced to a planning memo (doc_004) with no final number, so it does not override the closeout entry.\"\n}",
+      "usage": {
+        "completion_tokens": 541,
+        "prompt_tokens": 1481,
+        "total_tokens": 2022,
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": null,
+          "audio_tokens": 0,
+          "reasoning_tokens": 0,
+          "rejected_prediction_tokens": null,
+          "text_tokens": 0,
+          "image_tokens": 0
+        },
+        "prompt_tokens_details": {
+          "audio_tokens": 0,
+          "cached_tokens": 0,
+          "text_tokens": 0,
+          "image_tokens": 0
+        },
+        "usage_semantic": "openai",
+        "usage_source": "anthropic",
+        "input_tokens": 1481,
+        "output_tokens": 0,
+        "input_tokens_details": null,
+        "claude_cache_creation_5_m_tokens": 0,
+        "claude_cache_creation_1_h_tokens": 0
+      },
+      "response_format_used": "json_schema",
+      "parse_success": true,
+      "parse_error": "",
+      "empty_output": false,
+      "schema_missing": false,
+      "json_extractor_used": "first_json_object",
+      "elapsed_s": 12.333,
+      "cost_usd": 0.00145225
+    }
+  ],
+  "final_attempt": {
+    "attempt": 1,
+    "model": "claude-opus-4-7",
+    "provider": "Anthropic",
+    "budget_setting": "operational",
+    "task_id": "uncued_039_visible",
+    "prompt_condition": "standard_answer",
+    "content": "{\n  \"claim_verdict\": \"supported\",\n  \"confidence\": 0.72,\n  \"supporting_evidence\": [\"doc_001\"],\n  \"rejected_evidence\": [\"doc_003\", \"doc_004\"],\n  \"selected_doc_ids\": [\"doc_001\", \"doc_003\", \"doc_002\"],\n  \"actions\": [\n    {\"action\": \"compare_versions\", \"target\": \"doc_001 vs doc_003\", \"rationale\": \"Two conflicting counts (42 vs 57); compare timestamps and document roles to determine authoritative closeout figure.\"},\n    {\"action\": \"trace_source\", \"target\": \"doc_003\", \"rationale\": \"doc_003 cites doc_004, a pre-close planning memo with no final number, weakening its 57 estimate.\"}\n  ],\n  \"evidence_environment_assessment\": \"The packet contains one closeout ledger (doc_001) listing 42 accepted inspections, dated latest and described as the final close. doc_003 offers a conflicting estimate of 57 but is explicitly framed as a running estimate citing doc_004, a pre-close planning memo without final figures. doc_002 names the workstream but lacks counts. The closeout ledger outranks running estimates and planning memos for a final monthly count, so the 42 figure is the most authoritative.\",\n  \"answer\": \"Yes. The closeout ledger (doc_001) records 42 accepted inspections for Vega rail inspections in June 2025, using the final close date. The competing 57 figure in doc_003 is a pre-close running estimate sourced to a planning memo (doc_004) with no final number, so it does not override the closeout entry.\"\n}",
+    "usage": {
+      "completion_tokens": 541,
+      "prompt_tokens": 1481,
+      "total_tokens": 2022,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": null,
+        "audio_tokens": 0,
+        "reasoning_tokens": 0,
+        "rejected_prediction_tokens": null,
+        "text_tokens": 0,
+        "image_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cached_tokens": 0,
+        "text_tokens": 0,
+        "image_tokens": 0
+      },
+      "usage_semantic": "openai",
+      "usage_source": "anthropic",
+      "input_tokens": 1481,
+      "output_tokens": 0,
+      "input_tokens_details": null,
+      "claude_cache_creation_5_m_tokens": 0,
+      "claude_cache_creation_1_h_tokens": 0
+    },
+    "response_format_used": "json_schema",
+    "parse_success": true,
+    "parse_error": "",
+    "empty_output": false,
+    "schema_missing": false,
+    "json_extractor_used": "first_json_object",
+    "elapsed_s": 12.333,
+    "cost_usd": 0.00145225
+  }
+}

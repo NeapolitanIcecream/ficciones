@@ -1,0 +1,90 @@
+{
+  "attempts": [
+    {
+      "attempt": 1,
+      "model": "claude-opus-4-7",
+      "provider": "Anthropic",
+      "budget_setting": "operational",
+      "task_id": "uncued_022_hidden",
+      "prompt_condition": "standard_answer",
+      "content": "{\n  \"claim_verdict\": \"refuted\",\n  \"confidence\": 0.78,\n  \"supporting_evidence\": [\"doc_004\"],\n  \"rejected_evidence\": [\"doc_001\"],\n  \"selected_doc_ids\": [\"doc_001\", \"doc_004\", \"doc_002\"],\n  \"actions\": [\n    {\"action\": \"trace_source\", \"target\": \"doc_004\", \"rationale\": \"Digest cites doc_002, which is only a routing note without a count, so the 139 figure lacks primary backing.\"},\n    {\"action\": \"compare_versions\", \"target\": \"doc_001\", \"rationale\": \"Ledger gives 118 as the authoritative month-close total; compare against digest's 139 to resolve discrepancy.\"}\n  ],\n  \"evidence_environment_assessment\": \"Four documents share site code, workstream, and close date, forcing reliance on values. doc_001 is the month-close ledger (primary record) showing 118. doc_004 is a secondary digest asserting 139 but cites only doc_002, a routing note containing no count. doc_003 is a scheduling memo without totals. The supporting citation chain for 139 is hollow, while the ledger directly contradicts it.\",\n  \"answer\": \"No. The Harbor Annex month-close ledger (doc_001) records 118 completed Nova pump refurbishments for July 2025, not 139. The digest claiming 139 (doc_004) cites only a routing note (doc_002) that contains no count, so its figure is unsupported. The primary ledger refutes the claim.\"\n}",
+      "usage": {
+        "completion_tokens": 506,
+        "prompt_tokens": 1473,
+        "total_tokens": 1979,
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": null,
+          "audio_tokens": 0,
+          "reasoning_tokens": 0,
+          "rejected_prediction_tokens": null,
+          "text_tokens": 0,
+          "image_tokens": 0
+        },
+        "prompt_tokens_details": {
+          "audio_tokens": 0,
+          "cached_tokens": 0,
+          "text_tokens": 0,
+          "image_tokens": 0
+        },
+        "usage_semantic": "openai",
+        "usage_source": "anthropic",
+        "input_tokens": 1473,
+        "output_tokens": 0,
+        "input_tokens_details": null,
+        "claude_cache_creation_5_m_tokens": 0,
+        "claude_cache_creation_1_h_tokens": 0
+      },
+      "response_format_used": "json_schema",
+      "parse_success": true,
+      "parse_error": "",
+      "empty_output": false,
+      "schema_missing": false,
+      "json_extractor_used": "first_json_object",
+      "elapsed_s": 7.633,
+      "cost_usd": 0.00138025
+    }
+  ],
+  "final_attempt": {
+    "attempt": 1,
+    "model": "claude-opus-4-7",
+    "provider": "Anthropic",
+    "budget_setting": "operational",
+    "task_id": "uncued_022_hidden",
+    "prompt_condition": "standard_answer",
+    "content": "{\n  \"claim_verdict\": \"refuted\",\n  \"confidence\": 0.78,\n  \"supporting_evidence\": [\"doc_004\"],\n  \"rejected_evidence\": [\"doc_001\"],\n  \"selected_doc_ids\": [\"doc_001\", \"doc_004\", \"doc_002\"],\n  \"actions\": [\n    {\"action\": \"trace_source\", \"target\": \"doc_004\", \"rationale\": \"Digest cites doc_002, which is only a routing note without a count, so the 139 figure lacks primary backing.\"},\n    {\"action\": \"compare_versions\", \"target\": \"doc_001\", \"rationale\": \"Ledger gives 118 as the authoritative month-close total; compare against digest's 139 to resolve discrepancy.\"}\n  ],\n  \"evidence_environment_assessment\": \"Four documents share site code, workstream, and close date, forcing reliance on values. doc_001 is the month-close ledger (primary record) showing 118. doc_004 is a secondary digest asserting 139 but cites only doc_002, a routing note containing no count. doc_003 is a scheduling memo without totals. The supporting citation chain for 139 is hollow, while the ledger directly contradicts it.\",\n  \"answer\": \"No. The Harbor Annex month-close ledger (doc_001) records 118 completed Nova pump refurbishments for July 2025, not 139. The digest claiming 139 (doc_004) cites only a routing note (doc_002) that contains no count, so its figure is unsupported. The primary ledger refutes the claim.\"\n}",
+    "usage": {
+      "completion_tokens": 506,
+      "prompt_tokens": 1473,
+      "total_tokens": 1979,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": null,
+        "audio_tokens": 0,
+        "reasoning_tokens": 0,
+        "rejected_prediction_tokens": null,
+        "text_tokens": 0,
+        "image_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cached_tokens": 0,
+        "text_tokens": 0,
+        "image_tokens": 0
+      },
+      "usage_semantic": "openai",
+      "usage_source": "anthropic",
+      "input_tokens": 1473,
+      "output_tokens": 0,
+      "input_tokens_details": null,
+      "claude_cache_creation_5_m_tokens": 0,
+      "claude_cache_creation_1_h_tokens": 0
+    },
+    "response_format_used": "json_schema",
+    "parse_success": true,
+    "parse_error": "",
+    "empty_output": false,
+    "schema_missing": false,
+    "json_extractor_used": "first_json_object",
+    "elapsed_s": 7.633,
+    "cost_usd": 0.00138025
+  }
+}

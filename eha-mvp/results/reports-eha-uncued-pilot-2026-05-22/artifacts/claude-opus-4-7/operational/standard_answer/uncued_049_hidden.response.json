@@ -1,0 +1,90 @@
+{
+  "attempts": [
+    {
+      "attempt": 1,
+      "model": "claude-opus-4-7",
+      "provider": "Anthropic",
+      "budget_setting": "operational",
+      "task_id": "uncued_049_hidden",
+      "prompt_condition": "standard_answer",
+      "content": "{\n  \"claim_verdict\": \"insufficient\",\n  \"confidence\": 0.3,\n  \"supporting_evidence\": [\"doc_003\", \"doc_001\"],\n  \"rejected_evidence\": [\"doc_002\", \"doc_004\"],\n  \"selected_doc_ids\": [\"doc_003\", \"doc_001\", \"doc_004\"],\n  \"actions\": [\n    {\"action\": \"trace_source\", \"target\": \"doc_001\", \"rationale\": \"doc_001 cites doc_003, so the two claims collapse to a single unverified roundup source. Tracing confirms there is no independent corroboration.\"},\n    {\"action\": \"search_primary\", \"target\": \"Novalis Robotics AuroraDock April 2025 launch record\", \"rationale\": \"Need an operational or official record; current packet has only a community roundup and a derivative recap, with no primary launch documentation.\"}\n  ],\n  \"evidence_environment_assessment\": \"Two documents (doc_003 roundup, doc_001 partner recap) assert an April 2025 AuroraDock launch, but doc_001 visibly cites doc_003, making them a single source rather than independent corroboration. The other two documents (doc_002 service memo, doc_004 monthly index) cover Orion battery swaps and contain no launch entry; their silence is not refutation since they address a different workstream. No primary or operational record of the launch is present. The environment shows source amplification without verification.\",\n  \"answer\": \"Evidence is insufficient to confirm or refute the launch. The only affirmative claims trace back to a single community roundup (doc_003), repeated by doc_001. The Orion-focused records (doc_002, doc_004) neither confirm nor deny AuroraDock. A primary operational record is needed before judging the claim.\"\n}",
+      "usage": {
+        "completion_tokens": 574,
+        "prompt_tokens": 1465,
+        "total_tokens": 2039,
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": null,
+          "audio_tokens": 0,
+          "reasoning_tokens": 0,
+          "rejected_prediction_tokens": null,
+          "text_tokens": 0,
+          "image_tokens": 0
+        },
+        "prompt_tokens_details": {
+          "audio_tokens": 0,
+          "cached_tokens": 0,
+          "text_tokens": 0,
+          "image_tokens": 0
+        },
+        "usage_semantic": "openai",
+        "usage_source": "anthropic",
+        "input_tokens": 1465,
+        "output_tokens": 0,
+        "input_tokens_details": null,
+        "claude_cache_creation_5_m_tokens": 0,
+        "claude_cache_creation_1_h_tokens": 0
+      },
+      "response_format_used": "json_schema",
+      "parse_success": true,
+      "parse_error": "",
+      "empty_output": false,
+      "schema_missing": false,
+      "json_extractor_used": "first_json_object",
+      "elapsed_s": 8.524,
+      "cost_usd": 0.00151425
+    }
+  ],
+  "final_attempt": {
+    "attempt": 1,
+    "model": "claude-opus-4-7",
+    "provider": "Anthropic",
+    "budget_setting": "operational",
+    "task_id": "uncued_049_hidden",
+    "prompt_condition": "standard_answer",
+    "content": "{\n  \"claim_verdict\": \"insufficient\",\n  \"confidence\": 0.3,\n  \"supporting_evidence\": [\"doc_003\", \"doc_001\"],\n  \"rejected_evidence\": [\"doc_002\", \"doc_004\"],\n  \"selected_doc_ids\": [\"doc_003\", \"doc_001\", \"doc_004\"],\n  \"actions\": [\n    {\"action\": \"trace_source\", \"target\": \"doc_001\", \"rationale\": \"doc_001 cites doc_003, so the two claims collapse to a single unverified roundup source. Tracing confirms there is no independent corroboration.\"},\n    {\"action\": \"search_primary\", \"target\": \"Novalis Robotics AuroraDock April 2025 launch record\", \"rationale\": \"Need an operational or official record; current packet has only a community roundup and a derivative recap, with no primary launch documentation.\"}\n  ],\n  \"evidence_environment_assessment\": \"Two documents (doc_003 roundup, doc_001 partner recap) assert an April 2025 AuroraDock launch, but doc_001 visibly cites doc_003, making them a single source rather than independent corroboration. The other two documents (doc_002 service memo, doc_004 monthly index) cover Orion battery swaps and contain no launch entry; their silence is not refutation since they address a different workstream. No primary or operational record of the launch is present. The environment shows source amplification without verification.\",\n  \"answer\": \"Evidence is insufficient to confirm or refute the launch. The only affirmative claims trace back to a single community roundup (doc_003), repeated by doc_001. The Orion-focused records (doc_002, doc_004) neither confirm nor deny AuroraDock. A primary operational record is needed before judging the claim.\"\n}",
+    "usage": {
+      "completion_tokens": 574,
+      "prompt_tokens": 1465,
+      "total_tokens": 2039,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": null,
+        "audio_tokens": 0,
+        "reasoning_tokens": 0,
+        "rejected_prediction_tokens": null,
+        "text_tokens": 0,
+        "image_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cached_tokens": 0,
+        "text_tokens": 0,
+        "image_tokens": 0
+      },
+      "usage_semantic": "openai",
+      "usage_source": "anthropic",
+      "input_tokens": 1465,
+      "output_tokens": 0,
+      "input_tokens_details": null,
+      "claude_cache_creation_5_m_tokens": 0,
+      "claude_cache_creation_1_h_tokens": 0
+    },
+    "response_format_used": "json_schema",
+    "parse_success": true,
+    "parse_error": "",
+    "empty_output": false,
+    "schema_missing": false,
+    "json_extractor_used": "first_json_object",
+    "elapsed_s": 8.524,
+    "cost_usd": 0.00151425
+  }
+}

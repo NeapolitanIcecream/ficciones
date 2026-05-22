@@ -1,0 +1,90 @@
+{
+  "attempts": [
+    {
+      "attempt": 1,
+      "model": "gpt-5.5",
+      "provider": "OpenAI",
+      "budget_setting": "operational",
+      "task_id": "uncued_003_hidden",
+      "prompt_condition": "standard_answer",
+      "content": "{\"actions\":[{\"action\":\"open\",\"rationale\":\"It is the only document stating the accepted-inspection count for the relevant workstream and month.\",\"target\":\"doc_001\"},{\"action\":\"search_contradiction\",\"rationale\":\"Checked whether any packet document states 57; none do, and doc_001 explicitly says no line lists 57.\",\"target\":\"provided packet\"}],\"answer\":\"No. The provided packet refutes the claim: the monthly ledger lists 42 accepted inspections for Vega rail inspections in June 2025, and explicitly says no line in the packet lists 57 for this workstream.\",\"claim_verdict\":\"refuted\",\"confidence\":0.93,\"evidence_environment_assessment\":\"The environment is small and mostly non-count-bearing. Only doc_001 provides a direct count and directly addresses the competing value, stating 42 accepted inspections and no packet line listing 57. Other documents share context but omit the final count, so they are low-value for adjudicating the numeric claim.\",\"rejected_evidence\":[\"doc_002\",\"doc_003\",\"doc_004\"],\"selected_doc_ids\":[\"doc_001\"],\"supporting_evidence\":[\"doc_001\"]}",
+      "usage": {
+        "completion_tokens": 591,
+        "prompt_tokens": 1164,
+        "total_tokens": 1755,
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": 0,
+          "audio_tokens": 0,
+          "reasoning_tokens": 335,
+          "rejected_prediction_tokens": 0
+        },
+        "prompt_tokens_details": {
+          "audio_tokens": 0,
+          "cached_tokens": 0
+        },
+        "latency_checkpoint": {
+          "engine_tbt_ms": 24,
+          "engine_ttft_ms": 383,
+          "engine_ttlt_ms": 14473,
+          "pre_inference_ms": 109,
+          "service_tbt_ms": 24,
+          "service_ttft_ms": 721,
+          "service_ttlt_ms": 14817,
+          "total_duration_ms": 14711,
+          "user_visible_ttft_ms": 612
+        }
+      },
+      "response_format_used": "json_schema",
+      "parse_success": true,
+      "parse_error": "",
+      "empty_output": false,
+      "schema_missing": false,
+      "json_extractor_used": "first_json_object",
+      "elapsed_s": 16.523,
+      "cost_usd": 0.02355
+    }
+  ],
+  "final_attempt": {
+    "attempt": 1,
+    "model": "gpt-5.5",
+    "provider": "OpenAI",
+    "budget_setting": "operational",
+    "task_id": "uncued_003_hidden",
+    "prompt_condition": "standard_answer",
+    "content": "{\"actions\":[{\"action\":\"open\",\"rationale\":\"It is the only document stating the accepted-inspection count for the relevant workstream and month.\",\"target\":\"doc_001\"},{\"action\":\"search_contradiction\",\"rationale\":\"Checked whether any packet document states 57; none do, and doc_001 explicitly says no line lists 57.\",\"target\":\"provided packet\"}],\"answer\":\"No. The provided packet refutes the claim: the monthly ledger lists 42 accepted inspections for Vega rail inspections in June 2025, and explicitly says no line in the packet lists 57 for this workstream.\",\"claim_verdict\":\"refuted\",\"confidence\":0.93,\"evidence_environment_assessment\":\"The environment is small and mostly non-count-bearing. Only doc_001 provides a direct count and directly addresses the competing value, stating 42 accepted inspections and no packet line listing 57. Other documents share context but omit the final count, so they are low-value for adjudicating the numeric claim.\",\"rejected_evidence\":[\"doc_002\",\"doc_003\",\"doc_004\"],\"selected_doc_ids\":[\"doc_001\"],\"supporting_evidence\":[\"doc_001\"]}",
+    "usage": {
+      "completion_tokens": 591,
+      "prompt_tokens": 1164,
+      "total_tokens": 1755,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": 0,
+        "audio_tokens": 0,
+        "reasoning_tokens": 335,
+        "rejected_prediction_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cached_tokens": 0
+      },
+      "latency_checkpoint": {
+        "engine_tbt_ms": 24,
+        "engine_ttft_ms": 383,
+        "engine_ttlt_ms": 14473,
+        "pre_inference_ms": 109,
+        "service_tbt_ms": 24,
+        "service_ttft_ms": 721,
+        "service_ttlt_ms": 14817,
+        "total_duration_ms": 14711,
+        "user_visible_ttft_ms": 612
+      }
+    },
+    "response_format_used": "json_schema",
+    "parse_success": true,
+    "parse_error": "",
+    "empty_output": false,
+    "schema_missing": false,
+    "json_extractor_used": "first_json_object",
+    "elapsed_s": 16.523,
+    "cost_usd": 0.02355
+  }
+}

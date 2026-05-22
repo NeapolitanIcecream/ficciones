@@ -1,0 +1,90 @@
+{
+  "attempts": [
+    {
+      "attempt": 1,
+      "model": "claude-opus-4-7",
+      "provider": "Anthropic",
+      "budget_setting": "operational",
+      "task_id": "uncued_046_visible",
+      "prompt_condition": "standard_answer",
+      "content": "{\n  \"claim_verdict\": \"supported\",\n  \"confidence\": 0.78,\n  \"supporting_evidence\": [\"doc_002\"],\n  \"rejected_evidence\": [\"doc_003\", \"doc_004\"],\n  \"selected_doc_ids\": [\"doc_002\", \"doc_003\", \"doc_001\"],\n  \"actions\": [\n    {\"action\": \"compare_versions\", \"target\": \"doc_002 vs doc_003\", \"rationale\": \"Reconcile the closeout ledger figure (118) against the earlier digest estimate (139) to confirm which reflects the final close.\"},\n    {\"action\": \"trace_source\", \"target\": \"doc_002\", \"rationale\": \"Verify the closeout ledger row is the authoritative final count for July 2025.\"}\n  ],\n  \"evidence_environment_assessment\": \"The packet contains one closeout ledger entry (doc_002) stating 118 completed refurbishments, which matches the claim and uses the final close date. doc_003 offers a conflicting figure (139) but self-identifies as a running estimate citing a pre-close planning memo (doc_004), making it weaker. doc_001 names the workstream but lacks a count, and doc_004 is pre-close planning with no final number. The final/closeout artifact outweighs the estimate, supporting the claim, though all timestamps are in February 2025 which is unusual for a July 2025 close.\",\n  \"answer\": \"Yes. The Program Registry closeout ledger (doc_002) records 118 completed Nova pump refurbishments for July 2025 using the final close date. A competing figure of 139 in doc_003 is explicitly framed as a running estimate tied to a pre-close planning memo (doc_004), so it is outweighed by the closeout entry. doc_001 corroborates the workstream and site but provides no count. Confidence is moderate due to anomalous February 2025 timestamps across the packet.\"\n}",
+      "usage": {
+        "completion_tokens": 620,
+        "prompt_tokens": 1490,
+        "total_tokens": 2110,
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": null,
+          "audio_tokens": 0,
+          "reasoning_tokens": 0,
+          "rejected_prediction_tokens": null,
+          "text_tokens": 0,
+          "image_tokens": 0
+        },
+        "prompt_tokens_details": {
+          "audio_tokens": 0,
+          "cached_tokens": 0,
+          "text_tokens": 0,
+          "image_tokens": 0
+        },
+        "usage_semantic": "openai",
+        "usage_source": "anthropic",
+        "input_tokens": 1490,
+        "output_tokens": 0,
+        "input_tokens_details": null,
+        "claude_cache_creation_5_m_tokens": 0,
+        "claude_cache_creation_1_h_tokens": 0
+      },
+      "response_format_used": "json_schema",
+      "parse_success": true,
+      "parse_error": "",
+      "empty_output": false,
+      "schema_missing": false,
+      "json_extractor_used": "first_json_object",
+      "elapsed_s": 18.41,
+      "cost_usd": 0.0016125
+    }
+  ],
+  "final_attempt": {
+    "attempt": 1,
+    "model": "claude-opus-4-7",
+    "provider": "Anthropic",
+    "budget_setting": "operational",
+    "task_id": "uncued_046_visible",
+    "prompt_condition": "standard_answer",
+    "content": "{\n  \"claim_verdict\": \"supported\",\n  \"confidence\": 0.78,\n  \"supporting_evidence\": [\"doc_002\"],\n  \"rejected_evidence\": [\"doc_003\", \"doc_004\"],\n  \"selected_doc_ids\": [\"doc_002\", \"doc_003\", \"doc_001\"],\n  \"actions\": [\n    {\"action\": \"compare_versions\", \"target\": \"doc_002 vs doc_003\", \"rationale\": \"Reconcile the closeout ledger figure (118) against the earlier digest estimate (139) to confirm which reflects the final close.\"},\n    {\"action\": \"trace_source\", \"target\": \"doc_002\", \"rationale\": \"Verify the closeout ledger row is the authoritative final count for July 2025.\"}\n  ],\n  \"evidence_environment_assessment\": \"The packet contains one closeout ledger entry (doc_002) stating 118 completed refurbishments, which matches the claim and uses the final close date. doc_003 offers a conflicting figure (139) but self-identifies as a running estimate citing a pre-close planning memo (doc_004), making it weaker. doc_001 names the workstream but lacks a count, and doc_004 is pre-close planning with no final number. The final/closeout artifact outweighs the estimate, supporting the claim, though all timestamps are in February 2025 which is unusual for a July 2025 close.\",\n  \"answer\": \"Yes. The Program Registry closeout ledger (doc_002) records 118 completed Nova pump refurbishments for July 2025 using the final close date. A competing figure of 139 in doc_003 is explicitly framed as a running estimate tied to a pre-close planning memo (doc_004), so it is outweighed by the closeout entry. doc_001 corroborates the workstream and site but provides no count. Confidence is moderate due to anomalous February 2025 timestamps across the packet.\"\n}",
+    "usage": {
+      "completion_tokens": 620,
+      "prompt_tokens": 1490,
+      "total_tokens": 2110,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": null,
+        "audio_tokens": 0,
+        "reasoning_tokens": 0,
+        "rejected_prediction_tokens": null,
+        "text_tokens": 0,
+        "image_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cached_tokens": 0,
+        "text_tokens": 0,
+        "image_tokens": 0
+      },
+      "usage_semantic": "openai",
+      "usage_source": "anthropic",
+      "input_tokens": 1490,
+      "output_tokens": 0,
+      "input_tokens_details": null,
+      "claude_cache_creation_5_m_tokens": 0,
+      "claude_cache_creation_1_h_tokens": 0
+    },
+    "response_format_used": "json_schema",
+    "parse_success": true,
+    "parse_error": "",
+    "empty_output": false,
+    "schema_missing": false,
+    "json_extractor_used": "first_json_object",
+    "elapsed_s": 18.41,
+    "cost_usd": 0.0016125
+  }
+}

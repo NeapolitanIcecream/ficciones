@@ -1,0 +1,90 @@
+{
+  "attempts": [
+    {
+      "attempt": 1,
+      "model": "claude-opus-4-7",
+      "provider": "Anthropic",
+      "budget_setting": "operational",
+      "task_id": "uncued_055_visible",
+      "prompt_condition": "standard_answer",
+      "content": "{\n\"claim_verdict\": \"insufficient\",\n\"confidence\": 0.3,\n\"supporting_evidence\": [\"doc_002\", \"doc_001\"],\n\"rejected_evidence\": [\"doc_003\", \"doc_004\"],\n\"selected_doc_ids\": [\"doc_002\", \"doc_001\", \"doc_003\"],\n\"actions\": [\n{\"action\": \"trace_source\", \"target\": \"doc_002\", \"rationale\": \"doc_001 cites doc_002, but doc_002 is a community roundup with no linked operational record. Tracing to a primary source is needed to verify the launch claim.\"},\n{\"action\": \"search_primary\", \"target\": \"Novalis Robotics AuroraDock April 2025 launch\", \"rationale\": \"No primary registry, press release, or operational record confirms the launch. Operations memos from February 2025 omit it. A primary source is required to substantiate or refute.\"}\n],\n\"evidence_environment_assessment\": \"The environment contains a circular citation pattern: doc_001 (registry entry) repeats doc_002's wording and cites it, while doc_002 (field note roundup) has no linked operational record. Both predate the claimed April 2025 launch (timestamps February 2025), which is suspicious. Operations documents (doc_003, doc_004) covering the relevant workstream do not mention AuroraDock, providing weak negative signal but not direct refutation since they are scoped to battery swaps. No primary source, press release, or post-April record is present.\",\n\"answer\": \"Evidence is insufficient to confirm or refute the AuroraDock field upgrade toolkit launch in April 2025. The only affirmative documents (doc_002, doc_001) form a circular citation with no primary operational record, and both are dated February 2025—before the claimed launch. Operations notes for the same period mention only Orion battery swaps. A primary source (registry, press release, or post-launch operational record) is needed before issuing a verdict.\"\n}",
+      "usage": {
+        "completion_tokens": 632,
+        "prompt_tokens": 1493,
+        "total_tokens": 2125,
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": null,
+          "audio_tokens": 0,
+          "reasoning_tokens": 0,
+          "rejected_prediction_tokens": null,
+          "text_tokens": 0,
+          "image_tokens": 0
+        },
+        "prompt_tokens_details": {
+          "audio_tokens": 0,
+          "cached_tokens": 0,
+          "text_tokens": 0,
+          "image_tokens": 0
+        },
+        "usage_semantic": "openai",
+        "usage_source": "anthropic",
+        "input_tokens": 1493,
+        "output_tokens": 0,
+        "input_tokens_details": null,
+        "claude_cache_creation_5_m_tokens": 0,
+        "claude_cache_creation_1_h_tokens": 0
+      },
+      "response_format_used": "json_schema",
+      "parse_success": true,
+      "parse_error": "",
+      "empty_output": false,
+      "schema_missing": false,
+      "json_extractor_used": "first_json_object",
+      "elapsed_s": 8.673,
+      "cost_usd": 0.0016372499999999998
+    }
+  ],
+  "final_attempt": {
+    "attempt": 1,
+    "model": "claude-opus-4-7",
+    "provider": "Anthropic",
+    "budget_setting": "operational",
+    "task_id": "uncued_055_visible",
+    "prompt_condition": "standard_answer",
+    "content": "{\n\"claim_verdict\": \"insufficient\",\n\"confidence\": 0.3,\n\"supporting_evidence\": [\"doc_002\", \"doc_001\"],\n\"rejected_evidence\": [\"doc_003\", \"doc_004\"],\n\"selected_doc_ids\": [\"doc_002\", \"doc_001\", \"doc_003\"],\n\"actions\": [\n{\"action\": \"trace_source\", \"target\": \"doc_002\", \"rationale\": \"doc_001 cites doc_002, but doc_002 is a community roundup with no linked operational record. Tracing to a primary source is needed to verify the launch claim.\"},\n{\"action\": \"search_primary\", \"target\": \"Novalis Robotics AuroraDock April 2025 launch\", \"rationale\": \"No primary registry, press release, or operational record confirms the launch. Operations memos from February 2025 omit it. A primary source is required to substantiate or refute.\"}\n],\n\"evidence_environment_assessment\": \"The environment contains a circular citation pattern: doc_001 (registry entry) repeats doc_002's wording and cites it, while doc_002 (field note roundup) has no linked operational record. Both predate the claimed April 2025 launch (timestamps February 2025), which is suspicious. Operations documents (doc_003, doc_004) covering the relevant workstream do not mention AuroraDock, providing weak negative signal but not direct refutation since they are scoped to battery swaps. No primary source, press release, or post-April record is present.\",\n\"answer\": \"Evidence is insufficient to confirm or refute the AuroraDock field upgrade toolkit launch in April 2025. The only affirmative documents (doc_002, doc_001) form a circular citation with no primary operational record, and both are dated February 2025—before the claimed launch. Operations notes for the same period mention only Orion battery swaps. A primary source (registry, press release, or post-launch operational record) is needed before issuing a verdict.\"\n}",
+    "usage": {
+      "completion_tokens": 632,
+      "prompt_tokens": 1493,
+      "total_tokens": 2125,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": null,
+        "audio_tokens": 0,
+        "reasoning_tokens": 0,
+        "rejected_prediction_tokens": null,
+        "text_tokens": 0,
+        "image_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cached_tokens": 0,
+        "text_tokens": 0,
+        "image_tokens": 0
+      },
+      "usage_semantic": "openai",
+      "usage_source": "anthropic",
+      "input_tokens": 1493,
+      "output_tokens": 0,
+      "input_tokens_details": null,
+      "claude_cache_creation_5_m_tokens": 0,
+      "claude_cache_creation_1_h_tokens": 0
+    },
+    "response_format_used": "json_schema",
+    "parse_success": true,
+    "parse_error": "",
+    "empty_output": false,
+    "schema_missing": false,
+    "json_extractor_used": "first_json_object",
+    "elapsed_s": 8.673,
+    "cost_usd": 0.0016372499999999998
+  }
+}

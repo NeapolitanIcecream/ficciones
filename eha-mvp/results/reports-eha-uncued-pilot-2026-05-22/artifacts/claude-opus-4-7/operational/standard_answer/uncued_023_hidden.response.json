@@ -1,0 +1,90 @@
+{
+  "attempts": [
+    {
+      "attempt": 1,
+      "model": "claude-opus-4-7",
+      "provider": "Anthropic",
+      "budget_setting": "operational",
+      "task_id": "uncued_023_hidden",
+      "prompt_condition": "standard_answer",
+      "content": "{\n  \"claim_verdict\": \"refuted\",\n  \"confidence\": 0.78,\n  \"supporting_evidence\": [\"doc_003\"],\n  \"rejected_evidence\": [\"doc_002\"],\n  \"selected_doc_ids\": [\"doc_002\", \"doc_003\"],\n  \"actions\": [\n    {\"action\": \"trace_source\", \"target\": \"doc_003\", \"rationale\": \"Digest claims 101 but cites only a routing note (doc_001) that lacks a count; verifying its source is essential.\"},\n    {\"action\": \"compare_versions\", \"target\": \"doc_002\", \"rationale\": \"Ledger row shows 76 for the same workstream/month; compare against digest to resolve the conflict.\"}\n  ],\n  \"evidence_environment_assessment\": \"The packet contains one primary-style record (doc_002, the month-close ledger) showing 76 approved checks, and a secondary digest (doc_003) asserting 101 while citing only a routing note (doc_001) that provides chronology but no count. Doc_004 is irrelevant to totals. The ledger is the authoritative count source; the digest's 101 is unsupported by any underlying row.\",\n  \"answer\": \"The claim of 101 is not supported. The Ridgeway month-close ledger (doc_002) records 76 approved Kestrel firmware checks for August 2025. Doc_003's mention of 101 cites only a routing note with no count, so it lacks primary backing. Based on the available evidence, the claim is refuted by the ledger figure of 76.\"\n}",
+      "usage": {
+        "completion_tokens": 499,
+        "prompt_tokens": 1469,
+        "total_tokens": 1968,
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": null,
+          "audio_tokens": 0,
+          "reasoning_tokens": 0,
+          "rejected_prediction_tokens": null,
+          "text_tokens": 0,
+          "image_tokens": 0
+        },
+        "prompt_tokens_details": {
+          "audio_tokens": 0,
+          "cached_tokens": 0,
+          "text_tokens": 0,
+          "image_tokens": 0
+        },
+        "usage_semantic": "openai",
+        "usage_source": "anthropic",
+        "input_tokens": 1469,
+        "output_tokens": 0,
+        "input_tokens_details": null,
+        "claude_cache_creation_5_m_tokens": 0,
+        "claude_cache_creation_1_h_tokens": 0
+      },
+      "response_format_used": "json_schema",
+      "parse_success": true,
+      "parse_error": "",
+      "empty_output": false,
+      "schema_missing": false,
+      "json_extractor_used": "first_json_object",
+      "elapsed_s": 35.222,
+      "cost_usd": 0.00136525
+    }
+  ],
+  "final_attempt": {
+    "attempt": 1,
+    "model": "claude-opus-4-7",
+    "provider": "Anthropic",
+    "budget_setting": "operational",
+    "task_id": "uncued_023_hidden",
+    "prompt_condition": "standard_answer",
+    "content": "{\n  \"claim_verdict\": \"refuted\",\n  \"confidence\": 0.78,\n  \"supporting_evidence\": [\"doc_003\"],\n  \"rejected_evidence\": [\"doc_002\"],\n  \"selected_doc_ids\": [\"doc_002\", \"doc_003\"],\n  \"actions\": [\n    {\"action\": \"trace_source\", \"target\": \"doc_003\", \"rationale\": \"Digest claims 101 but cites only a routing note (doc_001) that lacks a count; verifying its source is essential.\"},\n    {\"action\": \"compare_versions\", \"target\": \"doc_002\", \"rationale\": \"Ledger row shows 76 for the same workstream/month; compare against digest to resolve the conflict.\"}\n  ],\n  \"evidence_environment_assessment\": \"The packet contains one primary-style record (doc_002, the month-close ledger) showing 76 approved checks, and a secondary digest (doc_003) asserting 101 while citing only a routing note (doc_001) that provides chronology but no count. Doc_004 is irrelevant to totals. The ledger is the authoritative count source; the digest's 101 is unsupported by any underlying row.\",\n  \"answer\": \"The claim of 101 is not supported. The Ridgeway month-close ledger (doc_002) records 76 approved Kestrel firmware checks for August 2025. Doc_003's mention of 101 cites only a routing note with no count, so it lacks primary backing. Based on the available evidence, the claim is refuted by the ledger figure of 76.\"\n}",
+    "usage": {
+      "completion_tokens": 499,
+      "prompt_tokens": 1469,
+      "total_tokens": 1968,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": null,
+        "audio_tokens": 0,
+        "reasoning_tokens": 0,
+        "rejected_prediction_tokens": null,
+        "text_tokens": 0,
+        "image_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cached_tokens": 0,
+        "text_tokens": 0,
+        "image_tokens": 0
+      },
+      "usage_semantic": "openai",
+      "usage_source": "anthropic",
+      "input_tokens": 1469,
+      "output_tokens": 0,
+      "input_tokens_details": null,
+      "claude_cache_creation_5_m_tokens": 0,
+      "claude_cache_creation_1_h_tokens": 0
+    },
+    "response_format_used": "json_schema",
+    "parse_success": true,
+    "parse_error": "",
+    "empty_output": false,
+    "schema_missing": false,
+    "json_extractor_used": "first_json_object",
+    "elapsed_s": 35.222,
+    "cost_usd": 0.00136525
+  }
+}
