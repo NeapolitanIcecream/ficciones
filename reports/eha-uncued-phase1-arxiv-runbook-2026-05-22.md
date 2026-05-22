@@ -1012,13 +1012,13 @@ The runbook is complete when all of these are true:
 - paper draft is rewritten around uncued results;
 - final handoff records exact state, cost, tests, and remaining risks.
 
-## Execution Status: Advanced To Phase 16
+## Execution Status: Advanced To Phase 17
 
 Status date: 2026-05-22
 
-This runbook has been advanced through Phase 16. Phases 17-19 have not been started. The four-model Phase 12 pilot run is complete, the Phase 13 scored report tables have been generated, the Phase 14 scorer audit is complete, the optional Phase 15 schema-ablation mini-slice has been explicitly skipped under the runbook skip rule and deferred to Phase 1.1, and the role-uncued Phase 1 artifact package has been generated.
+This runbook has been advanced through Phase 17. Phases 18-19 have not been started. The four-model Phase 12 pilot run is complete, the Phase 13 scored report tables have been generated, the Phase 14 scorer audit is complete, the optional Phase 15 schema-ablation mini-slice has been explicitly skipped under the runbook skip rule and deferred to Phase 1.1, the role-uncued Phase 1 artifact package has been generated, and the artifact/readiness verifier passes.
 
-Completed Phase 0-16 artifacts:
+Completed Phase 0-17 artifacts:
 
 - Phase 0 start state: `reports/eha-uncued-phase1-start-state-2026-05-22.md`.
 - Phase 1 cued quarantine: `artifact/CUED_INTERNAL_ONLY.md`, `artifact/manifest.json`, `reports/eha-cued-artifact-quarantine-2026-05-22.md`.
@@ -1038,6 +1038,7 @@ Completed Phase 0-16 artifacts:
 - Phase 14 scorer audit: `reports/eha_uncued_scorer_audit.json`, `reports/eha-uncued-scorer-audit-2026-05-22.md`, `reports/uncued_scorer_audit_rows.csv`, `eha-mvp/results/reports-eha-uncued-pilot-2026-05-22/uncued_scorer_audit_rows.csv`, `uncued_scorer_audit_summary.json`.
 - Phase 15 schema-ablation decision: `reports/eha_uncued_schema_ablation_plan.json`, `reports/eha-uncued-schema-ablation-plan-2026-05-22.md`.
 - Phase 16 artifact package: `artifact_uncued_phase1/README.md`, `manifest.json`, `data/`, `prompts/`, `schemas/`, `scorer/`, `outputs/`, `baselines/`, `audits/`, `examples/`, `reproduce_minimal.sh`, and `verify_uncued_phase1.sh`.
+- Phase 17 readiness verification: `reports/eha_uncued_phase1_readiness.json`, `reports/eha-uncued-phase1-readiness-2026-05-22.md`.
 
 Phase 8 gate evidence:
 
@@ -1253,6 +1254,39 @@ Phase 16 artifact package evidence:
 - Artifact verifier script hash: `099cd6fd2a3af4b480b33fdc47a409739f1193c5305a1d6c8793d152b6e49020`.
 - Phase 16 decision: pass; proceed to Phase 17 final verification.
 
+Phase 17 readiness verification evidence:
+
+- Command: `uv run eha-verify-uncued-phase1 --artifact-dir ../artifact_uncued_phase1 --reports-dir ../reports --out-dir ../reports`.
+- Readiness decision: pass.
+- Required artifact layout present: true.
+- Manifest status is role-uncued: true.
+- Manifest hashes match: true.
+- Model-visible files exclude hidden labels: true.
+- Gold and scorer data included: true.
+- Prompt files included: true.
+- Leakage gate passed: true.
+- Baseline gate passed: true.
+- Human leakage gate passed: true.
+- Model run complete: true.
+- Scored results complete: true.
+- Scorer audit complete: true.
+- Schema ablation status explicit: true.
+- Minimal reproduction script present: true.
+- Artifact verifier script present: true.
+- Model records: expected 480, actual 480.
+- Phase 12 model-run status: passed.
+- Phase 12 spent cost: USD 3.764007.
+- Phase 13 scored rows: 480.
+- Phase 13 acceptance: passed.
+- Phase 14 scorer-audit rows: 40.
+- Phase 14 systematic scorer bug found: false.
+- Phase 15 schema ablation: skipped under runbook rule, 0 model calls.
+- Full test suite: `uv run pytest -q` returned `223 passed in 5.65s`.
+- Paper-result table note: the artifact/readiness verifier is passing; replacement of the old paper result tables is the next Phase 18 deliverable and is not claimed as complete in this Phase 17 record.
+- Readiness JSON hash: `4873a6e3dc724b33af844adb7914672ac669a2b35e99fe79bd778430524955d9`.
+- Readiness report hash: `04f62a8a3fc6f2bbf2524028cf5f4b2ecb0c2584ef52c8ab3a12050c831bbd18`.
+- Phase 17 decision: artifact/readiness pass; proceed to Phase 18 paper rewrite.
+
 Commands verified:
 
 ```bash
@@ -1268,6 +1302,7 @@ uv run eha-report-uncued-pilot --help
 uv run eha-package-uncued-phase1 --help
 uv run eha-verify-uncued-phase1 --help
 uv run eha-package-uncued-phase1 --dataset-dir data/uncued-pilot-v1 --run-dir results/reports-eha-uncued-pilot-2026-05-22 --out-dir ../artifact_uncued_phase1
+uv run eha-verify-uncued-phase1 --artifact-dir ../artifact_uncued_phase1 --reports-dir ../reports --out-dir ../reports
 cd /Users/chenmohan/gits/ficciones
 bash artifact_uncued_phase1/reproduce_minimal.sh
 ```
@@ -1286,6 +1321,8 @@ uv run pytest tests/test_uncued_scorer_audit.py -q
 # 2 passed in 0.36s
 uv run pytest tests/test_uncued_release.py -q
 # 4 passed in 0.25s
+uv run pytest -q
+# 223 passed in 5.65s
 cd /Users/chenmohan/gits/ficciones
 git diff --check
 # passed
@@ -1293,4 +1330,4 @@ git diff --check
 
 Next required phase:
 
-- Start Phase 17 final verification and freeze `reports/eha_uncued_phase1_readiness.json`.
+- Start Phase 18 paper rewrite around the uncued results.

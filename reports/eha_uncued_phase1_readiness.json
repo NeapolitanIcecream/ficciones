@@ -1,0 +1,56 @@
+{
+  "date": "2026-05-22",
+  "phase": 17,
+  "artifact_dir": "../artifact_uncued_phase1",
+  "reports_dir": "../reports",
+  "decision": "pass",
+  "gates": {
+    "required_layout_present": true,
+    "manifest_status_role_uncued": true,
+    "manifest_hashes_match": true,
+    "model_visible_files_exclude_hidden_labels": true,
+    "gold_and_scorer_data_included": true,
+    "prompt_files_included": true,
+    "leakage_gate_passed": true,
+    "baseline_gate_passed": true,
+    "human_leakage_gate_passed": true,
+    "model_run_complete": true,
+    "scored_results_complete": true,
+    "scorer_audit_complete": true,
+    "schema_ablation_status_explicit": true,
+    "minimal_reproduction_script_present": true,
+    "artifact_verifier_script_present": true
+  },
+  "missing_layout": [],
+  "hash_mismatches": [],
+  "visible_hidden_label_hits": [],
+  "model_run": {
+    "expected_records": 480,
+    "actual_records": 480,
+    "status": "passed",
+    "cost": {
+      "aborted": false,
+      "record_cost_usd": 3.759681,
+      "spent_usd": 3.764007,
+      "soft_cap_usd": 10.0,
+      "hard_cap_usd": 15.0,
+      "abort_cap_usd": 20.0
+    }
+  },
+  "scored_results": {
+    "status": "passed",
+    "scored_rows": 480,
+    "phase13_acceptance_passed": true
+  },
+  "scorer_audit": {
+    "reviewed_rows": 40,
+    "systematic_scorer_bug_found": false,
+    "rescoring_required": false,
+    "independent_human_review": false
+  },
+  "schema_ablation": {
+    "status": "skipped_under_runbook_rule",
+    "model_calls_made": 0,
+    "decision": "defer_to_phase_1_1"
+  }
+}
