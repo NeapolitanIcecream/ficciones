@@ -49,6 +49,14 @@ PILOT_FAMILY_COUNTS = {
     "active_verification": 12,
 }
 
+PILOT_FAMILY_BY_CONDITION = {
+    "clean": ("packet_judgment",) * 5 + ("evidence_selection",) * 5 + ("active_verification",) * 2,
+    "conflicting_evidence": ("packet_judgment",) * 5 + ("evidence_selection",) * 5 + ("active_verification",) * 2,
+    "false_consensus": ("packet_judgment",) * 5 + ("evidence_selection",) * 5 + ("active_verification",) * 2,
+    "buried_primary": ("packet_judgment",) * 5 + ("evidence_selection",) * 5 + ("active_verification",) * 2,
+    "generated_lore": ("packet_judgment",) * 4 + ("evidence_selection",) * 4 + ("active_verification",) * 4,
+}
+
 SOURCE_TYPES = ("field note", "registry entry", "operations memo", "timeline note")
 VISIBLE_TITLES = (
     "Service Ledger Extract",
@@ -148,11 +156,22 @@ def condition_plan(phase: str, task_count: int) -> list[str]:
     return planned
 
 
-def family_plan(phase: str, task_count: int) -> list[str]:
+def family_plan(phase: str, task_count: int, conditions: Sequence[str] | None = None) -> list[str]:
     if phase == "micro":
         planned = list(MICRO_FAMILY_SEQUENCE)
     elif phase == "pilot":
-        planned = [family for family in FAMILIES for _ in range(PILOT_FAMILY_COUNTS[family])]
+        if conditions is None:
+            raise ValueError("pilot family plan requires conditions")
+        remaining_by_condition = {condition: list(PILOT_FAMILY_BY_CONDITION[condition]) for condition in CONDITIONS}
+        planned = []
+        for condition in conditions:
+            try:
+                planned.append(remaining_by_condition[condition].pop(0))
+            except IndexError as exc:
+                raise ValueError(f"too many pilot tasks for condition: {condition}") from exc
+        leftovers = {condition: families for condition, families in remaining_by_condition.items() if families}
+        if leftovers:
+            raise ValueError(f"pilot family plan left unused family slots: {leftovers}")
     else:
         raise ValueError(f"unknown uncued dataset phase: {phase}")
     if len(planned) != task_count:
@@ -329,7 +348,7 @@ def build_uncued_dataset(
     seed: int,
 ) -> Dict[str, Any]:
     conditions = condition_plan(phase, task_count)
-    families = family_plan(phase, task_count)
+    families = family_plan(phase, task_count, conditions)
     rng = Random(seed)
 
     tasks: list[Dict[str, Any]] = []
@@ -471,4 +490,3 @@ def main(
     write_uncued_dataset(out_dir, dataset)
     manifest_paths = [out_dir / "manifest.json", out_dir / "tasks.jsonl", out_dir / "latent_tasks.jsonl"]
     console.print(f"Wrote {phase} EHA-Uncued dataset with hash seed {stable_hash_text(manifest_paths)[:12]} to {out_dir}.")
-
