@@ -1,0 +1,48 @@
+{
+  "date": "2026-05-22",
+  "dataset_dir": "data/uncued-micro",
+  "reports_dir": "../reports",
+  "phase": "micro_gate",
+  "decision": "go",
+  "missing_inputs": [],
+  "gates": {
+    "manifest_present": true,
+    "leakage_passed": true,
+    "baselines_passed": true,
+    "human_review_validation_passed": true,
+    "critical_leaks_zero": true,
+    "high_leaks_zero": true,
+    "direct_answer_cues_zero": true
+  },
+  "hashes": {
+    "micro_generation_manifest": "099b7e2774daf1513c8b5fda2d3f9177e6e8247bb0b8d0d244b3f825fd370bb2",
+    "leakage_report": "08255d36b783e06bf0d0773baee32ed3a80324013974c940f203801d85072602",
+    "baseline_report": "bb1a55b0a6b0055bcba50394bc7563be06209de5b105469894a6c51211cf5583",
+    "human_review_validation": "e52f77bc67a9c7e7407a8991dff4632c6d6b2671180b94c9dcf2d4c2606f70fe"
+  },
+  "manifest": {
+    "name": "EHA-Uncued micro",
+    "task_count": 10,
+    "views": [
+      "neutral_metadata_visible",
+      "neutral_metadata_hidden"
+    ],
+    "condition_counts": {
+      "clean": 2,
+      "conflicting_evidence": 2,
+      "false_consensus": 2,
+      "buried_primary": 2,
+      "generated_lore": 2
+    },
+    "family_counts": {
+      "packet_judgment": 4,
+      "evidence_selection": 4,
+      "active_verification": 2
+    }
+  },
+  "review_mode": [
+    "local_pre_model_surface_review"
+  ],
+  "independent_human_review": false,
+  "scope_note": "Decision covers the micro-pilot pre-model gate only; no frontier/API model call was made."
+}
