@@ -99,6 +99,9 @@ reports/eha_uncued_pilot_run.json
 reports/eha-uncued-pilot-run-2026-05-22.md
 reports/eha_uncued_pilot_results.json
 reports/eha-uncued-pilot-results-2026-05-22.md
+reports/eha_uncued_scorer_audit.json
+reports/eha-uncued-scorer-audit-2026-05-22.md
+reports/uncued_scorer_audit_rows.csv
 reports/eha-uncued-phase1-readiness-2026-05-22.md
 ```
 
@@ -1009,13 +1012,13 @@ The runbook is complete when all of these are true:
 - paper draft is rewritten around uncued results;
 - final handoff records exact state, cost, tests, and remaining risks.
 
-## Execution Status: Advanced To Phase 13
+## Execution Status: Advanced To Phase 14
 
 Status date: 2026-05-22
 
-This runbook has been advanced through Phase 13. Phases 14-19 have not been started. The four-model Phase 12 pilot run is complete, and the Phase 13 scored report tables have been generated.
+This runbook has been advanced through Phase 14. Phases 15-19 have not been started. The four-model Phase 12 pilot run is complete, the Phase 13 scored report tables have been generated, and the Phase 14 scorer audit is complete.
 
-Completed Phase 0-13 artifacts:
+Completed Phase 0-14 artifacts:
 
 - Phase 0 start state: `reports/eha-uncued-phase1-start-state-2026-05-22.md`.
 - Phase 1 cued quarantine: `artifact/CUED_INTERNAL_ONLY.md`, `artifact/manifest.json`, `reports/eha-cued-artifact-quarantine-2026-05-22.md`.
@@ -1032,6 +1035,7 @@ Completed Phase 0-13 artifacts:
 - Phase 11 DeepSeek retry: `reports/eha_uncued_model_preflight_deepseek_retry.json`, `reports/eha-uncued-model-preflight-deepseek-retry-2026-05-22.md`, `eha-mvp/results/reports-eha-uncued-model-preflight-deepseek-retry-2026-05-22/preflight_predictions.jsonl`, `preflight_rows.csv`, `preflight_summary.csv`, `cohort_decision.md`, `cohort_decision.csv`, `cohort_decision.json`, `cost_report.json`, `audit_manifest.json`.
 - Phase 12 pilot run: `reports/eha_uncued_pilot_run.json`, `reports/eha-uncued-pilot-run-2026-05-22.md`, `eha-mvp/results/reports-eha-uncued-pilot-2026-05-22/predictions.jsonl`, `run_manifest.json`, `invocation_profiles.json`, `run_summary_by_model.csv`, `prompt_audit_summary.json`, `stored_hidden_label_audit.json`, `cost_report.json`, `phase12_run_summary.md`.
 - Phase 13 pilot scoring/reporting: `reports/eha_uncued_pilot_results.json`, `reports/eha-uncued-pilot-results-2026-05-22.md`, `eha-mvp/results/reports-eha-uncued-pilot-2026-05-22/uncued_pilot_scored_predictions.csv`, `uncued_pilot_metrics_by_model.csv`, `uncued_pilot_metrics_by_view.csv`, `uncued_pilot_metrics_by_condition.csv`, `uncued_pilot_metrics_by_family.csv`, `uncued_pilot_metrics_by_model_view.csv`, `uncued_pilot_metrics_by_model_condition.csv`, `uncued_pilot_baselines_vs_models.csv`, `uncued_pilot_active_verification_action_metrics.csv`, `uncued_pilot_acceptance_diagnostics.json`, `report_manifest.json`, `summary.md`.
+- Phase 14 scorer audit: `reports/eha_uncued_scorer_audit.json`, `reports/eha-uncued-scorer-audit-2026-05-22.md`, `reports/uncued_scorer_audit_rows.csv`, `eha-mvp/results/reports-eha-uncued-pilot-2026-05-22/uncued_scorer_audit_rows.csv`, `uncued_scorer_audit_summary.json`.
 
 Phase 8 gate evidence:
 
@@ -1178,6 +1182,28 @@ Phase 13 pilot scoring/reporting evidence:
 - Summary hash: `d593fdf80f71b42ae70311a825d432b7b6f9146ebe76fb7956ec827587c8bde9`.
 - Phase 13 decision: pass; proceed to Phase 14 manual scorer audit.
 
+Phase 14 scorer audit evidence:
+
+- Command: `uv run eha-audit-uncued-scorer --dataset-dir data/uncued-pilot-v1 --run-dir results/reports-eha-uncued-pilot-2026-05-22 --out-dir ../reports --sample-size 40`.
+- Review mode: `local_codex_assisted_manual_scorer_audit`.
+- Independent human review: false.
+- Reviewed rows: 40.
+- Balance by model: 10 rows each for `gpt-5.5`, `claude-opus-4-7`, `gemini-3.1-pro-preview`, and `deepseek-v4-pro`.
+- Balance by view: 20 hidden and 20 visible rows.
+- Balance by condition: 8 rows each for clean, conflicting evidence, false consensus, buried primary, and generated lore.
+- Balance by family: 16 packet-judgment rows, 16 evidence-selection rows, 8 active-verification rows.
+- Success/failure coverage: 20 operational escapes and 20 operational failures.
+- Required worksheet fields are present: row ID, task ID, model, view, predicted verdict, selected evidence, rejected evidence, actions, automatic scores, per-metric human/manual agreement flags, disagreement reason, and scorer-fix-needed flag.
+- Scorer disagreement count: 0.
+- Scorer disagreement rate: 0.0.
+- Systematic scorer bug found: false.
+- Rescoring required: false.
+- Caveat: this is a local Codex-assisted scorer audit, not an independent human-subject review.
+- Scorer audit rows hash: `030f1891ea2a78b53e8bb8b78dfd1a5c638eb38193cb315517ae7efd883de6b2`.
+- Scorer audit JSON hash: `f2732eb0ebf96c024c8e3ec705defce34b09a1c60a582d24d29ae60529b4699b`.
+- Scorer audit report hash: `af0d85e88b624919c6ef63adb87986c6a3a8107a52a994b3d4441f571d901d38`.
+- Phase 14 decision: pass; include the scorer audit in the Phase 16 artifact package.
+
 Commands verified:
 
 ```bash
@@ -1204,6 +1230,8 @@ uv run pytest tests/test_uncued_run.py tests/test_epistemic_frontier_main.py tes
 # 20 passed in 0.42s
 uv run pytest tests/test_uncued_report.py -q
 # 1 passed in 0.32s
+uv run pytest tests/test_uncued_scorer_audit.py -q
+# 2 passed in 0.36s
 cd /Users/chenmohan/gits/ficciones
 git diff --check
 # passed
@@ -1211,4 +1239,4 @@ git diff --check
 
 Next required phase:
 
-- Start Phase 14 manual scorer audit with a balanced 30-50 row scorer-audit sample.
+- Start Phase 15 schema-ablation mini-slice. If skipping under the runbook skip rule, record the skip as planned Phase 1.1 work with an explicit reason.
