@@ -1,0 +1,36 @@
+{
+  "model": "deepseek-v4-pro",
+  "task_id": "uncued_041_hidden",
+  "content": "{\n  \"claim_verdict\": \"supported\",\n  \"confidence\": 0.85,\n  \"supporting_evidence\": [\"doc_004\"],\n  \"rejected_evidence\": [\"doc_003\"],\n  \"selected_doc_ids\": [\"doc_004\", \"doc_003\", \"doc_001\"],\n  \"actions\": [\n    {\n      \"action\": \"search_primary\",\n      \"target\": \"Kestrel firmware checks August 2025\",\n      \"rationale\": \"To locate the official closeout record that determines the final count of approved checks.\"\n    },\n    {\n      \"action\": \"search_contradiction\",\n      \"target\": \"doc_004\",\n      \"rationale\": \"To check for any other documents that present conflicting numbers, ensuring the 76 figure is not contested.\"\n    }\n  ],\n  \"evidence_environment_assessment\": \"The environment includes planning (doc_001), handoff (doc_002), an estimate (doc_003), and a closeout ledger (doc_004). Doc_004 directly states 76 approved checks. Doc_003 gives an earlier estimate of 101, citing the planning memo. The ledger is the most authoritative source, as it represents the final tally, while the estimate is provisional. No other documents provide final numbers, so the contradiction is likely due to the estimate being superseded. Given the information, the ledger is the best evidence.\",\n  \"answer\": \"Yes, the closeout ledger (doc_004) logs 76 approved checks for Kestrel firmware checks in August 2025. An earlier estimate (doc_003) projected 101, but the final ledger supersedes it.\"\n}",
+  "usage": {
+    "completion_tokens": 2319,
+    "prompt_tokens": 1043,
+    "total_tokens": 3362,
+    "completion_tokens_details": {
+      "accepted_prediction_tokens": null,
+      "audio_tokens": null,
+      "reasoning_tokens": 1971,
+      "rejected_prediction_tokens": null
+    },
+    "prompt_tokens_details": {
+      "audio_tokens": null,
+      "cached_tokens": 0
+    },
+    "prompt_cache_hit_tokens": 0,
+    "prompt_cache_miss_tokens": 1043
+  },
+  "response_format_used": "json_object",
+  "parse_success": true,
+  "parse_error": "",
+  "schema_missing": false,
+  "empty_output": false,
+  "invocation_profile": {
+    "temperature_policy": "omitted",
+    "max_completion_tokens_policy": "explicit:4096",
+    "response_format": "json_schema",
+    "json_extractor": "first_json_object",
+    "message_role_policy": "developer_system_merged_into_user",
+    "llm_repair": "disabled",
+    "doc_id_policy": "opaque_per_task"
+  }
+}

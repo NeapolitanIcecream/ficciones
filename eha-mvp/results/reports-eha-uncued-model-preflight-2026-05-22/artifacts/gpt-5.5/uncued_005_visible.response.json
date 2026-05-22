@@ -1,0 +1,45 @@
+{
+  "model": "gpt-5.5",
+  "task_id": "uncued_005_visible",
+  "content": "{\"actions\":[{\"action\":\"open\",\"rationale\":\"Directly states the August 2025 Kestrel firmware checks count and addresses whether 101 appears.\",\"target\":\"doc_001\"},{\"action\":\"search_contradiction\",\"rationale\":\"Check whether any provided document supports the 101 count; none of the other documents reports a count.\",\"target\":\"doc_002-doc_004\"}],\"answer\":\"No. The provided evidence refutes the claim: the only document with a closing count says the ledger lists 76 approved checks and no line lists 101 for this workstream.\",\"claim_verdict\":\"refuted\",\"confidence\":0.88,\"evidence_environment_assessment\":\"The environment is sparse but not conflicted. Only doc_001 provides a numerical count for the relevant workstream and month, and it directly contradicts 101. The remaining documents share context but omit any final count, so they do not support the claim.\",\"rejected_evidence\":[\"doc_002\",\"doc_003\",\"doc_004\"],\"selected_doc_ids\":[\"doc_001\",\"doc_002\",\"doc_003\"],\"supporting_evidence\":[\"doc_001\"]}",
+  "usage": {
+    "completion_tokens": 446,
+    "prompt_tokens": 1175,
+    "total_tokens": 1621,
+    "completion_tokens_details": {
+      "accepted_prediction_tokens": 0,
+      "audio_tokens": 0,
+      "reasoning_tokens": 196,
+      "rejected_prediction_tokens": 0
+    },
+    "prompt_tokens_details": {
+      "audio_tokens": 0,
+      "cached_tokens": 0
+    },
+    "latency_checkpoint": {
+      "engine_tbt_ms": 25,
+      "engine_ttft_ms": 422,
+      "engine_ttlt_ms": 11392,
+      "pre_inference_ms": 105,
+      "service_tbt_ms": 25,
+      "service_ttft_ms": 754,
+      "service_ttlt_ms": 11730,
+      "total_duration_ms": 11632,
+      "user_visible_ttft_ms": 649
+    }
+  },
+  "response_format_used": "json_schema",
+  "parse_success": true,
+  "parse_error": "",
+  "schema_missing": false,
+  "empty_output": false,
+  "invocation_profile": {
+    "temperature_policy": "omitted",
+    "max_completion_tokens_policy": "explicit:4096",
+    "response_format": "json_schema",
+    "json_extractor": "first_json_object",
+    "message_role_policy": "developer_system_merged_into_user",
+    "llm_repair": "disabled",
+    "doc_id_policy": "opaque_per_task"
+  }
+}

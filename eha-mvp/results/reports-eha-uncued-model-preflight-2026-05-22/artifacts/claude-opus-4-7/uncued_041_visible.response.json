@@ -1,0 +1,45 @@
+{
+  "model": "claude-opus-4-7",
+  "task_id": "uncued_041_visible",
+  "content": "{\n  \"claim_verdict\": \"supported\",\n  \"confidence\": 0.78,\n  \"supporting_evidence\": [\"doc_003\"],\n  \"rejected_evidence\": [\"doc_004\", \"doc_002\"],\n  \"selected_doc_ids\": [\"doc_003\", \"doc_004\", \"doc_002\"],\n  \"actions\": [\n    {\"action\": \"compare_versions\", \"target\": \"doc_003 vs doc_004\", \"rationale\": \"Reconcile the closeout ledger's 76 against the earlier digest's 101 estimate to confirm the final figure.\"},\n    {\"action\": \"trace_source\", \"target\": \"doc_003\", \"rationale\": \"Verify the closeout ledger is the authoritative final close record for August 2025.\"}\n  ],\n  \"evidence_environment_assessment\": \"Four documents address the same workstream. doc_002 is a pre-close planning memo with no final number. doc_004 offers an estimate (101) explicitly framed as running and citing the planning memo, not a closeout. doc_001 lacks any count. doc_003 is the closeout ledger using the final close date and reports 76 approved checks, making it the most authoritative source. The 101 figure is superseded by the later closeout entry.\",\n  \"answer\": \"Yes. The closeout ledger (doc_003) records 76 approved checks for Kestrel firmware checks in August 2025. Earlier figures (doc_004's 101) were running estimates tied to the planning memo (doc_002) and are superseded by the final close entry.\"\n}",
+  "usage": {
+    "completion_tokens": 496,
+    "prompt_tokens": 1484,
+    "total_tokens": 1980,
+    "completion_tokens_details": {
+      "accepted_prediction_tokens": null,
+      "audio_tokens": 0,
+      "reasoning_tokens": 0,
+      "rejected_prediction_tokens": null,
+      "text_tokens": 0,
+      "image_tokens": 0
+    },
+    "prompt_tokens_details": {
+      "audio_tokens": 0,
+      "cached_tokens": 0,
+      "text_tokens": 0,
+      "image_tokens": 0
+    },
+    "usage_semantic": "openai",
+    "usage_source": "anthropic",
+    "input_tokens": 1484,
+    "output_tokens": 0,
+    "input_tokens_details": null,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+  },
+  "response_format_used": "json_schema",
+  "parse_success": true,
+  "parse_error": "",
+  "schema_missing": false,
+  "empty_output": false,
+  "invocation_profile": {
+    "temperature_policy": "omitted",
+    "max_completion_tokens_policy": "explicit:4096",
+    "response_format": "json_schema",
+    "json_extractor": "first_json_object",
+    "message_role_policy": "developer_system_merged_into_user",
+    "llm_repair": "disabled",
+    "doc_id_policy": "opaque_per_task"
+  }
+}

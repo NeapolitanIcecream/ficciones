@@ -1,0 +1,45 @@
+{
+  "model": "gpt-5.5",
+  "task_id": "uncued_022_visible",
+  "content": "{\"actions\":[{\"action\":\"open\",\"rationale\":\"Check the apparent primary month-close ledger row for the stated workstream and count.\",\"target\":\"doc_001\"},{\"action\":\"trace_source\",\"rationale\":\"Test whether the 139 digest traces to a visible counted row or only to non-count packet references.\",\"target\":\"doc_003\"}],\"answer\":\"No. The strongest provided evidence is the month-close ledger row in doc_001, which lists 118 completed Nova pump refurbishments for July 2025, not 139. The only document stating 139 is a short digest without a visible row and it cites doc_004, which provides chronology but no count.\",\"claim_verdict\":\"refuted\",\"confidence\":0.78,\"evidence_environment_assessment\":\"The environment contains a direct conflict: a ledger-style month-close row gives 118, while a registry/digest states 139 without visible row support. The digest’s visible citation leads to a chronology note that has no final count, weakening provenance for 139. Non-count timeline notes add little.\",\"rejected_evidence\":[\"doc_003\",\"doc_004\",\"doc_002\"],\"selected_doc_ids\":[\"doc_001\",\"doc_003\",\"doc_004\"],\"supporting_evidence\":[\"doc_001\"]}",
+  "usage": {
+    "completion_tokens": 492,
+    "prompt_tokens": 1192,
+    "total_tokens": 1684,
+    "completion_tokens_details": {
+      "accepted_prediction_tokens": 0,
+      "audio_tokens": 0,
+      "reasoning_tokens": 217,
+      "rejected_prediction_tokens": 0
+    },
+    "prompt_tokens_details": {
+      "audio_tokens": 0,
+      "cached_tokens": 0
+    },
+    "latency_checkpoint": {
+      "engine_tbt_ms": 29,
+      "engine_ttft_ms": 678,
+      "engine_ttlt_ms": 14868,
+      "pre_inference_ms": 130,
+      "service_tbt_ms": 29,
+      "service_ttft_ms": 1164,
+      "service_ttlt_ms": 15091,
+      "total_duration_ms": 15122,
+      "user_visible_ttft_ms": 1034
+    }
+  },
+  "response_format_used": "json_schema",
+  "parse_success": true,
+  "parse_error": "",
+  "schema_missing": false,
+  "empty_output": false,
+  "invocation_profile": {
+    "temperature_policy": "omitted",
+    "max_completion_tokens_policy": "explicit:4096",
+    "response_format": "json_schema",
+    "json_extractor": "first_json_object",
+    "message_role_policy": "developer_system_merged_into_user",
+    "llm_repair": "disabled",
+    "doc_id_policy": "opaque_per_task"
+  }
+}

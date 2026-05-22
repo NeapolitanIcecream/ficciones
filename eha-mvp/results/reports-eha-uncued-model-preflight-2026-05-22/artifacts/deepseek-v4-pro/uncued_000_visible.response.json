@@ -1,0 +1,36 @@
+{
+  "model": "deepseek-v4-pro",
+  "task_id": "uncued_000_visible",
+  "content": "{\n  \"claim_verdict\": \"supported\",\n  \"confidence\": 0.6,\n  \"supporting_evidence\": [\"doc_003\"],\n  \"rejected_evidence\": [],\n  \"selected_doc_ids\": [\"doc_003\"],\n  \"actions\": [\n    {\n      \"action\": \"trace_source\",\n      \"target\": \"doc_003\",\n      \"rationale\": \"Verify the source of the monthly ledger to ensure it is an official record from Novalis Robotics.\"\n    },\n    {\n      \"action\": \"search_primary\",\n      \"target\": \"monthly ledger for Northline service bay\",\n      \"rationale\": \"Locate the actual ledger to confirm the 184 count directly.\"\n    }\n  ],\n  \"evidence_environment_assessment\": \"Four documents are provided, all with timestamps in January 2025 but discussing March 2025 valve checks. Only doc_003 explicitly states that the monthly ledger lists 184 completed checks. The other documents mention the same workstream but provide no count. No contradictory evidence exists. The temporal inconsistency suggests the documents may be planning notes or misdated, but doc_003's content directly answers the question. The single uncorroborated source limits confidence.\",\n  \"answer\": \"Based on the provided evidence, doc_003 states that the monthly ledger for Northline service bay lists 184 completed checks for Atlas valve checks in March 2025. While there is no explicit mention of Novalis Robotics, the context implies it is the responsible entity. No other documents provide a count, so the claim is supported by this single source.\"\n}",
+  "usage": {
+    "completion_tokens": 2510,
+    "prompt_tokens": 1063,
+    "total_tokens": 3573,
+    "completion_tokens_details": {
+      "accepted_prediction_tokens": null,
+      "audio_tokens": null,
+      "reasoning_tokens": 2180,
+      "rejected_prediction_tokens": null
+    },
+    "prompt_tokens_details": {
+      "audio_tokens": null,
+      "cached_tokens": 0
+    },
+    "prompt_cache_hit_tokens": 0,
+    "prompt_cache_miss_tokens": 1063
+  },
+  "response_format_used": "json_object",
+  "parse_success": true,
+  "parse_error": "",
+  "schema_missing": false,
+  "empty_output": false,
+  "invocation_profile": {
+    "temperature_policy": "omitted",
+    "max_completion_tokens_policy": "explicit:4096",
+    "response_format": "json_schema",
+    "json_extractor": "first_json_object",
+    "message_role_policy": "developer_system_merged_into_user",
+    "llm_repair": "disabled",
+    "doc_id_policy": "opaque_per_task"
+  }
+}

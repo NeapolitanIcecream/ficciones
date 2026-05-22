@@ -1,0 +1,45 @@
+{
+  "model": "gpt-5.5",
+  "task_id": "uncued_000_hidden",
+  "content": "{\"actions\":[{\"action\":\"open\",\"rationale\":\"It is the only document with a final monthly count for the relevant workstream and month.\",\"target\":\"doc_004\"},{\"action\":\"search_contradiction\",\"rationale\":\"Check whether any other provided document gives a conflicting March 2025 count.\",\"target\":\"provided packet\"}],\"answer\":\"Supported. The provided monthly ledger states that Northline service bay listed 184 completed checks for Atlas valve checks in March 2025, and no provided document gives a conflicting tally.\",\"claim_verdict\":\"supported\",\"confidence\":0.88,\"evidence_environment_assessment\":\"The environment is small and mostly consistent. Three documents provide contextual details but no final count. One ledger-like document directly states the relevant month, workstream, and tally. No contradiction appears in the packet, though the organization name “Novalis Robotics” is not explicitly repeated in the document bodies.\",\"rejected_evidence\":[\"doc_001\",\"doc_002\",\"doc_003\"],\"selected_doc_ids\":[\"doc_004\",\"doc_001\",\"doc_002\"],\"supporting_evidence\":[\"doc_004\"]}",
+  "usage": {
+    "completion_tokens": 500,
+    "prompt_tokens": 1200,
+    "total_tokens": 1700,
+    "completion_tokens_details": {
+      "accepted_prediction_tokens": 0,
+      "audio_tokens": 0,
+      "reasoning_tokens": 256,
+      "rejected_prediction_tokens": 0
+    },
+    "prompt_tokens_details": {
+      "audio_tokens": 0,
+      "cached_tokens": 0
+    },
+    "latency_checkpoint": {
+      "engine_tbt_ms": 26,
+      "engine_ttft_ms": 312,
+      "engine_ttlt_ms": 13112,
+      "pre_inference_ms": 110,
+      "service_tbt_ms": 26,
+      "service_ttft_ms": 666,
+      "service_ttlt_ms": 13460,
+      "total_duration_ms": 13352,
+      "user_visible_ttft_ms": 556
+    }
+  },
+  "response_format_used": "json_schema",
+  "parse_success": true,
+  "parse_error": "",
+  "schema_missing": false,
+  "empty_output": false,
+  "invocation_profile": {
+    "temperature_policy": "omitted",
+    "max_completion_tokens_policy": "explicit:4096",
+    "response_format": "json_schema",
+    "json_extractor": "first_json_object",
+    "message_role_policy": "developer_system_merged_into_user",
+    "llm_repair": "disabled",
+    "doc_id_policy": "opaque_per_task"
+  }
+}

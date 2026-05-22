@@ -1,0 +1,45 @@
+{
+  "model": "gpt-5.5",
+  "task_id": "uncued_010_visible",
+  "content": "{\"actions\":[{\"action\":\"open\",\"rationale\":\"Directly states the July 2025 Nova pump refurbishments count.\",\"target\":\"doc_004\"},{\"action\":\"search_contradiction\",\"rationale\":\"Check surrounding notes for conflicting final tallies; they provide context but no alternate count.\",\"target\":\"doc_001, doc_002, doc_003\"}],\"answer\":\"Yes. The provided evidence supports that the monthly ledger listed 118 completed refurbishments for Nova pump refurbishments in July 2025.\",\"claim_verdict\":\"supported\",\"confidence\":0.78,\"evidence_environment_assessment\":\"The environment contains one direct count-bearing document and three contextual documents that explicitly lack a final tally. No document contradicts the 118 figure. Evidence quality is limited because the direct item is a memo/summary with no visible citations or underlying ledger image, but within the provided set it is the most probative source.\",\"rejected_evidence\":[\"doc_001\",\"doc_002\",\"doc_003\"],\"selected_doc_ids\":[\"doc_004\",\"doc_001\",\"doc_002\"],\"supporting_evidence\":[\"doc_004\"]}",
+  "usage": {
+    "completion_tokens": 426,
+    "prompt_tokens": 1204,
+    "total_tokens": 1630,
+    "completion_tokens_details": {
+      "accepted_prediction_tokens": 0,
+      "audio_tokens": 0,
+      "reasoning_tokens": 180,
+      "rejected_prediction_tokens": 0
+    },
+    "prompt_tokens_details": {
+      "audio_tokens": 0,
+      "cached_tokens": 0
+    },
+    "latency_checkpoint": {
+      "engine_tbt_ms": 23,
+      "engine_ttft_ms": 790,
+      "engine_ttlt_ms": 10550,
+      "pre_inference_ms": 132,
+      "service_tbt_ms": 23,
+      "service_ttft_ms": 1166,
+      "service_ttlt_ms": 10922,
+      "total_duration_ms": 10799,
+      "user_visible_ttft_ms": 1034
+    }
+  },
+  "response_format_used": "json_schema",
+  "parse_success": true,
+  "parse_error": "",
+  "schema_missing": false,
+  "empty_output": false,
+  "invocation_profile": {
+    "temperature_policy": "omitted",
+    "max_completion_tokens_policy": "explicit:4096",
+    "response_format": "json_schema",
+    "json_extractor": "first_json_object",
+    "message_role_policy": "developer_system_merged_into_user",
+    "llm_repair": "disabled",
+    "doc_id_policy": "opaque_per_task"
+  }
+}

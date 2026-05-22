@@ -1,0 +1,43 @@
+{
+  "model": "gemini-3.1-pro-preview",
+  "task_id": "uncued_010_visible",
+  "content": "{\n  \"claim_verdict\": \"supported\",\n  \"confidence\": 0.95,\n  \"supporting_evidence\": [\n    \"doc_004\"\n  ],\n  \"rejected_evidence\": [\n    \"doc_001\",\n    \"doc_002\",\n    \"doc_003\"\n  ],\n  \"selected_doc_ids\": [\n    \"doc_004\"\n  ],\n  \"actions\": [\n    {\n      \"action\": \"search_contradiction\",\n      \"target\": \"Nova pump refurbishments July 2025 completion count\",\n      \"rationale\": \"To verify if any other sources or final reports provide a different refurbishment count for July 2025.\"\n    }\n  ],\n  \"evidence_environment_assessment\": \"The evidence environment includes several operational and planning notes regarding the Nova pump refurbishments in July 2025. While most documents provide contextual details such as site location and timing without numerical tallies, doc_004 directly answers the claim by citing the monthly ledger's count of 118 completed refurbishments. There are no contradicting figures present in the provided documents.\",\n  \"answer\": \"Yes, Novalis Robotics logged 118 completed refurbishments for Nova pump refurbishments in July 2025. According to the Field Summary Memo (doc_004), the monthly ledger for Harbor Annex explicitly lists 118 completed refurbishments for this specific workstream during that month.\"\n}",
+  "usage": {
+    "completion_tokens": 987,
+    "prompt_tokens": 1564,
+    "total_tokens": 2551,
+    "completion_tokens_details": {
+      "accepted_prediction_tokens": null,
+      "audio_tokens": 0,
+      "reasoning_tokens": 652,
+      "rejected_prediction_tokens": null,
+      "text_tokens": 335,
+      "image_tokens": 0
+    },
+    "prompt_tokens_details": {
+      "audio_tokens": 0,
+      "cached_tokens": 0,
+      "text_tokens": 1564,
+      "image_tokens": 0
+    },
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "input_tokens_details": null,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+  },
+  "response_format_used": "json_schema",
+  "parse_success": true,
+  "parse_error": "",
+  "schema_missing": false,
+  "empty_output": false,
+  "invocation_profile": {
+    "temperature_policy": "omitted",
+    "max_completion_tokens_policy": "explicit:4096",
+    "response_format": "json_schema",
+    "json_extractor": "first_json_object",
+    "message_role_policy": "developer_system_merged_into_user",
+    "llm_repair": "disabled",
+    "doc_id_policy": "opaque_per_task"
+  }
+}

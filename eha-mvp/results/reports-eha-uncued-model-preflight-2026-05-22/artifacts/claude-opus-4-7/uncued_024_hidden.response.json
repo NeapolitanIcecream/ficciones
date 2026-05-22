@@ -1,0 +1,45 @@
+{
+  "model": "claude-opus-4-7",
+  "task_id": "uncued_024_hidden",
+  "content": "{\n  \"claim_verdict\": \"refuted\",\n  \"confidence\": 0.7,\n  \"supporting_evidence\": [\"doc_002\"],\n  \"rejected_evidence\": [\"doc_003\", \"doc_004\"],\n  \"selected_doc_ids\": [\"doc_002\", \"doc_003\", \"doc_004\"],\n  \"actions\": [\n    {\"action\": \"trace_source\", \"target\": \"doc_004\", \"rationale\": \"The partner summary cites the weekly digest, which itself points to an earlier bulletin — a circular citation loop inflating the 211 figure.\"},\n    {\"action\": \"compare_versions\", \"target\": \"doc_002\", \"rationale\": \"The closing ledger is the primary count sheet and disagrees with the digest chain; verify ledger as authoritative source.\"}\n  ],\n  \"evidence_environment_assessment\": \"The 211 figure appears in two notes (doc_003 digest and doc_004 partner summary) that cite each other, forming a circular reference rather than independent corroboration. The closing ledger (doc_002) is the only document presenting a primary final count and reports 184. The site memo (doc_001) lacks a count. Authoritative weight favors the ledger over repeated secondary mentions.\",\n  \"answer\": \"No. The closing ledger for Northline service bay records 184 completed Atlas valve checks for March 2025, not 211. The 211 figure appears only in a weekly digest and a partner summary that cite each other circularly, providing no independent primary source. The claim is refuted by the ledger, the strongest available evidence.\"\n}",
+  "usage": {
+    "completion_tokens": 509,
+    "prompt_tokens": 1479,
+    "total_tokens": 1988,
+    "completion_tokens_details": {
+      "accepted_prediction_tokens": null,
+      "audio_tokens": 0,
+      "reasoning_tokens": 0,
+      "rejected_prediction_tokens": null,
+      "text_tokens": 0,
+      "image_tokens": 0
+    },
+    "prompt_tokens_details": {
+      "audio_tokens": 0,
+      "cached_tokens": 0,
+      "text_tokens": 0,
+      "image_tokens": 0
+    },
+    "usage_semantic": "openai",
+    "usage_source": "anthropic",
+    "input_tokens": 1479,
+    "output_tokens": 0,
+    "input_tokens_details": null,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+  },
+  "response_format_used": "json_schema",
+  "parse_success": true,
+  "parse_error": "",
+  "schema_missing": false,
+  "empty_output": false,
+  "invocation_profile": {
+    "temperature_policy": "omitted",
+    "max_completion_tokens_policy": "explicit:4096",
+    "response_format": "json_schema",
+    "json_extractor": "first_json_object",
+    "message_role_policy": "developer_system_merged_into_user",
+    "llm_repair": "disabled",
+    "doc_id_policy": "opaque_per_task"
+  }
+}

@@ -1,0 +1,45 @@
+{
+  "model": "claude-opus-4-7",
+  "task_id": "uncued_041_hidden",
+  "content": "{\n  \"claim_verdict\": \"supported\",\n  \"confidence\": 0.78,\n  \"supporting_evidence\": [\"doc_004\"],\n  \"rejected_evidence\": [\"doc_003\", \"doc_001\", \"doc_002\"],\n  \"selected_doc_ids\": [\"doc_004\", \"doc_003\", \"doc_001\"],\n  \"actions\": [\n    {\"action\": \"trace_source\", \"target\": \"doc_004\", \"rationale\": \"Confirm the closeout ledger is the authoritative final record for the August 2025 close.\"},\n    {\"action\": \"compare_versions\", \"target\": \"doc_003 vs doc_004\", \"rationale\": \"Reconcile the 101 running estimate against the 76 final closeout figure.\"}\n  ],\n  \"evidence_environment_assessment\": \"Four documents share labels (site, workstream, close date), so judgment relies on stated values and document role. doc_004 is a closeout ledger with the final figure (76). doc_003 is an earlier running estimate (101) citing the planning memo doc_001, which lacks final numbers. doc_002 is a handoff note without counts. The ledger postdates planning artifacts in role, making it the most authoritative; the digest is explicitly preliminary.\",\n  \"answer\": \"Yes. The closeout ledger (doc_004) records 76 approved checks for Kestrel firmware checks in August 2025. The conflicting figure of 101 in doc_003 is labeled a running estimate tied to a pre-close planning memo (doc_001), and doc_002 contains no count. The final ledger entry takes precedence over preliminary estimates.\"\n}",
+  "usage": {
+    "completion_tokens": 527,
+    "prompt_tokens": 1456,
+    "total_tokens": 1983,
+    "completion_tokens_details": {
+      "accepted_prediction_tokens": null,
+      "audio_tokens": 0,
+      "reasoning_tokens": 0,
+      "rejected_prediction_tokens": null,
+      "text_tokens": 0,
+      "image_tokens": 0
+    },
+    "prompt_tokens_details": {
+      "audio_tokens": 0,
+      "cached_tokens": 0,
+      "text_tokens": 0,
+      "image_tokens": 0
+    },
+    "usage_semantic": "openai",
+    "usage_source": "anthropic",
+    "input_tokens": 1456,
+    "output_tokens": 0,
+    "input_tokens_details": null,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+  },
+  "response_format_used": "json_schema",
+  "parse_success": true,
+  "parse_error": "",
+  "schema_missing": false,
+  "empty_output": false,
+  "invocation_profile": {
+    "temperature_policy": "omitted",
+    "max_completion_tokens_policy": "explicit:4096",
+    "response_format": "json_schema",
+    "json_extractor": "first_json_object",
+    "message_role_policy": "developer_system_merged_into_user",
+    "llm_repair": "disabled",
+    "doc_id_policy": "opaque_per_task"
+  }
+}

@@ -1,0 +1,45 @@
+{
+  "model": "claude-opus-4-7",
+  "task_id": "uncued_017_hidden",
+  "content": "{\n  \"claim_verdict\": \"refuted\",\n  \"confidence\": 0.6,\n  \"supporting_evidence\": [\"doc_001\"],\n  \"rejected_evidence\": [\"doc_003\"],\n  \"selected_doc_ids\": [\"doc_003\", \"doc_001\", \"doc_002\"],\n  \"actions\": [\n    {\"action\": \"trace_source\", \"target\": \"doc_003\", \"rationale\": \"The month-close ledger is the most authoritative artifact (a ledger row vs. a digest); verify its 76 figure against the underlying packet.\"},\n    {\"action\": \"compare_versions\", \"target\": \"doc_001 vs doc_003\", \"rationale\": \"Reconcile the digest's 101 figure with the ledger's 76 to determine which reflects the final approved count.\"}\n  ],\n  \"evidence_environment_assessment\": \"Two documents bear on the count: doc_003 (a month-close ledger for Ridgeway bench) reports 76 approved checks; doc_001 (an operations digest) reports 101 but cites only doc_002, a routing note that gives chronology, not a total. Doc_004 is a scheduling memo without totals. The ledger is a stronger primary record than a digest whose cited basis lacks the figure, so the 101 claim is unsupported by primary evidence and contradicted by the ledger.\",\n  \"answer\": \"The claim that Novalis Robotics logged 101 approved checks for Kestrel firmware checks in August 2025 is refuted by the available evidence. The month-close ledger (doc_003) records 76 approved checks for that workstream. The only document asserting 101 (doc_001) is a brief operations digest whose sole citation (doc_002) provides chronology, not a count. Absent a primary record corroborating 101, the ledger's figure prevails.\"\n}",
+  "usage": {
+    "completion_tokens": 590,
+    "prompt_tokens": 1471,
+    "total_tokens": 2061,
+    "completion_tokens_details": {
+      "accepted_prediction_tokens": null,
+      "audio_tokens": 0,
+      "reasoning_tokens": 0,
+      "rejected_prediction_tokens": null,
+      "text_tokens": 0,
+      "image_tokens": 0
+    },
+    "prompt_tokens_details": {
+      "audio_tokens": 0,
+      "cached_tokens": 0,
+      "text_tokens": 0,
+      "image_tokens": 0
+    },
+    "usage_semantic": "openai",
+    "usage_source": "anthropic",
+    "input_tokens": 1471,
+    "output_tokens": 0,
+    "input_tokens_details": null,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+  },
+  "response_format_used": "json_schema",
+  "parse_success": true,
+  "parse_error": "",
+  "schema_missing": false,
+  "empty_output": false,
+  "invocation_profile": {
+    "temperature_policy": "omitted",
+    "max_completion_tokens_policy": "explicit:4096",
+    "response_format": "json_schema",
+    "json_extractor": "first_json_object",
+    "message_role_policy": "developer_system_merged_into_user",
+    "llm_repair": "disabled",
+    "doc_id_policy": "opaque_per_task"
+  }
+}

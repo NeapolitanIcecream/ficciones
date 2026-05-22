@@ -1,0 +1,70 @@
+{
+  "phase": 11,
+  "status": "blocked_for_four_model_phase12",
+  "status_date": "2026-05-22",
+  "task_dir": "eha-mvp/data/uncued-pilot-v1",
+  "result_dir": "eha-mvp/results/reports-eha-uncued-model-preflight-2026-05-22",
+  "models_requested": [
+    "gpt-5.5",
+    "claude-opus-4-7",
+    "gemini-3.1-pro-preview",
+    "deepseek-v4-pro"
+  ],
+  "models_excluded": [
+    "kimi-k2.6"
+  ],
+  "fallback_models": [],
+  "sample_size_per_model": 20,
+  "prompt_condition": "standard_answer",
+  "expected_calls": 80,
+  "actual_records": 80,
+  "soft_cap_usd": 3.0,
+  "hard_cap_usd": 5.0,
+  "abort_cap_usd": 8.0,
+  "actual_cost_usd": 0.656743,
+  "aborted": false,
+  "gate": {
+    "parse_success_min": 0.95,
+    "empty_output_required": 0,
+    "schema_missing_rate_max": 0.05,
+    "llm_repair": "disabled"
+  },
+  "model_results": [
+    {
+      "model": "gpt-5.5",
+      "n": 20,
+      "parse_success_count": 20,
+      "empty_output_count": 0,
+      "schema_missing_count": 0,
+      "structured_preflight_pass": true
+    },
+    {
+      "model": "claude-opus-4-7",
+      "n": 20,
+      "parse_success_count": 20,
+      "empty_output_count": 0,
+      "schema_missing_count": 0,
+      "structured_preflight_pass": true
+    },
+    {
+      "model": "gemini-3.1-pro-preview",
+      "n": 20,
+      "parse_success_count": 20,
+      "empty_output_count": 0,
+      "schema_missing_count": 0,
+      "structured_preflight_pass": true
+    },
+    {
+      "model": "deepseek-v4-pro",
+      "n": 20,
+      "parse_success_count": 19,
+      "empty_output_count": 1,
+      "schema_missing_count": 0,
+      "structured_preflight_pass": false,
+      "failing_task_id": "uncued_000_hidden",
+      "parse_error": "empty output"
+    }
+  ],
+  "phase12_allowed": false,
+  "phase12_blocker": "deepseek-v4-pro failed the empty_output=0 structured-output gate."
+}

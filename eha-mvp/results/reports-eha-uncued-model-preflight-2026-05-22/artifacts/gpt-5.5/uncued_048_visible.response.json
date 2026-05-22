@@ -1,0 +1,45 @@
+{
+  "model": "gpt-5.5",
+  "task_id": "uncued_048_visible",
+  "content": "{\"actions\":[{\"action\":\"trace_source\",\"rationale\":\"The direct claim traces only to a community roundup with no operational record.\",\"target\":\"doc_004\"},{\"action\":\"search_primary\",\"rationale\":\"A launch claim needs a primary registry, memo, or operational announcement, which is absent here.\",\"target\":\"HelioSplice partner repair program launch March 2025\"}],\"answer\":\"Insufficient evidence. The only affirmative evidence is a community roundup, repeated by a later recap, with no linked operational record. Nearby registry and operations memo documents discuss other routine service work and do not mention a HelioSplice launch.\",\"claim_verdict\":\"insufficient\",\"confidence\":0.78,\"evidence_environment_assessment\":\"The environment is low quality for this claim: the affirmative evidence is derivative and circular, with doc_003 explicitly repeating doc_004. Doc_004 is a field/community note without citations or operational records. The other documents are not direct refutations but create absence of corroboration in more operationally relevant sources.\",\"rejected_evidence\":[\"doc_003\"],\"selected_doc_ids\":[\"doc_004\",\"doc_003\",\"doc_002\"],\"supporting_evidence\":[\"doc_004\"]}",
+  "usage": {
+    "completion_tokens": 254,
+    "prompt_tokens": 1187,
+    "total_tokens": 1441,
+    "completion_tokens_details": {
+      "accepted_prediction_tokens": 0,
+      "audio_tokens": 0,
+      "reasoning_tokens": 0,
+      "rejected_prediction_tokens": 0
+    },
+    "prompt_tokens_details": {
+      "audio_tokens": 0,
+      "cached_tokens": 0
+    },
+    "latency_checkpoint": {
+      "engine_tbt_ms": 19,
+      "engine_ttft_ms": 401,
+      "engine_ttlt_ms": 5332,
+      "pre_inference_ms": 127,
+      "service_tbt_ms": 19,
+      "service_ttft_ms": 763,
+      "service_ttlt_ms": 5692,
+      "total_duration_ms": 5572,
+      "user_visible_ttft_ms": 636
+    }
+  },
+  "response_format_used": "json_schema",
+  "parse_success": true,
+  "parse_error": "",
+  "schema_missing": false,
+  "empty_output": false,
+  "invocation_profile": {
+    "temperature_policy": "omitted",
+    "max_completion_tokens_policy": "explicit:4096",
+    "response_format": "json_schema",
+    "json_extractor": "first_json_object",
+    "message_role_policy": "developer_system_merged_into_user",
+    "llm_repair": "disabled",
+    "doc_id_policy": "opaque_per_task"
+  }
+}

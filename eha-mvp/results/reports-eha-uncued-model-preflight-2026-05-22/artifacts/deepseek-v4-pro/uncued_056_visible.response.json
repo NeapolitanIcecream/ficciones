@@ -1,0 +1,36 @@
+{
+  "model": "deepseek-v4-pro",
+  "task_id": "uncued_056_visible",
+  "content": "{\n  \"claim_verdict\": \"insufficient\",\n  \"confidence\": 0.2,\n  \"supporting_evidence\": [\"doc_002\"],\n  \"rejected_evidence\": [\"doc_001\", \"doc_003\"],\n  \"selected_doc_ids\": [\"doc_002\", \"doc_003\", \"doc_004\"],\n  \"actions\": [\n    {\n      \"action\": \"trace_source\",\n      \"target\": \"doc_002\",\n      \"rationale\": \"The claim originates from a community roundup with no operational record; tracing its source could reveal reliability.\"\n    },\n    {\n      \"action\": \"search_primary\",\n      \"target\": \"Meridian Shield recall board launch\",\n      \"rationale\": \"Primary operational records are needed to verify the launch, as current official documents do not mention it.\"\n    }\n  ],\n  \"evidence_environment_assessment\": \"Only doc_002, a community roundup, directly claims the launch; doc_004 repeats it. Doc_001 and doc_003, service ledger and program registry entries, list other May 2025 work but omit the recall board. No primary operational record corroborates the claim, leaving a single weak, possibly hearsay source.\",\n  \"answer\": \"The evidence is insufficient. The sole source is a community roundup without linked operational records. Official documents (doc_001, doc_003) do not mention the Meridian Shield recall board, and the claim lacks primary corroboration.\"\n}",
+  "usage": {
+    "completion_tokens": 2707,
+    "prompt_tokens": 1043,
+    "total_tokens": 3750,
+    "completion_tokens_details": {
+      "accepted_prediction_tokens": null,
+      "audio_tokens": null,
+      "reasoning_tokens": 2400,
+      "rejected_prediction_tokens": null
+    },
+    "prompt_tokens_details": {
+      "audio_tokens": null,
+      "cached_tokens": 0
+    },
+    "prompt_cache_hit_tokens": 0,
+    "prompt_cache_miss_tokens": 1043
+  },
+  "response_format_used": "json_object",
+  "parse_success": true,
+  "parse_error": "",
+  "schema_missing": false,
+  "empty_output": false,
+  "invocation_profile": {
+    "temperature_policy": "omitted",
+    "max_completion_tokens_policy": "explicit:4096",
+    "response_format": "json_schema",
+    "json_extractor": "first_json_object",
+    "message_role_policy": "developer_system_merged_into_user",
+    "llm_repair": "disabled",
+    "doc_id_policy": "opaque_per_task"
+  }
+}

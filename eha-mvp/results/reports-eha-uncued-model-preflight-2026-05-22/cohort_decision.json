@@ -1,0 +1,98 @@
+{
+  "decisions": [
+    {
+      "provider": "Anthropic",
+      "selected_model": "claude-opus-4-7",
+      "primary_candidate": "claude-opus-4-7",
+      "fallback_model": "",
+      "status": "selected",
+      "note": "Candidate passed structured-output preflight."
+    },
+    {
+      "provider": "DeepSeek",
+      "selected_model": "",
+      "primary_candidate": "deepseek-v4-pro",
+      "fallback_model": "",
+      "status": "blocked",
+      "note": "Candidate did not pass structured-output preflight."
+    },
+    {
+      "provider": "Google",
+      "selected_model": "gemini-3.1-pro-preview",
+      "primary_candidate": "gemini-3.1-pro-preview",
+      "fallback_model": "",
+      "status": "selected",
+      "note": "Latest Google candidate passed structured-output preflight."
+    },
+    {
+      "provider": "OpenAI",
+      "selected_model": "gpt-5.5",
+      "primary_candidate": "gpt-5.5",
+      "fallback_model": "",
+      "status": "selected",
+      "note": "Candidate passed structured-output preflight."
+    }
+  ],
+  "summaries": [
+    {
+      "model": "claude-opus-4-7",
+      "n": 20,
+      "parse_success_count": 20,
+      "parse_success_rate": 1.0,
+      "empty_output_count": 0,
+      "schema_missing_count": 0,
+      "schema_missing_rate": 0.0,
+      "structured_preflight_pass": true,
+      "response_format_used": "{\"json_schema\": 20}",
+      "json_extractor_used": "{\"first_json_object\": 20}",
+      "temperature_policy": "omitted",
+      "max_completion_tokens_policy": "explicit:4096",
+      "required_schema_fields": "claim_verdict,confidence,supporting_evidence,rejected_evidence,selected_doc_ids,actions,evidence_environment_assessment,answer"
+    },
+    {
+      "model": "deepseek-v4-pro",
+      "n": 20,
+      "parse_success_count": 19,
+      "parse_success_rate": 0.95,
+      "empty_output_count": 1,
+      "schema_missing_count": 0,
+      "schema_missing_rate": 0.0,
+      "structured_preflight_pass": false,
+      "response_format_used": "{\"json_object\": 20}",
+      "json_extractor_used": "{\"first_json_object\": 20}",
+      "temperature_policy": "omitted",
+      "max_completion_tokens_policy": "explicit:4096",
+      "required_schema_fields": "claim_verdict,confidence,supporting_evidence,rejected_evidence,selected_doc_ids,actions,evidence_environment_assessment,answer"
+    },
+    {
+      "model": "gemini-3.1-pro-preview",
+      "n": 20,
+      "parse_success_count": 20,
+      "parse_success_rate": 1.0,
+      "empty_output_count": 0,
+      "schema_missing_count": 0,
+      "schema_missing_rate": 0.0,
+      "structured_preflight_pass": true,
+      "response_format_used": "{\"json_schema\": 20}",
+      "json_extractor_used": "{\"first_json_object\": 20}",
+      "temperature_policy": "omitted",
+      "max_completion_tokens_policy": "explicit:4096",
+      "required_schema_fields": "claim_verdict,confidence,supporting_evidence,rejected_evidence,selected_doc_ids,actions,evidence_environment_assessment,answer"
+    },
+    {
+      "model": "gpt-5.5",
+      "n": 20,
+      "parse_success_count": 20,
+      "parse_success_rate": 1.0,
+      "empty_output_count": 0,
+      "schema_missing_count": 0,
+      "schema_missing_rate": 0.0,
+      "structured_preflight_pass": true,
+      "response_format_used": "{\"json_schema\": 20}",
+      "json_extractor_used": "{\"first_json_object\": 20}",
+      "temperature_policy": "omitted",
+      "max_completion_tokens_policy": "explicit:4096",
+      "required_schema_fields": "claim_verdict,confidence,supporting_evidence,rejected_evidence,selected_doc_ids,actions,evidence_environment_assessment,answer"
+    }
+  ]
+}

@@ -1,0 +1,36 @@
+{
+  "model": "deepseek-v4-pro",
+  "task_id": "uncued_048_hidden",
+  "content": "{\n  \"claim_verdict\": \"insufficient\",\n  \"confidence\": 0.4,\n  \"supporting_evidence\": [\"doc_001\", \"doc_002\"],\n  \"rejected_evidence\": [\"doc_003\", \"doc_004\"],\n  \"selected_doc_ids\": [\"doc_001\", \"doc_003\", \"doc_004\"],\n  \"actions\": [\n    {\n      \"action\": \"trace_source\",\n      \"target\": \"doc_001\",\n      \"rationale\": \"The community roundup in doc_001 is the only source for the claim; tracing its source would help assess its reliability.\"\n    },\n    {\n      \"action\": \"search_primary\",\n      \"target\": \"Novalis Robotics HelioSplice partner repair program launch March 2025\",\n      \"rationale\": \"No official Novalis Robotics document is present; searching for a primary source could confirm or refute the launch.\"\n    }\n  ],\n  \"evidence_environment_assessment\": \"The environment contains a community roundup (doc_001) claiming the program appeared in March 2025, and a partner recap (doc_002) citing it. However, two operational documents (doc_003, doc_004) from the period only show routine Atlas valve checks, with no mention of the HelioSplice program. The roundup lacks an operational link, making it unreliable. No official Novalis Robotics source exists. Thus, the evidence weakly supports the claim but is insufficient for a definitive judgment due to the absence of corroborating primary records and the silence of operational logs.\",\n  \"answer\": \"Based on the provided documents, there is insufficient evidence to confirm that Novalis Robotics launched the HelioSplice partner repair program in March 2025. While a community roundup (doc_001) and a partner recap (doc_002) mention it, they lack operational backup, and routine service records (doc_003, doc_004) from the same period do not reference the program.\"\n}",
+  "usage": {
+    "completion_tokens": 1627,
+    "prompt_tokens": 1042,
+    "total_tokens": 2669,
+    "completion_tokens_details": {
+      "accepted_prediction_tokens": null,
+      "audio_tokens": null,
+      "reasoning_tokens": 1212,
+      "rejected_prediction_tokens": null
+    },
+    "prompt_tokens_details": {
+      "audio_tokens": null,
+      "cached_tokens": 0
+    },
+    "prompt_cache_hit_tokens": 0,
+    "prompt_cache_miss_tokens": 1042
+  },
+  "response_format_used": "json_object",
+  "parse_success": true,
+  "parse_error": "",
+  "schema_missing": false,
+  "empty_output": false,
+  "invocation_profile": {
+    "temperature_policy": "omitted",
+    "max_completion_tokens_policy": "explicit:4096",
+    "response_format": "json_schema",
+    "json_extractor": "first_json_object",
+    "message_role_policy": "developer_system_merged_into_user",
+    "llm_repair": "disabled",
+    "doc_id_policy": "opaque_per_task"
+  }
+}

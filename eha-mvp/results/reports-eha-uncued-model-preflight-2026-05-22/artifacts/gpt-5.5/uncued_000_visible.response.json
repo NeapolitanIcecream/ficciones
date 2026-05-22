@@ -1,0 +1,45 @@
+{
+  "model": "gpt-5.5",
+  "task_id": "uncued_000_visible",
+  "content": "{\"actions\":[{\"action\":\"open\",\"rationale\":\"Check the only document that states a March 2025 Atlas valve checks tally.\",\"target\":\"doc_003\"},{\"action\":\"search_contradiction\",\"rationale\":\"Review surrounding packet for conflicting counts or attribution to Novalis Robotics.\",\"target\":\"doc_001, doc_002, doc_004\"}],\"answer\":\"Insufficient. doc_003 supports that a monthly ledger for Northline service bay listed 184 completed checks for Atlas valve checks in March 2025, but the provided evidence does not identify Novalis Robotics as the logger/operator. Other documents provide context but no final tally or entity attribution.\",\"claim_verdict\":\"insufficient\",\"confidence\":0.74,\"evidence_environment_assessment\":\"The packet contains one directly relevant count statement and several contextual notes without tallies. No document provides source citations or identifies Novalis Robotics, so the numeric portion is supported but entity attribution remains unverified within this evidence environment.\",\"rejected_evidence\":[\"doc_001\",\"doc_002\",\"doc_004\"],\"selected_doc_ids\":[\"doc_003\",\"doc_001\",\"doc_002\"],\"supporting_evidence\":[\"doc_003\"]}",
+  "usage": {
+    "completion_tokens": 657,
+    "prompt_tokens": 1204,
+    "total_tokens": 1861,
+    "completion_tokens_details": {
+      "accepted_prediction_tokens": 0,
+      "audio_tokens": 0,
+      "reasoning_tokens": 400,
+      "rejected_prediction_tokens": 0
+    },
+    "prompt_tokens_details": {
+      "audio_tokens": 0,
+      "cached_tokens": 0
+    },
+    "latency_checkpoint": {
+      "engine_tbt_ms": 20,
+      "engine_ttft_ms": 1143,
+      "engine_ttlt_ms": 14242,
+      "pre_inference_ms": 119,
+      "service_tbt_ms": 20,
+      "service_ttft_ms": 1772,
+      "service_ttlt_ms": 14879,
+      "total_duration_ms": 14758,
+      "user_visible_ttft_ms": 1653
+    }
+  },
+  "response_format_used": "json_schema",
+  "parse_success": true,
+  "parse_error": "",
+  "schema_missing": false,
+  "empty_output": false,
+  "invocation_profile": {
+    "temperature_policy": "omitted",
+    "max_completion_tokens_policy": "explicit:4096",
+    "response_format": "json_schema",
+    "json_extractor": "first_json_object",
+    "message_role_policy": "developer_system_merged_into_user",
+    "llm_repair": "disabled",
+    "doc_id_policy": "opaque_per_task"
+  }
+}

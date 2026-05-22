@@ -1,0 +1,36 @@
+{
+  "model": "deepseek-v4-pro",
+  "task_id": "uncued_017_hidden",
+  "content": "{\"claim_verdict\": \"insufficient\", \"confidence\": 0.4, \"supporting_evidence\": [\"doc_001\"], \"rejected_evidence\": [\"doc_003\"], \"selected_doc_ids\": [\"doc_001\", \"doc_003\"], \"actions\": [{\"action\": \"trace_source\", \"target\": \"doc_001\", \"rationale\": \"Doc_001 cites doc_002 for the count, but doc_002 contains no number. Tracing the source could reveal if the 101 figure is substantiated.\"}, {\"action\": \"search_contradiction\", \"target\": \"doc_003\", \"rationale\": \"Doc_003 provides a contradictory count of 76. Searching for other contradictory records would help resolve the discrepancy.\"}], \"evidence_environment_assessment\": \"Two documents directly address the count: doc_001 claims 101 approved checks, while doc_003 lists 76. Doc_002 and doc_004 offer no numeric totals. None of the documents mention Novalis Robotics, and the conflicting figures undermine confidence. The evidence environment is insufficient to confirm or refute the claim.\", \"answer\": \"The evidence does not conclusively support or refute that Novalis Robotics logged 101 approved Kestrel firmware checks in August 2025. Doc_001 states 101 checks but does not mention Novalis Robotics, and doc_003 records 76 checks for a similarly named workstream. The contradiction and lack of direct company attribution make the claim uncertain.\"}",
+  "usage": {
+    "completion_tokens": 2154,
+    "prompt_tokens": 1049,
+    "total_tokens": 3203,
+    "completion_tokens_details": {
+      "accepted_prediction_tokens": null,
+      "audio_tokens": null,
+      "reasoning_tokens": 1842,
+      "rejected_prediction_tokens": null
+    },
+    "prompt_tokens_details": {
+      "audio_tokens": null,
+      "cached_tokens": 0
+    },
+    "prompt_cache_hit_tokens": 0,
+    "prompt_cache_miss_tokens": 1049
+  },
+  "response_format_used": "json_object",
+  "parse_success": true,
+  "parse_error": "",
+  "schema_missing": false,
+  "empty_output": false,
+  "invocation_profile": {
+    "temperature_policy": "omitted",
+    "max_completion_tokens_policy": "explicit:4096",
+    "response_format": "json_schema",
+    "json_extractor": "first_json_object",
+    "message_role_policy": "developer_system_merged_into_user",
+    "llm_repair": "disabled",
+    "doc_id_policy": "opaque_per_task"
+  }
+}

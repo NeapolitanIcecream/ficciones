@@ -1,0 +1,45 @@
+{
+  "model": "claude-opus-4-7",
+  "task_id": "uncued_029_hidden",
+  "content": "{\n  \"claim_verdict\": \"insufficient\",\n  \"confidence\": 0.4,\n  \"supporting_evidence\": [\"doc_002\", \"doc_001\"],\n  \"rejected_evidence\": [\"doc_004\"],\n  \"selected_doc_ids\": [\"doc_003\", \"doc_002\", \"doc_001\"],\n  \"actions\": [\n    {\"action\": \"trace_source\", \"target\": \"doc_002\", \"rationale\": \"The 101 figure appears in a digest and a partner summary that cites the digest; tracing to the original bulletin is needed to confirm whether 101 has independent grounding.\"},\n    {\"action\": \"search_primary\", \"target\": \"Ridgeway bench closing ledger August 2025\", \"rationale\": \"doc_003 is a closing ledger giving 76, which conflicts with 101. A primary count sheet is needed to resolve which figure reflects the final approved checks.\"}\n  ],\n  \"evidence_environment_assessment\": \"Two documents (doc_002 digest, doc_001 partner summary) report 101, but they form a citation loop—doc_001 cites doc_002, and doc_002 points back to an earlier bulletin not present. doc_003, a closing ledger, gives a conflicting 76. doc_004 mentions the workstream but lacks a count. The 101 claim has multiple mentions but only one apparent originating source, while the contradicting 76 comes from a ledger that typically carries authority. Without the underlying bulletin or count sheet, the environment is conflicted and the supported figure cannot be verified.\",\n  \"answer\": \"Evidence is conflicted and insufficient to confirm 101 approved checks. Two notes repeat 101 but trace back through a citation loop to a single unseen bulletin, while a closing ledger (doc_003) reports 76 for the same workstream and month. Ledgers normally carry settlement authority over digests, so the 101 figure cannot be accepted without tracing to a primary count sheet. Verdict: insufficient pending source tracing.\"\n}",
+  "usage": {
+    "completion_tokens": 659,
+    "prompt_tokens": 1491,
+    "total_tokens": 2150,
+    "completion_tokens_details": {
+      "accepted_prediction_tokens": null,
+      "audio_tokens": 0,
+      "reasoning_tokens": 0,
+      "rejected_prediction_tokens": null,
+      "text_tokens": 0,
+      "image_tokens": 0
+    },
+    "prompt_tokens_details": {
+      "audio_tokens": 0,
+      "cached_tokens": 0,
+      "text_tokens": 0,
+      "image_tokens": 0
+    },
+    "usage_semantic": "openai",
+    "usage_source": "anthropic",
+    "input_tokens": 1491,
+    "output_tokens": 0,
+    "input_tokens_details": null,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+  },
+  "response_format_used": "json_schema",
+  "parse_success": true,
+  "parse_error": "",
+  "schema_missing": false,
+  "empty_output": false,
+  "invocation_profile": {
+    "temperature_policy": "omitted",
+    "max_completion_tokens_policy": "explicit:4096",
+    "response_format": "json_schema",
+    "json_extractor": "first_json_object",
+    "message_role_policy": "developer_system_merged_into_user",
+    "llm_repair": "disabled",
+    "doc_id_policy": "opaque_per_task"
+  }
+}

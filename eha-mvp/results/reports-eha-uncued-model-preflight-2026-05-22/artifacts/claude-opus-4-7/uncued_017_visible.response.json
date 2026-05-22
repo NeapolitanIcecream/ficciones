@@ -1,0 +1,45 @@
+{
+  "model": "claude-opus-4-7",
+  "task_id": "uncued_017_visible",
+  "content": "{\n  \"claim_verdict\": \"refuted\",\n  \"confidence\": 0.7,\n  \"supporting_evidence\": [\"doc_003\"],\n  \"rejected_evidence\": [\"doc_001\", \"doc_004\"],\n  \"selected_doc_ids\": [\"doc_002\", \"doc_003\"],\n  \"actions\": [\n    {\"action\": \"trace_source\", \"target\": \"doc_002\", \"rationale\": \"The month-close ledger is the closest to a primary record and reports 76, contradicting the 101 figure.\"},\n    {\"action\": \"search_primary\", \"target\": \"doc_003\", \"rationale\": \"The digest asserting 101 cites only a routing note (doc_001) with no count, so verify against the underlying ledger row.\"}\n  ],\n  \"evidence_environment_assessment\": \"Four documents share identical site code, workstream, and close date, forcing reliance on stated values. doc_002 is a month-close ledger giving an explicit count (76). doc_003 is an operations digest asserting 101 but cites only doc_001, a routing note with no total. doc_004 notes a closeout delay but no figure. The ledger outranks the digest as a primary record; the digest's citation chain is hollow.\",\n  \"answer\": \"No. The month-close ledger (doc_002) records 76 approved Kestrel firmware checks for Ridgeway bench in August 2025. The only document asserting 101 (doc_003) is a brief digest whose sole citation (doc_001) contains chronology but no count, and doc_004 adds no total. The primary ledger row refutes the 101 figure.\"\n}",
+  "usage": {
+    "completion_tokens": 515,
+    "prompt_tokens": 1499,
+    "total_tokens": 2014,
+    "completion_tokens_details": {
+      "accepted_prediction_tokens": null,
+      "audio_tokens": 0,
+      "reasoning_tokens": 0,
+      "rejected_prediction_tokens": null,
+      "text_tokens": 0,
+      "image_tokens": 0
+    },
+    "prompt_tokens_details": {
+      "audio_tokens": 0,
+      "cached_tokens": 0,
+      "text_tokens": 0,
+      "image_tokens": 0
+    },
+    "usage_semantic": "openai",
+    "usage_source": "anthropic",
+    "input_tokens": 1499,
+    "output_tokens": 0,
+    "input_tokens_details": null,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+  },
+  "response_format_used": "json_schema",
+  "parse_success": true,
+  "parse_error": "",
+  "schema_missing": false,
+  "empty_output": false,
+  "invocation_profile": {
+    "temperature_policy": "omitted",
+    "max_completion_tokens_policy": "explicit:4096",
+    "response_format": "json_schema",
+    "json_extractor": "first_json_object",
+    "message_role_policy": "developer_system_merged_into_user",
+    "llm_repair": "disabled",
+    "doc_id_policy": "opaque_per_task"
+  }
+}

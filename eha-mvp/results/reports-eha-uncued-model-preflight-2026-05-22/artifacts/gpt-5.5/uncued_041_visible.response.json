@@ -1,0 +1,45 @@
+{
+  "model": "gpt-5.5",
+  "task_id": "uncued_041_visible",
+  "content": "{\"actions\":[{\"action\":\"compare_versions\",\"rationale\":\"Final closeout ledger should outweigh earlier running estimates and planning notes.\",\"target\":\"doc_003 vs doc_004/doc_002\"},{\"action\":\"trace_source\",\"rationale\":\"The 101 figure points back to a planning memo with no final number.\",\"target\":\"doc_004 -> doc_002\"}],\"answer\":\"The evidence supports that the final closeout ledger lists 76 approved checks for Kestrel firmware checks in August 2025. However, the provided documents do not explicitly name Novalis Robotics as the logger, so the full claim is not completely established.\",\"claim_verdict\":\"insufficient\",\"confidence\":0.72,\"evidence_environment_assessment\":\"The environment contains one strong final-count document and weaker pre-close/planning documents. doc_003 is the most probative because it describes a closeout ledger, final close date, and exact count of 76. doc_004’s 101 is only a running estimate citing a planning memo; doc_002 has no final number. No document explicitly mentions Novalis Robotics.\",\"rejected_evidence\":[\"doc_004\",\"doc_002\",\"doc_001\"],\"selected_doc_ids\":[\"doc_003\",\"doc_004\",\"doc_002\"],\"supporting_evidence\":[\"doc_003\"]}",
+  "usage": {
+    "completion_tokens": 794,
+    "prompt_tokens": 1192,
+    "total_tokens": 1986,
+    "completion_tokens_details": {
+      "accepted_prediction_tokens": 0,
+      "audio_tokens": 0,
+      "reasoning_tokens": 512,
+      "rejected_prediction_tokens": 0
+    },
+    "prompt_tokens_details": {
+      "audio_tokens": 0,
+      "cached_tokens": 0
+    },
+    "latency_checkpoint": {
+      "engine_tbt_ms": 24,
+      "engine_ttft_ms": 480,
+      "engine_ttlt_ms": 19175,
+      "pre_inference_ms": 107,
+      "service_tbt_ms": 24,
+      "service_ttft_ms": 839,
+      "service_ttlt_ms": 19528,
+      "total_duration_ms": 19419,
+      "user_visible_ttft_ms": 732
+    }
+  },
+  "response_format_used": "json_schema",
+  "parse_success": true,
+  "parse_error": "",
+  "schema_missing": false,
+  "empty_output": false,
+  "invocation_profile": {
+    "temperature_policy": "omitted",
+    "max_completion_tokens_policy": "explicit:4096",
+    "response_format": "json_schema",
+    "json_extractor": "first_json_object",
+    "message_role_policy": "developer_system_merged_into_user",
+    "llm_repair": "disabled",
+    "doc_id_policy": "opaque_per_task"
+  }
+}

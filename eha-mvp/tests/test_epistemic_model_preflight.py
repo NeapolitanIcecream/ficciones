@@ -6,16 +6,20 @@ from pathlib import Path
 import pytest
 
 from eha.epistemic_model_preflight import (
+    DEFAULT_MAIN_CANDIDATES,
     PreflightRecord,
     collect_artifact_records,
+    cohort_decisions,
     extract_first_json_object,
+    load_preflight_tasks,
     model_preflight_summary,
+    model_visible_task,
     parse_prediction_with_diagnostics,
     portable_chat_messages,
     select_preflight_tasks,
     wall_clock_timeout,
 )
-from eha.epistemic_resilience import build_epistemic_tasks, epistemic_prediction_json_schema
+from eha.epistemic_resilience import build_epistemic_tasks, build_messages, epistemic_prediction_json_schema
 
 
 VALID_JSON = """
@@ -129,6 +133,64 @@ def test_preflight_task_sample_balances_conditions_and_families() -> None:
         "buried_primary": 4,
         "generated_lore": 4,
     }
+
+
+def test_uncued_task_dir_loads_view_specific_preflight_tasks_without_prompt_condition_leakage() -> None:
+    tasks = load_preflight_tasks(Path("data/uncued-pilot-v1"))
+
+    assert len(tasks) == 120
+    assert {task.source_task_id.rsplit(":", 1)[1] for task in tasks} == {
+        "neutral_metadata_visible",
+        "neutral_metadata_hidden",
+    }
+    assert {task.condition for task in select_preflight_tasks(tasks, sample_size=20)} == {
+        "clean",
+        "conflicting_evidence",
+        "false_consensus",
+        "buried_primary",
+        "generated_lore",
+    }
+
+    generated_task = next(task for task in tasks if task.condition == "generated_lore")
+    messages = build_messages(model_visible_task(generated_task), "standard_answer", opaque_doc_ids=True, scrub_audit_labels=True)
+    payload_text = messages[-1]["content"]
+
+    assert '"condition": "role_uncued"' in payload_text
+    assert "generated_lore" not in payload_text
+    assert "false_consensus" not in payload_text
+    assert "buried_primary" not in payload_text
+
+
+def test_phase_11_defaults_exclude_kimi_and_use_uncued_openai_candidate() -> None:
+    assert DEFAULT_MAIN_CANDIDATES == (
+        "gpt-5.5",
+        "claude-opus-4-7",
+        "gemini-3.1-pro-preview",
+        "deepseek-v4-pro",
+    )
+    assert "kimi-k2.6" not in DEFAULT_MAIN_CANDIDATES
+
+
+def test_cohort_decisions_only_reports_models_that_were_preflighted() -> None:
+    summaries = [
+        {"model": "gpt-5.5", "structured_preflight_pass": True},
+        {"model": "claude-opus-4-7", "structured_preflight_pass": True},
+        {"model": "gemini-3.1-pro-preview", "structured_preflight_pass": True},
+        {"model": "deepseek-v4-pro", "structured_preflight_pass": False},
+    ]
+
+    decisions = cohort_decisions(summaries)
+    by_provider = {decision["provider"]: decision for decision in decisions}
+
+    assert {decision["primary_candidate"] for decision in decisions} == {
+        "gpt-5.5",
+        "claude-opus-4-7",
+        "gemini-3.1-pro-preview",
+        "deepseek-v4-pro",
+    }
+    assert "Kimi" not in by_provider
+    assert by_provider["OpenAI"]["selected_model"] == "gpt-5.5"
+    assert by_provider["DeepSeek"]["status"] == "blocked"
 
 
 def test_preflight_gate_requires_parse_empty_and_schema_thresholds() -> None:

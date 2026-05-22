@@ -626,8 +626,18 @@ Preflight command:
 ```bash
 cd /Users/chenmohan/gits/ficciones/eha-mvp
 uv run eha-epistemic-model-preflight run \
+  --task-dir data/uncued-pilot-v1 \
   --models gpt-5.5,claude-opus-4-7,gemini-3.1-pro-preview,deepseek-v4-pro \
-  --out-dir results/reports-eha-uncued-model-preflight-2026-05-22
+  --fallback-models '' \
+  --out-dir results/reports-eha-uncued-model-preflight-2026-05-22 \
+  --sample-size 20 \
+  --prompt-condition standard_answer \
+  --max-output-tokens 4096 \
+  --soft-cap-usd 3 \
+  --hard-cap-usd 5 \
+  --abort-cap-usd 8 \
+  --timeout-s 240 \
+  --response-format json_schema
 ```
 
 Budget estimate:
@@ -996,13 +1006,13 @@ The runbook is complete when all of these are true:
 - paper draft is rewritten around uncued results;
 - final handoff records exact state, cost, tests, and remaining risks.
 
-## Execution Status: Advanced To Phase 10
+## Execution Status: Advanced To Phase 11
 
 Status date: 2026-05-22
 
-This runbook has been advanced through Phase 10. Phases 11-19 have not been started, and no frontier/API model calls were made.
+This runbook has been advanced through Phase 11. Phases 12-19 have not been started. Frontier/API model calls have only been made for the Phase 11 structured-output preflight.
 
-Completed Phase 0-10 artifacts:
+Completed Phase 0-11 artifacts:
 
 - Phase 0 start state: `reports/eha-uncued-phase1-start-state-2026-05-22.md`.
 - Phase 1 cued quarantine: `artifact/CUED_INTERNAL_ONLY.md`, `artifact/manifest.json`, `reports/eha-cued-artifact-quarantine-2026-05-22.md`.
@@ -1015,6 +1025,7 @@ Completed Phase 0-10 artifacts:
 - Phase 8 micro gate: `reports/eha_uncued_micro_gate.json`, `reports/eha-uncued-micro-gate-2026-05-22.md`.
 - Phase 9 pilot generation: `eha-mvp/data/uncued-pilot-v1/manifest.json`, `tasks.jsonl`, `latent_tasks.jsonl`, `gold_documents.jsonl`, `dependency_edges.jsonl`, `action_gold.jsonl`, `documents_neutral_metadata_visible.jsonl`, `documents_neutral_metadata_hidden.jsonl`.
 - Phase 10 pilot gates: `reports/eha_uncued_leakage_pilot.json`, `reports/eha-uncued-leakage-pilot-2026-05-22.md`, `reports/uncued_leakage_pilot_rows.csv`, `reports/eha_uncued_baselines_pilot.json`, `reports/eha-uncued-baselines-pilot-2026-05-22.md`, `reports/uncued_baseline_rows_pilot.csv`, `reports/uncued_baseline_aggregate_pilot.csv`, `reports/uncued_human_leakage_review_pilot.csv`, `reports/eha_uncued_human_leakage_review_pilot_validation.json`, `reports/eha-uncued-human-leakage-review-pilot-2026-05-22.md`, `reports/eha_uncued_pilot_gates.json`, `reports/eha-uncued-pilot-gates-2026-05-22.md`.
+- Phase 11 model preflight: `reports/eha_uncued_model_preflight.json`, `reports/eha-uncued-model-preflight-2026-05-22.md`, `eha-mvp/results/reports-eha-uncued-model-preflight-2026-05-22/preflight_predictions.jsonl`, `preflight_rows.csv`, `preflight_summary.csv`, `cohort_decision.md`, `cohort_decision.csv`, `cohort_decision.json`, `cost_report.json`, `audit_manifest.json`.
 
 Phase 8 gate evidence:
 
@@ -1052,7 +1063,31 @@ Phase 10 pilot gate evidence:
 - Pilot leakage report hash: `1426c028e3f016c77723cd949846c8c9bc6c54da9eeaa48e881db69eb0c71ed2`.
 - Pilot baseline report hash: `e7577c4bae0ddd3ae685b51de42e6321c0026bccf49df250aaa8da25e50c4490`.
 - Pilot human-review validation hash: `54daf906fe0845aa857919daf8497cf6e2d4b985479633012394e3a8b868c34d`.
-- Model/API cost so far: USD 0.
+- Model/API cost through Phase 10: USD 0.
+
+Phase 11 model preflight evidence:
+
+- Command included explicit `--task-dir data/uncued-pilot-v1`.
+- Models requested: `gpt-5.5`, `claude-opus-4-7`, `gemini-3.1-pro-preview`, `deepseek-v4-pro`.
+- Excluded model: `kimi-k2.6`.
+- Fallback models: none.
+- Prompt condition: `standard_answer`.
+- Expected calls: 80 = 20 tasks x 4 models x 1 prompt.
+- Hard budget cap: USD 5; abort cap: USD 8; soft cap: USD 3.
+- Actual records: 80.
+- Actual cost: USD 0.656743.
+- Budget status: not aborted and below hard cap.
+- Gate rule: `parse_success >= 0.95`, `empty_output = 0`, `schema_missing_rate <= 0.05`, LLM repair disabled.
+- `gpt-5.5`: 20/20 parse success, 0 empty outputs, pass.
+- `claude-opus-4-7`: 20/20 parse success, 0 empty outputs, pass.
+- `gemini-3.1-pro-preview`: 20/20 parse success, 0 empty outputs, pass.
+- `deepseek-v4-pro`: 19/20 parse success, 1 empty output, fail.
+- Failing DeepSeek row: `uncued_000_hidden`, condition `clean`, parse error `empty output`.
+- Preflight summary hash: `beba62e5e93525b2fbdbd631e2c898c542202e21d0230ba27b16b1abcf068334`.
+- Cohort decision hash: `6d5f5f8e0804cc9c0a669e827accf50ed7560cdbe7f25dc5b35ec3498f9c5029`.
+- Cost report hash: `3881551d2fca58fb3508a9eaf818db6755c0b5aae0e7c351dca72ce60f782bd4`.
+- Audit manifest hash: `104c10cd9d575c303e300dede630c0297e7766221c368cac684a2772153246dd`.
+- Phase 12 status: blocked for the requested four-model cohort until DeepSeek is retried, replaced, or a three-model Phase 12 scope is approved.
 
 Commands verified:
 
@@ -1075,7 +1110,7 @@ Verification:
 ```bash
 cd /Users/chenmohan/gits/ficciones/eha-mvp
 uv run pytest -q
-# 212 passed in 6.37s
+# 215 passed in 5.87s
 cd /Users/chenmohan/gits/ficciones
 git diff --check
 # passed
@@ -1083,4 +1118,4 @@ git diff --check
 
 Next required phase:
 
-- Start Phase 11 with model preflight and cost approval. Do not run frontier/API model calls until the model-call policy and budget approval are explicit.
+- Resolve the Phase 11 DeepSeek blocker before Phase 12, or explicitly approve a three-model Phase 12 pilot with `gpt-5.5`, `claude-opus-4-7`, and `gemini-3.1-pro-preview`.

@@ -1,0 +1,45 @@
+{
+  "model": "claude-opus-4-7",
+  "task_id": "uncued_012_visible",
+  "content": "{\n  \"claim_verdict\": \"refuted\",\n  \"confidence\": 0.7,\n  \"supporting_evidence\": [\"doc_002\"],\n  \"rejected_evidence\": [\"doc_001\"],\n  \"selected_doc_ids\": [\"doc_001\", \"doc_002\", \"doc_004\"],\n  \"actions\": [\n    {\n      \"action\": \"compare_versions\",\n      \"target\": \"doc_001 vs doc_002\",\n      \"rationale\": \"Two documents give conflicting counts (184 vs 211) for the same workstream and month; comparing resolves which is authoritative.\"\n    },\n    {\n      \"action\": \"trace_source\",\n      \"target\": \"doc_002\",\n      \"rationale\": \"doc_002 cites doc_004, but doc_004 contains only chronology and no count, undermining the 211 figure's provenance.\"\n    }\n  ],\n  \"evidence_environment_assessment\": \"The packet contains one direct conflict: doc_001 (field note, month-close ledger) reports 184 completed checks, while doc_002 (registry digest) reports 211 but cites doc_004, which contains no count—only assembly chronology. doc_003 adds a closeout delay but no total. The 211 figure lacks a verifiable underlying row, while the 184 figure comes from a month-close ledger, a more primary-looking source. Labels (site code, workstream, close date) are uniform, so judgment rests on stated values and source type.\",\n  \"answer\": \"The claim that Novalis Robotics logged 211 completed checks for Atlas valve checks in March 2025 is refuted by the available evidence. The month-close ledger (doc_001) records 184 checks, while the 211 figure (doc_002) cites doc_004, which provides only chronology and no count. The ledger is the more primary source, so the 211 figure appears unsupported.\"\n}",
+  "usage": {
+    "completion_tokens": 597,
+    "prompt_tokens": 1485,
+    "total_tokens": 2082,
+    "completion_tokens_details": {
+      "accepted_prediction_tokens": null,
+      "audio_tokens": 0,
+      "reasoning_tokens": 0,
+      "rejected_prediction_tokens": null,
+      "text_tokens": 0,
+      "image_tokens": 0
+    },
+    "prompt_tokens_details": {
+      "audio_tokens": 0,
+      "cached_tokens": 0,
+      "text_tokens": 0,
+      "image_tokens": 0
+    },
+    "usage_semantic": "openai",
+    "usage_source": "anthropic",
+    "input_tokens": 1485,
+    "output_tokens": 0,
+    "input_tokens_details": null,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+  },
+  "response_format_used": "json_schema",
+  "parse_success": true,
+  "parse_error": "",
+  "schema_missing": false,
+  "empty_output": false,
+  "invocation_profile": {
+    "temperature_policy": "omitted",
+    "max_completion_tokens_policy": "explicit:4096",
+    "response_format": "json_schema",
+    "json_extractor": "first_json_object",
+    "message_role_policy": "developer_system_merged_into_user",
+    "llm_repair": "disabled",
+    "doc_id_policy": "opaque_per_task"
+  }
+}

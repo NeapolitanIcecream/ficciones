@@ -1,0 +1,43 @@
+{
+  "model": "gemini-3.1-pro-preview",
+  "task_id": "uncued_000_visible",
+  "content": "{\"claim_verdict\": \"supported\", \"confidence\": 0.85, \"supporting_evidence\": [\"doc_003\"], \"rejected_evidence\": [\"doc_001\", \"doc_002\", \"doc_004\"], \"selected_doc_ids\": [\"doc_003\"], \"actions\": [{\"action\": \"search_primary\", \"target\": \"Novalis Robotics monthly ledger March 2025\", \"rationale\": \"Verify if the Northline service bay belongs to Novalis Robotics and confirm the 184 completed checks directly from the official ledger.\"}], \"evidence_environment_assessment\": \"The evidence environment contains one direct note (doc_003) that confirms 184 completed Atlas valve checks for March 2025 at the Northline service bay. The other documents provide context regarding the timeframe and location but lack quantitative data. There is a slight gap as the documents do not explicitly name Novalis Robotics, referencing only the Northline service bay.\", \"answer\": \"Yes, the evidence supports the claim. Document doc_003 explicitly states that the monthly ledger for the Northline service bay recorded exactly 184 completed checks for the Atlas valve checks workstream in March 2025. While the provided documents do not explicitly mention the company name Novalis Robotics, the exact match of the numerical tally, the specific workstream, and the timeframe strongly confirms the core metrics of the question.\"}",
+  "usage": {
+    "completion_tokens": 1907,
+    "prompt_tokens": 1182,
+    "total_tokens": 3089,
+    "completion_tokens_details": {
+      "accepted_prediction_tokens": null,
+      "audio_tokens": 0,
+      "reasoning_tokens": 1598,
+      "rejected_prediction_tokens": null,
+      "text_tokens": 309,
+      "image_tokens": 0
+    },
+    "prompt_tokens_details": {
+      "audio_tokens": 0,
+      "cached_tokens": 0,
+      "text_tokens": 1182,
+      "image_tokens": 0
+    },
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "input_tokens_details": null,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+  },
+  "response_format_used": "json_schema",
+  "parse_success": true,
+  "parse_error": "",
+  "schema_missing": false,
+  "empty_output": false,
+  "invocation_profile": {
+    "temperature_policy": "omitted",
+    "max_completion_tokens_policy": "explicit:4096",
+    "response_format": "json_schema",
+    "json_extractor": "first_json_object",
+    "message_role_policy": "developer_system_merged_into_user",
+    "llm_repair": "disabled",
+    "doc_id_policy": "opaque_per_task"
+  }
+}

@@ -1,0 +1,45 @@
+{
+  "model": "gpt-5.5",
+  "task_id": "uncued_029_hidden",
+  "content": "{\"actions\":[{\"action\":\"trace_source\",\"rationale\":\"The two 101-count documents cite each other or the same earlier bulletin, not an independent count sheet.\",\"target\":\"doc_001 and doc_002\"},{\"action\":\"search_contradiction\",\"rationale\":\"The closing ledger is the clearest count-bearing source and states a different final count.\",\"target\":\"doc_003\"}],\"answer\":\"No. The best available evidence is the closing ledger, which gives 76 approved checks for Kestrel firmware checks in August 2025, not 101. The 101 figure appears only in derivative/circular summaries, so it is rejected as lower-quality evidence.\",\"claim_verdict\":\"refuted\",\"confidence\":0.78,\"evidence_environment_assessment\":\"The environment is polluted by circular repetition: doc_001 and doc_002 both report 101 but cite each other or the same bulletin rather than an independent count sheet. The strongest count-bearing source is doc_003, a closing ledger, which reports 76. Doc_004 is non-count evidence.\",\"rejected_evidence\":[\"doc_001\",\"doc_002\",\"doc_004\"],\"selected_doc_ids\":[\"doc_003\",\"doc_001\",\"doc_002\"],\"supporting_evidence\":[\"doc_003\"]}",
+  "usage": {
+    "completion_tokens": 612,
+    "prompt_tokens": 1206,
+    "total_tokens": 1818,
+    "completion_tokens_details": {
+      "accepted_prediction_tokens": 0,
+      "audio_tokens": 0,
+      "reasoning_tokens": 336,
+      "rejected_prediction_tokens": 0
+    },
+    "prompt_tokens_details": {
+      "audio_tokens": 0,
+      "cached_tokens": 0
+    },
+    "latency_checkpoint": {
+      "engine_tbt_ms": 21,
+      "engine_ttft_ms": 354,
+      "engine_ttlt_ms": 13469,
+      "pre_inference_ms": 108,
+      "service_tbt_ms": 21,
+      "service_ttft_ms": 594,
+      "service_ttlt_ms": 13710,
+      "total_duration_ms": 13605,
+      "user_visible_ttft_ms": 486
+    }
+  },
+  "response_format_used": "json_schema",
+  "parse_success": true,
+  "parse_error": "",
+  "schema_missing": false,
+  "empty_output": false,
+  "invocation_profile": {
+    "temperature_policy": "omitted",
+    "max_completion_tokens_policy": "explicit:4096",
+    "response_format": "json_schema",
+    "json_extractor": "first_json_object",
+    "message_role_policy": "developer_system_merged_into_user",
+    "llm_repair": "disabled",
+    "doc_id_policy": "opaque_per_task"
+  }
+}

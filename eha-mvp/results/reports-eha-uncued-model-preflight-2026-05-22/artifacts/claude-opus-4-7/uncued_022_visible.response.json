@@ -1,0 +1,45 @@
+{
+  "model": "claude-opus-4-7",
+  "task_id": "uncued_022_visible",
+  "content": "{\n  \"claim_verdict\": \"refuted\",\n  \"confidence\": 0.7,\n  \"supporting_evidence\": [\"doc_003\"],\n  \"rejected_evidence\": [\"doc_001\"],\n  \"selected_doc_ids\": [\"doc_001\", \"doc_003\"],\n  \"actions\": [\n    {\"action\": \"trace_source\", \"target\": \"doc_001\", \"rationale\": \"The field summary cites the month-close ledger directly with a count of 118, which is the most primary-looking source and contradicts the 139 figure.\"},\n    {\"action\": \"search_primary\", \"target\": \"Nova pump refurbishments July 2025 ledger\", \"rationale\": \"Confirm the authoritative monthly count since doc_003 is a digest with no primary citation.\"}\n  ],\n  \"evidence_environment_assessment\": \"Four documents share site code, workstream, and close date. Only doc_001 (field note, month-close ledger) reports a concrete count: 118. doc_003 (registry digest) asserts 139 but cites only doc_004, a routing chronology with no count. doc_002 and doc_004 contain no totals. The 139 figure lacks primary support, while 118 comes from the ledger row itself.\",\n  \"answer\": \"No. The month-close ledger (doc_001) records 118 completed Nova pump refurbishments for July 2025, not 139. The 139 figure appears only in doc_003, an operations digest whose sole citation (doc_004) contains no count. The claim is refuted by the most ledger-proximate evidence available.\"\n}",
+  "usage": {
+    "completion_tokens": 502,
+    "prompt_tokens": 1501,
+    "total_tokens": 2003,
+    "completion_tokens_details": {
+      "accepted_prediction_tokens": null,
+      "audio_tokens": 0,
+      "reasoning_tokens": 0,
+      "rejected_prediction_tokens": null,
+      "text_tokens": 0,
+      "image_tokens": 0
+    },
+    "prompt_tokens_details": {
+      "audio_tokens": 0,
+      "cached_tokens": 0,
+      "text_tokens": 0,
+      "image_tokens": 0
+    },
+    "usage_semantic": "openai",
+    "usage_source": "anthropic",
+    "input_tokens": 1501,
+    "output_tokens": 0,
+    "input_tokens_details": null,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+  },
+  "response_format_used": "json_schema",
+  "parse_success": true,
+  "parse_error": "",
+  "schema_missing": false,
+  "empty_output": false,
+  "invocation_profile": {
+    "temperature_policy": "omitted",
+    "max_completion_tokens_policy": "explicit:4096",
+    "response_format": "json_schema",
+    "json_extractor": "first_json_object",
+    "message_role_policy": "developer_system_merged_into_user",
+    "llm_repair": "disabled",
+    "doc_id_policy": "opaque_per_task"
+  }
+}

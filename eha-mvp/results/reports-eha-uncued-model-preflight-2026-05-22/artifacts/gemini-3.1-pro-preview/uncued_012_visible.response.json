@@ -1,0 +1,43 @@
+{
+  "model": "gemini-3.1-pro-preview",
+  "task_id": "uncued_012_visible",
+  "content": "{\"claim_verdict\":\"insufficient\",\"confidence\":0.4,\"supporting_evidence\":[\"doc_002\"],\"rejected_evidence\":[\"doc_001\"],\"selected_doc_ids\":[\"doc_001\",\"doc_002\"],\"actions\":[{\"action\":\"search_primary\",\"target\":\"Novalis Robotics Atlas valve checks primary ledger\",\"rationale\":\"A primary source ledger is required to verify the true count and resolve the contradiction between the field note and ledger extract.\"},{\"action\":\"compare_versions\",\"target\":\"Northline service bay month-close ledger March 2025\",\"rationale\":\"Compare the different versions of the ledger to understand why the operations timeline note and the ledger extract report different final counts.\"}],\"evidence_environment_assessment\":\"The evidence environment contains conflicting information regarding the March 2025 Atlas valve checks count. Document 002 supports the claim with a count of 211, whereas Document 001 contradicts it by stating the count is 184. Documents 003 and 004 provide scheduling and routing context but lack final totals. The absence of an authoritative primary document makes it impossible to resolve the discrepancy reliably.\",\"answer\":\"It is unclear whether Novalis Robotics logged exactly 211 completed checks for Atlas valve checks in March 2025. The available evidence presents a direct contradiction. Document 002, a Service Ledger Extract, claims the total reached 211. However, Document 001, an Operations Timeline Note, explicitly states that the month-close ledger lists 184 completed checks. Without an authoritative primary source to resolve this discrepancy, there is insufficient evidence to confidently confirm the final count.\"}",
+  "usage": {
+    "completion_tokens": 2229,
+    "prompt_tokens": 1172,
+    "total_tokens": 3401,
+    "completion_tokens_details": {
+      "accepted_prediction_tokens": null,
+      "audio_tokens": 0,
+      "reasoning_tokens": 1874,
+      "rejected_prediction_tokens": null,
+      "text_tokens": 355,
+      "image_tokens": 0
+    },
+    "prompt_tokens_details": {
+      "audio_tokens": 0,
+      "cached_tokens": 0,
+      "text_tokens": 1172,
+      "image_tokens": 0
+    },
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "input_tokens_details": null,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+  },
+  "response_format_used": "json_schema",
+  "parse_success": true,
+  "parse_error": "",
+  "schema_missing": false,
+  "empty_output": false,
+  "invocation_profile": {
+    "temperature_policy": "omitted",
+    "max_completion_tokens_policy": "explicit:4096",
+    "response_format": "json_schema",
+    "json_extractor": "first_json_object",
+    "message_role_policy": "developer_system_merged_into_user",
+    "llm_repair": "disabled",
+    "doc_id_policy": "opaque_per_task"
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "model": "gemini-3.1-pro-preview",
+  "task_id": "uncued_005_visible",
+  "content": "{\n  \"claim_verdict\": \"refuted\",\n  \"confidence\": 0.9,\n  \"supporting_evidence\": [\n    \"doc_001\"\n  ],\n  \"rejected_evidence\": [\n    \"doc_002\",\n    \"doc_003\",\n    \"doc_004\"\n  ],\n  \"selected_doc_ids\": [\n    \"doc_001\"\n  ],\n  \"actions\": [\n    {\n      \"action\": \"abstain\",\n      \"target\": \"none\",\n      \"rationale\": \"Sufficient evidence was found in doc_001 to firmly refute the specific number presented in the claim.\"\n    }\n  ],\n  \"evidence_environment_assessment\": \"The evidence environment consists of several internal notes regarding Kestrel firmware checks in August 2025. Only doc_001 provides the specific count of approved checks, directly contradicting the claim by citing 76 instead of 101. The remaining documents omit the final tally and are therefore not useful for evaluating the claim's numerical accuracy.\",\n  \"answer\": \"The claim is refuted. According to the Service Ledger Extract (doc_001), there were 76 approved checks for Kestrel firmware checks in August 2025. The document explicitly notes that no line lists 101 approved checks for this workstream, directly contradicting the proposed count.\"\n}",
+  "usage": {
+    "completion_tokens": 811,
+    "prompt_tokens": 1531,
+    "total_tokens": 2342,
+    "completion_tokens_details": {
+      "accepted_prediction_tokens": null,
+      "audio_tokens": 0,
+      "reasoning_tokens": 494,
+      "rejected_prediction_tokens": null,
+      "text_tokens": 317,
+      "image_tokens": 0
+    },
+    "prompt_tokens_details": {
+      "audio_tokens": 0,
+      "cached_tokens": 0,
+      "text_tokens": 1531,
+      "image_tokens": 0
+    },
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "input_tokens_details": null,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+  },
+  "response_format_used": "json_schema",
+  "parse_success": true,
+  "parse_error": "",
+  "schema_missing": false,
+  "empty_output": false,
+  "invocation_profile": {
+    "temperature_policy": "omitted",
+    "max_completion_tokens_policy": "explicit:4096",
+    "response_format": "json_schema",
+    "json_extractor": "first_json_object",
+    "message_role_policy": "developer_system_merged_into_user",
+    "llm_repair": "disabled",
+    "doc_id_policy": "opaque_per_task"
+  }
+}

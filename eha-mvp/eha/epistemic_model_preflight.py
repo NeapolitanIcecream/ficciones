@@ -3,6 +3,7 @@ from __future__ import annotations
 import json
 import multiprocessing
 import signal
+import sys
 from collections import Counter, defaultdict
 from contextlib import contextmanager
 from pathlib import Path
@@ -21,6 +22,7 @@ from .epistemic_resilience import (
     EpistemicPrediction,
     EpistemicRunRecord,
     EpistemicTask,
+    EvidenceDoc,
     build_messages,
     epistemic_prediction_json_schema,
     invocation_profile,
@@ -33,6 +35,7 @@ from .epistemic_resilience import (
 from .phase2_run import Phase2OpenAIJsonRunner, split_csv
 from .report import markdown_table, write_csv
 from .schemas import EhaModel, model_to_dict, write_json, write_jsonl
+from .uncued_generate import load_uncued_dataset
 
 
 app = typer.Typer(add_completion=False, help="Run structured-output model preflight for EHA cohorts.")
@@ -40,15 +43,23 @@ console = Console()
 log = logger.bind(module="eha.epistemic_model_preflight")
 
 DEFAULT_MAIN_CANDIDATES = (
-    "gpt-5.4",
+    "gpt-5.5",
     "claude-opus-4-7",
     "gemini-3.1-pro-preview",
     "deepseek-v4-pro",
-    "kimi-k2.6",
 )
-DEFAULT_FALLBACK_CANDIDATES = ("gemini-2.5-pro",)
+DEFAULT_FALLBACK_CANDIDATES: tuple[str, ...] = ()
 GOOGLE_PRIMARY = "gemini-3.1-pro-preview"
 GOOGLE_FALLBACK = "gemini-2.5-pro"
+MODEL_PROVIDER_BY_ID = {
+    "gpt-5.5": "OpenAI",
+    "gpt-5.4": "OpenAI",
+    "claude-opus-4-7": "Anthropic",
+    "gemini-3.1-pro-preview": "Google",
+    "gemini-2.5-pro": "Google",
+    "deepseek-v4-pro": "DeepSeek",
+    "kimi-k2.6": "Kimi",
+}
 
 PRELIGHT_TASK_PLAN_20: Sequence[tuple[str, Mapping[str, int]]] = (
     ("clean", {"packet_judgment": 2, "evidence_selection": 1, "active_verification": 1}),
@@ -164,6 +175,103 @@ def select_preflight_tasks(tasks: Sequence[EpistemicTask], sample_size: int = 20
                 raise ValueError(f"not enough preflight tasks for {condition}/{family}: need {count}, found {len(candidates)}")
             selected.extend(candidates[:count])
     return selected
+
+
+def uncued_doc_role(gold_doc: Mapping[str, Any], condition: str) -> str:
+    if bool(gold_doc.get("supports_gold_verdict")) and not gold_doc.get("contamination"):
+        return "primary"
+    if gold_doc.get("contamination"):
+        return "generated_lore" if condition == "generated_lore" else "contaminant"
+    return "background"
+
+
+def uncued_doc_value(role: str) -> float:
+    if role == "primary":
+        return 1.0
+    if role == "background":
+        return 0.35
+    return -0.50
+
+
+def uncued_preflight_tasks(task_dir: Path) -> List[EpistemicTask]:
+    dataset = load_uncued_dataset(task_dir)
+    task_rows = {str(row["task_id"]): row for row in dataset["tasks"]}
+    latent_rows = {str(row["task_id"]): row for row in dataset["latent_tasks"]}
+    gold_by_view_task_doc = {
+        (str(row["view"]), str(row["task_id"]), str(row["doc_id"])): row
+        for row in dataset["gold_documents"]
+    }
+    tasks: List[EpistemicTask] = []
+    for latent in dataset["latent_tasks"]:
+        base_task_id = str(latent["task_id"])
+        condition = str(latent["condition"])
+        for view in dataset["manifest"].get("views", []):
+            docs: List[EvidenceDoc] = []
+            primary_doc_ids: List[str] = []
+            contaminant_doc_ids: List[str] = []
+            generated_doc_ids: List[str] = []
+            for doc in dataset["documents_by_view"][view]:
+                if doc["task_id"] != base_task_id:
+                    continue
+                gold = gold_by_view_task_doc[(str(view), base_task_id, str(doc["doc_id"]))]
+                role = uncued_doc_role(gold, condition)
+                if role == "primary":
+                    primary_doc_ids.append(str(doc["doc_id"]))
+                elif role in {"contaminant", "generated_lore"}:
+                    contaminant_doc_ids.append(str(doc["doc_id"]))
+                if role == "generated_lore":
+                    generated_doc_ids.append(str(doc["doc_id"]))
+                citations = [str(citation) for citation in doc.get("visible_citations", [])]
+                docs.append(
+                    EvidenceDoc(
+                        doc_id=str(doc["doc_id"]),
+                        title=str(doc["title"]),
+                        source_type=str(doc["source_type"]),
+                        timestamp=str(doc["timestamp"]),
+                        body=str(doc["body"]),
+                        visible_citations=citations,
+                        role=role,
+                        value_score=uncued_doc_value(role),
+                        upstream_root=citations[0] if citations else str(doc["doc_id"]),
+                    )
+                )
+            view_suffix = "hidden" if "hidden" in str(view) else "visible"
+            tasks.append(
+                EpistemicTask(
+                    task_id=f"{base_task_id}_{view_suffix}",
+                    family=str(latent["family"]),
+                    source_task_id=f"{base_task_id}:{view}",
+                    difficulty="uncued_pilot",
+                    condition=condition,
+                    question=str(task_rows[base_task_id]["question"]),
+                    gold_verdict=str(latent["gold_verdict"]),
+                    documents=docs,
+                    primary_doc_ids=primary_doc_ids,
+                    contaminant_doc_ids=contaminant_doc_ids,
+                    generated_doc_ids=generated_doc_ids,
+                    stale_doc_ids=[],
+                    contradiction_doc_ids=primary_doc_ids if latent["gold_verdict"] == "refuted" else [],
+                )
+            )
+    return tasks
+
+
+def load_preflight_tasks(task_dir: Path) -> List[EpistemicTask]:
+    manifest_path = task_dir / "manifest.json"
+    if manifest_path.exists():
+        try:
+            manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
+        except json.JSONDecodeError:
+            manifest = {}
+        if manifest.get("role_uncued") is True:
+            return uncued_preflight_tasks(task_dir)
+    return read_tasks(task_dir / "tasks.jsonl")
+
+
+def model_visible_task(task: EpistemicTask) -> EpistemicTask:
+    if task.difficulty.startswith("uncued"):
+        return task.model_copy(update={"condition": "role_uncued"})
+    return task
 
 
 def preflight_row(record: PreflightRecord) -> Dict[str, Any]:
@@ -354,7 +462,7 @@ def run_preflight_records(
     for model in models:
         for task in tasks:
             doc_id_view = opaque_doc_id_view(task)
-            messages = portable_chat_messages(build_messages(task, prompt_condition, opaque_doc_ids=True, scrub_audit_labels=True))
+            messages = portable_chat_messages(build_messages(model_visible_task(task), prompt_condition, opaque_doc_ids=True, scrub_audit_labels=True))
             prompt_text = json.dumps(messages, ensure_ascii=False)
             cost_guard.before_call(model, prompt_text, max_output_tokens or 4096)
             response = ""
@@ -506,61 +614,96 @@ def summary_passes(summary: Mapping[str, Any] | None) -> bool:
     return bool(summary and summary.get("structured_preflight_pass") is True)
 
 
+def provider_for_model(model: str) -> str:
+    known = MODEL_PROVIDER_BY_ID.get(model)
+    if known:
+        return known
+    normalized = model.lower()
+    if "gpt" in normalized or "openai" in normalized:
+        return "OpenAI"
+    if "claude" in normalized or "anthropic" in normalized:
+        return "Anthropic"
+    if "gemini" in normalized or "google" in normalized:
+        return "Google"
+    if "deepseek" in normalized:
+        return "DeepSeek"
+    if "kimi" in normalized or "moonshot" in normalized:
+        return "Kimi"
+    return "Other"
+
+
+def candidate_decision(provider: str, model: str, summary: Mapping[str, Any]) -> Dict[str, Any]:
+    passed = summary_passes(summary)
+    return {
+        "provider": provider,
+        "selected_model": model if passed else "",
+        "primary_candidate": model,
+        "fallback_model": "",
+        "status": "selected" if passed else "blocked",
+        "note": "Candidate passed structured-output preflight." if passed else "Candidate did not pass structured-output preflight.",
+    }
+
+
 def cohort_decisions(summaries: Sequence[Mapping[str, Any]]) -> List[Dict[str, Any]]:
     by_model = summary_by_model(summaries)
+    model_order = [str(summary["model"]) for summary in summaries]
     decisions: List[Dict[str, Any]] = []
-    for provider, model in (
-        ("OpenAI", "gpt-5.4"),
-        ("Anthropic", "claude-opus-4-7"),
-        ("DeepSeek", "deepseek-v4-pro"),
-        ("Kimi", "kimi-k2.6"),
-    ):
-        summary = by_model.get(model)
-        decisions.append(
-            {
-                "provider": provider,
-                "selected_model": model if summary_passes(summary) else "",
-                "primary_candidate": model,
-                "fallback_model": "",
-                "status": "selected" if summary_passes(summary) else "blocked",
-                "note": "Latest routable flagship passed structured-output preflight." if summary_passes(summary) else "Primary candidate did not pass structured-output preflight.",
-            }
-        )
+    handled: set[str] = set()
+
     google_primary = by_model.get(GOOGLE_PRIMARY)
     google_fallback = by_model.get(GOOGLE_FALLBACK)
-    if summary_passes(google_primary):
+    if google_primary or google_fallback:
+        handled.update(model for model in (GOOGLE_PRIMARY, GOOGLE_FALLBACK) if model in by_model)
+
+    if google_primary and summary_passes(google_primary):
         decisions.append(
             {
                 "provider": "Google",
                 "selected_model": GOOGLE_PRIMARY,
                 "primary_candidate": GOOGLE_PRIMARY,
-                "fallback_model": GOOGLE_FALLBACK,
+                "fallback_model": GOOGLE_FALLBACK if google_fallback else "",
                 "status": "selected",
                 "note": "Latest Google candidate passed structured-output preflight.",
             }
         )
-    elif summary_passes(google_fallback):
+    elif google_fallback and summary_passes(google_fallback):
         decisions.append(
             {
                 "provider": "Google",
                 "selected_model": GOOGLE_FALLBACK,
-                "primary_candidate": GOOGLE_PRIMARY,
+                "primary_candidate": GOOGLE_PRIMARY if google_primary else "",
                 "fallback_model": GOOGLE_FALLBACK,
                 "status": "fallback_selected",
                 "note": "Google latest candidate did not pass; stable fallback passed preflight.",
             }
         )
-    else:
+    elif google_primary:
         decisions.append(
             {
                 "provider": "Google",
                 "selected_model": "",
                 "primary_candidate": GOOGLE_PRIMARY,
-                "fallback_model": GOOGLE_FALLBACK,
+                "fallback_model": GOOGLE_FALLBACK if google_fallback else "",
                 "status": "blocked",
-                "note": "Neither Google primary nor fallback passed structured-output preflight.",
+                "note": "Primary candidate did not pass structured-output preflight.",
             }
         )
+    elif google_fallback:
+        decisions.append(
+            {
+                "provider": "Google",
+                "selected_model": "",
+                "primary_candidate": "",
+                "fallback_model": GOOGLE_FALLBACK,
+                "status": "blocked",
+                "note": "Fallback candidate did not pass structured-output preflight.",
+            }
+        )
+
+    for model in model_order:
+        if model in handled:
+            continue
+        decisions.append(candidate_decision(provider_for_model(model), model, by_model[model]))
     return sorted(decisions, key=lambda row: row["provider"])
 
 
@@ -701,7 +844,7 @@ def run(
 ) -> None:
     if prompt_condition not in {"standard_answer", "epistemic_hygiene_instruction"}:
         raise typer.BadParameter("prompt_condition must be standard_answer or epistemic_hygiene_instruction")
-    tasks = select_preflight_tasks(read_tasks(task_dir / "tasks.jsonl"), sample_size=sample_size)
+    tasks = select_preflight_tasks(load_preflight_tasks(task_dir), sample_size=sample_size)
     selected_models = split_csv(models)
     for model in split_csv(fallback_models):
         if model not in selected_models:
@@ -780,5 +923,11 @@ def run(
     console.print(f"[green]Wrote structured-output preflight[/green] to {out_dir}")
 
 
-if __name__ == "__main__":
+def main() -> None:
+    if len(sys.argv) > 1 and sys.argv[1] == "run":
+        del sys.argv[1]
     app()
+
+
+if __name__ == "__main__":
+    main()

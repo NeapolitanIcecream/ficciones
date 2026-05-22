@@ -1,0 +1,43 @@
+{
+  "model": "gemini-3.1-pro-preview",
+  "task_id": "uncued_041_hidden",
+  "content": "{\n  \"claim_verdict\": \"supported\",\n  \"confidence\": 0.95,\n  \"supporting_evidence\": [\n    \"doc_004\"\n  ],\n  \"rejected_evidence\": [\n    \"doc_003\",\n    \"doc_001\",\n    \"doc_002\"\n  ],\n  \"selected_doc_ids\": [\n    \"doc_004\",\n    \"doc_003\"\n  ],\n  \"actions\": [\n    {\n      \"action\": \"search_primary\",\n      \"target\": \"Novalis Robotics August 2025 closeout ledger\",\n      \"rationale\": \"To independently verify the final approved checks count in the primary closeout ledger against the provided excerpts.\"\n    }\n  ],\n  \"evidence_environment_assessment\": \"The evidence environment presents a chronological progression of documentation for Kestrel firmware checks in August 2025. Early documents include a planning memo and an estimate of 101 checks. However, the most recent and authoritative document, the closeout ledger, provides the definitive final count, overriding the earlier running estimates.\",\n  \"answer\": \"Yes, the claim is supported. According to the final closeout ledger (doc_004), 76 approved checks were logged for Kestrel firmware checks in August 2025. While an earlier digest (doc_003) estimated 101 checks, the closeout ledger represents the finalized count, superseding preliminary estimates and confirming the claim.\"\n}",
+  "usage": {
+    "completion_tokens": 1437,
+    "prompt_tokens": 1547,
+    "total_tokens": 2984,
+    "completion_tokens_details": {
+      "accepted_prediction_tokens": null,
+      "audio_tokens": 0,
+      "reasoning_tokens": 1096,
+      "rejected_prediction_tokens": null,
+      "text_tokens": 341,
+      "image_tokens": 0
+    },
+    "prompt_tokens_details": {
+      "audio_tokens": 0,
+      "cached_tokens": 0,
+      "text_tokens": 1547,
+      "image_tokens": 0
+    },
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "input_tokens_details": null,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+  },
+  "response_format_used": "json_schema",
+  "parse_success": true,
+  "parse_error": "",
+  "schema_missing": false,
+  "empty_output": false,
+  "invocation_profile": {
+    "temperature_policy": "omitted",
+    "max_completion_tokens_policy": "explicit:4096",
+    "response_format": "json_schema",
+    "json_extractor": "first_json_object",
+    "message_role_policy": "developer_system_merged_into_user",
+    "llm_repair": "disabled",
+    "doc_id_policy": "opaque_per_task"
+  }
+}

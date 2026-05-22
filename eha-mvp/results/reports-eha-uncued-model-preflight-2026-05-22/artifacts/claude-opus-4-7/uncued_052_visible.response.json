@@ -1,0 +1,45 @@
+{
+  "model": "claude-opus-4-7",
+  "task_id": "uncued_052_visible",
+  "content": "{\n  \"claim_verdict\": \"insufficient\",\n  \"confidence\": 0.25,\n  \"supporting_evidence\": [\"doc_001\", \"doc_004\"],\n  \"rejected_evidence\": [\"doc_002\", \"doc_003\"],\n  \"selected_doc_ids\": [\"doc_001\", \"doc_004\", \"doc_002\"],\n  \"actions\": [\n    {\"action\": \"trace_source\", \"target\": \"doc_004\", \"rationale\": \"doc_004 cites doc_001, so the registry entry is not independent. Tracing confirms a single unverified origin.\"},\n    {\"action\": \"search_primary\", \"target\": \"Novalis Robotics LumenBridge launch announcement July 2025\", \"rationale\": \"Need an authoritative primary record (press release or operational launch entry) since available docs only show a roundup and a derivative recap.\"}\n  ],\n  \"evidence_environment_assessment\": \"Two documents (doc_001 roundup, doc_004 registry recap) assert the LumenBridge launch, but doc_004 visibly cites doc_001, making them a single source rather than independent corroboration. doc_002 and doc_003 cover the same site/workstream/month and describe routine Nova pump refurbishments without any launch entry, which is suggestive but not a direct denial. No primary operational record, press release, or registry entry independent of the roundup is present. The packet shares site code, workstream, and close date across notes, so the absence of a launch line in operational notes is meaningful but not conclusive.\",\n  \"answer\": \"Evidence is insufficient to confirm the launch. The claim traces to a single roundup (doc_001), echoed by doc_004 which cites it. Operational notes for the same site and month (doc_002, doc_003) list only routine Nova pump refurbishments and omit any LumenBridge entry, weakening the claim without directly refuting it. A primary source or independent operational record is needed before affirming the July 2025 launch.\"\n}",
+  "usage": {
+    "completion_tokens": 635,
+    "prompt_tokens": 1478,
+    "total_tokens": 2113,
+    "completion_tokens_details": {
+      "accepted_prediction_tokens": null,
+      "audio_tokens": 0,
+      "reasoning_tokens": 0,
+      "rejected_prediction_tokens": null,
+      "text_tokens": 0,
+      "image_tokens": 0
+    },
+    "prompt_tokens_details": {
+      "audio_tokens": 0,
+      "cached_tokens": 0,
+      "text_tokens": 0,
+      "image_tokens": 0
+    },
+    "usage_semantic": "openai",
+    "usage_source": "anthropic",
+    "input_tokens": 1478,
+    "output_tokens": 0,
+    "input_tokens_details": null,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+  },
+  "response_format_used": "json_schema",
+  "parse_success": true,
+  "parse_error": "",
+  "schema_missing": false,
+  "empty_output": false,
+  "invocation_profile": {
+    "temperature_policy": "omitted",
+    "max_completion_tokens_policy": "explicit:4096",
+    "response_format": "json_schema",
+    "json_extractor": "first_json_object",
+    "message_role_policy": "developer_system_merged_into_user",
+    "llm_repair": "disabled",
+    "doc_id_policy": "opaque_per_task"
+  }
+}

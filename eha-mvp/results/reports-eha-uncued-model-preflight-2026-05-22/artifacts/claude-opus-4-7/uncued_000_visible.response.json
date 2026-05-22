@@ -1,0 +1,45 @@
+{
+  "model": "claude-opus-4-7",
+  "task_id": "uncued_000_visible",
+  "content": "{\n  \"claim_verdict\": \"supported\",\n  \"confidence\": 0.62,\n  \"supporting_evidence\": [\"doc_003\"],\n  \"rejected_evidence\": [\"doc_001\", \"doc_002\", \"doc_004\"],\n  \"selected_doc_ids\": [\"doc_003\", \"doc_001\", \"doc_002\"],\n  \"actions\": [\n    {\"action\": \"trace_source\", \"target\": \"doc_003\", \"rationale\": \"Verify the monthly ledger entry that states the 184 count, since it is the sole document providing the tally.\"},\n    {\"action\": \"search_primary\", \"target\": \"Northline monthly ledger March 2025 close\", \"rationale\": \"Confirm closing count against the primary ledger rather than a single timeline note.\"}\n  ],\n  \"evidence_environment_assessment\": \"Four documents share site code, workstream, and close date. Only doc_003 provides a numeric tally (184) matching the claim. doc_001, doc_002, and doc_004 give routing, handoff, and staffing context but no count. No document contradicts the figure. Support rests on a single field note dated before the month it describes, which is unusual and warrants source tracing. Absent corroboration or contradiction, the claim is plausibly supported but not strongly confirmed.\",\n  \"answer\": \"Yes—doc_003 reports 184 completed Atlas valve checks at Northline for March 2025. The other three documents neither confirm nor contradict the figure. Because support comes from a single note with an odd pre-month timestamp, confidence is moderate; tracing the underlying ledger is recommended.\"\n}",
+  "usage": {
+    "completion_tokens": 519,
+    "prompt_tokens": 1500,
+    "total_tokens": 2019,
+    "completion_tokens_details": {
+      "accepted_prediction_tokens": null,
+      "audio_tokens": 0,
+      "reasoning_tokens": 0,
+      "rejected_prediction_tokens": null,
+      "text_tokens": 0,
+      "image_tokens": 0
+    },
+    "prompt_tokens_details": {
+      "audio_tokens": 0,
+      "cached_tokens": 0,
+      "text_tokens": 0,
+      "image_tokens": 0
+    },
+    "usage_semantic": "openai",
+    "usage_source": "anthropic",
+    "input_tokens": 1500,
+    "output_tokens": 0,
+    "input_tokens_details": null,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+  },
+  "response_format_used": "json_schema",
+  "parse_success": true,
+  "parse_error": "",
+  "schema_missing": false,
+  "empty_output": false,
+  "invocation_profile": {
+    "temperature_policy": "omitted",
+    "max_completion_tokens_policy": "explicit:4096",
+    "response_format": "json_schema",
+    "json_extractor": "first_json_object",
+    "message_role_policy": "developer_system_merged_into_user",
+    "llm_repair": "disabled",
+    "doc_id_policy": "opaque_per_task"
+  }
+}

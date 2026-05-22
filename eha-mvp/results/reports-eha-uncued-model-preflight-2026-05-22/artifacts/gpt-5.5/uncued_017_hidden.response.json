@@ -1,0 +1,45 @@
+{
+  "model": "gpt-5.5",
+  "task_id": "uncued_017_hidden",
+  "content": "{\"actions\":[{\"action\":\"trace_source\",\"rationale\":\"The 101-count digest cites a routing note that gives chronology but no final count.\",\"target\":\"doc_001 -> doc_002\"},{\"action\":\"compare_versions\",\"rationale\":\"A month-close ledger directly reports a conflicting approved-check total for the same workstream and month.\",\"target\":\"doc_003 vs doc_001\"}],\"answer\":\"No. The best available evidence refutes the 101 figure: the month-close ledger lists 76 approved checks for Kestrel firmware checks in August 2025. The only document stating 101 is a short digest without a visible underlying row, and its cited source gives no final count.\",\"claim_verdict\":\"refuted\",\"confidence\":0.82,\"evidence_environment_assessment\":\"The environment contains a direct conflict: a ledger reports 76, while a digest claims 101. The digest’s citation does not substantiate the count, and other documents provide chronology or scheduling but no total. The ledger is the most probative source for the numeric claim.\",\"rejected_evidence\":[\"doc_001\",\"doc_002\",\"doc_004\"],\"selected_doc_ids\":[\"doc_003\",\"doc_001\",\"doc_002\"],\"supporting_evidence\":[\"doc_003\"]}",
+  "usage": {
+    "completion_tokens": 472,
+    "prompt_tokens": 1193,
+    "total_tokens": 1665,
+    "completion_tokens_details": {
+      "accepted_prediction_tokens": 0,
+      "audio_tokens": 0,
+      "reasoning_tokens": 197,
+      "rejected_prediction_tokens": 0
+    },
+    "prompt_tokens_details": {
+      "audio_tokens": 0,
+      "cached_tokens": 0
+    },
+    "latency_checkpoint": {
+      "engine_tbt_ms": 20,
+      "engine_ttft_ms": 925,
+      "engine_ttlt_ms": 10437,
+      "pre_inference_ms": 104,
+      "service_tbt_ms": 20,
+      "service_ttft_ms": 1268,
+      "service_ttlt_ms": 10787,
+      "total_duration_ms": 10681,
+      "user_visible_ttft_ms": 1164
+    }
+  },
+  "response_format_used": "json_schema",
+  "parse_success": true,
+  "parse_error": "",
+  "schema_missing": false,
+  "empty_output": false,
+  "invocation_profile": {
+    "temperature_policy": "omitted",
+    "max_completion_tokens_policy": "explicit:4096",
+    "response_format": "json_schema",
+    "json_extractor": "first_json_object",
+    "message_role_policy": "developer_system_merged_into_user",
+    "llm_repair": "disabled",
+    "doc_id_policy": "opaque_per_task"
+  }
+}

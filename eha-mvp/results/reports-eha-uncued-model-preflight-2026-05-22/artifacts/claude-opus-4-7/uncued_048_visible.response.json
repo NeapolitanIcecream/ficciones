@@ -1,0 +1,45 @@
+{
+  "model": "claude-opus-4-7",
+  "task_id": "uncued_048_visible",
+  "content": "{\n  \"claim_verdict\": \"insufficient\",\n  \"confidence\": 0.7,\n  \"supporting_evidence\": [\"doc_004\", \"doc_003\"],\n  \"rejected_evidence\": [\"doc_001\", \"doc_002\"],\n  \"selected_doc_ids\": [\"doc_004\", \"doc_003\", \"doc_002\"],\n  \"actions\": [\n    {\n      \"action\": \"trace_source\",\n      \"target\": \"doc_004\",\n      \"rationale\": \"The roundup is the origin of the launch claim but cites no operational record; tracing to a primary source is needed to confirm.\"\n    },\n    {\n      \"action\": \"search_primary\",\n      \"target\": \"Novalis Robotics HelioSplice program registry\",\n      \"rationale\": \"Registry and memo (doc_001, doc_002) show only Atlas valve checks; a primary launch record is needed before accepting the claim.\"\n    }\n  ],\n  \"evidence_environment_assessment\": \"The packet contains a circular citation chain: doc_003 cites doc_004, and doc_004 (a community roundup) provides no underlying record. The two independent operational documents (doc_001 registry, doc_002 memo) cover the same site/workstream/month and list only Atlas valve checks, with no mention of HelioSplice. Supporting items are non-primary and self-referential; refuting items are primary-style but may simply omit the program. Net: weak corroboration for launch and notable silence in operational records.\",\n  \"answer\": \"Evidence is insufficient to confirm the March 2025 launch. The launch claim traces to a single community roundup (doc_004) echoed by doc_003, with no primary operational record. The registry (doc_001) and field memo (doc_002) covering the same period mention only Atlas valve checks and omit HelioSplice. Without a primary source, the claim cannot be reliably supported or refuted.\"\n}",
+  "usage": {
+    "completion_tokens": 609,
+    "prompt_tokens": 1477,
+    "total_tokens": 2086,
+    "completion_tokens_details": {
+      "accepted_prediction_tokens": null,
+      "audio_tokens": 0,
+      "reasoning_tokens": 0,
+      "rejected_prediction_tokens": null,
+      "text_tokens": 0,
+      "image_tokens": 0
+    },
+    "prompt_tokens_details": {
+      "audio_tokens": 0,
+      "cached_tokens": 0,
+      "text_tokens": 0,
+      "image_tokens": 0
+    },
+    "usage_semantic": "openai",
+    "usage_source": "anthropic",
+    "input_tokens": 1477,
+    "output_tokens": 0,
+    "input_tokens_details": null,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+  },
+  "response_format_used": "json_schema",
+  "parse_success": true,
+  "parse_error": "",
+  "schema_missing": false,
+  "empty_output": false,
+  "invocation_profile": {
+    "temperature_policy": "omitted",
+    "max_completion_tokens_policy": "explicit:4096",
+    "response_format": "json_schema",
+    "json_extractor": "first_json_object",
+    "message_role_policy": "developer_system_merged_into_user",
+    "llm_repair": "disabled",
+    "doc_id_policy": "opaque_per_task"
+  }
+}

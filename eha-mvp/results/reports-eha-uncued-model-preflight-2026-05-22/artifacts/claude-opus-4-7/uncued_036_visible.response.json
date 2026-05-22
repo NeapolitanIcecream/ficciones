@@ -1,0 +1,45 @@
+{
+  "model": "claude-opus-4-7",
+  "task_id": "uncued_036_visible",
+  "content": "{\n  \"claim_verdict\": \"supported\",\n  \"confidence\": 0.78,\n  \"supporting_evidence\": [\"doc_002\"],\n  \"rejected_evidence\": [\"doc_003\", \"doc_004\"],\n  \"selected_doc_ids\": [\"doc_002\", \"doc_003\", \"doc_004\"],\n  \"actions\": [\n    {\"action\": \"compare_versions\", \"target\": \"doc_002 vs doc_003\", \"rationale\": \"Reconcile the closeout ledger figure (184) against the earlier digest estimate (211) to confirm which represents the final monthly close.\"},\n    {\"action\": \"trace_source\", \"target\": \"doc_003\", \"rationale\": \"doc_003 cites doc_004, a planning memo with no final number, weakening its 211 estimate.\"}\n  ],\n  \"evidence_environment_assessment\": \"Four documents share identical labels (site code, workstream, close date), so judgment must rely on stated values and document role. doc_002 is a closeout ledger with the final close date listing 184. doc_003 is an earlier digest estimate (211) citing doc_004, a pre-close planning memo with no final number. doc_001 contains no count. The closeout ledger outranks the planning estimate in recency and finality, though both are dated January 2025 despite covering March 2025, a minor inconsistency.\",\n  \"answer\": \"Yes. doc_002, the closeout ledger using the final close date, records 184 completed Atlas valve checks for March 2025. The competing figure of 211 in doc_003 is explicitly framed as a running estimate and traces to doc_004, a pre-close planning memo with no final number, so it is superseded by the closeout entry.\"\n}",
+  "usage": {
+    "completion_tokens": 549,
+    "prompt_tokens": 1474,
+    "total_tokens": 2023,
+    "completion_tokens_details": {
+      "accepted_prediction_tokens": null,
+      "audio_tokens": 0,
+      "reasoning_tokens": 0,
+      "rejected_prediction_tokens": null,
+      "text_tokens": 0,
+      "image_tokens": 0
+    },
+    "prompt_tokens_details": {
+      "audio_tokens": 0,
+      "cached_tokens": 0,
+      "text_tokens": 0,
+      "image_tokens": 0
+    },
+    "usage_semantic": "openai",
+    "usage_source": "anthropic",
+    "input_tokens": 1474,
+    "output_tokens": 0,
+    "input_tokens_details": null,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+  },
+  "response_format_used": "json_schema",
+  "parse_success": true,
+  "parse_error": "",
+  "schema_missing": false,
+  "empty_output": false,
+  "invocation_profile": {
+    "temperature_policy": "omitted",
+    "max_completion_tokens_policy": "explicit:4096",
+    "response_format": "json_schema",
+    "json_extractor": "first_json_object",
+    "message_role_policy": "developer_system_merged_into_user",
+    "llm_repair": "disabled",
+    "doc_id_policy": "opaque_per_task"
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "model": "deepseek-v4-pro",
+  "task_id": "uncued_036_visible",
+  "content": "{\n  \"claim_verdict\": \"supported\",\n  \"confidence\": 0.9,\n  \"supporting_evidence\": [\"doc_002\"],\n  \"rejected_evidence\": [\"doc_003\"],\n  \"selected_doc_ids\": [\"doc_002\", \"doc_003\"],\n  \"actions\": [\n    {\n      \"action\": \"compare_versions\",\n      \"target\": \"doc_002, doc_003\",\n      \"rationale\": \"doc_002 (closeout ledger) and doc_003 (running estimate) report different numbers (184 vs 211). Comparing them determines which reflects the final logged count.\"\n    },\n    {\n      \"action\": \"trace_source\",\n      \"target\": \"doc_002\",\n      \"rationale\": \"Verify the closeout ledger's origin and authenticity to ensure it is the definitive record, not an intermediate draft.\"\n    }\n  ],\n  \"evidence_environment_assessment\": \"The evidence environment contains an early planning memo (doc_004), a handoff note (doc_001), a running estimate (doc_003, 211 checks), and a later closeout ledger (doc_002, 184 checks). The progression from estimate to final closeout suggests the ledger is authoritative. No signs of manipulation; the discrepancy is due to temporal context.\",\n  \"answer\": \"Yes, the closeout ledger (doc_002) logs 184 completed checks for Atlas valve checks in March 2025, superseding the earlier estimate of 211.\"\n}",
+  "usage": {
+    "completion_tokens": 1584,
+    "prompt_tokens": 1045,
+    "total_tokens": 2629,
+    "completion_tokens_details": {
+      "accepted_prediction_tokens": null,
+      "audio_tokens": null,
+      "reasoning_tokens": 1273,
+      "rejected_prediction_tokens": null
+    },
+    "prompt_tokens_details": {
+      "audio_tokens": null,
+      "cached_tokens": 0
+    },
+    "prompt_cache_hit_tokens": 0,
+    "prompt_cache_miss_tokens": 1045
+  },
+  "response_format_used": "json_object",
+  "parse_success": true,
+  "parse_error": "",
+  "schema_missing": false,
+  "empty_output": false,
+  "invocation_profile": {
+    "temperature_policy": "omitted",
+    "max_completion_tokens_policy": "explicit:4096",
+    "response_format": "json_schema",
+    "json_extractor": "first_json_object",
+    "message_role_policy": "developer_system_merged_into_user",
+    "llm_repair": "disabled",
+    "doc_id_policy": "opaque_per_task"
+  }
+}

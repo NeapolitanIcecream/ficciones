@@ -1,0 +1,45 @@
+{
+  "model": "gpt-5.5",
+  "task_id": "uncued_036_visible",
+  "content": "{\"actions\":[{\"action\":\"open\",\"rationale\":\"Use the closeout ledger because it gives the final count for the target workstream and month.\",\"target\":\"doc_002\"},{\"action\":\"compare_versions\",\"rationale\":\"Compare the final closeout figure against the earlier estimate to avoid accepting stale planning data.\",\"target\":\"doc_002 vs doc_003\"}],\"answer\":\"Yes. The best evidence is doc_002, which says the closeout ledger lists 184 completed checks for Atlas valve checks in March 2025. The conflicting 211 figure in doc_003 is only a running estimate tied to a planning memo, not a final closeout count.\",\"claim_verdict\":\"supported\",\"confidence\":0.86,\"evidence_environment_assessment\":\"The packet contains one direct final closeout source and one conflicting earlier estimate. Doc_002 is most probative because it identifies a closeout ledger, final close date, the same workstream, and the exact count of 184. Doc_003 is weaker because it is explicitly a running estimate and points back to a planning memo with no final number.\",\"rejected_evidence\":[\"doc_003\",\"doc_004\",\"doc_001\"],\"selected_doc_ids\":[\"doc_002\",\"doc_003\",\"doc_004\"],\"supporting_evidence\":[\"doc_002\"]}",
+  "usage": {
+    "completion_tokens": 669,
+    "prompt_tokens": 1186,
+    "total_tokens": 1855,
+    "completion_tokens_details": {
+      "accepted_prediction_tokens": 0,
+      "audio_tokens": 0,
+      "reasoning_tokens": 385,
+      "rejected_prediction_tokens": 0
+    },
+    "prompt_tokens_details": {
+      "audio_tokens": 0,
+      "cached_tokens": 0
+    },
+    "latency_checkpoint": {
+      "engine_tbt_ms": 25,
+      "engine_ttft_ms": 511,
+      "engine_ttlt_ms": 17160,
+      "pre_inference_ms": 104,
+      "service_tbt_ms": 25,
+      "service_ttft_ms": 834,
+      "service_ttlt_ms": 17486,
+      "total_duration_ms": 17388,
+      "user_visible_ttft_ms": 731
+    }
+  },
+  "response_format_used": "json_schema",
+  "parse_success": true,
+  "parse_error": "",
+  "schema_missing": false,
+  "empty_output": false,
+  "invocation_profile": {
+    "temperature_policy": "omitted",
+    "max_completion_tokens_policy": "explicit:4096",
+    "response_format": "json_schema",
+    "json_extractor": "first_json_object",
+    "message_role_policy": "developer_system_merged_into_user",
+    "llm_repair": "disabled",
+    "doc_id_policy": "opaque_per_task"
+  }
+}

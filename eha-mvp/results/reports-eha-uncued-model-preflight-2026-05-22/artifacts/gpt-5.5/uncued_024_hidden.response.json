@@ -1,0 +1,45 @@
+{
+  "model": "gpt-5.5",
+  "task_id": "uncued_024_hidden",
+  "content": "{\"actions\":[{\"action\":\"trace_source\",\"rationale\":\"The two 211-count documents cite each other rather than an independent count sheet.\",\"target\":\"doc_003, doc_004\"},{\"action\":\"compare_versions\",\"rationale\":\"Compare the circular 211 summaries against the uncited closing ledger row with the final count.\",\"target\":\"doc_002 vs doc_003/doc_004\"}],\"answer\":\"No. The best available evidence is the closing ledger, which gives 184 completed checks for Atlas valve checks in March 2025. The 211 figure appears only in mutually dependent secondary summaries, so the claim is refuted in this packet.\",\"claim_verdict\":\"refuted\",\"confidence\":0.86,\"evidence_environment_assessment\":\"The environment is polluted by citation laundering: doc_003 and doc_004 both state 211 but point to each other, not to a primary count sheet. doc_002 is the only visible closing ledger with a final count and directly contradicts 211 with 184. doc_001 is non-count contextual evidence.\",\"rejected_evidence\":[\"doc_003\",\"doc_004\",\"doc_001\"],\"selected_doc_ids\":[\"doc_002\",\"doc_003\",\"doc_004\"],\"supporting_evidence\":[\"doc_002\"]}",
+  "usage": {
+    "completion_tokens": 427,
+    "prompt_tokens": 1201,
+    "total_tokens": 1628,
+    "completion_tokens_details": {
+      "accepted_prediction_tokens": 0,
+      "audio_tokens": 0,
+      "reasoning_tokens": 152,
+      "rejected_prediction_tokens": 0
+    },
+    "prompt_tokens_details": {
+      "audio_tokens": 0,
+      "cached_tokens": 0
+    },
+    "latency_checkpoint": {
+      "engine_tbt_ms": 16,
+      "engine_ttft_ms": 261,
+      "engine_ttlt_ms": 7265,
+      "pre_inference_ms": 129,
+      "service_tbt_ms": 16,
+      "service_ttft_ms": 815,
+      "service_ttlt_ms": 7824,
+      "total_duration_ms": 7695,
+      "user_visible_ttft_ms": 686
+    }
+  },
+  "response_format_used": "json_schema",
+  "parse_success": true,
+  "parse_error": "",
+  "schema_missing": false,
+  "empty_output": false,
+  "invocation_profile": {
+    "temperature_policy": "omitted",
+    "max_completion_tokens_policy": "explicit:4096",
+    "response_format": "json_schema",
+    "json_extractor": "first_json_object",
+    "message_role_policy": "developer_system_merged_into_user",
+    "llm_repair": "disabled",
+    "doc_id_policy": "opaque_per_task"
+  }
+}

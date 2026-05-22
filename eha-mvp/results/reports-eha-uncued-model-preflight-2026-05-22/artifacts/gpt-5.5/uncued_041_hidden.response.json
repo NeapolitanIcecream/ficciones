@@ -1,0 +1,45 @@
+{
+  "model": "gpt-5.5",
+  "task_id": "uncued_041_hidden",
+  "content": "{\"actions\":[{\"action\":\"open\",\"rationale\":\"Use the final closeout ledger because it directly states the count for the target workstream and month.\",\"target\":\"doc_004\"},{\"action\":\"compare_versions\",\"rationale\":\"Contrast the ledger with the earlier running estimate to avoid accepting provisional figures.\",\"target\":\"doc_003\"}],\"answer\":\"Supported. The strongest evidence is the closeout ledger, which states 76 approved checks for Kestrel firmware checks in August 2025. The conflicting 101 figure is only a running estimate tied to planning, not a final closeout count.\",\"claim_verdict\":\"supported\",\"confidence\":0.86,\"evidence_environment_assessment\":\"The environment contains planning, handoff, estimate, and closeout-style documents. The closeout ledger is most probative for the final count. The 101 figure is weaker because it is explicitly a running estimate sourced to a planning memo, while other notes contain no closing number.\",\"rejected_evidence\":[\"doc_003\",\"doc_001\",\"doc_002\"],\"selected_doc_ids\":[\"doc_004\",\"doc_003\",\"doc_001\"],\"supporting_evidence\":[\"doc_004\"]}",
+  "usage": {
+    "completion_tokens": 767,
+    "prompt_tokens": 1188,
+    "total_tokens": 1955,
+    "completion_tokens_details": {
+      "accepted_prediction_tokens": 0,
+      "audio_tokens": 0,
+      "reasoning_tokens": 512,
+      "rejected_prediction_tokens": 0
+    },
+    "prompt_tokens_details": {
+      "audio_tokens": 0,
+      "cached_tokens": 0
+    },
+    "latency_checkpoint": {
+      "engine_tbt_ms": 20,
+      "engine_ttft_ms": 328,
+      "engine_ttlt_ms": 15579,
+      "pre_inference_ms": 131,
+      "service_tbt_ms": 20,
+      "service_ttft_ms": 688,
+      "service_ttlt_ms": 15944,
+      "total_duration_ms": 15811,
+      "user_visible_ttft_ms": 557
+    }
+  },
+  "response_format_used": "json_schema",
+  "parse_success": true,
+  "parse_error": "",
+  "schema_missing": false,
+  "empty_output": false,
+  "invocation_profile": {
+    "temperature_policy": "omitted",
+    "max_completion_tokens_policy": "explicit:4096",
+    "response_format": "json_schema",
+    "json_extractor": "first_json_object",
+    "message_role_policy": "developer_system_merged_into_user",
+    "llm_repair": "disabled",
+    "doc_id_policy": "opaque_per_task"
+  }
+}

@@ -1,0 +1,45 @@
+{
+  "model": "claude-opus-4-7",
+  "task_id": "uncued_005_visible",
+  "content": "{\n  \"claim_verdict\": \"refuted\",\n  \"confidence\": 0.82,\n  \"supporting_evidence\": [],\n  \"rejected_evidence\": [\"doc_002\", \"doc_003\", \"doc_004\"],\n  \"selected_doc_ids\": [\"doc_001\"],\n  \"actions\": [{\"action\": \"trace_source\", \"target\": \"doc_001\", \"rationale\": \"Confirm the ledger figure of 76 approved checks against the original monthly close record to ensure the count is authoritative.\"}],\n  \"evidence_environment_assessment\": \"Only doc_001 reports a numeric count for Kestrel firmware checks in August 2025, listing 76 approved checks. Docs 002–004 reference the same workstream, site, and month but omit closing counts, contributing context without quantitative evidence. No document supports the 101 figure. The packet is internally consistent and the ledger extract is the most directly relevant source for judging the claim.\",\n  \"answer\": \"No. The Service Ledger Extract (doc_001) records 76 approved checks for Kestrel firmware checks in August 2025, and no document in the packet reports 101. The other notes corroborate the workstream and month but provide no count. The claim of 101 approved checks is refuted by the available evidence.\"\n}",
+  "usage": {
+    "completion_tokens": 415,
+    "prompt_tokens": 1452,
+    "total_tokens": 1867,
+    "completion_tokens_details": {
+      "accepted_prediction_tokens": null,
+      "audio_tokens": 0,
+      "reasoning_tokens": 0,
+      "rejected_prediction_tokens": null,
+      "text_tokens": 0,
+      "image_tokens": 0
+    },
+    "prompt_tokens_details": {
+      "audio_tokens": 0,
+      "cached_tokens": 0,
+      "text_tokens": 0,
+      "image_tokens": 0
+    },
+    "usage_semantic": "openai",
+    "usage_source": "anthropic",
+    "input_tokens": 1452,
+    "output_tokens": 0,
+    "input_tokens_details": null,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+  },
+  "response_format_used": "json_schema",
+  "parse_success": true,
+  "parse_error": "",
+  "schema_missing": false,
+  "empty_output": false,
+  "invocation_profile": {
+    "temperature_policy": "omitted",
+    "max_completion_tokens_policy": "explicit:4096",
+    "response_format": "json_schema",
+    "json_extractor": "first_json_object",
+    "message_role_policy": "developer_system_merged_into_user",
+    "llm_repair": "disabled",
+    "doc_id_policy": "opaque_per_task"
+  }
+}

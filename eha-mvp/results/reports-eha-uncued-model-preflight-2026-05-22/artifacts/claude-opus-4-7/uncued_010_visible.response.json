@@ -1,0 +1,45 @@
+{
+  "model": "claude-opus-4-7",
+  "task_id": "uncued_010_visible",
+  "content": "{\n  \"claim_verdict\": \"supported\",\n  \"confidence\": 0.7,\n  \"supporting_evidence\": [\"doc_004\"],\n  \"rejected_evidence\": [\"doc_001\", \"doc_002\", \"doc_003\"],\n  \"selected_doc_ids\": [\"doc_004\", \"doc_003\", \"doc_001\"],\n  \"actions\": [\n    {\"action\": \"trace_source\", \"target\": \"doc_004\", \"rationale\": \"Verify the monthly ledger entry for Harbor Annex showing 118 refurbishments, since it is the sole source providing a count.\"},\n    {\"action\": \"search_primary\", \"target\": \"Nova pump refurbishments July 2025 close report\", \"rationale\": \"Seek an independent primary close-of-month tally to corroborate doc_004's figure.\"}\n  ],\n  \"evidence_environment_assessment\": \"Four documents share matching site code, workstream name, and close date, designed so relation checks rely on stated values. Only doc_004 provides a numeric count (118) tied to Harbor Annex for July 2025. Docs 001-003 give context (timing, routing, staffing) but no tally. No contradicting figure appears, but corroboration is absent, and document timestamps (Feb 2025) precede the referenced July 2025 period, which is anomalous and warrants caution.\",\n  \"answer\": \"Doc_004 explicitly states the Harbor Annex monthly ledger logged 118 completed Nova pump refurbishments for July 2025, supporting the claim. The other three documents provide consistent context (workstream, site, timing) but no counts, so they neither confirm nor contradict. With a single numeric source and odd timestamp dating, the claim is supported but with moderate confidence pending corroboration from a primary close report.\"\n}",
+  "usage": {
+    "completion_tokens": 578,
+    "prompt_tokens": 1517,
+    "total_tokens": 2095,
+    "completion_tokens_details": {
+      "accepted_prediction_tokens": null,
+      "audio_tokens": 0,
+      "reasoning_tokens": 0,
+      "rejected_prediction_tokens": null,
+      "text_tokens": 0,
+      "image_tokens": 0
+    },
+    "prompt_tokens_details": {
+      "audio_tokens": 0,
+      "cached_tokens": 0,
+      "text_tokens": 0,
+      "image_tokens": 0
+    },
+    "usage_semantic": "openai",
+    "usage_source": "anthropic",
+    "input_tokens": 1517,
+    "output_tokens": 0,
+    "input_tokens_details": null,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+  },
+  "response_format_used": "json_schema",
+  "parse_success": true,
+  "parse_error": "",
+  "schema_missing": false,
+  "empty_output": false,
+  "invocation_profile": {
+    "temperature_policy": "omitted",
+    "max_completion_tokens_policy": "explicit:4096",
+    "response_format": "json_schema",
+    "json_extractor": "first_json_object",
+    "message_role_policy": "developer_system_merged_into_user",
+    "llm_repair": "disabled",
+    "doc_id_policy": "opaque_per_task"
+  }
+}

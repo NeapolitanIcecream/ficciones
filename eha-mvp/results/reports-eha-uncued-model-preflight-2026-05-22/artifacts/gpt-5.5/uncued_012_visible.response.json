@@ -1,0 +1,45 @@
+{
+  "model": "gpt-5.5",
+  "task_id": "uncued_012_visible",
+  "content": "{\"actions\":[{\"action\":\"trace_source\",\"rationale\":\"doc_002’s visible citation points to doc_004, which provides chronology but no count, weakening the 211 figure.\",\"target\":\"doc_002 -> doc_004\"},{\"action\":\"compare_versions\",\"rationale\":\"Compare the explicit 211 digest against the month-close ledger statement listing 184 for the same workstream and month.\",\"target\":\"doc_001 vs doc_002\"}],\"answer\":\"No. The best available evidence refutes the 211 figure: doc_001 says the month-close ledger lists 184 completed Atlas valve checks for March 2025. The only 211 source, doc_002, is a digest without a visible underlying row and cites doc_004, which contains no final count.\",\"claim_verdict\":\"refuted\",\"confidence\":0.72,\"evidence_environment_assessment\":\"The environment contains a direct conflict. doc_001 reports a month-close ledger count of 184 for the same workstream and month. doc_002 reports 211 but is derivative and unsupported by its cited doc_004, which gives no total. doc_003 is irrelevant to the count.\",\"rejected_evidence\":[\"doc_002\",\"doc_004\",\"doc_003\"],\"selected_doc_ids\":[\"doc_001\",\"doc_002\",\"doc_004\"],\"supporting_evidence\":[\"doc_001\"]}",
+  "usage": {
+    "completion_tokens": 558,
+    "prompt_tokens": 1190,
+    "total_tokens": 1748,
+    "completion_tokens_details": {
+      "accepted_prediction_tokens": 0,
+      "audio_tokens": 0,
+      "reasoning_tokens": 262,
+      "rejected_prediction_tokens": 0
+    },
+    "prompt_tokens_details": {
+      "audio_tokens": 0,
+      "cached_tokens": 0
+    },
+    "latency_checkpoint": {
+      "engine_tbt_ms": 20,
+      "engine_ttft_ms": 314,
+      "engine_ttlt_ms": 11324,
+      "pre_inference_ms": 110,
+      "service_tbt_ms": 20,
+      "service_ttft_ms": 662,
+      "service_ttlt_ms": 11672,
+      "total_duration_ms": 11566,
+      "user_visible_ttft_ms": 552
+    }
+  },
+  "response_format_used": "json_schema",
+  "parse_success": true,
+  "parse_error": "",
+  "schema_missing": false,
+  "empty_output": false,
+  "invocation_profile": {
+    "temperature_policy": "omitted",
+    "max_completion_tokens_policy": "explicit:4096",
+    "response_format": "json_schema",
+    "json_extractor": "first_json_object",
+    "message_role_policy": "developer_system_merged_into_user",
+    "llm_repair": "disabled",
+    "doc_id_policy": "opaque_per_task"
+  }
+}
