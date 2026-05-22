@@ -1,0 +1,15 @@
+\section{Metrics And Scoring Contract}
+
+The scorer treats final-answer accuracy as one component, not the endpoint. The main metrics are:
+\begin{itemize}
+    \item \textbf{Belief correctness}: whether the predicted verdict matches the gold verdict.
+    \item \textbf{Evidence precision}: whether selected support avoids polluted evidence and aligns with clean support.
+    \item \textbf{Clean support recall}: whether available clean support is recovered.
+    \item \textbf{Polluted support rate}: how often polluted evidence is used as support.
+    \item \textbf{Rejected pollutant rate}: how often known pollutants are rejected or avoided.
+    \item \textbf{Uncertainty discipline}: whether confidence and insufficiency behavior follow the gold state.
+    \item \textbf{Verification action score}: whether active-verification actions use the required action type and an executable target.
+    \item \textbf{Operational epistemic escape}: the joint success criterion combining belief, evidence hygiene, and task-family-specific requirements.
+\end{itemize}
+
+Operational escape is intentionally stricter than answer accuracy. A model that answers correctly while placing generated lore in \code{supporting_evidence} should not receive full credit for an agent-facing evidence contract. Likewise, an active-verification answer can be correct while the next action is too vague to execute.

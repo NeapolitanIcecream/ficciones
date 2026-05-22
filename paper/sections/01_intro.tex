@@ -1,23 +1,17 @@
 \section{Introduction}
 
-LLM agents increasingly rely on information environments they do not control. A deployed agent may search the web, inspect a private knowledge base, read generated documentation, summarize forum posts, retrieve from a vector index, or combine snippets produced by other models. This changes the factual-reliability problem. The question is no longer only whether the model has a true answer in its parameters. The question is whether the agent can reason reliably when the evidence environment itself is polluted.
+Information-seeking agents are often evaluated by final-answer accuracy. That is too coarse for settings where the evidence environment is polluted. A system can answer correctly while citing a repost, laundering generated text into a support field, or failing to specify the next verification action. These are not only presentation errors: downstream tools, auditors, and users may depend on the structured evidence and action fields.
 
-Polluted evidence environments are common in agent settings. Documents may be outdated but still indexed. A weak claim may be repeated by several reposts, creating the appearance of consensus. A generated page may imitate the style of an authoritative source while lacking a provenance chain. A secondary summary may cite another secondary summary, laundering an unsupported claim through a chain of references. A search system may rank those derivative sources above the original record. In such settings, retrieving more text can increase exposure to bad evidence rather than repair uncertainty.
+\eha{}-Uncued tests this distinction in a small controlled setting. The pilot asks models to judge claims using synthetic evidence packets that contain clean evidence, conflicting evidence, false consensus, buried primary evidence, or generated lore. The model-visible packet does not label documents as primary, contaminant, generated, or gold-supporting. The scorer then separates belief correctness from evidence hygiene and active-verification behavior.
 
-Final-answer accuracy is therefore insufficient. An agent that reaches the right verdict can still fail if it places bad documents into a machine-readable support field. A downstream report generator, memory system, or auditing tool may consume \code{supporting_evidence} without reading the model's full prose. Likewise, an agent that knows the right answer can still fail if its next action is not executable: a target such as \code{doc_a, doc_b -> doc_c} may be understandable to a human but unsafe or ambiguous for a tool interface.
+This paper replaces an earlier cued construction. That older run was useful as a failure discovery: it showed that visible construction cues could invalidate the benchmark. It is quarantined and not used as a main result. The contribution here is a role-uncued pilot with explicit pre-model leakage gates, shortcut baselines, four-model execution, scorer audit, and a reproducible artifact package.
 
-\eha{} evaluates this broader reliability problem. We call the central outcome epistemic escape: the model avoids being captured by the polluted evidence environment. Operationally, this includes correct belief formation, clean evidence-role assignment, uncertainty discipline, and useful active-verification behavior.
+The study is intentionally modest. It is a diagnostic pilot over 60 latent tasks, two neutral metadata views, four frontier model labels, and one clarified schema. It should be read as evidence that answer accuracy hides operational failures under controlled pollution, not as a stable ranking of model providers.
 
-One motivating example comes from EHA's generated-lore condition. In a \code{gpt-5.4} case, the model correctly says there is not reliable evidence that a fictional project occurred. Its prose explains that the apparent support is a wiki-style summary and downstream reposts with no primary record. Yet the same generated-lore root and repost appear in \code{supporting_evidence}. A human reader can infer that the model distrusts the source. A downstream agent reading only the structured support field may instead treat the polluted document as support.
-
-This paper does not rank frontier models. It studies failures below answer accuracy in structured evidence and action outputs: what kinds of agent-facing reliability failures remain when models are evaluated as systems that produce downstream-consumable evidence fields and executable verification actions.
-
-This paper makes five contributions:
-
-\begin{enumerate}
-    \item It defines polluted evidence environments as an agent-facing evaluation setting.
-    \item It introduces \eha{} as a controlled diagnostic benchmark for epistemic escape, not as a universal provider leaderboard.
-    \item It reports a five-model frontier cohort run and decomposes results across belief correctness, evidence cleanliness, uncertainty discipline, and active verification.
-    \item It shows that answer correctness can separate from evidence-role cleanliness, schema-sensitive role assignment, and action executability.
-    \item It releases opaque-ID repaired artifacts, no-API baselines, and a minimal reproducibility package.
-\end{enumerate}
+The main contributions are:
+\begin{itemize}
+    \item a role-uncued version of the \eha{} task design that removes direct material-role and conclusion cues from model-visible evidence;
+    \item pre-model leakage and shortcut-baseline gates showing that simple non-API shortcuts remain below the level needed to explain the strongest model results;
+    \item a four-model pilot showing large gaps between belief correctness and operational epistemic escape, especially on generated-lore rows;
+    \item a packaged artifact, verifier, and scorer audit that make the pilot reproducible and explicitly bounded.
+\end{itemize}

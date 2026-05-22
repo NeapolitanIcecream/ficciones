@@ -1,0 +1,16 @@
+\section{Polluted Evidence Environments}
+
+Retrieval and tool-use benchmarks have shown that language models can use external evidence and actions, but the quality of the evidence environment itself is often treated as a background assumption \citep{lewis2020retrieval,yao2023react,zhou2024webarena}. In open-web settings, that assumption is fragile. Evidence may be stale, copied from another source, contradicted by a primary record, or generated in a form that looks plausible. Related work on factuality, retrieval-augmented generation, and poisoned retrieval motivates this concern \citep{thorne-etal-2018-fever,niu-etal-2024-ragtruth,zou2025poisonedrag}.
+
+\eha{} focuses on polluted evidence environments rather than only polluted final answers. The target behavior is epistemic escape: the model should form the right belief, select safe support, reject or avoid polluted evidence, and, when needed, express an executable verification action.
+
+The role-uncued pilot is built around five evidence conditions:
+\begin{itemize}
+    \item \textbf{Clean}: the packet contains enough clean evidence and no intended pollutant trap.
+    \item \textbf{Conflicting evidence}: the packet contains evidence that pulls toward incompatible conclusions.
+    \item \textbf{False consensus}: several surface-consistent records point the wrong way.
+    \item \textbf{Buried primary}: the primary evidence is present but less salient than distractors.
+    \item \textbf{Generated lore}: generated or lore-like material appears plausible but should not be used as clean support.
+\end{itemize}
+
+These conditions are synthetic by design. The point is not to mimic the full web, but to make failure modes measurable under controlled source relations.

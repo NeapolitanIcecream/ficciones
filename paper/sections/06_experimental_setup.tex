@@ -1,0 +1,7 @@
+\section{Experimental Setup}
+
+The pilot runs four model labels: \code{gpt-5.5}, \code{claude-opus-4-7}, \code{gemini-3.1-pro-preview}, and \code{deepseek-v4-pro}. Each model receives 120 task instances: 60 latent tasks times two neutral metadata views. The schema variant is \code{clarified}; the prompt condition is \code{standard_answer}.
+
+All 480 model records parse successfully. The stored prompt audit reports zero semantic document-ID hits, zero semantic visible-citation hits, zero audit-ID title/body hits, and zero hidden-field hits across 480 prompts. The stored hidden-label audit reports zero prompt hits and zero output hits. The total Phase 12 model-call cost recorded by the runbook is USD 3.764007.
+
+DeepSeek required special handling before the final run. A DeepSeek-only preflight retry used \code{response_format=json_object}, first-JSON-object extraction, omitted temperature, \code{max_completion_tokens=4096}, merged developer/system content into the user message, disabled LLM repair, and recorded the invocation profile separately. The Phase 12 run uses the same documented profile with a maximum of two attempts.

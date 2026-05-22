@@ -1,0 +1,13 @@
+\section{EHA-Uncued Dataset Design}
+
+The pilot contains 60 latent tasks. Each task is rendered in two neutral metadata views, giving 120 model-visible task instances per model. The condition split is balanced: 12 clean, 12 conflicting-evidence, 12 false-consensus, 12 buried-primary, and 12 generated-lore tasks. The family split is 24 packet-judgment, 24 evidence-selection, and 12 active-verification tasks.
+
+The key design change is role uncuedness. Model-visible documents use opaque per-task identifiers such as \code{doc_001}; visible titles, source types, timestamps, bodies, and citations do not expose construction roles such as primary support, contaminant, generated document, stale document, or gold verdict. Gold labels, dependency edges, and audit-only role labels are preserved for scoring but are not placed in model-visible prompts.
+
+Two views test whether neutral metadata changes behavior without making roles explicit:
+\begin{itemize}
+    \item \code{neutral_metadata_visible}: neutral metadata fields are visible.
+    \item \code{neutral_metadata_hidden}: the same task is presented without those visible neutral metadata fields.
+\end{itemize}
+
+The pilot is not a replacement for a large benchmark. It is a validity-first dataset slice used to test whether the benchmark can survive basic leakage and shortcut checks before making model claims.

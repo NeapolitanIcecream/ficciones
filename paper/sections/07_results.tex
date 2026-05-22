@@ -1,0 +1,17 @@
+\section{Results}
+
+\input{tables/model_metrics_by_view}
+
+\Cref{tab:model-metrics-by-view} gives the main model metrics by neutral metadata view. Operational escape is lower than belief correctness for every model and view. \code{gpt-5.5} has the highest operational escape in both views, at 0.517 hidden and 0.533 visible. \code{gemini-3.1-pro-preview} follows at 0.417 hidden and 0.450 visible. Claude and DeepSeek have lower operational escape despite high parse success.
+
+\input{tables/model_metrics_by_condition}
+
+\Cref{tab:model-metrics-by-condition} shows that the aggregate difficulty is not uniform. Clean rows are much easier, with 0.719 operational escape. Generated-lore rows have 0.938 belief correctness but only 0.125 operational escape because evidence precision collapses to 0.000 and polluted support remains high.
+
+\input{tables/evidence_hygiene_vs_belief}
+
+\Cref{tab:hygiene-vs-belief} makes the separation explicit. The largest belief-to-operation gap appears in generated lore. Buried-primary rows also separate: belief correctness is 0.979, while operational escape is 0.490. This supports the core claim that the task is not just asking whether the model can answer the claim. It asks whether the model can keep the evidence contract clean enough for an agent pipeline.
+
+\input{tables/active_verification_action_exactness}
+
+\Cref{tab:active-verification-action-exactness} summarizes active-verification action behavior. Exact target rate is 1.000 in this pilot, so the remaining variation comes from required action recall and the action score. This result should be read cautiously because the active-verification slice has only 96 rows.

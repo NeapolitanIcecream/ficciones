@@ -1,0 +1,11 @@
+\section{Leakage Controls And Shortcut Baselines}
+
+The older cued construction is quarantined because it exposed the wrong lesson: if benchmark construction roles are visible, models may solve the interface rather than the epistemic problem. The role-uncued pilot therefore runs leakage checks before model calls and records prompt-level audits during model execution.
+
+\input{tables/leakage_gate_summary}
+
+\Cref{tab:leakage-gate-summary} reports the main leakage controls. Automatic leakage checks found no critical, high, medium, hidden-label, semantic-ID, or direct-answer-cue hits. A local pre-model surface review covered 400 document rows and 50 unique tasks; it found no critical leaks or direct answer cues. This is not independent human-subject validation. It is a pre-model leakage gate used to decide whether model calls are justified.
+
+\input{tables/shortcut_baseline_summary}
+
+\Cref{tab:shortcut-baseline-summary} summarizes the no-API shortcuts. The strongest simple heuristic reaches 0.350 operational escape on the hidden view and 0.333 on the visible view. This is high enough to require caution, but low enough that model evaluation is not explained by document IDs, order, metadata alone, or a trivial cue phrase. The comparison is not uniformly favorable to every model-view pair: Claude and DeepSeek are at or below the simple heuristic on operational escape and evidence precision. The correct claim is narrower: the shortcut gates pass, and the strongest model-view pairs exceed the simple heuristic by meaningful margins.

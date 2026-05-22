@@ -1,0 +1,11 @@
+\section{Limitations}
+
+The pilot is small: 60 latent tasks, two neutral metadata views, four model labels, and one prompt/schema condition. It is not statistically powered for fine-grained provider ranking. Reported model differences should be treated as descriptive.
+
+The tasks are synthetic. Synthetic control is useful for isolating source-role failures, but it may introduce prose regularities that real evidence environments do not share. The leakage and baseline gates reduce this risk; they do not eliminate it.
+
+The human review evidence has two different scopes. The 400-row pre-model surface review is a local leakage gate. The 40-row scorer audit is a local Codex-assisted manual audit. Neither should be described as independent human validation.
+
+The schema-ablation mini-slice was skipped under the runbook rule and deferred to Phase 1.1. This paper can motivate schema/interface questions, but it cannot claim that a role-uncued schema ablation has already been run.
+
+Finally, the artifact includes hidden labels and gold data for reproducibility, but those files are not model-visible. Any downstream reuse must preserve that separation.

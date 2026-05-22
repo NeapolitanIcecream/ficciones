@@ -1,0 +1,18 @@
+\begin{table}[t]
+    \centering
+    \small
+    \caption{Leakage and prompt-hygiene gate summary for the role-uncued pilot.}
+    \label{tab:leakage-gate-summary}
+    \begin{tabularx}{\linewidth}{lrrX}
+        \toprule
+        Gate & Rows/files & Hits & Status \\
+        \midrule
+        Automatic leakage audit & 480 docs & 0 critical/high/medium & Passed \\
+        Hidden-label scan & 480 docs & 0 hidden-label hits & Passed \\
+        Semantic-ID/direct-cue scan & 480 docs & 0 semantic-ID or direct-answer hits & Passed \\
+        Local surface review & 400 rows & 0 critical leaks, 0 direct cues & Passed; not independent human validation \\
+        Prompt audit & 480 prompts & 0 hidden fields, 0 audit-ID hits & Passed \\
+        Stored hidden-label audit & 480 outputs & 0 prompt hits, 0 output hits & Passed \\
+        \bottomrule
+    \end{tabularx}
+\end{table}
