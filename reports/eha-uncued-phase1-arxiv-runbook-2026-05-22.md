@@ -1012,13 +1012,13 @@ The runbook is complete when all of these are true:
 - paper draft is rewritten around uncued results;
 - final handoff records exact state, cost, tests, and remaining risks.
 
-## Execution Status: Advanced To Phase 14
+## Execution Status: Advanced To Phase 15
 
 Status date: 2026-05-22
 
-This runbook has been advanced through Phase 14. Phases 15-19 have not been started. The four-model Phase 12 pilot run is complete, the Phase 13 scored report tables have been generated, and the Phase 14 scorer audit is complete.
+This runbook has been advanced through Phase 15. Phases 16-19 have not been started. The four-model Phase 12 pilot run is complete, the Phase 13 scored report tables have been generated, the Phase 14 scorer audit is complete, and the optional Phase 15 schema-ablation mini-slice has been explicitly skipped under the runbook skip rule and deferred to Phase 1.1.
 
-Completed Phase 0-14 artifacts:
+Completed Phase 0-15 artifacts:
 
 - Phase 0 start state: `reports/eha-uncued-phase1-start-state-2026-05-22.md`.
 - Phase 1 cued quarantine: `artifact/CUED_INTERNAL_ONLY.md`, `artifact/manifest.json`, `reports/eha-cued-artifact-quarantine-2026-05-22.md`.
@@ -1036,6 +1036,7 @@ Completed Phase 0-14 artifacts:
 - Phase 12 pilot run: `reports/eha_uncued_pilot_run.json`, `reports/eha-uncued-pilot-run-2026-05-22.md`, `eha-mvp/results/reports-eha-uncued-pilot-2026-05-22/predictions.jsonl`, `run_manifest.json`, `invocation_profiles.json`, `run_summary_by_model.csv`, `prompt_audit_summary.json`, `stored_hidden_label_audit.json`, `cost_report.json`, `phase12_run_summary.md`.
 - Phase 13 pilot scoring/reporting: `reports/eha_uncued_pilot_results.json`, `reports/eha-uncued-pilot-results-2026-05-22.md`, `eha-mvp/results/reports-eha-uncued-pilot-2026-05-22/uncued_pilot_scored_predictions.csv`, `uncued_pilot_metrics_by_model.csv`, `uncued_pilot_metrics_by_view.csv`, `uncued_pilot_metrics_by_condition.csv`, `uncued_pilot_metrics_by_family.csv`, `uncued_pilot_metrics_by_model_view.csv`, `uncued_pilot_metrics_by_model_condition.csv`, `uncued_pilot_baselines_vs_models.csv`, `uncued_pilot_active_verification_action_metrics.csv`, `uncued_pilot_acceptance_diagnostics.json`, `report_manifest.json`, `summary.md`.
 - Phase 14 scorer audit: `reports/eha_uncued_scorer_audit.json`, `reports/eha-uncued-scorer-audit-2026-05-22.md`, `reports/uncued_scorer_audit_rows.csv`, `eha-mvp/results/reports-eha-uncued-pilot-2026-05-22/uncued_scorer_audit_rows.csv`, `uncued_scorer_audit_summary.json`.
+- Phase 15 schema-ablation decision: `reports/eha_uncued_schema_ablation_plan.json`, `reports/eha-uncued-schema-ablation-plan-2026-05-22.md`.
 
 Phase 8 gate evidence:
 
@@ -1204,6 +1205,25 @@ Phase 14 scorer audit evidence:
 - Scorer audit report hash: `af0d85e88b624919c6ef63adb87986c6a3a8107a52a994b3d4441f571d901d38`.
 - Phase 14 decision: pass; include the scorer audit in the Phase 16 artifact package.
 
+Phase 15 schema-ablation decision evidence:
+
+- Decision: skipped under the runbook skip rule.
+- Deferred work: planned Phase 1.1 schema-ablation mini-slice.
+- Reason: Phase 12-14 completed the main four-model role-uncued pilot, scoring, and scorer audit; time and budget are preserved for arXiv readiness.
+- Model calls made: 0.
+- Cued data used: false.
+- Main result blocked: false.
+- Planned conditions: generated lore and buried primary.
+- Planned task count: 10-20 tasks.
+- Planned model set: `gpt-5.5` and `gemini-3.1-pro-preview`, subject to budget.
+- Planned schema variants: `clarified`, `current`, `minimal`, and `diagnostic_no_hygiene`.
+- Planned budget cap: USD 5.
+- Claim boundary: ablation only; not a replacement for the main Phase 12-13 result.
+- Acceptance: clearly marked as ablation, does not reuse cued data, listed as planned Phase 1.1 work, and does not block arXiv pilot readiness.
+- Schema-ablation JSON hash: `4667f7459bc9efb851da47101fa7a21de5215237c0011c1cf1999c4f7043d3e8`.
+- Schema-ablation report hash: `91cec9ec4912896a375169879cd564b3c158adbeb26ca45f55db6a5055b6fbfa`.
+- Phase 15 decision: deferred; proceed to Phase 16 packaging.
+
 Commands verified:
 
 ```bash
@@ -1239,4 +1259,4 @@ git diff --check
 
 Next required phase:
 
-- Start Phase 15 schema-ablation mini-slice. If skipping under the runbook skip rule, record the skip as planned Phase 1.1 work with an explicit reason.
+- Start Phase 16 package generation for `artifact_uncued_phase1/`.
