@@ -34,6 +34,11 @@ UNCUED_BASELINES = (
 )
 
 
+def dataset_label(dataset: Mapping[str, Any]) -> str:
+    phase = str(dataset.get("manifest", {}).get("phase", "micro")).strip().lower()
+    return "pilot" if phase == "pilot" else "micro"
+
+
 def docs_by_task(docs: Sequence[Mapping[str, Any]]) -> Dict[str, list[Mapping[str, Any]]]:
     grouped: Dict[str, list[Mapping[str, Any]]] = defaultdict(list)
     for doc in docs:
@@ -263,6 +268,7 @@ def gate_results(aggregate: Sequence[Mapping[str, Any]]) -> list[Dict[str, Any]]
 
 def run_baselines(dataset_dir: Path, out_dir: Path, views: Sequence[str]) -> Dict[str, Any]:
     dataset = load_uncued_dataset(dataset_dir)
+    label = dataset_label(dataset)
     task_by_id = {str(task["task_id"]): task for task in dataset["tasks"]}
     latent = latent_by_task(dataset["latent_tasks"])
     gold_grouped = gold_by_view_task(dataset["gold_documents"])
@@ -288,23 +294,31 @@ def run_baselines(dataset_dir: Path, out_dir: Path, views: Sequence[str]) -> Dic
     payload = {
         "dataset_dir": str(dataset_dir),
         "views": list(views),
+        "dataset_label": label,
         "baselines": list(UNCUED_BASELINES),
         "rows": rows,
         "aggregate": aggregate,
         "gate_results": gates,
         "passed": passed,
     }
-    write_baseline_report(out_dir, payload)
+    write_baseline_report(out_dir, payload, label=label)
     return payload
 
 
-def write_baseline_report(out_dir: Path, payload: Mapping[str, Any], *, report_date: str = DEFAULT_REPORT_DATE) -> None:
+def write_baseline_report(
+    out_dir: Path,
+    payload: Mapping[str, Any],
+    *,
+    label: str = "micro",
+    report_date: str = DEFAULT_REPORT_DATE,
+) -> None:
     out_dir.mkdir(parents=True, exist_ok=True)
-    write_json(out_dir / "eha_uncued_baselines_micro.json", payload)
-    write_csv(out_dir / "uncued_baseline_rows_micro.csv", payload["rows"])
-    write_csv(out_dir / "uncued_baseline_aggregate_micro.csv", payload["aggregate"])
+    write_json(out_dir / f"eha_uncued_baselines_{label}.json", payload)
+    write_csv(out_dir / f"uncued_baseline_rows_{label}.csv", payload["rows"])
+    write_csv(out_dir / f"uncued_baseline_aggregate_{label}.csv", payload["aggregate"])
+    title_label = label.replace("_", " ").title()
     lines = [
-        "# EHA-Uncued Micro Shortcut Baselines",
+        f"# EHA-Uncued {title_label} Shortcut Baselines",
         "",
         f"Date: {report_date}",
         "",
@@ -324,7 +338,7 @@ def write_baseline_report(out_dir: Path, payload: Mapping[str, Any], *, report_d
         *markdown_table(payload["gate_results"], ["baseline", "view", "metric", "value", "limit", "passed"]),
         "",
     ]
-    (out_dir / f"eha-uncued-baselines-micro-{report_date}.md").write_text("\n".join(lines), encoding="utf-8")
+    (out_dir / f"eha-uncued-baselines-{label}-{report_date}.md").write_text("\n".join(lines), encoding="utf-8")
 
 
 @app.command()

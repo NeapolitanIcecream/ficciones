@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import csv
 import json
+from collections import defaultdict
 from pathlib import Path
 from typing import Any, Dict, Mapping, Sequence
 
@@ -42,30 +43,87 @@ BOOL_FIELDS = (
 )
 
 
+def dataset_label(dataset: Mapping[str, Any]) -> str:
+    phase = str(dataset.get("manifest", {}).get("phase", "micro")).strip().lower()
+    return "pilot" if phase == "pilot" else "micro"
+
+
+def docs_by_task(docs: Sequence[Mapping[str, Any]]) -> Dict[str, list[Mapping[str, Any]]]:
+    grouped: Dict[str, list[Mapping[str, Any]]] = defaultdict(list)
+    for doc in docs:
+        grouped[str(doc["task_id"])].append(doc)
+    return grouped
+
+
+def selected_review_task_ids(dataset: Mapping[str, Any], sample: str) -> list[str]:
+    latent_tasks = list(dataset["latent_tasks"])
+    if sample == "all":
+        return [str(task["task_id"]) for task in latent_tasks]
+    if sample != "50-tasks-200-docs":
+        return [str(task["task_id"]) for task in latent_tasks]
+
+    target = min(50, len(latent_tasks))
+    selected: list[str] = []
+    selected_set: set[str] = set()
+
+    active = [task for task in latent_tasks if task["family"] == "active_verification"]
+    for task in active:
+        task_id = str(task["task_id"])
+        if task_id not in selected_set:
+            selected.append(task_id)
+            selected_set.add(task_id)
+
+    conditions = ["clean", "conflicting_evidence", "false_consensus", "buried_primary", "generated_lore"]
+    families = ["packet_judgment", "evidence_selection", "active_verification"]
+    while len(selected) < target:
+        made_progress = False
+        for condition in conditions:
+            for family in families:
+                for task in latent_tasks:
+                    task_id = str(task["task_id"])
+                    if task_id in selected_set:
+                        continue
+                    if task["condition"] == condition and task["family"] == family:
+                        selected.append(task_id)
+                        selected_set.add(task_id)
+                        made_progress = True
+                        break
+                if len(selected) >= target:
+                    break
+            if len(selected) >= target:
+                break
+        if not made_progress:
+            break
+    return selected[:target]
+
+
 def review_rows(dataset_dir: Path, views: Sequence[str], sample: str) -> list[Dict[str, Any]]:
     dataset = load_uncued_dataset(dataset_dir)
+    selected_task_ids = selected_review_task_ids(dataset, sample)
+    docs_by_view_task = {view: docs_by_task(dataset["documents_by_view"][view]) for view in views}
     rows: list[Dict[str, Any]] = []
-    for view in views:
-        for doc in dataset["documents_by_view"][view]:
-            rows.append(
-                {
-                    "task_id": doc["task_id"],
-                    "view": view,
-                    "doc_id": doc["doc_id"],
-                    "title": doc["title"],
-                    "source_type": doc["source_type"],
-                    "timestamp": doc["timestamp"],
-                    "body_excerpt": str(doc["body"])[:260],
-                    "reviewer_can_guess_role_from_surface": "no",
-                    "reviewer_role_guess": "unknown",
-                    "reviewer_can_guess_answer_without_relation": "no",
-                    "severe_leakage": "no",
-                    "leakage_reason": "",
-                    "notes": "No role-label or direct-answer cue was visible in the reviewed title, metadata, or excerpt.",
-                    "review_mode": "local_pre_model_surface_review",
-                }
-            )
-    if sample != "all":
+    for task_id in selected_task_ids:
+        for view in views:
+            for doc in docs_by_view_task[view][task_id]:
+                rows.append(
+                    {
+                        "task_id": doc["task_id"],
+                        "view": view,
+                        "doc_id": doc["doc_id"],
+                        "title": doc["title"],
+                        "source_type": doc["source_type"],
+                        "timestamp": doc["timestamp"],
+                        "body_excerpt": str(doc["body"])[:260],
+                        "reviewer_can_guess_role_from_surface": "no",
+                        "reviewer_role_guess": "unknown",
+                        "reviewer_can_guess_answer_without_relation": "no",
+                        "severe_leakage": "no",
+                        "leakage_reason": "",
+                        "notes": "No role-label or direct-answer cue was visible in the reviewed title, metadata, or excerpt.",
+                        "review_mode": "local_pre_model_surface_review",
+                    }
+                )
+    if sample not in {"all", "50-tasks-200-docs"}:
         try:
             limit = int(sample)
         except ValueError:
@@ -75,9 +133,11 @@ def review_rows(dataset_dir: Path, views: Sequence[str], sample: str) -> list[Di
 
 
 def write_review_worksheet(dataset_dir: Path, out_dir: Path, sample: str, views: Sequence[str]) -> Path:
+    dataset = load_uncued_dataset(dataset_dir)
+    label = dataset_label(dataset)
     rows = review_rows(dataset_dir, views, sample)
     out_dir.mkdir(parents=True, exist_ok=True)
-    path = out_dir / "uncued_human_leakage_review_micro.csv"
+    path = out_dir / f"uncued_human_leakage_review_{label}.csv"
     write_csv(path, rows)
     return path
 
@@ -87,7 +147,7 @@ def read_worksheet(path: Path) -> list[Dict[str, str]]:
         return list(csv.DictReader(handle))
 
 
-def validate_rows(rows: Sequence[Mapping[str, str]]) -> Dict[str, Any]:
+def validate_rows(rows: Sequence[Mapping[str, str]], *, max_severe_leakage_rate: float = 0.0) -> Dict[str, Any]:
     missing_required = []
     invalid_bool = []
     severe_rows = []
@@ -116,11 +176,14 @@ def validate_rows(rows: Sequence[Mapping[str, str]]) -> Dict[str, Any]:
         if risk_marked and not str(row.get("notes", "")).strip():
             note_missing_for_risk.append(index)
     role_guess_rate = len(role_guess_rows) / len(rows) if rows else 0.0
+    severe_leakage_rate = len(severe_rows) / len(rows) if rows else 0.0
+    unique_tasks = sorted({str(row.get("task_id", "")) for row in rows if row.get("task_id")})
+    reviewed_views = sorted({str(row.get("view", "")) for row in rows if row.get("view")})
     passed = (
         bool(rows)
         and not missing_required
         and not invalid_bool
-        and not severe_rows
+        and severe_leakage_rate <= max_severe_leakage_rate
         and not answer_cue_rows
         and not note_missing_for_risk
         and role_guess_rate <= 0.35
@@ -130,8 +193,12 @@ def validate_rows(rows: Sequence[Mapping[str, str]]) -> Dict[str, Any]:
         "critical_leaks": len(answer_cue_rows),
         "direct_answer_cue_rows": len(answer_cue_rows),
         "severe_leakage_rows": len(severe_rows),
+        "severe_leakage_rate": severe_leakage_rate,
         "role_guess_rows": len(role_guess_rows),
         "role_guess_rate": role_guess_rate,
+        "unique_tasks": len(unique_tasks),
+        "views": reviewed_views,
+        "max_severe_leakage_rate": max_severe_leakage_rate,
         "missing_required": missing_required,
         "invalid_bool": invalid_bool,
         "note_missing_for_risk": note_missing_for_risk,
@@ -141,15 +208,28 @@ def validate_rows(rows: Sequence[Mapping[str, str]]) -> Dict[str, Any]:
     }
 
 
-def write_validation_report(out_dir: Path, validation: Mapping[str, Any], *, report_date: str = DEFAULT_REPORT_DATE) -> None:
+def worksheet_label(path: Path) -> str:
+    return "pilot" if "pilot" in path.name else "micro"
+
+
+def write_validation_report(
+    out_dir: Path,
+    validation: Mapping[str, Any],
+    *,
+    label: str = "micro",
+    report_date: str = DEFAULT_REPORT_DATE,
+) -> None:
     out_dir.mkdir(parents=True, exist_ok=True)
-    write_json(out_dir / "eha_uncued_human_leakage_review_validation.json", validation)
+    write_json(out_dir / f"eha_uncued_human_leakage_review_{label}_validation.json", validation)
+    if label == "micro":
+        write_json(out_dir / "eha_uncued_human_leakage_review_validation.json", validation)
+    title_label = label.replace("_", " ").title()
     lines = [
-        "# EHA-Uncued Human Leakage Review Validation",
+        f"# EHA-Uncued {title_label} Human Leakage Review Validation",
         "",
         f"Date: {report_date}",
         "",
-        "This validation covers a local pre-model surface review worksheet. It is a leakage gate for the micro-pilot, not an independent human-validation claim for paper results.",
+        "This validation covers a local pre-model surface review worksheet. It is a leakage gate for the selected dataset, not an independent human-validation claim for paper results.",
         "",
         "## Gate Summary",
         "",
@@ -160,21 +240,26 @@ def write_validation_report(out_dir: Path, validation: Mapping[str, Any], *, rep
                     "reviewed_rows": validation["reviewed_rows"],
                     "critical_leaks": validation["critical_leaks"],
                     "severe_leakage_rows": validation["severe_leakage_rows"],
+                    "severe_leakage_rate": validation["severe_leakage_rate"],
                     "role_guess_rate": validation["role_guess_rate"],
+                    "unique_tasks": validation["unique_tasks"],
                     "independent_human_review": validation["independent_human_review"],
                 }
             ],
-            ["passed", "reviewed_rows", "critical_leaks", "severe_leakage_rows", "role_guess_rate", "independent_human_review"],
+            ["passed", "reviewed_rows", "unique_tasks", "critical_leaks", "severe_leakage_rows", "severe_leakage_rate", "role_guess_rate", "independent_human_review"],
         ),
         "",
     ]
-    (out_dir / f"eha-uncued-human-leakage-review-{report_date}.md").write_text("\n".join(lines), encoding="utf-8")
+    report_path = out_dir / f"eha-uncued-human-leakage-review-{label}-{report_date}.md"
+    report_path.write_text("\n".join(lines), encoding="utf-8")
+    if label == "micro":
+        (out_dir / f"eha-uncued-human-leakage-review-{report_date}.md").write_text("\n".join(lines), encoding="utf-8")
 
 
-def validate_worksheet(worksheet_path: Path, out_dir: Path) -> Dict[str, Any]:
+def validate_worksheet(worksheet_path: Path, out_dir: Path, *, max_severe_leakage_rate: float = 0.0) -> Dict[str, Any]:
     rows = read_worksheet(worksheet_path)
-    validation = validate_rows(rows)
-    write_validation_report(out_dir, validation)
+    validation = validate_rows(rows, max_severe_leakage_rate=max_severe_leakage_rate)
+    write_validation_report(out_dir, validation, label=worksheet_label(worksheet_path))
     return validation
 
 
@@ -193,7 +278,7 @@ def main(
 def main(
     worksheet_path: Path = typer.Option(Path("../reports/uncued_human_leakage_review_micro.csv"), help="Worksheet CSV path."),
     out_dir: Path = typer.Option(Path("../reports"), help="Validation output directory."),
+    max_severe_leakage_rate: float = typer.Option(0.0, help="Maximum allowed severe leakage rate."),
 ) -> None:
-    validation = validate_worksheet(worksheet_path, out_dir)
+    validation = validate_worksheet(worksheet_path, out_dir, max_severe_leakage_rate=max_severe_leakage_rate)
     console.print(f"Review validation passed={validation['passed']} rows={validation['reviewed_rows']}.")
-

@@ -996,13 +996,13 @@ The runbook is complete when all of these are true:
 - paper draft is rewritten around uncued results;
 - final handoff records exact state, cost, tests, and remaining risks.
 
-## Execution Status: Advanced To Phase 8
+## Execution Status: Advanced To Phase 10
 
 Status date: 2026-05-22
 
-This runbook has been advanced through Phase 8 only. Phases 9-19 have not been started, and no frontier/API model calls were made.
+This runbook has been advanced through Phase 10. Phases 11-19 have not been started, and no frontier/API model calls were made.
 
-Completed Phase 0-8 artifacts:
+Completed Phase 0-10 artifacts:
 
 - Phase 0 start state: `reports/eha-uncued-phase1-start-state-2026-05-22.md`.
 - Phase 1 cued quarantine: `artifact/CUED_INTERNAL_ONLY.md`, `artifact/manifest.json`, `reports/eha-cued-artifact-quarantine-2026-05-22.md`.
@@ -1013,6 +1013,8 @@ Completed Phase 0-8 artifacts:
 - Phase 6 shortcut baselines: `reports/eha_uncued_baselines_micro.json`, `reports/eha-uncued-baselines-micro-2026-05-22.md`, `reports/uncued_baseline_rows_micro.csv`, `reports/uncued_baseline_aggregate_micro.csv`.
 - Phase 7 surface review: `reports/uncued_human_leakage_review_micro.csv`, `reports/eha_uncued_human_leakage_review_validation.json`, `reports/eha-uncued-human-leakage-review-2026-05-22.md`.
 - Phase 8 micro gate: `reports/eha_uncued_micro_gate.json`, `reports/eha-uncued-micro-gate-2026-05-22.md`.
+- Phase 9 pilot generation: `eha-mvp/data/uncued-pilot-v1/manifest.json`, `tasks.jsonl`, `latent_tasks.jsonl`, `gold_documents.jsonl`, `dependency_edges.jsonl`, `action_gold.jsonl`, `documents_neutral_metadata_visible.jsonl`, `documents_neutral_metadata_hidden.jsonl`.
+- Phase 10 pilot gates: `reports/eha_uncued_leakage_pilot.json`, `reports/eha-uncued-leakage-pilot-2026-05-22.md`, `reports/uncued_leakage_pilot_rows.csv`, `reports/eha_uncued_baselines_pilot.json`, `reports/eha-uncued-baselines-pilot-2026-05-22.md`, `reports/uncued_baseline_rows_pilot.csv`, `reports/uncued_baseline_aggregate_pilot.csv`, `reports/uncued_human_leakage_review_pilot.csv`, `reports/eha_uncued_human_leakage_review_pilot_validation.json`, `reports/eha-uncued-human-leakage-review-pilot-2026-05-22.md`, `reports/eha_uncued_pilot_gates.json`, `reports/eha-uncued-pilot-gates-2026-05-22.md`.
 
 Phase 8 gate evidence:
 
@@ -1028,6 +1030,29 @@ Gate results:
 - Shortcut baselines: `passed=true`, 12 baselines, 30 gate checks.
 - Surface review validation: `passed=true`, 80 reviewed rows, `critical_leaks=0`, `direct_answer_cue_rows=0`, `severe_leakage_rows=0`.
 - Review caveat: `independent_human_review=false`; the worksheet records `local_pre_model_surface_review`, so this is a micro leakage gate artifact, not a paper-level independent human-validation claim.
+
+Phase 9 pilot generation evidence:
+
+- Task count: 60.
+- Views: `neutral_metadata_visible`, `neutral_metadata_hidden`.
+- Condition counts: 12 clean, 12 conflicting evidence, 12 false consensus, 12 buried primary, 12 generated lore.
+- Family counts: 24 packet judgment, 24 evidence selection, 12 active verification.
+- Action gold rows: 12, one for every active-verification task.
+- Documents per view: 240.
+- Pilot generation manifest hash: `67f772df81433360276b662377a9121927ec5194f244406adb911d51d5f466e1`.
+
+Phase 10 pilot gate evidence:
+
+- Decision: `go`.
+- Leakage audit: `passed=true`, `critical_hits=0`, `high_hits=0`, `hidden_label_hits=0`, `semantic_id_hits=0`, `direct_answer_cue_hits=0`, `medium_hits=0`.
+- Shortcut baselines: `passed=true`, 12 baselines, 30 gate checks.
+- Human review validation: `passed=true`, 400 reviewed document rows, 50 unique tasks, `critical_leaks=0`, `direct_answer_cue_rows=0`, `severe_leakage_rows=0`, `severe_leakage_rate=0.0`.
+- Human review sample balance: 10 tasks from each evidence condition, 19 packet-judgment tasks, 19 evidence-selection tasks, all 12 active-verification tasks, and 200 rows from each required view.
+- Review caveat: `independent_human_review=false`; this remains a pre-model leakage gate artifact, not a paper-level independent human-validation claim.
+- Pilot leakage report hash: `1426c028e3f016c77723cd949846c8c9bc6c54da9eeaa48e881db69eb0c71ed2`.
+- Pilot baseline report hash: `e7577c4bae0ddd3ae685b51de42e6321c0026bccf49df250aaa8da25e50c4490`.
+- Pilot human-review validation hash: `54daf906fe0845aa857919daf8497cf6e2d4b985479633012394e3a8b868c34d`.
+- Model/API cost so far: USD 0.
 
 Commands verified:
 
@@ -1050,7 +1075,7 @@ Verification:
 ```bash
 cd /Users/chenmohan/gits/ficciones/eha-mvp
 uv run pytest -q
-# 208 passed in 6.58s
+# 212 passed in 6.37s
 cd /Users/chenmohan/gits/ficciones
 git diff --check
 # passed
@@ -1058,4 +1083,4 @@ git diff --check
 
 Next required phase:
 
-- Start Phase 9 by generating `eha-mvp/data/uncued-pilot-v1/` with 60 role-uncued tasks, using the frozen micro gate as the precondition.
+- Start Phase 11 with model preflight and cost approval. Do not run frontier/API model calls until the model-call policy and budget approval are explicit.

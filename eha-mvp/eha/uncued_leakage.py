@@ -30,6 +30,11 @@ VISIBLE_TASK_KEYS = ("task_id", "question")
 VISIBLE_DOC_KEYS = ("task_id", "doc_id", "title", "source_type", "timestamp", "body", "visible_citations")
 
 
+def dataset_label(dataset: Mapping[str, Any]) -> str:
+    phase = str(dataset.get("manifest", {}).get("phase", "micro")).strip().lower()
+    return "pilot" if phase == "pilot" else "micro"
+
+
 def excerpt(text: str, pattern: str) -> str:
     lowered = text.lower()
     idx = lowered.find(pattern.lower().strip("\\b"))
@@ -121,12 +126,20 @@ def leakage_summary(hits: Sequence[Mapping[str, Any]], *, dataset_dir: Path, vie
     }
 
 
-def write_leakage_report(out_dir: Path, summary: Mapping[str, Any], hits: Sequence[Mapping[str, Any]], *, report_date: str = DEFAULT_REPORT_DATE) -> None:
+def write_leakage_report(
+    out_dir: Path,
+    summary: Mapping[str, Any],
+    hits: Sequence[Mapping[str, Any]],
+    *,
+    label: str = "micro",
+    report_date: str = DEFAULT_REPORT_DATE,
+) -> None:
     out_dir.mkdir(parents=True, exist_ok=True)
-    write_json(out_dir / "eha_uncued_leakage_micro.json", {**summary, "hits": list(hits)})
-    write_csv(out_dir / "uncued_leakage_micro_rows.csv", hits)
+    write_json(out_dir / f"eha_uncued_leakage_{label}.json", {**summary, "hits": list(hits)})
+    write_csv(out_dir / f"uncued_leakage_{label}_rows.csv", hits)
+    title_label = label.replace("_", " ").title()
     lines = [
-        "# EHA-Uncued Micro Leakage Audit",
+        f"# EHA-Uncued {title_label} Leakage Audit",
         "",
         f"Date: {report_date}",
         "",
@@ -151,14 +164,16 @@ def write_leakage_report(out_dir: Path, summary: Mapping[str, Any], hits: Sequen
     ]
     lines.extend(markdown_table(hits[:20], ["view", "task_id", "doc_id", "severity", "category", "pattern"]))
     lines.append("")
-    (out_dir / f"eha-uncued-leakage-micro-{report_date}.md").write_text("\n".join(lines), encoding="utf-8")
+    (out_dir / f"eha-uncued-leakage-{label}-{report_date}.md").write_text("\n".join(lines), encoding="utf-8")
 
 
 def run_leakage_audit(dataset_dir: Path, out_dir: Path, views: Sequence[str]) -> Dict[str, Any]:
     dataset = load_uncued_dataset(dataset_dir)
+    label = dataset_label(dataset)
     hits = audit_visible_rows(dataset, views)
     summary = leakage_summary(hits, dataset_dir=dataset_dir, views=views)
-    write_leakage_report(out_dir, summary, hits)
+    summary["dataset_label"] = label
+    write_leakage_report(out_dir, summary, hits, label=label)
     return {**summary, "hits": hits}
 
 
@@ -171,4 +186,3 @@ def main(
     selected_views = split_csv(views)
     summary = run_leakage_audit(dataset_dir, out_dir, selected_views)
     console.print(f"Leakage audit passed={summary['passed']} critical={summary['critical_hits']} high={summary['high_hits']}.")
-
