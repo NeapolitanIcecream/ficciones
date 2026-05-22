@@ -1,0 +1,36 @@
+{
+  "model": "deepseek-v4-pro",
+  "task_id": "uncued_056_visible",
+  "content": "{\n  \"claim_verdict\": \"insufficient\",\n  \"confidence\": 0.2,\n  \"supporting_evidence\": [\"doc_002\", \"doc_004\"],\n  \"rejected_evidence\": [\"doc_001\", \"doc_003\"],\n  \"selected_doc_ids\": [\"doc_002\", \"doc_004\", \"doc_003\"],\n  \"actions\": [\n    {\n      \"action\": \"trace_source\",\n      \"target\": \"doc_004\",\n      \"rationale\": \"doc_004 cites doc_002; tracing reveals the claim originates from a community roundup, not an operational record.\"\n    },\n    {\n      \"action\": \"search_primary\",\n      \"target\": \"Novalis Robotics Meridian Shield recall board launch May 2025\",\n      \"rationale\": \"No primary launch record appears; searching for official announcements or internal memos is essential.\"\n    }\n  ],\n  \"evidence_environment_assessment\": \"The claim rests on a community roundup (doc_002) and a derivative note (doc_004). No primary operational record substantiates the launch. Other May 2025 documents (doc_001, doc_003) mention unrelated work, highlighting the absence of the recall board from formal logs. This indicates potential circular reporting and an information gap.\",\n  \"answer\": \"Insufficient evidence. The only sources are a community roundup and a secondary note referencing it, with no operational confirmation.\"\n}",
+  "usage": {
+    "completion_tokens": 1686,
+    "prompt_tokens": 1043,
+    "total_tokens": 2729,
+    "completion_tokens_details": {
+      "accepted_prediction_tokens": null,
+      "audio_tokens": null,
+      "reasoning_tokens": 1384,
+      "rejected_prediction_tokens": null
+    },
+    "prompt_tokens_details": {
+      "audio_tokens": null,
+      "cached_tokens": 1024
+    },
+    "prompt_cache_hit_tokens": 1024,
+    "prompt_cache_miss_tokens": 19
+  },
+  "response_format_used": "json_object",
+  "parse_success": true,
+  "parse_error": "",
+  "schema_missing": false,
+  "empty_output": false,
+  "invocation_profile": {
+    "temperature_policy": "omitted",
+    "max_completion_tokens_policy": "explicit:4096",
+    "response_format": "json_object",
+    "json_extractor": "first_json_object",
+    "message_role_policy": "developer_system_merged_into_user",
+    "llm_repair": "disabled",
+    "doc_id_policy": "opaque_per_task"
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "model": "deepseek-v4-pro",
+  "task_id": "uncued_052_visible",
+  "content": "{\n  \"claim_verdict\": \"insufficient\",\n  \"confidence\": 0.8,\n  \"supporting_evidence\": [\"doc_001\", \"doc_004\"],\n  \"rejected_evidence\": [\"doc_002\", \"doc_003\"],\n  \"selected_doc_ids\": [\"doc_001\", \"doc_002\", \"doc_003\"],\n  \"actions\": [\n    {\n      \"action\": \"trace_source\",\n      \"target\": \"doc_001\",\n      \"rationale\": \"The claim relies on a community roundup without operational record; tracing its origin could reveal credibility.\"\n    },\n    {\n      \"action\": \"search_primary\",\n      \"target\": \"LumenBridge partner desk launch July 2025\",\n      \"rationale\": \"No official launch documentation exists in the provided packet; searching primary sources may uncover authoritative evidence.\"\n    }\n  ],\n  \"evidence_environment_assessment\": \"The evidence packet is homogeneous, with all documents sharing the same site code, workstream name, and monthly close date, suggesting possible coordinated sourcing or limited information diversity. Only a single source (a field note citing a community roundup) supports the claim, while subsequent derivative and operational documents either repeat it without independent verification or completely omit it. This creates a low-information environment where claim verification is undermined by lack of corroboration and reliance on hearsay.\",\n  \"answer\": \"The evidence cannot sufficiently confirm nor refute the launch. The sole original source is a community roundup noted in a field record, with no linked operational data. A registry entry merely repeats this, while two contemporaneous operational documents concerning the same workstream and site do not mention the partner desk. This absence, combined with the hearsay nature of the claim, renders the evidence insufficient for a definitive verdict.\"\n}",
+  "usage": {
+    "completion_tokens": 2206,
+    "prompt_tokens": 1039,
+    "total_tokens": 3245,
+    "completion_tokens_details": {
+      "accepted_prediction_tokens": null,
+      "audio_tokens": null,
+      "reasoning_tokens": 1835,
+      "rejected_prediction_tokens": null
+    },
+    "prompt_tokens_details": {
+      "audio_tokens": null,
+      "cached_tokens": 1024
+    },
+    "prompt_cache_hit_tokens": 1024,
+    "prompt_cache_miss_tokens": 15
+  },
+  "response_format_used": "json_object",
+  "parse_success": true,
+  "parse_error": "",
+  "schema_missing": false,
+  "empty_output": false,
+  "invocation_profile": {
+    "temperature_policy": "omitted",
+    "max_completion_tokens_policy": "explicit:4096",
+    "response_format": "json_object",
+    "json_extractor": "first_json_object",
+    "message_role_policy": "developer_system_merged_into_user",
+    "llm_repair": "disabled",
+    "doc_id_policy": "opaque_per_task"
+  }
+}

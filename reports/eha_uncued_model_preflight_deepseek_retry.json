@@ -1,0 +1,64 @@
+{
+  "phase": 11,
+  "retry": "deepseek_only",
+  "status": "pass_with_timeout_caveat",
+  "status_date": "2026-05-22",
+  "task_dir": "eha-mvp/data/uncued-pilot-v1",
+  "result_dir": "eha-mvp/results/reports-eha-uncued-model-preflight-deepseek-retry-2026-05-22",
+  "model": "deepseek-v4-pro",
+  "sample_size": 20,
+  "prompt_condition": "standard_answer",
+  "expected_calls": 20,
+  "actual_records": 20,
+  "invocation_profile": {
+    "temperature_policy": "omitted",
+    "max_completion_tokens_policy": "explicit:4096",
+    "response_format": "json_object",
+    "json_extractor": "first_json_object",
+    "message_role_policy": "developer_system_merged_into_user",
+    "llm_repair": "disabled"
+  },
+  "soft_cap_usd": 0.5,
+  "hard_cap_usd": 1.0,
+  "abort_cap_usd": 2.0,
+  "actual_cost_usd": 0.083832,
+  "aborted": false,
+  "gate": {
+    "parse_success_min": 0.95,
+    "empty_output_required": 0,
+    "schema_missing_rate_max": 0.05,
+    "llm_repair": "disabled"
+  },
+  "summary": {
+    "n": 20,
+    "parse_success_count": 19,
+    "parse_success_rate": 0.95,
+    "empty_output_count": 0,
+    "schema_missing_count": 0,
+    "schema_missing_rate": 0.0,
+    "structured_preflight_pass": true,
+    "response_format_used": {
+      "json_object": 20
+    },
+    "json_extractor_used": {
+      "first_json_object": 19,
+      "not_attempted": 1
+    }
+  },
+  "retry_failure": {
+    "task_id": "uncued_046_visible",
+    "condition": "buried_primary",
+    "parse_success": false,
+    "empty_output": false,
+    "schema_missing": false,
+    "parse_error": "API call exceeded 240.0s process timeout"
+  },
+  "initial_failure_resolved": {
+    "task_id": "uncued_000_hidden",
+    "condition": "clean",
+    "parse_success": true,
+    "empty_output": false
+  },
+  "phase12_allowed": true,
+  "phase12_caveat": "DeepSeek passed the structured-output gate on retry, but one retry row timed out. Count any future parse failure or timeout as operational failure."
+}

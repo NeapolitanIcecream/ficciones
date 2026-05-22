@@ -1,0 +1,36 @@
+{
+  "model": "deepseek-v4-pro",
+  "task_id": "uncued_048_visible",
+  "content": "{\n  \"claim_verdict\": \"refuted\",\n  \"confidence\": 0.9,\n  \"supporting_evidence\": [\"doc_001\", \"doc_002\"],\n  \"rejected_evidence\": [\"doc_003\", \"doc_004\"],\n  \"selected_doc_ids\": [\"doc_001\", \"doc_002\", \"doc_004\"],\n  \"actions\": [\n    {\n      \"action\": \"trace_source\",\n      \"target\": \"doc_004\",\n      \"rationale\": \"The claim originates from an uncorroborated community roundup; tracing its source could reveal if it is based on any operational record or rumor.\"\n    },\n    {\n      \"action\": \"search_primary\",\n      \"target\": \"HelioSplice partner repair program launch March 2025\",\n      \"rationale\": \"Looking for official launch documentation or press releases would confirm whether the program was actually launched.\"\n    }\n  ],\n  \"evidence_environment_assessment\": \"The evidence contains an unsupported claim from a community roundup (doc_004) repeated in a ledger (doc_003). Two operational records (doc_001, doc_002) explicitly contradict or omit the program launch, indicating no reliable corroboration. The roundup lacks operational citations, while the registry entry directly states no launch was recorded.\",\n  \"answer\": \"No, Novalis Robotics did not launch the HelioSplice partner repair program in March 2025. Operational records only mention routine Atlas valve checks, and a program registry entry explicitly states there is no launch record. The claim appears solely in an unsupported community roundup.\"\n}",
+  "usage": {
+    "completion_tokens": 1654,
+    "prompt_tokens": 1049,
+    "total_tokens": 2703,
+    "completion_tokens_details": {
+      "accepted_prediction_tokens": null,
+      "audio_tokens": null,
+      "reasoning_tokens": 1318,
+      "rejected_prediction_tokens": null
+    },
+    "prompt_tokens_details": {
+      "audio_tokens": null,
+      "cached_tokens": 1024
+    },
+    "prompt_cache_hit_tokens": 1024,
+    "prompt_cache_miss_tokens": 25
+  },
+  "response_format_used": "json_object",
+  "parse_success": true,
+  "parse_error": "",
+  "schema_missing": false,
+  "empty_output": false,
+  "invocation_profile": {
+    "temperature_policy": "omitted",
+    "max_completion_tokens_policy": "explicit:4096",
+    "response_format": "json_object",
+    "json_extractor": "first_json_object",
+    "message_role_policy": "developer_system_merged_into_user",
+    "llm_repair": "disabled",
+    "doc_id_policy": "opaque_per_task"
+  }
+}

@@ -1026,6 +1026,7 @@ Completed Phase 0-11 artifacts:
 - Phase 9 pilot generation: `eha-mvp/data/uncued-pilot-v1/manifest.json`, `tasks.jsonl`, `latent_tasks.jsonl`, `gold_documents.jsonl`, `dependency_edges.jsonl`, `action_gold.jsonl`, `documents_neutral_metadata_visible.jsonl`, `documents_neutral_metadata_hidden.jsonl`.
 - Phase 10 pilot gates: `reports/eha_uncued_leakage_pilot.json`, `reports/eha-uncued-leakage-pilot-2026-05-22.md`, `reports/uncued_leakage_pilot_rows.csv`, `reports/eha_uncued_baselines_pilot.json`, `reports/eha-uncued-baselines-pilot-2026-05-22.md`, `reports/uncued_baseline_rows_pilot.csv`, `reports/uncued_baseline_aggregate_pilot.csv`, `reports/uncued_human_leakage_review_pilot.csv`, `reports/eha_uncued_human_leakage_review_pilot_validation.json`, `reports/eha-uncued-human-leakage-review-pilot-2026-05-22.md`, `reports/eha_uncued_pilot_gates.json`, `reports/eha-uncued-pilot-gates-2026-05-22.md`.
 - Phase 11 model preflight: `reports/eha_uncued_model_preflight.json`, `reports/eha-uncued-model-preflight-2026-05-22.md`, `eha-mvp/results/reports-eha-uncued-model-preflight-2026-05-22/preflight_predictions.jsonl`, `preflight_rows.csv`, `preflight_summary.csv`, `cohort_decision.md`, `cohort_decision.csv`, `cohort_decision.json`, `cost_report.json`, `audit_manifest.json`.
+- Phase 11 DeepSeek retry: `reports/eha_uncued_model_preflight_deepseek_retry.json`, `reports/eha-uncued-model-preflight-deepseek-retry-2026-05-22.md`, `eha-mvp/results/reports-eha-uncued-model-preflight-deepseek-retry-2026-05-22/preflight_predictions.jsonl`, `preflight_rows.csv`, `preflight_summary.csv`, `cohort_decision.md`, `cohort_decision.csv`, `cohort_decision.json`, `cost_report.json`, `audit_manifest.json`.
 
 Phase 8 gate evidence:
 
@@ -1087,7 +1088,30 @@ Phase 11 model preflight evidence:
 - Cohort decision hash: `6d5f5f8e0804cc9c0a669e827accf50ed7560cdbe7f25dc5b35ec3498f9c5029`.
 - Cost report hash: `3881551d2fca58fb3508a9eaf818db6755c0b5aae0e7c351dca72ce60f782bd4`.
 - Audit manifest hash: `104c10cd9d575c303e300dede630c0297e7766221c368cac684a2772153246dd`.
-- Phase 12 status: blocked for the requested four-model cohort until DeepSeek is retried, replaced, or a three-model Phase 12 scope is approved.
+- Initial Phase 12 status: blocked for the requested four-model cohort until DeepSeek is retried, replaced, or a three-model Phase 12 scope is approved.
+
+Phase 11 DeepSeek retry evidence:
+
+- Retry command included explicit `--task-dir data/uncued-pilot-v1`.
+- Retry model: `deepseek-v4-pro`.
+- Retry fallback models: none.
+- Retry prompt condition: `standard_answer`.
+- Retry invocation profile: temperature omitted, `max_completion_tokens=4096`, `response_format=json_object`, `json_extractor=first_json_object`, developer/system merged into user, LLM repair disabled.
+- Expected retry calls: 20 = 20 tasks x 1 model x 1 prompt.
+- Retry hard budget cap: USD 1; abort cap: USD 2; soft cap: USD 0.5.
+- Actual retry records: 20.
+- Actual retry cost: USD 0.083832.
+- Retry budget status: not aborted and below hard cap.
+- Retry gate result: pass.
+- `deepseek-v4-pro`: 19/20 parse success, 0 empty outputs, 0 schema-missing rows.
+- Original failing row resolved: `uncued_000_hidden`, condition `clean`, returned structured non-empty output.
+- Retry caveat: `uncued_046_visible`, condition `buried_primary`, timed out after 240 seconds; this is an operational parse failure, but the gate passes because `parse_success_rate=0.95`, `empty_output=0`, and `schema_missing_rate=0.0`.
+- DeepSeek retry summary hash: `2983f2d75e83de2cb10bc76eee0dca79ff34e07dd3dfbdceb5039c1b7573519e`.
+- DeepSeek retry cohort decision hash: `c260f1db92effda3524f6302df635e64f751398e1b2e569390c90ab4c6d64039`.
+- DeepSeek retry cost report hash: `58c6aa81b21c878a3d541ba31e2f3b292075e5869fe73c0fad1025dda2c4d2ac`.
+- DeepSeek retry audit manifest hash: `914d056a92bcc1a7c5474350ae4119b6fd870011a6e9ac7d67d306247df412ff`.
+- Total Phase 11 model-call cost after retry: USD 0.740575.
+- Phase 12 status after retry: allowed for the four-model cohort, with the DeepSeek timeout caveat preserved.
 
 Commands verified:
 
@@ -1110,7 +1134,7 @@ Verification:
 ```bash
 cd /Users/chenmohan/gits/ficciones/eha-mvp
 uv run pytest -q
-# 215 passed in 5.87s
+# 215 passed in 6.56s
 cd /Users/chenmohan/gits/ficciones
 git diff --check
 # passed
@@ -1118,4 +1142,4 @@ git diff --check
 
 Next required phase:
 
-- Resolve the Phase 11 DeepSeek blocker before Phase 12, or explicitly approve a three-model Phase 12 pilot with `gpt-5.5`, `claude-opus-4-7`, and `gemini-3.1-pro-preview`.
+- Start Phase 12 with the four-model pilot cohort: `gpt-5.5`, `claude-opus-4-7`, `gemini-3.1-pro-preview`, and `deepseek-v4-pro`. Use the documented DeepSeek retry invocation profile unless Phase 12 explicitly tests another profile.

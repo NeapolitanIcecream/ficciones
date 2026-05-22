@@ -1,0 +1,36 @@
+{
+  "model": "deepseek-v4-pro",
+  "task_id": "uncued_010_visible",
+  "content": "{\"claim_verdict\":\"supported\",\"confidence\":0.95,\"supporting_evidence\":[\"doc_004\"],\"rejected_evidence\":[\"doc_001\",\"doc_002\",\"doc_003\"],\"selected_doc_ids\":[\"doc_004\"],\"actions\":[{\"action\":\"trace_source\",\"target\":\"doc_004\",\"rationale\":\"Verify the original monthly ledger from Harbor Annex to confirm the 118 refurbishments recorded.\"},{\"action\":\"search_contradiction\",\"target\":\"Nova pump refurbishments July 2025 count\",\"rationale\":\"Check for any conflicting tallies or corrections from other internal reports.\"}],\"evidence_environment_assessment\":\"The evidence environment includes four documents. Three provide contextual information about the Nova pump refurbishments at Harbor Annex in July 2025 but do not contain the final count. doc_004, a field summary memo, explicitly states that the monthly ledger lists 118 completed refurbishments. No documents contradict this figure. The memo is dated after the month close and uses consistent site and workstream identifiers. The environment is consistent and supports the claim.\",\"answer\":\"Yes, according to doc_004, a field summary memo, the monthly ledger for Harbor Annex lists 118 completed refurbishments for Nova pump refurbishments in July 2025. Other documents provide context but no final tally, and none contradict this figure.\"}",
+  "usage": {
+    "completion_tokens": 2051,
+    "prompt_tokens": 1063,
+    "total_tokens": 3114,
+    "completion_tokens_details": {
+      "accepted_prediction_tokens": null,
+      "audio_tokens": null,
+      "reasoning_tokens": 1773,
+      "rejected_prediction_tokens": null
+    },
+    "prompt_tokens_details": {
+      "audio_tokens": null,
+      "cached_tokens": 1024
+    },
+    "prompt_cache_hit_tokens": 1024,
+    "prompt_cache_miss_tokens": 39
+  },
+  "response_format_used": "json_object",
+  "parse_success": true,
+  "parse_error": "",
+  "schema_missing": false,
+  "empty_output": false,
+  "invocation_profile": {
+    "temperature_policy": "omitted",
+    "max_completion_tokens_policy": "explicit:4096",
+    "response_format": "json_object",
+    "json_extractor": "first_json_object",
+    "message_role_policy": "developer_system_merged_into_user",
+    "llm_repair": "disabled",
+    "doc_id_policy": "opaque_per_task"
+  }
+}

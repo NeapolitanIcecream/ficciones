@@ -1,0 +1,36 @@
+{
+  "model": "deepseek-v4-pro",
+  "task_id": "uncued_000_visible",
+  "content": "{\n  \"claim_verdict\": \"supported\",\n  \"confidence\": 0.9,\n  \"supporting_evidence\": [\"doc_003\"],\n  \"rejected_evidence\": [],\n  \"selected_doc_ids\": [\"doc_003\"],\n  \"actions\": [\n    {\n      \"action\": \"open\",\n      \"target\": \"doc_003\",\n      \"rationale\": \"Directly contains the claim's figure of 184 completed checks.\"\n    }\n  ],\n  \"evidence_environment_assessment\": \"Only doc_003 provides the specific tally; others describe context without numbers. No contradictory evidence exists.\",\n  \"answer\": \"Yes. Doc_003, a monthly ledger, explicitly states 184 completed checks for Atlas valve checks in March 2025.\"\n}",
+  "usage": {
+    "completion_tokens": 625,
+    "prompt_tokens": 1063,
+    "total_tokens": 1688,
+    "completion_tokens_details": {
+      "accepted_prediction_tokens": null,
+      "audio_tokens": null,
+      "reasoning_tokens": 465,
+      "rejected_prediction_tokens": null
+    },
+    "prompt_tokens_details": {
+      "audio_tokens": null,
+      "cached_tokens": 1024
+    },
+    "prompt_cache_hit_tokens": 1024,
+    "prompt_cache_miss_tokens": 39
+  },
+  "response_format_used": "json_object",
+  "parse_success": true,
+  "parse_error": "",
+  "schema_missing": false,
+  "empty_output": false,
+  "invocation_profile": {
+    "temperature_policy": "omitted",
+    "max_completion_tokens_policy": "explicit:4096",
+    "response_format": "json_object",
+    "json_extractor": "first_json_object",
+    "message_role_policy": "developer_system_merged_into_user",
+    "llm_repair": "disabled",
+    "doc_id_policy": "opaque_per_task"
+  }
+}

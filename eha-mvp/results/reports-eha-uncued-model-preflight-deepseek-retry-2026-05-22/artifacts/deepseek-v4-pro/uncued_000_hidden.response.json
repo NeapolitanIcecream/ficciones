@@ -1,0 +1,36 @@
+{
+  "model": "deepseek-v4-pro",
+  "task_id": "uncued_000_hidden",
+  "content": "{\n  \"claim_verdict\": \"supported\",\n  \"confidence\": 0.95,\n  \"supporting_evidence\": [\"doc_004\"],\n  \"rejected_evidence\": [],\n  \"selected_doc_ids\": [\"doc_004\"],\n  \"actions\": [\n    {\n      \"action\": \"open\",\n      \"target\": \"doc_004\",\n      \"rationale\": \"Open the monthly ledger to confirm the recorded count of 184 completed checks for Atlas valve checks in March 2025.\"\n    }\n  ],\n  \"evidence_environment_assessment\": \"One document directly states the exact count claimed. Other documents provide context about the workstream and site but do not contradict the tally. No alternative figures or disconfirming evidence appear.\",\n  \"answer\": \"Yes, the monthly ledger (doc_004) explicitly records 184 completed checks for Atlas valve checks at Northline service bay in March 2025, supporting the claim.\"\n}",
+  "usage": {
+    "completion_tokens": 1034,
+    "prompt_tokens": 1056,
+    "total_tokens": 2090,
+    "completion_tokens_details": {
+      "accepted_prediction_tokens": null,
+      "audio_tokens": null,
+      "reasoning_tokens": 838,
+      "rejected_prediction_tokens": null
+    },
+    "prompt_tokens_details": {
+      "audio_tokens": null,
+      "cached_tokens": 1024
+    },
+    "prompt_cache_hit_tokens": 1024,
+    "prompt_cache_miss_tokens": 32
+  },
+  "response_format_used": "json_object",
+  "parse_success": true,
+  "parse_error": "",
+  "schema_missing": false,
+  "empty_output": false,
+  "invocation_profile": {
+    "temperature_policy": "omitted",
+    "max_completion_tokens_policy": "explicit:4096",
+    "response_format": "json_object",
+    "json_extractor": "first_json_object",
+    "message_role_policy": "developer_system_merged_into_user",
+    "llm_repair": "disabled",
+    "doc_id_policy": "opaque_per_task"
+  }
+}

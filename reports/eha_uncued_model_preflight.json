@@ -1,6 +1,6 @@
 {
   "phase": 11,
-  "status": "blocked_for_four_model_phase12",
+  "status": "resolved_with_documented_deepseek_retry",
   "status_date": "2026-05-22",
   "task_dir": "eha-mvp/data/uncued-pilot-v1",
   "result_dir": "eha-mvp/results/reports-eha-uncued-model-preflight-2026-05-22",
@@ -22,6 +22,7 @@
   "hard_cap_usd": 5.0,
   "abort_cap_usd": 8.0,
   "actual_cost_usd": 0.656743,
+  "total_phase11_cost_usd_after_retry": 0.740575,
   "aborted": false,
   "gate": {
     "parse_success_min": 0.95,
@@ -65,6 +66,28 @@
       "parse_error": "empty output"
     }
   ],
-  "phase12_allowed": false,
-  "phase12_blocker": "deepseek-v4-pro failed the empty_output=0 structured-output gate."
+  "deepseek_retry": {
+    "result_dir": "eha-mvp/results/reports-eha-uncued-model-preflight-deepseek-retry-2026-05-22",
+    "report": "reports/eha-uncued-model-preflight-deepseek-retry-2026-05-22.md",
+    "invocation_profile": {
+      "temperature_policy": "omitted",
+      "max_completion_tokens_policy": "explicit:4096",
+      "response_format": "json_object",
+      "json_extractor": "first_json_object",
+      "message_role_policy": "developer_system_merged_into_user",
+      "llm_repair": "disabled"
+    },
+    "actual_records": 20,
+    "actual_cost_usd": 0.083832,
+    "structured_preflight_pass": true,
+    "parse_success_count": 19,
+    "parse_success_rate": 0.95,
+    "empty_output_count": 0,
+    "schema_missing_count": 0,
+    "timeout_task_id": "uncued_046_visible",
+    "timeout_parse_error": "API call exceeded 240.0s process timeout",
+    "initial_failure_resolved_task_id": "uncued_000_hidden"
+  },
+  "phase12_allowed": true,
+  "phase12_caveat": "DeepSeek passed on documented retry, but one retry row timed out. Count future DeepSeek timeout or parse failure as operational failure."
 }

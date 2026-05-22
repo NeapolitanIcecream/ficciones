@@ -8,7 +8,7 @@ Result directory: `/Users/chenmohan/gits/ficciones/eha-mvp/results/reports-eha-u
 
 ## Decision
 
-Phase 11 was executed, but the four-model Phase 12 pilot is blocked until the DeepSeek cohort decision is resolved.
+Phase 11 was executed. The initial four-model preflight found a DeepSeek blocker, then a documented DeepSeek-only retry resolved it under the configured structured-output gate.
 
 Three selected models passed the structured-output gate:
 
@@ -16,7 +16,7 @@ Three selected models passed the structured-output gate:
 - `claude-opus-4-7`;
 - `gemini-3.1-pro-preview`.
 
-`deepseek-v4-pro` did not pass because one preflight call returned an empty output. The gate requires `parse_success >= 0.95`, `empty_output = 0`, and `schema_missing_rate <= 0.05`.
+`deepseek-v4-pro` did not pass the initial run because one preflight call returned an empty output. The DeepSeek-only retry passed with `parse_success_rate=0.95`, `empty_output_count=0`, and `schema_missing_rate=0.0`.
 
 `kimi-k2.6` was not included.
 
@@ -82,4 +82,45 @@ Hashes:
 
 ## Next Step
 
-Do not start Phase 12 as a four-model pilot from this cohort. Resolve DeepSeek by either rerunning a documented preflight retry, replacing the model, or approving a three-model Phase 12 scope.
+Start Phase 12 with the four-model cohort if project policy accepts the documented DeepSeek retry:
+
+- `gpt-5.5`;
+- `claude-opus-4-7`;
+- `gemini-3.1-pro-preview`;
+- `deepseek-v4-pro`.
+
+Use the DeepSeek retry invocation profile as the Phase 12 default for DeepSeek (`response_format=json_object`, `max_completion_tokens=4096`, temperature omitted). Count any DeepSeek timeout or parse failure as an operational failure.
+
+## DeepSeek Retry
+
+DeepSeek-only retry report: `reports/eha-uncued-model-preflight-deepseek-retry-2026-05-22.md`.
+
+Retry result directory: `/Users/chenmohan/gits/ficciones/eha-mvp/results/reports-eha-uncued-model-preflight-deepseek-retry-2026-05-22`.
+
+Retry invocation profile:
+
+```json
+{
+  "temperature_policy": "omitted",
+  "max_completion_tokens_policy": "explicit:4096",
+  "response_format": "json_object",
+  "json_extractor": "first_json_object",
+  "message_role_policy": "developer_system_merged_into_user",
+  "llm_repair": "disabled"
+}
+```
+
+Retry summary:
+
+| model | n | parse success | empty outputs | schema missing | gate |
+| --- | ---: | ---: | ---: | ---: | --- |
+| `deepseek-v4-pro` | 20 | 19 | 0 | 0 | pass |
+
+Retry caveat:
+
+- `uncued_046_visible`, condition `buried_primary`, timed out after 240 seconds and is an operational parse failure.
+- The original failing row `uncued_000_hidden` returned structured, non-empty output on retry.
+
+Retry cost: USD 0.083832, below the USD 1 hard cap.
+
+Total Phase 11 model-call cost after retry: USD 0.740575.
