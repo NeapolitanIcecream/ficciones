@@ -11,6 +11,7 @@ from eha.uncued_schema_ablation import (
     SCHEMA_VARIANTS,
     build_schema_prompt_payload,
     invocation_profiles_payload,
+    latest_records_by_key,
     parse_schema_prediction,
     plan_schema_ablation,
     schema_json_schema,
@@ -143,6 +144,30 @@ def test_deepseek_invocation_profile_is_recorded_separately() -> None:
     assert profile["retry_profile"]["max_attempts"] == 2
 
 
+def test_latest_records_by_key_prefers_retry_row() -> None:
+    records = [
+        {
+            "schema_variant": "current",
+            "model": "fixture-model",
+            "task_id": "uncued_048_visible",
+            "prompt_condition": "standard_answer",
+            "parse_success": False,
+        },
+        {
+            "schema_variant": "current",
+            "model": "fixture-model",
+            "task_id": "uncued_048_visible",
+            "prompt_condition": "standard_answer",
+            "parse_success": True,
+        },
+    ]
+
+    latest = latest_records_by_key(records)
+
+    assert len(latest) == 1
+    assert latest[0]["parse_success"] is True
+
+
 def test_verifier_rejects_missing_current_anchor(tmp_path: Path) -> None:
     run_dir = tmp_path / "run"
     reports_dir = tmp_path / "reports"
@@ -185,3 +210,52 @@ def test_verifier_rejects_missing_current_anchor(tmp_path: Path) -> None:
 
     assert result["decision"] == "fail"
     assert result["gates"]["current_anchor_complete"] is False
+
+
+def test_verifier_rejects_latest_parse_failures(tmp_path: Path) -> None:
+    run_dir = tmp_path / "run"
+    reports_dir = tmp_path / "reports"
+    run_dir.mkdir()
+    reports_dir.mkdir()
+    (run_dir / "selection_manifest.json").write_text(
+        json.dumps(
+            {
+                "dataset_dir": "data/uncued-pilot-v1",
+                "selected_tasks": [{"task_id": "uncued_048", "view_task_id": "uncued_048_visible", "condition": "generated_lore", "family": "packet_judgment"}],
+                "view": "neutral_metadata_visible",
+                "seed": 20260523,
+            }
+        ),
+        encoding="utf-8",
+    )
+    (run_dir / "run_manifest.json").write_text(
+        json.dumps(
+            {
+                "models": ["fixture-model"],
+                "schemas": list(SCHEMA_VARIANTS),
+                "selected_view": "neutral_metadata_visible",
+                "prompt_condition": "standard_answer",
+                "planned_calls": 4,
+                "actual_records": 4,
+            }
+        ),
+        encoding="utf-8",
+    )
+    (run_dir / "prompt_audit_summary.json").write_text(json.dumps({"passed": True}), encoding="utf-8")
+    (run_dir / "stored_hidden_label_audit.json").write_text(json.dumps({"passed": True}), encoding="utf-8")
+    (run_dir / "cost_report.json").write_text(json.dumps({"spent_usd": 0.0, "hard_cap_usd": 5.0, "aborted": False}), encoding="utf-8")
+    with (run_dir / "schema_ablation_rows.csv").open("w", newline="", encoding="utf-8") as handle:
+        fieldnames = ["task_id", "model", "schema_variant", "parse_success"]
+        writer = csv.DictWriter(handle, fieldnames=fieldnames)
+        writer.writeheader()
+        for variant in SCHEMA_VARIANTS:
+            writer.writerow({"task_id": "uncued_048_visible", "model": "fixture-model", "schema_variant": variant, "parse_success": "0" if variant == "current" else "1"})
+    (reports_dir / "eha-uncued-schema-ablation-results-2026-05-23.md").write_text(
+        "exploratory Phase 1.1; does not revise the Phase 1 main table; old cued model outputs; does not use old cued",
+        encoding="utf-8",
+    )
+
+    result = verify_schema_ablation(run_dir, reports_dir)
+
+    assert result["decision"] == "fail"
+    assert result["gates"]["all_latest_rows_parse_success"] is False

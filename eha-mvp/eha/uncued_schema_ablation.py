@@ -422,11 +422,24 @@ def safe_name(value: str) -> str:
     return value.replace("/", "_").replace(":", "_")
 
 
-def completed_keys(predictions_path: Path) -> set[tuple[str, str, str, str]]:
+def prediction_key(row: Mapping[str, Any]) -> tuple[str, str, str, str]:
+    return (str(row.get("schema_variant")), str(row.get("model")), str(row.get("task_id")), str(row.get("prompt_condition")))
+
+
+def completed_keys(predictions_path: Path, *, successful_only: bool = False) -> set[tuple[str, str, str, str]]:
     keys: set[tuple[str, str, str, str]] = set()
     for row in read_jsonl(predictions_path):
-        keys.add((str(row.get("schema_variant")), str(row.get("model")), str(row.get("task_id")), str(row.get("prompt_condition"))))
+        if successful_only and not bool(row.get("parse_success")):
+            continue
+        keys.add(prediction_key(row))
     return keys
+
+
+def latest_records_by_key(records: Sequence[Mapping[str, Any]]) -> list[Dict[str, Any]]:
+    latest: dict[tuple[str, str, str, str], Dict[str, Any]] = {}
+    for row in records:
+        latest[prediction_key(row)] = dict(row)
+    return list(latest.values())
 
 
 def translate_prediction_payload(payload: Mapping[str, Any], visible_to_audit: Mapping[str, str]) -> Dict[str, Any]:
@@ -685,6 +698,7 @@ def run_schema_ablation(
     parallel_models: int,
     max_attempts: int,
     resume: bool,
+    retry_failed: bool,
 ) -> Dict[str, Any]:
     selection_path = out_dir / "selection_manifest.json"
     if not selection_path.exists():
@@ -712,6 +726,7 @@ def run_schema_ablation(
         "provider_response_formats": {profile.model: profile.response_format for profile in profiles},
         "budget": {"soft_cap_usd": soft_cap_usd, "hard_cap_usd": hard_cap_usd, "abort_cap_usd": abort_cap_usd},
         "dry_run": dry_run,
+        "retry_failed": retry_failed,
         "projected_cost_usd": cost_projection["projected_cost_usd"],
     }
     write_json(out_dir / "run_manifest.json", manifest)
@@ -735,7 +750,7 @@ def run_schema_ablation(
         return manifest
 
     predictions_path = out_dir / "predictions.jsonl"
-    done = completed_keys(predictions_path) if resume else set()
+    done = completed_keys(predictions_path, successful_only=retry_failed) if resume else set()
     jobs = [
         (task, schema, profile)
         for task in tasks
@@ -743,6 +758,9 @@ def run_schema_ablation(
         for profile in profiles
         if (schema, profile.model, task.task_id, prompt) not in done
     ]
+    manifest["resume_completed_count"] = len(done)
+    manifest["retry_job_count"] = len(jobs)
+    write_json(out_dir / "run_manifest.json", manifest)
     write_lock = threading.Lock()
     cost_lock = threading.Lock()
     cost_guard = CostGuard(soft_cap_usd=soft_cap_usd, hard_cap_usd=hard_cap_usd, abort_cap_usd=abort_cap_usd)
@@ -772,11 +790,27 @@ def run_schema_ablation(
         raise
 
     records = read_jsonl(predictions_path)
+    latest_records = latest_records_by_key(records)
     manifest["actual_records"] = len(records)
+    manifest["actual_unique_records"] = len(latest_records)
+    manifest["latest_parse_success_records"] = sum(1 for row in latest_records if bool(row.get("parse_success")))
+    manifest["latest_parse_failure_records"] = sum(1 for row in latest_records if not bool(row.get("parse_success")))
     write_json(out_dir / "run_manifest.json", manifest)
     write_json(out_dir / "prompt_audit_summary.json", prompt_audit_summary(records))
     write_json(out_dir / "stored_hidden_label_audit.json", stored_hidden_label_audit(out_dir))
-    write_json(out_dir / "cost_report.json", {"aborted": False, "record_cost_usd": round(sum(float(row.get("cost_usd", 0.0) or 0.0) for row in records), 6), "projected_cost_usd": cost_projection["projected_cost_usd"], **cost_guard.report()})
+    guard_report = cost_guard.report()
+    record_cost_usd = round(sum(float(row.get("cost_usd", 0.0) or 0.0) for row in records), 6)
+    write_json(
+        out_dir / "cost_report.json",
+        {
+            "aborted": False,
+            "record_cost_usd": record_cost_usd,
+            "projected_cost_usd": cost_projection["projected_cost_usd"],
+            **guard_report,
+            "retry_spent_usd": guard_report["spent_usd"],
+            "spent_usd": record_cost_usd,
+        },
+    )
     return manifest
 
 
@@ -946,7 +980,8 @@ def load_csv_rows(path: Path) -> list[Dict[str, str]]:
 
 
 def run_schema_ablation_report(run_dir: Path, reports_dir: Path, *, dataset_dir: Path = Path("data/uncued-pilot-v1")) -> Dict[str, Any]:
-    records = read_jsonl(run_dir / "predictions.jsonl")
+    raw_records = read_jsonl(run_dir / "predictions.jsonl")
+    records = latest_records_by_key(raw_records)
     scored_rows = score_schema_ablation_rows(records, dataset_dir)
     by_schema_model = aggregate_scored_rows(scored_rows, ["schema_variant", "model"])
     by_schema_model_condition = aggregate_scored_rows(scored_rows, ["schema_variant", "model", "condition"])
@@ -970,6 +1005,7 @@ def run_schema_ablation_report(run_dir: Path, reports_dir: Path, *, dataset_dir:
         "old_cued_data_used": False,
         "phase1_main_table_revised": False,
         "selected_task_count": len({row["base_task_id"] for row in scored_rows}),
+        "raw_record_count": len(raw_records),
         "row_count": len(scored_rows),
         "models": run_manifest.get("models", []),
         "schemas": run_manifest.get("schemas", []),
@@ -1003,7 +1039,7 @@ def run_schema_ablation_report(run_dir: Path, reports_dir: Path, *, dataset_dir:
         "",
         f"- Run directory: `{run_dir}`",
         f"- Selected source tasks: {payload['selected_task_count']}",
-        f"- Rows: {payload['row_count']}",
+        f"- Rows: {payload['row_count']} latest records ({payload['raw_record_count']} raw records)",
         f"- Models: {', '.join(payload['models'])}",
         f"- Schemas: {', '.join(payload['schemas'])}",
         f"- View: `{payload['view']}`",
@@ -1057,6 +1093,7 @@ def verify_schema_ablation(run_dir: Path, reports_dir: Path, *, dataset_dir: Pat
     complete = complete_schema_groups(scored_rows, schemas or list(SCHEMA_VARIANTS))
     selected_conditions = {str(row.get("condition")) for row in selection.get("selected_tasks", [])}
     schema_set = {str(row.get("schema_variant")) for row in scored_rows}
+    all_rows_parse_success = all(str(row.get("parse_success")) == "1" for row in scored_rows) and bool(scored_rows)
     report_text = (reports_dir / f"eha-uncued-schema-ablation-results-{REPORT_DATE}.md").read_text(encoding="utf-8") if (reports_dir / f"eha-uncued-schema-ablation-results-{REPORT_DATE}.md").exists() else ""
     leakage = read_json(Path("../reports/eha_uncued_leakage_pilot.json")) if Path("../reports/eha_uncued_leakage_pilot.json").exists() else {}
     baselines = read_json(Path("../reports/eha_uncued_baselines_pilot.json")) if Path("../reports/eha_uncued_baselines_pilot.json").exists() else {}
@@ -1069,6 +1106,7 @@ def verify_schema_ablation(run_dir: Path, reports_dir: Path, *, dataset_dir: Pat
         "stored_hidden_label_audit_passed": bool(hidden_audit.get("passed")),
         "cost_under_hard_cap": not bool(cost_report.get("aborted")) and float(cost_report.get("spent_usd", cost_report.get("record_cost_usd", 0.0)) or 0.0) <= float(cost_report.get("hard_cap_usd", 5.0) or 5.0),
         "current_anchor_complete": "current" in schema_set and complete["incomplete_count"] == 0,
+        "all_latest_rows_parse_success": all_rows_parse_success,
         "all_schemas_represented": set(SCHEMA_VARIANTS) <= schema_set,
         "results_separate_from_phase1_artifact": not str(run_dir).startswith("artifact_uncued_phase1"),
         "report_boundary_present": "exploratory Phase 1.1" in report_text and "does not revise the Phase 1 main table" in report_text,
@@ -1119,6 +1157,7 @@ def run_main(
     parallel_models: int = typer.Option(2),
     max_attempts: int = typer.Option(2),
     resume: bool = typer.Option(True),
+    retry_failed: bool = typer.Option(False, help="When resuming, rerun failed rows while skipping successful rows."),
 ) -> None:
     try:
         manifest = run_schema_ablation(
@@ -1138,6 +1177,7 @@ def run_main(
             parallel_models=parallel_models,
             max_attempts=max_attempts,
             resume=resume,
+            retry_failed=retry_failed,
         )
     except BudgetExceeded as exc:
         console.print(str(exc))

@@ -424,11 +424,11 @@ If Phase 1.1 does not run, keep the existing paper language: schema/interface an
 - Report explicitly says no old cued data or cued outputs were used.
 - Report claims only schema/interface sensitivity, not replacement of the Phase 1 result.
 
-## Execution Status: Advanced To Phase 5 With Retry Items
+## Execution Status: Complete Through Phase 8
 
 Status date: 2026-05-23
 
-Phases 0-4 are complete. Phase 5 has been run, but it is not yet accepted because the main two-model run contains two transient Gemini 429 failure rows. A supplemental DeepSeek-only documented retry is complete in a separate directory and is not part of the main paired GPT/Gemini schema-ablation table.
+Phases 0-8 are complete. The main two-model schema-ablation run initially produced two transient Gemini 429 failure rows; both were resolved by a targeted `--retry-failed` pass. The scored report uses the latest record for each schema/model/task/prompt key: 128 latest rows from 130 raw records, with 128/128 latest parse successes. A supplemental DeepSeek-only documented retry is complete in a separate directory and is not part of the main paired GPT/Gemini schema-ablation table.
 
 Completed artifacts:
 
@@ -438,6 +438,10 @@ Completed artifacts:
 - Phase 3 prompt parity audit: `eha-mvp/results/reports-eha-uncued-schema-ablation-2026-05-23/prompt_parity_audit.json`.
 - Phase 4 dry-run preflight: `eha-mvp/results/reports-eha-uncued-schema-ablation-2026-05-23/run_manifest.json`, `dry_run_cost_projection.json`, and `cost_report.json`.
 - Phase 5 main run artifacts: `eha-mvp/results/reports-eha-uncued-schema-ablation-2026-05-23/predictions.jsonl`, `run_manifest.json`, `prompt_audit_summary.json`, `stored_hidden_label_audit.json`, and `cost_report.json`.
+- Phase 6 scoring outputs: `schema_ablation_rows.csv`, `schema_ablation_by_schema_model.csv`, `schema_ablation_by_schema_model_condition.csv`, and `schema_ablation_by_schema_model_family.csv`.
+- Phase 7 manual audit: `schema_ablation_manual_audit.csv`.
+- Phase 8 report and verifier: `schema_ablation_report.md`, `reports/eha_uncued_schema_ablation_results.json`, `reports/eha-uncued-schema-ablation-results-2026-05-23.md`, and `reports/eha_uncued_schema_ablation_verification.json`.
+- Paper integration: `paper/sections/08_schema_interface.tex`, `paper/sections/10_limitations.tex`, `paper/sections/13_conclusion.tex`, and rebuilt `paper/main.pdf`.
 - Supplemental DeepSeek-only retry: `reports/eha-uncued-schema-ablation-deepseek-retry-2026-05-23.md`, `reports/eha_uncued_schema_ablation_deepseek_retry.json`, and `eha-mvp/results/reports-eha-uncued-schema-ablation-deepseek-retry-2026-05-23/`.
 - Command implementation: `eha-mvp/eha/uncued_schema_ablation.py`, `eha-mvp/tests/test_uncued_schema_ablation.py`, and `eha-mvp/pyproject.toml`.
 
@@ -504,26 +508,75 @@ Phase 4 dry-run preflight evidence:
 Phase 5 main-run evidence:
 
 - Command: `uv run eha-run-uncued-schema-ablation --dataset-dir data/uncued-pilot-v1 --out-dir results/reports-eha-uncued-schema-ablation-2026-05-23 --models gpt-5.5,gemini-3.1-pro-preview --schemas current,clarified,minimal,diagnostic_no_hygiene --prompt standard_answer --view neutral_metadata_visible --max-output-tokens 4096 --parallel-models 2 --resume --soft-cap-usd 4 --hard-cap-usd 5 --abort-cap-usd 6`.
+- Targeted retry command: `uv run eha-run-uncued-schema-ablation --dataset-dir data/uncued-pilot-v1 --out-dir results/reports-eha-uncued-schema-ablation-2026-05-23 --models gpt-5.5,gemini-3.1-pro-preview --schemas current,clarified,minimal,diagnostic_no_hygiene --prompt standard_answer --view neutral_metadata_visible --max-output-tokens 4096 --cost-estimate-output-tokens 900 --parallel-models 1 --max-attempts 2 --resume --retry-failed --soft-cap-usd 4 --hard-cap-usd 5 --abort-cap-usd 6`.
 - Planned calls: 128.
-- Actual records: 128.
-- Parse successes: 126.
-- Parse failures: 2.
+- Raw records after targeted retry: 130.
+- Unique latest records: 128.
+- Latest parse successes: 128.
+- Latest parse failures: 0.
 - Budget status: not aborted.
-- Record cost: USD 1.884941.
-- Spent: USD 1.884941.
+- Record cost: USD 1.890321.
+- Spent: USD 1.890321.
+- Targeted retry spend: USD 0.005380.
 - Hard cap: USD 5.
 - Prompt audit: passed; semantic doc ID hits 0, visible citation hits 0, audit-ID title/body hits 0, hidden-field hits 0.
 - Stored hidden-label audit: passed; prompt hits 0, output hits 0.
 - `gpt-5.5`: 64/64 parse success.
-- `gemini-3.1-pro-preview`: 62/64 parse success.
+- `gemini-3.1-pro-preview`: 64/64 latest parse success.
 - Gemini retry items:
-  - `uncued_046_visible`, schema `diagnostic_no_hygiene`, parse error `RateLimitError` 429 after 2 attempts.
-  - `uncued_047_visible`, schema `current`, parse error `RateLimitError` 429 after 2 attempts.
-- Phase 5 current run manifest hash: `04711539e52a018d9dac8523ce64d9794e0b1b71b8ba75bc2690c52a00028fa4`.
-- Phase 5 predictions hash: `b63755218e83aae7f9e57d7bc77cd940c52055375b665b3d502f7699b20fae3d`.
-- Phase 5 prompt audit hash: `020652edd96d03a364499456fa363d9d587a3b45ac76e5064c9af064af8ff941`.
+  - `uncued_046_visible`, schema `diagnostic_no_hygiene`, initial `RateLimitError` 429 after 2 attempts; retry parsed successfully on attempt 1.
+  - `uncued_047_visible`, schema `current`, initial `RateLimitError` 429 after 2 attempts; retry parsed successfully on attempt 1.
+- Phase 5 current run manifest hash: `de5349eef3fa41d6075e577fb618ed4304e3846fbe2869bd1f6e831412f45685`.
+- Phase 5 invocation profile hash: `37346db63d3e92220d5faa008109dd94c82006ccccb7cb08c8497117d9ed4702`.
+- Phase 5 predictions hash: `89e630413285c516efc14a65e33d58148a7b8a757d7bfed81873bbbd5ff54b0e`.
+- Phase 5 prompt audit hash: `3d752d16d8da302567e9365f6e3eb4092307c8a8e55527639c077051b29f3a84`.
 - Phase 5 stored hidden-label audit hash: `5069bd02061d2ff590349a12f9cb2922f62f106081445609195fb2c80e845156`.
-- Phase 5 cost report hash: `fc3f80550c19382b0fe39e957a1ac03d9cf6c2379d01b040951b4c74b80c5cd1`.
+- Phase 5 cost report hash: `033b3bca0d881c3925b25c298b9cca32f43f452847d024330b0b1473d49b5b51`.
+
+Phase 6 scoring evidence:
+
+- Command: `uv run eha-report-uncued-schema-ablation --run-dir results/reports-eha-uncued-schema-ablation-2026-05-23 --reports-dir ../reports`.
+- Scored rows: 128 latest rows from 130 raw records.
+- Models: `gpt-5.5`, `gemini-3.1-pro-preview`.
+- Schemas: `current`, `clarified`, `minimal`, `diagnostic_no_hygiene`.
+- Complete schema/model/task groups: 32 complete, 0 incomplete.
+- Minimal schema: polluted-in-support rate 1.000 and role-escape rate 0.000 for both models in this slice.
+- Current and clarified schemas: polluted-in-support rate 0.000 for both models in this slice.
+- `diagnostic_no_hygiene`: mixed role-allocation behavior; `gpt-5.5` role escape 0.500, `gemini-3.1-pro-preview` role escape 1.000.
+- Scored rows hash: `d83c5f083f6c809aca6b0fb053c1b649d03400232251d0897900b3bd53b14db2`.
+- By schema/model hash: `cd09eeca4cb1d68132206986e8d117a22ab54d14f07d2d265d123b313643f2e2`.
+- By schema/model/condition hash: `eba0fa014fd86b8ccfe074d628eeecda2e4f7eafadb5c515764b2348351b470f`.
+- By schema/model/family hash: `5a8b2ffbabb1f6f460857a92226f1d3d308b2d4d2b1f4acca81bce70a1dcd39d`.
+
+Phase 7 manual-audit evidence:
+
+- Audit mode: local Codex-assisted manual schema-ablation audit.
+- Reviewed rows: 16.
+- Scorer fixes needed: 0.
+- Independent human review: false.
+- Manual audit hash: `951db080fd1a37ab813ffd087d28aad317e5ba963d502e49e832da56b23b169f`.
+
+Phase 8 report and verification evidence:
+
+- Report command: `uv run eha-report-uncued-schema-ablation --run-dir results/reports-eha-uncued-schema-ablation-2026-05-23 --reports-dir ../reports`.
+- Verify command: `uv run eha-verify-uncued-schema-ablation --run-dir results/reports-eha-uncued-schema-ablation-2026-05-23 --reports-dir ../reports`.
+- Verification decision: pass.
+- Verification gates passing: data source role-uncued, Phase 1 gates present/passing, selected conditions only, prompt audit passed, stored hidden-label audit passed, cost under hard cap, current anchor complete, all latest rows parse-successful, all schemas represented, results separated from Phase 1 artifact, report boundary present, and no old-cued evidence claim.
+- Result report hash: `1d5f4803776bc4529c4209b6875de9f3c30e6bede468e7bade9e30bf28d124f3`.
+- Result JSON hash: `f68cf4c4ac1e57968e153fcca6af9a0bc621f85f04c8be9bd184a498f050ebc9`.
+- Verification JSON hash: `db3281c69f4b1cd1db4e6fee22cca9a5457b747f2ca56db3901bea2da0dea62f`.
+- Allowed paper claim: exploratory Phase 1.1 schema/interface sensitivity only; not a replacement for the Phase 1 result and not evidence from old cued outputs.
+
+Paper integration evidence:
+
+- Updated `paper/sections/08_schema_interface.tex` to describe the completed Phase 1.1 ablation as exploratory follow-up evidence.
+- Updated `paper/sections/10_limitations.tex` to limit the ablation to 16 source tasks, one visible view, two main models, and a local Codex-assisted audit.
+- Updated `paper/sections/13_conclusion.tex` to treat schema/interface choices as experimental factors.
+- Rebuilt `paper/main.pdf` with `make` in `paper/`; Tectonic completed with only the existing bibliography underfull-box warning.
+- `paper/sections/08_schema_interface.tex` hash: `d45bd1718ae5ec5fc15d0f4631508624cba0f09058bf96d7d80ac7bac55149c6`.
+- `paper/sections/10_limitations.tex` hash: `89877345d4450d8d77891e38f9f8044ebfe4a06ed83ea1dfcb6d55a35d3754b8`.
+- `paper/sections/13_conclusion.tex` hash: `c9d63af613bded1f1d3f9adc21406198f46b28517aa48a549314de15b74506b7`.
+- `paper/main.pdf` hash: `9451f402ac9bd9ce02a77d53bbedaf1b3ceb5be54d3a22f8a7f3b6eb494acfd0`.
 
 Supplemental DeepSeek-only documented retry:
 
@@ -561,14 +614,25 @@ uv run eha-run-uncued-schema-ablation --help
 uv run eha-report-uncued-schema-ablation --help
 uv run eha-verify-uncued-schema-ablation --help
 uv run pytest tests/test_uncued_schema_ablation.py -q
-# 10 passed in 0.68s
+# 12 passed in 0.70s
 uv run eha-run-uncued-schema-ablation --dataset-dir data/uncued-pilot-v1 --out-dir results/reports-eha-uncued-schema-ablation-2026-05-23 --models gpt-5.5,gemini-3.1-pro-preview --schemas current,clarified,minimal,diagnostic_no_hygiene --prompt standard_answer --view neutral_metadata_visible --dry-run --hard-cap-usd 5
+uv run eha-run-uncued-schema-ablation --dataset-dir data/uncued-pilot-v1 --out-dir results/reports-eha-uncued-schema-ablation-2026-05-23 --models gpt-5.5,gemini-3.1-pro-preview --schemas current,clarified,minimal,diagnostic_no_hygiene --prompt standard_answer --view neutral_metadata_visible --max-output-tokens 4096 --parallel-models 2 --resume --soft-cap-usd 4 --hard-cap-usd 5 --abort-cap-usd 6
+uv run eha-run-uncued-schema-ablation --dataset-dir data/uncued-pilot-v1 --out-dir results/reports-eha-uncued-schema-ablation-2026-05-23 --models gpt-5.5,gemini-3.1-pro-preview --schemas current,clarified,minimal,diagnostic_no_hygiene --prompt standard_answer --view neutral_metadata_visible --max-output-tokens 4096 --cost-estimate-output-tokens 900 --parallel-models 1 --max-attempts 2 --resume --retry-failed --soft-cap-usd 4 --hard-cap-usd 5 --abort-cap-usd 6
+uv run eha-report-uncued-schema-ablation --run-dir results/reports-eha-uncued-schema-ablation-2026-05-23 --reports-dir ../reports
+uv run eha-verify-uncued-schema-ablation --run-dir results/reports-eha-uncued-schema-ablation-2026-05-23 --reports-dir ../reports
 uv run eha-plan-uncued-schema-ablation --dataset-dir data/uncued-pilot-v1 --out-dir results/reports-eha-uncued-schema-ablation-deepseek-retry-2026-05-23 --conditions generated_lore,buried_primary --tasks-per-condition 8 --view neutral_metadata_visible --seed 20260523
 uv run eha-run-uncued-schema-ablation --dataset-dir data/uncued-pilot-v1 --out-dir results/reports-eha-uncued-schema-ablation-deepseek-retry-2026-05-23 --models deepseek-v4-pro --schemas current,clarified,minimal,diagnostic_no_hygiene --prompt standard_answer --view neutral_metadata_visible --dry-run --hard-cap-usd 2 --soft-cap-usd 1 --abort-cap-usd 3 --max-output-tokens 4096 --cost-estimate-output-tokens 900 --parallel-models 1 --max-attempts 2
 uv run eha-run-uncued-schema-ablation --dataset-dir data/uncued-pilot-v1 --out-dir results/reports-eha-uncued-schema-ablation-deepseek-retry-2026-05-23 --models deepseek-v4-pro --schemas current,clarified,minimal,diagnostic_no_hygiene --prompt standard_answer --view neutral_metadata_visible --max-output-tokens 4096 --cost-estimate-output-tokens 900 --parallel-models 1 --max-attempts 2 --resume --soft-cap-usd 1 --hard-cap-usd 2 --abort-cap-usd 3
+cd /Users/chenmohan/gits/ficciones/paper && make
 ```
 
-Next required phase:
+Final acceptance status:
 
-- Resolve or document the two Gemini 429 rows before accepting Phase 5.
-- Then run Phase 6 scoring, Phase 7 audit, and Phase 8 report.
+- Selection manifest was frozen before model calls.
+- Prompt audits passed.
+- All four schemas are represented in complete paired latest rows.
+- Main run stayed under the USD 5 hard cap.
+- Results are separated from Phase 1 outputs.
+- The report says no old cued data or outputs are used.
+- The report claims only schema/interface sensitivity, not replacement of the Phase 1 result.
+- Phase 1.1 is complete through Phase 8.

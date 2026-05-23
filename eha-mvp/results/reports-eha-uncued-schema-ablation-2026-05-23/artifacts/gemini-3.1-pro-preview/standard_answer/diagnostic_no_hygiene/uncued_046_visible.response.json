@@ -3,35 +3,48 @@
     {
       "attempt": 1,
       "response_format_used": "json_schema",
-      "parse_success": false,
-      "parse_error": "RateLimitError: Error code: 429 - {'error': {'message': 'Resource has been exhausted (e.g. check quota).', 'type': 'upstream_error', 'param': '', 'code': 429}}",
-      "empty_output": true,
+      "parse_success": true,
+      "parse_error": "",
+      "empty_output": false,
       "schema_missing": false,
-      "elapsed_s": 3.356,
-      "cost_usd": 0.0
-    },
-    {
-      "attempt": 2,
-      "response_format_used": "json_schema",
-      "parse_success": false,
-      "parse_error": "RateLimitError: Error code: 429 - {'error': {'message': 'Resource has been exhausted (e.g. check quota).', 'type': 'upstream_error', 'param': '', 'code': 429}}",
-      "empty_output": true,
-      "schema_missing": false,
-      "elapsed_s": 4.776,
-      "cost_usd": 0.0
+      "elapsed_s": 15.518,
+      "cost_usd": 0.003605
     }
   ],
   "final": {
-    "content": "",
-    "usage": {},
+    "content": "{\"claim_verdict\":\"supported\",\"confidence\":0.95,\"supporting_evidence\":[\"doc_002\"],\"rejected_or_contaminated_evidence\":[\"doc_003\"],\"diagnostic_evidence\":[\"doc_001\",\"doc_004\"],\"selected_doc_ids\":[\"doc_002\",\"doc_003\"],\"actions\":[{\"action\":\"abstain\",\"target\":\"none\",\"rationale\":\"Adequate evidence found in the final closeout ledger to verify the claim.\"}],\"evidence_notes\":\"doc_002 confirms the closeout ledger lists 118 completed refurbishments. doc_003 provides a prior estimate of 139 based on planning data, but doc_002 represents the final logged number.\",\"answer\":\"Yes, the closeout ledger (doc_002) confirms that 118 completed refurbishments were logged for Nova pump refurbishments in July 2025. An earlier running estimate (doc_003) predicted 139, but the final closed count is 118.\"}",
+    "usage": {
+      "completion_tokens": 1654,
+      "prompt_tokens": 1188,
+      "total_tokens": 2842,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": null,
+        "audio_tokens": 0,
+        "reasoning_tokens": 1427,
+        "rejected_prediction_tokens": null,
+        "text_tokens": 227,
+        "image_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cached_tokens": 0,
+        "text_tokens": 1188,
+        "image_tokens": 0
+      },
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "input_tokens_details": null,
+      "claude_cache_creation_5_m_tokens": 0,
+      "claude_cache_creation_1_h_tokens": 0
+    },
     "response_format_used": "json_schema",
-    "parse_success": false,
-    "parse_error": "RateLimitError: Error code: 429 - {'error': {'message': 'Resource has been exhausted (e.g. check quota).', 'type': 'upstream_error', 'param': '', 'code': 429}}",
-    "empty_output": true,
+    "parse_success": true,
+    "parse_error": "",
+    "empty_output": false,
     "schema_missing": false,
     "json_extractor_used": "first_json_object",
-    "cost_usd": 0.0,
-    "attempt_count": 2,
-    "visible_output_tokens": 0
+    "cost_usd": 0.003605,
+    "attempt_count": 1,
+    "visible_output_tokens": 197
   }
 }
