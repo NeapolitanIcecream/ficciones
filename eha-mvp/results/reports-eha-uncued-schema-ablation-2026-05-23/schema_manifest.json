@@ -1,0 +1,74 @@
+{
+  "date": "2026-05-23",
+  "schema_variants": [
+    {
+      "schema_variant": "current",
+      "required_fields": [
+        "claim_verdict",
+        "confidence",
+        "supporting_evidence",
+        "rejected_evidence",
+        "selected_doc_ids",
+        "actions",
+        "evidence_environment_assessment",
+        "answer"
+      ],
+      "additional_properties": false,
+      "support_field": "supporting_evidence",
+      "rejection_field": "rejected_evidence",
+      "diagnostic_field": "not_applicable"
+    },
+    {
+      "schema_variant": "clarified",
+      "required_fields": [
+        "claim_verdict",
+        "confidence",
+        "clean_supporting_evidence",
+        "refuting_evidence",
+        "rejected_or_contaminated_evidence",
+        "diagnostic_evidence",
+        "selected_doc_ids",
+        "actions",
+        "evidence_notes",
+        "answer"
+      ],
+      "additional_properties": false,
+      "support_field": "clean_supporting_evidence",
+      "rejection_field": "rejected_or_contaminated_evidence",
+      "diagnostic_field": "diagnostic_evidence"
+    },
+    {
+      "schema_variant": "minimal",
+      "required_fields": [
+        "claim_verdict",
+        "confidence",
+        "evidence_doc_ids",
+        "selected_doc_ids",
+        "evidence_notes"
+      ],
+      "additional_properties": false,
+      "support_field": "evidence_doc_ids",
+      "rejection_field": "not_applicable",
+      "diagnostic_field": "not_applicable"
+    },
+    {
+      "schema_variant": "diagnostic_no_hygiene",
+      "required_fields": [
+        "claim_verdict",
+        "confidence",
+        "supporting_evidence",
+        "rejected_or_contaminated_evidence",
+        "diagnostic_evidence",
+        "selected_doc_ids",
+        "actions",
+        "evidence_notes",
+        "answer"
+      ],
+      "additional_properties": false,
+      "support_field": "supporting_evidence",
+      "rejection_field": "rejected_or_contaminated_evidence",
+      "diagnostic_field": "diagnostic_evidence"
+    }
+  ],
+  "naming_note": "Phase 1 production interface is labelled current in Phase 1.1."
+}

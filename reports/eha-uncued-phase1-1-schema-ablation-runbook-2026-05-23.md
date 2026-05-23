@@ -424,15 +424,19 @@ If Phase 1.1 does not run, keep the existing paper language: schema/interface an
 - Report explicitly says no old cued data or cued outputs were used.
 - Report claims only schema/interface sensitivity, not replacement of the Phase 1 result.
 
-## Execution Status: Advanced To Phase 0
+## Execution Status: Advanced To Phase 3
 
 Status date: 2026-05-23
 
-Phase 0 is complete. Phases 1-8 have not been started.
+Phases 0-3 are complete. Phases 4-8 have not been started.
 
 Completed artifacts:
 
 - Phase 0 start state: `reports/eha-uncued-schema-ablation-start-state-2026-05-23.md`.
+- Phase 1 task selection: `eha-mvp/results/reports-eha-uncued-schema-ablation-2026-05-23/selection_manifest.json`.
+- Phase 2 schema manifest: `eha-mvp/results/reports-eha-uncued-schema-ablation-2026-05-23/schema_manifest.json`.
+- Phase 3 prompt parity audit: `eha-mvp/results/reports-eha-uncued-schema-ablation-2026-05-23/prompt_parity_audit.json`.
+- Command implementation: `eha-mvp/eha/uncued_schema_ablation.py`, `eha-mvp/tests/test_uncued_schema_ablation.py`, and `eha-mvp/pyproject.toml`.
 
 Phase 0 evidence:
 
@@ -446,6 +450,47 @@ Phase 0 evidence:
 - Baseline test command: `uv run pytest tests/test_uncued_run.py tests/test_uncued_report.py tests/test_uncued_scorer_audit.py -q`.
 - Baseline test result: 6 passed in 0.44s.
 
+Phase 1 task-slice evidence:
+
+- Command: `uv run eha-plan-uncued-schema-ablation --dataset-dir data/uncued-pilot-v1 --out-dir results/reports-eha-uncued-schema-ablation-2026-05-23 --conditions generated_lore,buried_primary --tasks-per-condition 8 --view neutral_metadata_visible --seed 20260523`.
+- Source task count: 16.
+- Selected view: `neutral_metadata_visible`.
+- Seed: 20260523.
+- Conditions: 8 `generated_lore`, 8 `buried_primary`.
+- Per-condition family split: 3 packet judgment, 3 evidence selection, 2 active verification.
+- Selected task IDs: `uncued_048`, `uncued_049`, `uncued_051`, `uncued_052`, `uncued_054`, `uncued_055`, `uncued_056`, `uncued_058`, `uncued_037`, `uncued_039`, `uncued_040`, `uncued_041`, `uncued_042`, `uncued_045`, `uncued_046`, `uncued_047`.
+- Old cued data used: false.
+- Selection manifest hash: `84c6dc89077a429d5ecda1d543d294df2b4db2336ecd4bee6364313a0de3e3c0`.
+
+Phase 2 schema/parser evidence:
+
+- Schema variants implemented with exact labels: `current`, `clarified`, `minimal`, `diagnostic_no_hygiene`.
+- `current` uses the Phase 1 production contract under the Phase 1.1 label.
+- Every schema has `additionalProperties=false`.
+- Parser tests reject missing required fields for every schema.
+- Schema manifest hash: `8c9cbc95b386cf7f9f6b4b4f33b6fe59e3d6a06b3be84652ae442253540cee1b`.
+
+Phase 3 prompt-composer evidence:
+
+- Prompt composer uses the same question, document list, document order, opaque doc IDs, visible citations, and base policy across schema variants.
+- Model-visible prompt payload omits condition labels, family labels, hidden roles, gold verdicts, and semantic document IDs.
+- Prompt parity audit: passed.
+- Prompt parity failure count: 0.
+- Prompt audit failure count: 0.
+- Prompt parity audit hash: `a3f2c689734e95bb5767616321a065c116710e3d372cedd40692d0d16f235646`.
+
+Commands verified:
+
+```bash
+cd /Users/chenmohan/gits/ficciones/eha-mvp
+uv run eha-plan-uncued-schema-ablation --help
+uv run eha-run-uncued-schema-ablation --help
+uv run eha-report-uncued-schema-ablation --help
+uv run eha-verify-uncued-schema-ablation --help
+uv run pytest tests/test_uncued_schema_ablation.py -q
+# 9 passed in 0.82s
+```
+
 Next required phase:
 
-- Phase 1: freeze the task slice and write `selection_manifest.json`.
+- Phase 4: run cost and dry-run preflight before any model calls.
