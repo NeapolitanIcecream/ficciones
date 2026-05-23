@@ -424,11 +424,11 @@ If Phase 1.1 does not run, keep the existing paper language: schema/interface an
 - Report explicitly says no old cued data or cued outputs were used.
 - Report claims only schema/interface sensitivity, not replacement of the Phase 1 result.
 
-## Execution Status: Advanced To Phase 3
+## Execution Status: Advanced To Phase 4
 
 Status date: 2026-05-23
 
-Phases 0-3 are complete. Phases 4-8 have not been started.
+Phases 0-4 are complete. Phases 5-8 have not been started.
 
 Completed artifacts:
 
@@ -436,6 +436,7 @@ Completed artifacts:
 - Phase 1 task selection: `eha-mvp/results/reports-eha-uncued-schema-ablation-2026-05-23/selection_manifest.json`.
 - Phase 2 schema manifest: `eha-mvp/results/reports-eha-uncued-schema-ablation-2026-05-23/schema_manifest.json`.
 - Phase 3 prompt parity audit: `eha-mvp/results/reports-eha-uncued-schema-ablation-2026-05-23/prompt_parity_audit.json`.
+- Phase 4 dry-run preflight: `eha-mvp/results/reports-eha-uncued-schema-ablation-2026-05-23/run_manifest.json`, `dry_run_cost_projection.json`, and `cost_report.json`.
 - Command implementation: `eha-mvp/eha/uncued_schema_ablation.py`, `eha-mvp/tests/test_uncued_schema_ablation.py`, and `eha-mvp/pyproject.toml`.
 
 Phase 0 evidence:
@@ -479,6 +480,24 @@ Phase 3 prompt-composer evidence:
 - Prompt audit failure count: 0.
 - Prompt parity audit hash: `a3f2c689734e95bb5767616321a065c116710e3d372cedd40692d0d16f235646`.
 
+Phase 4 dry-run preflight evidence:
+
+- Command: `uv run eha-run-uncued-schema-ablation --dataset-dir data/uncued-pilot-v1 --out-dir results/reports-eha-uncued-schema-ablation-2026-05-23 --models gpt-5.5,gemini-3.1-pro-preview --schemas current,clarified,minimal,diagnostic_no_hygiene --prompt standard_answer --view neutral_metadata_visible --dry-run --hard-cap-usd 5`.
+- Planned calls: 128 = 16 selected tasks x 2 models x 4 schemas x 1 prompt.
+- Models: `gpt-5.5`, `gemini-3.1-pro-preview`.
+- Schemas: `current`, `clarified`, `minimal`, `diagnostic_no_hygiene`.
+- Prompt condition: `standard_answer`.
+- View: `neutral_metadata_visible`.
+- Max output tokens: 4096.
+- Conservative output-token cost estimate: 900.
+- Projected cost: USD 2.198226.
+- Hard cap: USD 5.
+- Abort cap: USD 6.
+- Dry-run status: not aborted.
+- Dry-run run manifest hash: `7a87ae4b330513d247ca1b286662b231a2a5a4cd9ebf5e11894f854c22191ac1`.
+- Dry-run cost projection hash: `5c6f9166c2655af4185b73e4fefa0a7c628f762051cf63cd6ee0b506b8b411da`.
+- Dry-run cost report hash: `caaed9d8f2719a1c3a213cdda783d8c6fb0296dbf3762cfd975a93fdd31a4ec2`.
+
 Commands verified:
 
 ```bash
@@ -489,8 +508,9 @@ uv run eha-report-uncued-schema-ablation --help
 uv run eha-verify-uncued-schema-ablation --help
 uv run pytest tests/test_uncued_schema_ablation.py -q
 # 9 passed in 0.82s
+uv run eha-run-uncued-schema-ablation --dataset-dir data/uncued-pilot-v1 --out-dir results/reports-eha-uncued-schema-ablation-2026-05-23 --models gpt-5.5,gemini-3.1-pro-preview --schemas current,clarified,minimal,diagnostic_no_hygiene --prompt standard_answer --view neutral_metadata_visible --dry-run --hard-cap-usd 5
 ```
 
 Next required phase:
 
-- Phase 4: run cost and dry-run preflight before any model calls.
+- Phase 5: run the paired schema model calls under the USD 5 hard cap.
