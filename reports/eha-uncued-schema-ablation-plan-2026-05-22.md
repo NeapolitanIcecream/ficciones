@@ -20,6 +20,7 @@ If run later, the mini-slice should remain an ablation, not a replacement for th
 - Schemas: `clarified`, `current`, `minimal`, `diagnostic_no_hygiene`.
 - Budget cap: USD 5.
 - Data rule: use only `data/uncued-pilot-v1`; do not reuse cued artifacts.
+- Runbook: `reports/eha-uncued-phase1-1-schema-ablation-runbook-2026-05-23.md`.
 
 ## Acceptance
 
