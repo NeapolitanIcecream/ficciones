@@ -1,0 +1,52 @@
+{
+  "attempts": [
+    {
+      "attempt": 1,
+      "response_format_used": "json_schema",
+      "parse_success": true,
+      "parse_error": "",
+      "empty_output": false,
+      "schema_missing": false,
+      "elapsed_s": 14.291,
+      "cost_usd": 0.0296
+    }
+  ],
+  "final": {
+    "content": "{\"actions\":[{\"action\":\"open\",\"rationale\":\"Use the final closeout ledger row because it directly states the completed refurbishment count for the specified workstream and month.\",\"target\":\"doc_002\"},{\"action\":\"compare_versions\",\"rationale\":\"Compare the final ledger count against the earlier running estimate that gives a different number.\",\"target\":\"doc_003\"}],\"answer\":\"Yes. The best available evidence is the closeout ledger entry stating 118 completed refurbishments for Nova pump refurbishments in July 2025. An earlier document gives 139, but it is framed as a running estimate rather than a final closeout count.\",\"claim_verdict\":\"supported\",\"confidence\":0.87,\"evidence_environment_assessment\":\"The environment contains both final and non-final materials. doc_002 is the most probative because it describes a closeout ledger row using the final close date and gives the exact count of 118. doc_003 conflicts with 139 but is explicitly a running estimate tied to planning material, so it is lower-quality for the final logged count. doc_001 and doc_004 do not provide a final closing number.\",\"rejected_evidence\":[\"doc_003\",\"doc_001\",\"doc_004\"],\"selected_doc_ids\":[\"doc_002\",\"doc_003\",\"doc_001\"],\"supporting_evidence\":[\"doc_002\"]}",
+    "usage": {
+      "completion_tokens": 794,
+      "prompt_tokens": 1156,
+      "total_tokens": 1950,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": 0,
+        "audio_tokens": 0,
+        "reasoning_tokens": 502,
+        "rejected_prediction_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cached_tokens": 0
+      },
+      "latency_checkpoint": {
+        "engine_tbt_ms": 15,
+        "engine_ttft_ms": 228,
+        "engine_ttlt_ms": 12328,
+        "pre_inference_ms": 133,
+        "service_tbt_ms": 15,
+        "service_ttft_ms": 614,
+        "service_ttlt_ms": 12717,
+        "total_duration_ms": 12587,
+        "user_visible_ttft_ms": 481
+      }
+    },
+    "response_format_used": "json_schema",
+    "parse_success": true,
+    "parse_error": "",
+    "empty_output": false,
+    "schema_missing": false,
+    "json_extractor_used": "first_json_object",
+    "cost_usd": 0.0296,
+    "attempt_count": 1,
+    "visible_output_tokens": 308
+  }
+}

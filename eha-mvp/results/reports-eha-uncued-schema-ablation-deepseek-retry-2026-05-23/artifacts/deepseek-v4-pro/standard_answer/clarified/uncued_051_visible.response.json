@@ -1,0 +1,43 @@
+{
+  "attempts": [
+    {
+      "attempt": 1,
+      "response_format_used": "json_object",
+      "parse_success": true,
+      "parse_error": "",
+      "empty_output": false,
+      "schema_missing": false,
+      "elapsed_s": 32.033,
+      "cost_usd": 0.003365
+    }
+  ],
+  "final": {
+    "content": "{\n  \"claim_verdict\": \"insufficient\",\n  \"confidence\": 0.3,\n  \"clean_supporting_evidence\": [],\n  \"refuting_evidence\": [],\n  \"rejected_or_contaminated_evidence\": [\n    \"doc_001\",\n    \"doc_003\"\n  ],\n  \"diagnostic_evidence\": [\n    \"doc_002\",\n    \"doc_004\"\n  ],\n  \"selected_doc_ids\": [\n    \"doc_001\",\n    \"doc_002\",\n    \"doc_004\"\n  ],\n  \"actions\": [\n    {\n      \"action\": \"trace_source\",\n      \"target\": \"doc_001\",\n      \"rationale\": \"Trace the community roundup claim to verify if any operational record or official launch announcement exists for the Cobalt Loop service exchange.\"\n    },\n    {\n      \"action\": \"search_primary\",\n      \"target\": \"Cobalt Loop service exchange June 2025\",\n      \"rationale\": \"Search for primary operational records, launch logs, or official statements from Novalis Robotics to corroborate the claim.\"\n    }\n  ],\n  \"evidence_notes\": \"The only evidence supporting the claim comes from a community roundup (doc_001) with no linked operational record, and a registry entry (doc_003) that merely cites it. These are considered unreliable or contaminated. Two operational documents (doc_002, doc_004) from the same period reference routine Vega rail inspections but omit any mention of Cobalt Loop, suggesting an absence of records rather than direct refutation. The evidence environment is insufficient to confirm or deny the launch.\",\n  \"answer\": \"There is insufficient reliable evidence to determine whether Novalis Robotics launched the Cobalt Loop service exchange in June 2025. The claim appears only in an uncorroborated community roundup and a derivative registry entry, while contemporary operational records show no trace of such a launch.\"\n}",
+    "usage": {
+      "completion_tokens": 1542,
+      "prompt_tokens": 1124,
+      "total_tokens": 2666,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": null,
+        "audio_tokens": null,
+        "reasoning_tokens": 1146,
+        "rejected_prediction_tokens": null
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": null,
+        "cached_tokens": 0
+      },
+      "prompt_cache_hit_tokens": 0,
+      "prompt_cache_miss_tokens": 1124
+    },
+    "response_format_used": "json_object",
+    "parse_success": true,
+    "parse_error": "",
+    "empty_output": false,
+    "schema_missing": false,
+    "json_extractor_used": "first_json_object",
+    "cost_usd": 0.003365,
+    "attempt_count": 1,
+    "visible_output_tokens": 418
+  }
+}

@@ -1,0 +1,53 @@
+{
+  "attempts": [
+    {
+      "attempt": 1,
+      "response_format_used": "json_object",
+      "parse_success": false,
+      "parse_error": "No JSON object found.",
+      "empty_output": true,
+      "schema_missing": false,
+      "elapsed_s": 49.723,
+      "cost_usd": 0.005102
+    },
+    {
+      "attempt": 2,
+      "response_format_used": "json_object",
+      "parse_success": true,
+      "parse_error": "",
+      "empty_output": false,
+      "schema_missing": false,
+      "elapsed_s": 35.678,
+      "cost_usd": 0.003842
+    }
+  ],
+  "final": {
+    "content": "{\n  \"claim_verdict\": \"supported\",\n  \"confidence\": 0.9,\n  \"clean_supporting_evidence\": [\n    \"doc_001\"\n  ],\n  \"refuting_evidence\": [],\n  \"rejected_or_contaminated_evidence\": [\n    \"doc_002\",\n    \"doc_003\",\n    \"doc_004\"\n  ],\n  \"diagnostic_evidence\": [\n    \"doc_003\"\n  ],\n  \"selected_doc_ids\": [\n    \"doc_001\",\n    \"doc_002\",\n    \"doc_003\"\n  ],\n  \"actions\": [\n    {\n      \"action\": \"compare_versions\",\n      \"target\": \"doc_001 and doc_002\",\n      \"rationale\": \"Compare the final closeout ledger (doc_001, 42 inspections) with the earlier running estimate (doc_002, 57) to understand the discrepancy and timeline.\"\n    },\n    {\n      \"action\": \"trace_source\",\n      \"target\": \"doc_001\",\n      \"rationale\": \"Trace the source of the closeout ledger to confirm it is the authoritative final count and not a draft or preliminary entry.\"\n    }\n  ],\n  \"evidence_notes\": \"doc_001 directly states 42 accepted inspections in a closeout ledger, which is the most authoritative record. doc_002 provides a pre-close estimate of 57 that references the planning memo (doc_003), which contains no final number. doc_004 adds no count. No document refutes the 42 figure; the estimate is stale and unreliable.\",\n  \"answer\": \"Yes, according to the closeout ledger (doc_001), Novalis Robotics logged 42 accepted inspections for Vega rail inspections in June 2025.\"\n}",
+    "usage": {
+      "completion_tokens": 1780,
+      "prompt_tokens": 1128,
+      "total_tokens": 2908,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": null,
+        "audio_tokens": null,
+        "reasoning_tokens": 1415,
+        "rejected_prediction_tokens": null
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": null,
+        "cached_tokens": 1024
+      },
+      "prompt_cache_hit_tokens": 1024,
+      "prompt_cache_miss_tokens": 104
+    },
+    "response_format_used": "json_object",
+    "parse_success": true,
+    "parse_error": "",
+    "empty_output": false,
+    "schema_missing": false,
+    "json_extractor_used": "first_json_object",
+    "cost_usd": 0.003842,
+    "attempt_count": 2,
+    "visible_output_tokens": 335
+  }
+}

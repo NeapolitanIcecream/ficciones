@@ -1,0 +1,65 @@
+{
+  "date": "2026-05-23",
+  "phase": "1.1_schema_ablation_deepseek_retry",
+  "status": "pass",
+  "scope": "supplemental_deepseek_only_retry",
+  "not_part_of_main_two_model_schema_ablation_table": true,
+  "run_dir": "eha-mvp/results/reports-eha-uncued-schema-ablation-deepseek-retry-2026-05-23",
+  "model": "deepseek-v4-pro",
+  "provider": "DeepSeek",
+  "selected_view": "neutral_metadata_visible",
+  "prompt_condition": "standard_answer",
+  "schema_variants": [
+    "current",
+    "clarified",
+    "minimal",
+    "diagnostic_no_hygiene"
+  ],
+  "planned_calls": 64,
+  "actual_records": 64,
+  "parse_success_records": 64,
+  "parse_failure_records": 0,
+  "empty_output_records": 0,
+  "schema_missing_records": 0,
+  "second_attempt_records": 1,
+  "budget": {
+    "projected_cost_usd": 0.132106,
+    "record_cost_usd": 0.264305,
+    "spent_usd": 0.269407,
+    "soft_cap_usd": 1.0,
+    "hard_cap_usd": 2.0,
+    "abort_cap_usd": 3.0,
+    "aborted": false
+  },
+  "invocation_profile": {
+    "temperature_policy": "omitted",
+    "max_completion_tokens_policy": "explicit:4096",
+    "response_format": "json_object",
+    "json_extractor": "first_json_object",
+    "message_role_policy": "developer_system_merged_into_user",
+    "llm_repair": "disabled",
+    "max_attempts": 2,
+    "timeout_s": 240.0,
+    "parallel_model_streams": 1,
+    "cost_estimate_output_tokens": 900
+  },
+  "audits": {
+    "prompt_audit_passed": true,
+    "stored_hidden_label_audit_passed": true,
+    "semantic_doc_id_hits": 0,
+    "semantic_visible_citation_hits": 0,
+    "audit_id_hits_in_title_or_body": 0,
+    "hidden_field_hit_count": 0
+  },
+  "hashes": {
+    "selection_manifest": "84c6dc89077a429d5ecda1d543d294df2b4db2336ecd4bee6364313a0de3e3c0",
+    "prompt_parity_audit": "a3f2c689734e95bb5767616321a065c116710e3d372cedd40692d0d16f235646",
+    "run_manifest": "4a916f76b540d68beade6291d19da0a395228d33360395623696ff90d5cf13e8",
+    "dry_run_cost_projection": "5d0aa8118ccc5ec7c37bfcc80bc236c7c1a5d567223e9057e50963bc5ddc9128",
+    "invocation_profiles": "6b09088ef7895c6b5437f35f7cd77fddf0ffbb44f873e33bc67391e09b441e3d",
+    "predictions": "3d8da592ac29fd59b31161b0af7ac7ef88e0a6586cacbd6503a485c0c8a313ca",
+    "prompt_audit_summary": "538415178ec09609925cba9565b8ed3320f0077228ceb6b7d348b1c1dc1c443a",
+    "stored_hidden_label_audit": "5069bd02061d2ff590349a12f9cb2922f62f106081445609195fb2c80e845156",
+    "cost_report": "04512b20d95996a650eedee894584f778b2d6b0772a3d1216884f967d8a49919"
+  }
+}

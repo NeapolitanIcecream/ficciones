@@ -374,6 +374,50 @@ def schema_profiles(models: str, *, max_output_tokens: int, timeout_s: float, co
     return profiles
 
 
+def invocation_profiles_payload(
+    profiles: Sequence[FrontierModelProfile],
+    *,
+    schemas: Sequence[str],
+    prompt: str,
+    view: str,
+    max_attempts: int,
+    parallel_models: int,
+) -> Dict[str, Any]:
+    profile_rows: list[Dict[str, Any]] = []
+    for profile in profiles:
+        profile_rows.append(
+            {
+                "model": profile.model,
+                "provider": profile.provider,
+                "budget_setting": profile.budget_setting,
+                "timeout_s": profile.timeout_s,
+                "cost_estimate_output_tokens": profile.cost_estimate_output_tokens,
+                "invocation_profile": profile.invocation(),
+                "retry_profile": {
+                    "max_attempts": max_attempts,
+                    "llm_repair": "disabled",
+                    "json_extractor": profile.json_extractor,
+                    "response_format": profile.response_format,
+                    "temperature_policy": "omitted" if profile.temperature is None else f"explicit:{profile.temperature}",
+                    "max_completion_tokens_policy": "omitted" if not profile.max_output_tokens else f"explicit:{profile.max_output_tokens}",
+                },
+            }
+        )
+    deepseek_rows = [row for row in profile_rows if row["provider"] == "DeepSeek"]
+    return {
+        "phase": "1.1_schema_ablation_run",
+        "schema_variants": list(schemas),
+        "prompt_condition": prompt,
+        "selected_view": view,
+        "parallel_strategy": {
+            "parallel_model_streams": parallel_models,
+            "per_job_concurrency": 1,
+        },
+        "profiles": profile_rows,
+        "deepseek_profiles": deepseek_rows,
+    }
+
+
 def safe_name(value: str) -> str:
     return value.replace("/", "_").replace(":", "_")
 
@@ -672,6 +716,17 @@ def run_schema_ablation(
     }
     write_json(out_dir / "run_manifest.json", manifest)
     write_json(out_dir / "dry_run_cost_projection.json", cost_projection)
+    write_json(
+        out_dir / "invocation_profiles.json",
+        invocation_profiles_payload(
+            profiles,
+            schemas=schemas,
+            prompt=prompt,
+            view=view,
+            max_attempts=max_attempts,
+            parallel_models=parallel_models,
+        ),
+    )
     if cost_projection["projected_cost_usd"] > hard_cap_usd:
         write_json(out_dir / "cost_report.json", {"aborted": True, "reason": "projected cost exceeds hard cap", **manifest["budget"], "projected_cost_usd": cost_projection["projected_cost_usd"]})
         raise BudgetExceeded(f"Projected cost ${cost_projection['projected_cost_usd']:.2f} exceeds hard cap ${hard_cap_usd:.2f}.")

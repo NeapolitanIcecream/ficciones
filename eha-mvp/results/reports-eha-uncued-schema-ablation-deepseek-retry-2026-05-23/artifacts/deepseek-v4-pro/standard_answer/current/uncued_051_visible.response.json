@@ -1,0 +1,43 @@
+{
+  "attempts": [
+    {
+      "attempt": 1,
+      "response_format_used": "json_object",
+      "parse_success": true,
+      "parse_error": "",
+      "empty_output": false,
+      "schema_missing": false,
+      "elapsed_s": 62.066,
+      "cost_usd": 0.004955
+    }
+  ],
+  "final": {
+    "content": "{\n  \"claim_verdict\": \"supported\",\n  \"confidence\": 0.3,\n  \"supporting_evidence\": [\"doc_001\", \"doc_003\"],\n  \"rejected_evidence\": [\"doc_002\", \"doc_004\"],\n  \"selected_doc_ids\": [\"doc_001\", \"doc_003\"],\n  \"actions\": [\n    {\n      \"action\": \"trace_source\",\n      \"target\": \"doc_001\",\n      \"rationale\": \"The community roundup in doc_001 lacks operational records; tracing its source may reveal if it is based on factual events or rumor.\"\n    },\n    {\n      \"action\": \"search_primary\",\n      \"target\": \"Cobalt Loop service exchange\",\n      \"rationale\": \"Search for primary operational documents such as service ledgers or workshop memos that directly mention the Cobalt Loop launch in June 2025.\"\n    }\n  ],\n  \"evidence_environment_assessment\": \"The evidence environment contains a claim in doc_001 (community roundup) that the Cobalt Loop service exchange appeared in June 2025, repeated in doc_003 which cites doc_001. Operational documents from July 2025 (doc_002, doc_004) mention only Vega rail inspections, not Cobalt Loop. No primary operational record confirms the launch. The evidence is limited to a self-referential anecdotal source with no independent corroboration.\",\n  \"answer\": \"Based on the evidence, doc_001 states that the Cobalt Loop service exchange appeared during June 2025. However, this is a community roundup without linked operational records, and other provided operational documents do not mention it. The claim is supported but with low confidence due to the lack of primary evidence.\"\n}",
+    "usage": {
+      "completion_tokens": 2352,
+      "prompt_tokens": 1004,
+      "total_tokens": 3356,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": null,
+        "audio_tokens": null,
+        "reasoning_tokens": 1991,
+        "rejected_prediction_tokens": null
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": null,
+        "cached_tokens": 896
+      },
+      "prompt_cache_hit_tokens": 896,
+      "prompt_cache_miss_tokens": 108
+    },
+    "response_format_used": "json_object",
+    "parse_success": true,
+    "parse_error": "",
+    "empty_output": false,
+    "schema_missing": false,
+    "json_extractor_used": "first_json_object",
+    "cost_usd": 0.004955,
+    "attempt_count": 1,
+    "visible_output_tokens": 377
+  }
+}

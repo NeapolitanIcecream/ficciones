@@ -1,0 +1,43 @@
+{
+  "attempts": [
+    {
+      "attempt": 1,
+      "response_format_used": "json_object",
+      "parse_success": true,
+      "parse_error": "",
+      "empty_output": false,
+      "schema_missing": false,
+      "elapsed_s": 46.304,
+      "cost_usd": 0.00452125
+    }
+  ],
+  "final": {
+    "content": "{\n  \"claim_verdict\": \"insufficient\",\n  \"confidence\": 0.3,\n  \"clean_supporting_evidence\": [],\n  \"refuting_evidence\": [],\n  \"rejected_or_contaminated_evidence\": [\"doc_002\", \"doc_004\"],\n  \"diagnostic_evidence\": [\"doc_001\", \"doc_003\"],\n  \"selected_doc_ids\": [\"doc_002\", \"doc_004\", \"doc_001\"],\n  \"actions\": [\n    {\n      \"action\": \"trace_source\",\n      \"target\": \"doc_002\",\n      \"rationale\": \"doc_004 explicitly cites doc_002, so tracing its origin is necessary to assess reliability and potential contamination.\"\n    },\n    {\n      \"action\": \"search_primary\",\n      \"target\": \"official launch records\",\n      \"rationale\": \"Operational documents like service ledgers and monthly indices lack the launch, but a dedicated search for primary authorizations would clarify.\"\n    }\n  ],\n  \"evidence_notes\": \"Two documents (doc_002, doc_004) mention the LumenBridge partner desk launch in July 2025, but doc_002 is an uncorroborated field note from a community roundup, and doc_004 merely repeats it. Both use same site/workstream codes as surrounding operational records (doc_001, doc_003) about pump refurbishments, which never mention the desk. The absence in those primary logs suggests the claim is unsupported, but no direct refutation exists. Hence, evidence is insufficient and likely contaminated.\",\n  \"answer\": \"The available evidence is insufficient to confirm whether Novalis Robotics launched the LumenBridge partner desk in July 2025. The only sources (doc_002 and doc_004) are unreliable and echoed, while primary operational logs (doc_001, doc_003) do not corroborate the event.\"\n}",
+    "usage": {
+      "completion_tokens": 2120,
+      "prompt_tokens": 1125,
+      "total_tokens": 3245,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": null,
+        "audio_tokens": null,
+        "reasoning_tokens": 1726,
+        "rejected_prediction_tokens": null
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": null,
+        "cached_tokens": 0
+      },
+      "prompt_cache_hit_tokens": 0,
+      "prompt_cache_miss_tokens": 1125
+    },
+    "response_format_used": "json_object",
+    "parse_success": true,
+    "parse_error": "",
+    "empty_output": false,
+    "schema_missing": false,
+    "json_extractor_used": "first_json_object",
+    "cost_usd": 0.00452125,
+    "attempt_count": 1,
+    "visible_output_tokens": 396
+  }
+}

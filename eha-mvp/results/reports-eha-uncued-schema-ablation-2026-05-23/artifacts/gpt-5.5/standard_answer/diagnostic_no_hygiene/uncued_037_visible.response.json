@@ -1,0 +1,52 @@
+{
+  "attempts": [
+    {
+      "attempt": 1,
+      "response_format_used": "json_schema",
+      "parse_success": true,
+      "parse_error": "",
+      "empty_output": false,
+      "schema_missing": false,
+      "elapsed_s": 14.179,
+      "cost_usd": 0.030185
+    }
+  ],
+  "final": {
+    "content": "{\"actions\":[{\"action\":\"open\",\"rationale\":\"The field summary memo contains the final closeout ledger count for the relevant workstream and month.\",\"target\":\"doc_003\"},{\"action\":\"compare_versions\",\"rationale\":\"The registry entry gives a conflicting running estimate, so it should be distinguished from the final closeout ledger.\",\"target\":\"doc_004\"}],\"answer\":\"Yes. The best available evidence supports that 63 verified Orion battery swaps were logged for April 2025, based on the closeout ledger entry. A separate 88-swap figure is only a running estimate and is not the final count.\",\"claim_verdict\":\"supported\",\"confidence\":0.86,\"diagnostic_evidence\":[\"doc_003 identifies the relevant item as a closeout ledger entry and says it lists 63 verified swaps for Orion battery swaps in April 2025.\",\"doc_004 gives 88 verified swaps but frames that number as a running estimate tied to planning material rather than a final closeout count.\"],\"evidence_notes\":\"The strongest document is doc_003 because it explicitly states the final closeout ledger count, the same workstream, and the same month. The conflicting 88 figure in doc_004 is lower-quality for this claim because it is described as an estimate and points back to planning material. The provided documents do not independently elaborate on the organization name, but within this evidence environment the final ledger count supports the queried count.\",\"rejected_or_contaminated_evidence\":[\"doc_004: gives 88 verified swaps, but it is explicitly described as a running estimate and cites a planning memo, so it is not preferred over the final closeout ledger.\",\"doc_002: planning memo prepared before monthly close and contains no final number.\",\"doc_001: handoff note contains no closing count.\"],\"selected_doc_ids\":[\"doc_003\",\"doc_004\",\"doc_002\"],\"supporting_evidence\":[\"doc_003: The closeout ledger lists 63 verified swaps for Orion battery swaps in April 2025 and uses the final close date.\"]}",
+    "usage": {
+      "completion_tokens": 803,
+      "prompt_tokens": 1219,
+      "total_tokens": 2022,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": 0,
+        "audio_tokens": 0,
+        "reasoning_tokens": 363,
+        "rejected_prediction_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cached_tokens": 0
+      },
+      "latency_checkpoint": {
+        "engine_tbt_ms": 15,
+        "engine_ttft_ms": 285,
+        "engine_ttlt_ms": 12348,
+        "pre_inference_ms": 123,
+        "service_tbt_ms": 15,
+        "service_ttft_ms": 641,
+        "service_ttlt_ms": 12698,
+        "total_duration_ms": 12585,
+        "user_visible_ttft_ms": 518
+      }
+    },
+    "response_format_used": "json_schema",
+    "parse_success": true,
+    "parse_error": "",
+    "empty_output": false,
+    "schema_missing": false,
+    "json_extractor_used": "first_json_object",
+    "cost_usd": 0.030185,
+    "attempt_count": 1,
+    "visible_output_tokens": 487
+  }
+}

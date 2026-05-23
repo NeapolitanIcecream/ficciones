@@ -1,0 +1,43 @@
+{
+  "attempts": [
+    {
+      "attempt": 1,
+      "response_format_used": "json_object",
+      "parse_success": true,
+      "parse_error": "",
+      "empty_output": false,
+      "schema_missing": false,
+      "elapsed_s": 56.155,
+      "cost_usd": 0.005587249999999999
+    }
+  ],
+  "final": {
+    "content": "{\n  \"claim_verdict\": \"insufficient\",\n  \"confidence\": 0.7,\n  \"supporting_evidence\": [],\n  \"rejected_or_contaminated_evidence\": [\"doc_003\", \"doc_002\"],\n  \"diagnostic_evidence\": [\"doc_001\", \"doc_004\"],\n  \"selected_doc_ids\": [\"doc_003\", \"doc_001\", \"doc_004\"],\n  \"actions\": [\n    {\n      \"action\": \"search_primary\",\n      \"target\": \"Novalis Robotics official launch documentation for AuroraDock field upgrade toolkit\",\n      \"rationale\": \"The only positive claim comes from a community roundup without linked operational records; searching primary sources like press releases or product announcements would provide definitive evidence.\"\n    },\n    {\n      \"action\": \"trace_source\",\n      \"target\": \"doc_003\",\n      \"rationale\": \"The community roundup is the sole original claim; tracing its source could determine if it is a credible witness or misinformation.\"\n    }\n  ],\n  \"evidence_notes\": \"The claim hinges on doc_003 (community roundup) and its echo doc_002, which lacks independent verification and has no operational record. Official-looking documents doc_001 and doc_004 from the same site and period do not mention AuroraDock, suggesting the claim is uncorroborated. The evidence is insufficient to support or refute.\",\n  \"answer\": \"The evidence is insufficient to determine whether Novalis Robotics launched the AuroraDock field upgrade toolkit in April 2025. The only sources are a community roundup and a partner recap that cites it, neither of which is linked to operational records. Other documents covering the same timeframe and site do not mention the toolkit, which raises doubt but does not definitively refute the claim.\"\n}",
+    "usage": {
+      "completion_tokens": 2662,
+      "prompt_tokens": 1053,
+      "total_tokens": 3715,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": null,
+        "audio_tokens": null,
+        "reasoning_tokens": 2287,
+        "rejected_prediction_tokens": null
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": null,
+        "cached_tokens": 0
+      },
+      "prompt_cache_hit_tokens": 0,
+      "prompt_cache_miss_tokens": 1053
+    },
+    "response_format_used": "json_object",
+    "parse_success": true,
+    "parse_error": "",
+    "empty_output": false,
+    "schema_missing": false,
+    "json_extractor_used": "first_json_object",
+    "cost_usd": 0.005587249999999999,
+    "attempt_count": 1,
+    "visible_output_tokens": 409
+  }
+}

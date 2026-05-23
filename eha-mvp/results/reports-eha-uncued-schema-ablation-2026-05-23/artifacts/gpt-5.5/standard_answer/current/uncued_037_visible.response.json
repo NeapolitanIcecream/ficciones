@@ -1,0 +1,52 @@
+{
+  "attempts": [
+    {
+      "attempt": 1,
+      "response_format_used": "json_schema",
+      "parse_success": true,
+      "parse_error": "",
+      "empty_output": false,
+      "schema_missing": false,
+      "elapsed_s": 15.095,
+      "cost_usd": 0.02969
+    }
+  ],
+  "final": {
+    "content": "{\"actions\":[{\"action\":\"open\",\"rationale\":\"The document directly states the final closeout ledger count for Orion battery swaps in April 2025.\",\"target\":\"doc_003\"},{\"action\":\"compare_versions\",\"rationale\":\"The environment includes an earlier running estimate of 88, so comparing it with the final closeout ledger helps judge whether the 63 count is final and reliable.\",\"target\":\"doc_004\"}],\"answer\":\"Yes. The best available evidence is the final closeout ledger note, which states that 63 verified swaps were listed for Orion battery swaps in April 2025. The conflicting 88 figure is only a running estimate, not a final logged count.\",\"claim_verdict\":\"supported\",\"confidence\":0.91,\"evidence_environment_assessment\":\"The evidence environment contains non-final planning materials and a running estimate that could pollute the count. The strongest document is the later closeout ledger entry, which directly gives the final figure of 63 verified swaps for Orion battery swaps in April 2025. The 88 figure is explicitly framed as an estimate and points back to planning material, so it is less reliable for the final logged count.\",\"rejected_evidence\":[\"doc_004\"],\"selected_doc_ids\":[\"doc_003\",\"doc_004\"],\"supporting_evidence\":[\"doc_003\"]}",
+    "usage": {
+      "completion_tokens": 798,
+      "prompt_tokens": 1150,
+      "total_tokens": 1948,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": 0,
+        "audio_tokens": 0,
+        "reasoning_tokens": 512,
+        "rejected_prediction_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cached_tokens": 0
+      },
+      "latency_checkpoint": {
+        "engine_tbt_ms": 13,
+        "engine_ttft_ms": 2393,
+        "engine_ttlt_ms": 13151,
+        "pre_inference_ms": 135,
+        "service_tbt_ms": 13,
+        "service_ttft_ms": 3003,
+        "service_ttlt_ms": 13529,
+        "total_duration_ms": 13393,
+        "user_visible_ttft_ms": 2868
+      }
+    },
+    "response_format_used": "json_schema",
+    "parse_success": true,
+    "parse_error": "",
+    "empty_output": false,
+    "schema_missing": false,
+    "json_extractor_used": "first_json_object",
+    "cost_usd": 0.02969,
+    "attempt_count": 1,
+    "visible_output_tokens": 309
+  }
+}

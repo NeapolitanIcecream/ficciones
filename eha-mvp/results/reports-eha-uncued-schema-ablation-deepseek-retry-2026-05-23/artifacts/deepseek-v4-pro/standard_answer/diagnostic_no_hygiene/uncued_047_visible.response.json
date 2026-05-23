@@ -1,0 +1,43 @@
+{
+  "attempts": [
+    {
+      "attempt": 1,
+      "response_format_used": "json_object",
+      "parse_success": true,
+      "parse_error": "",
+      "empty_output": false,
+      "schema_missing": false,
+      "elapsed_s": 32.972,
+      "cost_usd": 0.00371925
+    }
+  ],
+  "final": {
+    "content": "{\n  \"claim_verdict\": \"supported\",\n  \"confidence\": 0.8,\n  \"supporting_evidence\": [\"doc_001\"],\n  \"rejected_or_contaminated_evidence\": [\"doc_004\"],\n  \"diagnostic_evidence\": [\"doc_004 is a running estimate from March 14, predating the closeout ledger from March 16. The ledger is the final count and should be prioritized.\"],\n  \"selected_doc_ids\": [\"doc_001\", \"doc_004\"],\n  \"actions\": [\n    {\n      \"action\": \"compare_versions\",\n      \"target\": \"doc_001 vs doc_004\",\n      \"rationale\": \"Resolve the conflict between the 76 approved checks in the closeout ledger and the 101 estimate.\"\n    },\n    {\n      \"action\": \"search_contradiction\",\n      \"target\": \"Kestrel firmware checks August 2025\",\n      \"rationale\": \"Look for additional final counts to verify the true number.\"\n    }\n  ],\n  \"evidence_notes\": \"The closeout ledger (doc_001) provides a definitive count of 76 approved checks, while the field summary memo (doc_004) is a running estimate of 101. The ledger is more recent and reflects the final tally, so the claim is supported. The planning memo and handoff note do not provide final numbers.\",\n  \"answer\": \"Yes, Novalis Robotics logged 76 approved checks for Kestrel firmware checks in August 2025, according to the closeout ledger.\"\n}",
+    "usage": {
+      "completion_tokens": 1727,
+      "prompt_tokens": 1061,
+      "total_tokens": 2788,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": null,
+        "audio_tokens": null,
+        "reasoning_tokens": 1402,
+        "rejected_prediction_tokens": null
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": null,
+        "cached_tokens": 0
+      },
+      "prompt_cache_hit_tokens": 0,
+      "prompt_cache_miss_tokens": 1061
+    },
+    "response_format_used": "json_object",
+    "parse_success": true,
+    "parse_error": "",
+    "empty_output": false,
+    "schema_missing": false,
+    "json_extractor_used": "first_json_object",
+    "cost_usd": 0.00371925,
+    "attempt_count": 1,
+    "visible_output_tokens": 310
+  }
+}

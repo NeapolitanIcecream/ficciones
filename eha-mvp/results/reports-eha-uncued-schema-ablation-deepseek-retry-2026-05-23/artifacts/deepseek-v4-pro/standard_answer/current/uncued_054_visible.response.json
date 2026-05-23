@@ -1,0 +1,43 @@
+{
+  "attempts": [
+    {
+      "attempt": 1,
+      "response_format_used": "json_object",
+      "parse_success": true,
+      "parse_error": "",
+      "empty_output": false,
+      "schema_missing": false,
+      "elapsed_s": 42.194,
+      "cost_usd": 0.00459925
+    }
+  ],
+  "final": {
+    "content": "{\n  \"claim_verdict\": \"insufficient\",\n  \"confidence\": 0.3,\n  \"supporting_evidence\": [\"doc_004\", \"doc_001\"],\n  \"rejected_evidence\": [],\n  \"selected_doc_ids\": [\"doc_004\", \"doc_001\", \"doc_002\"],\n  \"actions\": [\n    {\n      \"action\": \"trace_source\",\n      \"target\": \"doc_004\",\n      \"rationale\": \"The claim originates from a community roundup field note. Tracing its source would clarify if it is based on an official launch record.\"\n    },\n    {\n      \"action\": \"search_primary\",\n      \"target\": \"press release or official announcement\",\n      \"rationale\": \"A primary source such as a company press release or official program registry would conclusively confirm or deny the launch.\"\n    }\n  ],\n  \"evidence_environment_assessment\": \"The evidence environment is polluted with secondhand reports and operational memos that lack direct confirmation. The only source alleging a March 2025 launch is a community roundup (doc_004) with no linked operational record. A partner recap (doc_001) merely repeats this claim. Two other documents (doc_002, doc_003) mention routine March 2025 work but omit the HelioSplice program, yielding silence rather than contradiction. No primary source or explicit denial exists.\",\n  \"answer\": \"There is insufficient evidence to confirm or refute the launch of the HelioSplice partner repair program in March 2025. The sole support comes from an unsubstantiated roundup with no operational trace, while other documents neither confirm nor explicitly deny.\"\n}",
+    "usage": {
+      "completion_tokens": 2173,
+      "prompt_tokens": 1013,
+      "total_tokens": 3186,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": null,
+        "audio_tokens": null,
+        "reasoning_tokens": 1827,
+        "rejected_prediction_tokens": null
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": null,
+        "cached_tokens": 0
+      },
+      "prompt_cache_hit_tokens": 0,
+      "prompt_cache_miss_tokens": 1013
+    },
+    "response_format_used": "json_object",
+    "parse_success": true,
+    "parse_error": "",
+    "empty_output": false,
+    "schema_missing": false,
+    "json_extractor_used": "first_json_object",
+    "cost_usd": 0.00459925,
+    "attempt_count": 1,
+    "visible_output_tokens": 370
+  }
+}

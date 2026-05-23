@@ -1,0 +1,50 @@
+{
+  "attempts": [
+    {
+      "attempt": 1,
+      "response_format_used": "json_schema",
+      "parse_success": true,
+      "parse_error": "",
+      "empty_output": false,
+      "schema_missing": false,
+      "elapsed_s": 22.111,
+      "cost_usd": 0.003686
+    }
+  ],
+  "final": {
+    "content": "{\n  \"claim_verdict\": \"insufficient\",\n  \"confidence\": 0.8,\n  \"clean_supporting_evidence\": [],\n  \"refuting_evidence\": [],\n  \"rejected_or_contaminated_evidence\": [\n    \"doc_001\",\n    \"doc_002\"\n  ],\n  \"diagnostic_evidence\": [\n    \"doc_003\",\n    \"doc_004\"\n  ],\n  \"selected_doc_ids\": [\n    \"doc_002\",\n    \"doc_003\",\n    \"doc_004\"\n  ],\n  \"actions\": [\n    {\n      \"action\": \"search_primary\",\n      \"target\": \"Novalis Robotics AuroraDock field upgrade toolkit April 2025\",\n      \"rationale\": \"Seek primary operational or press release documents to verify if the AuroraDock field upgrade toolkit was actually launched in April 2025.\"\n    },\n    {\n      \"action\": \"trace_source\",\n      \"target\": \"doc_002\",\n      \"rationale\": \"Determine the origin of the community roundup claim since it lacks a linked operational record.\"\n    }\n  ],\n  \"evidence_notes\": \"The evidence supporting the claim traces back to a single community roundup (doc_002) that lacks an operational record. A registry entry (doc_001) circularly cites this roundup. Meanwhile, official operations and timeline records for April 2025 (doc_003, doc_004) only mention routine Orion battery swaps and do not list the AuroraDock toolkit launch. The available clean evidence is insufficient to verify the claim.\",\n  \"answer\": \"There is insufficient reliable evidence to confirm that Novalis Robotics launched the AuroraDock field upgrade toolkit in April 2025. The claim originates from an unverified community roundup that lacks supporting operational records, and other documents merely repeat this unverified claim. Official operational and timeline records for the stated period do not mention the AuroraDock launch.\"\n}",
+    "usage": {
+      "completion_tokens": 1686,
+      "prompt_tokens": 1256,
+      "total_tokens": 2942,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": null,
+        "audio_tokens": 0,
+        "reasoning_tokens": 1233,
+        "rejected_prediction_tokens": null,
+        "text_tokens": 453,
+        "image_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cached_tokens": 0,
+        "text_tokens": 1256,
+        "image_tokens": 0
+      },
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "input_tokens_details": null,
+      "claude_cache_creation_5_m_tokens": 0,
+      "claude_cache_creation_1_h_tokens": 0
+    },
+    "response_format_used": "json_schema",
+    "parse_success": true,
+    "parse_error": "",
+    "empty_output": false,
+    "schema_missing": false,
+    "json_extractor_used": "first_json_object",
+    "cost_usd": 0.003686,
+    "attempt_count": 1,
+    "visible_output_tokens": 418
+  }
+}

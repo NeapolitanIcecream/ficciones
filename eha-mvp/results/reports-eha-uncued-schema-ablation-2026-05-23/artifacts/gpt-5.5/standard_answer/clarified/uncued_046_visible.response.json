@@ -1,0 +1,52 @@
+{
+  "attempts": [
+    {
+      "attempt": 1,
+      "response_format_used": "json_schema",
+      "parse_success": true,
+      "parse_error": "",
+      "empty_output": false,
+      "schema_missing": false,
+      "elapsed_s": 13.128,
+      "cost_usd": 0.031100000000000003
+    }
+  ],
+  "final": {
+    "content": "{\"actions\":[{\"action\":\"open\",\"rationale\":\"The document directly states the final closeout ledger count for Nova pump refurbishments in July 2025.\",\"target\":\"doc_002\"},{\"action\":\"trace_source\",\"rationale\":\"The conflicting 139 figure is described as a running estimate tied to a planning memo rather than a final closeout count.\",\"target\":\"doc_003\"}],\"answer\":\"Supported. The cleanest evidence is doc_002, which says the closeout ledger lists 118 completed refurbishments for Nova pump refurbishments in July 2025. The conflicting 139 figure in doc_003 is only a running estimate based on planning material, not a final logged count.\",\"claim_verdict\":\"supported\",\"clean_supporting_evidence\":[\"doc_002\"],\"confidence\":0.9,\"diagnostic_evidence\":[\"doc_004\"],\"evidence_notes\":\"doc_002 is the only document that directly states a final closeout ledger count of 118. doc_003 contains a conflicting 139 figure, but it is explicitly framed as a running estimate and cites a planning memo. doc_004 confirms the planning memo had no final number, making doc_003 unsuitable as a refutation of the final logged count.\",\"refuting_evidence\":[],\"rejected_or_contaminated_evidence\":[\"doc_003\"],\"selected_doc_ids\":[\"doc_002\",\"doc_003\",\"doc_004\"]}",
+    "usage": {
+      "completion_tokens": 818,
+      "prompt_tokens": 1312,
+      "total_tokens": 2130,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": 0,
+        "audio_tokens": 0,
+        "reasoning_tokens": 512,
+        "rejected_prediction_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cached_tokens": 0
+      },
+      "latency_checkpoint": {
+        "engine_tbt_ms": 13,
+        "engine_ttft_ms": 234,
+        "engine_ttlt_ms": 11121,
+        "pre_inference_ms": 141,
+        "service_tbt_ms": 13,
+        "service_ttft_ms": 602,
+        "service_ttlt_ms": 11485,
+        "total_duration_ms": 11352,
+        "user_visible_ttft_ms": 461
+      }
+    },
+    "response_format_used": "json_schema",
+    "parse_success": true,
+    "parse_error": "",
+    "empty_output": false,
+    "schema_missing": false,
+    "json_extractor_used": "first_json_object",
+    "cost_usd": 0.031100000000000003,
+    "attempt_count": 1,
+    "visible_output_tokens": 306
+  }
+}

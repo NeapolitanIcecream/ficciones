@@ -1,0 +1,52 @@
+{
+  "attempts": [
+    {
+      "attempt": 1,
+      "response_format_used": "json_schema",
+      "parse_success": true,
+      "parse_error": "",
+      "empty_output": false,
+      "schema_missing": false,
+      "elapsed_s": 13.107,
+      "cost_usd": 0.027854999999999998
+    }
+  ],
+  "final": {
+    "content": "{\"actions\":[{\"action\":\"trace_source\",\"rationale\":\"The ledger extract repeats the claim but visibly cites the roundup, so it is derivative rather than independent confirmation.\",\"target\":\"doc_001 -> doc_004\"},{\"action\":\"search_primary\",\"rationale\":\"The only direct claim source is described as a community roundup with no linked operational record, so primary launch evidence is missing in the provided environment.\",\"target\":\"doc_004\"}],\"answer\":\"Insufficient. The environment contains a community-roundup statement that the HelioSplice partner repair program appeared during March 2025, but it provides no linked operational record and does not independently establish that Novalis Robotics launched it. The ledger extract is derivative of that roundup, while other operational/timeline documents do not mention the program launch.\",\"claim_verdict\":\"insufficient\",\"confidence\":0.77,\"diagnostic_evidence\":[\"doc_004 says the program appeared during March 2025 but explicitly notes there is no linked operational record.\",\"doc_001 repeats the launch wording but its visible citation points back to doc_004, making it non-independent.\",\"doc_002 mentions March 2025 service work but does not mention the HelioSplice partner repair program.\"],\"evidence_notes\":\"The strongest available evidence is a secondary roundup item. Because the claim asks whether Novalis Robotics launched the program, the evidence would need a primary or operational source tying Novalis Robotics to an actual March 2025 launch. The provided documents do not supply that level of support.\",\"rejected_or_contaminated_evidence\":[\"doc_001 is contaminated/derivative because it repeats the roundup wording and cites doc_004 rather than providing independent evidence.\",\"doc_004 is weak for the claim because it is a community roundup with no linked operational record.\"],\"selected_doc_ids\":[\"doc_004\",\"doc_001\",\"doc_002\"],\"supporting_evidence\":[\"doc_004 is the only source directly mentioning HelioSplice and March 2025, but it is insufficient because it says only that the program appeared and lacks an operational record.\",\"doc_002 provides contextual absence: a March 2025 operations memo lists other service work but does not mention a HelioSplice launch.\"]}",
+    "usage": {
+      "completion_tokens": 725,
+      "prompt_tokens": 1221,
+      "total_tokens": 1946,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": 0,
+        "audio_tokens": 0,
+        "reasoning_tokens": 253,
+        "rejected_prediction_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cached_tokens": 0
+      },
+      "latency_checkpoint": {
+        "engine_tbt_ms": 15,
+        "engine_ttft_ms": 252,
+        "engine_ttlt_ms": 11116,
+        "pre_inference_ms": 90,
+        "service_tbt_ms": 15,
+        "service_ttft_ms": 579,
+        "service_ttlt_ms": 11441,
+        "total_duration_ms": 11361,
+        "user_visible_ttft_ms": 489
+      }
+    },
+    "response_format_used": "json_schema",
+    "parse_success": true,
+    "parse_error": "",
+    "empty_output": false,
+    "schema_missing": false,
+    "json_extractor_used": "first_json_object",
+    "cost_usd": 0.027854999999999998,
+    "attempt_count": 1,
+    "visible_output_tokens": 557
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "attempts": [
+    {
+      "attempt": 1,
+      "response_format_used": "json_object",
+      "parse_success": true,
+      "parse_error": "",
+      "empty_output": false,
+      "schema_missing": false,
+      "elapsed_s": 44.739,
+      "cost_usd": 0.004843999999999999
+    }
+  ],
+  "final": {
+    "content": "{\n  \"claim_verdict\": \"supported\",\n  \"confidence\": 0.9,\n  \"supporting_evidence\": [\"doc_001\"],\n  \"rejected_evidence\": [\"doc_002\"],\n  \"selected_doc_ids\": [\"doc_001\", \"doc_002\"],\n  \"actions\": [\n    {\n      \"action\": \"compare_versions\",\n      \"target\": \"doc_001,doc_002\",\n      \"rationale\": \"Compare the closeout ledger (doc_001) showing 42 accepted inspections with the digest estimate (doc_002) showing 57 to assess consistency and reliability.\"\n    },\n    {\n      \"action\": \"trace_source\",\n      \"target\": \"doc_002\",\n      \"rationale\": \"Trace the origin of the estimate in doc_002 to the planning memo (doc_003) to verify its foundations.\"\n    }\n  ],\n  \"evidence_environment_assessment\": \"The evidence environment contains four documents with varying levels of authority and temporal relevance. doc_001 is a closeout ledger from 2025-01-16 listing 42 accepted inspections as the final figure. doc_002 is a digest from 2025-01-14 that estimates 57, based on planning memo doc_003 (2025-01-13) which has no final number. doc_004 is an operations handoff with no count. The conflict between doc_001 and doc_002 is resolved by doc_001's later timestamp, closeout nature, and description as the final ledger. The environment is moderately polluted with an earlier estimate, but the primary source supports the claim.\",\n  \"answer\": \"The closeout ledger in doc_001 explicitly logs 42 accepted inspections for Vega rail inspections in June 2025. While an earlier digest (doc_002) estimated 57, it is a pre-close running estimate and is superseded by the final documented count. Therefore, the claim is supported.\"\n}",
+    "usage": {
+      "completion_tokens": 2296,
+      "prompt_tokens": 1008,
+      "total_tokens": 3304,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": null,
+        "audio_tokens": null,
+        "reasoning_tokens": 1892,
+        "rejected_prediction_tokens": null
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": null,
+        "cached_tokens": 0
+      },
+      "prompt_cache_hit_tokens": 0,
+      "prompt_cache_miss_tokens": 1008
+    },
+    "response_format_used": "json_object",
+    "parse_success": true,
+    "parse_error": "",
+    "empty_output": false,
+    "schema_missing": false,
+    "json_extractor_used": "first_json_object",
+    "cost_usd": 0.004843999999999999,
+    "attempt_count": 1,
+    "visible_output_tokens": 401
+  }
+}

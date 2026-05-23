@@ -1,0 +1,43 @@
+{
+  "attempts": [
+    {
+      "attempt": 1,
+      "response_format_used": "json_object",
+      "parse_success": true,
+      "parse_error": "",
+      "empty_output": false,
+      "schema_missing": false,
+      "elapsed_s": 49.291,
+      "cost_usd": 0.005188
+    }
+  ],
+  "final": {
+    "content": "{\"claim_verdict\": \"supported\", \"confidence\": 0.9, \"supporting_evidence\": [\"doc_001\"], \"rejected_evidence\": [\"doc_004\"], \"selected_doc_ids\": [\"doc_001\", \"doc_004\"], \"actions\": [{\"action\": \"compare_versions\", \"target\": \"doc_001, doc_004\", \"rationale\": \"Resolve the discrepancy between the 76 approved checks in the closeout ledger (doc_001) and the 101 estimate in the field summary (doc_004).\"}, {\"action\": \"trace_source\", \"target\": \"doc_001\", \"rationale\": \"Confirm that the closeout ledger is the authoritative final record for the August 2025 Kestrel firmware checks.\"}], \"evidence_environment_assessment\": \"The environment contains a direct supporting document (doc_001: closeout ledger with 76 checks) and a contradictory preliminary estimate (doc_004: 101 checks). Contextual documents (doc_002, doc_003) lack final counts. The closeout ledger's timing and purpose give it higher reliability, making the claim well-supported despite the conflicting estimate.\", \"answer\": \"Yes, Novalis Robotics logged 76 approved checks for Kestrel firmware checks in August 2025, as stated in the closeout ledger (doc_001).\"}",
+    "usage": {
+      "completion_tokens": 2467,
+      "prompt_tokens": 1016,
+      "total_tokens": 3483,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": null,
+        "audio_tokens": null,
+        "reasoning_tokens": 2182,
+        "rejected_prediction_tokens": null
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": null,
+        "cached_tokens": 0
+      },
+      "prompt_cache_hit_tokens": 0,
+      "prompt_cache_miss_tokens": 1016
+    },
+    "response_format_used": "json_object",
+    "parse_success": true,
+    "parse_error": "",
+    "empty_output": false,
+    "schema_missing": false,
+    "json_extractor_used": "first_json_object",
+    "cost_usd": 0.005188,
+    "attempt_count": 1,
+    "visible_output_tokens": 278
+  }
+}

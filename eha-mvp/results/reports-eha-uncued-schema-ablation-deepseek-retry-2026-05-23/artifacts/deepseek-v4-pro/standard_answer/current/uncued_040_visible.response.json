@@ -1,0 +1,43 @@
+{
+  "attempts": [
+    {
+      "attempt": 1,
+      "response_format_used": "json_object",
+      "parse_success": true,
+      "parse_error": "",
+      "empty_output": false,
+      "schema_missing": false,
+      "elapsed_s": 29.231,
+      "cost_usd": 0.0030394999999999997
+    }
+  ],
+  "final": {
+    "content": "{\n  \"claim_verdict\": \"supported\",\n  \"confidence\": 0.9,\n  \"supporting_evidence\": [\"doc_002\"],\n  \"rejected_evidence\": [\"doc_003\"],\n  \"selected_doc_ids\": [\"doc_002\", \"doc_003\", \"doc_001\"],\n  \"actions\": [\n    {\n      \"action\": \"open\",\n      \"target\": \"doc_002\",\n      \"rationale\": \"Inspect the closeout ledger to verify the recorded number of 118 completed refurbishments.\"\n    },\n    {\n      \"action\": \"trace_source\",\n      \"target\": \"doc_002\",\n      \"rationale\": \"Trace the origin of the ledger to confirm it is an authenticated final record and not a preliminary draft.\"\n    }\n  ],\n  \"evidence_environment_assessment\": \"The evidence includes a planning memo with no final number, an operations timeline note estimating 139, a closeout ledger stating 118, and a handoff note with no number. The ledger is the latest document with a final close date and directly supports the claim, while the earlier estimate contradicts it. No other document provides a competing final count, making the ledger the most authoritative source.\",\n  \"answer\": \"Based on the closeout ledger (doc_002), Novalis Robotics logged 118 completed refurbishments for Nova pump refurbishments in July 2025. The claim is supported by this official record.\"\n}",
+    "usage": {
+      "completion_tokens": 1393,
+      "prompt_tokens": 1014,
+      "total_tokens": 2407,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": null,
+        "audio_tokens": null,
+        "reasoning_tokens": 1096,
+        "rejected_prediction_tokens": null
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": null,
+        "cached_tokens": 0
+      },
+      "prompt_cache_hit_tokens": 0,
+      "prompt_cache_miss_tokens": 1014
+    },
+    "response_format_used": "json_object",
+    "parse_success": true,
+    "parse_error": "",
+    "empty_output": false,
+    "schema_missing": false,
+    "json_extractor_used": "first_json_object",
+    "cost_usd": 0.0030394999999999997,
+    "attempt_count": 1,
+    "visible_output_tokens": 306
+  }
+}

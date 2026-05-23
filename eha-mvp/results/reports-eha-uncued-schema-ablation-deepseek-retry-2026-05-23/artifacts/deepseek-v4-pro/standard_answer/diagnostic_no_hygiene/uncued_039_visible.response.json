@@ -1,0 +1,43 @@
+{
+  "attempts": [
+    {
+      "attempt": 1,
+      "response_format_used": "json_object",
+      "parse_success": true,
+      "parse_error": "",
+      "empty_output": false,
+      "schema_missing": false,
+      "elapsed_s": 63.353,
+      "cost_usd": 0.00631725
+    }
+  ],
+  "final": {
+    "content": "{\n  \"claim_verdict\": \"insufficient\",\n  \"confidence\": 0.85,\n  \"supporting_evidence\": [\"doc_001\", \"doc_003\"],\n  \"rejected_or_contaminated_evidence\": [],\n  \"diagnostic_evidence\": [\"doc_004\", \"doc_002\"],\n  \"selected_doc_ids\": [\"doc_001\", \"doc_003\", \"doc_004\"],\n  \"actions\": [\n    {\n      \"action\": \"trace_source\",\n      \"target\": \"doc_001\",\n      \"rationale\": \"Verify whether the closeout ledger originates from Novalis Robotics, as the document does not explicitly name the entity.\"\n    },\n    {\n      \"action\": \"compare_versions\",\n      \"target\": \"doc_001 and doc_003\",\n      \"rationale\": \"Resolve the discrepancy between the closeout ledger's final count of 42 and the digest's earlier estimate of 57 inspections.\"\n    }\n  ],\n  \"evidence_notes\": \"No document explicitly mentions Novalis Robotics, so the claim's attribution cannot be confirmed. doc_001 states the closeout ledger lists 42 accepted inspections, which matches the claimed number but does not link to a specific company. doc_003 provides an earlier estimate of 57, introducing uncertainty even if the entity were known. doc_004 and doc_002 offer no counts or entity identification.\",\n  \"answer\": \"Evidence is insufficient to confirm the claim. While doc_001 records 42 accepted inspections for Vega rail inspections in June 2025, none of the documents reference Novalis Robotics, making it impossible to verify that the logged inspections are attributable to that company.\"\n}",
+    "usage": {
+      "completion_tokens": 3027,
+      "prompt_tokens": 1053,
+      "total_tokens": 4080,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": null,
+        "audio_tokens": null,
+        "reasoning_tokens": 2680,
+        "rejected_prediction_tokens": null
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": null,
+        "cached_tokens": 0
+      },
+      "prompt_cache_hit_tokens": 0,
+      "prompt_cache_miss_tokens": 1053
+    },
+    "response_format_used": "json_object",
+    "parse_success": true,
+    "parse_error": "",
+    "empty_output": false,
+    "schema_missing": false,
+    "json_extractor_used": "first_json_object",
+    "cost_usd": 0.00631725,
+    "attempt_count": 1,
+    "visible_output_tokens": 359
+  }
+}

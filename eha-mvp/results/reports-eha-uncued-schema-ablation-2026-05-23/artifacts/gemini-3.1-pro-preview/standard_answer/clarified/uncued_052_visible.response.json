@@ -1,0 +1,50 @@
+{
+  "attempts": [
+    {
+      "attempt": 1,
+      "response_format_used": "json_schema",
+      "parse_success": true,
+      "parse_error": "",
+      "empty_output": false,
+      "schema_missing": false,
+      "elapsed_s": 8.026,
+      "cost_usd": 0.002179
+    }
+  ],
+  "final": {
+    "content": "{\n  \"claim_verdict\": \"insufficient\",\n  \"confidence\": 0.8,\n  \"clean_supporting_evidence\": [],\n  \"refuting_evidence\": [],\n  \"rejected_or_contaminated_evidence\": [\n    \"doc_004\"\n  ],\n  \"diagnostic_evidence\": [\n    \"doc_001\",\n    \"doc_002\",\n    \"doc_003\"\n  ],\n  \"selected_doc_ids\": [\n    \"doc_001\",\n    \"doc_002\",\n    \"doc_004\"\n  ],\n  \"actions\": [\n    {\n      \"action\": \"trace_source\",\n      \"target\": \"doc_001\",\n      \"rationale\": \"Trace the community roundup to see if there is any primary operational record underlying the claim.\"\n    },\n    {\n      \"action\": \"search_primary\",\n      \"target\": \"Novalis Robotics LumenBridge partner desk July 2025\",\n      \"rationale\": \"Look for primary source confirmation of the LumenBridge partner desk launch in July 2025.\"\n    }\n  ],\n  \"evidence_notes\": \"The evidence consists of a field note (doc_001) claiming the LumenBridge partner desk appeared in July 2025, but it lacks a linked operational record. A registry entry (doc_004) circularly repeats this claim citing doc_001. Other operations memos (doc_002, doc_003) do not mention the desk, only routine Nova pump refurbishments.\",\n  \"answer\": \"There is insufficient reliable evidence to confirm that Novalis Robotics launched the LumenBridge partner desk in July 2025. The claim originates from a community roundup without an operational record, and subsequent mentions merely repeat that initial unsupported claim.\"\n}",
+    "usage": {
+      "completion_tokens": 875,
+      "prompt_tokens": 1716,
+      "total_tokens": 2591,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": null,
+        "audio_tokens": 0,
+        "reasoning_tokens": 457,
+        "rejected_prediction_tokens": null,
+        "text_tokens": 418,
+        "image_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cached_tokens": 0,
+        "text_tokens": 1716,
+        "image_tokens": 0
+      },
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "input_tokens_details": null,
+      "claude_cache_creation_5_m_tokens": 0,
+      "claude_cache_creation_1_h_tokens": 0
+    },
+    "response_format_used": "json_schema",
+    "parse_success": true,
+    "parse_error": "",
+    "empty_output": false,
+    "schema_missing": false,
+    "json_extractor_used": "first_json_object",
+    "cost_usd": 0.002179,
+    "attempt_count": 1,
+    "visible_output_tokens": 352
+  }
+}

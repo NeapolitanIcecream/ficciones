@@ -10,9 +10,11 @@ from eha.epistemic_resilience import epistemic_prediction_json_schema
 from eha.uncued_schema_ablation import (
     SCHEMA_VARIANTS,
     build_schema_prompt_payload,
+    invocation_profiles_payload,
     parse_schema_prediction,
     plan_schema_ablation,
     schema_json_schema,
+    schema_profiles,
     score_schema_ablation_rows,
     verify_schema_ablation,
 )
@@ -114,6 +116,31 @@ def test_score_marks_minimal_rejection_metrics_not_applicable(tmp_path: Path) ->
 
     assert scored[0]["polluted_rejected"] == "not_applicable"
     assert scored[0]["polluted_diagnostic"] == "not_applicable"
+
+
+def test_deepseek_invocation_profile_is_recorded_separately() -> None:
+    profiles = schema_profiles(
+        "deepseek-v4-pro",
+        max_output_tokens=4096,
+        timeout_s=240.0,
+        cost_estimate_output_tokens=900,
+    )
+
+    payload = invocation_profiles_payload(
+        profiles,
+        schemas=["current", "clarified"],
+        prompt="standard_answer",
+        view="neutral_metadata_visible",
+        max_attempts=2,
+        parallel_models=1,
+    )
+
+    assert [row["model"] for row in payload["deepseek_profiles"]] == ["deepseek-v4-pro"]
+    profile = payload["deepseek_profiles"][0]
+    assert profile["invocation_profile"]["response_format"] == "json_object"
+    assert profile["invocation_profile"]["max_completion_tokens_policy"] == "explicit:4096"
+    assert profile["retry_profile"]["llm_repair"] == "disabled"
+    assert profile["retry_profile"]["max_attempts"] == 2
 
 
 def test_verifier_rejects_missing_current_anchor(tmp_path: Path) -> None:

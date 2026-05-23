@@ -1,0 +1,52 @@
+{
+  "attempts": [
+    {
+      "attempt": 1,
+      "response_format_used": "json_schema",
+      "parse_success": true,
+      "parse_error": "",
+      "empty_output": false,
+      "schema_missing": false,
+      "elapsed_s": 13.117,
+      "cost_usd": 0.03117
+    }
+  ],
+  "final": {
+    "content": "{\"actions\":[{\"action\":\"open\",\"rationale\":\"Use the document that states the final closeout count for the relevant workstream and month.\",\"target\":\"doc_001\"},{\"action\":\"trace_source\",\"rationale\":\"Check the conflicting higher number; it is framed as a running estimate and cites a planning memo rather than a final ledger.\",\"target\":\"doc_004\"}],\"answer\":\"Supported. The most probative evidence says the closeout ledger lists 76 approved checks for Kestrel firmware checks in August 2025. The conflicting 101 figure is only a running estimate tied to planning materials, not a final closeout count. The organization name is not explicitly repeated in the documents, so confidence is not maximal.\",\"claim_verdict\":\"supported\",\"confidence\":0.82,\"evidence_environment_assessment\":\"The environment contains one direct final-count statement and several lower-quality surrounding notes. doc_001 is the strongest evidence because it describes a closeout ledger and gives the exact 76 approved checks for Kestrel firmware checks in August 2025. doc_004 conflicts with 101 but is explicitly a running estimate and cites planning material, so it is less reliable for the final logged count. doc_002 and doc_003 provide context but no closing count. None of the documents explicitly names Novalis Robotics, which slightly limits certainty.\",\"rejected_evidence\":[\"doc_004\",\"doc_002\",\"doc_003\"],\"selected_doc_ids\":[\"doc_001\",\"doc_004\",\"doc_003\"],\"supporting_evidence\":[\"doc_001\"]}",
+    "usage": {
+      "completion_tokens": 846,
+      "prompt_tokens": 1158,
+      "total_tokens": 2004,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": 0,
+        "audio_tokens": 0,
+        "reasoning_tokens": 512,
+        "rejected_prediction_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cached_tokens": 0
+      },
+      "latency_checkpoint": {
+        "engine_tbt_ms": 13,
+        "engine_ttft_ms": 186,
+        "engine_ttlt_ms": 11012,
+        "pre_inference_ms": 99,
+        "service_tbt_ms": 13,
+        "service_ttft_ms": 505,
+        "service_ttlt_ms": 11336,
+        "total_duration_ms": 11239,
+        "user_visible_ttft_ms": 406
+      }
+    },
+    "response_format_used": "json_schema",
+    "parse_success": true,
+    "parse_error": "",
+    "empty_output": false,
+    "schema_missing": false,
+    "json_extractor_used": "first_json_object",
+    "cost_usd": 0.03117,
+    "attempt_count": 1,
+    "visible_output_tokens": 365
+  }
+}

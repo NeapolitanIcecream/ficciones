@@ -1,0 +1,43 @@
+{
+  "attempts": [
+    {
+      "attempt": 1,
+      "response_format_used": "json_object",
+      "parse_success": true,
+      "parse_error": "",
+      "empty_output": false,
+      "schema_missing": false,
+      "elapsed_s": 30.397,
+      "cost_usd": 0.003392
+    }
+  ],
+  "final": {
+    "content": "{\n  \"claim_verdict\": \"supported\",\n  \"confidence\": 0.9,\n  \"supporting_evidence\": [\"doc_001\"],\n  \"rejected_evidence\": [\"doc_003\"],\n  \"selected_doc_ids\": [\"doc_001\", \"doc_003\"],\n  \"actions\": [\n    {\n      \"action\": \"open\",\n      \"target\": \"doc_001\",\n      \"rationale\": \"Contains the final closeout ledger with 42 accepted inspections.\"\n    },\n    {\n      \"action\": \"trace_source\",\n      \"target\": \"doc_003\",\n      \"rationale\": \"To verify the estimate and its source; found it is a running estimate citing planning memo.\"\n    }\n  ],\n  \"evidence_environment_assessment\": \"The evidence environment contains one authoritative closeout document (doc_001) stating 42 accepted inspections, and an earlier estimate (doc_003) stating 57. The estimate is a running estimate from before the close, pointing to a planning memo (doc_004). There is also a neutral operations note (doc_002). No other contradictory final numbers exist. The environment is consistent with the claim when considering document recency and purpose.\",\n  \"answer\": \"The claim is supported by the Program Registry Entry (doc_001), which is a closeout ledger from 2025-04-16, listing 42 accepted inspections. Although doc_003 provides an estimate of 57, it is a running estimate from 2025-04-14 and is not the final figure. The closeout ledger represents the final, accepted count. Therefore, the claim is supported.\"\n}",
+    "usage": {
+      "completion_tokens": 1570,
+      "prompt_tokens": 1008,
+      "total_tokens": 2578,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": null,
+        "audio_tokens": null,
+        "reasoning_tokens": 1231,
+        "rejected_prediction_tokens": null
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": null,
+        "cached_tokens": 0
+      },
+      "prompt_cache_hit_tokens": 0,
+      "prompt_cache_miss_tokens": 1008
+    },
+    "response_format_used": "json_object",
+    "parse_success": true,
+    "parse_error": "",
+    "empty_output": false,
+    "schema_missing": false,
+    "json_extractor_used": "first_json_object",
+    "cost_usd": 0.003392,
+    "attempt_count": 1,
+    "visible_output_tokens": 344
+  }
+}

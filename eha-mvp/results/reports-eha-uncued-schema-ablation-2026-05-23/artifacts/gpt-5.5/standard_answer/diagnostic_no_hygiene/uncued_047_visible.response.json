@@ -1,0 +1,52 @@
+{
+  "attempts": [
+    {
+      "attempt": 1,
+      "response_format_used": "json_schema",
+      "parse_success": true,
+      "parse_error": "",
+      "empty_output": false,
+      "schema_missing": false,
+      "elapsed_s": 14.621,
+      "cost_usd": 0.033705
+    }
+  ],
+  "final": {
+    "content": "{\"actions\":[{\"action\":\"open\",\"rationale\":\"Check the document that directly states the final closeout count for the relevant workstream and month.\",\"target\":\"doc_001\"},{\"action\":\"search_contradiction\",\"rationale\":\"Review the conflicting 101-count document to determine whether it is a final count or only a preliminary estimate.\",\"target\":\"doc_004\"}],\"answer\":\"Yes. The strongest provided evidence is doc_001, which says the closeout ledger lists 76 approved checks for Kestrel firmware checks in August 2025. The conflicting 101 figure in doc_004 is only a running estimate tied to planning, not a final closeout count.\",\"claim_verdict\":\"supported\",\"confidence\":0.82,\"diagnostic_evidence\":[\"doc_001 is framed as a closeout ledger entry using the final close date, making it the most probative source for the final approved-check count.\",\"doc_004 gives a different figure, 101, but explicitly describes it as a running estimate and points to a planning memo rather than a final closeout source.\"],\"evidence_notes\":\"The provided documents do not explicitly name Novalis Robotics, so the support is strongest for the count/workstream/month portion of the claim. Within the evidence environment, doc_001 is the only final-count source and supports 76 approved checks; doc_004 is less reliable because it is an estimate.\",\"rejected_or_contaminated_evidence\":[\"doc_004: estimates 101 approved checks, but it is framed as a running estimate and cites the planning memo, so it is not treated as the final logged count.\",\"doc_003: planning memo prepared before monthly close and has no final number.\",\"doc_002: handoff note contains no closing count.\"],\"selected_doc_ids\":[\"doc_001\",\"doc_004\",\"doc_003\"],\"supporting_evidence\":[\"doc_001: “The closeout ledger lists 76 approved checks for Kestrel firmware checks in August 2025.”\"]}",
+    "usage": {
+      "completion_tokens": 919,
+      "prompt_tokens": 1227,
+      "total_tokens": 2146,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": 0,
+        "audio_tokens": 0,
+        "reasoning_tokens": 490,
+        "rejected_prediction_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cached_tokens": 0
+      },
+      "latency_checkpoint": {
+        "engine_tbt_ms": 13,
+        "engine_ttft_ms": 299,
+        "engine_ttlt_ms": 12619,
+        "pre_inference_ms": 133,
+        "service_tbt_ms": 13,
+        "service_ttft_ms": 672,
+        "service_ttlt_ms": 12998,
+        "total_duration_ms": 12868,
+        "user_visible_ttft_ms": 539
+      }
+    },
+    "response_format_used": "json_schema",
+    "parse_success": true,
+    "parse_error": "",
+    "empty_output": false,
+    "schema_missing": false,
+    "json_extractor_used": "first_json_object",
+    "cost_usd": 0.033705,
+    "attempt_count": 1,
+    "visible_output_tokens": 455
+  }
+}

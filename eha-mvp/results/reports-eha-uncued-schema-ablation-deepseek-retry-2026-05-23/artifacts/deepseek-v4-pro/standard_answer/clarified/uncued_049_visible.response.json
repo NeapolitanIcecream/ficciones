@@ -1,0 +1,43 @@
+{
+  "attempts": [
+    {
+      "attempt": 1,
+      "response_format_used": "json_object",
+      "parse_success": true,
+      "parse_error": "",
+      "empty_output": false,
+      "schema_missing": false,
+      "elapsed_s": 54.669,
+      "cost_usd": 0.005236
+    }
+  ],
+  "final": {
+    "content": "{\n  \"claim_verdict\": \"insufficient\",\n  \"confidence\": 0.3,\n  \"clean_supporting_evidence\": [],\n  \"refuting_evidence\": [],\n  \"rejected_or_contaminated_evidence\": [\"doc_003\", \"doc_002\"],\n  \"diagnostic_evidence\": [\"doc_001\", \"doc_004\"],\n  \"selected_doc_ids\": [\"doc_003\", \"doc_002\", \"doc_004\"],\n  \"actions\": [\n    {\n      \"action\": \"trace_source\",\n      \"target\": \"doc_003\",\n      \"rationale\": \"doc_003 is the only document asserting the launch but relies on a community roundup with no operational record. Tracing the roundup's origin could determine reliability.\"\n    },\n    {\n      \"action\": \"search_primary\",\n      \"target\": \"Novalis Robotics official announcements April 2025\",\n      \"rationale\": \"No official Novalis Robotics source is provided. A primary source search could directly confirm or refute the launch.\"\n    }\n  ],\n  \"evidence_notes\": \"The only document supporting the claim is a field note (doc_003) citing a community roundup and explicitly lacking an operational record. doc_002 merely echoes that claim with a citation to doc_003. Operational notes (doc_001, doc_004) from the same timeframe and site do not mention the toolkit, focusing on Orion battery swaps. No official Novalis Robotics source is present. Evidence is inadequate to support or refute the claim.\",\n  \"answer\": \"There is insufficient evidence to determine if Novalis Robotics launched the AuroraDock field upgrade toolkit in April 2025. The only source is an unverified community roundup noted in doc_003, repeated in doc_002 without additional confirmation. Other operational records do not corroborate the launch.\"\n}",
+    "usage": {
+      "completion_tokens": 2477,
+      "prompt_tokens": 1128,
+      "total_tokens": 3605,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": null,
+        "audio_tokens": null,
+        "reasoning_tokens": 2092,
+        "rejected_prediction_tokens": null
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": null,
+        "cached_tokens": 0
+      },
+      "prompt_cache_hit_tokens": 0,
+      "prompt_cache_miss_tokens": 1128
+    },
+    "response_format_used": "json_object",
+    "parse_success": true,
+    "parse_error": "",
+    "empty_output": false,
+    "schema_missing": false,
+    "json_extractor_used": "first_json_object",
+    "cost_usd": 0.005236,
+    "attempt_count": 1,
+    "visible_output_tokens": 400
+  }
+}

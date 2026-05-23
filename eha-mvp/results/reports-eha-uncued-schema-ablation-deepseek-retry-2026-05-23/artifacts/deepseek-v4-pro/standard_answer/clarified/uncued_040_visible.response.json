@@ -1,0 +1,43 @@
+{
+  "attempts": [
+    {
+      "attempt": 1,
+      "response_format_used": "json_object",
+      "parse_success": true,
+      "parse_error": "",
+      "empty_output": false,
+      "schema_missing": false,
+      "elapsed_s": 42.711,
+      "cost_usd": 0.0045655
+    }
+  ],
+  "final": {
+    "content": "{\n  \"claim_verdict\": \"supported\",\n  \"confidence\": 0.9,\n  \"clean_supporting_evidence\": [\"doc_002\"],\n  \"refuting_evidence\": [\"doc_003\"],\n  \"rejected_or_contaminated_evidence\": [],\n  \"diagnostic_evidence\": [\"doc_001\", \"doc_004\"],\n  \"selected_doc_ids\": [\"doc_002\", \"doc_003\", \"doc_001\"],\n  \"actions\": [\n    {\n      \"action\": \"compare_versions\",\n      \"target\": \"doc_002 and doc_003\",\n      \"rationale\": \"doc_002 shows final count 118, doc_003 shows estimate 139; comparing clarifies discrepancy.\"\n    },\n    {\n      \"action\": \"trace_source\",\n      \"target\": \"doc_003 to doc_001\",\n      \"rationale\": \"doc_003 cites doc_001, tracing may reveal if 139 was based on planning assumptions.\"\n    }\n  ],\n  \"evidence_notes\": \"The closeout ledger doc_002 from May 16, 2025, states 118 completed refurbishments, which is later and final. An earlier estimate doc_003 from May 14 gave 139, but it is not final. No contamination detected; all documents appear within the same reporting packet with consistent site/workstream codes.\",\n  \"answer\": \"Yes, the closeout ledger (doc_002) indicates 118 completed refurbishments for Nova pump refurbishments in July 2025.\"\n}",
+    "usage": {
+      "completion_tokens": 2141,
+      "prompt_tokens": 1134,
+      "total_tokens": 3275,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": null,
+        "audio_tokens": null,
+        "reasoning_tokens": 1823,
+        "rejected_prediction_tokens": null
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": null,
+        "cached_tokens": 0
+      },
+      "prompt_cache_hit_tokens": 0,
+      "prompt_cache_miss_tokens": 1134
+    },
+    "response_format_used": "json_object",
+    "parse_success": true,
+    "parse_error": "",
+    "empty_output": false,
+    "schema_missing": false,
+    "json_extractor_used": "first_json_object",
+    "cost_usd": 0.0045655,
+    "attempt_count": 1,
+    "visible_output_tokens": 287
+  }
+}

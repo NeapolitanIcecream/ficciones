@@ -1,0 +1,43 @@
+{
+  "attempts": [
+    {
+      "attempt": 1,
+      "response_format_used": "json_object",
+      "parse_success": true,
+      "parse_error": "",
+      "empty_output": false,
+      "schema_missing": false,
+      "elapsed_s": 45.453,
+      "cost_usd": 0.004516
+    }
+  ],
+  "final": {
+    "content": "{\n  \"claim_verdict\": \"insufficient\",\n  \"confidence\": 0.9,\n  \"clean_supporting_evidence\": [],\n  \"refuting_evidence\": [],\n  \"rejected_or_contaminated_evidence\": [\"doc_003\", \"doc_004\"],\n  \"diagnostic_evidence\": [\"doc_001\", \"doc_002\"],\n  \"selected_doc_ids\": [\"doc_003\", \"doc_004\", \"doc_002\"],\n  \"actions\": [\n    {\n      \"action\": \"trace_source\",\n      \"target\": \"doc_003\",\n      \"rationale\": \"The timestamp on doc_003 (February 2025) predates the claimed operation month (April 2025), which is inconsistent with a closeout ledger. Tracing its source could reveal if it was fabricated or backdated.\"\n    },\n    {\n      \"action\": \"compare_versions\",\n      \"target\": \"doc_003 and doc_004\",\n      \"rationale\": \"doc_003 claims 63 verified swaps, while doc_004 estimates 88. Comparing these versions highlights the discrepancy and the need for a post-event source.\"\n    }\n  ],\n  \"evidence_notes\": \"doc_003 claims 63 verified swaps but is dated February 2025, before the April 2025 period, making a 'closeout ledger' implausible. doc_004 provides an earlier estimate of 88. The remaining documents are planning notes without final numbers. No reliable post-April evidence exists to confirm the claim.\",\n  \"answer\": \"The evidence contains a document (doc_003) that states 63 verified swaps, but it is dated before April 2025 and describes a closeout ledger, which is inconsistent. An estimate (doc_004) suggests 88. No reliable, post-April documentation is available, so the claim cannot be confirmed.\"\n}",
+    "usage": {
+      "completion_tokens": 2117,
+      "prompt_tokens": 1128,
+      "total_tokens": 3245,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": null,
+        "audio_tokens": null,
+        "reasoning_tokens": 1727,
+        "rejected_prediction_tokens": null
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": null,
+        "cached_tokens": 0
+      },
+      "prompt_cache_hit_tokens": 0,
+      "prompt_cache_miss_tokens": 1128
+    },
+    "response_format_used": "json_object",
+    "parse_success": true,
+    "parse_error": "",
+    "empty_output": false,
+    "schema_missing": false,
+    "json_extractor_used": "first_json_object",
+    "cost_usd": 0.004516,
+    "attempt_count": 1,
+    "visible_output_tokens": 373
+  }
+}

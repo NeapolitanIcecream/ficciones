@@ -1,0 +1,52 @@
+{
+  "attempts": [
+    {
+      "attempt": 1,
+      "response_format_used": "json_schema",
+      "parse_success": true,
+      "parse_error": "",
+      "empty_output": false,
+      "schema_missing": false,
+      "elapsed_s": 11.838,
+      "cost_usd": 0.02496
+    }
+  ],
+  "final": {
+    "content": "{\"actions\":[{\"action\":\"trace_source\",\"rationale\":\"The ledger extract is derivative and visibly cites the roundup, so the source chain should be traced back to the underlying item rather than treated as independent corroboration.\",\"target\":\"doc_001 -> doc_004\"},{\"action\":\"search_primary\",\"rationale\":\"The available positive claim comes from a community roundup without a linked operational record; a primary Novalis Robotics launch notice or program record would be needed to support the claim cleanly.\",\"target\":\"Novalis Robotics HelioSplice partner repair program March 2025 launch record\"}],\"answer\":\"Insufficient evidence. The only document stating that the HelioSplice partner repair program appeared in March 2025 is a community roundup with no linked operational record, and the ledger extract merely repeats that roundup. Other operational/timeline notes do not mention the program launch, but they are not direct refutations.\",\"claim_verdict\":\"insufficient\",\"clean_supporting_evidence\":[],\"confidence\":0.78,\"diagnostic_evidence\":[\"doc_002\",\"doc_003\"],\"evidence_notes\":\"doc_004 is the apparent origin of the launch wording but is a community roundup/field note and explicitly lacks a linked operational record. doc_001 is derivative because it repeats the wording and visibly cites doc_004. doc_002 and doc_003 are useful context because relevant service/timeline materials omit a HelioSplice launch, but absence alone does not directly refute the claim.\",\"refuting_evidence\":[],\"rejected_or_contaminated_evidence\":[\"doc_001\",\"doc_004\"],\"selected_doc_ids\":[\"doc_004\",\"doc_001\",\"doc_002\"]}",
+    "usage": {
+      "completion_tokens": 614,
+      "prompt_tokens": 1308,
+      "total_tokens": 1922,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": 0,
+        "audio_tokens": 0,
+        "reasoning_tokens": 254,
+        "rejected_prediction_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cached_tokens": 0
+      },
+      "latency_checkpoint": {
+        "engine_tbt_ms": 16,
+        "engine_ttft_ms": 219,
+        "engine_ttlt_ms": 9856,
+        "pre_inference_ms": 159,
+        "service_tbt_ms": 16,
+        "service_ttft_ms": 620,
+        "service_ttlt_ms": 10260,
+        "total_duration_ms": 10101,
+        "user_visible_ttft_ms": 461
+      }
+    },
+    "response_format_used": "json_schema",
+    "parse_success": true,
+    "parse_error": "",
+    "empty_output": false,
+    "schema_missing": false,
+    "json_extractor_used": "first_json_object",
+    "cost_usd": 0.02496,
+    "attempt_count": 1,
+    "visible_output_tokens": 399
+  }
+}

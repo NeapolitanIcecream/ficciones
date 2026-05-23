@@ -1,0 +1,43 @@
+{
+  "attempts": [
+    {
+      "attempt": 1,
+      "response_format_used": "json_object",
+      "parse_success": true,
+      "parse_error": "",
+      "empty_output": false,
+      "schema_missing": false,
+      "elapsed_s": 42.752,
+      "cost_usd": 0.004236
+    }
+  ],
+  "final": {
+    "content": "{\n  \"claim_verdict\": \"refuted\",\n  \"confidence\": 0.9,\n  \"clean_supporting_evidence\": [],\n  \"refuting_evidence\": [\"doc_001\", \"doc_003\"],\n  \"rejected_or_contaminated_evidence\": [\"doc_002\", \"doc_004\"],\n  \"diagnostic_evidence\": [],\n  \"selected_doc_ids\": [\"doc_002\", \"doc_003\", \"doc_004\"],\n  \"actions\": [\n    {\n      \"action\": \"trace_source\",\n      \"target\": \"doc_002\",\n      \"rationale\": \"Investigate the origin of the community roundup claim to verify its authenticity and trace any potential fabrication or unsubstantiated rumor.\"\n    },\n    {\n      \"action\": \"search_primary\",\n      \"target\": \"Meridian Shield recall board launch\",\n      \"rationale\": \"Search for official Novalis Robotics announcements, press releases, or operational records to independently confirm or refute the May 2025 launch.\"\n    }\n  ],\n  \"evidence_notes\": \"Official service ledger (doc_001) and program registry (doc_003) from March 2025 do not mention the Meridian Shield recall board, while the only supporting sources are an unverified community roundup (doc_002) and a memo (doc_004) that merely repeats it. This indicates the claim lacks reliable evidence.\",\n  \"answer\": \"No, Novalis Robotics did not launch the Meridian Shield recall board in May 2025.\"\n}",
+    "usage": {
+      "completion_tokens": 1977,
+      "prompt_tokens": 1128,
+      "total_tokens": 3105,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": null,
+        "audio_tokens": null,
+        "reasoning_tokens": 1658,
+        "rejected_prediction_tokens": null
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": null,
+        "cached_tokens": 0
+      },
+      "prompt_cache_hit_tokens": 0,
+      "prompt_cache_miss_tokens": 1128
+    },
+    "response_format_used": "json_object",
+    "parse_success": true,
+    "parse_error": "",
+    "empty_output": false,
+    "schema_missing": false,
+    "json_extractor_used": "first_json_object",
+    "cost_usd": 0.004236,
+    "attempt_count": 1,
+    "visible_output_tokens": 308
+  }
+}

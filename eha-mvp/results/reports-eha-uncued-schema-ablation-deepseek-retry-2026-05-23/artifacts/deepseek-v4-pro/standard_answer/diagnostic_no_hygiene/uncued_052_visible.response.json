@@ -1,0 +1,43 @@
+{
+  "attempts": [
+    {
+      "attempt": 1,
+      "response_format_used": "json_object",
+      "parse_success": true,
+      "parse_error": "",
+      "empty_output": false,
+      "schema_missing": false,
+      "elapsed_s": 36.957,
+      "cost_usd": 0.0040505
+    }
+  ],
+  "final": {
+    "content": "{\n  \"claim_verdict\": \"insufficient\",\n  \"confidence\": 0.3,\n  \"supporting_evidence\": [\"doc_001\", \"doc_004\"],\n  \"rejected_or_contaminated_evidence\": [],\n  \"diagnostic_evidence\": [\"doc_003\", \"doc_002\"],\n  \"selected_doc_ids\": [\"doc_001\", \"doc_004\", \"doc_003\"],\n  \"actions\": [\n    {\n      \"action\": \"search_primary\",\n      \"target\": \"Novalis Robotics official press releases or product launch announcements for July 2025\",\n      \"rationale\": \"Look for an official primary source from Novalis Robotics confirming the launch of LumenBridge partner desk.\"\n    },\n    {\n      \"action\": \"trace_source\",\n      \"target\": \"doc_001\",\n      \"rationale\": \"Trace the community roundup source to determine the reliability of the claim and whether it is based on firsthand knowledge.\"\n    }\n  ],\n  \"evidence_notes\": \"The only evidence for the launch comes from a community roundup (doc_001) which lacks an operational record, and a partner recap (doc_004) that cites the roundup. Operational documents (doc_002, doc_003) do not mention the launch, and an operations timeline (doc_003) explicitly lists no program launch entry. No official source from Novalis Robotics is present.\",\n  \"answer\": \"Insufficient evidence to determine whether Novalis Robotics launched the LumenBridge partner desk in July 2025. The claim relies on an unverified community roundup and a derivative recap, with no operational records or official confirmation.\"\n}",
+    "usage": {
+      "completion_tokens": 1894,
+      "prompt_tokens": 1050,
+      "total_tokens": 2944,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": null,
+        "audio_tokens": null,
+        "reasoning_tokens": 1548,
+        "rejected_prediction_tokens": null
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": null,
+        "cached_tokens": 0
+      },
+      "prompt_cache_hit_tokens": 0,
+      "prompt_cache_miss_tokens": 1050
+    },
+    "response_format_used": "json_object",
+    "parse_success": true,
+    "parse_error": "",
+    "empty_output": false,
+    "schema_missing": false,
+    "json_extractor_used": "first_json_object",
+    "cost_usd": 0.0040505,
+    "attempt_count": 1,
+    "visible_output_tokens": 354
+  }
+}

@@ -1,0 +1,52 @@
+{
+  "attempts": [
+    {
+      "attempt": 1,
+      "response_format_used": "json_schema",
+      "parse_success": true,
+      "parse_error": "",
+      "empty_output": false,
+      "schema_missing": false,
+      "elapsed_s": 14.092,
+      "cost_usd": 0.031014999999999997
+    }
+  ],
+  "final": {
+    "content": "{\"actions\":[{\"action\":\"open\",\"rationale\":\"Review the closeout ledger extract because it is the only document stating a final completed-check count for Atlas valve checks in March 2025.\",\"target\":\"doc_003\"},{\"action\":\"search_contradiction\",\"rationale\":\"Check the competing 211-count memo, but treat it cautiously because it is framed as a running estimate tied to planning rather than final closeout.\",\"target\":\"doc_004\"}],\"answer\":\"Yes. The clean closeout ledger evidence states that 184 completed checks were listed for Atlas valve checks in March 2025. A separate 211-count document is only a running estimate and is not treated as a direct refutation.\",\"claim_verdict\":\"supported\",\"clean_supporting_evidence\":[\"doc_003\"],\"confidence\":0.78,\"diagnostic_evidence\":[\"doc_002\"],\"evidence_notes\":\"doc_003 is the strongest evidence because it describes a closeout ledger with the final count of 184 completed checks for Atlas valve checks in March 2025. doc_004 gives a different number, 211, but it is explicitly an estimate and points back to a planning memo, so it is rejected as stale/non-final rather than used as direct refutation. The provided evidence does not explicitly name Novalis Robotics, so confidence is not maximal.\",\"refuting_evidence\":[],\"rejected_or_contaminated_evidence\":[\"doc_004\"],\"selected_doc_ids\":[\"doc_003\",\"doc_004\",\"doc_002\"]}",
+    "usage": {
+      "completion_tokens": 816,
+      "prompt_tokens": 1307,
+      "total_tokens": 2123,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": 0,
+        "audio_tokens": 0,
+        "reasoning_tokens": 489,
+        "rejected_prediction_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cached_tokens": 0
+      },
+      "latency_checkpoint": {
+        "engine_tbt_ms": 15,
+        "engine_ttft_ms": 260,
+        "engine_ttlt_ms": 12097,
+        "pre_inference_ms": 105,
+        "service_tbt_ms": 14,
+        "service_ttft_ms": 634,
+        "service_ttlt_ms": 12436,
+        "total_duration_ms": 12336,
+        "user_visible_ttft_ms": 529
+      }
+    },
+    "response_format_used": "json_schema",
+    "parse_success": true,
+    "parse_error": "",
+    "empty_output": false,
+    "schema_missing": false,
+    "json_extractor_used": "first_json_object",
+    "cost_usd": 0.031014999999999997,
+    "attempt_count": 1,
+    "visible_output_tokens": 338
+  }
+}

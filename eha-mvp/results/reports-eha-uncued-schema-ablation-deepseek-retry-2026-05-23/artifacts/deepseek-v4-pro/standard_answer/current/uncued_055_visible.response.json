@@ -1,0 +1,43 @@
+{
+  "attempts": [
+    {
+      "attempt": 1,
+      "response_format_used": "json_object",
+      "parse_success": true,
+      "parse_error": "",
+      "empty_output": false,
+      "schema_missing": false,
+      "elapsed_s": 33.272,
+      "cost_usd": 0.003342
+    }
+  ],
+  "final": {
+    "content": "{\n  \"claim_verdict\": \"insufficient\",\n  \"confidence\": 0.3,\n  \"supporting_evidence\": [\"doc_002\", \"doc_001\"],\n  \"rejected_evidence\": [\"doc_003\", \"doc_004\"],\n  \"selected_doc_ids\": [\"doc_002\", \"doc_001\", \"doc_003\"],\n  \"actions\": [\n    {\n      \"action\": \"trace_source\",\n      \"target\": \"doc_001\",\n      \"rationale\": \"doc_001 repeats the launch claim and cites doc_002; tracing back verifies the origin and assesses its reliability.\"\n    },\n    {\n      \"action\": \"search_contradiction\",\n      \"target\": \"AuroraDock field upgrade toolkit April 2025\",\n      \"rationale\": \"Operational records like doc_003 and doc_004 show no mention, so a targeted contradiction search helps confirm absence of corroborating evidence.\"\n    }\n  ],\n  \"evidence_environment_assessment\": \"The environment contains one primary source (doc_002) claiming the AuroraDock toolkit appeared in April 2025, echoed in doc_001. Both lack operational records or external verification. Other documents (doc_003, doc_004) detail unrelated work and do not mention the toolkit, providing no support. Overall, the evidence is uncorroborated and low-quality.\",\n  \"answer\": \"Based on the available documents, there is insufficient evidence to conclude that Novalis Robotics launched the AuroraDock field upgrade toolkit in April 2025. The claim originates from a community roundup without operational corroboration.\"\n}",
+    "usage": {
+      "completion_tokens": 1545,
+      "prompt_tokens": 1008,
+      "total_tokens": 2553,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": null,
+        "audio_tokens": null,
+        "reasoning_tokens": 1208,
+        "rejected_prediction_tokens": null
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": null,
+        "cached_tokens": 0
+      },
+      "prompt_cache_hit_tokens": 0,
+      "prompt_cache_miss_tokens": 1008
+    },
+    "response_format_used": "json_object",
+    "parse_success": true,
+    "parse_error": "",
+    "empty_output": false,
+    "schema_missing": false,
+    "json_extractor_used": "first_json_object",
+    "cost_usd": 0.003342,
+    "attempt_count": 1,
+    "visible_output_tokens": 342
+  }
+}

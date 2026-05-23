@@ -1,0 +1,52 @@
+{
+  "attempts": [
+    {
+      "attempt": 1,
+      "response_format_used": "json_schema",
+      "parse_success": true,
+      "parse_error": "",
+      "empty_output": false,
+      "schema_missing": false,
+      "elapsed_s": 24.548,
+      "cost_usd": 0.04671
+    }
+  ],
+  "final": {
+    "content": "{\"actions\":[{\"action\":\"open\",\"rationale\":\"Review the apparent final closeout source that states the August 2025 Kestrel firmware checks count.\",\"target\":\"doc_003\"},{\"action\":\"trace_source\",\"rationale\":\"Check the contradictory 101 figure because it is described as a running estimate tied to the planning memo rather than a final closeout number.\",\"target\":\"doc_004\"}],\"answer\":\"Yes. The best available evidence says the closeout ledger lists 76 approved checks for Kestrel firmware checks in August 2025. The competing 101 figure is only a running estimate tied to planning, not a final logged count.\",\"claim_verdict\":\"supported\",\"clean_supporting_evidence\":[\"doc_003\"],\"confidence\":0.86,\"diagnostic_evidence\":[\"doc_002\"],\"evidence_notes\":\"doc_003 is the cleanest evidence because it describes a closeout ledger row using the final close date and gives the exact count of 76. doc_004 conflicts with a 101 figure, but it is explicitly framed as a running estimate and points back to a planning memo, so it is stale/non-final rather than direct refutation. doc_002 confirms the cited planning memo had no final number.\",\"refuting_evidence\":[],\"rejected_or_contaminated_evidence\":[\"doc_004\"],\"selected_doc_ids\":[\"doc_003\",\"doc_004\",\"doc_002\"]}",
+    "usage": {
+      "completion_tokens": 1338,
+      "prompt_tokens": 1314,
+      "total_tokens": 2652,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": 0,
+        "audio_tokens": 0,
+        "reasoning_tokens": 1024,
+        "rejected_prediction_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cached_tokens": 0
+      },
+      "latency_checkpoint": {
+        "engine_tbt_ms": 16,
+        "engine_ttft_ms": 654,
+        "engine_ttlt_ms": 22589,
+        "pre_inference_ms": 117,
+        "service_tbt_ms": 16,
+        "service_ttft_ms": 997,
+        "service_ttlt_ms": 22927,
+        "total_duration_ms": 22818,
+        "user_visible_ttft_ms": 880
+      }
+    },
+    "response_format_used": "json_schema",
+    "parse_success": true,
+    "parse_error": "",
+    "empty_output": false,
+    "schema_missing": false,
+    "json_extractor_used": "first_json_object",
+    "cost_usd": 0.04671,
+    "attempt_count": 1,
+    "visible_output_tokens": 310
+  }
+}

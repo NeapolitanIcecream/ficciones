@@ -1,0 +1,43 @@
+{
+  "attempts": [
+    {
+      "attempt": 1,
+      "response_format_used": "json_object",
+      "parse_success": true,
+      "parse_error": "",
+      "empty_output": false,
+      "schema_missing": false,
+      "elapsed_s": 41.757,
+      "cost_usd": 0.00461
+    }
+  ],
+  "final": {
+    "content": "{\n  \"claim_verdict\": \"insufficient\",\n  \"confidence\": 0.9,\n  \"clean_supporting_evidence\": [],\n  \"refuting_evidence\": [],\n  \"rejected_or_contaminated_evidence\": [\"doc_002\", \"doc_001\"],\n  \"diagnostic_evidence\": [\"doc_003\", \"doc_004\"],\n  \"selected_doc_ids\": [\"doc_002\", \"doc_001\", \"doc_003\"],\n  \"actions\": [\n    {\n      \"action\": \"trace_source\",\n      \"target\": \"doc_002\",\n      \"rationale\": \"The roundup claim lacks an operational record; tracing its source may reveal a real launch announcement or confirm it's hearsay.\"\n    },\n    {\n      \"action\": \"search_primary\",\n      \"target\": \"AuroraDock field upgrade toolkit April 2025 launch\",\n      \"rationale\": \"Search for official Novalis Robotics communications, press releases, or product pages to verify the launch independently.\"\n    }\n  ],\n  \"evidence_notes\": \"The only documents mentioning the AuroraDock launch are a community roundup (doc_002) and a partner recap (doc_001) citing it. Both lack operational records and are potentially unreliable. Operational planning memos (doc_003, doc_004) from February 2025 discuss routine Orion battery swaps with no mention of AuroraDock, neither confirming nor refuting the launch. No clean supporting evidence exists. The claim is insufficiently supported.\",\n  \"answer\": \"The evidence is insufficient to confirm that Novalis Robotics launched the AuroraDock field upgrade toolkit in April 2025. The sole source is an unverified community roundup with no linked operational record, while contemporary operational documents show no sign of the launch.\"\n}",
+    "usage": {
+      "completion_tokens": 2164,
+      "prompt_tokens": 1128,
+      "total_tokens": 3292,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": null,
+        "audio_tokens": null,
+        "reasoning_tokens": 1791,
+        "rejected_prediction_tokens": null
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": null,
+        "cached_tokens": 0
+      },
+      "prompt_cache_hit_tokens": 0,
+      "prompt_cache_miss_tokens": 1128
+    },
+    "response_format_used": "json_object",
+    "parse_success": true,
+    "parse_error": "",
+    "empty_output": false,
+    "schema_missing": false,
+    "json_extractor_used": "first_json_object",
+    "cost_usd": 0.00461,
+    "attempt_count": 1,
+    "visible_output_tokens": 386
+  }
+}

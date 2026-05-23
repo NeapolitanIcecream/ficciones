@@ -1,0 +1,43 @@
+{
+  "attempts": [
+    {
+      "attempt": 1,
+      "response_format_used": "json_object",
+      "parse_success": true,
+      "parse_error": "",
+      "empty_output": false,
+      "schema_missing": false,
+      "elapsed_s": 41.233,
+      "cost_usd": 0.00447875
+    }
+  ],
+  "final": {
+    "content": "{\n  \"claim_verdict\": \"insufficient\",\n  \"confidence\": 0.9,\n  \"supporting_evidence\": [],\n  \"rejected_or_contaminated_evidence\": [\"doc_003\", \"doc_001\"],\n  \"diagnostic_evidence\": [],\n  \"selected_doc_ids\": [\"doc_002\", \"doc_003\", \"doc_001\"],\n  \"actions\": [\n    {\n      \"action\": \"compare_versions\",\n      \"target\": \"doc_002 and doc_003\",\n      \"rationale\": \"These documents provide different numbers (118 vs 139) for the same period, requiring reconciliation.\"\n    },\n    {\n      \"action\": \"trace_source\",\n      \"target\": \"doc_002\",\n      \"rationale\": \"Determining the author or source system of the closeout ledger could clarify if Novalis Robotics logged the number.\"\n    }\n  ],\n  \"evidence_notes\": \"Doc_002 reports 118 completed refurbishments, but does not attribute the log to Novalis Robotics. Doc_003 estimates 139. Doc_001 and doc_004 provide no final numbers. No document explicitly states that Novalis Robotics logged any number. Therefore, the claim cannot be verified.\",\n  \"answer\": \"The evidence does not confirm whether Novalis Robotics logged 118 completed refurbishments. While a closeout ledger lists 118, it does not specify that Novalis Robotics was the logger. Thus, the claim is insufficiently supported.\"\n}",
+    "usage": {
+      "completion_tokens": 2107,
+      "prompt_tokens": 1059,
+      "total_tokens": 3166,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": null,
+        "audio_tokens": null,
+        "reasoning_tokens": 1800,
+        "rejected_prediction_tokens": null
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": null,
+        "cached_tokens": 0
+      },
+      "prompt_cache_hit_tokens": 0,
+      "prompt_cache_miss_tokens": 1059
+    },
+    "response_format_used": "json_object",
+    "parse_success": true,
+    "parse_error": "",
+    "empty_output": false,
+    "schema_missing": false,
+    "json_extractor_used": "first_json_object",
+    "cost_usd": 0.00447875,
+    "attempt_count": 1,
+    "visible_output_tokens": 305
+  }
+}

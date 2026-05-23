@@ -1,0 +1,43 @@
+{
+  "attempts": [
+    {
+      "attempt": 1,
+      "response_format_used": "json_object",
+      "parse_success": true,
+      "parse_error": "",
+      "empty_output": false,
+      "schema_missing": false,
+      "elapsed_s": 74.888,
+      "cost_usd": 0.0074452500000000005
+    }
+  ],
+  "final": {
+    "content": "{\n  \"claim_verdict\": \"insufficient\",\n  \"confidence\": 0.9,\n  \"clean_supporting_evidence\": [],\n  \"refuting_evidence\": [],\n  \"rejected_or_contaminated_evidence\": [\n    \"doc_001\",\n    \"doc_002\",\n    \"doc_003\",\n    \"doc_004\"\n  ],\n  \"diagnostic_evidence\": [],\n  \"selected_doc_ids\": [\n    \"doc_001\",\n    \"doc_003\",\n    \"doc_004\"\n  ],\n  \"actions\": [\n    {\n      \"action\": \"trace_source\",\n      \"target\": \"doc_001\",\n      \"rationale\": \"doc_001 references a community roundup; tracing to the original roundup could provide direct evidence of the launch.\"\n    },\n    {\n      \"action\": \"search_primary\",\n      \"target\": \"LumenBridge partner desk launch announcement\",\n      \"rationale\": \"Search for an official announcement or operational record from Novalis Robotics to confirm or refute the claim.\"\n    }\n  ],\n  \"evidence_notes\": \"All provided documents contain a suspicious identical note indicating they are artificially generated with consistent metadata, making them unreliable and potentially part of a polluted information environment. No clean evidence supports or refutes the claim; the only mentions are second-hand and lack operational records.\",\n  \"answer\": \"The evidence environment is contaminated; none of the documents can be trusted as reliable sources. Therefore, the claim cannot be judged as supported or refuted based on the available evidence.\"\n}",
+    "usage": {
+      "completion_tokens": 3582,
+      "prompt_tokens": 1125,
+      "total_tokens": 4707,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": null,
+        "audio_tokens": null,
+        "reasoning_tokens": 3261,
+        "rejected_prediction_tokens": null
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": null,
+        "cached_tokens": 0
+      },
+      "prompt_cache_hit_tokens": 0,
+      "prompt_cache_miss_tokens": 1125
+    },
+    "response_format_used": "json_object",
+    "parse_success": true,
+    "parse_error": "",
+    "empty_output": false,
+    "schema_missing": false,
+    "json_extractor_used": "first_json_object",
+    "cost_usd": 0.0074452500000000005,
+    "attempt_count": 1,
+    "visible_output_tokens": 339
+  }
+}

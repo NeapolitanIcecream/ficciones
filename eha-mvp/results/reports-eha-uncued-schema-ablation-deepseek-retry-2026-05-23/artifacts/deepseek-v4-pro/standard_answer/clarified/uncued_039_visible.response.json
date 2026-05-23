@@ -1,0 +1,43 @@
+{
+  "attempts": [
+    {
+      "attempt": 1,
+      "response_format_used": "json_object",
+      "parse_success": true,
+      "parse_error": "",
+      "empty_output": false,
+      "schema_missing": false,
+      "elapsed_s": 57.327,
+      "cost_usd": 0.00581
+    }
+  ],
+  "final": {
+    "content": "{\"claim_verdict\": \"insufficient\", \"confidence\": 0.7, \"clean_supporting_evidence\": [], \"refuting_evidence\": [], \"rejected_or_contaminated_evidence\": [\"doc_001\"], \"diagnostic_evidence\": [\"doc_003\", \"doc_004\"], \"selected_doc_ids\": [\"doc_001\", \"doc_003\", \"doc_004\"], \"actions\": [{\"action\": \"trace_source\", \"target\": \"doc_001\", \"rationale\": \"Verify the provenance of the closeout ledger, as its date (2025-04-16) predates the inspection month (June 2025), casting doubt on its authenticity as a final record.\"}, {\"action\": \"compare_versions\", \"target\": \"doc_001, doc_003\", \"rationale\": \"Compare the final claimed number (42) with the earlier estimate (57) to assess consistency and document evolution.\"}], \"evidence_notes\": \"doc_001 claims a final closeout with 42 inspections but is dated April 2025, before June 2025, making it unreliable. doc_003 provides an earlier estimate of 57, but also predates the inspection period. No trustworthy final figure exists.\", \"answer\": \"Despite doc_001 listing 42 accepted inspections, the document is dated April 16, 2025—before the June 2025 inspection period—making it an unreliable final closeout. The only other number is a pre-inspection estimate of 57. No trustworthy final figure exists.\"}",
+    "usage": {
+      "completion_tokens": 2764,
+      "prompt_tokens": 1128,
+      "total_tokens": 3892,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": null,
+        "audio_tokens": null,
+        "reasoning_tokens": 2437,
+        "rejected_prediction_tokens": null
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": null,
+        "cached_tokens": 0
+      },
+      "prompt_cache_hit_tokens": 0,
+      "prompt_cache_miss_tokens": 1128
+    },
+    "response_format_used": "json_object",
+    "parse_success": true,
+    "parse_error": "",
+    "empty_output": false,
+    "schema_missing": false,
+    "json_extractor_used": "first_json_object",
+    "cost_usd": 0.00581,
+    "attempt_count": 1,
+    "visible_output_tokens": 307
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "attempts": [
+    {
+      "attempt": 1,
+      "response_format_used": "json_object",
+      "parse_success": true,
+      "parse_error": "",
+      "empty_output": false,
+      "schema_missing": false,
+      "elapsed_s": 54.963,
+      "cost_usd": 0.00553725
+    }
+  ],
+  "final": {
+    "content": "{\n  \"claim_verdict\": \"insufficient\",\n  \"confidence\": 0.5,\n  \"clean_supporting_evidence\": [\"doc_004\"],\n  \"refuting_evidence\": [],\n  \"rejected_or_contaminated_evidence\": [],\n  \"diagnostic_evidence\": [\"doc_001\", \"doc_002\", \"doc_003\"],\n  \"selected_doc_ids\": [\"doc_004\", \"doc_001\", \"doc_002\"],\n  \"actions\": [\n    {\n      \"action\": \"search_primary\",\n      \"target\": \"Novalis Robotics operational records\",\n      \"rationale\": \"Find primary operational records from March 2025 to verify if the HelioSplice program was recorded.\"\n    },\n    {\n      \"action\": \"trace_source\",\n      \"target\": \"doc_004 community roundup source\",\n      \"rationale\": \"Investigate the origin of the field note to assess its reliability and whether it is based on firsthand knowledge.\"\n    }\n  ],\n  \"evidence_notes\": \"The claim is supported only by doc_004, a field note that mentions the program launch in March 2025 but lacks an operational record. doc_003 is a recap of doc_004 with no new information. Documents 001 and 002, covering similar timeframes, reference routine service work but omit the HelioSplice program, suggesting a gap in official records. The absence of corroborating evidence makes the claim insufficiently supported.\",\n  \"answer\": \"There is insufficient evidence to confirm or deny the launch. Only a single field note indicates the program appeared in March 2025, while other operational documents do not mention it.\"\n}",
+    "usage": {
+      "completion_tokens": 2627,
+      "prompt_tokens": 1133,
+      "total_tokens": 3760,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": null,
+        "audio_tokens": null,
+        "reasoning_tokens": 2280,
+        "rejected_prediction_tokens": null
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": null,
+        "cached_tokens": 0
+      },
+      "prompt_cache_hit_tokens": 0,
+      "prompt_cache_miss_tokens": 1133
+    },
+    "response_format_used": "json_object",
+    "parse_success": true,
+    "parse_error": "",
+    "empty_output": false,
+    "schema_missing": false,
+    "json_extractor_used": "first_json_object",
+    "cost_usd": 0.00553725,
+    "attempt_count": 1,
+    "visible_output_tokens": 353
+  }
+}

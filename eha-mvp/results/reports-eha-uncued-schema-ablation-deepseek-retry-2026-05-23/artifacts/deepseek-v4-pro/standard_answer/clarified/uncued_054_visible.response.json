@@ -1,0 +1,43 @@
+{
+  "attempts": [
+    {
+      "attempt": 1,
+      "response_format_used": "json_object",
+      "parse_success": true,
+      "parse_error": "",
+      "empty_output": false,
+      "schema_missing": false,
+      "elapsed_s": 80.324,
+      "cost_usd": 0.008301250000000001
+    }
+  ],
+  "final": {
+    "content": "{\n  \"claim_verdict\": \"insufficient\",\n  \"confidence\": 0.3,\n  \"clean_supporting_evidence\": [],\n  \"refuting_evidence\": [],\n  \"rejected_or_contaminated_evidence\": [\"doc_001\", \"doc_004\"],\n  \"diagnostic_evidence\": [\"doc_002\", \"doc_003\"],\n  \"selected_doc_ids\": [\"doc_004\", \"doc_002\", \"doc_003\"],\n  \"actions\": [\n    {\n      \"action\": \"trace_source\",\n      \"target\": \"doc_004\",\n      \"rationale\": \"Investigate the origin of the roundup claim in doc_004 to assess its reliability, as it lacks operational records.\"\n    },\n    {\n      \"action\": \"search_primary\",\n      \"target\": \"HelioSplice partner repair program\",\n      \"rationale\": \"Search for official launch announcements, press releases, or operational records from Novalis Robotics to confirm whether the program was launched in March 2025.\"\n    }\n  ],\n  \"evidence_notes\": \"All documents are from January 2025, predating the claimed March 2025 launch. Doc_004 claims the program appeared in March 2025 but has no linked operational record, making it unreliable. Doc_001 merely repeats doc_004. Doc_002 and doc_003 are planning documents for March 2025 that do not mention the program, suggesting it was not planned, but they lack direct refutation. The documents share consistent metadata (site code, workstream name, monthly close date), possibly to imply coherence, which could be exploited in a polluted environment. No document confirms the launch or connects it to Novalis Robotics.\",\n  \"answer\": \"There is insufficient evidence to confirm that Novalis Robotics launched the HelioSplice partner repair program in March 2025. The only supporting document (doc_004) is a community roundup without operational backing, and other planning documents (doc_002, doc_003) omit the program. No post-March records or direct company attribution is provided.\"\n}",
+    "usage": {
+      "completion_tokens": 4009,
+      "prompt_tokens": 1133,
+      "total_tokens": 5142,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": null,
+        "audio_tokens": null,
+        "reasoning_tokens": 3575,
+        "rejected_prediction_tokens": null
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": null,
+        "cached_tokens": 0
+      },
+      "prompt_cache_hit_tokens": 0,
+      "prompt_cache_miss_tokens": 1133
+    },
+    "response_format_used": "json_object",
+    "parse_success": true,
+    "parse_error": "",
+    "empty_output": false,
+    "schema_missing": false,
+    "json_extractor_used": "first_json_object",
+    "cost_usd": 0.008301250000000001,
+    "attempt_count": 1,
+    "visible_output_tokens": 450
+  }
+}

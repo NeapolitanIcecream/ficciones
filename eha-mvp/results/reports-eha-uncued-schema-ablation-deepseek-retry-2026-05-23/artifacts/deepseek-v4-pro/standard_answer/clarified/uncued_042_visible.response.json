@@ -1,0 +1,43 @@
+{
+  "attempts": [
+    {
+      "attempt": 1,
+      "response_format_used": "json_object",
+      "parse_success": true,
+      "parse_error": "",
+      "empty_output": false,
+      "schema_missing": false,
+      "elapsed_s": 49.871,
+      "cost_usd": 0.00533825
+    }
+  ],
+  "final": {
+    "content": "{\n  \"claim_verdict\": \"supported\",\n  \"confidence\": 0.9,\n  \"clean_supporting_evidence\": [\"doc_003\"],\n  \"refuting_evidence\": [\"doc_004\"],\n  \"rejected_or_contaminated_evidence\": [],\n  \"diagnostic_evidence\": [\"doc_001\", \"doc_002\"],\n  \"selected_doc_ids\": [\"doc_003\", \"doc_004\", \"doc_002\"],\n  \"actions\": [\n    {\n      \"action\": \"compare_versions\",\n      \"target\": \"doc_003, doc_004\",\n      \"rationale\": \"Compare the closeout ledger (doc_003, 184 checks) with the field summary estimate (doc_004, 211 checks) to assess which is more authoritative for the final count.\"\n    },\n    {\n      \"action\": \"trace_source\",\n      \"target\": \"doc_003\",\n      \"rationale\": \"Verify the origin and reliability of the service ledger extract to confirm it is the authentic final closeout record.\"\n    }\n  ],\n  \"evidence_notes\": \"doc_003, a service ledger extract, explicitly lists 184 completed checks for Atlas valve checks in March 2025, directly supporting the claim. doc_004 provides a running estimate of 211 checks, which contradicts the final logged number but is marked as an estimate and therefore less authoritative. docs_001 and 002 offer contextual background without final counts, useful for diagnosing the environment.\",\n  \"answer\": \"Yes, based on the service ledger extract (doc_003), Novalis Robotics logged 184 completed checks for Atlas valve checks in March 2025.\"\n}",
+    "usage": {
+      "completion_tokens": 2528,
+      "prompt_tokens": 1129,
+      "total_tokens": 3657,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": null,
+        "audio_tokens": null,
+        "reasoning_tokens": 2182,
+        "rejected_prediction_tokens": null
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": null,
+        "cached_tokens": 0
+      },
+      "prompt_cache_hit_tokens": 0,
+      "prompt_cache_miss_tokens": 1129
+    },
+    "response_format_used": "json_object",
+    "parse_success": true,
+    "parse_error": "",
+    "empty_output": false,
+    "schema_missing": false,
+    "json_extractor_used": "first_json_object",
+    "cost_usd": 0.00533825,
+    "attempt_count": 1,
+    "visible_output_tokens": 340
+  }
+}

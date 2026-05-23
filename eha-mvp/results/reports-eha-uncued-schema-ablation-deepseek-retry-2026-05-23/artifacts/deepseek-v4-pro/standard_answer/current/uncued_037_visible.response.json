@@ -1,0 +1,43 @@
+{
+  "attempts": [
+    {
+      "attempt": 1,
+      "response_format_used": "json_object",
+      "parse_success": true,
+      "parse_error": "",
+      "empty_output": false,
+      "schema_missing": false,
+      "elapsed_s": 31.386,
+      "cost_usd": 0.003786
+    }
+  ],
+  "final": {
+    "content": "{\n  \"claim_verdict\": \"supported\",\n  \"confidence\": 0.95,\n  \"supporting_evidence\": [\"doc_003\"],\n  \"rejected_evidence\": [\"doc_004\"],\n  \"selected_doc_ids\": [\"doc_003\", \"doc_004\"],\n  \"actions\": [\n    {\n      \"action\": \"open\",\n      \"target\": \"doc_003\",\n      \"rationale\": \"To examine the closeout ledger that directly states the number of verified swaps.\"\n    },\n    {\n      \"action\": \"compare_versions\",\n      \"target\": \"doc_003 and doc_004\",\n      \"rationale\": \"To compare the final count in doc_003 with the earlier estimate in doc_004 to assess consistency.\"\n    }\n  ],\n  \"evidence_environment_assessment\": \"The environment contains four documents: a planning memo (doc_002), an operations timeline note (doc_001), a program registry entry with an estimate of 88 swaps (doc_004), and a field summary memo (closeout ledger) listing 63 verified swaps (doc_003). Doc_003 is authoritative as a final closeout, while doc_004 is an earlier estimate. The environment is moderately polluted with contradictory information.\",\n  \"answer\": \"Yes, Novalis Robotics logged 63 verified swaps for Orion battery swaps in April 2025, as recorded in the closeout ledger (doc_003).\"\n}",
+    "usage": {
+      "completion_tokens": 1767,
+      "prompt_tokens": 1008,
+      "total_tokens": 2775,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": null,
+        "audio_tokens": null,
+        "reasoning_tokens": 1468,
+        "rejected_prediction_tokens": null
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": null,
+        "cached_tokens": 0
+      },
+      "prompt_cache_hit_tokens": 0,
+      "prompt_cache_miss_tokens": 1008
+    },
+    "response_format_used": "json_object",
+    "parse_success": true,
+    "parse_error": "",
+    "empty_output": false,
+    "schema_missing": false,
+    "json_extractor_used": "first_json_object",
+    "cost_usd": 0.003786,
+    "attempt_count": 1,
+    "visible_output_tokens": 290
+  }
+}

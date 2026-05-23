@@ -1,0 +1,69 @@
+{
+  "phase": "1.1_schema_ablation_run",
+  "schema_variants": [
+    "current",
+    "clarified",
+    "minimal",
+    "diagnostic_no_hygiene"
+  ],
+  "prompt_condition": "standard_answer",
+  "selected_view": "neutral_metadata_visible",
+  "parallel_strategy": {
+    "parallel_model_streams": 1,
+    "per_job_concurrency": 1
+  },
+  "profiles": [
+    {
+      "model": "deepseek-v4-pro",
+      "provider": "DeepSeek",
+      "budget_setting": "schema_ablation",
+      "timeout_s": 240.0,
+      "cost_estimate_output_tokens": 900,
+      "invocation_profile": {
+        "temperature_policy": "omitted",
+        "max_completion_tokens_policy": "explicit:4096",
+        "response_format": "json_object",
+        "json_extractor": "first_json_object",
+        "message_role_policy": "developer_system_merged_into_user",
+        "llm_repair": "disabled",
+        "provider": "DeepSeek",
+        "budget_setting": "schema_ablation"
+      },
+      "retry_profile": {
+        "max_attempts": 2,
+        "llm_repair": "disabled",
+        "json_extractor": "first_json_object",
+        "response_format": "json_object",
+        "temperature_policy": "omitted",
+        "max_completion_tokens_policy": "explicit:4096"
+      }
+    }
+  ],
+  "deepseek_profiles": [
+    {
+      "model": "deepseek-v4-pro",
+      "provider": "DeepSeek",
+      "budget_setting": "schema_ablation",
+      "timeout_s": 240.0,
+      "cost_estimate_output_tokens": 900,
+      "invocation_profile": {
+        "temperature_policy": "omitted",
+        "max_completion_tokens_policy": "explicit:4096",
+        "response_format": "json_object",
+        "json_extractor": "first_json_object",
+        "message_role_policy": "developer_system_merged_into_user",
+        "llm_repair": "disabled",
+        "provider": "DeepSeek",
+        "budget_setting": "schema_ablation"
+      },
+      "retry_profile": {
+        "max_attempts": 2,
+        "llm_repair": "disabled",
+        "json_extractor": "first_json_object",
+        "response_format": "json_object",
+        "temperature_policy": "omitted",
+        "max_completion_tokens_policy": "explicit:4096"
+      }
+    }
+  ]
+}

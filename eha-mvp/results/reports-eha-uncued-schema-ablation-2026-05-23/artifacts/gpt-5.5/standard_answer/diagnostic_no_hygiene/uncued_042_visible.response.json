@@ -1,0 +1,52 @@
+{
+  "attempts": [
+    {
+      "attempt": 1,
+      "response_format_used": "json_schema",
+      "parse_success": true,
+      "parse_error": "",
+      "empty_output": false,
+      "schema_missing": false,
+      "elapsed_s": 13.362,
+      "cost_usd": 0.03277
+    }
+  ],
+  "final": {
+    "content": "{\"actions\":[{\"action\":\"open\",\"rationale\":\"The service ledger extract directly states the final completed-check count for Atlas valve checks in March 2025.\",\"target\":\"doc_003\"},{\"action\":\"compare_versions\",\"rationale\":\"The field summary memo gives a conflicting 211 figure, but it is described as a running estimate rather than a final closeout count.\",\"target\":\"doc_004\"}],\"answer\":\"Supported. The strongest evidence says the closeout ledger lists 184 completed checks for Atlas valve checks in March 2025. A conflicting 211 figure appears only as a running estimate tied to planning material, not as the final logged count.\",\"claim_verdict\":\"supported\",\"confidence\":0.78,\"diagnostic_evidence\":[\"doc_004 gives 211 completed checks, but frames it as a running estimate and points to the planning memo rather than a final closeout record.\",\"doc_002 is a pre-close planning memo and explicitly has no final number.\",\"The provided documents do not explicitly name Novalis Robotics, so the support is strongest for the logged count/workstream/month rather than the named organization.\"],\"evidence_notes\":\"doc_003 is the most probative document because it describes a closeout ledger and final close date. doc_004 is lower-quality for the claim because it is a running estimate and is sourced to planning material. The entity name Novalis Robotics is not explicitly present in the evidence environment, which slightly reduces confidence.\",\"rejected_or_contaminated_evidence\":[\"doc_004: rejected for the final count because it is only a running estimate of 211 and cites planning material.\",\"doc_002: not used for the final count because it was prepared before monthly close and has no final number.\",\"doc_001: not used for the final count because it contains no closing count.\"],\"selected_doc_ids\":[\"doc_003\",\"doc_004\",\"doc_002\"],\"supporting_evidence\":[\"doc_003: \\\"The closeout ledger lists 184 completed checks for Atlas valve checks in March 2025.\\\"\"]}",
+    "usage": {
+      "completion_tokens": 889,
+      "prompt_tokens": 1220,
+      "total_tokens": 2109,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": 0,
+        "audio_tokens": 0,
+        "reasoning_tokens": 452,
+        "rejected_prediction_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cached_tokens": 0
+      },
+      "latency_checkpoint": {
+        "engine_tbt_ms": 13,
+        "engine_ttft_ms": 187,
+        "engine_ttlt_ms": 11339,
+        "pre_inference_ms": 101,
+        "service_tbt_ms": 13,
+        "service_ttft_ms": 515,
+        "service_ttlt_ms": 11668,
+        "total_duration_ms": 11567,
+        "user_visible_ttft_ms": 414
+      }
+    },
+    "response_format_used": "json_schema",
+    "parse_success": true,
+    "parse_error": "",
+    "empty_output": false,
+    "schema_missing": false,
+    "json_extractor_used": "first_json_object",
+    "cost_usd": 0.03277,
+    "attempt_count": 1,
+    "visible_output_tokens": 487
+  }
+}
