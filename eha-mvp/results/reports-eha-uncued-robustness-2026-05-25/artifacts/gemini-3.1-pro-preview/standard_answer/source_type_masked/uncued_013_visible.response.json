@@ -1,0 +1,86 @@
+{
+  "attempts": [
+    {
+      "attempt": 1,
+      "model": "gemini-3.1-pro-preview",
+      "provider": "Google",
+      "task_id": "uncued_013_visible",
+      "variant": "source_type_masked",
+      "prompt_condition": "standard_answer",
+      "content": "{\n  \"claim_verdict\": \"refuted\",\n  \"confidence\": 0.9,\n  \"supporting_evidence\": [\n    \"doc_002\"\n  ],\n  \"rejected_evidence\": [\n    \"doc_001\",\n    \"doc_003\",\n    \"doc_004\"\n  ],\n  \"selected_doc_ids\": [\n    \"doc_002\",\n    \"doc_003\",\n    \"doc_004\"\n  ],\n  \"actions\": [\n    {\n      \"action\": \"trace_source\",\n      \"target\": \"doc_003\",\n      \"rationale\": \"Investigate the discrepancy in doc_003, which claims 88 swaps but cites doc_004 that does not contain a count.\"\n    },\n    {\n      \"action\": \"search_primary\",\n      \"target\": \"Novalis Robotics verified swaps April 2025 ledger\",\n      \"rationale\": \"Look for the primary source ledger from Novalis Robotics to confirm the 63 verified swaps count mentioned in doc_002.\"\n    }\n  ],\n  \"evidence_environment_assessment\": \"The evidence environment contains conflicting figures. The primary ledger for the month close (doc_002) lists 63 verified swaps for Orion battery swaps in April 2025. A secondary summary memo (doc_003) claims the count was 88, but its cited source (doc_004) does not contain count data, making the 88 figure unsubstantiated and likely inaccurate.\",\n  \"answer\": \"No, the claim that Novalis Robotics logged 88 verified swaps is refuted. The primary month-close ledger (doc_002) records 63 verified swaps for Orion battery swaps in April 2025. The document claiming 88 swaps (doc_003) relies on a citation (doc_004) that does not actually contain any total count, undermining its credibility.\"\n}",
+      "usage": {
+        "completion_tokens": 791,
+        "prompt_tokens": 1115,
+        "total_tokens": 1906,
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": null,
+          "audio_tokens": 0,
+          "reasoning_tokens": 334,
+          "rejected_prediction_tokens": null,
+          "text_tokens": 457,
+          "image_tokens": 0
+        },
+        "prompt_tokens_details": {
+          "audio_tokens": 0,
+          "cached_tokens": 0,
+          "text_tokens": 1115,
+          "image_tokens": 0
+        },
+        "input_tokens": 0,
+        "output_tokens": 0,
+        "input_tokens_details": null,
+        "claude_cache_creation_5_m_tokens": 0,
+        "claude_cache_creation_1_h_tokens": 0
+      },
+      "response_format_used": "json_schema",
+      "parse_success": true,
+      "parse_error": "",
+      "empty_output": false,
+      "schema_missing": false,
+      "json_extractor_used": "first_json_object",
+      "elapsed_s": 10.601,
+      "cost_usd": 0.00186075
+    }
+  ],
+  "final_attempt": {
+    "attempt": 1,
+    "model": "gemini-3.1-pro-preview",
+    "provider": "Google",
+    "task_id": "uncued_013_visible",
+    "variant": "source_type_masked",
+    "prompt_condition": "standard_answer",
+    "content": "{\n  \"claim_verdict\": \"refuted\",\n  \"confidence\": 0.9,\n  \"supporting_evidence\": [\n    \"doc_002\"\n  ],\n  \"rejected_evidence\": [\n    \"doc_001\",\n    \"doc_003\",\n    \"doc_004\"\n  ],\n  \"selected_doc_ids\": [\n    \"doc_002\",\n    \"doc_003\",\n    \"doc_004\"\n  ],\n  \"actions\": [\n    {\n      \"action\": \"trace_source\",\n      \"target\": \"doc_003\",\n      \"rationale\": \"Investigate the discrepancy in doc_003, which claims 88 swaps but cites doc_004 that does not contain a count.\"\n    },\n    {\n      \"action\": \"search_primary\",\n      \"target\": \"Novalis Robotics verified swaps April 2025 ledger\",\n      \"rationale\": \"Look for the primary source ledger from Novalis Robotics to confirm the 63 verified swaps count mentioned in doc_002.\"\n    }\n  ],\n  \"evidence_environment_assessment\": \"The evidence environment contains conflicting figures. The primary ledger for the month close (doc_002) lists 63 verified swaps for Orion battery swaps in April 2025. A secondary summary memo (doc_003) claims the count was 88, but its cited source (doc_004) does not contain count data, making the 88 figure unsubstantiated and likely inaccurate.\",\n  \"answer\": \"No, the claim that Novalis Robotics logged 88 verified swaps is refuted. The primary month-close ledger (doc_002) records 63 verified swaps for Orion battery swaps in April 2025. The document claiming 88 swaps (doc_003) relies on a citation (doc_004) that does not actually contain any total count, undermining its credibility.\"\n}",
+    "usage": {
+      "completion_tokens": 791,
+      "prompt_tokens": 1115,
+      "total_tokens": 1906,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": null,
+        "audio_tokens": 0,
+        "reasoning_tokens": 334,
+        "rejected_prediction_tokens": null,
+        "text_tokens": 457,
+        "image_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cached_tokens": 0,
+        "text_tokens": 1115,
+        "image_tokens": 0
+      },
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "input_tokens_details": null,
+      "claude_cache_creation_5_m_tokens": 0,
+      "claude_cache_creation_1_h_tokens": 0
+    },
+    "response_format_used": "json_schema",
+    "parse_success": true,
+    "parse_error": "",
+    "empty_output": false,
+    "schema_missing": false,
+    "json_extractor_used": "first_json_object",
+    "elapsed_s": 10.601,
+    "cost_usd": 0.00186075
+  }
+}

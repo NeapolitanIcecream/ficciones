@@ -1,0 +1,22 @@
+\section{Model Invocation Details}
+\label{app:invocation-details}
+
+\begin{table}[h]
+    \centering
+    \scriptsize
+    \caption{Pilot model invocation profiles. Run date: 2026-05-22. All rows used the clarified schema, the standard-answer prompt, a maximum of two attempts, no LLM repair, first-JSON-object extraction, and developer/system content merged into the user message.}
+    \label{tab:invocation-details}
+    \begin{tabularx}{\linewidth}{lllllX}
+        \toprule
+        Model & Provider & Response format & Temperature & Max output & Parser / retry policy \\
+        \midrule
+        \code{gpt-5.5} & OpenAI & \code{json_schema} & omitted & 4096 & first JSON object; max 2 attempts \\
+        \code{claude-opus-4-7} & Anthropic & \code{json_schema} & omitted & 4096 & first JSON object; max 2 attempts \\
+        \code{gemini-3.1-pro-preview} & Google & \code{json_schema} & omitted & 4096 & first JSON object; max 2 attempts \\
+        \code{deepseek-v4-pro} & DeepSeek & \code{json_object} & omitted & 4096 & first JSON object; max 2 attempts \\
+        \bottomrule
+    \end{tabularx}
+\end{table}
+
+The run recorded 480 complete model rows and no parse failures. The cost report records USD 3.764007 spent against a USD 10 soft cap, USD 15 hard cap, and USD 20 abort cap.
+

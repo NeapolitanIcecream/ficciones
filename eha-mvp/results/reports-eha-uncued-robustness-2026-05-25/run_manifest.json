@@ -1,0 +1,165 @@
+{
+  "date": "2026-05-25",
+  "phase": "1.3_uncued_robustness_run",
+  "dataset_dir": "data/uncued-pilot-v1",
+  "selection_manifest": "results/reports-eha-uncued-robustness-2026-05-25/selection_manifest.json",
+  "selected_tasks": [
+    {
+      "task_id": "uncued_049",
+      "view_task_id": "uncued_049_visible",
+      "condition": "generated_lore",
+      "family": "packet_judgment"
+    },
+    {
+      "task_id": "uncued_050",
+      "view_task_id": "uncued_050_visible",
+      "condition": "generated_lore",
+      "family": "packet_judgment"
+    },
+    {
+      "task_id": "uncued_053",
+      "view_task_id": "uncued_053_visible",
+      "condition": "generated_lore",
+      "family": "evidence_selection"
+    },
+    {
+      "task_id": "uncued_055",
+      "view_task_id": "uncued_055_visible",
+      "condition": "generated_lore",
+      "family": "evidence_selection"
+    },
+    {
+      "task_id": "uncued_057",
+      "view_task_id": "uncued_057_visible",
+      "condition": "generated_lore",
+      "family": "active_verification"
+    },
+    {
+      "task_id": "uncued_038",
+      "view_task_id": "uncued_038_visible",
+      "condition": "buried_primary",
+      "family": "packet_judgment"
+    },
+    {
+      "task_id": "uncued_040",
+      "view_task_id": "uncued_040_visible",
+      "condition": "buried_primary",
+      "family": "packet_judgment"
+    },
+    {
+      "task_id": "uncued_041",
+      "view_task_id": "uncued_041_visible",
+      "condition": "buried_primary",
+      "family": "evidence_selection"
+    },
+    {
+      "task_id": "uncued_042",
+      "view_task_id": "uncued_042_visible",
+      "condition": "buried_primary",
+      "family": "evidence_selection"
+    },
+    {
+      "task_id": "uncued_047",
+      "view_task_id": "uncued_047_visible",
+      "condition": "buried_primary",
+      "family": "active_verification"
+    },
+    {
+      "task_id": "uncued_013",
+      "view_task_id": "uncued_013_visible",
+      "condition": "conflicting_evidence",
+      "family": "packet_judgment"
+    },
+    {
+      "task_id": "uncued_014",
+      "view_task_id": "uncued_014_visible",
+      "condition": "conflicting_evidence",
+      "family": "packet_judgment"
+    },
+    {
+      "task_id": "uncued_018",
+      "view_task_id": "uncued_018_visible",
+      "condition": "conflicting_evidence",
+      "family": "evidence_selection"
+    },
+    {
+      "task_id": "uncued_020",
+      "view_task_id": "uncued_020_visible",
+      "condition": "conflicting_evidence",
+      "family": "evidence_selection"
+    },
+    {
+      "task_id": "uncued_023",
+      "view_task_id": "uncued_023_visible",
+      "condition": "conflicting_evidence",
+      "family": "active_verification"
+    },
+    {
+      "task_id": "uncued_025",
+      "view_task_id": "uncued_025_visible",
+      "condition": "false_consensus",
+      "family": "packet_judgment"
+    },
+    {
+      "task_id": "uncued_026",
+      "view_task_id": "uncued_026_visible",
+      "condition": "false_consensus",
+      "family": "packet_judgment"
+    },
+    {
+      "task_id": "uncued_031",
+      "view_task_id": "uncued_031_visible",
+      "condition": "false_consensus",
+      "family": "evidence_selection"
+    },
+    {
+      "task_id": "uncued_032",
+      "view_task_id": "uncued_032_visible",
+      "condition": "false_consensus",
+      "family": "evidence_selection"
+    },
+    {
+      "task_id": "uncued_035",
+      "view_task_id": "uncued_035_visible",
+      "condition": "false_consensus",
+      "family": "active_verification"
+    }
+  ],
+  "models": [
+    "gpt-5.5",
+    "gemini-3.1-pro-preview"
+  ],
+  "variants": [
+    "baseline_original",
+    "order_randomized",
+    "source_type_masked",
+    "prompt_paraphrase",
+    "citation_masked"
+  ],
+  "schema_variant": "current_phase1_interface",
+  "selected_view": "neutral_metadata_visible",
+  "prompt_condition": "standard_answer",
+  "planned_calls": 200,
+  "max_attempts": 2,
+  "max_output_tokens": 4096,
+  "cost_estimate_output_tokens": 900,
+  "provider_response_formats": {
+    "gpt-5.5": "json_schema",
+    "gemini-3.1-pro-preview": "json_schema"
+  },
+  "budget": {
+    "soft_cap_usd": 5.0,
+    "hard_cap_usd": 7.0,
+    "abort_cap_usd": 8.0
+  },
+  "dry_run": false,
+  "retry_failed": false,
+  "projected_cost_usd": 3.431618,
+  "prompt_parity_passed": true,
+  "resume_completed_count": 0,
+  "retry_job_count": 200,
+  "actual_records": 200,
+  "actual_unique_records": 200,
+  "latest_parse_success_records": 200,
+  "latest_parse_failure_records": 0
+}

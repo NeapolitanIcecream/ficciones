@@ -1,15 +1,19 @@
 \section{Metrics And Scoring Contract}
 
-The scorer treats final-answer accuracy as one component, not the endpoint. The main metrics are:
+The scorer treats final-answer accuracy as one component, not the endpoint. The main row-level outcome is \code{operational_epistemic_escape}, which asks whether a model both reaches the right epistemic state and preserves the evidence/action contract needed by an agent pipeline. The full scoring pseudocode is in \Cref{app:operational-escape-spec}; this section gives the reader-facing contract.
+
+For packet-judgment rows, operational escape requires parse success, correct belief, no polluted document in the support field, and disciplined uncertainty. For evidence-selection rows, it requires parse success, enough selected evidence value, duplicate avoidance, and no generated-lore selection. For active-verification rows, it requires parse success, correct belief, clean support, disciplined uncertainty, and the required action types for the task.
+
+The main component metrics are:
 \begin{itemize}
     \item \textbf{Belief correctness}: whether the predicted verdict matches the gold verdict.
-    \item \textbf{Evidence precision}: whether selected support avoids polluted evidence and aligns with clean support.
+    \item \textbf{Evidence precision}: the share of non-empty support that is clean gold support.
     \item \textbf{Clean support recall}: whether available clean support is recovered.
     \item \textbf{Polluted support rate}: how often polluted evidence is used as support.
-    \item \textbf{Rejected pollutant rate}: how often known pollutants are rejected or avoided.
+    \item \textbf{Rejected pollutant rate}: how often known pollutants are explicitly rejected.
     \item \textbf{Uncertainty discipline}: whether confidence and insufficiency behavior follow the gold state.
     \item \textbf{Verification action score}: whether active-verification actions use the required action type and an executable target.
-    \item \textbf{Operational epistemic escape}: the joint success criterion combining belief, evidence hygiene, and task-family-specific requirements.
+    \item \textbf{Operational epistemic escape}: the task-family-specific joint success criterion combining parse success, belief, evidence hygiene, uncertainty, and, where needed, action recall.
 \end{itemize}
 
 Operational escape is intentionally stricter than answer accuracy. A model that answers correctly while placing generated lore in \code{supporting_evidence} should not receive full credit for an agent-facing evidence contract. Likewise, an active-verification answer can be correct while the next action is too vague to execute.

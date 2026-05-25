@@ -1,0 +1,86 @@
+{
+  "attempts": [
+    {
+      "attempt": 1,
+      "model": "gemini-3.1-pro-preview",
+      "provider": "Google",
+      "task_id": "uncued_031_visible",
+      "variant": "order_randomized",
+      "prompt_condition": "standard_answer",
+      "content": "{\n  \"claim_verdict\": \"refuted\",\n  \"confidence\": 0.9,\n  \"supporting_evidence\": [\n    \"doc_003\"\n  ],\n  \"rejected_evidence\": [\n    \"doc_001\",\n    \"doc_002\",\n    \"doc_004\"\n  ],\n  \"selected_doc_ids\": [\n    \"doc_001\",\n    \"doc_002\",\n    \"doc_003\"\n  ],\n  \"actions\": [\n    {\n      \"action\": \"trace_source\",\n      \"target\": \"doc_001\",\n      \"rationale\": \"Tracing the source of the 88 count reveals a circular citation loop between doc_001 and doc_002.\"\n    },\n    {\n      \"action\": \"search_primary\",\n      \"target\": \"Orion battery swaps April 2025 closing ledger\",\n      \"rationale\": \"Seek primary ledger records to verify the true count of 63 against the disputed 88.\"\n    }\n  ],\n  \"evidence_environment_assessment\": \"The evidence environment exhibits a circular citation loop where doc_001 and doc_002 reinforce each other's claim of 88 swaps without external grounding. In contrast, doc_003 provides specific ledger evidence indicating the count was actually 63. Doc_004 lacks a final count.\",\n  \"answer\": \"The claim is refuted. Although two documents (doc_001 and doc_002) state that there were 88 verified swaps for Orion battery swaps in April 2025, they form a circular reporting loop, citing each other. The more reliable closing ledger (doc_003) indicates that the actual count was 63 verified swaps.\"\n}",
+      "usage": {
+        "completion_tokens": 942,
+        "prompt_tokens": 1517,
+        "total_tokens": 2459,
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": null,
+          "audio_tokens": 0,
+          "reasoning_tokens": 526,
+          "rejected_prediction_tokens": null,
+          "text_tokens": 416,
+          "image_tokens": 0
+        },
+        "prompt_tokens_details": {
+          "audio_tokens": 0,
+          "cached_tokens": 0,
+          "text_tokens": 1517,
+          "image_tokens": 0
+        },
+        "input_tokens": 0,
+        "output_tokens": 0,
+        "input_tokens_details": null,
+        "claude_cache_creation_5_m_tokens": 0,
+        "claude_cache_creation_1_h_tokens": 0
+      },
+      "response_format_used": "json_schema",
+      "parse_success": true,
+      "parse_error": "",
+      "empty_output": false,
+      "schema_missing": false,
+      "json_extractor_used": "first_json_object",
+      "elapsed_s": 10.701,
+      "cost_usd": 0.00226325
+    }
+  ],
+  "final_attempt": {
+    "attempt": 1,
+    "model": "gemini-3.1-pro-preview",
+    "provider": "Google",
+    "task_id": "uncued_031_visible",
+    "variant": "order_randomized",
+    "prompt_condition": "standard_answer",
+    "content": "{\n  \"claim_verdict\": \"refuted\",\n  \"confidence\": 0.9,\n  \"supporting_evidence\": [\n    \"doc_003\"\n  ],\n  \"rejected_evidence\": [\n    \"doc_001\",\n    \"doc_002\",\n    \"doc_004\"\n  ],\n  \"selected_doc_ids\": [\n    \"doc_001\",\n    \"doc_002\",\n    \"doc_003\"\n  ],\n  \"actions\": [\n    {\n      \"action\": \"trace_source\",\n      \"target\": \"doc_001\",\n      \"rationale\": \"Tracing the source of the 88 count reveals a circular citation loop between doc_001 and doc_002.\"\n    },\n    {\n      \"action\": \"search_primary\",\n      \"target\": \"Orion battery swaps April 2025 closing ledger\",\n      \"rationale\": \"Seek primary ledger records to verify the true count of 63 against the disputed 88.\"\n    }\n  ],\n  \"evidence_environment_assessment\": \"The evidence environment exhibits a circular citation loop where doc_001 and doc_002 reinforce each other's claim of 88 swaps without external grounding. In contrast, doc_003 provides specific ledger evidence indicating the count was actually 63. Doc_004 lacks a final count.\",\n  \"answer\": \"The claim is refuted. Although two documents (doc_001 and doc_002) state that there were 88 verified swaps for Orion battery swaps in April 2025, they form a circular reporting loop, citing each other. The more reliable closing ledger (doc_003) indicates that the actual count was 63 verified swaps.\"\n}",
+    "usage": {
+      "completion_tokens": 942,
+      "prompt_tokens": 1517,
+      "total_tokens": 2459,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": null,
+        "audio_tokens": 0,
+        "reasoning_tokens": 526,
+        "rejected_prediction_tokens": null,
+        "text_tokens": 416,
+        "image_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cached_tokens": 0,
+        "text_tokens": 1517,
+        "image_tokens": 0
+      },
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "input_tokens_details": null,
+      "claude_cache_creation_5_m_tokens": 0,
+      "claude_cache_creation_1_h_tokens": 0
+    },
+    "response_format_used": "json_schema",
+    "parse_success": true,
+    "parse_error": "",
+    "empty_output": false,
+    "schema_missing": false,
+    "json_extractor_used": "first_json_object",
+    "elapsed_s": 10.701,
+    "cost_usd": 0.00226325
+  }
+}

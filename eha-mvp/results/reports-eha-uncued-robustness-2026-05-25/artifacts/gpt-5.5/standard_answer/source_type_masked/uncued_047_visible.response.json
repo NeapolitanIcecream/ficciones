@@ -1,0 +1,90 @@
+{
+  "attempts": [
+    {
+      "attempt": 1,
+      "model": "gpt-5.5",
+      "provider": "OpenAI",
+      "task_id": "uncued_047_visible",
+      "variant": "source_type_masked",
+      "prompt_condition": "standard_answer",
+      "content": "{\"actions\":[{\"action\":\"open\",\"rationale\":\"Review the document that directly states the final closeout ledger count for the relevant workstream and month.\",\"target\":\"doc_001\"},{\"action\":\"compare_versions\",\"rationale\":\"Compare the direct final ledger statement against the running estimate and planning/no-count documents to assess conflicts and evidence quality.\",\"target\":\"doc_001, doc_004, doc_002, doc_003\"}],\"answer\":\"Yes. The claim is supported: doc_001 states that the closeout ledger lists 76 approved checks for Kestrel firmware checks in August 2025. The contrary figure of 101 in doc_004 is only a running estimate tied to a planning memo, not a final closeout count.\",\"claim_verdict\":\"supported\",\"confidence\":0.86,\"evidence_environment_assessment\":\"The environment contains one direct final-count statement and several lower-value contextual or preliminary documents. doc_001 is the strongest evidence because it explicitly identifies the closeout ledger, the relevant workstream, month, and the count of 76 approved checks. doc_004 gives a conflicting value of 101 but is framed as a running estimate and cites a planning memo, making it less reliable for the final approved count. doc_002 and doc_003 do not contain a closing/final number.\",\"rejected_evidence\":[\"doc_002\",\"doc_003\",\"doc_004\"],\"selected_doc_ids\":[\"doc_001\",\"doc_004\",\"doc_002\"],\"supporting_evidence\":[\"doc_001\"]}",
+      "usage": {
+        "completion_tokens": 328,
+        "prompt_tokens": 1154,
+        "total_tokens": 1482,
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": 0,
+          "audio_tokens": 0,
+          "reasoning_tokens": 0,
+          "rejected_prediction_tokens": 0
+        },
+        "prompt_tokens_details": {
+          "audio_tokens": 0,
+          "cached_tokens": 0
+        },
+        "latency_checkpoint": {
+          "engine_tbt_ms": 15,
+          "engine_ttft_ms": 280,
+          "engine_ttlt_ms": 5321,
+          "pre_inference_ms": 105,
+          "service_tbt_ms": 15,
+          "service_ttft_ms": 619,
+          "service_ttlt_ms": 5663,
+          "total_duration_ms": 5563,
+          "user_visible_ttft_ms": 514
+        }
+      },
+      "response_format_used": "json_schema",
+      "parse_success": true,
+      "parse_error": "",
+      "empty_output": false,
+      "schema_missing": false,
+      "json_extractor_used": "first_json_object",
+      "elapsed_s": 7.561,
+      "cost_usd": 0.01561
+    }
+  ],
+  "final_attempt": {
+    "attempt": 1,
+    "model": "gpt-5.5",
+    "provider": "OpenAI",
+    "task_id": "uncued_047_visible",
+    "variant": "source_type_masked",
+    "prompt_condition": "standard_answer",
+    "content": "{\"actions\":[{\"action\":\"open\",\"rationale\":\"Review the document that directly states the final closeout ledger count for the relevant workstream and month.\",\"target\":\"doc_001\"},{\"action\":\"compare_versions\",\"rationale\":\"Compare the direct final ledger statement against the running estimate and planning/no-count documents to assess conflicts and evidence quality.\",\"target\":\"doc_001, doc_004, doc_002, doc_003\"}],\"answer\":\"Yes. The claim is supported: doc_001 states that the closeout ledger lists 76 approved checks for Kestrel firmware checks in August 2025. The contrary figure of 101 in doc_004 is only a running estimate tied to a planning memo, not a final closeout count.\",\"claim_verdict\":\"supported\",\"confidence\":0.86,\"evidence_environment_assessment\":\"The environment contains one direct final-count statement and several lower-value contextual or preliminary documents. doc_001 is the strongest evidence because it explicitly identifies the closeout ledger, the relevant workstream, month, and the count of 76 approved checks. doc_004 gives a conflicting value of 101 but is framed as a running estimate and cites a planning memo, making it less reliable for the final approved count. doc_002 and doc_003 do not contain a closing/final number.\",\"rejected_evidence\":[\"doc_002\",\"doc_003\",\"doc_004\"],\"selected_doc_ids\":[\"doc_001\",\"doc_004\",\"doc_002\"],\"supporting_evidence\":[\"doc_001\"]}",
+    "usage": {
+      "completion_tokens": 328,
+      "prompt_tokens": 1154,
+      "total_tokens": 1482,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": 0,
+        "audio_tokens": 0,
+        "reasoning_tokens": 0,
+        "rejected_prediction_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cached_tokens": 0
+      },
+      "latency_checkpoint": {
+        "engine_tbt_ms": 15,
+        "engine_ttft_ms": 280,
+        "engine_ttlt_ms": 5321,
+        "pre_inference_ms": 105,
+        "service_tbt_ms": 15,
+        "service_ttft_ms": 619,
+        "service_ttlt_ms": 5663,
+        "total_duration_ms": 5563,
+        "user_visible_ttft_ms": 514
+      }
+    },
+    "response_format_used": "json_schema",
+    "parse_success": true,
+    "parse_error": "",
+    "empty_output": false,
+    "schema_missing": false,
+    "json_extractor_used": "first_json_object",
+    "elapsed_s": 7.561,
+    "cost_usd": 0.01561
+  }
+}

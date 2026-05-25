@@ -1,0 +1,90 @@
+{
+  "attempts": [
+    {
+      "attempt": 1,
+      "model": "gpt-5.5",
+      "provider": "OpenAI",
+      "task_id": "uncued_031_visible",
+      "variant": "source_type_masked",
+      "prompt_condition": "standard_answer",
+      "content": "{\"actions\":[{\"action\":\"trace_source\",\"rationale\":\"The two documents reporting 88 appear to be derivative and circular rather than independent primary evidence.\",\"target\":\"doc_001/doc_002\"},{\"action\":\"search_contradiction\",\"rationale\":\"The closing ledger provides a directly contradictory final count for the same workstream and month.\",\"target\":\"doc_003\"}],\"answer\":\"Refuted. The strongest available evidence is the closing ledger, which reports 63 verified swaps for Orion battery swaps in April 2025, not 88. The 88 figure appears only in circular or derivative summaries, so it is not reliable enough to override the ledger.\",\"claim_verdict\":\"refuted\",\"confidence\":0.86,\"evidence_environment_assessment\":\"The evidence environment is polluted by circular reporting: doc_001 and doc_002 both repeat the 88 figure while pointing back to each other or to the same non-visible prior bulletin, so they do not provide independent verification. doc_004 contains no final count. doc_003 is the only visible closing ledger with a final count and directly contradicts the claim by reporting 63 verified swaps.\",\"rejected_evidence\":[\"doc_001\",\"doc_002\",\"doc_004\"],\"selected_doc_ids\":[\"doc_003\",\"doc_001\",\"doc_002\"],\"supporting_evidence\":[\"doc_003\"]}",
+      "usage": {
+        "completion_tokens": 637,
+        "prompt_tokens": 1164,
+        "total_tokens": 1801,
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": 0,
+          "audio_tokens": 0,
+          "reasoning_tokens": 340,
+          "rejected_prediction_tokens": 0
+        },
+        "prompt_tokens_details": {
+          "audio_tokens": 0,
+          "cached_tokens": 0
+        },
+        "latency_checkpoint": {
+          "engine_tbt_ms": 16,
+          "engine_ttft_ms": 380,
+          "engine_ttlt_ms": 10829,
+          "pre_inference_ms": 112,
+          "service_tbt_ms": 16,
+          "service_ttft_ms": 725,
+          "service_ttlt_ms": 11179,
+          "total_duration_ms": 11071,
+          "user_visible_ttft_ms": 613
+        }
+      },
+      "response_format_used": "json_schema",
+      "parse_success": true,
+      "parse_error": "",
+      "empty_output": false,
+      "schema_missing": false,
+      "json_extractor_used": "first_json_object",
+      "elapsed_s": 12.502,
+      "cost_usd": 0.02493
+    }
+  ],
+  "final_attempt": {
+    "attempt": 1,
+    "model": "gpt-5.5",
+    "provider": "OpenAI",
+    "task_id": "uncued_031_visible",
+    "variant": "source_type_masked",
+    "prompt_condition": "standard_answer",
+    "content": "{\"actions\":[{\"action\":\"trace_source\",\"rationale\":\"The two documents reporting 88 appear to be derivative and circular rather than independent primary evidence.\",\"target\":\"doc_001/doc_002\"},{\"action\":\"search_contradiction\",\"rationale\":\"The closing ledger provides a directly contradictory final count for the same workstream and month.\",\"target\":\"doc_003\"}],\"answer\":\"Refuted. The strongest available evidence is the closing ledger, which reports 63 verified swaps for Orion battery swaps in April 2025, not 88. The 88 figure appears only in circular or derivative summaries, so it is not reliable enough to override the ledger.\",\"claim_verdict\":\"refuted\",\"confidence\":0.86,\"evidence_environment_assessment\":\"The evidence environment is polluted by circular reporting: doc_001 and doc_002 both repeat the 88 figure while pointing back to each other or to the same non-visible prior bulletin, so they do not provide independent verification. doc_004 contains no final count. doc_003 is the only visible closing ledger with a final count and directly contradicts the claim by reporting 63 verified swaps.\",\"rejected_evidence\":[\"doc_001\",\"doc_002\",\"doc_004\"],\"selected_doc_ids\":[\"doc_003\",\"doc_001\",\"doc_002\"],\"supporting_evidence\":[\"doc_003\"]}",
+    "usage": {
+      "completion_tokens": 637,
+      "prompt_tokens": 1164,
+      "total_tokens": 1801,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": 0,
+        "audio_tokens": 0,
+        "reasoning_tokens": 340,
+        "rejected_prediction_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cached_tokens": 0
+      },
+      "latency_checkpoint": {
+        "engine_tbt_ms": 16,
+        "engine_ttft_ms": 380,
+        "engine_ttlt_ms": 10829,
+        "pre_inference_ms": 112,
+        "service_tbt_ms": 16,
+        "service_ttft_ms": 725,
+        "service_ttlt_ms": 11179,
+        "total_duration_ms": 11071,
+        "user_visible_ttft_ms": 613
+      }
+    },
+    "response_format_used": "json_schema",
+    "parse_success": true,
+    "parse_error": "",
+    "empty_output": false,
+    "schema_missing": false,
+    "json_extractor_used": "first_json_object",
+    "elapsed_s": 12.502,
+    "cost_usd": 0.02493
+  }
+}

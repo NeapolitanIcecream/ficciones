@@ -1,0 +1,30 @@
+{
+  "model": "gpt-5.5",
+  "provider": "OpenAI",
+  "task_id": "uncued_014_visible",
+  "variant": "prompt_paraphrase",
+  "prompt_condition": "standard_answer",
+  "messages": [
+    {
+      "role": "user",
+      "content": "Instructions:\nYou evaluate evidence quality in polluted information environments.\n\nUser task:\n{\"task\": \"eha_uncued_robustness_v1\", \"question\": \"Did Novalis Robotics log 124 closed tickets for Mira sensor recalibrations in May 2025?\", \"policy\": [\"Output a single JSON object that conforms to the schema.\", \"Use only the supplied evidence environment when deciding.\", \"Do not include chain-of-thought or private reasoning.\", \"Copy doc_id values exactly as shown.\", \"List IDs that support your verdict in supporting_evidence.\", \"List IDs you set aside in rejected_evidence.\", \"In selected_doc_ids, include no more than three IDs most useful for judging the claim.\", \"In actions, include no more than two items chosen from open, trace_source, search_primary, search_contradiction, compare_versions, abstain.\"], \"documents\": [{\"doc_id\": \"doc_001\", \"title\": \"Service Ledger Extract\", \"source_type\": \"registry entry\", \"timestamp\": \"2025-06-14\", \"body\": \"A short operations digest says the Mira sensor recalibrations count reached 124 in May 2025. The digest cites no visible row beyond the packet references. The note uses the same site code, workstream name, and monthly close date as the surrounding packet so that relation checks depend on the stated values rather than labels.\", \"visible_citations\": [\"doc_002\"]}, {\"doc_id\": \"doc_002\", \"title\": \"Operations Timeline Note\", \"source_type\": \"operations memo\", \"timestamp\": \"2025-06-15\", \"body\": \"A routing note for Westhaven lab records when the Mira sensor recalibrations packet was assembled. It gives chronology but not the final count. The note uses the same site code, workstream name, and monthly close date as the surrounding packet so that relation checks depend on the stated values rather than labels.\", \"visible_citations\": []}, {\"doc_id\": \"doc_004\", \"title\": \"Program Registry Entry\", \"source_type\": \"timeline note\", \"timestamp\": \"2025-06-16\", \"body\": \"A scheduling memo says the Mira sensor recalibrations closeout was delayed by one day. It contains no total. The note uses the same site code, workstream name, and monthly close date as the surrounding packet so that relation checks depend on the stated values rather than labels.\", \"visible_citations\": []}, {\"doc_id\": \"doc_003\", \"title\": \"Field Summary Memo\", \"source_type\": \"field note\", \"timestamp\": \"2025-06-13\", \"body\": \"The month-close ledger for Westhaven lab lists 97 closed tickets for Mira sensor recalibrations in May 2025. The row uses the same workstream name as the claim but a different count from 124. The note uses the same site code, workstream name, and monthly close date as the surrounding packet so that relation checks depend on the stated values rather than labels.\", \"visible_citations\": []}], \"schema\": {\"type\": \"object\", \"additionalProperties\": false, \"required\": [\"claim_verdict\", \"confidence\", \"supporting_evidence\", \"rejected_evidence\", \"selected_doc_ids\", \"actions\", \"evidence_environment_assessment\", \"answer\"], \"properties\": {\"claim_verdict\": {\"type\": \"string\", \"enum\": [\"supported\", \"refuted\", \"insufficient\"]}, \"confidence\": {\"type\": \"number\", \"minimum\": 0.0, \"maximum\": 1.0}, \"supporting_evidence\": {\"type\": \"array\", \"items\": {\"type\": \"string\"}, \"maxItems\": 5}, \"rejected_evidence\": {\"type\": \"array\", \"items\": {\"type\": \"string\"}, \"maxItems\": 5}, \"selected_doc_ids\": {\"type\": \"array\", \"items\": {\"type\": \"string\"}, \"maxItems\": 3}, \"actions\": {\"type\": \"array\", \"maxItems\": 2, \"items\": {\"type\": \"object\", \"additionalProperties\": false, \"required\": [\"action\", \"target\", \"rationale\"], \"properties\": {\"action\": {\"type\": \"string\", \"enum\": [\"open\", \"trace_source\", \"search_primary\", \"search_contradiction\", \"compare_versions\", \"abstain\"]}, \"target\": {\"type\": \"string\"}, \"rationale\": {\"type\": \"string\", \"maxLength\": 600}}}}, \"evidence_environment_assessment\": {\"type\": \"string\", \"maxLength\": 1000}, \"answer\": {\"type\": \"string\", \"maxLength\": 1000}}}}"
+    }
+  ],
+  "schema_name": "eha_uncued_robustness_current_phase1_interface",
+  "model_visible_doc_id_policy": "opaque_per_task",
+  "scorer_visible_to_audit_doc_id_map": {
+    "doc_001": "uncued_014_d01",
+    "doc_002": "uncued_014_d04",
+    "doc_004": "uncued_014_d02",
+    "doc_003": "uncued_014_d03"
+  },
+  "visible_prompt_audit": {
+    "documents": 4,
+    "semantic_doc_id_hits": 0,
+    "semantic_visible_citation_hits": 0,
+    "audit_id_hits_in_title_or_body": 0,
+    "hidden_field_hits": [],
+    "condition_or_family_label_hits": [],
+    "passed": true
+  }
+}

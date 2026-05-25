@@ -1,0 +1,90 @@
+{
+  "attempts": [
+    {
+      "attempt": 1,
+      "model": "gpt-5.5",
+      "provider": "OpenAI",
+      "task_id": "uncued_042_visible",
+      "variant": "order_randomized",
+      "prompt_condition": "standard_answer",
+      "content": "{\"actions\":[{\"action\":\"open\",\"rationale\":\"The service ledger extract is the only document giving a final closeout count for Atlas valve checks in March 2025.\",\"target\":\"doc_003\"},{\"action\":\"compare_versions\",\"rationale\":\"A conflicting 211 figure appears in a running estimate, so comparing it with the final closeout ledger is necessary.\",\"target\":\"doc_003 vs doc_004\"}],\"answer\":\"Yes. The best evidence is the closeout ledger extract, which lists 184 completed checks for Atlas valve checks in March 2025. The conflicting 211 figure is only a running estimate tied to a planning memo and is less reliable than the final closeout ledger.\",\"claim_verdict\":\"supported\",\"confidence\":0.84,\"evidence_environment_assessment\":\"The environment contains one direct final-count source and several lower-quality or non-final notes. doc_003 is a closeout ledger extract and directly states 184 completed checks for Atlas valve checks in March 2025. doc_004 conflicts with 211 but is explicitly framed as a running estimate and cites doc_002, which is only a pre-close planning memo with no final number. doc_001 also has no count. The entity name Novalis Robotics is not explicitly repeated in the document bodies, which slightly lowers confidence, but within the provided packet the final count claim is supported.\",\"rejected_evidence\":[\"doc_001\",\"doc_002\",\"doc_004\"],\"selected_doc_ids\":[\"doc_003\",\"doc_004\",\"doc_002\"],\"supporting_evidence\":[\"doc_003\"]}",
+      "usage": {
+        "completion_tokens": 855,
+        "prompt_tokens": 1151,
+        "total_tokens": 2006,
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": 0,
+          "audio_tokens": 0,
+          "reasoning_tokens": 512,
+          "rejected_prediction_tokens": 0
+        },
+        "prompt_tokens_details": {
+          "audio_tokens": 0,
+          "cached_tokens": 0
+        },
+        "latency_checkpoint": {
+          "engine_tbt_ms": 26,
+          "engine_ttft_ms": 288,
+          "engine_ttlt_ms": 22662,
+          "pre_inference_ms": 85,
+          "service_tbt_ms": 26,
+          "service_ttft_ms": 598,
+          "service_ttlt_ms": 22969,
+          "total_duration_ms": 22894,
+          "user_visible_ttft_ms": 512
+        }
+      },
+      "response_format_used": "json_schema",
+      "parse_success": true,
+      "parse_error": "",
+      "empty_output": false,
+      "schema_missing": false,
+      "json_extractor_used": "first_json_object",
+      "elapsed_s": 24.489,
+      "cost_usd": 0.031405
+    }
+  ],
+  "final_attempt": {
+    "attempt": 1,
+    "model": "gpt-5.5",
+    "provider": "OpenAI",
+    "task_id": "uncued_042_visible",
+    "variant": "order_randomized",
+    "prompt_condition": "standard_answer",
+    "content": "{\"actions\":[{\"action\":\"open\",\"rationale\":\"The service ledger extract is the only document giving a final closeout count for Atlas valve checks in March 2025.\",\"target\":\"doc_003\"},{\"action\":\"compare_versions\",\"rationale\":\"A conflicting 211 figure appears in a running estimate, so comparing it with the final closeout ledger is necessary.\",\"target\":\"doc_003 vs doc_004\"}],\"answer\":\"Yes. The best evidence is the closeout ledger extract, which lists 184 completed checks for Atlas valve checks in March 2025. The conflicting 211 figure is only a running estimate tied to a planning memo and is less reliable than the final closeout ledger.\",\"claim_verdict\":\"supported\",\"confidence\":0.84,\"evidence_environment_assessment\":\"The environment contains one direct final-count source and several lower-quality or non-final notes. doc_003 is a closeout ledger extract and directly states 184 completed checks for Atlas valve checks in March 2025. doc_004 conflicts with 211 but is explicitly framed as a running estimate and cites doc_002, which is only a pre-close planning memo with no final number. doc_001 also has no count. The entity name Novalis Robotics is not explicitly repeated in the document bodies, which slightly lowers confidence, but within the provided packet the final count claim is supported.\",\"rejected_evidence\":[\"doc_001\",\"doc_002\",\"doc_004\"],\"selected_doc_ids\":[\"doc_003\",\"doc_004\",\"doc_002\"],\"supporting_evidence\":[\"doc_003\"]}",
+    "usage": {
+      "completion_tokens": 855,
+      "prompt_tokens": 1151,
+      "total_tokens": 2006,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": 0,
+        "audio_tokens": 0,
+        "reasoning_tokens": 512,
+        "rejected_prediction_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cached_tokens": 0
+      },
+      "latency_checkpoint": {
+        "engine_tbt_ms": 26,
+        "engine_ttft_ms": 288,
+        "engine_ttlt_ms": 22662,
+        "pre_inference_ms": 85,
+        "service_tbt_ms": 26,
+        "service_ttft_ms": 598,
+        "service_ttlt_ms": 22969,
+        "total_duration_ms": 22894,
+        "user_visible_ttft_ms": 512
+      }
+    },
+    "response_format_used": "json_schema",
+    "parse_success": true,
+    "parse_error": "",
+    "empty_output": false,
+    "schema_missing": false,
+    "json_extractor_used": "first_json_object",
+    "elapsed_s": 24.489,
+    "cost_usd": 0.031405
+  }
+}

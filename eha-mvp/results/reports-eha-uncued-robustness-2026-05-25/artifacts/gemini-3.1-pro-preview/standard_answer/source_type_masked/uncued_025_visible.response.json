@@ -1,0 +1,86 @@
+{
+  "attempts": [
+    {
+      "attempt": 1,
+      "model": "gemini-3.1-pro-preview",
+      "provider": "Google",
+      "task_id": "uncued_025_visible",
+      "variant": "source_type_masked",
+      "prompt_condition": "standard_answer",
+      "content": "{\n  \"claim_verdict\": \"refuted\",\n  \"confidence\": 0.8,\n  \"supporting_evidence\": [\n    \"doc_002\"\n  ],\n  \"rejected_evidence\": [\n    \"doc_001\",\n    \"doc_003\",\n    \"doc_004\"\n  ],\n  \"selected_doc_ids\": [\n    \"doc_002\",\n    \"doc_003\",\n    \"doc_001\"\n  ],\n  \"actions\": [\n    {\n      \"action\": \"trace_source\",\n      \"target\": \"doc_003\",\n      \"rationale\": \"Investigate the origin of the 88 count, as doc_001 and doc_003 cite each other circularly.\"\n    },\n    {\n      \"action\": \"search_primary\",\n      \"target\": \"East Yard depot closing ledger April 2025\",\n      \"rationale\": \"Locate the primary closing ledger to independently verify the count of 63 mentioned in doc_002.\"\n    }\n  ],\n  \"evidence_environment_assessment\": \"The evidence environment contains conflicting figures. Documents 001 and 003 claim 88 verified swaps but engage in circular reporting by citing each other, reducing their credibility. Document 002, which is dated earlier, cites the closing ledger directly and states the count is 63. Document 004 lacks a specific count. Thus, the claim of 88 appears to be an error amplified by circular references.\",\n  \"answer\": \"The claim is refuted. While two documents mention 88 verified swaps, they cite each other in a circular manner, undermining their reliability. An earlier field summary memo (doc_002) references the closing ledger directly, stating there were 63 verified swaps for Orion battery swaps in April 2025.\"\n}",
+      "usage": {
+        "completion_tokens": 1025,
+        "prompt_tokens": 1513,
+        "total_tokens": 2538,
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": null,
+          "audio_tokens": 0,
+          "reasoning_tokens": 594,
+          "rejected_prediction_tokens": null,
+          "text_tokens": 431,
+          "image_tokens": 0
+        },
+        "prompt_tokens_details": {
+          "audio_tokens": 0,
+          "cached_tokens": 0,
+          "text_tokens": 1513,
+          "image_tokens": 0
+        },
+        "input_tokens": 0,
+        "output_tokens": 0,
+        "input_tokens_details": null,
+        "claude_cache_creation_5_m_tokens": 0,
+        "claude_cache_creation_1_h_tokens": 0
+      },
+      "response_format_used": "json_schema",
+      "parse_success": true,
+      "parse_error": "",
+      "empty_output": false,
+      "schema_missing": false,
+      "json_extractor_used": "first_json_object",
+      "elapsed_s": 10.732,
+      "cost_usd": 0.0024282500000000003
+    }
+  ],
+  "final_attempt": {
+    "attempt": 1,
+    "model": "gemini-3.1-pro-preview",
+    "provider": "Google",
+    "task_id": "uncued_025_visible",
+    "variant": "source_type_masked",
+    "prompt_condition": "standard_answer",
+    "content": "{\n  \"claim_verdict\": \"refuted\",\n  \"confidence\": 0.8,\n  \"supporting_evidence\": [\n    \"doc_002\"\n  ],\n  \"rejected_evidence\": [\n    \"doc_001\",\n    \"doc_003\",\n    \"doc_004\"\n  ],\n  \"selected_doc_ids\": [\n    \"doc_002\",\n    \"doc_003\",\n    \"doc_001\"\n  ],\n  \"actions\": [\n    {\n      \"action\": \"trace_source\",\n      \"target\": \"doc_003\",\n      \"rationale\": \"Investigate the origin of the 88 count, as doc_001 and doc_003 cite each other circularly.\"\n    },\n    {\n      \"action\": \"search_primary\",\n      \"target\": \"East Yard depot closing ledger April 2025\",\n      \"rationale\": \"Locate the primary closing ledger to independently verify the count of 63 mentioned in doc_002.\"\n    }\n  ],\n  \"evidence_environment_assessment\": \"The evidence environment contains conflicting figures. Documents 001 and 003 claim 88 verified swaps but engage in circular reporting by citing each other, reducing their credibility. Document 002, which is dated earlier, cites the closing ledger directly and states the count is 63. Document 004 lacks a specific count. Thus, the claim of 88 appears to be an error amplified by circular references.\",\n  \"answer\": \"The claim is refuted. While two documents mention 88 verified swaps, they cite each other in a circular manner, undermining their reliability. An earlier field summary memo (doc_002) references the closing ledger directly, stating there were 63 verified swaps for Orion battery swaps in April 2025.\"\n}",
+    "usage": {
+      "completion_tokens": 1025,
+      "prompt_tokens": 1513,
+      "total_tokens": 2538,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": null,
+        "audio_tokens": 0,
+        "reasoning_tokens": 594,
+        "rejected_prediction_tokens": null,
+        "text_tokens": 431,
+        "image_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cached_tokens": 0,
+        "text_tokens": 1513,
+        "image_tokens": 0
+      },
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "input_tokens_details": null,
+      "claude_cache_creation_5_m_tokens": 0,
+      "claude_cache_creation_1_h_tokens": 0
+    },
+    "response_format_used": "json_schema",
+    "parse_success": true,
+    "parse_error": "",
+    "empty_output": false,
+    "schema_missing": false,
+    "json_extractor_used": "first_json_object",
+    "elapsed_s": 10.732,
+    "cost_usd": 0.0024282500000000003
+  }
+}

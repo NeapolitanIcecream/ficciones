@@ -1,0 +1,60 @@
+\section{Task And Scoring Examples}
+\label{app:task-examples}
+
+The examples below expose scorer-only roles for auditability. These roles were not visible to models; model-visible packets contained only the neutral document fields.
+
+\subsection{Clean Or Buried-Primary Success}
+\label{app:example-clean-or-buried-primary}
+\begin{description}
+    \item[Task] \code{uncued_000_visible}; family \code{packet_judgment}, condition \code{clean}, view \code{neutral_metadata_visible}.
+    \item[Question] Did Novalis Robotics log 184 completed checks for Atlas valve checks in March 2025?
+    \item[Model] \code{gemini-3.1-pro-preview}. Gold verdict \code{supported}; predicted verdict \code{supported}.
+    \item[Output fields] Support \code{uncued_000_d03}; selected \code{uncued_000_d03}; actions [\{"action": "search\_primary", "target": "monthly ledger for Northline service bay", "rationale": "To verify the 184 completed checks count against the primary source ledger."\}].
+    \item[Scorer decision] Belief 1.000; evidence precision 1.000; polluted support 0.000; required action recall n/a; operational escape 1.000.
+    \item[Answer excerpt] Yes, based on the provided evidence, the operations timeline note confirms that the monthly ledger for the Northline service bay lists 184 completed checks for Atlas valve checks in March 2025.
+\end{description}
+
+\begin{quote}\small
+\textbf{\code{uncued_000_d01}} (Service Ledger Extract; timeline note; 2025-01-16; role=\code{context}, supports=False): A routing note lists Northline service bay as the site for the Atlas valve checks workstream. The note does not provide a closing count. The note uses the same site code, workstream name, and monthly close...\\
+\textbf{\code{uncued_000_d03}} (Operations Timeline Note; field note; 2025-01-13; role=\code{clean_anchor}, supports=True): The monthly ledger for Northline service bay lists 184 completed checks for Atlas valve checks in March 2025. The entry is dated after the close of the month and uses the same work order code as the...\\
+\textbf{\code{uncued_000_d04}} (Program Registry Entry; operations memo; 2025-01-15; role=\code{context}, supports=False): A shift memo mentions that Atlas valve checks work was concentrated in the final week of March 2025. It tracks handoff timing but not the final tally. The note uses the same site code, workstream name, and...\\
+\textbf{\code{uncued_000_d02}} (Field Summary Memo; registry entry; 2025-01-14; role=\code{context}, supports=False): A planning note for Atlas valve checks describes the inspection route at Northline service bay during March 2025. It gives staffing context and does not include a final monthly count. The note uses the same...\\
+\end{quote}
+
+\subsection{Correct Belief With Failed Evidence Hygiene}
+\label{app:example-generated-lore-hygiene-failure}
+\begin{description}
+    \item[Task] \code{uncued_048_visible}; family \code{packet_judgment}, condition \code{generated_lore}, view \code{neutral_metadata_visible}.
+    \item[Question] Did Novalis Robotics launch the HelioSplice partner repair program in March 2025?
+    \item[Model] \code{claude-opus-4-7}. Gold verdict \code{insufficient}; predicted verdict \code{insufficient}.
+    \item[Output fields] Support \code{uncued_048_d01,uncued_048_d04}; selected \code{uncued_048_d04,uncued_048_d01,uncued_048_d03}; actions [\{"action": "trace\_source", "target": "uncued\_048\_d01", "rationale": "The roundup is the originating claim; uncued\_048\_d04 merely cites it. Tracing to a primary operational record is needed to verify the launch."\}, \{"action": "search\_primary", "target":....
+    \item[Scorer decision] Belief 1.000; evidence precision 0.000; polluted support 1.000; required action recall n/a; operational escape 0.000.
+    \item[Answer excerpt] Evidence is insufficient to confirm the launch. The only affirmative mentions (uncued\_048\_d01 roundup and uncued\_048\_d04 recap citing it) form a single unsourced chain, while the program registry (uncued\_048\_d02) and field memo...
+\end{description}
+
+\begin{quote}\small
+\textbf{\code{uncued_048_d04}} (Service Ledger Extract; registry entry; 2025-04-14; role=\code{same_root_echo}, supports=False, contamination=\code{unsupported}): A partner recap repeats the HelioSplice partner repair program launch wording from the roundup. Its visible citation points to the roundup item. The note uses the same site code, workstream name, and monthly...\\
+\textbf{\code{uncued_048_d01}} (Operations Timeline Note; field note; 2025-04-13; role=\code{unsupported_story}, supports=False, contamination=\code{unsupported}): A community roundup says the HelioSplice partner repair program appeared during March 2025. The item gives a program name and month but no linked operational record. The note uses the same site code,...\\
+\textbf{\code{uncued_048_d02}} (Program Registry Entry; timeline note; 2025-04-16; role=\code{context}, supports=False): A monthly index names the Atlas valve checks workstream and site. It lists regular service categories but no program launch entry. The note uses the same site code, workstream name, and monthly close date as...\\
+\textbf{\code{uncued_048_d03}} (Field Summary Memo; operations memo; 2025-04-15; role=\code{context}, supports=False): A service planning memo for Northline service bay lists routine Atlas valve checks work in March 2025. It does not mention the HelioSplice partner repair program. The note uses the same site code, workstream...\\
+\end{quote}
+
+\subsection{Active-Verification Action Case}
+\label{app:example-active-verification}
+\begin{description}
+    \item[Task] \code{uncued_010_visible}; family \code{active_verification}, condition \code{clean}, view \code{neutral_metadata_visible}.
+    \item[Question] Did Novalis Robotics log 118 completed refurbishments for Nova pump refurbishments in July 2025?
+    \item[Model] \code{claude-opus-4-7}. Gold verdict \code{supported}; predicted verdict \code{supported}.
+    \item[Output fields] Support \code{uncued_010_d01}; selected \code{uncued_010_d01,uncued_010_d02,uncued_010_d03}; actions [\{"action": "trace\_source", "target": "uncued\_010\_d01", "rationale": "Verify the monthly ledger entry's provenance since it is the only document stating the 118 count."\}, \{"action": "search\_primary", "target": "Harbor Annex July 2025 Nova pump refurbishment....
+    \item[Scorer decision] Belief 1.000; evidence precision 1.000; polluted support 0.000; required action recall 1.0; operational escape 1.000.
+    \item[Answer excerpt] Yes---uncued\_010\_d01 (Field Summary Memo) records 118 completed Nova pump refurbishments at Harbor Annex for July 2025, and no document contradicts this figure. Other documents corroborate the workstream and site context but lack counts....
+\end{description}
+
+\begin{quote}\small
+\textbf{\code{uncued_010_d04}} (Service Ledger Extract; timeline note; 2025-02-16; role=\code{context}, supports=False): A routing note lists Harbor Annex as the site for the Nova pump refurbishments workstream. The note does not provide a closing count. The note uses the same site code, workstream name, and monthly close date...\\
+\textbf{\code{uncued_010_d03}} (Operations Timeline Note; operations memo; 2025-02-15; role=\code{context}, supports=False): A shift memo mentions that Nova pump refurbishments work was concentrated in the final week of July 2025. It tracks handoff timing but not the final tally. The note uses the same site code, workstream name,...\\
+\textbf{\code{uncued_010_d02}} (Program Registry Entry; registry entry; 2025-02-14; role=\code{context}, supports=False): A planning note for Nova pump refurbishments describes the inspection route at Harbor Annex during July 2025. It gives staffing context and does not include a final monthly count. The note uses the same site...\\
+\textbf{\code{uncued_010_d01}} (Field Summary Memo; field note; 2025-02-13; role=\code{clean_anchor}, supports=True): The monthly ledger for Harbor Annex lists 118 completed refurbishments for Nova pump refurbishments in July 2025. The entry is dated after the close of the month and uses the same work order code as the...\\
+\end{quote}
+
+\noindent Required action types: open\_best\_visible\_record. Required target documents by view: neutral\_metadata\_hidden: uncued\_010\_d03; neutral\_metadata\_visible: uncued\_010\_d01.

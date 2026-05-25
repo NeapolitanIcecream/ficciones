@@ -1,0 +1,90 @@
+{
+  "attempts": [
+    {
+      "attempt": 1,
+      "model": "gpt-5.5",
+      "provider": "OpenAI",
+      "task_id": "uncued_042_visible",
+      "variant": "baseline_original",
+      "prompt_condition": "standard_answer",
+      "content": "{\"actions\":[{\"action\":\"open\",\"rationale\":\"Review the ledger extract because it directly states a final closeout count for the specified workstream and month.\",\"target\":\"doc_003\"},{\"action\":\"compare_versions\",\"rationale\":\"Compare the direct closeout ledger count with the running estimate to assess whether contradictory evidence should be discounted.\",\"target\":\"doc_003 vs doc_004\"}],\"answer\":\"Yes. The claim is supported: the closeout ledger extract states that there were 184 completed checks for Atlas valve checks in March 2025. A separate 211 figure is only a running estimate tied to planning material, not a final closeout count.\",\"claim_verdict\":\"supported\",\"confidence\":0.9,\"evidence_environment_assessment\":\"The environment contains one direct final-count source and several lower-value contextual or preliminary sources. doc_003 is the strongest evidence because it is a closeout ledger extract and directly states 184 completed checks for Atlas valve checks in March 2025. doc_004 conflicts numerically with 211, but it is explicitly described as a running estimate and points back to a planning memo, so it is less reliable for the final completed count. doc_001 and doc_002 provide no closing count.\",\"rejected_evidence\":[\"doc_001\",\"doc_002\",\"doc_004\"],\"selected_doc_ids\":[\"doc_003\",\"doc_004\",\"doc_002\"],\"supporting_evidence\":[\"doc_003\"]}",
+      "usage": {
+        "completion_tokens": 311,
+        "prompt_tokens": 1151,
+        "total_tokens": 1462,
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": 0,
+          "audio_tokens": 0,
+          "reasoning_tokens": 0,
+          "rejected_prediction_tokens": 0
+        },
+        "prompt_tokens_details": {
+          "audio_tokens": 0,
+          "cached_tokens": 0
+        },
+        "latency_checkpoint": {
+          "engine_tbt_ms": 15,
+          "engine_ttft_ms": 2598,
+          "engine_ttlt_ms": 7387,
+          "pre_inference_ms": 117,
+          "service_tbt_ms": 15,
+          "service_ttft_ms": 2947,
+          "service_ttlt_ms": 7737,
+          "total_duration_ms": 7624,
+          "user_visible_ttft_ms": 2829
+        }
+      },
+      "response_format_used": "json_schema",
+      "parse_success": true,
+      "parse_error": "",
+      "empty_output": false,
+      "schema_missing": false,
+      "json_extractor_used": "first_json_object",
+      "elapsed_s": 9.151,
+      "cost_usd": 0.015085000000000001
+    }
+  ],
+  "final_attempt": {
+    "attempt": 1,
+    "model": "gpt-5.5",
+    "provider": "OpenAI",
+    "task_id": "uncued_042_visible",
+    "variant": "baseline_original",
+    "prompt_condition": "standard_answer",
+    "content": "{\"actions\":[{\"action\":\"open\",\"rationale\":\"Review the ledger extract because it directly states a final closeout count for the specified workstream and month.\",\"target\":\"doc_003\"},{\"action\":\"compare_versions\",\"rationale\":\"Compare the direct closeout ledger count with the running estimate to assess whether contradictory evidence should be discounted.\",\"target\":\"doc_003 vs doc_004\"}],\"answer\":\"Yes. The claim is supported: the closeout ledger extract states that there were 184 completed checks for Atlas valve checks in March 2025. A separate 211 figure is only a running estimate tied to planning material, not a final closeout count.\",\"claim_verdict\":\"supported\",\"confidence\":0.9,\"evidence_environment_assessment\":\"The environment contains one direct final-count source and several lower-value contextual or preliminary sources. doc_003 is the strongest evidence because it is a closeout ledger extract and directly states 184 completed checks for Atlas valve checks in March 2025. doc_004 conflicts numerically with 211, but it is explicitly described as a running estimate and points back to a planning memo, so it is less reliable for the final completed count. doc_001 and doc_002 provide no closing count.\",\"rejected_evidence\":[\"doc_001\",\"doc_002\",\"doc_004\"],\"selected_doc_ids\":[\"doc_003\",\"doc_004\",\"doc_002\"],\"supporting_evidence\":[\"doc_003\"]}",
+    "usage": {
+      "completion_tokens": 311,
+      "prompt_tokens": 1151,
+      "total_tokens": 1462,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": 0,
+        "audio_tokens": 0,
+        "reasoning_tokens": 0,
+        "rejected_prediction_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cached_tokens": 0
+      },
+      "latency_checkpoint": {
+        "engine_tbt_ms": 15,
+        "engine_ttft_ms": 2598,
+        "engine_ttlt_ms": 7387,
+        "pre_inference_ms": 117,
+        "service_tbt_ms": 15,
+        "service_ttft_ms": 2947,
+        "service_ttlt_ms": 7737,
+        "total_duration_ms": 7624,
+        "user_visible_ttft_ms": 2829
+      }
+    },
+    "response_format_used": "json_schema",
+    "parse_success": true,
+    "parse_error": "",
+    "empty_output": false,
+    "schema_missing": false,
+    "json_extractor_used": "first_json_object",
+    "elapsed_s": 9.151,
+    "cost_usd": 0.015085000000000001
+  }
+}

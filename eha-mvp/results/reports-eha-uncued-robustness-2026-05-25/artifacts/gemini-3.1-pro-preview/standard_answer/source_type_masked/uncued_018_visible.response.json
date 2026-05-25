@@ -1,0 +1,86 @@
+{
+  "attempts": [
+    {
+      "attempt": 1,
+      "model": "gemini-3.1-pro-preview",
+      "provider": "Google",
+      "task_id": "uncued_018_visible",
+      "variant": "source_type_masked",
+      "prompt_condition": "standard_answer",
+      "content": "{\n  \"claim_verdict\": \"refuted\",\n  \"confidence\": 0.9,\n  \"supporting_evidence\": [\n    \"doc_002\"\n  ],\n  \"rejected_evidence\": [\n    \"doc_001\",\n    \"doc_003\",\n    \"doc_004\"\n  ],\n  \"selected_doc_ids\": [\n    \"doc_002\",\n    \"doc_004\"\n  ],\n  \"actions\": [\n    {\n      \"action\": \"compare_versions\",\n      \"target\": \"doc_002 and doc_004\",\n      \"rationale\": \"Comparing the month-close ledger and the operations digest to understand the discrepancy in completed checks.\"\n    },\n    {\n      \"action\": \"trace_source\",\n      \"target\": \"doc_004\",\n      \"rationale\": \"Tracing the source of the 211 figure in the operations digest, as its citation (doc_001) does not contain the final count.\"\n    }\n  ],\n  \"evidence_environment_assessment\": \"The evidence environment contains conflicting information regarding the completed check counts. The primary-like source, a month-close ledger (doc_002), reports 184 completed checks. In contrast, an operations digest (doc_004) claims the count is 211, but it cites a routing note (doc_001) that explicitly lacks the final count. Given the stronger reliability of the ledger over an unsupported digest claim, the evidence leans heavily toward 184, refuting the claim.\",\n  \"answer\": \"The claim is refuted. The month-close ledger (doc_002) explicitly lists 184 completed checks for Atlas valve checks in March 2025. Although an operations digest (doc_004) mentions the count reached 211, it relies on a source (doc_001) that does not actually contain the final count, making the ledger's figure of 184 the most reliable.\"\n}",
+      "usage": {
+        "completion_tokens": 1124,
+        "prompt_tokens": 1501,
+        "total_tokens": 2625,
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": null,
+          "audio_tokens": 0,
+          "reasoning_tokens": 658,
+          "rejected_prediction_tokens": null,
+          "text_tokens": 466,
+          "image_tokens": 0
+        },
+        "prompt_tokens_details": {
+          "audio_tokens": 0,
+          "cached_tokens": 0,
+          "text_tokens": 1501,
+          "image_tokens": 0
+        },
+        "input_tokens": 0,
+        "output_tokens": 0,
+        "input_tokens_details": null,
+        "claude_cache_creation_5_m_tokens": 0,
+        "claude_cache_creation_1_h_tokens": 0
+      },
+      "response_format_used": "json_schema",
+      "parse_success": true,
+      "parse_error": "",
+      "empty_output": false,
+      "schema_missing": false,
+      "json_extractor_used": "first_json_object",
+      "elapsed_s": 12.677,
+      "cost_usd": 0.00262325
+    }
+  ],
+  "final_attempt": {
+    "attempt": 1,
+    "model": "gemini-3.1-pro-preview",
+    "provider": "Google",
+    "task_id": "uncued_018_visible",
+    "variant": "source_type_masked",
+    "prompt_condition": "standard_answer",
+    "content": "{\n  \"claim_verdict\": \"refuted\",\n  \"confidence\": 0.9,\n  \"supporting_evidence\": [\n    \"doc_002\"\n  ],\n  \"rejected_evidence\": [\n    \"doc_001\",\n    \"doc_003\",\n    \"doc_004\"\n  ],\n  \"selected_doc_ids\": [\n    \"doc_002\",\n    \"doc_004\"\n  ],\n  \"actions\": [\n    {\n      \"action\": \"compare_versions\",\n      \"target\": \"doc_002 and doc_004\",\n      \"rationale\": \"Comparing the month-close ledger and the operations digest to understand the discrepancy in completed checks.\"\n    },\n    {\n      \"action\": \"trace_source\",\n      \"target\": \"doc_004\",\n      \"rationale\": \"Tracing the source of the 211 figure in the operations digest, as its citation (doc_001) does not contain the final count.\"\n    }\n  ],\n  \"evidence_environment_assessment\": \"The evidence environment contains conflicting information regarding the completed check counts. The primary-like source, a month-close ledger (doc_002), reports 184 completed checks. In contrast, an operations digest (doc_004) claims the count is 211, but it cites a routing note (doc_001) that explicitly lacks the final count. Given the stronger reliability of the ledger over an unsupported digest claim, the evidence leans heavily toward 184, refuting the claim.\",\n  \"answer\": \"The claim is refuted. The month-close ledger (doc_002) explicitly lists 184 completed checks for Atlas valve checks in March 2025. Although an operations digest (doc_004) mentions the count reached 211, it relies on a source (doc_001) that does not actually contain the final count, making the ledger's figure of 184 the most reliable.\"\n}",
+    "usage": {
+      "completion_tokens": 1124,
+      "prompt_tokens": 1501,
+      "total_tokens": 2625,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": null,
+        "audio_tokens": 0,
+        "reasoning_tokens": 658,
+        "rejected_prediction_tokens": null,
+        "text_tokens": 466,
+        "image_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cached_tokens": 0,
+        "text_tokens": 1501,
+        "image_tokens": 0
+      },
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "input_tokens_details": null,
+      "claude_cache_creation_5_m_tokens": 0,
+      "claude_cache_creation_1_h_tokens": 0
+    },
+    "response_format_used": "json_schema",
+    "parse_success": true,
+    "parse_error": "",
+    "empty_output": false,
+    "schema_missing": false,
+    "json_extractor_used": "first_json_object",
+    "elapsed_s": 12.677,
+    "cost_usd": 0.00262325
+  }
+}

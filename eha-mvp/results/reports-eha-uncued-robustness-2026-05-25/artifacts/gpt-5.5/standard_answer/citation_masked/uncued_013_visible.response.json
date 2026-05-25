@@ -1,0 +1,90 @@
+{
+  "attempts": [
+    {
+      "attempt": 1,
+      "model": "gpt-5.5",
+      "provider": "OpenAI",
+      "task_id": "uncued_013_visible",
+      "variant": "citation_masked",
+      "prompt_condition": "standard_answer",
+      "content": "{\"actions\":[{\"action\":\"compare_versions\",\"rationale\":\"The environment contains two documents with the same workstream and month but conflicting counts: 63 versus 88. Comparing them is necessary to judge whether the 88 claim is verified or contradicted.\",\"target\":\"doc_002, doc_003\"},{\"action\":\"trace_source\",\"rationale\":\"The 88-count document is a short digest with no visible row or citation, while the 63-count document describes a month-close ledger row. Source traceability favors the ledger extract over the uncited digest.\",\"target\":\"doc_003\"}],\"answer\":\"No. The best available evidence says the month-close ledger for East Yard depot listed 63 verified Orion battery swaps in April 2025, while the only document stating 88 is an uncited digest saying the count reached 88 rather than a verified ledger total.\",\"claim_verdict\":\"refuted\",\"confidence\":0.78,\"evidence_environment_assessment\":\"The evidence environment is polluted by near-duplicate contextual labels and conflicting counts. doc_002 is the strongest item because it reports a month-close ledger row for the same workstream and month and explicitly gives 63 verified swaps. doc_003 matches the claimed number but is weaker because it is only a short digest with no visible underlying row or citation and says the count reached 88, not necessarily verified swaps in the final ledger. doc_001 and doc_004 provide chronology or packet context but no count.\",\"rejected_evidence\":[\"doc_001\",\"doc_003\",\"doc_004\"],\"selected_doc_ids\":[\"doc_002\",\"doc_003\",\"doc_001\"],\"supporting_evidence\":[\"doc_002\"]}",
+      "usage": {
+        "completion_tokens": 357,
+        "prompt_tokens": 1149,
+        "total_tokens": 1506,
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": 0,
+          "audio_tokens": 0,
+          "reasoning_tokens": 0,
+          "rejected_prediction_tokens": 0
+        },
+        "prompt_tokens_details": {
+          "audio_tokens": 0,
+          "cached_tokens": 0
+        },
+        "latency_checkpoint": {
+          "engine_tbt_ms": 16,
+          "engine_ttft_ms": 329,
+          "engine_ttlt_ms": 6072,
+          "pre_inference_ms": 98,
+          "service_tbt_ms": 16,
+          "service_ttft_ms": 672,
+          "service_ttlt_ms": 6417,
+          "total_duration_ms": 6323,
+          "user_visible_ttft_ms": 574
+        }
+      },
+      "response_format_used": "json_schema",
+      "parse_success": true,
+      "parse_error": "",
+      "empty_output": false,
+      "schema_missing": false,
+      "json_extractor_used": "first_json_object",
+      "elapsed_s": 8.537,
+      "cost_usd": 0.016455
+    }
+  ],
+  "final_attempt": {
+    "attempt": 1,
+    "model": "gpt-5.5",
+    "provider": "OpenAI",
+    "task_id": "uncued_013_visible",
+    "variant": "citation_masked",
+    "prompt_condition": "standard_answer",
+    "content": "{\"actions\":[{\"action\":\"compare_versions\",\"rationale\":\"The environment contains two documents with the same workstream and month but conflicting counts: 63 versus 88. Comparing them is necessary to judge whether the 88 claim is verified or contradicted.\",\"target\":\"doc_002, doc_003\"},{\"action\":\"trace_source\",\"rationale\":\"The 88-count document is a short digest with no visible row or citation, while the 63-count document describes a month-close ledger row. Source traceability favors the ledger extract over the uncited digest.\",\"target\":\"doc_003\"}],\"answer\":\"No. The best available evidence says the month-close ledger for East Yard depot listed 63 verified Orion battery swaps in April 2025, while the only document stating 88 is an uncited digest saying the count reached 88 rather than a verified ledger total.\",\"claim_verdict\":\"refuted\",\"confidence\":0.78,\"evidence_environment_assessment\":\"The evidence environment is polluted by near-duplicate contextual labels and conflicting counts. doc_002 is the strongest item because it reports a month-close ledger row for the same workstream and month and explicitly gives 63 verified swaps. doc_003 matches the claimed number but is weaker because it is only a short digest with no visible underlying row or citation and says the count reached 88, not necessarily verified swaps in the final ledger. doc_001 and doc_004 provide chronology or packet context but no count.\",\"rejected_evidence\":[\"doc_001\",\"doc_003\",\"doc_004\"],\"selected_doc_ids\":[\"doc_002\",\"doc_003\",\"doc_001\"],\"supporting_evidence\":[\"doc_002\"]}",
+    "usage": {
+      "completion_tokens": 357,
+      "prompt_tokens": 1149,
+      "total_tokens": 1506,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": 0,
+        "audio_tokens": 0,
+        "reasoning_tokens": 0,
+        "rejected_prediction_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cached_tokens": 0
+      },
+      "latency_checkpoint": {
+        "engine_tbt_ms": 16,
+        "engine_ttft_ms": 329,
+        "engine_ttlt_ms": 6072,
+        "pre_inference_ms": 98,
+        "service_tbt_ms": 16,
+        "service_ttft_ms": 672,
+        "service_ttlt_ms": 6417,
+        "total_duration_ms": 6323,
+        "user_visible_ttft_ms": 574
+      }
+    },
+    "response_format_used": "json_schema",
+    "parse_success": true,
+    "parse_error": "",
+    "empty_output": false,
+    "schema_missing": false,
+    "json_extractor_used": "first_json_object",
+    "elapsed_s": 8.537,
+    "cost_usd": 0.016455
+  }
+}

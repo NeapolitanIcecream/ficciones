@@ -1,0 +1,90 @@
+{
+  "attempts": [
+    {
+      "attempt": 1,
+      "model": "gpt-5.5",
+      "provider": "OpenAI",
+      "task_id": "uncued_014_visible",
+      "variant": "order_randomized",
+      "prompt_condition": "standard_answer",
+      "content": "{\"actions\":[{\"action\":\"trace_source\",\"rationale\":\"Check whether the digest reporting 124 is supported by its cited source; the cited document provides chronology only and no final count.\",\"target\":\"doc_001 -> doc_002\"},{\"action\":\"compare_versions\",\"rationale\":\"Compare the unsupported 124 digest against the month-close ledger statement reporting a different final count for the same workstream and month.\",\"target\":\"doc_001 vs doc_003\"}],\"answer\":\"No. The best available evidence refutes the claim: doc_003 states the month-close ledger lists 97 closed tickets for Mira sensor recalibrations in May 2025, not 124. The document asserting 124 is weak because it is a digest with no visible row and cites doc_002, which provides no final count.\",\"claim_verdict\":\"refuted\",\"confidence\":0.78,\"evidence_environment_assessment\":\"The environment contains conflicting claims. The direct 124 assertion in doc_001 is poorly sourced: it cites doc_002, but doc_002 only gives packet chronology and no count. Doc_003 directly addresses the same workstream and month and states the month-close ledger count was 97, making it the strongest evidence for judging the numeric claim. Doc_004 is not useful because it discusses scheduling delay and contains no total.\",\"rejected_evidence\":[\"doc_001\",\"doc_004\"],\"selected_doc_ids\":[\"doc_003\",\"doc_001\",\"doc_002\"],\"supporting_evidence\":[\"doc_003\",\"doc_002\"]}",
+      "usage": {
+        "completion_tokens": 744,
+        "prompt_tokens": 1163,
+        "total_tokens": 1907,
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": 0,
+          "audio_tokens": 0,
+          "reasoning_tokens": 409,
+          "rejected_prediction_tokens": 0
+        },
+        "prompt_tokens_details": {
+          "audio_tokens": 0,
+          "cached_tokens": 0
+        },
+        "latency_checkpoint": {
+          "engine_tbt_ms": 18,
+          "engine_ttft_ms": 425,
+          "engine_ttlt_ms": 14009,
+          "pre_inference_ms": 104,
+          "service_tbt_ms": 18,
+          "service_ttft_ms": 779,
+          "service_ttlt_ms": 14367,
+          "total_duration_ms": 14267,
+          "user_visible_ttft_ms": 675
+        }
+      },
+      "response_format_used": "json_schema",
+      "parse_success": true,
+      "parse_error": "",
+      "empty_output": false,
+      "schema_missing": false,
+      "json_extractor_used": "first_json_object",
+      "elapsed_s": 16.035,
+      "cost_usd": 0.028135
+    }
+  ],
+  "final_attempt": {
+    "attempt": 1,
+    "model": "gpt-5.5",
+    "provider": "OpenAI",
+    "task_id": "uncued_014_visible",
+    "variant": "order_randomized",
+    "prompt_condition": "standard_answer",
+    "content": "{\"actions\":[{\"action\":\"trace_source\",\"rationale\":\"Check whether the digest reporting 124 is supported by its cited source; the cited document provides chronology only and no final count.\",\"target\":\"doc_001 -> doc_002\"},{\"action\":\"compare_versions\",\"rationale\":\"Compare the unsupported 124 digest against the month-close ledger statement reporting a different final count for the same workstream and month.\",\"target\":\"doc_001 vs doc_003\"}],\"answer\":\"No. The best available evidence refutes the claim: doc_003 states the month-close ledger lists 97 closed tickets for Mira sensor recalibrations in May 2025, not 124. The document asserting 124 is weak because it is a digest with no visible row and cites doc_002, which provides no final count.\",\"claim_verdict\":\"refuted\",\"confidence\":0.78,\"evidence_environment_assessment\":\"The environment contains conflicting claims. The direct 124 assertion in doc_001 is poorly sourced: it cites doc_002, but doc_002 only gives packet chronology and no count. Doc_003 directly addresses the same workstream and month and states the month-close ledger count was 97, making it the strongest evidence for judging the numeric claim. Doc_004 is not useful because it discusses scheduling delay and contains no total.\",\"rejected_evidence\":[\"doc_001\",\"doc_004\"],\"selected_doc_ids\":[\"doc_003\",\"doc_001\",\"doc_002\"],\"supporting_evidence\":[\"doc_003\",\"doc_002\"]}",
+    "usage": {
+      "completion_tokens": 744,
+      "prompt_tokens": 1163,
+      "total_tokens": 1907,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": 0,
+        "audio_tokens": 0,
+        "reasoning_tokens": 409,
+        "rejected_prediction_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cached_tokens": 0
+      },
+      "latency_checkpoint": {
+        "engine_tbt_ms": 18,
+        "engine_ttft_ms": 425,
+        "engine_ttlt_ms": 14009,
+        "pre_inference_ms": 104,
+        "service_tbt_ms": 18,
+        "service_ttft_ms": 779,
+        "service_ttlt_ms": 14367,
+        "total_duration_ms": 14267,
+        "user_visible_ttft_ms": 675
+      }
+    },
+    "response_format_used": "json_schema",
+    "parse_success": true,
+    "parse_error": "",
+    "empty_output": false,
+    "schema_missing": false,
+    "json_extractor_used": "first_json_object",
+    "elapsed_s": 16.035,
+    "cost_usd": 0.028135
+  }
+}

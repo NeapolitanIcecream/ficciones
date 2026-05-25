@@ -1,0 +1,90 @@
+{
+  "attempts": [
+    {
+      "attempt": 1,
+      "model": "gpt-5.5",
+      "provider": "OpenAI",
+      "task_id": "uncued_041_visible",
+      "variant": "source_type_masked",
+      "prompt_condition": "standard_answer",
+      "content": "{\"actions\":[{\"action\":\"open\",\"rationale\":\"Review the document that directly states the final closeout count for the relevant workstream and month.\",\"target\":\"doc_003\"},{\"action\":\"compare_versions\",\"rationale\":\"Compare the final closeout ledger against the earlier estimate that gives a conflicting count.\",\"target\":\"doc_003 vs doc_004\"}],\"answer\":\"Yes. The claim is supported: the closeout ledger lists 76 approved checks for Kestrel firmware checks in August 2025. The conflicting 101 figure is explicitly described as a running estimate based on a planning memo rather than a final number.\",\"claim_verdict\":\"supported\",\"confidence\":0.93,\"evidence_environment_assessment\":\"The environment contains both pre-close planning/estimate material and a later closeout ledger. The strongest evidence is doc_003 because it directly states the final count and uses the final close date. doc_004 conflicts with 101 but is weaker because it is framed as a running estimate and points to doc_002, which itself has no final number. doc_001 and doc_002 provide context only and do not establish a closing count.\",\"rejected_evidence\":[\"doc_004\",\"doc_001\",\"doc_002\"],\"selected_doc_ids\":[\"doc_003\",\"doc_004\",\"doc_002\"],\"supporting_evidence\":[\"doc_003\"]}",
+      "usage": {
+        "completion_tokens": 293,
+        "prompt_tokens": 1154,
+        "total_tokens": 1447,
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": 0,
+          "audio_tokens": 0,
+          "reasoning_tokens": 0,
+          "rejected_prediction_tokens": 0
+        },
+        "prompt_tokens_details": {
+          "audio_tokens": 0,
+          "cached_tokens": 0
+        },
+        "latency_checkpoint": {
+          "engine_tbt_ms": 17,
+          "engine_ttft_ms": 267,
+          "engine_ttlt_ms": 5222,
+          "pre_inference_ms": 110,
+          "service_tbt_ms": 17,
+          "service_ttft_ms": 635,
+          "service_ttlt_ms": 5577,
+          "total_duration_ms": 5469,
+          "user_visible_ttft_ms": 524
+        }
+      },
+      "response_format_used": "json_schema",
+      "parse_success": true,
+      "parse_error": "",
+      "empty_output": false,
+      "schema_missing": false,
+      "json_extractor_used": "first_json_object",
+      "elapsed_s": 7.077,
+      "cost_usd": 0.014560000000000002
+    }
+  ],
+  "final_attempt": {
+    "attempt": 1,
+    "model": "gpt-5.5",
+    "provider": "OpenAI",
+    "task_id": "uncued_041_visible",
+    "variant": "source_type_masked",
+    "prompt_condition": "standard_answer",
+    "content": "{\"actions\":[{\"action\":\"open\",\"rationale\":\"Review the document that directly states the final closeout count for the relevant workstream and month.\",\"target\":\"doc_003\"},{\"action\":\"compare_versions\",\"rationale\":\"Compare the final closeout ledger against the earlier estimate that gives a conflicting count.\",\"target\":\"doc_003 vs doc_004\"}],\"answer\":\"Yes. The claim is supported: the closeout ledger lists 76 approved checks for Kestrel firmware checks in August 2025. The conflicting 101 figure is explicitly described as a running estimate based on a planning memo rather than a final number.\",\"claim_verdict\":\"supported\",\"confidence\":0.93,\"evidence_environment_assessment\":\"The environment contains both pre-close planning/estimate material and a later closeout ledger. The strongest evidence is doc_003 because it directly states the final count and uses the final close date. doc_004 conflicts with 101 but is weaker because it is framed as a running estimate and points to doc_002, which itself has no final number. doc_001 and doc_002 provide context only and do not establish a closing count.\",\"rejected_evidence\":[\"doc_004\",\"doc_001\",\"doc_002\"],\"selected_doc_ids\":[\"doc_003\",\"doc_004\",\"doc_002\"],\"supporting_evidence\":[\"doc_003\"]}",
+    "usage": {
+      "completion_tokens": 293,
+      "prompt_tokens": 1154,
+      "total_tokens": 1447,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": 0,
+        "audio_tokens": 0,
+        "reasoning_tokens": 0,
+        "rejected_prediction_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cached_tokens": 0
+      },
+      "latency_checkpoint": {
+        "engine_tbt_ms": 17,
+        "engine_ttft_ms": 267,
+        "engine_ttlt_ms": 5222,
+        "pre_inference_ms": 110,
+        "service_tbt_ms": 17,
+        "service_ttft_ms": 635,
+        "service_ttlt_ms": 5577,
+        "total_duration_ms": 5469,
+        "user_visible_ttft_ms": 524
+      }
+    },
+    "response_format_used": "json_schema",
+    "parse_success": true,
+    "parse_error": "",
+    "empty_output": false,
+    "schema_missing": false,
+    "json_extractor_used": "first_json_object",
+    "elapsed_s": 7.077,
+    "cost_usd": 0.014560000000000002
+  }
+}

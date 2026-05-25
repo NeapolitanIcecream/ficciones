@@ -1,0 +1,86 @@
+{
+  "attempts": [
+    {
+      "attempt": 1,
+      "model": "gemini-3.1-pro-preview",
+      "provider": "Google",
+      "task_id": "uncued_014_visible",
+      "variant": "order_randomized",
+      "prompt_condition": "standard_answer",
+      "content": "{\n  \"claim_verdict\": \"refuted\",\n  \"confidence\": 0.85,\n  \"supporting_evidence\": [\n    \"doc_003\"\n  ],\n  \"rejected_evidence\": [\n    \"doc_001\",\n    \"doc_002\",\n    \"doc_004\"\n  ],\n  \"selected_doc_ids\": [\n    \"doc_003\",\n    \"doc_001\",\n    \"doc_002\"\n  ],\n  \"actions\": [\n    {\n      \"action\": \"search_primary\",\n      \"target\": \"Novalis Robotics Westhaven lab month-close ledger May 2025\",\n      \"rationale\": \"To verify the exact ticket count from the primary ledger system, as the provided documents contain conflicting numbers and anomalous citations.\"\n    },\n    {\n      \"action\": \"trace_source\",\n      \"target\": \"doc_001\",\n      \"rationale\": \"To investigate the origin of the operations digest, which exhibits a temporal anomaly by citing a document dated in the future.\"\n    }\n  ],\n  \"evidence_environment_assessment\": \"The evidence environment contains conflicting information regarding the ticket count. doc_003 states that the month-close ledger lists 97 closed tickets. Conversely, doc_001 claims the count reached 124. However, doc_001 is highly unreliable because it exhibits a temporal anomaly: it is dated 2025-06-14 but cites doc_002, which is dated 2025-06-15 (in the future relative to the citing document). Furthermore, the cited document (doc_002) explicitly lacks the final count. Thus, the claim of 124 is based on polluted evidence, making doc_003 the most credible source available.\",\n  \"answer\": \"No, Novalis Robotics did not log 124 closed tickets for Mira sensor recalibrations in May 2025. The most reliable evidence (doc_003) indicates that the month-close ledger recorded 97 closed tickets. The source claiming a count of 124 (doc_001) is unreliable due to a chronological impossibility, as it cites a document (doc_002) that was created after it and which does not contain a final count.\"\n}",
+      "usage": {
+        "completion_tokens": 1887,
+        "prompt_tokens": 1514,
+        "total_tokens": 3401,
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": null,
+          "audio_tokens": 0,
+          "reasoning_tokens": 1352,
+          "rejected_prediction_tokens": null,
+          "text_tokens": 535,
+          "image_tokens": 0
+        },
+        "prompt_tokens_details": {
+          "audio_tokens": 0,
+          "cached_tokens": 0,
+          "text_tokens": 1514,
+          "image_tokens": 0
+        },
+        "input_tokens": 0,
+        "output_tokens": 0,
+        "input_tokens_details": null,
+        "claude_cache_creation_5_m_tokens": 0,
+        "claude_cache_creation_1_h_tokens": 0
+      },
+      "response_format_used": "json_schema",
+      "parse_success": true,
+      "parse_error": "",
+      "empty_output": false,
+      "schema_missing": false,
+      "json_extractor_used": "first_json_object",
+      "elapsed_s": 16.08,
+      "cost_usd": 0.0041525
+    }
+  ],
+  "final_attempt": {
+    "attempt": 1,
+    "model": "gemini-3.1-pro-preview",
+    "provider": "Google",
+    "task_id": "uncued_014_visible",
+    "variant": "order_randomized",
+    "prompt_condition": "standard_answer",
+    "content": "{\n  \"claim_verdict\": \"refuted\",\n  \"confidence\": 0.85,\n  \"supporting_evidence\": [\n    \"doc_003\"\n  ],\n  \"rejected_evidence\": [\n    \"doc_001\",\n    \"doc_002\",\n    \"doc_004\"\n  ],\n  \"selected_doc_ids\": [\n    \"doc_003\",\n    \"doc_001\",\n    \"doc_002\"\n  ],\n  \"actions\": [\n    {\n      \"action\": \"search_primary\",\n      \"target\": \"Novalis Robotics Westhaven lab month-close ledger May 2025\",\n      \"rationale\": \"To verify the exact ticket count from the primary ledger system, as the provided documents contain conflicting numbers and anomalous citations.\"\n    },\n    {\n      \"action\": \"trace_source\",\n      \"target\": \"doc_001\",\n      \"rationale\": \"To investigate the origin of the operations digest, which exhibits a temporal anomaly by citing a document dated in the future.\"\n    }\n  ],\n  \"evidence_environment_assessment\": \"The evidence environment contains conflicting information regarding the ticket count. doc_003 states that the month-close ledger lists 97 closed tickets. Conversely, doc_001 claims the count reached 124. However, doc_001 is highly unreliable because it exhibits a temporal anomaly: it is dated 2025-06-14 but cites doc_002, which is dated 2025-06-15 (in the future relative to the citing document). Furthermore, the cited document (doc_002) explicitly lacks the final count. Thus, the claim of 124 is based on polluted evidence, making doc_003 the most credible source available.\",\n  \"answer\": \"No, Novalis Robotics did not log 124 closed tickets for Mira sensor recalibrations in May 2025. The most reliable evidence (doc_003) indicates that the month-close ledger recorded 97 closed tickets. The source claiming a count of 124 (doc_001) is unreliable due to a chronological impossibility, as it cites a document (doc_002) that was created after it and which does not contain a final count.\"\n}",
+    "usage": {
+      "completion_tokens": 1887,
+      "prompt_tokens": 1514,
+      "total_tokens": 3401,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": null,
+        "audio_tokens": 0,
+        "reasoning_tokens": 1352,
+        "rejected_prediction_tokens": null,
+        "text_tokens": 535,
+        "image_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cached_tokens": 0,
+        "text_tokens": 1514,
+        "image_tokens": 0
+      },
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "input_tokens_details": null,
+      "claude_cache_creation_5_m_tokens": 0,
+      "claude_cache_creation_1_h_tokens": 0
+    },
+    "response_format_used": "json_schema",
+    "parse_success": true,
+    "parse_error": "",
+    "empty_output": false,
+    "schema_missing": false,
+    "json_extractor_used": "first_json_object",
+    "elapsed_s": 16.08,
+    "cost_usd": 0.0041525
+  }
+}

@@ -1,0 +1,86 @@
+{
+  "attempts": [
+    {
+      "attempt": 1,
+      "model": "gemini-3.1-pro-preview",
+      "provider": "Google",
+      "task_id": "uncued_025_visible",
+      "variant": "order_randomized",
+      "prompt_condition": "standard_answer",
+      "content": "{\n  \"claim_verdict\": \"refuted\",\n  \"confidence\": 0.85,\n  \"supporting_evidence\": [\n    \"doc_002\"\n  ],\n  \"rejected_evidence\": [\n    \"doc_001\",\n    \"doc_003\",\n    \"doc_004\"\n  ],\n  \"selected_doc_ids\": [\n    \"doc_001\",\n    \"doc_002\",\n    \"doc_003\"\n  ],\n  \"actions\": [\n    {\n      \"action\": \"trace_source\",\n      \"target\": \"doc_001\",\n      \"rationale\": \"Investigate the circular reporting loop between doc_001 and doc_003 regarding the figure 88.\"\n    },\n    {\n      \"action\": \"search_primary\",\n      \"target\": \"East Yard depot closing ledger\",\n      \"rationale\": \"Verify the 63 count provided in doc_002 to determine the true number of verified swaps.\"\n    }\n  ],\n  \"evidence_environment_assessment\": \"The evidence environment contains circular reporting. Both doc_001 and doc_003 claim the number of verified swaps was 88, but they point to each other without referencing a primary count sheet. Meanwhile, doc_002 offers a contradicting value of 63 based on a closing ledger. This suggests the figure of 88 is an unsubstantiated artifact of circular reference rather than actual operations data.\",\n  \"answer\": \"The claim that Novalis Robotics logged 88 verified swaps for Orion battery swaps in April 2025 is refuted. The evidence supporting the number 88 (doc_001 and doc_003) relies entirely on circular reporting between a partner summary and a weekly digest. Conversely, the only document citing a primary source, a closing ledger (doc_002), states that there were 63 verified swaps.\"\n}",
+      "usage": {
+        "completion_tokens": 1388,
+        "prompt_tokens": 1136,
+        "total_tokens": 2524,
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": null,
+          "audio_tokens": 0,
+          "reasoning_tokens": 944,
+          "rejected_prediction_tokens": null,
+          "text_tokens": 444,
+          "image_tokens": 0
+        },
+        "prompt_tokens_details": {
+          "audio_tokens": 0,
+          "cached_tokens": 0,
+          "text_tokens": 1136,
+          "image_tokens": 0
+        },
+        "input_tokens": 0,
+        "output_tokens": 0,
+        "input_tokens_details": null,
+        "claude_cache_creation_5_m_tokens": 0,
+        "claude_cache_creation_1_h_tokens": 0
+      },
+      "response_format_used": "json_schema",
+      "parse_success": true,
+      "parse_error": "",
+      "empty_output": false,
+      "schema_missing": false,
+      "json_extractor_used": "first_json_object",
+      "elapsed_s": 21.987,
+      "cost_usd": 0.00306
+    }
+  ],
+  "final_attempt": {
+    "attempt": 1,
+    "model": "gemini-3.1-pro-preview",
+    "provider": "Google",
+    "task_id": "uncued_025_visible",
+    "variant": "order_randomized",
+    "prompt_condition": "standard_answer",
+    "content": "{\n  \"claim_verdict\": \"refuted\",\n  \"confidence\": 0.85,\n  \"supporting_evidence\": [\n    \"doc_002\"\n  ],\n  \"rejected_evidence\": [\n    \"doc_001\",\n    \"doc_003\",\n    \"doc_004\"\n  ],\n  \"selected_doc_ids\": [\n    \"doc_001\",\n    \"doc_002\",\n    \"doc_003\"\n  ],\n  \"actions\": [\n    {\n      \"action\": \"trace_source\",\n      \"target\": \"doc_001\",\n      \"rationale\": \"Investigate the circular reporting loop between doc_001 and doc_003 regarding the figure 88.\"\n    },\n    {\n      \"action\": \"search_primary\",\n      \"target\": \"East Yard depot closing ledger\",\n      \"rationale\": \"Verify the 63 count provided in doc_002 to determine the true number of verified swaps.\"\n    }\n  ],\n  \"evidence_environment_assessment\": \"The evidence environment contains circular reporting. Both doc_001 and doc_003 claim the number of verified swaps was 88, but they point to each other without referencing a primary count sheet. Meanwhile, doc_002 offers a contradicting value of 63 based on a closing ledger. This suggests the figure of 88 is an unsubstantiated artifact of circular reference rather than actual operations data.\",\n  \"answer\": \"The claim that Novalis Robotics logged 88 verified swaps for Orion battery swaps in April 2025 is refuted. The evidence supporting the number 88 (doc_001 and doc_003) relies entirely on circular reporting between a partner summary and a weekly digest. Conversely, the only document citing a primary source, a closing ledger (doc_002), states that there were 63 verified swaps.\"\n}",
+    "usage": {
+      "completion_tokens": 1388,
+      "prompt_tokens": 1136,
+      "total_tokens": 2524,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": null,
+        "audio_tokens": 0,
+        "reasoning_tokens": 944,
+        "rejected_prediction_tokens": null,
+        "text_tokens": 444,
+        "image_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cached_tokens": 0,
+        "text_tokens": 1136,
+        "image_tokens": 0
+      },
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "input_tokens_details": null,
+      "claude_cache_creation_5_m_tokens": 0,
+      "claude_cache_creation_1_h_tokens": 0
+    },
+    "response_format_used": "json_schema",
+    "parse_success": true,
+    "parse_error": "",
+    "empty_output": false,
+    "schema_missing": false,
+    "json_extractor_used": "first_json_object",
+    "elapsed_s": 21.987,
+    "cost_usd": 0.00306
+  }
+}

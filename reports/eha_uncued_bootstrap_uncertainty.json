@@ -1,0 +1,258 @@
+{
+  "method": {
+    "resample_unit": "latent_task",
+    "paired_views_kept_together": true,
+    "iterations": 10000,
+    "seed": 20260525,
+    "latent_task_count": 60,
+    "scored_row_count": 480,
+    "dataset_dir": "data/uncued-pilot-v1",
+    "results_dir": "results/reports-eha-uncued-pilot-2026-05-22"
+  },
+  "model_metrics": [
+    {
+      "model": "claude-opus-4-7",
+      "n": 120,
+      "operational_epistemic_escape": {
+        "mean": 0.31666666666666665,
+        "ci95": {
+          "low": 0.21666666666666667,
+          "high": 0.425
+        },
+        "bootstrap_std": 0.05528806274991817
+      },
+      "belief_correctness": {
+        "mean": 0.9333333333333333,
+        "ci95": {
+          "low": 0.875,
+          "high": 0.9833333333333333
+        },
+        "bootstrap_std": 0.027572333040668782
+      },
+      "evidence_precision": {
+        "mean": 0.4807692307692308,
+        "ci95": {
+          "low": 0.3619047619047619,
+          "high": 0.6039603960396039
+        },
+        "bootstrap_std": 0.061840567953185356
+      }
+    },
+    {
+      "model": "deepseek-v4-pro",
+      "n": 120,
+      "operational_epistemic_escape": {
+        "mean": 0.23333333333333334,
+        "ci95": {
+          "low": 0.14166666666666666,
+          "high": 0.3333333333333333
+        },
+        "bootstrap_std": 0.04935482839713974
+      },
+      "belief_correctness": {
+        "mean": 0.6583333333333333,
+        "ci95": {
+          "low": 0.5583333333333333,
+          "high": 0.7583333333333333
+        },
+        "bootstrap_std": 0.050334995274714744
+      },
+      "evidence_precision": {
+        "mean": 0.44144144144144143,
+        "ci95": {
+          "low": 0.3230088495575221,
+          "high": 0.5625
+        },
+        "bootstrap_std": 0.06073523698499096
+      }
+    },
+    {
+      "model": "gemini-3.1-pro-preview",
+      "n": 120,
+      "operational_epistemic_escape": {
+        "mean": 0.43333333333333335,
+        "ci95": {
+          "low": 0.32479166666666687,
+          "high": 0.55
+        },
+        "bootstrap_std": 0.05812709016552533
+      },
+      "belief_correctness": {
+        "mean": 0.9166666666666666,
+        "ci95": {
+          "low": 0.8666666666666667,
+          "high": 0.9583333333333334
+        },
+        "bootstrap_std": 0.024000908185941628
+      },
+      "evidence_precision": {
+        "mean": 0.8428571428571429,
+        "ci95": {
+          "low": 0.7572815533980582,
+          "high": 0.9175954433497535
+        },
+        "bootstrap_std": 0.040952667507156565
+      }
+    },
+    {
+      "model": "gpt-5.5",
+      "n": 120,
+      "operational_epistemic_escape": {
+        "mean": 0.525,
+        "ci95": {
+          "low": 0.4083333333333333,
+          "high": 0.6416666666666667
+        },
+        "bootstrap_std": 0.059680327759889004
+      },
+      "belief_correctness": {
+        "mean": 0.9916666666666667,
+        "ci95": {
+          "low": 0.975,
+          "high": 1.0
+        },
+        "bootstrap_std": 0.00820629839411982
+      },
+      "evidence_precision": {
+        "mean": 0.7541666666666667,
+        "ci95": {
+          "low": 0.65,
+          "high": 0.85
+        },
+        "bootstrap_std": 0.05117696297054847
+      }
+    }
+  ],
+  "condition_operational_epistemic_escape": [
+    {
+      "condition": "clean",
+      "n": 96,
+      "operational_epistemic_escape": {
+        "mean": 0.71875,
+        "ci95": {
+          "low": 0.5357142857142857,
+          "high": 0.8863636363636364
+        },
+        "bootstrap_std": 0.08779586022069268
+      }
+    },
+    {
+      "condition": "conflicting_evidence",
+      "n": 96,
+      "operational_epistemic_escape": {
+        "mean": 0.25,
+        "ci95": {
+          "low": 0.08333333333333333,
+          "high": 0.43333333333333335
+        },
+        "bootstrap_std": 0.08873360690661655
+      }
+    },
+    {
+      "condition": "false_consensus",
+      "n": 96,
+      "operational_epistemic_escape": {
+        "mean": 0.3020833333333333,
+        "ci95": {
+          "low": 0.1346153846153846,
+          "high": 0.4861111111111111
+        },
+        "bootstrap_std": 0.09096612704237123
+      }
+    },
+    {
+      "condition": "buried_primary",
+      "n": 96,
+      "operational_epistemic_escape": {
+        "mean": 0.4895833333333333,
+        "ci95": {
+          "low": 0.225,
+          "high": 0.75
+        },
+        "bootstrap_std": 0.13572868397637994
+      }
+    },
+    {
+      "condition": "generated_lore",
+      "n": 96,
+      "operational_epistemic_escape": {
+        "mean": 0.125,
+        "ci95": {
+          "low": 0.05555555555555555,
+          "high": 0.2
+        },
+        "bootstrap_std": 0.03741846551739502
+      }
+    }
+  ],
+  "generated_lore_belief_operational_gap": {
+    "mean": 0.8125,
+    "ci95": {
+      "low": 0.7142857142857143,
+      "high": 0.90625
+    },
+    "bootstrap_std": 0.04957784150718729
+  },
+  "visible_hidden_paired_deltas": [
+    {
+      "model": "overall",
+      "n_pairs": 240,
+      "visible_minus_hidden_operational_epistemic_escape": {
+        "mean": 0.029166666666666667,
+        "ci95": {
+          "low": -0.020833333333333332,
+          "high": 0.07916666666666666
+        },
+        "bootstrap_std": 0.025212163620848656
+      }
+    },
+    {
+      "model": "claude-opus-4-7",
+      "n_pairs": 60,
+      "visible_minus_hidden_operational_epistemic_escape": {
+        "mean": 0.03333333333333333,
+        "ci95": {
+          "low": -0.05,
+          "high": 0.13333333333333333
+        },
+        "bootstrap_std": 0.0466392512030133
+      }
+    },
+    {
+      "model": "deepseek-v4-pro",
+      "n_pairs": 60,
+      "visible_minus_hidden_operational_epistemic_escape": {
+        "mean": 0.03333333333333333,
+        "ci95": {
+          "low": -0.06666666666666667,
+          "high": 0.11666666666666667
+        },
+        "bootstrap_std": 0.04665025794855444
+      }
+    },
+    {
+      "model": "gemini-3.1-pro-preview",
+      "n_pairs": 60,
+      "visible_minus_hidden_operational_epistemic_escape": {
+        "mean": 0.03333333333333333,
+        "ci95": {
+          "low": -0.06666666666666667,
+          "high": 0.13333333333333333
+        },
+        "bootstrap_std": 0.0526699931438934
+      }
+    },
+    {
+      "model": "gpt-5.5",
+      "n_pairs": 60,
+      "visible_minus_hidden_operational_epistemic_escape": {
+        "mean": 0.016666666666666666,
+        "ci95": {
+          "low": -0.08333333333333333,
+          "high": 0.11666666666666667
+        },
+        "bootstrap_std": 0.05025389180617424
+      }
+    }
+  ]
+}

@@ -1,0 +1,90 @@
+{
+  "attempts": [
+    {
+      "attempt": 1,
+      "model": "gpt-5.5",
+      "provider": "OpenAI",
+      "task_id": "uncued_018_visible",
+      "variant": "baseline_original",
+      "prompt_condition": "standard_answer",
+      "content": "{\"actions\":[{\"action\":\"trace_source\",\"rationale\":\"The 211-count statement is derivative and cites doc_001, so its source trail should be checked for an actual count.\",\"target\":\"doc_004 -> doc_001\"},{\"action\":\"compare_versions\",\"rationale\":\"The environment contains a direct ledger-like count of 184 and a conflicting digest count of 211; comparing their source quality is necessary.\",\"target\":\"doc_002 vs doc_004\"}],\"answer\":\"No. The best available evidence refutes the 211 figure: doc_002 says the month-close ledger lists 184 completed checks for Atlas valve checks in March 2025. The only document stating 211, doc_004, is a short digest with no visible supporting row and cites doc_001, which does not provide a final count.\",\"claim_verdict\":\"refuted\",\"confidence\":0.82,\"evidence_environment_assessment\":\"The evidence environment is polluted by a derivative digest that states 211 while citing a document that contains no count. The strongest count evidence is doc_002, described as the month-close ledger entry, which gives 184 for the same workstream and month. doc_001 and doc_003 provide chronology/scheduling context but no total. The absence of the exact company name in the document bodies slightly limits certainty, but among the provided evidence the 211 claim is not supported and is contradicted by the ledger count.\",\"rejected_evidence\":[\"doc_004\",\"doc_001\",\"doc_003\"],\"selected_doc_ids\":[\"doc_002\",\"doc_004\",\"doc_001\"],\"supporting_evidence\":[\"doc_002\"]}",
+      "usage": {
+        "completion_tokens": 794,
+        "prompt_tokens": 1155,
+        "total_tokens": 1949,
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": 0,
+          "audio_tokens": 0,
+          "reasoning_tokens": 438,
+          "rejected_prediction_tokens": 0
+        },
+        "prompt_tokens_details": {
+          "audio_tokens": 0,
+          "cached_tokens": 0
+        },
+        "latency_checkpoint": {
+          "engine_tbt_ms": 17,
+          "engine_ttft_ms": 423,
+          "engine_ttlt_ms": 14298,
+          "pre_inference_ms": 116,
+          "service_tbt_ms": 17,
+          "service_ttft_ms": 772,
+          "service_ttlt_ms": 14666,
+          "total_duration_ms": 14545,
+          "user_visible_ttft_ms": 656
+        }
+      },
+      "response_format_used": "json_schema",
+      "parse_success": true,
+      "parse_error": "",
+      "empty_output": false,
+      "schema_missing": false,
+      "json_extractor_used": "first_json_object",
+      "elapsed_s": 16.272,
+      "cost_usd": 0.029595
+    }
+  ],
+  "final_attempt": {
+    "attempt": 1,
+    "model": "gpt-5.5",
+    "provider": "OpenAI",
+    "task_id": "uncued_018_visible",
+    "variant": "baseline_original",
+    "prompt_condition": "standard_answer",
+    "content": "{\"actions\":[{\"action\":\"trace_source\",\"rationale\":\"The 211-count statement is derivative and cites doc_001, so its source trail should be checked for an actual count.\",\"target\":\"doc_004 -> doc_001\"},{\"action\":\"compare_versions\",\"rationale\":\"The environment contains a direct ledger-like count of 184 and a conflicting digest count of 211; comparing their source quality is necessary.\",\"target\":\"doc_002 vs doc_004\"}],\"answer\":\"No. The best available evidence refutes the 211 figure: doc_002 says the month-close ledger lists 184 completed checks for Atlas valve checks in March 2025. The only document stating 211, doc_004, is a short digest with no visible supporting row and cites doc_001, which does not provide a final count.\",\"claim_verdict\":\"refuted\",\"confidence\":0.82,\"evidence_environment_assessment\":\"The evidence environment is polluted by a derivative digest that states 211 while citing a document that contains no count. The strongest count evidence is doc_002, described as the month-close ledger entry, which gives 184 for the same workstream and month. doc_001 and doc_003 provide chronology/scheduling context but no total. The absence of the exact company name in the document bodies slightly limits certainty, but among the provided evidence the 211 claim is not supported and is contradicted by the ledger count.\",\"rejected_evidence\":[\"doc_004\",\"doc_001\",\"doc_003\"],\"selected_doc_ids\":[\"doc_002\",\"doc_004\",\"doc_001\"],\"supporting_evidence\":[\"doc_002\"]}",
+    "usage": {
+      "completion_tokens": 794,
+      "prompt_tokens": 1155,
+      "total_tokens": 1949,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": 0,
+        "audio_tokens": 0,
+        "reasoning_tokens": 438,
+        "rejected_prediction_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cached_tokens": 0
+      },
+      "latency_checkpoint": {
+        "engine_tbt_ms": 17,
+        "engine_ttft_ms": 423,
+        "engine_ttlt_ms": 14298,
+        "pre_inference_ms": 116,
+        "service_tbt_ms": 17,
+        "service_ttft_ms": 772,
+        "service_ttlt_ms": 14666,
+        "total_duration_ms": 14545,
+        "user_visible_ttft_ms": 656
+      }
+    },
+    "response_format_used": "json_schema",
+    "parse_success": true,
+    "parse_error": "",
+    "empty_output": false,
+    "schema_missing": false,
+    "json_extractor_used": "first_json_object",
+    "elapsed_s": 16.272,
+    "cost_usd": 0.029595
+  }
+}

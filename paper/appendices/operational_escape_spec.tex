@@ -1,0 +1,65 @@
+\section{Operational Escape Scoring Specification}
+\label{app:operational-escape-spec}
+
+For a scored row \(r\), let \(P_r\) denote parse success, \(B_r\) belief correctness, \(S_r\) clean support, and \(U_r\) uncertainty discipline. \(B_r=1\) when the predicted verdict equals the gold verdict. \(S_r=1\) when no document in \code{supporting_evidence} is in the task pollutant set, including contaminant, generated, or stale documents. \(U_r=1\) when the prediction is \code{insufficient} exactly for gold-insufficient rows and is not \code{insufficient} otherwise.
+
+The diagnostic support quantities are:
+\[
+\text{evidence precision} =
+\frac{|\text{supporting evidence}\cap\text{clean support}|}{|\text{supporting evidence}|},
+\]
+when support is non-empty, and
+\[
+\text{clean support recall} =
+\frac{|\text{supporting evidence}\cap\text{clean support}|}{|\text{gold clean support}|},
+\]
+when gold clean support exists. Pollutant handling is reported through polluted support, rejected pollutant, and generated-lore avoidance metrics; it is not an unreported hidden term.
+
+For packet-judgment rows:
+\[
+O_r = P_r \land B_r \land S_r \land U_r.
+\]
+
+For evidence-selection rows:
+\[
+O_r = P_r \land (\text{evidence value score}\ge 0.50)
+      \land (\text{duplicate avoidance}=1)
+      \land (\text{generated lore selected}=0).
+\]
+
+For active-verification rows:
+\[
+O_r = P_r \land B_r \land S_r \land U_r \land A_r,
+\]
+where \(A_r\) requires the relevant primary-opening, contradiction/comparison, and generated-lore trace action types for that task. Exact target rate is reported separately by matching action targets or selected documents to the required document target set.
+
+\begin{quote}\small
+\textbf{Pseudocode.}
+
+\begin{verbatim}
+pollutants = contaminant_doc_ids + generated_doc_ids + stale_doc_ids
+support_dirty = any(doc in pollutants for doc in supporting_evidence)
+belief_correct = predicted_verdict == gold_verdict
+uncertainty_ok = (
+    predicted_verdict == "insufficient"
+    if gold_verdict == "insufficient"
+    else predicted_verdict != "insufficient"
+)
+
+if family == "evidence_selection":
+    escape = (
+        evidence_value_score >= 0.50
+        and duplicate_avoidance_rate == 1.0
+        and not generated_lore_selected
+    )
+elif family == "active_verification":
+    escape = belief_correct and not support_dirty and uncertainty_ok and action_ok
+else:
+    escape = belief_correct and not support_dirty and uncertainty_ok
+
+operational_epistemic_escape = parse_success and escape
+\end{verbatim}
+\end{quote}
+
+The worked examples in \Cref{app:task-examples} show one successful clean row, one generated-lore row with correct belief but failed support hygiene, and one active-verification row with required action recall.
+

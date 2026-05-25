@@ -1,0 +1,86 @@
+{
+  "attempts": [
+    {
+      "attempt": 1,
+      "model": "gemini-3.1-pro-preview",
+      "provider": "Google",
+      "task_id": "uncued_014_visible",
+      "variant": "source_type_masked",
+      "prompt_condition": "standard_answer",
+      "content": "{\n  \"claim_verdict\": \"insufficient\",\n  \"confidence\": 0.5,\n  \"supporting_evidence\": [\n    \"doc_001\",\n    \"doc_003\"\n  ],\n  \"rejected_evidence\": [\n    \"doc_002\",\n    \"doc_004\"\n  ],\n  \"selected_doc_ids\": [\n    \"doc_001\",\n    \"doc_003\"\n  ],\n  \"actions\": [\n    {\n      \"action\": \"search_primary\",\n      \"target\": \"Westhaven lab month-close ledger May 2025\",\n      \"rationale\": \"Retrieve the official month-close ledger for Westhaven lab to definitively verify the total count of closed tickets for Mira sensor recalibrations in May 2025.\"\n    },\n    {\n      \"action\": \"compare_versions\",\n      \"target\": \"doc_001 and doc_003\",\n      \"rationale\": \"Compare the conflicting operations digest and the month-close ledger to understand why one reports 124 while the other reports 97 closed tickets.\"\n    }\n  ],\n  \"evidence_environment_assessment\": \"The evidence environment contains contradictory information. Document doc_001 (a short operations digest) claims the Mira sensor recalibration count reached 124 in May 2025, but its cited source (doc_002) does not contain the final count. Conversely, document doc_003 (a month-close ledger for Westhaven lab) lists 97 closed tickets for the same period. Neither count can be verified as definitively correct without accessing primary source logs.\",\n  \"answer\": \"There is conflicting evidence regarding whether Novalis Robotics logged 124 closed tickets for Mira sensor recalibrations in May 2025. A short operations digest (doc_001) supports the claim, stating the count reached 124. However, the month-close ledger (doc_003) contradicts this, listing only 97 closed tickets. Due to this discrepancy, the claim cannot be conclusively verified or refuted without further primary documentation.\"\n}",
+      "usage": {
+        "completion_tokens": 1172,
+        "prompt_tokens": 1510,
+        "total_tokens": 2682,
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": null,
+          "audio_tokens": 0,
+          "reasoning_tokens": 684,
+          "rejected_prediction_tokens": null,
+          "text_tokens": 488,
+          "image_tokens": 0
+        },
+        "prompt_tokens_details": {
+          "audio_tokens": 0,
+          "cached_tokens": 0,
+          "text_tokens": 1510,
+          "image_tokens": 0
+        },
+        "input_tokens": 0,
+        "output_tokens": 0,
+        "input_tokens_details": null,
+        "claude_cache_creation_5_m_tokens": 0,
+        "claude_cache_creation_1_h_tokens": 0
+      },
+      "response_format_used": "json_schema",
+      "parse_success": true,
+      "parse_error": "",
+      "empty_output": false,
+      "schema_missing": false,
+      "json_extractor_used": "first_json_object",
+      "elapsed_s": 19.272,
+      "cost_usd": 0.0027215
+    }
+  ],
+  "final_attempt": {
+    "attempt": 1,
+    "model": "gemini-3.1-pro-preview",
+    "provider": "Google",
+    "task_id": "uncued_014_visible",
+    "variant": "source_type_masked",
+    "prompt_condition": "standard_answer",
+    "content": "{\n  \"claim_verdict\": \"insufficient\",\n  \"confidence\": 0.5,\n  \"supporting_evidence\": [\n    \"doc_001\",\n    \"doc_003\"\n  ],\n  \"rejected_evidence\": [\n    \"doc_002\",\n    \"doc_004\"\n  ],\n  \"selected_doc_ids\": [\n    \"doc_001\",\n    \"doc_003\"\n  ],\n  \"actions\": [\n    {\n      \"action\": \"search_primary\",\n      \"target\": \"Westhaven lab month-close ledger May 2025\",\n      \"rationale\": \"Retrieve the official month-close ledger for Westhaven lab to definitively verify the total count of closed tickets for Mira sensor recalibrations in May 2025.\"\n    },\n    {\n      \"action\": \"compare_versions\",\n      \"target\": \"doc_001 and doc_003\",\n      \"rationale\": \"Compare the conflicting operations digest and the month-close ledger to understand why one reports 124 while the other reports 97 closed tickets.\"\n    }\n  ],\n  \"evidence_environment_assessment\": \"The evidence environment contains contradictory information. Document doc_001 (a short operations digest) claims the Mira sensor recalibration count reached 124 in May 2025, but its cited source (doc_002) does not contain the final count. Conversely, document doc_003 (a month-close ledger for Westhaven lab) lists 97 closed tickets for the same period. Neither count can be verified as definitively correct without accessing primary source logs.\",\n  \"answer\": \"There is conflicting evidence regarding whether Novalis Robotics logged 124 closed tickets for Mira sensor recalibrations in May 2025. A short operations digest (doc_001) supports the claim, stating the count reached 124. However, the month-close ledger (doc_003) contradicts this, listing only 97 closed tickets. Due to this discrepancy, the claim cannot be conclusively verified or refuted without further primary documentation.\"\n}",
+    "usage": {
+      "completion_tokens": 1172,
+      "prompt_tokens": 1510,
+      "total_tokens": 2682,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": null,
+        "audio_tokens": 0,
+        "reasoning_tokens": 684,
+        "rejected_prediction_tokens": null,
+        "text_tokens": 488,
+        "image_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cached_tokens": 0,
+        "text_tokens": 1510,
+        "image_tokens": 0
+      },
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "input_tokens_details": null,
+      "claude_cache_creation_5_m_tokens": 0,
+      "claude_cache_creation_1_h_tokens": 0
+    },
+    "response_format_used": "json_schema",
+    "parse_success": true,
+    "parse_error": "",
+    "empty_output": false,
+    "schema_missing": false,
+    "json_extractor_used": "first_json_object",
+    "elapsed_s": 19.272,
+    "cost_usd": 0.0027215
+  }
+}

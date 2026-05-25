@@ -1,0 +1,90 @@
+{
+  "attempts": [
+    {
+      "attempt": 1,
+      "model": "gpt-5.5",
+      "provider": "OpenAI",
+      "task_id": "uncued_042_visible",
+      "variant": "source_type_masked",
+      "prompt_condition": "standard_answer",
+      "content": "{\"actions\":[{\"action\":\"open\",\"rationale\":\"Inspect the closeout ledger because it directly states the final completed-check count for the relevant workstream and month.\",\"target\":\"doc_003\"},{\"action\":\"search_contradiction\",\"rationale\":\"Check the apparent conflicting estimate and whether it is final or lower-quality evidence.\",\"target\":\"doc_004\"}],\"answer\":\"Yes. The claim is supported: the Service Ledger Extract states that the closeout ledger lists 184 completed checks for Atlas valve checks in March 2025. The conflicting 211 figure is only a running estimate tied to a planning memo, not a final closeout count.\",\"claim_verdict\":\"supported\",\"confidence\":0.92,\"evidence_environment_assessment\":\"The environment contains one directly relevant final closeout ledger extract and one contradictory but weaker running estimate. The planning memo and handoff note lack final counts. Because doc_003 is framed as a closeout ledger using the final close date, it is the strongest evidence for the claimed count; doc_004 is rejected as a non-final estimate sourced to planning materials.\",\"rejected_evidence\":[\"doc_001\",\"doc_002\",\"doc_004\"],\"selected_doc_ids\":[\"doc_003\",\"doc_004\",\"doc_002\"],\"supporting_evidence\":[\"doc_003\"]}",
+      "usage": {
+        "completion_tokens": 281,
+        "prompt_tokens": 1147,
+        "total_tokens": 1428,
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": 0,
+          "audio_tokens": 0,
+          "reasoning_tokens": 0,
+          "rejected_prediction_tokens": 0
+        },
+        "prompt_tokens_details": {
+          "audio_tokens": 0,
+          "cached_tokens": 0
+        },
+        "latency_checkpoint": {
+          "engine_tbt_ms": 19,
+          "engine_ttft_ms": 697,
+          "engine_ttlt_ms": 5951,
+          "pre_inference_ms": 92,
+          "service_tbt_ms": 19,
+          "service_ttft_ms": 1040,
+          "service_ttlt_ms": 6360,
+          "total_duration_ms": 6261,
+          "user_visible_ttft_ms": 948
+        }
+      },
+      "response_format_used": "json_schema",
+      "parse_success": true,
+      "parse_error": "",
+      "empty_output": false,
+      "schema_missing": false,
+      "json_extractor_used": "first_json_object",
+      "elapsed_s": 7.861,
+      "cost_usd": 0.014165
+    }
+  ],
+  "final_attempt": {
+    "attempt": 1,
+    "model": "gpt-5.5",
+    "provider": "OpenAI",
+    "task_id": "uncued_042_visible",
+    "variant": "source_type_masked",
+    "prompt_condition": "standard_answer",
+    "content": "{\"actions\":[{\"action\":\"open\",\"rationale\":\"Inspect the closeout ledger because it directly states the final completed-check count for the relevant workstream and month.\",\"target\":\"doc_003\"},{\"action\":\"search_contradiction\",\"rationale\":\"Check the apparent conflicting estimate and whether it is final or lower-quality evidence.\",\"target\":\"doc_004\"}],\"answer\":\"Yes. The claim is supported: the Service Ledger Extract states that the closeout ledger lists 184 completed checks for Atlas valve checks in March 2025. The conflicting 211 figure is only a running estimate tied to a planning memo, not a final closeout count.\",\"claim_verdict\":\"supported\",\"confidence\":0.92,\"evidence_environment_assessment\":\"The environment contains one directly relevant final closeout ledger extract and one contradictory but weaker running estimate. The planning memo and handoff note lack final counts. Because doc_003 is framed as a closeout ledger using the final close date, it is the strongest evidence for the claimed count; doc_004 is rejected as a non-final estimate sourced to planning materials.\",\"rejected_evidence\":[\"doc_001\",\"doc_002\",\"doc_004\"],\"selected_doc_ids\":[\"doc_003\",\"doc_004\",\"doc_002\"],\"supporting_evidence\":[\"doc_003\"]}",
+    "usage": {
+      "completion_tokens": 281,
+      "prompt_tokens": 1147,
+      "total_tokens": 1428,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": 0,
+        "audio_tokens": 0,
+        "reasoning_tokens": 0,
+        "rejected_prediction_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cached_tokens": 0
+      },
+      "latency_checkpoint": {
+        "engine_tbt_ms": 19,
+        "engine_ttft_ms": 697,
+        "engine_ttlt_ms": 5951,
+        "pre_inference_ms": 92,
+        "service_tbt_ms": 19,
+        "service_ttft_ms": 1040,
+        "service_ttlt_ms": 6360,
+        "total_duration_ms": 6261,
+        "user_visible_ttft_ms": 948
+      }
+    },
+    "response_format_used": "json_schema",
+    "parse_success": true,
+    "parse_error": "",
+    "empty_output": false,
+    "schema_missing": false,
+    "json_extractor_used": "first_json_object",
+    "elapsed_s": 7.861,
+    "cost_usd": 0.014165
+  }
+}

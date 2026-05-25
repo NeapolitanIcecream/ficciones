@@ -1,0 +1,86 @@
+{
+  "attempts": [
+    {
+      "attempt": 1,
+      "model": "gemini-3.1-pro-preview",
+      "provider": "Google",
+      "task_id": "uncued_018_visible",
+      "variant": "prompt_paraphrase",
+      "prompt_condition": "standard_answer",
+      "content": "{\n  \"claim_verdict\": \"refuted\",\n  \"confidence\": 0.95,\n  \"supporting_evidence\": [\n    \"doc_002\"\n  ],\n  \"rejected_evidence\": [\n    \"doc_001\",\n    \"doc_003\",\n    \"doc_004\"\n  ],\n  \"selected_doc_ids\": [\n    \"doc_002\",\n    \"doc_004\"\n  ],\n  \"actions\": [\n    {\n      \"action\": \"search_primary\",\n      \"target\": \"Northline service bay month-close ledger March 2025\",\n      \"rationale\": \"To conclusively verify the final number of Atlas valve checks against the 184 stated in doc_002.\"\n    },\n    {\n      \"action\": \"trace_source\",\n      \"target\": \"doc_004\",\n      \"rationale\": \"To investigate the origin of the 211 claim, particularly given that doc_004 cites doc_001, which is dated a day later and lacks count data.\"\n    }\n  ],\n  \"evidence_environment_assessment\": \"The evidence environment contains a contradiction and a temporal anomaly. The claim of 211 checks appears in a secondary operations digest (doc_004), which suspiciously cites a document (doc_001) dated after its own timestamp. Meanwhile, the primary month-close ledger field note (doc_002) explicitly records the count as 184, rendering the 211 claim highly suspect.\",\n  \"answer\": \"No, the month-close ledger for Northline service bay lists 184 completed checks for Atlas valve checks in March 2025. The claim of 211 checks originates from a secondary digest (doc_004) that contains a temporal anomaly, as it cites a routing note (doc_001) that was created after the digest itself and which contains no actual count data.\"\n}",
+      "usage": {
+        "completion_tokens": 1629,
+        "prompt_tokens": 1125,
+        "total_tokens": 2754,
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": null,
+          "audio_tokens": 0,
+          "reasoning_tokens": 1176,
+          "rejected_prediction_tokens": null,
+          "text_tokens": 453,
+          "image_tokens": 0
+        },
+        "prompt_tokens_details": {
+          "audio_tokens": 0,
+          "cached_tokens": 0,
+          "text_tokens": 1125,
+          "image_tokens": 0
+        },
+        "input_tokens": 0,
+        "output_tokens": 0,
+        "input_tokens_details": null,
+        "claude_cache_creation_5_m_tokens": 0,
+        "claude_cache_creation_1_h_tokens": 0
+      },
+      "response_format_used": "json_schema",
+      "parse_success": true,
+      "parse_error": "",
+      "empty_output": false,
+      "schema_missing": false,
+      "json_extractor_used": "first_json_object",
+      "elapsed_s": 16.86,
+      "cost_usd": 0.00353925
+    }
+  ],
+  "final_attempt": {
+    "attempt": 1,
+    "model": "gemini-3.1-pro-preview",
+    "provider": "Google",
+    "task_id": "uncued_018_visible",
+    "variant": "prompt_paraphrase",
+    "prompt_condition": "standard_answer",
+    "content": "{\n  \"claim_verdict\": \"refuted\",\n  \"confidence\": 0.95,\n  \"supporting_evidence\": [\n    \"doc_002\"\n  ],\n  \"rejected_evidence\": [\n    \"doc_001\",\n    \"doc_003\",\n    \"doc_004\"\n  ],\n  \"selected_doc_ids\": [\n    \"doc_002\",\n    \"doc_004\"\n  ],\n  \"actions\": [\n    {\n      \"action\": \"search_primary\",\n      \"target\": \"Northline service bay month-close ledger March 2025\",\n      \"rationale\": \"To conclusively verify the final number of Atlas valve checks against the 184 stated in doc_002.\"\n    },\n    {\n      \"action\": \"trace_source\",\n      \"target\": \"doc_004\",\n      \"rationale\": \"To investigate the origin of the 211 claim, particularly given that doc_004 cites doc_001, which is dated a day later and lacks count data.\"\n    }\n  ],\n  \"evidence_environment_assessment\": \"The evidence environment contains a contradiction and a temporal anomaly. The claim of 211 checks appears in a secondary operations digest (doc_004), which suspiciously cites a document (doc_001) dated after its own timestamp. Meanwhile, the primary month-close ledger field note (doc_002) explicitly records the count as 184, rendering the 211 claim highly suspect.\",\n  \"answer\": \"No, the month-close ledger for Northline service bay lists 184 completed checks for Atlas valve checks in March 2025. The claim of 211 checks originates from a secondary digest (doc_004) that contains a temporal anomaly, as it cites a routing note (doc_001) that was created after the digest itself and which contains no actual count data.\"\n}",
+    "usage": {
+      "completion_tokens": 1629,
+      "prompt_tokens": 1125,
+      "total_tokens": 2754,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": null,
+        "audio_tokens": 0,
+        "reasoning_tokens": 1176,
+        "rejected_prediction_tokens": null,
+        "text_tokens": 453,
+        "image_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cached_tokens": 0,
+        "text_tokens": 1125,
+        "image_tokens": 0
+      },
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "input_tokens_details": null,
+      "claude_cache_creation_5_m_tokens": 0,
+      "claude_cache_creation_1_h_tokens": 0
+    },
+    "response_format_used": "json_schema",
+    "parse_success": true,
+    "parse_error": "",
+    "empty_output": false,
+    "schema_missing": false,
+    "json_extractor_used": "first_json_object",
+    "elapsed_s": 16.86,
+    "cost_usd": 0.00353925
+  }
+}

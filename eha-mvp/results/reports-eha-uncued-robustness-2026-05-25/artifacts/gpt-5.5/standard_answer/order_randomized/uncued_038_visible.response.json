@@ -1,0 +1,90 @@
+{
+  "attempts": [
+    {
+      "attempt": 1,
+      "model": "gpt-5.5",
+      "provider": "OpenAI",
+      "task_id": "uncued_038_visible",
+      "variant": "order_randomized",
+      "prompt_condition": "standard_answer",
+      "content": "{\"actions\":[{\"action\":\"open\",\"rationale\":\"Review the document that directly states a final closeout-ledger count for the exact workstream and month in the claim.\",\"target\":\"doc_001\"},{\"action\":\"compare_versions\",\"rationale\":\"Compare the final ledger statement with earlier planning or estimate documents that may contain non-final or conflicting figures.\",\"target\":\"doc_001, doc_004, doc_003\"}],\"answer\":\"Yes. The provided evidence supports that Novalis Robotics logged 97 closed tickets for Mira sensor recalibrations in May 2025, based on the closeout ledger entry. The contrary 124 figure is explicitly framed as a running estimate rather than a final closed-ticket count.\",\"claim_verdict\":\"supported\",\"confidence\":0.88,\"evidence_environment_assessment\":\"The environment contains one directly relevant final closeout-ledger statement, one earlier running estimate with a conflicting number, and planning/handoff notes without final counts. The strongest evidence is doc_001 because it explicitly states 97 closed tickets for the exact workstream and month and says it uses the final close date. The 124 figure in doc_004 is less reliable for the claim because it is labeled a running estimate and points to a planning memo prepared before monthly close.\",\"rejected_evidence\":[\"doc_002\",\"doc_004\",\"doc_003\"],\"selected_doc_ids\":[\"doc_001\",\"doc_004\",\"doc_003\"],\"supporting_evidence\":[\"doc_001\"]}",
+      "usage": {
+        "completion_tokens": 316,
+        "prompt_tokens": 1158,
+        "total_tokens": 1474,
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": 0,
+          "audio_tokens": 0,
+          "reasoning_tokens": 0,
+          "rejected_prediction_tokens": 0
+        },
+        "prompt_tokens_details": {
+          "audio_tokens": 0,
+          "cached_tokens": 0
+        },
+        "latency_checkpoint": {
+          "engine_tbt_ms": 19,
+          "engine_ttft_ms": 464,
+          "engine_ttlt_ms": 6324,
+          "pre_inference_ms": 141,
+          "service_tbt_ms": 19,
+          "service_ttft_ms": 848,
+          "service_ttlt_ms": 6702,
+          "total_duration_ms": 6569,
+          "user_visible_ttft_ms": 707
+        }
+      },
+      "response_format_used": "json_schema",
+      "parse_success": true,
+      "parse_error": "",
+      "empty_output": false,
+      "schema_missing": false,
+      "json_extractor_used": "first_json_object",
+      "elapsed_s": 8.347,
+      "cost_usd": 0.015269999999999999
+    }
+  ],
+  "final_attempt": {
+    "attempt": 1,
+    "model": "gpt-5.5",
+    "provider": "OpenAI",
+    "task_id": "uncued_038_visible",
+    "variant": "order_randomized",
+    "prompt_condition": "standard_answer",
+    "content": "{\"actions\":[{\"action\":\"open\",\"rationale\":\"Review the document that directly states a final closeout-ledger count for the exact workstream and month in the claim.\",\"target\":\"doc_001\"},{\"action\":\"compare_versions\",\"rationale\":\"Compare the final ledger statement with earlier planning or estimate documents that may contain non-final or conflicting figures.\",\"target\":\"doc_001, doc_004, doc_003\"}],\"answer\":\"Yes. The provided evidence supports that Novalis Robotics logged 97 closed tickets for Mira sensor recalibrations in May 2025, based on the closeout ledger entry. The contrary 124 figure is explicitly framed as a running estimate rather than a final closed-ticket count.\",\"claim_verdict\":\"supported\",\"confidence\":0.88,\"evidence_environment_assessment\":\"The environment contains one directly relevant final closeout-ledger statement, one earlier running estimate with a conflicting number, and planning/handoff notes without final counts. The strongest evidence is doc_001 because it explicitly states 97 closed tickets for the exact workstream and month and says it uses the final close date. The 124 figure in doc_004 is less reliable for the claim because it is labeled a running estimate and points to a planning memo prepared before monthly close.\",\"rejected_evidence\":[\"doc_002\",\"doc_004\",\"doc_003\"],\"selected_doc_ids\":[\"doc_001\",\"doc_004\",\"doc_003\"],\"supporting_evidence\":[\"doc_001\"]}",
+    "usage": {
+      "completion_tokens": 316,
+      "prompt_tokens": 1158,
+      "total_tokens": 1474,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": 0,
+        "audio_tokens": 0,
+        "reasoning_tokens": 0,
+        "rejected_prediction_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cached_tokens": 0
+      },
+      "latency_checkpoint": {
+        "engine_tbt_ms": 19,
+        "engine_ttft_ms": 464,
+        "engine_ttlt_ms": 6324,
+        "pre_inference_ms": 141,
+        "service_tbt_ms": 19,
+        "service_ttft_ms": 848,
+        "service_ttlt_ms": 6702,
+        "total_duration_ms": 6569,
+        "user_visible_ttft_ms": 707
+      }
+    },
+    "response_format_used": "json_schema",
+    "parse_success": true,
+    "parse_error": "",
+    "empty_output": false,
+    "schema_missing": false,
+    "json_extractor_used": "first_json_object",
+    "elapsed_s": 8.347,
+    "cost_usd": 0.015269999999999999
+  }
+}

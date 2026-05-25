@@ -1,0 +1,10 @@
+\section{Leakage And Shortcut Method Details}
+\label{app:leakage-shortcut-methods}
+
+The automatic leakage audit scans only model-visible surfaces: task identifiers, questions, document identifiers, titles, source types, timestamps, bodies, and visible citations. It fails the gate for hidden scorer fields, direct answer cues, semantic identifiers that expose construction roles, or forbidden material-role phrases. The pilot audit reports zero critical, high, medium, hidden-label, semantic-ID, and direct-answer-cue hits.
+
+The local surface review sampled 400 document rows covering 50 unique latent tasks. It found zero critical leaks, zero severe leakage rows, and zero role-guess hits. This was a pre-model leakage gate, not an external validation study.
+
+The no-API shortcut baselines are: ID-only, document-order-only, title-only, source-type-only, metadata-only, timestamp-only, citation-graph-only, claim-overlap-only, cue-phrase-only, random-valid-schema, always-insufficient, and simple heuristic. The strongest shortcut is the simple heuristic, at 0.350 operational escape in the hidden view and 0.333 in the visible view. This means the benchmark is not explained by trivial labels alone, but shallow overlap can still solve enough rows that model comparisons should be phrased carefully.
+
+The relevant reproducibility paths are \code{eha-mvp/eha/uncued_leakage.py}, \code{eha-mvp/eha/uncued_baselines.py}, \code{reports/eha_uncued_leakage_pilot.json}, \code{reports/eha_uncued_baselines_pilot.json}, and the packaged copies under \code{artifact_uncued_phase1/}.

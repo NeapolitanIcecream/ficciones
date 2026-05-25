@@ -1,0 +1,34 @@
+{
+  "date": "2026-05-25",
+  "phase": "1.3_uncued_robustness_perturbations",
+  "variants": [
+    {
+      "variant": "baseline_original",
+      "changed_factor": "none",
+      "rule": "Rebuild the normal role-uncued prompt from the frozen source task."
+    },
+    {
+      "variant": "order_randomized",
+      "changed_factor": "document_order",
+      "rule": "Shuffle model-visible document order using seed and task ID; preserve document fields."
+    },
+    {
+      "variant": "source_type_masked",
+      "changed_factor": "source_type_metadata",
+      "rule": "Replace every model-visible source_type with document; preserve all other document fields."
+    },
+    {
+      "variant": "prompt_paraphrase",
+      "changed_factor": "policy_wording",
+      "rule": "Use semantically equivalent base policy wording while keeping documents and schema fixed."
+    },
+    {
+      "variant": "citation_masked",
+      "changed_factor": "visible_citations",
+      "rule": "Remove model-visible citation lists; preserve document body text and all non-citation fields."
+    }
+  ],
+  "baseline_required": true,
+  "schema_variant": "current_phase1_interface",
+  "prompt_condition": "standard_answer"
+}

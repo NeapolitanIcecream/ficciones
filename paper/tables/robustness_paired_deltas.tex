@@ -1,0 +1,16 @@
+\begin{table}[t]
+    \centering
+    \scriptsize
+    \caption{Phase 1.3 paired robustness deltas relative to the within-suite baseline. Positive operational deltas mean the perturbation increased operational epistemic escape relative to \code{baseline_original}; positive polluted-support deltas mean more polluted support.}
+    \label{tab:robustness-paired-deltas}
+    \begin{tabular}{lrrrrr}
+        \toprule
+        Variant & Pairs & $\Delta$ operational & $\Delta$ belief & $\Delta$ evidence precision & $\Delta$ polluted support \\
+        \midrule
+        \code{order_randomized} & 40 & 0.125 & 0.075 & 0.013 & -0.075 \\
+        \code{source_type_masked} & 40 & 0.100 & 0.050 & 0.026 & -0.025 \\
+        \code{prompt_paraphrase} & 40 & 0.100 & 0.025 & 0.025 & -0.025 \\
+        \code{citation_masked} & 40 & 0.075 & -0.075 & -0.047 & 0.075 \\
+        \bottomrule
+    \end{tabular}
+\end{table}

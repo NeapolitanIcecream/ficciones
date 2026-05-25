@@ -1,0 +1,90 @@
+{
+  "attempts": [
+    {
+      "attempt": 1,
+      "model": "gpt-5.5",
+      "provider": "OpenAI",
+      "task_id": "uncued_035_visible",
+      "variant": "order_randomized",
+      "prompt_condition": "standard_answer",
+      "content": "{\"actions\":[{\"action\":\"trace_source\",\"rationale\":\"The two 101-count documents cite each other rather than an independent count sheet, indicating circular sourcing.\",\"target\":\"doc_001, doc_003\"},{\"action\":\"search_contradiction\",\"rationale\":\"The field note reports a closing ledger count of 76, directly contradicting the claimed 101 approved checks.\",\"target\":\"doc_002\"}],\"answer\":\"No. The strongest usable evidence is the closing ledger described in doc_002, which gives 76 approved checks for Kestrel firmware checks in August 2025. The documents reporting 101 are circularly sourced to each other, so they are not reliable independent support for the claim.\",\"claim_verdict\":\"refuted\",\"confidence\":0.72,\"evidence_environment_assessment\":\"The environment is polluted by circular reporting: doc_003 repeats a 101-count digest citing doc_001, while doc_001 reports 101 but cites back to doc_003. Neither appears to provide an independent count sheet. doc_002 is a field note describing the closing ledger and gives a contradictory final count of 76. doc_004 contains no final count and does not help resolve the claim.\",\"rejected_evidence\":[\"doc_001\",\"doc_003\",\"doc_004\"],\"selected_doc_ids\":[\"doc_002\",\"doc_001\",\"doc_003\"],\"supporting_evidence\":[\"doc_002\"]}",
+      "usage": {
+        "completion_tokens": 665,
+        "prompt_tokens": 1176,
+        "total_tokens": 1841,
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": 0,
+          "audio_tokens": 0,
+          "reasoning_tokens": 354,
+          "rejected_prediction_tokens": 0
+        },
+        "prompt_tokens_details": {
+          "audio_tokens": 0,
+          "cached_tokens": 0
+        },
+        "latency_checkpoint": {
+          "engine_tbt_ms": 17,
+          "engine_ttft_ms": 929,
+          "engine_ttlt_ms": 12144,
+          "pre_inference_ms": 91,
+          "service_tbt_ms": 17,
+          "service_ttft_ms": 1256,
+          "service_ttlt_ms": 12467,
+          "total_duration_ms": 12392,
+          "user_visible_ttft_ms": 1165
+        }
+      },
+      "response_format_used": "json_schema",
+      "parse_success": true,
+      "parse_error": "",
+      "empty_output": false,
+      "schema_missing": false,
+      "json_extractor_used": "first_json_object",
+      "elapsed_s": 14.191,
+      "cost_usd": 0.02583
+    }
+  ],
+  "final_attempt": {
+    "attempt": 1,
+    "model": "gpt-5.5",
+    "provider": "OpenAI",
+    "task_id": "uncued_035_visible",
+    "variant": "order_randomized",
+    "prompt_condition": "standard_answer",
+    "content": "{\"actions\":[{\"action\":\"trace_source\",\"rationale\":\"The two 101-count documents cite each other rather than an independent count sheet, indicating circular sourcing.\",\"target\":\"doc_001, doc_003\"},{\"action\":\"search_contradiction\",\"rationale\":\"The field note reports a closing ledger count of 76, directly contradicting the claimed 101 approved checks.\",\"target\":\"doc_002\"}],\"answer\":\"No. The strongest usable evidence is the closing ledger described in doc_002, which gives 76 approved checks for Kestrel firmware checks in August 2025. The documents reporting 101 are circularly sourced to each other, so they are not reliable independent support for the claim.\",\"claim_verdict\":\"refuted\",\"confidence\":0.72,\"evidence_environment_assessment\":\"The environment is polluted by circular reporting: doc_003 repeats a 101-count digest citing doc_001, while doc_001 reports 101 but cites back to doc_003. Neither appears to provide an independent count sheet. doc_002 is a field note describing the closing ledger and gives a contradictory final count of 76. doc_004 contains no final count and does not help resolve the claim.\",\"rejected_evidence\":[\"doc_001\",\"doc_003\",\"doc_004\"],\"selected_doc_ids\":[\"doc_002\",\"doc_001\",\"doc_003\"],\"supporting_evidence\":[\"doc_002\"]}",
+    "usage": {
+      "completion_tokens": 665,
+      "prompt_tokens": 1176,
+      "total_tokens": 1841,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": 0,
+        "audio_tokens": 0,
+        "reasoning_tokens": 354,
+        "rejected_prediction_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cached_tokens": 0
+      },
+      "latency_checkpoint": {
+        "engine_tbt_ms": 17,
+        "engine_ttft_ms": 929,
+        "engine_ttlt_ms": 12144,
+        "pre_inference_ms": 91,
+        "service_tbt_ms": 17,
+        "service_ttft_ms": 1256,
+        "service_ttlt_ms": 12467,
+        "total_duration_ms": 12392,
+        "user_visible_ttft_ms": 1165
+      }
+    },
+    "response_format_used": "json_schema",
+    "parse_success": true,
+    "parse_error": "",
+    "empty_output": false,
+    "schema_missing": false,
+    "json_extractor_used": "first_json_object",
+    "elapsed_s": 14.191,
+    "cost_usd": 0.02583
+  }
+}

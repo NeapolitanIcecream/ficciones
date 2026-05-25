@@ -1,0 +1,70 @@
+{
+  "phase": "1.3_uncued_robustness_run",
+  "schema_variant": "current_phase1_interface",
+  "variants": [
+    "baseline_original",
+    "order_randomized",
+    "source_type_masked",
+    "prompt_paraphrase",
+    "citation_masked"
+  ],
+  "prompt_condition": "standard_answer",
+  "selected_view": "neutral_metadata_visible",
+  "parallel_strategy": {
+    "parallel_model_streams": 2,
+    "per_job_concurrency": 1
+  },
+  "profiles": [
+    {
+      "model": "gpt-5.5",
+      "provider": "OpenAI",
+      "budget_setting": "robustness",
+      "timeout_s": 240.0,
+      "cost_estimate_output_tokens": 900,
+      "invocation_profile": {
+        "temperature_policy": "omitted",
+        "max_completion_tokens_policy": "explicit:4096",
+        "response_format": "json_schema",
+        "json_extractor": "first_json_object",
+        "message_role_policy": "developer_system_merged_into_user",
+        "llm_repair": "disabled",
+        "provider": "OpenAI",
+        "budget_setting": "robustness"
+      },
+      "retry_profile": {
+        "max_attempts": 2,
+        "llm_repair": "disabled",
+        "json_extractor": "first_json_object",
+        "response_format": "json_schema",
+        "temperature_policy": "omitted",
+        "max_completion_tokens_policy": "explicit:4096"
+      }
+    },
+    {
+      "model": "gemini-3.1-pro-preview",
+      "provider": "Google",
+      "budget_setting": "robustness",
+      "timeout_s": 240.0,
+      "cost_estimate_output_tokens": 900,
+      "invocation_profile": {
+        "temperature_policy": "omitted",
+        "max_completion_tokens_policy": "explicit:4096",
+        "response_format": "json_schema",
+        "json_extractor": "first_json_object",
+        "message_role_policy": "developer_system_merged_into_user",
+        "llm_repair": "disabled",
+        "provider": "Google",
+        "budget_setting": "robustness"
+      },
+      "retry_profile": {
+        "max_attempts": 2,
+        "llm_repair": "disabled",
+        "json_extractor": "first_json_object",
+        "response_format": "json_schema",
+        "temperature_policy": "omitted",
+        "max_completion_tokens_policy": "explicit:4096"
+      }
+    }
+  ],
+  "deepseek_profiles": []
+}

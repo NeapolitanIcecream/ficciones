@@ -1,0 +1,90 @@
+{
+  "attempts": [
+    {
+      "attempt": 1,
+      "model": "gpt-5.5",
+      "provider": "OpenAI",
+      "task_id": "uncued_042_visible",
+      "variant": "citation_masked",
+      "prompt_condition": "standard_answer",
+      "content": "{\"actions\":[{\"action\":\"open\",\"rationale\":\"Inspect the ledger extract because it directly states the final closeout count for the relevant workstream and month.\",\"target\":\"doc_003\"},{\"action\":\"compare_versions\",\"rationale\":\"Compare the final ledger count with the running estimate to avoid relying on earlier or non-final figures.\",\"target\":\"doc_003 vs doc_004\"}],\"answer\":\"Yes. The provided evidence supports that Novalis Robotics logged 184 completed checks for Atlas valve checks in March 2025, based on the closeout ledger extract. The contrary 211 figure is described as a running estimate rather than a final number.\",\"claim_verdict\":\"supported\",\"confidence\":0.92,\"evidence_environment_assessment\":\"The environment contains one direct final closeout source and several contextual or non-final notes. doc_003 is the strongest evidence because it states the closeout ledger lists 184 completed checks for Atlas valve checks in March 2025. doc_004 conflicts numerically but is explicitly framed as a running estimate, making it lower quality for the final logged count. doc_001 and doc_002 provide context but no closing count.\",\"rejected_evidence\":[\"doc_001\",\"doc_002\",\"doc_004\"],\"selected_doc_ids\":[\"doc_003\",\"doc_004\"],\"supporting_evidence\":[\"doc_003\"]}",
+      "usage": {
+        "completion_tokens": 290,
+        "prompt_tokens": 1147,
+        "total_tokens": 1437,
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": 0,
+          "audio_tokens": 0,
+          "reasoning_tokens": 0,
+          "rejected_prediction_tokens": 0
+        },
+        "prompt_tokens_details": {
+          "audio_tokens": 0,
+          "cached_tokens": 0
+        },
+        "latency_checkpoint": {
+          "engine_tbt_ms": 14,
+          "engine_ttft_ms": 267,
+          "engine_ttlt_ms": 4208,
+          "pre_inference_ms": 111,
+          "service_tbt_ms": 14,
+          "service_ttft_ms": 604,
+          "service_ttlt_ms": 4543,
+          "total_duration_ms": 4441,
+          "user_visible_ttft_ms": 493
+        }
+      },
+      "response_format_used": "json_schema",
+      "parse_success": true,
+      "parse_error": "",
+      "empty_output": false,
+      "schema_missing": false,
+      "json_extractor_used": "first_json_object",
+      "elapsed_s": 6.015,
+      "cost_usd": 0.014435
+    }
+  ],
+  "final_attempt": {
+    "attempt": 1,
+    "model": "gpt-5.5",
+    "provider": "OpenAI",
+    "task_id": "uncued_042_visible",
+    "variant": "citation_masked",
+    "prompt_condition": "standard_answer",
+    "content": "{\"actions\":[{\"action\":\"open\",\"rationale\":\"Inspect the ledger extract because it directly states the final closeout count for the relevant workstream and month.\",\"target\":\"doc_003\"},{\"action\":\"compare_versions\",\"rationale\":\"Compare the final ledger count with the running estimate to avoid relying on earlier or non-final figures.\",\"target\":\"doc_003 vs doc_004\"}],\"answer\":\"Yes. The provided evidence supports that Novalis Robotics logged 184 completed checks for Atlas valve checks in March 2025, based on the closeout ledger extract. The contrary 211 figure is described as a running estimate rather than a final number.\",\"claim_verdict\":\"supported\",\"confidence\":0.92,\"evidence_environment_assessment\":\"The environment contains one direct final closeout source and several contextual or non-final notes. doc_003 is the strongest evidence because it states the closeout ledger lists 184 completed checks for Atlas valve checks in March 2025. doc_004 conflicts numerically but is explicitly framed as a running estimate, making it lower quality for the final logged count. doc_001 and doc_002 provide context but no closing count.\",\"rejected_evidence\":[\"doc_001\",\"doc_002\",\"doc_004\"],\"selected_doc_ids\":[\"doc_003\",\"doc_004\"],\"supporting_evidence\":[\"doc_003\"]}",
+    "usage": {
+      "completion_tokens": 290,
+      "prompt_tokens": 1147,
+      "total_tokens": 1437,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": 0,
+        "audio_tokens": 0,
+        "reasoning_tokens": 0,
+        "rejected_prediction_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cached_tokens": 0
+      },
+      "latency_checkpoint": {
+        "engine_tbt_ms": 14,
+        "engine_ttft_ms": 267,
+        "engine_ttlt_ms": 4208,
+        "pre_inference_ms": 111,
+        "service_tbt_ms": 14,
+        "service_ttft_ms": 604,
+        "service_ttlt_ms": 4543,
+        "total_duration_ms": 4441,
+        "user_visible_ttft_ms": 493
+      }
+    },
+    "response_format_used": "json_schema",
+    "parse_success": true,
+    "parse_error": "",
+    "empty_output": false,
+    "schema_missing": false,
+    "json_extractor_used": "first_json_object",
+    "elapsed_s": 6.015,
+    "cost_usd": 0.014435
+  }
+}

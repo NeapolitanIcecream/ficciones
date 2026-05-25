@@ -2,11 +2,19 @@
 
 \input{tables/model_metrics_by_view}
 
-\Cref{tab:model-metrics-by-view} gives the main model metrics by neutral metadata view. Operational escape is lower than belief correctness for every model and view. \code{gpt-5.5} has the highest operational escape in both views, at 0.517 hidden and 0.533 visible. \code{gemini-3.1-pro-preview} follows at 0.417 hidden and 0.450 visible. Claude and DeepSeek have lower operational escape despite high parse success.
+\Cref{tab:model-metrics-by-view} gives the main model metrics by neutral metadata view. Operational escape is lower than belief correctness for every model and view. The model ordering is descriptive: \code{gpt-5.5} has the highest observed operational escape in both views, followed by \code{gemini-3.1-pro-preview}, while Claude and DeepSeek have lower operational escape despite complete parse success.
+
+\input{tables/model_metrics_with_ci}
+
+\Cref{tab:model-metrics-with-ci} adds task-level bootstrap intervals. The intervals are wide enough that this pilot should not be read as a fine-grained provider ranking. The visible-minus-hidden paired operational delta is small overall, 0.029 with a 95\% bootstrap interval of [-0.021, 0.079], so the two neutral metadata views are best treated as paired robustness views rather than separate leaderboards.
 
 \input{tables/model_metrics_by_condition}
 
 \Cref{tab:model-metrics-by-condition} shows that the aggregate difficulty is not uniform. Clean rows are much easier, with 0.719 operational escape. Generated-lore rows have 0.938 belief correctness but only 0.125 operational escape because evidence precision collapses to 0.000 and polluted support remains high.
+
+\input{tables/condition_metrics_with_ci}
+
+\Cref{tab:condition-metrics-with-ci} reports the same condition-level operational rates with latent-task bootstrap intervals. Generated lore remains the clearest stress case: the belief-to-operational gap is 0.812 with a 95\% interval of [0.714, 0.906].
 
 \input{tables/evidence_hygiene_vs_belief}
 
@@ -14,4 +22,8 @@
 
 \input{tables/active_verification_action_exactness}
 
-\Cref{tab:active-verification-action-exactness} summarizes active-verification action behavior. Exact target rate is 1.000 in this pilot, so the remaining variation comes from required action recall and the action score. This result should be read cautiously because the active-verification slice has only 96 rows.
+\Cref{tab:active-verification-action-exactness} summarizes active-verification action behavior. Exact target rate is 1.000 in this pilot, so the remaining variation comes from required action recall, the action score, and whether the active-verification row also satisfies belief and support hygiene. This result should be read cautiously because the active-verification slice has only 96 rows.
+
+\input{tables/robustness_paired_deltas}
+
+\Cref{tab:robustness-paired-deltas} reports a paired Phase 1.3 robustness mini-suite over 20 frozen source tasks, two frontier models, and five presentation variants. All 200 calls parsed, and all 40 task-model groups contained the \code{baseline_original} row plus every perturbation row. Operational deltas were non-negative for evidence-order randomization, source-type masking, prompt paraphrase, and citation masking. The generated-lore belief/operation gap also persisted: the baseline gap was 1.000, source-type masking and citation masking remained at 1.000, and order randomization and prompt paraphrase remained at 0.900. Citation masking should be read as a stress test because visible dependency structure can be task-relevant evidence rather than neutral presentation metadata.

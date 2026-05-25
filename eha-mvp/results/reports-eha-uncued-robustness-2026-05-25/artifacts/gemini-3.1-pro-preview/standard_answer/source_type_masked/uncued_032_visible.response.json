@@ -1,0 +1,86 @@
+{
+  "attempts": [
+    {
+      "attempt": 1,
+      "model": "gemini-3.1-pro-preview",
+      "provider": "Google",
+      "task_id": "uncued_032_visible",
+      "variant": "source_type_masked",
+      "prompt_condition": "standard_answer",
+      "content": "{\n  \"claim_verdict\": \"refuted\",\n  \"confidence\": 0.9,\n  \"supporting_evidence\": [\n    \"doc_001\"\n  ],\n  \"rejected_evidence\": [\n    \"doc_002\",\n    \"doc_003\",\n    \"doc_004\"\n  ],\n  \"selected_doc_ids\": [\n    \"doc_001\",\n    \"doc_003\",\n    \"doc_004\"\n  ],\n  \"actions\": [\n    {\n      \"action\": \"search_primary\",\n      \"target\": \"Westhaven lab closing ledger May 2025\",\n      \"rationale\": \"Retrieve the primary source closing ledger to confirm the final count of 97 tickets.\"\n    },\n    {\n      \"action\": \"trace_source\",\n      \"target\": \"doc_003\",\n      \"rationale\": \"Investigate the weekly digest to determine the origin of the 124 count and verify the circular citation with doc_004.\"\n    }\n  ],\n  \"evidence_environment_assessment\": \"The evidence environment contains a circular reporting loop. Documents doc_003 and doc_004 both claim 124 closed tickets but cite each other, artificially inflating the credibility of that number. The primary closing ledger (doc_001) contradicts this, stating the true count is 97.\",\n  \"answer\": \"The claim that Novalis Robotics logged 124 closed tickets for Mira sensor recalibrations in May 2025 is refuted. The closing ledger for the Westhaven lab (doc_001) records 97 closed tickets for this period. The sources claiming 124 tickets (doc_003 and doc_004) rely on a circular reporting loop where they cite one another, undermining the validity of the 124 count.\"\n}",
+      "usage": {
+        "completion_tokens": 1102,
+        "prompt_tokens": 1146,
+        "total_tokens": 2248,
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": null,
+          "audio_tokens": 0,
+          "reasoning_tokens": 668,
+          "rejected_prediction_tokens": null,
+          "text_tokens": 434,
+          "image_tokens": 0
+        },
+        "prompt_tokens_details": {
+          "audio_tokens": 0,
+          "cached_tokens": 0,
+          "text_tokens": 1146,
+          "image_tokens": 0
+        },
+        "input_tokens": 0,
+        "output_tokens": 0,
+        "input_tokens_details": null,
+        "claude_cache_creation_5_m_tokens": 0,
+        "claude_cache_creation_1_h_tokens": 0
+      },
+      "response_format_used": "json_schema",
+      "parse_success": true,
+      "parse_error": "",
+      "empty_output": false,
+      "schema_missing": false,
+      "json_extractor_used": "first_json_object",
+      "elapsed_s": 9.836,
+      "cost_usd": 0.0024904999999999997
+    }
+  ],
+  "final_attempt": {
+    "attempt": 1,
+    "model": "gemini-3.1-pro-preview",
+    "provider": "Google",
+    "task_id": "uncued_032_visible",
+    "variant": "source_type_masked",
+    "prompt_condition": "standard_answer",
+    "content": "{\n  \"claim_verdict\": \"refuted\",\n  \"confidence\": 0.9,\n  \"supporting_evidence\": [\n    \"doc_001\"\n  ],\n  \"rejected_evidence\": [\n    \"doc_002\",\n    \"doc_003\",\n    \"doc_004\"\n  ],\n  \"selected_doc_ids\": [\n    \"doc_001\",\n    \"doc_003\",\n    \"doc_004\"\n  ],\n  \"actions\": [\n    {\n      \"action\": \"search_primary\",\n      \"target\": \"Westhaven lab closing ledger May 2025\",\n      \"rationale\": \"Retrieve the primary source closing ledger to confirm the final count of 97 tickets.\"\n    },\n    {\n      \"action\": \"trace_source\",\n      \"target\": \"doc_003\",\n      \"rationale\": \"Investigate the weekly digest to determine the origin of the 124 count and verify the circular citation with doc_004.\"\n    }\n  ],\n  \"evidence_environment_assessment\": \"The evidence environment contains a circular reporting loop. Documents doc_003 and doc_004 both claim 124 closed tickets but cite each other, artificially inflating the credibility of that number. The primary closing ledger (doc_001) contradicts this, stating the true count is 97.\",\n  \"answer\": \"The claim that Novalis Robotics logged 124 closed tickets for Mira sensor recalibrations in May 2025 is refuted. The closing ledger for the Westhaven lab (doc_001) records 97 closed tickets for this period. The sources claiming 124 tickets (doc_003 and doc_004) rely on a circular reporting loop where they cite one another, undermining the validity of the 124 count.\"\n}",
+    "usage": {
+      "completion_tokens": 1102,
+      "prompt_tokens": 1146,
+      "total_tokens": 2248,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": null,
+        "audio_tokens": 0,
+        "reasoning_tokens": 668,
+        "rejected_prediction_tokens": null,
+        "text_tokens": 434,
+        "image_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cached_tokens": 0,
+        "text_tokens": 1146,
+        "image_tokens": 0
+      },
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "input_tokens_details": null,
+      "claude_cache_creation_5_m_tokens": 0,
+      "claude_cache_creation_1_h_tokens": 0
+    },
+    "response_format_used": "json_schema",
+    "parse_success": true,
+    "parse_error": "",
+    "empty_output": false,
+    "schema_missing": false,
+    "json_extractor_used": "first_json_object",
+    "elapsed_s": 9.836,
+    "cost_usd": 0.0024904999999999997
+  }
+}

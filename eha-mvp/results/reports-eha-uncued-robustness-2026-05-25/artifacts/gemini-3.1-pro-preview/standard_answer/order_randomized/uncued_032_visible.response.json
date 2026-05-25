@@ -1,0 +1,86 @@
+{
+  "attempts": [
+    {
+      "attempt": 1,
+      "model": "gemini-3.1-pro-preview",
+      "provider": "Google",
+      "task_id": "uncued_032_visible",
+      "variant": "order_randomized",
+      "prompt_condition": "standard_answer",
+      "content": "{\n  \"claim_verdict\": \"refuted\",\n  \"confidence\": 0.9,\n  \"supporting_evidence\": [\n    \"doc_001\"\n  ],\n  \"rejected_evidence\": [\n    \"doc_002\",\n    \"doc_003\",\n    \"doc_004\"\n  ],\n  \"selected_doc_ids\": [\n    \"doc_001\",\n    \"doc_003\",\n    \"doc_004\"\n  ],\n  \"actions\": [\n    {\n      \"action\": \"trace_source\",\n      \"target\": \"doc_001\",\n      \"rationale\": \"Verify the original closing ledger for the Westhaven lab to confirm the 97 ticket count.\"\n    },\n    {\n      \"action\": \"search_contradiction\",\n      \"target\": \"Novalis Robotics Mira sensor recalibrations closed tickets May 2025\",\n      \"rationale\": \"Look for other independent primary sources to resolve the conflicting counts of 97 and 124.\"\n    }\n  ],\n  \"evidence_environment_assessment\": \"The evidence environment presents a conflict regarding the final count. doc_001 reports 97 tickets, while doc_003 and doc_004 claim 124 tickets. However, doc_003 and doc_004 engage in circular citation, undermining their credibility. As a result, the claim of 124 tickets is considered refuted by the independent ledger count of 97.\",\n  \"answer\": \"No, Novalis Robotics did not log 124 closed tickets. The most reliable evidence (doc_001) states there were 97 closed tickets for Mira sensor recalibrations in May 2025. The documents supporting the 124 count (doc_003 and doc_004) are unreliable due to circular citations.\"\n}",
+      "usage": {
+        "completion_tokens": 1100,
+        "prompt_tokens": 1532,
+        "total_tokens": 2632,
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": null,
+          "audio_tokens": 0,
+          "reasoning_tokens": 664,
+          "rejected_prediction_tokens": null,
+          "text_tokens": 436,
+          "image_tokens": 0
+        },
+        "prompt_tokens_details": {
+          "audio_tokens": 0,
+          "cached_tokens": 0,
+          "text_tokens": 1532,
+          "image_tokens": 0
+        },
+        "input_tokens": 0,
+        "output_tokens": 0,
+        "input_tokens_details": null,
+        "claude_cache_creation_5_m_tokens": 0,
+        "claude_cache_creation_1_h_tokens": 0
+      },
+      "response_format_used": "json_schema",
+      "parse_success": true,
+      "parse_error": "",
+      "empty_output": false,
+      "schema_missing": false,
+      "json_extractor_used": "first_json_object",
+      "elapsed_s": 12.945,
+      "cost_usd": 0.0025830000000000002
+    }
+  ],
+  "final_attempt": {
+    "attempt": 1,
+    "model": "gemini-3.1-pro-preview",
+    "provider": "Google",
+    "task_id": "uncued_032_visible",
+    "variant": "order_randomized",
+    "prompt_condition": "standard_answer",
+    "content": "{\n  \"claim_verdict\": \"refuted\",\n  \"confidence\": 0.9,\n  \"supporting_evidence\": [\n    \"doc_001\"\n  ],\n  \"rejected_evidence\": [\n    \"doc_002\",\n    \"doc_003\",\n    \"doc_004\"\n  ],\n  \"selected_doc_ids\": [\n    \"doc_001\",\n    \"doc_003\",\n    \"doc_004\"\n  ],\n  \"actions\": [\n    {\n      \"action\": \"trace_source\",\n      \"target\": \"doc_001\",\n      \"rationale\": \"Verify the original closing ledger for the Westhaven lab to confirm the 97 ticket count.\"\n    },\n    {\n      \"action\": \"search_contradiction\",\n      \"target\": \"Novalis Robotics Mira sensor recalibrations closed tickets May 2025\",\n      \"rationale\": \"Look for other independent primary sources to resolve the conflicting counts of 97 and 124.\"\n    }\n  ],\n  \"evidence_environment_assessment\": \"The evidence environment presents a conflict regarding the final count. doc_001 reports 97 tickets, while doc_003 and doc_004 claim 124 tickets. However, doc_003 and doc_004 engage in circular citation, undermining their credibility. As a result, the claim of 124 tickets is considered refuted by the independent ledger count of 97.\",\n  \"answer\": \"No, Novalis Robotics did not log 124 closed tickets. The most reliable evidence (doc_001) states there were 97 closed tickets for Mira sensor recalibrations in May 2025. The documents supporting the 124 count (doc_003 and doc_004) are unreliable due to circular citations.\"\n}",
+    "usage": {
+      "completion_tokens": 1100,
+      "prompt_tokens": 1532,
+      "total_tokens": 2632,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": null,
+        "audio_tokens": 0,
+        "reasoning_tokens": 664,
+        "rejected_prediction_tokens": null,
+        "text_tokens": 436,
+        "image_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cached_tokens": 0,
+        "text_tokens": 1532,
+        "image_tokens": 0
+      },
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "input_tokens_details": null,
+      "claude_cache_creation_5_m_tokens": 0,
+      "claude_cache_creation_1_h_tokens": 0
+    },
+    "response_format_used": "json_schema",
+    "parse_success": true,
+    "parse_error": "",
+    "empty_output": false,
+    "schema_missing": false,
+    "json_extractor_used": "first_json_object",
+    "elapsed_s": 12.945,
+    "cost_usd": 0.0025830000000000002
+  }
+}

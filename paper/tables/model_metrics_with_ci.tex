@@ -1,0 +1,16 @@
+\begin{table}[t]
+    \centering
+    \small
+    \caption{Model metrics with 95\% bootstrap intervals from latent-task resampling. Each bootstrap draw resamples the 60 latent tasks and keeps both metadata views paired.}
+    \label{tab:model-metrics-with-ci}
+    \begin{tabular}{lrrrr}
+        \toprule
+        Model & $n$ & Operational escape & Belief correct & Evidence precision \\
+        \midrule
+        \code{claude-opus-4-7} & 120 & 0.317 [0.217, 0.425] & 0.933 [0.875, 0.983] & 0.481 [0.362, 0.604] \\
+        \code{deepseek-v4-pro} & 120 & 0.233 [0.142, 0.333] & 0.658 [0.558, 0.758] & 0.441 [0.323, 0.562] \\
+        \code{gemini-3.1-pro-preview} & 120 & 0.433 [0.325, 0.550] & 0.917 [0.867, 0.958] & 0.843 [0.757, 0.918] \\
+        \code{gpt-5.5} & 120 & 0.525 [0.408, 0.642] & 0.992 [0.975, 1.000] & 0.754 [0.650, 0.850] \\
+        \bottomrule
+    \end{tabular}
+\end{table}

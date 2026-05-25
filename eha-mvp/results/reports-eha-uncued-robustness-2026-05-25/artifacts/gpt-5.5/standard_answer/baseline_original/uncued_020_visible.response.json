@@ -1,0 +1,90 @@
+{
+  "attempts": [
+    {
+      "attempt": 1,
+      "model": "gpt-5.5",
+      "provider": "OpenAI",
+      "task_id": "uncued_020_visible",
+      "variant": "baseline_original",
+      "prompt_condition": "standard_answer",
+      "content": "{\"actions\":[{\"action\":\"trace_source\",\"rationale\":\"The 124-ticket statement appears in a digest that cites doc_003, but doc_003 says it provides chronology and not a final count.\",\"target\":\"doc_001\"},{\"action\":\"search_contradiction\",\"rationale\":\"The month-close ledger entry directly addresses the same workstream and period and reports a different closed-ticket count.\",\"target\":\"doc_002\"}],\"answer\":\"No. The provided evidence does not support 124 closed tickets; the most direct ledger evidence reports 97 closed tickets for Mira sensor recalibrations in May 2025. The 124 figure appears only in an unsupported digest whose cited source does not contain a final count.\",\"claim_verdict\":\"refuted\",\"confidence\":0.86,\"evidence_environment_assessment\":\"The environment contains a direct contradiction between an unsupported digest claim and a more probative month-close ledger row. doc_001 states 124 but lacks a visible supporting row and cites doc_003, which explicitly does not provide a final count. doc_002 directly lists the relevant workstream and month-close ledger count as 97, making it the strongest evidence for judging the claim. doc_004 is unrelated to the count.\",\"rejected_evidence\":[\"doc_001\",\"doc_003\",\"doc_004\"],\"selected_doc_ids\":[\"doc_002\",\"doc_001\",\"doc_003\"],\"supporting_evidence\":[\"doc_002\"]}",
+      "usage": {
+        "completion_tokens": 518,
+        "prompt_tokens": 1163,
+        "total_tokens": 1681,
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": 0,
+          "audio_tokens": 0,
+          "reasoning_tokens": 203,
+          "rejected_prediction_tokens": 0
+        },
+        "prompt_tokens_details": {
+          "audio_tokens": 0,
+          "cached_tokens": 0
+        },
+        "latency_checkpoint": {
+          "engine_tbt_ms": 18,
+          "engine_ttft_ms": 234,
+          "engine_ttlt_ms": 9804,
+          "pre_inference_ms": 110,
+          "service_tbt_ms": 18,
+          "service_ttft_ms": 590,
+          "service_ttlt_ms": 10149,
+          "total_duration_ms": 10052,
+          "user_visible_ttft_ms": 480
+        }
+      },
+      "response_format_used": "json_schema",
+      "parse_success": true,
+      "parse_error": "",
+      "empty_output": false,
+      "schema_missing": false,
+      "json_extractor_used": "first_json_object",
+      "elapsed_s": 11.638,
+      "cost_usd": 0.021355
+    }
+  ],
+  "final_attempt": {
+    "attempt": 1,
+    "model": "gpt-5.5",
+    "provider": "OpenAI",
+    "task_id": "uncued_020_visible",
+    "variant": "baseline_original",
+    "prompt_condition": "standard_answer",
+    "content": "{\"actions\":[{\"action\":\"trace_source\",\"rationale\":\"The 124-ticket statement appears in a digest that cites doc_003, but doc_003 says it provides chronology and not a final count.\",\"target\":\"doc_001\"},{\"action\":\"search_contradiction\",\"rationale\":\"The month-close ledger entry directly addresses the same workstream and period and reports a different closed-ticket count.\",\"target\":\"doc_002\"}],\"answer\":\"No. The provided evidence does not support 124 closed tickets; the most direct ledger evidence reports 97 closed tickets for Mira sensor recalibrations in May 2025. The 124 figure appears only in an unsupported digest whose cited source does not contain a final count.\",\"claim_verdict\":\"refuted\",\"confidence\":0.86,\"evidence_environment_assessment\":\"The environment contains a direct contradiction between an unsupported digest claim and a more probative month-close ledger row. doc_001 states 124 but lacks a visible supporting row and cites doc_003, which explicitly does not provide a final count. doc_002 directly lists the relevant workstream and month-close ledger count as 97, making it the strongest evidence for judging the claim. doc_004 is unrelated to the count.\",\"rejected_evidence\":[\"doc_001\",\"doc_003\",\"doc_004\"],\"selected_doc_ids\":[\"doc_002\",\"doc_001\",\"doc_003\"],\"supporting_evidence\":[\"doc_002\"]}",
+    "usage": {
+      "completion_tokens": 518,
+      "prompt_tokens": 1163,
+      "total_tokens": 1681,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": 0,
+        "audio_tokens": 0,
+        "reasoning_tokens": 203,
+        "rejected_prediction_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cached_tokens": 0
+      },
+      "latency_checkpoint": {
+        "engine_tbt_ms": 18,
+        "engine_ttft_ms": 234,
+        "engine_ttlt_ms": 9804,
+        "pre_inference_ms": 110,
+        "service_tbt_ms": 18,
+        "service_ttft_ms": 590,
+        "service_ttlt_ms": 10149,
+        "total_duration_ms": 10052,
+        "user_visible_ttft_ms": 480
+      }
+    },
+    "response_format_used": "json_schema",
+    "parse_success": true,
+    "parse_error": "",
+    "empty_output": false,
+    "schema_missing": false,
+    "json_extractor_used": "first_json_object",
+    "elapsed_s": 11.638,
+    "cost_usd": 0.021355
+  }
+}
