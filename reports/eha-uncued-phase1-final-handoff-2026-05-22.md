@@ -4,6 +4,8 @@ Date: 2026-05-22
 
 Status: Phase 0-19 complete for the role-uncued Phase 1 arXiv-readiness runbook.
 
+Post-handoff update: the deferred role-uncued schema ablation was completed later as Phase 1.1. See `reports/eha-uncued-phase1-1-final-handoff-2026-05-25.md` for the current post-ablation status.
+
 ## What Was Built
 
 - Role-uncued micro and pilot datasets under `eha-mvp/data/uncued-micro/` and `eha-mvp/data/uncued-pilot-v1/`.
@@ -95,7 +97,7 @@ DeepSeek retry/pilot profile:
 | Phase 12 model run | pass | 480/480 records, all parse success |
 | Phase 13 scoring | pass | 480 scored rows, acceptance passed |
 | Phase 14 scorer audit | pass | 40 reviewed rows, 0 disagreements |
-| Phase 15 schema ablation | skipped | deferred to Phase 1.1, 0 model calls |
+| Phase 15 schema ablation | skipped on Phase 1 path; later completed as Phase 1.1 | Phase 15 made 0 model calls; see `reports/eha-uncued-phase1-1-final-handoff-2026-05-25.md` |
 | Phase 16 artifact package | pass | `artifact_uncued_phase1/manifest.json` |
 | Phase 17 readiness verifier | pass | `reports/eha_uncued_phase1_readiness.json` |
 | Phase 18 paper rewrite | pass | `paper/main.pdf`, uncued-only main results |
@@ -110,10 +112,10 @@ The old cued construction is mentioned only as a quarantined construction failur
 
 - The dataset is pilot-scale and synthetic: 60 latent tasks, two views, four model labels.
 - The local surface review and scorer audit are not independent human-subject validation.
-- Phase 15 schema ablation was intentionally skipped and should be run as Phase 1.1.
+- Phase 15 schema ablation was intentionally skipped on the main Phase 1 path; it was later completed as exploratory Phase 1.1 evidence.
 - Some model-view pairs do not beat the simple heuristic; the paper states the narrower, accurate baseline claim.
 - The paper compile has one bibliography underfull-box warning, not a build failure.
 
 ## Recommended Next Step
 
-Run Phase 1.1: independent human audit plus the planned role-uncued schema ablation on generated-lore and buried-primary tasks before expanding the benchmark or making stronger ranking claims.
+Use the completed Phase 1.1 ablation only as narrow schema/interface sensitivity evidence. The next larger step is an expanded role-uncued task set with independent human audit before making stronger ranking claims.
