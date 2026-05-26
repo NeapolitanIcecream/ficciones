@@ -1,0 +1,50 @@
+{
+  "attempts": [
+    {
+      "attempt": 1,
+      "response_format_used": "json_schema",
+      "parse_success": true,
+      "parse_error": "",
+      "empty_output": false,
+      "schema_missing": false,
+      "elapsed_s": 12.73,
+      "cost_usd": 0.00309625
+    }
+  ],
+  "final": {
+    "content": "{\"claim_verdict\":\"refuted\",\"confidence\":0.9,\"clean_supporting_evidence\":[],\"refuting_evidence\":[\"doc_004\"],\"rejected_or_contaminated_evidence\":[\"doc_001\"],\"diagnostic_evidence\":[\"doc_002\",\"doc_003\"],\"selected_doc_ids\":[\"doc_004\",\"doc_001\",\"doc_003\"],\"actions\":[{\"action\":\"trace_source\",\"target\":\"doc_001\",\"rationale\":\"Investigate the origin of the 101 count since it conflicts with the ledger and cites a document with no count.\"},{\"action\":\"search_primary\",\"target\":\"Kestrel firmware checks ledger August 2025\",\"rationale\":\"Access the primary ledger to definitively confirm the final approved checks count.\"}],\"evidence_notes\":\"The month-close ledger for Ridgeway bench (doc_004) lists 76 approved checks for Kestrel firmware in August 2025. Document doc_001 claims the count reached 101, but it cites doc_003, which does not contain the final count, making doc_001 unreliable.\",\"answer\":\"Based on the available evidence, the claim is refuted. The month-close ledger for Ridgeway bench (doc_004) explicitly lists 76 approved checks for Kestrel firmware checks in August 2025. The conflicting claim of 101 checks appears in a short operations digest (doc_001), which is considered contaminated as it lacks a visible citation to a row with this count and relies on a routing note (doc_003) that gives no final count.\"}",
+    "usage": {
+      "completion_tokens": 1330,
+      "prompt_tokens": 1745,
+      "total_tokens": 3075,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": null,
+        "audio_tokens": 0,
+        "reasoning_tokens": 972,
+        "rejected_prediction_tokens": null,
+        "text_tokens": 358,
+        "image_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cached_tokens": 0,
+        "text_tokens": 1745,
+        "image_tokens": 0
+      },
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "input_tokens_details": null,
+      "claude_cache_creation_5_m_tokens": 0,
+      "claude_cache_creation_1_h_tokens": 0
+    },
+    "response_format_used": "json_schema",
+    "parse_success": true,
+    "parse_error": "",
+    "empty_output": false,
+    "schema_missing": false,
+    "json_extractor_used": "first_json_object",
+    "cost_usd": 0.00309625,
+    "attempt_count": 1,
+    "visible_output_tokens": 329
+  }
+}

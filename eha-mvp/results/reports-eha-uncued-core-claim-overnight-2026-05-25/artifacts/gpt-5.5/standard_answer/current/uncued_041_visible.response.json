@@ -1,0 +1,52 @@
+{
+  "attempts": [
+    {
+      "attempt": 1,
+      "response_format_used": "json_schema",
+      "parse_success": true,
+      "parse_error": "",
+      "empty_output": false,
+      "schema_missing": false,
+      "elapsed_s": 21.486,
+      "cost_usd": 0.0291
+    }
+  ],
+  "final": {
+    "content": "{\"actions\":[{\"action\":\"compare_versions\",\"rationale\":\"Compare the final closeout ledger count against the earlier running estimate for the same workstream and month.\",\"target\":\"doc_003 vs doc_004\"},{\"action\":\"trace_source\",\"rationale\":\"Trace the 101-count estimate to its cited planning memo, which was prepared before monthly close and had no final number.\",\"target\":\"doc_004 -> doc_002\"}],\"answer\":\"Yes. The strongest evidence is the closeout ledger in doc_003, which lists 76 approved checks for Kestrel firmware checks in August 2025. The conflicting 101 figure in doc_004 is only a running estimate tied to a pre-close planning memo, not a final logged count.\",\"claim_verdict\":\"supported\",\"confidence\":0.86,\"evidence_environment_assessment\":\"The environment contains one clean final-count document and one conflicting estimate. Doc_003 is most probative because it describes a closeout ledger row after planning notes and using the final close date. Doc_004 is polluted or lower-quality for this claim because it is explicitly a running estimate and points back to doc_002, which had no final number. Doc_001 and doc_002 provide context but do not establish a closing count.\",\"rejected_evidence\":[\"doc_004\",\"doc_002\"],\"selected_doc_ids\":[\"doc_003\",\"doc_004\",\"doc_002\"],\"supporting_evidence\":[\"doc_003\"]}",
+    "usage": {
+      "completion_tokens": 777,
+      "prompt_tokens": 1158,
+      "total_tokens": 1935,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": 0,
+        "audio_tokens": 0,
+        "reasoning_tokens": 463,
+        "rejected_prediction_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cached_tokens": 0
+      },
+      "latency_checkpoint": {
+        "engine_tbt_ms": 24,
+        "engine_ttft_ms": 362,
+        "engine_ttlt_ms": 19195,
+        "pre_inference_ms": 170,
+        "service_tbt_ms": 24,
+        "service_ttft_ms": 794,
+        "service_ttlt_ms": 19617,
+        "total_duration_ms": 19493,
+        "user_visible_ttft_ms": 623
+      }
+    },
+    "response_format_used": "json_schema",
+    "parse_success": true,
+    "parse_error": "",
+    "empty_output": false,
+    "schema_missing": false,
+    "json_extractor_used": "first_json_object",
+    "cost_usd": 0.0291,
+    "attempt_count": 1,
+    "visible_output_tokens": 327
+  }
+}

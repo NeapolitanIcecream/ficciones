@@ -1,0 +1,52 @@
+{
+  "attempts": [
+    {
+      "attempt": 1,
+      "response_format_used": "json_schema",
+      "parse_success": true,
+      "parse_error": "",
+      "empty_output": false,
+      "schema_missing": false,
+      "elapsed_s": 18.979,
+      "cost_usd": 0.026225
+    }
+  ],
+  "final": {
+    "content": "{\"actions\":[{\"action\":\"open\",\"rationale\":\"Check the document that states the month-close ledger count for the same workstream and month.\",\"target\":\"doc_002\"},{\"action\":\"trace_source\",\"rationale\":\"Trace the document asserting 88 to its cited packet reference to see whether the cited source contains a final count.\",\"target\":\"doc_003\"}],\"answer\":\"No. The best direct evidence says the month-close ledger listed 63 verified Orion battery swaps for April 2025, while the 88-count memo is unsupported by its cited reference.\",\"claim_verdict\":\"refuted\",\"clean_supporting_evidence\":[],\"confidence\":0.82,\"diagnostic_evidence\":[\"doc_004\",\"doc_001\"],\"evidence_notes\":\"doc_002 directly gives a conflicting count of 63 verified swaps for the same Orion battery swaps in April 2025. doc_003 says the count reached 88, but it cites only doc_004, which provides chronology and no final count, so doc_003 is not clean support. doc_001 also contains no total and is only diagnostically useful.\",\"refuting_evidence\":[\"doc_002\"],\"rejected_or_contaminated_evidence\":[\"doc_003\"],\"selected_doc_ids\":[\"doc_002\",\"doc_003\",\"doc_004\"]}",
+    "usage": {
+      "completion_tokens": 656,
+      "prompt_tokens": 1309,
+      "total_tokens": 1965,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": 0,
+        "audio_tokens": 0,
+        "reasoning_tokens": 370,
+        "rejected_prediction_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cached_tokens": 0
+      },
+      "latency_checkpoint": {
+        "engine_tbt_ms": 25,
+        "engine_ttft_ms": 733,
+        "engine_ttlt_ms": 17162,
+        "pre_inference_ms": 160,
+        "service_tbt_ms": 25,
+        "service_ttft_ms": 1133,
+        "service_ttlt_ms": 17560,
+        "total_duration_ms": 17408,
+        "user_visible_ttft_ms": 973
+      }
+    },
+    "response_format_used": "json_schema",
+    "parse_success": true,
+    "parse_error": "",
+    "empty_output": false,
+    "schema_missing": false,
+    "json_extractor_used": "first_json_object",
+    "cost_usd": 0.026225,
+    "attempt_count": 1,
+    "visible_output_tokens": 277
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "attempts": [
+    {
+      "attempt": 1,
+      "response_format_used": "json_schema",
+      "parse_success": true,
+      "parse_error": "",
+      "empty_output": false,
+      "schema_missing": false,
+      "elapsed_s": 10.596,
+      "cost_usd": 0.00224975
+    }
+  ],
+  "final": {
+    "content": "{\n  \"claim_verdict\": \"insufficient\",\n  \"confidence\": 0.6,\n  \"supporting_evidence\": [],\n  \"rejected_evidence\": [\n    \"doc_001\",\n    \"doc_004\"\n  ],\n  \"selected_doc_ids\": [\n    \"doc_001\",\n    \"doc_003\",\n    \"doc_004\"\n  ],\n  \"actions\": [\n    {\n      \"action\": \"trace_source\",\n      \"target\": \"doc_001\",\n      \"rationale\": \"Tracing the origin of the community roundup claim to determine if there is an operational record.\"\n    },\n    {\n      \"action\": \"search_primary\",\n      \"target\": \"Novalis Robotics SolaceGrid repair exchange August 2025\",\n      \"rationale\": \"Searching for primary operational documents from Novalis Robotics that officially confirm the launch.\"\n    }\n  ],\n  \"evidence_environment_assessment\": \"The evidence environment contains unverified claims originating from a community roundup (doc_001) that are then circularly reported by a partner recap (doc_004). Other operational and service planning memos (doc_002, doc_003) for the same timeframe lack any mention of the SolaceGrid repair exchange, rendering the existing support highly questionable and insufficient.\",\n  \"answer\": \"The available evidence is insufficient to definitively determine whether Novalis Robotics launched the SolaceGrid repair exchange in August 2025. The claim relies entirely on a community roundup and a secondary note that cites it, representing circular reporting without primary backing. Meanwhile, operational memos from the same period do not reference the program.\"\n}",
+    "usage": {
+      "completion_tokens": 938,
+      "prompt_tokens": 1495,
+      "total_tokens": 2433,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": null,
+        "audio_tokens": 0,
+        "reasoning_tokens": 558,
+        "rejected_prediction_tokens": null,
+        "text_tokens": 380,
+        "image_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cached_tokens": 0,
+        "text_tokens": 1495,
+        "image_tokens": 0
+      },
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "input_tokens_details": null,
+      "claude_cache_creation_5_m_tokens": 0,
+      "claude_cache_creation_1_h_tokens": 0
+    },
+    "response_format_used": "json_schema",
+    "parse_success": true,
+    "parse_error": "",
+    "empty_output": false,
+    "schema_missing": false,
+    "json_extractor_used": "first_json_object",
+    "cost_usd": 0.00224975,
+    "attempt_count": 1,
+    "visible_output_tokens": 367
+  }
+}

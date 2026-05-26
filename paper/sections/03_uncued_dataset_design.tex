@@ -4,6 +4,8 @@ The pilot contains 60 latent tasks. Each task is rendered in two neutral metadat
 
 The key design change is role uncuedness. Model-visible documents use opaque per-task identifiers such as \code{doc_001}; visible titles, source types, timestamps, bodies, and citations do not expose construction roles such as primary support, contaminant, generated document, stale document, or gold verdict. Gold labels, dependency edges, and audit-only role labels are preserved for scoring but are not placed in model-visible prompts.
 
+The scorer distinguishes five paper-facing evidence roles. \textbf{Clean support} is evidence that can support the gold verdict. \textbf{Refuting evidence} supports the opposite verdict or a contradiction. \textbf{Polluted material} includes generated, stale, derivative, contaminant, or same-root echo evidence that should not be treated as independent support. \textbf{Rejected or diagnostic evidence} may be selected or discussed to explain why the environment is unsafe, but should not be allocated as clean support. \textbf{Verification action} is an executable next step, such as tracing a source relation or opening a primary record.
+
 Two views test whether neutral metadata changes behavior without making roles explicit:
 \begin{itemize}
     \item \code{neutral_metadata_visible}: neutral metadata fields are visible.
@@ -12,4 +14,6 @@ Two views test whether neutral metadata changes behavior without making roles ex
 
 The pilot is not a replacement for a large benchmark. It is a validity-first dataset slice used to test whether the benchmark can survive basic leakage and shortcut checks before making model claims.
 
-\Cref{app:task-examples} gives concrete task, packet, output, and scorer examples, including a generated-lore row where the model reaches the correct final verdict but fails operational escape by retaining polluted support. \Cref{app:template-diversity} reports the synthetic-template diversity audit and its limitations.
+Two metadata qualifications matter for interpretation. First, document timestamps are synthetic, model-visible, and non-evidential; they should not be read as publication dates, observation dates, recency cues, or answer evidence. Second, false-consensus episodes may include mutual visible-citation loops among polluted same-root echo documents. These loops are synthetic echo-chain structure, not independent corroboration and not acyclic provenance trees.
+
+\Cref{app:task-examples} gives concrete task, packet, output, and scorer examples, including a generated-lore row where the model reaches the correct final verdict but fails strict operational escape by retaining polluted support. \Cref{app:template-diversity} reports the synthetic-template diversity audit and its limitations.

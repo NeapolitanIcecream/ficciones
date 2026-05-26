@@ -2,28 +2,44 @@
 
 \input{tables/model_metrics_by_view}
 
-\Cref{tab:model-metrics-by-view} gives the main model metrics by neutral metadata view. Operational escape is lower than belief correctness for every model and view. The model ordering is descriptive: \code{gpt-5.5} has the highest observed operational escape in both views, followed by \code{gemini-3.1-pro-preview}, while Claude and DeepSeek have lower operational escape despite complete parse success.
+\Cref{tab:model-metrics-by-view} gives the main model metrics by neutral metadata view. Operational escape is lower than belief correctness for every model and view, but the table should be read descriptively. The pilot is too small, and shortcut baselines are too competitive, to support provider ranking from the main text.
 
 \input{tables/model_metrics_with_ci}
 
-\Cref{tab:model-metrics-with-ci} adds task-level bootstrap intervals. The intervals are wide enough that this pilot should not be read as a fine-grained provider ranking. The visible-minus-hidden paired operational delta is small overall, 0.029 with a 95\% bootstrap interval of [-0.021, 0.079], so the two neutral metadata views are best treated as paired robustness views rather than separate leaderboards.
+\Cref{tab:model-metrics-with-ci} adds task-level bootstrap intervals. The intervals are wide enough that this pilot should not be read as a fine-grained provider ranking. The visible-minus-hidden paired operational delta is small overall, 0.029 with a 95\% bootstrap interval of [-0.021, 0.079], so the two neutral metadata views are best treated as paired diagnostic views rather than separate leaderboards.
 
 \input{tables/model_metrics_by_condition}
 
-\Cref{tab:model-metrics-by-condition} shows that the aggregate difficulty is not uniform. Clean rows are much easier, with 0.719 operational escape. Generated-lore rows have 0.938 belief correctness but only 0.125 operational escape because evidence precision collapses to 0.000 and polluted support remains high.
+\Cref{tab:model-metrics-by-condition} shows that the aggregate difficulty is not uniform. Clean rows are much easier, with 0.719 operational escape. Generated-lore rows have 0.938 belief correctness but only 0.125 strict operational escape because evidence precision collapses to 0.000 and polluted support remains high under the current support-field contract.
 
 \input{tables/condition_metrics_with_ci}
 
-\Cref{tab:condition-metrics-with-ci} reports the same condition-level operational rates with latent-task bootstrap intervals. Generated lore remains the clearest stress case: the belief-to-operational gap is 0.812 with a 95\% interval of [0.714, 0.906].
+\Cref{tab:condition-metrics-with-ci} reports the same condition-level operational rates with latent-task bootstrap intervals. Generated lore is the clearest stress case for source independence and pollutant allocation: the belief-to-operational diagnostic gap is 0.812 with a 95\% interval of [0.714, 0.906].
 
 \input{tables/evidence_hygiene_vs_belief}
 
-\Cref{tab:hygiene-vs-belief} makes the separation explicit. The largest belief-to-operation gap appears in generated lore. Buried-primary rows also separate: belief correctness is 0.979, while operational escape is 0.490. This supports the core claim that the task is not just asking whether the model can answer the claim. It asks whether the model can keep the evidence contract clean enough for an agent pipeline.
+\Cref{tab:hygiene-vs-belief} summarizes a diagnostic pattern under the current schema and scorer: correct verdicts can coexist with polluted support, weak source independence, or incomplete evidence-contract behavior. The table is therefore a triage view, not evidence of a schema-independent belief/action separation.
+
+\input{tables/failure_decomposition_summary}
+
+\Cref{tab:failure-decomposition-summary} decomposes the 433 operational-escape failures across the pilot and Phase 1.3 mini-suite. The two largest primary components are evidence value below threshold and generated-lore selection, each with 126 failures. Belief-incorrect rows account for 72 failures, while dirty support is a smaller but important structured-field failure mode. The decomposition keeps the interpretation local to named scorer components.
+
+\input{tables/support_ambiguity_sensitivity}
+
+\Cref{tab:support-ambiguity-sensitivity} audits the generated-lore support-field ambiguity behind the strict score. All 72 target generated-lore strict failures were inspected. The audit judged 71 as likely support-field allocation artifacts because the model prose or actions treated the same documents as unverified, derivative, or requiring primary-source tracing rather than clean support. One row remained a likely true dirty-support failure. This supports a sensitivity claim about the current support field, not a claim that all strict failures disappear.
+
+\input{tables/positive_evidence_contract}
+
+\Cref{tab:positive-evidence-contract} gives a positive contract view over 480 pilot rows. Final verdict correctness is much higher than either operational escape or the composite evidence-hygiene contract, showing why the paper reports provenance discipline, pollutant diagnosis, and verification behavior separately.
+
+\input{tables/shortcut_boundary_summary}
+
+\Cref{tab:shortcut-boundary-summary} bounds the ecological-validity claim. Against row-wise best shortcut baselines, model operational escape is not reliably higher overall: the mean margin is 0.035 with a 95\% bootstrap interval of [-0.133, 0.200], and 361 of 480 rows are non-positive. The only condition/family cells clearly above shortcuts in the audit are packet-judgment cells for buried-primary, conflicting-evidence, and false-consensus conditions. Evidence-selection cells are tied or below shortcuts, and generated-lore evidence selection is below shortcuts.
 
 \input{tables/active_verification_action_exactness}
 
-\Cref{tab:active-verification-action-exactness} summarizes active-verification action behavior. Exact target rate is 1.000 in this pilot, so the remaining variation comes from required action recall, the action score, and whether the active-verification row also satisfies belief and support hygiene. This result should be read cautiously because the active-verification slice has only 96 rows.
+\Cref{tab:active-verification-action-exactness} summarizes active-verification action behavior. Exact target rate is 1.000 in this pilot, so the remaining variation comes from required action recall, the action score, and whether the active-verification row also satisfies belief and support hygiene. This result is exploratory because the active-verification slice has only 96 rows and shortcut margins are not decisive for active-verification cells.
 
 \input{tables/robustness_paired_deltas}
 
-\Cref{tab:robustness-paired-deltas} reports a paired Phase 1.3 robustness mini-suite over 20 frozen source tasks, two frontier models, and five presentation variants. All 200 calls parsed, and all 40 task-model groups contained the \code{baseline_original} row plus every perturbation row. Operational deltas were non-negative for evidence-order randomization, source-type masking, prompt paraphrase, and citation masking. The generated-lore belief/operation gap also persisted: the baseline gap was 1.000, source-type masking and citation masking remained at 1.000, and order randomization and prompt paraphrase remained at 0.900. Citation masking should be read as a stress test because visible dependency structure can be task-relevant evidence rather than neutral presentation metadata.
+\Cref{tab:presentation-perturbation-deltas} reports a paired Phase 1.3 presentation-perturbation mini-suite over 20 frozen source tasks, two models, and five presentation variants. All 200 calls parsed, and all 40 task-model groups contained the \code{baseline_original} row plus every perturbation row. In this slice, operational deltas were non-negative for evidence-order randomization, source-type masking, prompt paraphrase, and citation masking. Generated-lore diagnostic gaps were also observed in this slice. Citation masking should be read as a stress test because visible dependency structure can be task-relevant evidence rather than neutral presentation metadata.

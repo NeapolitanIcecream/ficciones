@@ -1,0 +1,52 @@
+{
+  "attempts": [
+    {
+      "attempt": 1,
+      "response_format_used": "json_schema",
+      "parse_success": true,
+      "parse_error": "",
+      "empty_output": false,
+      "schema_missing": false,
+      "elapsed_s": 26.166,
+      "cost_usd": 0.03129
+    }
+  ],
+  "final": {
+    "content": "{\"actions\":[{\"action\":\"trace_source\",\"rationale\":\"Trace the 101 claim because the two documents asserting it cite each other rather than an independent count sheet.\",\"target\":\"doc_001, doc_002\"},{\"action\":\"search_contradiction\",\"rationale\":\"Check the document set for any count that directly conflicts with 101 for Kestrel firmware checks in August 2025.\",\"target\":\"doc_003\"}],\"answer\":\"The claim is refuted by the provided environment: the only document describing a closing ledger count says 76 approved checks, not 101. The two 101 documents are circular summaries and do not provide clean independent support.\",\"claim_verdict\":\"refuted\",\"clean_supporting_evidence\":[],\"confidence\":0.77,\"diagnostic_evidence\":[\"doc_004\"],\"evidence_notes\":\"doc_001 and doc_002 both assert 101, but they form a citation loop: doc_001 points to doc_002 and doc_002 points back to doc_001, with neither citing a separate count sheet. doc_003 directly reports a closing ledger count of 76 for the same workstream and month. doc_004 confirms context but has no final count.\",\"refuting_evidence\":[\"doc_003\"],\"rejected_or_contaminated_evidence\":[\"doc_001\",\"doc_002\"],\"selected_doc_ids\":[\"doc_003\",\"doc_001\",\"doc_002\"]}",
+    "usage": {
+      "completion_tokens": 821,
+      "prompt_tokens": 1332,
+      "total_tokens": 2153,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": 0,
+        "audio_tokens": 0,
+        "reasoning_tokens": 512,
+        "rejected_prediction_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cached_tokens": 0
+      },
+      "latency_checkpoint": {
+        "engine_tbt_ms": 29,
+        "engine_ttft_ms": 380,
+        "engine_ttlt_ms": 24310,
+        "pre_inference_ms": 108,
+        "service_tbt_ms": 29,
+        "service_ttft_ms": 746,
+        "service_ttlt_ms": 24679,
+        "total_duration_ms": 24577,
+        "user_visible_ttft_ms": 637
+      }
+    },
+    "response_format_used": "json_schema",
+    "parse_success": true,
+    "parse_error": "",
+    "empty_output": false,
+    "schema_missing": false,
+    "json_extractor_used": "first_json_object",
+    "cost_usd": 0.03129,
+    "attempt_count": 1,
+    "visible_output_tokens": 299
+  }
+}

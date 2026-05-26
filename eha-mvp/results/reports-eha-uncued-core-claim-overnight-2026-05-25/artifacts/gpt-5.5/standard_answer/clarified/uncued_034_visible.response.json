@@ -1,0 +1,52 @@
+{
+  "attempts": [
+    {
+      "attempt": 1,
+      "response_format_used": "json_schema",
+      "parse_success": true,
+      "parse_error": "",
+      "empty_output": false,
+      "schema_missing": false,
+      "elapsed_s": 17.871,
+      "cost_usd": 0.025965000000000002
+    }
+  ],
+  "final": {
+    "content": "{\"actions\":[{\"action\":\"trace_source\",\"rationale\":\"The two documents claiming 139 cite each other rather than an independent count sheet, indicating circular support.\",\"target\":\"doc_002 and doc_004\"},{\"action\":\"search_contradiction\",\"rationale\":\"The closing ledger entry gives a different final count for the same workstream and month.\",\"target\":\"doc_003\"}],\"answer\":\"No. The cleanest available evidence is the closing ledger entry stating 118 completed refurbishments for Nova pump refurbishments in July 2025. The documents stating 139 are circularly sourced to each other and are not clean support.\",\"claim_verdict\":\"refuted\",\"clean_supporting_evidence\":[],\"confidence\":0.83,\"diagnostic_evidence\":[\"doc_001\"],\"evidence_notes\":\"doc_003 directly contradicts the claimed count with a final ledger count of 118. doc_002 and doc_004 both state 139, but their citations loop back to each other rather than to an independent source, so they are treated as contaminated support. doc_001 provides context but no final count.\",\"refuting_evidence\":[\"doc_003\"],\"rejected_or_contaminated_evidence\":[\"doc_002\",\"doc_004\"],\"selected_doc_ids\":[\"doc_003\",\"doc_002\",\"doc_004\"]}",
+    "usage": {
+      "completion_tokens": 644,
+      "prompt_tokens": 1329,
+      "total_tokens": 1973,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": 0,
+        "audio_tokens": 0,
+        "reasoning_tokens": 355,
+        "rejected_prediction_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cached_tokens": 0
+      },
+      "latency_checkpoint": {
+        "engine_tbt_ms": 24,
+        "engine_ttft_ms": 274,
+        "engine_ttlt_ms": 16049,
+        "pre_inference_ms": 97,
+        "service_tbt_ms": 25,
+        "service_ttft_ms": 594,
+        "service_ttlt_ms": 16366,
+        "total_duration_ms": 16278,
+        "user_visible_ttft_ms": 497
+      }
+    },
+    "response_format_used": "json_schema",
+    "parse_success": true,
+    "parse_error": "",
+    "empty_output": false,
+    "schema_missing": false,
+    "json_extractor_used": "first_json_object",
+    "cost_usd": 0.025965000000000002,
+    "attempt_count": 1,
+    "visible_output_tokens": 290
+  }
+}

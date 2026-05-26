@@ -1,0 +1,52 @@
+{
+  "attempts": [
+    {
+      "attempt": 1,
+      "response_format_used": "json_schema",
+      "parse_success": true,
+      "parse_error": "",
+      "empty_output": false,
+      "schema_missing": false,
+      "elapsed_s": 18.594,
+      "cost_usd": 0.030795000000000003
+    }
+  ],
+  "final": {
+    "content": "{\"actions\":[{\"action\":\"trace_source\",\"rationale\":\"The apparent 211-count support in doc_002 cites doc_004, but doc_004 provides chronology only and no final count, so the support cannot be verified from its cited source.\",\"target\":\"doc_002 -> doc_004\"},{\"action\":\"search_contradiction\",\"rationale\":\"doc_001 directly states a different completed-check total for the same Atlas valve checks and March 2025 closeout.\",\"target\":\"doc_001\"}],\"answer\":\"No. The provided evidence does not cleanly support 211 completed checks. The strongest direct count evidence states 184 completed checks, while the 211 figure appears in an unsupported digest whose cited source does not contain the count.\",\"claim_verdict\":\"refuted\",\"clean_supporting_evidence\":[],\"confidence\":0.78,\"diagnostic_evidence\":[\"doc_004\"],\"evidence_notes\":\"doc_001 directly contradicts the claim by reporting 184 completed checks for Atlas valve checks in March 2025. doc_002 mentions 211, but it is not treated as clean support because it cites no visible row and its visible citation, doc_004, provides chronology but no final count. doc_003 contains no total and is not material to judging the count.\",\"refuting_evidence\":[\"doc_001\"],\"rejected_or_contaminated_evidence\":[\"doc_002\"],\"selected_doc_ids\":[\"doc_001\",\"doc_002\",\"doc_004\"]}",
+    "usage": {
+      "completion_tokens": 808,
+      "prompt_tokens": 1311,
+      "total_tokens": 2119,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": 0,
+        "audio_tokens": 0,
+        "reasoning_tokens": 487,
+        "rejected_prediction_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cached_tokens": 0
+      },
+      "latency_checkpoint": {
+        "engine_tbt_ms": 20,
+        "engine_ttft_ms": 283,
+        "engine_ttlt_ms": 16490,
+        "pre_inference_ms": 149,
+        "service_tbt_ms": 20,
+        "service_ttft_ms": 671,
+        "service_ttlt_ms": 16888,
+        "total_duration_ms": 16752,
+        "user_visible_ttft_ms": 522
+      }
+    },
+    "response_format_used": "json_schema",
+    "parse_success": true,
+    "parse_error": "",
+    "empty_output": false,
+    "schema_missing": false,
+    "json_extractor_used": "first_json_object",
+    "cost_usd": 0.030795000000000003,
+    "attempt_count": 1,
+    "visible_output_tokens": 323
+  }
+}

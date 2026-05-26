@@ -1,0 +1,178 @@
+{
+  "date": "2026-05-25",
+  "run_dir": "results/reports-eha-uncued-core-claim-overnight-2026-05-25",
+  "recommendation": "substantially_reframe",
+  "decision_inputs": {
+    "recommendation": "substantially_reframe",
+    "support_gap_closed_share": 0.9861111111111112,
+    "schema_mean_delta_operational_contract_success": 0.013888888888888888,
+    "schema_mean_delta_polluted_in_support": 0.0,
+    "data_sanity_decision": "pass_with_qualifications",
+    "shortcut_overall_margin": 0.035416666666666666
+  },
+  "failure_decomposition": {
+    "row_count": 680,
+    "operational_failure_count": 433,
+    "belief_correct_operational_failure_count": 361,
+    "other_unclassified_count": 0,
+    "other_unclassified_rate": 0.0,
+    "one_primary_component_per_operational_failure": true,
+    "old_cued_data_used": false,
+    "source_hash_count": 9
+  },
+  "support_ambiguity": {
+    "polluted_support_row_count": 151,
+    "target_candidate_count": 72,
+    "target_strict_failure_count": 72,
+    "target_strict_failures_becoming_prose_pass_count": 71,
+    "target_gap_closed_share": 0.9861111111111112,
+    "interpretation": "gap_mostly_support_field_artifact",
+    "subjectivity_note": "prose_aware_rejected is deterministic keyword-based sensitivity, not a new main scorer."
+  },
+  "positive_evidence_contract": {
+    "row_count": 480,
+    "summary_group_count": 60,
+    "mean_composite_contract": 0.41041666666666665,
+    "mean_operational_escape": 0.3770833333333333,
+    "old_cued_data_used": false
+  },
+  "schema_rerun": {
+    "row_count": 144,
+    "paired_delta_count": 72,
+    "schema_variants": [
+      "current_phase1",
+      "role_decomposed_v1"
+    ],
+    "by_schema_model": [
+      {
+        "schema_variant": "current_phase1",
+        "model": "gemini-3.1-pro-preview",
+        "n": 36,
+        "parse_success": 1.0,
+        "belief_correctness": 0.9722222222222222,
+        "polluted_in_support": 0.0,
+        "clean_support_recovered": 0.6666666666666666,
+        "pollutant_rejection": 1.0,
+        "role_escape": 0.9722222222222222,
+        "operational_contract_success": 0.9444444444444444,
+        "cost_usd": 0.0035913888888888888
+      },
+      {
+        "schema_variant": "current_phase1",
+        "model": "gpt-5.5",
+        "n": 36,
+        "parse_success": 1.0,
+        "belief_correctness": 1.0,
+        "polluted_in_support": 0.0,
+        "clean_support_recovered": 0.6666666666666666,
+        "pollutant_rejection": 1.0,
+        "role_escape": 1.0,
+        "operational_contract_success": 1.0,
+        "cost_usd": 0.0274
+      },
+      {
+        "schema_variant": "role_decomposed_v1",
+        "model": "gemini-3.1-pro-preview",
+        "n": 36,
+        "parse_success": 1.0,
+        "belief_correctness": 1.0,
+        "polluted_in_support": 0.0,
+        "clean_support_recovered": 0.2222222222222222,
+        "pollutant_rejection": 0.9444444444444444,
+        "role_escape": 1.0,
+        "operational_contract_success": 0.9722222222222222,
+        "cost_usd": 0.0031905208333333334
+      },
+      {
+        "schema_variant": "role_decomposed_v1",
+        "model": "gpt-5.5",
+        "n": 36,
+        "parse_success": 1.0,
+        "belief_correctness": 1.0,
+        "polluted_in_support": 0.0,
+        "clean_support_recovered": 0.2222222222222222,
+        "pollutant_rejection": 1.0,
+        "role_escape": 1.0,
+        "operational_contract_success": 1.0,
+        "cost_usd": 0.028013333333333335
+      }
+    ],
+    "mean_delta_polluted_in_support": 0.0,
+    "mean_delta_operational_contract_success": 0.013888888888888888
+  },
+  "shortcut_baselines": {
+    "overall": {
+      "n": 480,
+      "latent_task_count": 60,
+      "iterations": 1000,
+      "mean_margin": 0.035416666666666666,
+      "ci95": [
+        -0.13333333333333333,
+        0.2
+      ]
+    },
+    "by_model": {
+      "claude-opus-4-7": {
+        "n": 120,
+        "latent_task_count": 60,
+        "iterations": 1000,
+        "mean_margin": -0.025,
+        "ci95": [
+          -0.18333333333333332,
+          0.13333333333333333
+        ]
+      },
+      "deepseek-v4-pro": {
+        "n": 120,
+        "latent_task_count": 60,
+        "iterations": 1000,
+        "mean_margin": -0.10833333333333334,
+        "ci95": [
+          -0.26666666666666666,
+          0.03333333333333333
+        ]
+      },
+      "gemini-3.1-pro-preview": {
+        "n": 120,
+        "latent_task_count": 60,
+        "iterations": 1000,
+        "mean_margin": 0.09166666666666666,
+        "ci95": [
+          -0.08333333333333333,
+          0.25
+        ]
+      },
+      "gpt-5.5": {
+        "n": 120,
+        "latent_task_count": 60,
+        "iterations": 1000,
+        "mean_margin": 0.18333333333333332,
+        "ci95": [
+          0.0,
+          0.36666666666666664
+        ]
+      }
+    }
+  },
+  "data_sanity": {
+    "issue_count": 26,
+    "severity_counts": {
+      "P1": 26
+    },
+    "p0_count": 0,
+    "p1_count": 26,
+    "p2_count": 0,
+    "decision": "pass_with_qualifications",
+    "heuristic_false_positive_categories": [
+      "synthetic timestamp chronology warnings",
+      "missing gold_labels.jsonl when latent_tasks.jsonl is the authoritative local contract"
+    ]
+  },
+  "allowed_claims": [
+    "final-answer accuracy can mask evidence-hygiene and verification failures in this pilot",
+    "generated-lore and echo-chain tasks expose provenance/source-independence failures under specified scorer contracts",
+    "the belief/operation gap is a diagnostic view with schema and scorer sensitivities",
+    "the artifact supports a validity-first diagnostic pilot, not a production benchmark or stable leaderboard"
+  ],
+  "forbidden_claims_avoided": true
+}

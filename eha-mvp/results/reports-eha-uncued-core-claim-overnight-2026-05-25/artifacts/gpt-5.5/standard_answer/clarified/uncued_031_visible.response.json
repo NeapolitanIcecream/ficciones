@@ -1,0 +1,52 @@
+{
+  "attempts": [
+    {
+      "attempt": 1,
+      "response_format_used": "json_schema",
+      "parse_success": true,
+      "parse_error": "",
+      "empty_output": false,
+      "schema_missing": false,
+      "elapsed_s": 18.816,
+      "cost_usd": 0.02543
+    }
+  ],
+  "final": {
+    "content": "{\"actions\":[{\"action\":\"open\",\"rationale\":\"The closing ledger row is the most direct available count for Orion battery swaps in April 2025 and contradicts the claimed value.\",\"target\":\"doc_003\"},{\"action\":\"trace_source\",\"rationale\":\"The two documents reporting 88 appear to cite each other or repeat a shared earlier bulletin rather than provide an independent count sheet.\",\"target\":\"doc_001/doc_002\"}],\"answer\":\"No. The best available direct evidence says the closing ledger recorded 63 verified swaps, not 88. The documents claiming 88 are not clean support because they appear to be circular or derivative summaries rather than an independent final count.\",\"claim_verdict\":\"refuted\",\"clean_supporting_evidence\":[],\"confidence\":0.84,\"diagnostic_evidence\":[\"doc_004\"],\"evidence_notes\":\"doc_003 directly identifies the closing ledger count as 63 verified swaps for Orion battery swaps in April 2025. doc_001 and doc_002 both state 88, but their citation pattern is circular/derivative, so they are treated as contaminated rather than clean support. doc_004 is diagnostic only because it shares context but contains no final count.\",\"refuting_evidence\":[\"doc_003\"],\"rejected_or_contaminated_evidence\":[\"doc_001\",\"doc_002\"],\"selected_doc_ids\":[\"doc_003\",\"doc_001\",\"doc_002\"]}",
+    "usage": {
+      "completion_tokens": 627,
+      "prompt_tokens": 1324,
+      "total_tokens": 1951,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": 0,
+        "audio_tokens": 0,
+        "reasoning_tokens": 319,
+        "rejected_prediction_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cached_tokens": 0
+      },
+      "latency_checkpoint": {
+        "engine_tbt_ms": 26,
+        "engine_ttft_ms": 441,
+        "engine_ttlt_ms": 16828,
+        "pre_inference_ms": 104,
+        "service_tbt_ms": 26,
+        "service_ttft_ms": 776,
+        "service_ttlt_ms": 17161,
+        "total_duration_ms": 17064,
+        "user_visible_ttft_ms": 672
+      }
+    },
+    "response_format_used": "json_schema",
+    "parse_success": true,
+    "parse_error": "",
+    "empty_output": false,
+    "schema_missing": false,
+    "json_extractor_used": "first_json_object",
+    "cost_usd": 0.02543,
+    "attempt_count": 1,
+    "visible_output_tokens": 318
+  }
+}

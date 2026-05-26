@@ -1,0 +1,107 @@
+{
+  "date": "2026-05-25",
+  "run_dir": "results/reports-eha-uncued-core-claim-overnight-2026-05-25",
+  "reports_dir": "../reports",
+  "git": {
+    "branch": "codex/add-reality-testing-benchmarks",
+    "head": "4dd786a04d2bee814f8ec199e6b73f56bf6721ae",
+    "status_short": "M eha-mvp/pyproject.toml\n?? eha-mvp/eha/uncued_core_claim_common.py\n?? eha-mvp/eha/uncued_core_claim_report.py\n?? eha-mvp/eha/uncued_data_sanity.py\n?? eha-mvp/eha/uncued_failure_decomposition.py\n?? eha-mvp/eha/uncued_positive_contract.py\n?? eha-mvp/eha/uncued_support_ambiguity.py\n?? eha-mvp/results/reports-eha-uncued-core-claim-overnight-2026-05-25/\n?? eha-mvp/tests/test_uncued_core_claim_report.py\n?? eha-mvp/tests/test_uncued_data_sanity.py\n?? eha-mvp/tests/test_uncued_failure_decomposition.py\n?? eha-mvp/tests/test_uncued_positive_contract.py\n?? eha-mvp/tests/test_uncued_support_ambiguity.py\n?? reports/eha-uncued-core-claim-overnight-results-2026-05-25.md\n?? reports/eha-uncued-core-claim-overnight-runbook-2026-05-25.md\n?? reports/eha-uncued-paper-reframing-decision-2026-05-25.md\n?? reports/eha_uncued_core_claim_overnight_results.json"
+  },
+  "input_hashes": {
+    "results/reports-eha-uncued-pilot-2026-05-22/uncued_pilot_scored_predictions.csv": "5d77f0f93eeb80cc42c2e1f9b91f949d9a9e193b07f20e6f14affd1710025a3b",
+    "data/uncued-pilot-v1/tasks.jsonl": "9735368ddcf75443a706e410b6fcd1bcc4178ba1eadf86ca2d73ad7ea87349b4",
+    "data/uncued-pilot-v1/latent_tasks.jsonl": "e9e6c942611072aea117c18f757be6aab7d3be580adf20ca2b6e137f403e5a49",
+    "data/uncued-pilot-v1/gold_documents.jsonl": "48963f1e85186c04f7b452fd5c233fb8eb22372bbae2ef0b464cb362a9ace8bb",
+    "data/uncued-pilot-v1/action_gold.jsonl": "c0bd7efe51029baa2b2608568cb9af86198f5a7e1658d8bca244074054157e65",
+    "data/uncued-pilot-v1/dependency_edges.jsonl": "7c83210018f540e1614f1b5a9e15c26621ce967bdf2ec4a4f4f9ca5f88a19809",
+    "data/uncued-pilot-v1/documents_neutral_metadata_visible.jsonl": "9951f08a18a7514ee39abda3789376a183a521af8af0e383b4a315399abce70a",
+    "data/uncued-pilot-v1/documents_neutral_metadata_hidden.jsonl": "19414e74d1b5b3b1729551a9c4fdcba1721444ebfdd5eeec65ce2626caacac15"
+  },
+  "schema_rerun": {
+    "row_count": 144,
+    "paired_delta_count": 72,
+    "schema_variants": [
+      "current_phase1",
+      "role_decomposed_v1"
+    ],
+    "by_schema_model": [
+      {
+        "schema_variant": "current_phase1",
+        "model": "gemini-3.1-pro-preview",
+        "n": 36,
+        "parse_success": 1.0,
+        "belief_correctness": 0.9722222222222222,
+        "polluted_in_support": 0.0,
+        "clean_support_recovered": 0.6666666666666666,
+        "pollutant_rejection": 1.0,
+        "role_escape": 0.9722222222222222,
+        "operational_contract_success": 0.9444444444444444,
+        "cost_usd": 0.0035913888888888888
+      },
+      {
+        "schema_variant": "current_phase1",
+        "model": "gpt-5.5",
+        "n": 36,
+        "parse_success": 1.0,
+        "belief_correctness": 1.0,
+        "polluted_in_support": 0.0,
+        "clean_support_recovered": 0.6666666666666666,
+        "pollutant_rejection": 1.0,
+        "role_escape": 1.0,
+        "operational_contract_success": 1.0,
+        "cost_usd": 0.0274
+      },
+      {
+        "schema_variant": "role_decomposed_v1",
+        "model": "gemini-3.1-pro-preview",
+        "n": 36,
+        "parse_success": 1.0,
+        "belief_correctness": 1.0,
+        "polluted_in_support": 0.0,
+        "clean_support_recovered": 0.2222222222222222,
+        "pollutant_rejection": 0.9444444444444444,
+        "role_escape": 1.0,
+        "operational_contract_success": 0.9722222222222222,
+        "cost_usd": 0.0031905208333333334
+      },
+      {
+        "schema_variant": "role_decomposed_v1",
+        "model": "gpt-5.5",
+        "n": 36,
+        "parse_success": 1.0,
+        "belief_correctness": 1.0,
+        "polluted_in_support": 0.0,
+        "clean_support_recovered": 0.2222222222222222,
+        "pollutant_rejection": 1.0,
+        "role_escape": 1.0,
+        "operational_contract_success": 1.0,
+        "cost_usd": 0.028013333333333335
+      }
+    ],
+    "mean_delta_polluted_in_support": 0.0,
+    "mean_delta_operational_contract_success": 0.013888888888888888
+  },
+  "cost": {
+    "aborted": false,
+    "record_cost_usd": 2.239029,
+    "projected_cost_usd": 2.498776,
+    "spent_usd": 2.239029,
+    "soft_cap_usd": 17.0,
+    "hard_cap_usd": 20.0,
+    "abort_cap_usd": 20.0,
+    "retry_spent_usd": 2.239029
+  },
+  "commands": [
+    "eha-uncued-failure-decomposition",
+    "eha-uncued-support-ambiguity",
+    "eha-uncued-positive-contract",
+    "eha-plan-uncued-core-claim-schema-rerun",
+    "eha-run-uncued-core-claim-schema-rerun",
+    "eha-report-uncued-core-claim-schema-rerun",
+    "eha-score-uncued-baselines",
+    "eha-uncued-data-sanity",
+    "eha-report-uncued-core-claim-overnight",
+    "eha-verify-uncued-core-claim-overnight"
+  ],
+  "old_cued_data_used": false
+}

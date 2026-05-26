@@ -1,0 +1,52 @@
+{
+  "attempts": [
+    {
+      "attempt": 1,
+      "response_format_used": "json_schema",
+      "parse_success": true,
+      "parse_error": "",
+      "empty_output": false,
+      "schema_missing": false,
+      "elapsed_s": 19.302,
+      "cost_usd": 0.025165
+    }
+  ],
+  "final": {
+    "content": "{\"actions\":[{\"action\":\"open\",\"rationale\":\"Use the month-close ledger row because it directly states the approved-check count for Kestrel firmware checks in August 2025.\",\"target\":\"doc_002\"},{\"action\":\"trace_source\",\"rationale\":\"Check the 101-count digest because it cites only a chronology note that contains no final count, making it unreliable support for the claim.\",\"target\":\"doc_003\"}],\"answer\":\"No. The provided month-close ledger evidence lists 76 approved Kestrel firmware checks for August 2025, not 101. The only document stating 101 is an unsupported digest citing a note that contains no final count.\",\"claim_verdict\":\"refuted\",\"clean_supporting_evidence\":[],\"confidence\":0.78,\"diagnostic_evidence\":[\"doc_001\",\"doc_004\"],\"evidence_notes\":\"doc_002 directly addresses the workstream, month, and approved-check count and gives 76. doc_003 matches the claimed count but is not clean support because it cites no visible row and points to doc_001, which explicitly contains chronology only and no final count. doc_004 is also non-count context only.\",\"refuting_evidence\":[\"doc_002\"],\"rejected_or_contaminated_evidence\":[\"doc_003\"],\"selected_doc_ids\":[\"doc_002\",\"doc_003\",\"doc_001\"]}",
+    "usage": {
+      "completion_tokens": 619,
+      "prompt_tokens": 1319,
+      "total_tokens": 1938,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": 0,
+        "audio_tokens": 0,
+        "reasoning_tokens": 320,
+        "rejected_prediction_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cached_tokens": 0
+      },
+      "latency_checkpoint": {
+        "engine_tbt_ms": 24,
+        "engine_ttft_ms": 2184,
+        "engine_ttlt_ms": 17292,
+        "pre_inference_ms": 112,
+        "service_tbt_ms": 24,
+        "service_ttft_ms": 2553,
+        "service_ttlt_ms": 17659,
+        "total_duration_ms": 17559,
+        "user_visible_ttft_ms": 2441
+      }
+    },
+    "response_format_used": "json_schema",
+    "parse_success": true,
+    "parse_error": "",
+    "empty_output": false,
+    "schema_missing": false,
+    "json_extractor_used": "first_json_object",
+    "cost_usd": 0.025165,
+    "attempt_count": 1,
+    "visible_output_tokens": 297
+  }
+}

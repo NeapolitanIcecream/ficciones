@@ -1,0 +1,52 @@
+{
+  "attempts": [
+    {
+      "attempt": 1,
+      "response_format_used": "json_schema",
+      "parse_success": true,
+      "parse_error": "",
+      "empty_output": false,
+      "schema_missing": false,
+      "elapsed_s": 28.707,
+      "cost_usd": 0.03071
+    }
+  ],
+  "final": {
+    "content": "{\"actions\":[{\"action\":\"open\",\"rationale\":\"Inspect the closeout statement that directly gives the final verified swap count for Orion battery swaps in April 2025.\",\"target\":\"doc_001\"},{\"action\":\"trace_source\",\"rationale\":\"Check the conflicting 88-swap estimate, which points back to a planning memo with no final number.\",\"target\":\"doc_002\"}],\"answer\":\"Yes. The best available evidence supports 63 verified Orion battery swaps in April 2025: doc_001 states that the closeout ledger lists 63 verified swaps. The conflicting 88 figure in doc_002 is only a running estimate and traces to a planning memo without a final number, so it is not as reliable for the final logged count.\",\"claim_verdict\":\"supported\",\"confidence\":0.78,\"evidence_environment_assessment\":\"The environment contains one direct final-count statement and one polluted conflicting estimate. doc_001 is the most probative because it refers to the closeout ledger and final close date. doc_002 gives 88 but explicitly frames it as a running estimate and cites doc_004, a pre-close planning memo with no final count. doc_003 is neutral because it contains no closing count. Overall, the final-count evidence favors 63, though the primary ledger itself is not provided.\",\"rejected_evidence\":[\"doc_002\"],\"selected_doc_ids\":[\"doc_001\",\"doc_002\",\"doc_004\"],\"supporting_evidence\":[\"doc_001\"]}",
+    "usage": {
+      "completion_tokens": 832,
+      "prompt_tokens": 1150,
+      "total_tokens": 1982,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": 0,
+        "audio_tokens": 0,
+        "reasoning_tokens": 512,
+        "rejected_prediction_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cached_tokens": 0
+      },
+      "latency_checkpoint": {
+        "engine_tbt_ms": 32,
+        "engine_ttft_ms": 260,
+        "engine_ttlt_ms": 26778,
+        "pre_inference_ms": 108,
+        "service_tbt_ms": 32,
+        "service_ttft_ms": 606,
+        "service_ttlt_ms": 27108,
+        "total_duration_ms": 27021,
+        "user_visible_ttft_ms": 498
+      }
+    },
+    "response_format_used": "json_schema",
+    "parse_success": true,
+    "parse_error": "",
+    "empty_output": false,
+    "schema_missing": false,
+    "json_extractor_used": "first_json_object",
+    "cost_usd": 0.03071,
+    "attempt_count": 1,
+    "visible_output_tokens": 337
+  }
+}

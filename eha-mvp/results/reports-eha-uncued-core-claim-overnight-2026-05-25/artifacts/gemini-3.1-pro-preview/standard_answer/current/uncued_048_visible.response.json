@@ -1,0 +1,50 @@
+{
+  "attempts": [
+    {
+      "attempt": 1,
+      "response_format_used": "json_schema",
+      "parse_success": true,
+      "parse_error": "",
+      "empty_output": false,
+      "schema_missing": false,
+      "elapsed_s": 18.694,
+      "cost_usd": 0.00255025
+    }
+  ],
+  "final": {
+    "content": "{\n  \"claim_verdict\": \"insufficient\",\n  \"confidence\": 0.85,\n  \"supporting_evidence\": [],\n  \"rejected_evidence\": [\n    \"doc_003\",\n    \"doc_004\"\n  ],\n  \"selected_doc_ids\": [\n    \"doc_004\",\n    \"doc_001\",\n    \"doc_002\"\n  ],\n  \"actions\": [\n    {\n      \"action\": \"search_primary\",\n      \"target\": \"Novalis Robotics HelioSplice partner repair program launch March 2025\",\n      \"rationale\": \"Attempt to locate primary operational records verifying the launch of the HelioSplice partner repair program, as the current evidence is based on an unsupported community roundup.\"\n    }\n  ],\n  \"evidence_environment_assessment\": \"The evidence environment is polluted with a circular reporting loop. Document doc_004 introduces the claim without linking to any operational record, and doc_003 simply repeats this claim while citing doc_004. Furthermore, other operational logs covering March 2025 (doc_001, doc_002) fail to mention the HelioSplice partner repair program.\",\n  \"answer\": \"There is currently insufficient evidence to confirm whether Novalis Robotics launched the HelioSplice partner repair program in March 2025. The only evidence supporting the claim stems from a community roundup that lacks primary operational backing (doc_004) and a subsequent ledger extract that merely cites the roundup (doc_003). Meanwhile, regular service memos and monthly indices for the time period do not contain any references to the program.\"\n}",
+    "usage": {
+      "completion_tokens": 1088,
+      "prompt_tokens": 1497,
+      "total_tokens": 2585,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": null,
+        "audio_tokens": 0,
+        "reasoning_tokens": 715,
+        "rejected_prediction_tokens": null,
+        "text_tokens": 373,
+        "image_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cached_tokens": 0,
+        "text_tokens": 1497,
+        "image_tokens": 0
+      },
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "input_tokens_details": null,
+      "claude_cache_creation_5_m_tokens": 0,
+      "claude_cache_creation_1_h_tokens": 0
+    },
+    "response_format_used": "json_schema",
+    "parse_success": true,
+    "parse_error": "",
+    "empty_output": false,
+    "schema_missing": false,
+    "json_extractor_used": "first_json_object",
+    "cost_usd": 0.00255025,
+    "attempt_count": 1,
+    "visible_output_tokens": 355
+  }
+}

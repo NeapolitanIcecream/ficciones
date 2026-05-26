@@ -1,0 +1,52 @@
+{
+  "attempts": [
+    {
+      "attempt": 1,
+      "response_format_used": "json_schema",
+      "parse_success": true,
+      "parse_error": "",
+      "empty_output": false,
+      "schema_missing": false,
+      "elapsed_s": 15.933,
+      "cost_usd": 0.0227
+    }
+  ],
+  "final": {
+    "content": "{\"actions\":[{\"action\":\"trace_source\",\"rationale\":\"The two documents claiming 88 cite each other rather than an independent count sheet, indicating circular support.\",\"target\":\"doc_001 and doc_003\"},{\"action\":\"search_contradiction\",\"rationale\":\"The closing ledger row gives a different final count for the same workstream and month, directly testing the claim.\",\"target\":\"doc_002\"}],\"answer\":\"No. The claim that Novalis Robotics logged 88 verified Orion battery swaps in April 2025 is refuted by the closing ledger, which gives 63 verified swaps. The documents stating 88 are circular summaries that cite each other rather than an independent count sheet.\",\"claim_verdict\":\"refuted\",\"clean_supporting_evidence\":[],\"confidence\":0.86,\"diagnostic_evidence\":[\"doc_004\"],\"evidence_notes\":\"doc_002 is the strongest evidence because it is described as the closing ledger and provides a final count of 63 for Orion battery swaps in April 2025. doc_001 and doc_003 both state 88 but are not clean support because their citations loop back to each other, making them polluted/circular rather than independently sourced. doc_004 is useful only diagnostically because it confirms context but contains no final count.\",\"refuting_evidence\":[\"doc_002\"],\"rejected_or_contaminated_evidence\":[\"doc_001\",\"doc_003\"],\"selected_doc_ids\":[\"doc_002\",\"doc_001\",\"doc_003\"]}",
+    "usage": {
+      "completion_tokens": 536,
+      "prompt_tokens": 1324,
+      "total_tokens": 1860,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": 0,
+        "audio_tokens": 0,
+        "reasoning_tokens": 212,
+        "rejected_prediction_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cached_tokens": 0
+      },
+      "latency_checkpoint": {
+        "engine_tbt_ms": 23,
+        "engine_ttft_ms": 1333,
+        "engine_ttlt_ms": 13852,
+        "pre_inference_ms": 148,
+        "service_tbt_ms": 23,
+        "service_ttft_ms": 1713,
+        "service_ttlt_ms": 14228,
+        "total_duration_ms": 14109,
+        "user_visible_ttft_ms": 1565
+      }
+    },
+    "response_format_used": "json_schema",
+    "parse_success": true,
+    "parse_error": "",
+    "empty_output": false,
+    "schema_missing": false,
+    "json_extractor_used": "first_json_object",
+    "cost_usd": 0.0227,
+    "attempt_count": 1,
+    "visible_output_tokens": 336
+  }
+}

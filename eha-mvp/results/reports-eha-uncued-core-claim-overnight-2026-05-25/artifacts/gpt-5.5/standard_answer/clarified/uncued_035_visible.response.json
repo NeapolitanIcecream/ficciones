@@ -1,0 +1,52 @@
+{
+  "attempts": [
+    {
+      "attempt": 1,
+      "response_format_used": "json_schema",
+      "parse_success": true,
+      "parse_error": "",
+      "empty_output": false,
+      "schema_missing": false,
+      "elapsed_s": 15.943,
+      "cost_usd": 0.024390000000000002
+    }
+  ],
+  "final": {
+    "content": "{\"actions\":[{\"action\":\"open\",\"rationale\":\"Inspect the only document described as a closing ledger with a final count for the relevant workstream and month.\",\"target\":\"doc_002\"},{\"action\":\"trace_source\",\"rationale\":\"Check whether the 101-count documents rely on independent primary evidence or merely cite each other.\",\"target\":\"doc_001 and doc_003\"}],\"answer\":\"No. Based on the provided evidence, the claim is refuted: the closing ledger gives 76 approved checks for Kestrel firmware checks in August 2025, while the 101 figure appears only in circularly sourced secondary notes.\",\"claim_verdict\":\"refuted\",\"clean_supporting_evidence\":[],\"confidence\":0.84,\"diagnostic_evidence\":[\"doc_004\"],\"evidence_notes\":\"doc_002 is the strongest evidence because it is described as the closing ledger and gives a final count of 76. doc_001 and doc_003 both repeat the 101 figure but cite each other or the same earlier bulletin, so they are not clean independent support. doc_004 contains no final count and is useful only for context about the packet.\",\"refuting_evidence\":[\"doc_002\"],\"rejected_or_contaminated_evidence\":[\"doc_001\",\"doc_003\"],\"selected_doc_ids\":[\"doc_002\",\"doc_001\",\"doc_003\"]}",
+    "usage": {
+      "completion_tokens": 591,
+      "prompt_tokens": 1332,
+      "total_tokens": 1923,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": 0,
+        "audio_tokens": 0,
+        "reasoning_tokens": 293,
+        "rejected_prediction_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cached_tokens": 0
+      },
+      "latency_checkpoint": {
+        "engine_tbt_ms": 24,
+        "engine_ttft_ms": 200,
+        "engine_ttlt_ms": 14234,
+        "pre_inference_ms": 112,
+        "service_tbt_ms": 24,
+        "service_ttft_ms": 554,
+        "service_ttlt_ms": 14590,
+        "total_duration_ms": 14483,
+        "user_visible_ttft_ms": 441
+      }
+    },
+    "response_format_used": "json_schema",
+    "parse_success": true,
+    "parse_error": "",
+    "empty_output": false,
+    "schema_missing": false,
+    "json_extractor_used": "first_json_object",
+    "cost_usd": 0.024390000000000002,
+    "attempt_count": 1,
+    "visible_output_tokens": 295
+  }
+}

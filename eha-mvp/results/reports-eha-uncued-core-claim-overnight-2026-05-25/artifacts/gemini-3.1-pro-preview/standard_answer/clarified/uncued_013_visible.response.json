@@ -1,0 +1,50 @@
+{
+  "attempts": [
+    {
+      "attempt": 1,
+      "response_format_used": "json_schema",
+      "parse_success": true,
+      "parse_error": "",
+      "empty_output": false,
+      "schema_missing": false,
+      "elapsed_s": 13.625,
+      "cost_usd": 0.0028420000000000003
+    }
+  ],
+  "final": {
+    "content": "{\n  \"claim_verdict\": \"refuted\",\n  \"confidence\": 0.9,\n  \"clean_supporting_evidence\": [],\n  \"refuting_evidence\": [\n    \"doc_002\"\n  ],\n  \"rejected_or_contaminated_evidence\": [\n    \"doc_003\"\n  ],\n  \"diagnostic_evidence\": [\n    \"doc_001\",\n    \"doc_004\"\n  ],\n  \"selected_doc_ids\": [\n    \"doc_002\",\n    \"doc_003\",\n    \"doc_004\"\n  ],\n  \"actions\": [\n    {\n      \"action\": \"search_primary\",\n      \"target\": \"East Yard depot month-close ledger\",\n      \"rationale\": \"Verify the true number of swaps listed in the primary month-close ledger.\"\n    },\n    {\n      \"action\": \"trace_source\",\n      \"target\": \"doc_003\",\n      \"rationale\": \"Determine why doc_003 asserts 88 swaps while citing doc_004, which contains no final count.\"\n    }\n  ],\n  \"evidence_notes\": \"The primary operational note (doc_002) states the ledger recorded 63 verified swaps, refuting the claim of 88. A summary memo (doc_003) claims 88 swaps but is contaminated because it cites a routing note (doc_004) that completely lacks a final count.\",\n  \"answer\": \"No, Novalis Robotics did not log 88 verified swaps. According to the field note detailing the month-close ledger (doc_002), there were 63 verified swaps for Orion battery swaps in April 2025. The claim of 88 swaps appears in an unreliable memo (doc_003) that cites a source lacking the count data entirely.\"\n}",
+    "usage": {
+      "completion_tokens": 1262,
+      "prompt_tokens": 1272,
+      "total_tokens": 2534,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": null,
+        "audio_tokens": 0,
+        "reasoning_tokens": 829,
+        "rejected_prediction_tokens": null,
+        "text_tokens": 433,
+        "image_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cached_tokens": 0,
+        "text_tokens": 1272,
+        "image_tokens": 0
+      },
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "input_tokens_details": null,
+      "claude_cache_creation_5_m_tokens": 0,
+      "claude_cache_creation_1_h_tokens": 0
+    },
+    "response_format_used": "json_schema",
+    "parse_success": true,
+    "parse_error": "",
+    "empty_output": false,
+    "schema_missing": false,
+    "json_extractor_used": "first_json_object",
+    "cost_usd": 0.0028420000000000003,
+    "attempt_count": 1,
+    "visible_output_tokens": 330
+  }
+}

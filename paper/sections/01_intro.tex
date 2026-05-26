@@ -1,17 +1,17 @@
 \section{Introduction}
 
-Information-seeking agents are often evaluated by final-answer accuracy. That is too coarse for settings where the evidence environment is polluted. A system can answer correctly while citing a repost, laundering generated text into a support field, or failing to specify the next verification action. These are not only presentation errors: downstream tools, auditors, and users may depend on the structured evidence and action fields.
+Information-seeking systems are often evaluated by final-answer accuracy. That is too coarse for settings where the evidence environment is polluted. A system can answer correctly while citing a repost, laundering generated text into a support field, treating echo-chain records as independent, or failing to specify the next verification action. These are not only presentation errors: downstream tools, auditors, and users may depend on structured evidence and action fields.
 
-\eha{}-Uncued tests this distinction in a small controlled setting. The pilot asks models to judge claims using synthetic evidence packets that contain clean evidence, conflicting evidence, false consensus, buried primary evidence, or generated lore. The model-visible packet does not label documents as primary, contaminant, generated, or gold-supporting. The scorer then separates belief correctness from evidence hygiene and active-verification behavior.
+\eha{}-Uncued tests evidence-hygiene behavior in a small controlled setting. The pilot asks models to judge claims using synthetic evidence packets that contain clean evidence, conflicting evidence, false consensus, buried primary evidence, or generated lore. The model-visible packet does not label documents as primary, contaminant, generated, or gold-supporting. The scorer then separates final verdict correctness from provenance discipline, source independence, pollutant rejection, and active-verification behavior.
 
-This paper replaces an earlier cued construction. That older run was useful as a failure discovery: it showed that visible construction cues could invalidate the benchmark. It is quarantined and not used as a main result. The contribution here is a role-uncued pilot with explicit pre-model leakage gates, shortcut baselines, four-model execution, scorer audit, and a reproducible artifact package.
+This paper replaces an earlier cued construction. That older run was useful as a failure discovery: it showed that visible construction cues could invalidate the benchmark. It is quarantined and not used as a main result. The contribution here is a role-uncued synthetic diagnostic pilot with explicit pre-model leakage gates, shortcut baselines, four-model execution, scorer audit, narrow follow-up audits, and a reproducible artifact package.
 
-The study is intentionally modest. It is a diagnostic pilot over 60 latent tasks, two neutral metadata views, four frontier model labels, and one clarified schema. It should be read as evidence that answer accuracy hides operational failures under controlled pollution, not as a stable ranking of model providers.
+The study is intentionally modest. It is a diagnostic pilot over 60 latent tasks, two neutral metadata views, four model labels, and one main prompt/schema condition. It should be read as evidence about scorer-contract behavior under controlled synthetic pollution, not as a stable ranking of providers, production readiness evidence, or an open-web ecological-validity claim.
 
 The main contributions are:
 \begin{itemize}
     \item a role-uncued version of the \eha{} task design that removes direct material-role and conclusion cues from model-visible evidence;
-    \item pre-model leakage and shortcut-baseline gates showing that simple non-API shortcuts remain below the level needed to explain the strongest model results;
-    \item a four-model pilot showing large gaps between belief correctness and operational epistemic escape, especially on generated-lore rows;
+    \item pre-model leakage checks and shortcut-baseline gates that bound which result claims are valid;
+    \item a failure-decomposition and support-ambiguity analysis showing how verdict correctness, support fields, pollutant rejection, and verification actions can diverge under the current scorer contract;
     \item a packaged artifact, verifier, and scorer audit that make the pilot reproducible and explicitly bounded.
 \end{itemize}

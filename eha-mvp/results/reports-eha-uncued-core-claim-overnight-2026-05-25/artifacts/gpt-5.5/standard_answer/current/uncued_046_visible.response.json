@@ -1,0 +1,52 @@
+{
+  "attempts": [
+    {
+      "attempt": 1,
+      "response_format_used": "json_schema",
+      "parse_success": true,
+      "parse_error": "",
+      "empty_output": false,
+      "schema_missing": false,
+      "elapsed_s": 17.058,
+      "cost_usd": 0.02357
+    }
+  ],
+  "final": {
+    "content": "{\"actions\":[{\"action\":\"open\",\"rationale\":\"Use the closeout ledger entry that directly states the final count for the relevant workstream and month.\",\"target\":\"doc_002\"},{\"action\":\"search_contradiction\",\"rationale\":\"Check the conflicting 139 figure and whether it is final or only an estimate.\",\"target\":\"doc_003\"}],\"answer\":\"Yes. The best evidence is doc_002, which says the closeout ledger lists 118 completed refurbishments for Nova pump refurbishments in July 2025. The conflicting 139 figure in doc_003 is described only as a running estimate tied to planning, not a final closeout count.\",\"claim_verdict\":\"supported\",\"confidence\":0.86,\"evidence_environment_assessment\":\"The environment contains one direct final-count document and one conflicting estimate. Doc_002 is the most probative because it describes a closeout ledger row using the final close date. Doc_003 is lower quality for this claim because it is explicitly framed as a running estimate and cites a planning memo. Doc_004 has no final number, and doc_001 has no closing count. The company name is not independently elaborated in the snippets, but the count/workstream/month portion of the claim is directly supported.\",\"rejected_evidence\":[\"doc_003\",\"doc_004\",\"doc_001\"],\"selected_doc_ids\":[\"doc_002\",\"doc_003\",\"doc_004\"],\"supporting_evidence\":[\"doc_002\"]}",
+    "usage": {
+      "completion_tokens": 593,
+      "prompt_tokens": 1156,
+      "total_tokens": 1749,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": 0,
+        "audio_tokens": 0,
+        "reasoning_tokens": 276,
+        "rejected_prediction_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cached_tokens": 0
+      },
+      "latency_checkpoint": {
+        "engine_tbt_ms": 24,
+        "engine_ttft_ms": 539,
+        "engine_ttlt_ms": 15034,
+        "pre_inference_ms": 150,
+        "service_tbt_ms": 24,
+        "service_ttft_ms": 948,
+        "service_ttlt_ms": 15440,
+        "total_duration_ms": 15296,
+        "user_visible_ttft_ms": 798
+      }
+    },
+    "response_format_used": "json_schema",
+    "parse_success": true,
+    "parse_error": "",
+    "empty_output": false,
+    "schema_missing": false,
+    "json_extractor_used": "first_json_object",
+    "cost_usd": 0.02357,
+    "attempt_count": 1,
+    "visible_output_tokens": 331
+  }
+}

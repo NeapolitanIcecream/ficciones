@@ -1,0 +1,52 @@
+{
+  "attempts": [
+    {
+      "attempt": 1,
+      "response_format_used": "json_schema",
+      "parse_success": true,
+      "parse_error": "",
+      "empty_output": false,
+      "schema_missing": false,
+      "elapsed_s": 18.731,
+      "cost_usd": 0.025285
+    }
+  ],
+  "final": {
+    "content": "{\"actions\":[{\"action\":\"open\",\"rationale\":\"Use the closeout ledger extract because it directly states the final count for Atlas valve checks in March 2025.\",\"target\":\"doc_003\"},{\"action\":\"compare_versions\",\"rationale\":\"Check the competing 211 figure, which is framed as a running estimate rather than a final closeout count.\",\"target\":\"doc_004\"}],\"answer\":\"Yes. The strongest evidence is the closeout ledger extract, which states that 184 completed checks were listed for Atlas valve checks in March 2025. The conflicting 211 figure is rejected because it is only a running estimate tied to planning material, not the final closeout ledger.\",\"claim_verdict\":\"supported\",\"confidence\":0.86,\"evidence_environment_assessment\":\"The environment contains one direct final-count source and several less probative contextual or preliminary notes. doc_003 is the most valuable evidence because it identifies a closeout ledger and directly gives 184 completed checks for Atlas valve checks in March 2025. doc_004 conflicts with 211, but it is explicitly a running estimate and cites planning material, so it is weaker than the closeout ledger. doc_001 and doc_002 provide context but no final count.\",\"rejected_evidence\":[\"doc_004\"],\"selected_doc_ids\":[\"doc_003\",\"doc_004\",\"doc_002\"],\"supporting_evidence\":[\"doc_003\"]}",
+    "usage": {
+      "completion_tokens": 651,
+      "prompt_tokens": 1151,
+      "total_tokens": 1802,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": 0,
+        "audio_tokens": 0,
+        "reasoning_tokens": 346,
+        "rejected_prediction_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cached_tokens": 0
+      },
+      "latency_checkpoint": {
+        "engine_tbt_ms": 24,
+        "engine_ttft_ms": 523,
+        "engine_ttlt_ms": 16454,
+        "pre_inference_ms": 107,
+        "service_tbt_ms": 24,
+        "service_ttft_ms": 854,
+        "service_ttlt_ms": 16784,
+        "total_duration_ms": 16683,
+        "user_visible_ttft_ms": 748
+      }
+    },
+    "response_format_used": "json_schema",
+    "parse_success": true,
+    "parse_error": "",
+    "empty_output": false,
+    "schema_missing": false,
+    "json_extractor_used": "first_json_object",
+    "cost_usd": 0.025285,
+    "attempt_count": 1,
+    "visible_output_tokens": 326
+  }
+}

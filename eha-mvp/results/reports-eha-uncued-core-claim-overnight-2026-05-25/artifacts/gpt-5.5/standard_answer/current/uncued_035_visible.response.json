@@ -1,0 +1,52 @@
+{
+  "attempts": [
+    {
+      "attempt": 1,
+      "response_format_used": "json_schema",
+      "parse_success": true,
+      "parse_error": "",
+      "empty_output": false,
+      "schema_missing": false,
+      "elapsed_s": 19.368,
+      "cost_usd": 0.02742
+    }
+  ],
+  "final": {
+    "content": "{\"actions\":[{\"action\":\"trace_source\",\"rationale\":\"The two documents stating 101 are not independent: their visible citations point back to each other or to the same bulletin chain, so the source trail is circular rather than a separate count sheet.\",\"target\":\"doc_001, doc_003\"},{\"action\":\"compare_versions\",\"rationale\":\"Compare the repeated 101 summaries against the closing ledger row that gives a final count of 76 for the same workstream and month.\",\"target\":\"doc_002 vs doc_001/doc_003\"}],\"answer\":\"No. The cleanest available final-count evidence is the closing ledger, which gives 76 approved checks for Kestrel firmware checks in August 2025. The documents claiming 101 appear to be circular summaries rather than independent count evidence, so the claim is refuted in this evidence environment.\",\"claim_verdict\":\"refuted\",\"confidence\":0.78,\"evidence_environment_assessment\":\"The environment is polluted by repeated secondary claims of 101 that do not appear independent: doc_001 and doc_003 cite each other or the same bulletin chain rather than a separate count sheet. doc_002 is the only visible closing ledger row with a final count and states 76 approved checks for the same workstream and month. doc_004 is not probative because it contains no final count.\",\"rejected_evidence\":[\"doc_001\",\"doc_003\",\"doc_004\"],\"selected_doc_ids\":[\"doc_002\",\"doc_001\",\"doc_003\"],\"supporting_evidence\":[\"doc_002\"]}",
+    "usage": {
+      "completion_tokens": 718,
+      "prompt_tokens": 1176,
+      "total_tokens": 1894,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": 0,
+        "audio_tokens": 0,
+        "reasoning_tokens": 383,
+        "rejected_prediction_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cached_tokens": 0
+      },
+      "latency_checkpoint": {
+        "engine_tbt_ms": 24,
+        "engine_ttft_ms": 385,
+        "engine_ttlt_ms": 17510,
+        "pre_inference_ms": 144,
+        "service_tbt_ms": 24,
+        "service_ttft_ms": 761,
+        "service_ttlt_ms": 17877,
+        "total_duration_ms": 17743,
+        "user_visible_ttft_ms": 617
+      }
+    },
+    "response_format_used": "json_schema",
+    "parse_success": true,
+    "parse_error": "",
+    "empty_output": false,
+    "schema_missing": false,
+    "json_extractor_used": "first_json_object",
+    "cost_usd": 0.02742,
+    "attempt_count": 1,
+    "visible_output_tokens": 352
+  }
+}

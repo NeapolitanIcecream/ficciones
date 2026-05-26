@@ -1,0 +1,52 @@
+{
+  "attempts": [
+    {
+      "attempt": 1,
+      "response_format_used": "json_schema",
+      "parse_success": true,
+      "parse_error": "",
+      "empty_output": false,
+      "schema_missing": false,
+      "elapsed_s": 18.238,
+      "cost_usd": 0.02003
+    }
+  ],
+  "final": {
+    "content": "{\"actions\":[{\"action\":\"trace_source\",\"rationale\":\"The two documents reporting 88 cite each other rather than an independent count sheet, indicating circular sourcing.\",\"target\":\"doc_001/doc_003\"},{\"action\":\"compare_versions\",\"rationale\":\"Compare the circular 88 reports with the visible closing ledger row that gives a different final count.\",\"target\":\"doc_002 vs doc_001/doc_003\"}],\"answer\":\"No. The cleanest visible count is the closing ledger in doc_002, which gives 63 verified swaps for Orion battery swaps in April 2025. The documents stating 88 rely on circular citations and are rejected as polluted evidence.\",\"claim_verdict\":\"refuted\",\"confidence\":0.82,\"evidence_environment_assessment\":\"The environment is polluted by mutually reinforcing secondary notes: doc_001 and doc_003 both state 88 but cite each other rather than an independent count sheet. Doc_002 is the only visible ledger-style row with a final count and directly contradicts 88 by reporting 63 verified swaps. Doc_004 is not probative because it contains no final count.\",\"rejected_evidence\":[\"doc_001\",\"doc_003\"],\"selected_doc_ids\":[\"doc_002\",\"doc_001\",\"doc_003\"],\"supporting_evidence\":[\"doc_002\"]}",
+    "usage": {
+      "completion_tokens": 473,
+      "prompt_tokens": 1168,
+      "total_tokens": 1641,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": 0,
+        "audio_tokens": 0,
+        "reasoning_tokens": 188,
+        "rejected_prediction_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cached_tokens": 0
+      },
+      "latency_checkpoint": {
+        "engine_tbt_ms": 27,
+        "engine_ttft_ms": 3966,
+        "engine_ttlt_ms": 16544,
+        "pre_inference_ms": 100,
+        "service_tbt_ms": 27,
+        "service_ttft_ms": 4295,
+        "service_ttlt_ms": 16880,
+        "total_duration_ms": 16779,
+        "user_visible_ttft_ms": 4195
+      }
+    },
+    "response_format_used": "json_schema",
+    "parse_success": true,
+    "parse_error": "",
+    "empty_output": false,
+    "schema_missing": false,
+    "json_extractor_used": "first_json_object",
+    "cost_usd": 0.02003,
+    "attempt_count": 1,
+    "visible_output_tokens": 293
+  }
+}

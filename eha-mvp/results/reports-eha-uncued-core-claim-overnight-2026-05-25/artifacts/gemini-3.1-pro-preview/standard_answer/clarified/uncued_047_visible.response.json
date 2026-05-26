@@ -1,0 +1,50 @@
+{
+  "attempts": [
+    {
+      "attempt": 1,
+      "response_format_used": "json_schema",
+      "parse_success": true,
+      "parse_error": "",
+      "empty_output": false,
+      "schema_missing": false,
+      "elapsed_s": 11.222,
+      "cost_usd": 0.0028865
+    }
+  ],
+  "final": {
+    "content": "{\n  \"claim_verdict\": \"supported\",\n  \"confidence\": 0.95,\n  \"clean_supporting_evidence\": [\n    \"doc_001\"\n  ],\n  \"refuting_evidence\": [],\n  \"rejected_or_contaminated_evidence\": [\n    \"doc_004\"\n  ],\n  \"diagnostic_evidence\": [\n    \"doc_002\",\n    \"doc_003\"\n  ],\n  \"selected_doc_ids\": [\n    \"doc_001\",\n    \"doc_003\",\n    \"doc_004\"\n  ],\n  \"actions\": [\n    {\n      \"action\": \"search_contradiction\",\n      \"target\": \"Kestrel firmware checks August 2025 final count\",\n      \"rationale\": \"Verify that no other final ledger disputes the 76 approved checks count provided in the closeout ledger.\"\n    }\n  ],\n  \"evidence_notes\": \"Document doc_001 is a closeout ledger confirming 76 approved checks for August 2025. Document doc_004 is a running estimate of 101 checks and is superseded by the final ledger. Documents doc_002 and doc_003 are planning and handoff notes containing no final counts.\",\n  \"answer\": \"Yes, according to the operations timeline note and closeout ledger, there were 76 approved checks for Kestrel firmware checks in August 2025.\"\n}",
+    "usage": {
+      "completion_tokens": 1226,
+      "prompt_tokens": 1738,
+      "total_tokens": 2964,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": null,
+        "audio_tokens": 0,
+        "reasoning_tokens": 885,
+        "rejected_prediction_tokens": null,
+        "text_tokens": 341,
+        "image_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cached_tokens": 0,
+        "text_tokens": 1738,
+        "image_tokens": 0
+      },
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "input_tokens_details": null,
+      "claude_cache_creation_5_m_tokens": 0,
+      "claude_cache_creation_1_h_tokens": 0
+    },
+    "response_format_used": "json_schema",
+    "parse_success": true,
+    "parse_error": "",
+    "empty_output": false,
+    "schema_missing": false,
+    "json_extractor_used": "first_json_object",
+    "cost_usd": 0.0028865,
+    "attempt_count": 1,
+    "visible_output_tokens": 260
+  }
+}

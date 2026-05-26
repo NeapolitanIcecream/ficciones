@@ -1,0 +1,52 @@
+{
+  "attempts": [
+    {
+      "attempt": 1,
+      "response_format_used": "json_schema",
+      "parse_success": true,
+      "parse_error": "",
+      "empty_output": false,
+      "schema_missing": false,
+      "elapsed_s": 23.305,
+      "cost_usd": 0.030555
+    }
+  ],
+  "final": {
+    "content": "{\"actions\":[{\"action\":\"trace_source\",\"rationale\":\"The only document asserting 211 cites doc_004, so its source trail should be checked for whether it actually supports the count.\",\"target\":\"doc_002 -> doc_004\"},{\"action\":\"search_contradiction\",\"rationale\":\"A separate same-workstream/month note reports a different completed-check count, which is directly relevant to judging the 211 claim.\",\"target\":\"doc_001\"}],\"answer\":\"No. The evidence environment contains a weak digest claim of 211, but its cited source does not provide a final count. The cleaner contradictory evidence says the month-close ledger lists 184 completed checks for Atlas valve checks in March 2025, so the claim that 211 were logged is refuted on the provided evidence.\",\"claim_verdict\":\"refuted\",\"confidence\":0.72,\"evidence_environment_assessment\":\"The environment is polluted by a count assertion in doc_002 that lacks a visible ledger row and cites doc_004, which only gives chronology and no final count. doc_001 is the most directly useful evidence because it states the month-close ledger count for the same workstream and month, and it contradicts 211 with 184. No document independently verifies the 211 figure from a primary row.\",\"rejected_evidence\":[\"doc_002\"],\"selected_doc_ids\":[\"doc_001\",\"doc_002\",\"doc_004\"],\"supporting_evidence\":[\"doc_001\"]}",
+    "usage": {
+      "completion_tokens": 826,
+      "prompt_tokens": 1155,
+      "total_tokens": 1981,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": 0,
+        "audio_tokens": 0,
+        "reasoning_tokens": 512,
+        "rejected_prediction_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cached_tokens": 0
+      },
+      "latency_checkpoint": {
+        "engine_tbt_ms": 25,
+        "engine_ttft_ms": 719,
+        "engine_ttlt_ms": 21187,
+        "pre_inference_ms": 132,
+        "service_tbt_ms": 25,
+        "service_ttft_ms": 1114,
+        "service_ttlt_ms": 21586,
+        "total_duration_ms": 21459,
+        "user_visible_ttft_ms": 982
+      }
+    },
+    "response_format_used": "json_schema",
+    "parse_success": true,
+    "parse_error": "",
+    "empty_output": false,
+    "schema_missing": false,
+    "json_extractor_used": "first_json_object",
+    "cost_usd": 0.030555,
+    "attempt_count": 1,
+    "visible_output_tokens": 332
+  }
+}

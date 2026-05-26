@@ -1,0 +1,52 @@
+{
+  "attempts": [
+    {
+      "attempt": 1,
+      "response_format_used": "json_schema",
+      "parse_success": true,
+      "parse_error": "",
+      "empty_output": false,
+      "schema_missing": false,
+      "elapsed_s": 22.059,
+      "cost_usd": 0.03011
+    }
+  ],
+  "final": {
+    "content": "{\"actions\":[{\"action\":\"open\",\"rationale\":\"Inspect the final closeout ledger statement that directly gives the accepted inspection count for Vega rail inspections in June 2025.\",\"target\":\"doc_001\"},{\"action\":\"trace_source\",\"rationale\":\"Check the conflicting 57-count estimate and its cited planning memo to determine whether it is stale or non-final.\",\"target\":\"doc_003\"}],\"answer\":\"Yes. The clean final closeout evidence states that the ledger lists 42 accepted inspections for Vega rail inspections in June 2025. A conflicting 57-count document is only a running estimate tied to a pre-close planning memo, so it is not treated as direct refutation.\",\"claim_verdict\":\"supported\",\"clean_supporting_evidence\":[\"doc_001\"],\"confidence\":0.82,\"diagnostic_evidence\":[\"doc_004\",\"doc_002\"],\"evidence_notes\":\"doc_001 is the most valuable evidence because it describes a closeout ledger row using the final close date and gives the exact count of 42 for Vega rail inspections in June 2025. doc_003 gives a different number, 57, but identifies it as a running estimate and points to a planning memo, so it is stale/non-final rather than a direct refutation. doc_004 confirms the cited planning memo was prepared before monthly close and had no final number. doc_002 names the workstream/site but contains no closing count.\",\"refuting_evidence\":[],\"rejected_or_contaminated_evidence\":[\"doc_003\"],\"selected_doc_ids\":[\"doc_001\",\"doc_003\",\"doc_004\"]}",
+    "usage": {
+      "completion_tokens": 786,
+      "prompt_tokens": 1306,
+      "total_tokens": 2092,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": 0,
+        "audio_tokens": 0,
+        "reasoning_tokens": 440,
+        "rejected_prediction_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cached_tokens": 0
+      },
+      "latency_checkpoint": {
+        "engine_tbt_ms": 25,
+        "engine_ttft_ms": 389,
+        "engine_ttlt_ms": 19852,
+        "pre_inference_ms": 252,
+        "service_tbt_ms": 25,
+        "service_ttft_ms": 904,
+        "service_ttlt_ms": 20365,
+        "total_duration_ms": 20115,
+        "user_visible_ttft_ms": 652
+      }
+    },
+    "response_format_used": "json_schema",
+    "parse_success": true,
+    "parse_error": "",
+    "empty_output": false,
+    "schema_missing": false,
+    "json_extractor_used": "first_json_object",
+    "cost_usd": 0.03011,
+    "attempt_count": 1,
+    "visible_output_tokens": 358
+  }
+}

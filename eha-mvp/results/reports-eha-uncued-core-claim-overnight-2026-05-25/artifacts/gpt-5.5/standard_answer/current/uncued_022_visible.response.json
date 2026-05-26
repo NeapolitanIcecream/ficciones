@@ -1,0 +1,52 @@
+{
+  "attempts": [
+    {
+      "attempt": 1,
+      "response_format_used": "json_schema",
+      "parse_success": true,
+      "parse_error": "",
+      "empty_output": false,
+      "schema_missing": false,
+      "elapsed_s": 15.747,
+      "cost_usd": 0.02265
+    }
+  ],
+  "final": {
+    "content": "{\"actions\":[{\"action\":\"trace_source\",\"rationale\":\"The only document asserting 139 is a digest with a visible citation to a chronology note that contains no final count, so its source support should be checked.\",\"target\":\"doc_003 -> doc_004\"},{\"action\":\"compare_versions\",\"rationale\":\"The clean month-close ledger states a conflicting total of 118 for the same workstream and month, making it necessary to compare it against the unsupported 139 digest.\",\"target\":\"doc_001 vs doc_003\"}],\"answer\":\"No. The provided evidence does not support that Novalis Robotics logged 139 completed Nova pump refurbishments in July 2025. The clean month-close ledger states 118 completed refurbishments, while the only 139 claim is an unsupported digest citing a document that gives chronology but no final count.\",\"claim_verdict\":\"refuted\",\"confidence\":0.86,\"evidence_environment_assessment\":\"The environment is polluted by a secondary digest asserting 139 without visible row-level support and citing a document that contains no final total. The strongest evidence is the month-close ledger entry for the same workstream and month, which gives 118. Timeline/routing notes provide context but no count.\",\"rejected_evidence\":[\"doc_003\"],\"selected_doc_ids\":[\"doc_001\",\"doc_003\",\"doc_004\"],\"supporting_evidence\":[\"doc_001\"]}",
+    "usage": {
+      "completion_tokens": 562,
+      "prompt_tokens": 1158,
+      "total_tokens": 1720,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": 0,
+        "audio_tokens": 0,
+        "reasoning_tokens": 262,
+        "rejected_prediction_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cached_tokens": 0
+      },
+      "latency_checkpoint": {
+        "engine_tbt_ms": 24,
+        "engine_ttft_ms": 450,
+        "engine_ttlt_ms": 13798,
+        "pre_inference_ms": 148,
+        "service_tbt_ms": 24,
+        "service_ttft_ms": 830,
+        "service_ttlt_ms": 14192,
+        "total_duration_ms": 14044,
+        "user_visible_ttft_ms": 682
+      }
+    },
+    "response_format_used": "json_schema",
+    "parse_success": true,
+    "parse_error": "",
+    "empty_output": false,
+    "schema_missing": false,
+    "json_extractor_used": "first_json_object",
+    "cost_usd": 0.02265,
+    "attempt_count": 1,
+    "visible_output_tokens": 326
+  }
+}

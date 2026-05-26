@@ -1,0 +1,50 @@
+{
+  "attempts": [
+    {
+      "attempt": 1,
+      "response_format_used": "json_schema",
+      "parse_success": true,
+      "parse_error": "",
+      "empty_output": false,
+      "schema_missing": false,
+      "elapsed_s": 11.185,
+      "cost_usd": 0.0027955000000000002
+    }
+  ],
+  "final": {
+    "content": "{\n  \"claim_verdict\": \"refuted\",\n  \"confidence\": 0.9,\n  \"clean_supporting_evidence\": [],\n  \"refuting_evidence\": [\n    \"doc_001\"\n  ],\n  \"rejected_or_contaminated_evidence\": [\n    \"doc_003\",\n    \"doc_004\"\n  ],\n  \"diagnostic_evidence\": [\n    \"doc_002\"\n  ],\n  \"selected_doc_ids\": [\n    \"doc_001\",\n    \"doc_003\",\n    \"doc_004\"\n  ],\n  \"actions\": [\n    {\n      \"action\": \"trace_source\",\n      \"target\": \"doc_001\",\n      \"rationale\": \"Trace the source of the 97 count from the Field Summary Memo to verify its accuracy.\"\n    },\n    {\n      \"action\": \"search_contradiction\",\n      \"target\": \"Novalis Robotics Mira sensor recalibrations closed tickets May 2025\",\n      \"rationale\": \"Search for any further independent data that confirms whether the actual count is 97 or 124.\"\n    }\n  ],\n  \"evidence_notes\": \"Documents doc_003 and doc_004 assert that there were 124 closed tickets, but they cite each other in a circular loop, making them unreliable. Document doc_001 acts as refuting evidence, clearly stating there were 97 closed tickets. Document doc_002 provides no final count.\",\n  \"answer\": \"The claim is refuted. While some documents state the count was 124, these documents (doc_003 and doc_004) reference each other in a circular reporting loop and are considered contaminated. The reliable closing ledger (doc_001) shows that there were actually 97 closed tickets for Mira sensor recalibrations in May 2025.\"\n}",
+    "usage": {
+      "completion_tokens": 1177,
+      "prompt_tokens": 1766,
+      "total_tokens": 2943,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": null,
+        "audio_tokens": 0,
+        "reasoning_tokens": 732,
+        "rejected_prediction_tokens": null,
+        "text_tokens": 445,
+        "image_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cached_tokens": 0,
+        "text_tokens": 1766,
+        "image_tokens": 0
+      },
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "input_tokens_details": null,
+      "claude_cache_creation_5_m_tokens": 0,
+      "claude_cache_creation_1_h_tokens": 0
+    },
+    "response_format_used": "json_schema",
+    "parse_success": true,
+    "parse_error": "",
+    "empty_output": false,
+    "schema_missing": false,
+    "json_extractor_used": "first_json_object",
+    "cost_usd": 0.0027955000000000002,
+    "attempt_count": 1,
+    "visible_output_tokens": 352
+  }
+}

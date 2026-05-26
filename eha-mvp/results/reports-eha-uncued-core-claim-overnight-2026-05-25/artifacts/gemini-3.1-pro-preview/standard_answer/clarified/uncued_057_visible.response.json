@@ -1,0 +1,50 @@
+{
+  "attempts": [
+    {
+      "attempt": 1,
+      "response_format_used": "json_schema",
+      "parse_success": true,
+      "parse_error": "",
+      "empty_output": false,
+      "schema_missing": false,
+      "elapsed_s": 16.511,
+      "cost_usd": 0.002281
+    }
+  ],
+  "final": {
+    "content": "{\n  \"claim_verdict\": \"insufficient\",\n  \"confidence\": 0.85,\n  \"clean_supporting_evidence\": [],\n  \"refuting_evidence\": [],\n  \"rejected_or_contaminated_evidence\": [\n    \"doc_001\",\n    \"doc_004\"\n  ],\n  \"diagnostic_evidence\": [\n    \"doc_002\",\n    \"doc_003\"\n  ],\n  \"selected_doc_ids\": [\n    \"doc_001\",\n    \"doc_002\",\n    \"doc_004\"\n  ],\n  \"actions\": [\n    {\n      \"action\": \"search_primary\",\n      \"target\": \"Cobalt Loop service exchange launch June 2025\",\n      \"rationale\": \"We need primary operational records from Novalis Robotics to confirm the launch, rather than community roundups.\"\n    },\n    {\n      \"action\": \"trace_source\",\n      \"target\": \"doc_004\",\n      \"rationale\": \"Trace the origin of the community roundup claim to determine if it is based on factual operations data.\"\n    }\n  ],\n  \"evidence_notes\": \"The evidence relies on a community roundup (doc_004) that lacks linked operational records. A partner recap (doc_001) simply repeats and cites this roundup, creating a circular reference. Other planning documents (doc_002, doc_003) for June 2025 do not mention the Cobalt Loop service exchange launch. Thus, there is insufficient evidence to verify the claim.\",\n  \"answer\": \"There is insufficient evidence to confirm whether Novalis Robotics launched the Cobalt Loop service exchange in June 2025. The available documents only contain a community roundup claim and a circular citation of that claim, with no concrete operational records or primary sources to verify the launch.\"\n}",
+    "usage": {
+      "completion_tokens": 984,
+      "prompt_tokens": 1252,
+      "total_tokens": 2236,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": null,
+        "audio_tokens": 0,
+        "reasoning_tokens": 558,
+        "rejected_prediction_tokens": null,
+        "text_tokens": 426,
+        "image_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cached_tokens": 0,
+        "text_tokens": 1252,
+        "image_tokens": 0
+      },
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "input_tokens_details": null,
+      "claude_cache_creation_5_m_tokens": 0,
+      "claude_cache_creation_1_h_tokens": 0
+    },
+    "response_format_used": "json_schema",
+    "parse_success": true,
+    "parse_error": "",
+    "empty_output": false,
+    "schema_missing": false,
+    "json_extractor_used": "first_json_object",
+    "cost_usd": 0.002281,
+    "attempt_count": 1,
+    "visible_output_tokens": 373
+  }
+}

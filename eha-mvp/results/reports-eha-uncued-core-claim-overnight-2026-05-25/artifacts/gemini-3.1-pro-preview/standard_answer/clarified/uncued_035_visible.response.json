@@ -1,0 +1,50 @@
+{
+  "attempts": [
+    {
+      "attempt": 1,
+      "response_format_used": "json_schema",
+      "parse_success": true,
+      "parse_error": "",
+      "empty_output": false,
+      "schema_missing": false,
+      "elapsed_s": 9.239,
+      "cost_usd": 0.0023385
+    }
+  ],
+  "final": {
+    "content": "{\n  \"claim_verdict\": \"refuted\",\n  \"confidence\": 0.9,\n  \"clean_supporting_evidence\": [],\n  \"refuting_evidence\": [\n    \"doc_002\"\n  ],\n  \"rejected_or_contaminated_evidence\": [\n    \"doc_001\",\n    \"doc_003\"\n  ],\n  \"diagnostic_evidence\": [\n    \"doc_004\"\n  ],\n  \"selected_doc_ids\": [\n    \"doc_001\",\n    \"doc_002\",\n    \"doc_003\"\n  ],\n  \"actions\": [\n    {\n      \"action\": \"trace_source\",\n      \"target\": \"doc_001\",\n      \"rationale\": \"Investigating the circular citation between doc_001 and doc_003 to determine where the incorrect count of 101 originated.\"\n    },\n    {\n      \"action\": \"search_primary\",\n      \"target\": \"Novalis Robotics closing ledger August 2025\",\n      \"rationale\": \"Verify the closing ledger's count of 76 approved checks to confirm it accurately refutes the 101 count.\"\n    }\n  ],\n  \"evidence_notes\": \"Documents 001 and 003 claim 101 approved checks but suffer from circular reporting, citing each other. The primary closing ledger (doc_002) directly refutes the claim by stating there were 76 approved checks. Document 004 lacks a final count.\",\n  \"answer\": \"No, Novalis Robotics logged 76 approved checks for Kestrel firmware checks in August 2025 according to the closing ledger, not 101. The documents claiming a total of 101 rely on circular reporting and are considered contaminated.\"\n}",
+    "usage": {
+      "completion_tokens": 949,
+      "prompt_tokens": 1762,
+      "total_tokens": 2711,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": null,
+        "audio_tokens": 0,
+        "reasoning_tokens": 528,
+        "rejected_prediction_tokens": null,
+        "text_tokens": 421,
+        "image_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cached_tokens": 0,
+        "text_tokens": 1762,
+        "image_tokens": 0
+      },
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "input_tokens_details": null,
+      "claude_cache_creation_5_m_tokens": 0,
+      "claude_cache_creation_1_h_tokens": 0
+    },
+    "response_format_used": "json_schema",
+    "parse_success": true,
+    "parse_error": "",
+    "empty_output": false,
+    "schema_missing": false,
+    "json_extractor_used": "first_json_object",
+    "cost_usd": 0.0023385,
+    "attempt_count": 1,
+    "visible_output_tokens": 326
+  }
+}

@@ -1,0 +1,52 @@
+{
+  "attempts": [
+    {
+      "attempt": 1,
+      "response_format_used": "json_schema",
+      "parse_success": true,
+      "parse_error": "",
+      "empty_output": false,
+      "schema_missing": false,
+      "elapsed_s": 16.157,
+      "cost_usd": 0.021675
+    }
+  ],
+  "final": {
+    "content": "{\"actions\":[{\"action\":\"trace_source\",\"rationale\":\"The only document stating 211 cites doc_001, but doc_001 provides chronology only and no completed-check count.\",\"target\":\"doc_004 -> doc_001\"},{\"action\":\"compare_versions\",\"rationale\":\"Compare the unsupported 211 digest against the month-close ledger entry that gives a different completed-check total for the same workstream and month.\",\"target\":\"doc_004 vs doc_002\"}],\"answer\":\"No. The strongest clean evidence is doc_002, which says the month-close ledger lists 184 completed checks for Atlas valve checks in March 2025, not 211. The 211 figure appears only in doc_004, whose cited source does not contain a count, so it is rejected.\",\"claim_verdict\":\"refuted\",\"confidence\":0.78,\"evidence_environment_assessment\":\"The environment is polluted by a secondary digest that states the claimed 211 total while citing a document that does not support that total. The cleanest count-bearing evidence is the month-close ledger entry in doc_002, which directly conflicts with the claim by listing 184 completed checks. Neutral chronology documents do not establish the claimed count.\",\"rejected_evidence\":[\"doc_004\"],\"selected_doc_ids\":[\"doc_002\",\"doc_004\",\"doc_001\"],\"supporting_evidence\":[\"doc_002\"]}",
+    "usage": {
+      "completion_tokens": 530,
+      "prompt_tokens": 1155,
+      "total_tokens": 1685,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": 0,
+        "audio_tokens": 0,
+        "reasoning_tokens": 233,
+        "rejected_prediction_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cached_tokens": 0
+      },
+      "latency_checkpoint": {
+        "engine_tbt_ms": 26,
+        "engine_ttft_ms": 404,
+        "engine_ttlt_ms": 13964,
+        "pre_inference_ms": 344,
+        "service_tbt_ms": 26,
+        "service_ttft_ms": 882,
+        "service_ttlt_ms": 14440,
+        "total_duration_ms": 14128,
+        "user_visible_ttft_ms": 537
+      }
+    },
+    "response_format_used": "json_schema",
+    "parse_success": true,
+    "parse_error": "",
+    "empty_output": false,
+    "schema_missing": false,
+    "json_extractor_used": "first_json_object",
+    "cost_usd": 0.021675,
+    "attempt_count": 1,
+    "visible_output_tokens": 311
+  }
+}

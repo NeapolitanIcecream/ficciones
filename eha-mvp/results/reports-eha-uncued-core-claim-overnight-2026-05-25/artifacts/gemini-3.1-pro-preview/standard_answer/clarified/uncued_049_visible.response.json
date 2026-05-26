@@ -1,0 +1,50 @@
+{
+  "attempts": [
+    {
+      "attempt": 1,
+      "response_format_used": "json_schema",
+      "parse_success": true,
+      "parse_error": "",
+      "empty_output": false,
+      "schema_missing": false,
+      "elapsed_s": 19.648,
+      "cost_usd": 0.0027679999999999996
+    }
+  ],
+  "final": {
+    "content": "{\n  \"claim_verdict\": \"insufficient\",\n  \"confidence\": 0.8,\n  \"clean_supporting_evidence\": [],\n  \"refuting_evidence\": [],\n  \"rejected_or_contaminated_evidence\": [\n    \"doc_002\",\n    \"doc_003\"\n  ],\n  \"diagnostic_evidence\": [\n    \"doc_001\",\n    \"doc_004\"\n  ],\n  \"selected_doc_ids\": [\n    \"doc_002\",\n    \"doc_003\",\n    \"doc_004\"\n  ],\n  \"actions\": [\n    {\n      \"action\": \"trace_source\",\n      \"target\": \"doc_003\",\n      \"rationale\": \"Trace the origin of the community roundup claim to verify if the launch actually occurred.\"\n    },\n    {\n      \"action\": \"search_primary\",\n      \"target\": \"Novalis Robotics AuroraDock field upgrade toolkit April 2025\",\n      \"rationale\": \"Search for primary operational records or official announcements from Novalis Robotics confirming the launch.\"\n    }\n  ],\n  \"evidence_notes\": \"The claim is supported only by an unverified community roundup (doc_003) without linked operational records, which is then circularly cited by a partner recap (doc_002). Official operations memos and timelines for April 2025 (doc_001, doc_004) do not mention the launch.\",\n  \"answer\": \"There is insufficient evidence to confirm whether Novalis Robotics launched the AuroraDock field upgrade toolkit in April 2025. The only sources mentioning the launch are an unverified community roundup and a document citing it, neither of which provide official operational records. Furthermore, service memos from April 2025 do not mention the toolkit.\"\n}",
+    "usage": {
+      "completion_tokens": 1169,
+      "prompt_tokens": 1720,
+      "total_tokens": 2889,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": null,
+        "audio_tokens": 0,
+        "reasoning_tokens": 751,
+        "rejected_prediction_tokens": null,
+        "text_tokens": 418,
+        "image_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cached_tokens": 0,
+        "text_tokens": 1720,
+        "image_tokens": 0
+      },
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "input_tokens_details": null,
+      "claude_cache_creation_5_m_tokens": 0,
+      "claude_cache_creation_1_h_tokens": 0
+    },
+    "response_format_used": "json_schema",
+    "parse_success": true,
+    "parse_error": "",
+    "empty_output": false,
+    "schema_missing": false,
+    "json_extractor_used": "first_json_object",
+    "cost_usd": 0.0027679999999999996,
+    "attempt_count": 1,
+    "visible_output_tokens": 363
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "date": "2026-05-25",
+  "decision": "pass",
+  "commands": [
+    {
+      "command": "cd eha-mvp && uv run eha-verify-uncued-core-claim-overnight --run-dir results/reports-eha-uncued-core-claim-overnight-2026-05-25 --reports-dir ../reports",
+      "status": "pass",
+      "evidence": "Core-claim overnight verification decision=pass."
+    },
+    {
+      "command": "cd eha-mvp && uv run pytest tests/test_uncued_failure_decomposition.py tests/test_uncued_support_ambiguity.py tests/test_uncued_positive_contract.py tests/test_uncued_data_sanity.py tests/test_uncued_core_claim_report.py tests/test_uncued_run.py tests/test_uncued_report.py tests/test_uncued_schema_ablation.py tests/test_uncued_robustness.py -q",
+      "status": "pass",
+      "evidence": "30 passed in 2.56s"
+    },
+    {
+      "command": "make pdf",
+      "status": "pass_with_warnings",
+      "evidence": "paper/main.pdf written; Tectonic emitted underfull/overfull hbox warnings in existing appendix/table text."
+    },
+    {
+      "command": "git diff --check",
+      "status": "pass",
+      "evidence": "No output; exit code 0."
+    }
+  ],
+  "artifacts": {
+    "pdf": "paper/main.pdf",
+    "final_claim_audit": ".codex-workflows/uncued-paper-rewrite-overnight/audits/audit-final-paper-claim-consistency/audit_report.md",
+    "start_state": "eha-mvp/results/reports-eha-uncued-paper-rewrite-overnight-2026-05-25/start_state.md"
+  }
+}

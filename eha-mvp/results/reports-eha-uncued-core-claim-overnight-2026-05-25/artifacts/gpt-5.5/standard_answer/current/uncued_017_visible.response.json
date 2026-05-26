@@ -1,0 +1,52 @@
+{
+  "attempts": [
+    {
+      "attempt": 1,
+      "response_format_used": "json_schema",
+      "parse_success": true,
+      "parse_error": "",
+      "empty_output": false,
+      "schema_missing": false,
+      "elapsed_s": 13.581,
+      "cost_usd": 0.022555000000000002
+    }
+  ],
+  "final": {
+    "content": "{\"actions\":[{\"action\":\"trace_source\",\"rationale\":\"The only document stating 101 is a digest that cites a chronology note with no final count, so its provenance should be traced rather than accepted as primary evidence.\",\"target\":\"doc_003\"},{\"action\":\"compare_versions\",\"rationale\":\"Compare the unsupported 101 digest against the month-close ledger row that directly lists the approved-check count for the same workstream and month.\",\"target\":\"doc_002 vs doc_003\"}],\"answer\":\"No. The provided evidence does not support that Novalis Robotics logged 101 approved Kestrel firmware checks in August 2025. The cleanest count-bearing evidence is the month-close ledger excerpt, which lists 76 approved checks for Kestrel firmware checks in August 2025. The only 101 figure appears in an operations digest without a visible supporting row and cites a note that contains no final count.\",\"claim_verdict\":\"refuted\",\"confidence\":0.84,\"evidence_environment_assessment\":\"The environment contains a direct count-bearing ledger-style document that reports 76, plus a derivative digest reporting 101 without visible row support. The digest's citation points to a chronology note that explicitly lacks a final count, making the 101 claim weak and likely polluted. Other timeline/scheduling notes provide context but no count.\",\"rejected_evidence\":[\"doc_003\"],\"selected_doc_ids\":[\"doc_002\",\"doc_003\",\"doc_001\"],\"supporting_evidence\":[\"doc_002\"]}",
+    "usage": {
+      "completion_tokens": 558,
+      "prompt_tokens": 1163,
+      "total_tokens": 1721,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": 0,
+        "audio_tokens": 0,
+        "reasoning_tokens": 237,
+        "rejected_prediction_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cached_tokens": 0
+      },
+      "latency_checkpoint": {
+        "engine_tbt_ms": 20,
+        "engine_ttft_ms": 329,
+        "engine_ttlt_ms": 11257,
+        "pre_inference_ms": 390,
+        "service_tbt_ms": 19,
+        "service_ttft_ms": 1114,
+        "service_ttlt_ms": 11900,
+        "total_duration_ms": 11515,
+        "user_visible_ttft_ms": 724
+      }
+    },
+    "response_format_used": "json_schema",
+    "parse_success": true,
+    "parse_error": "",
+    "empty_output": false,
+    "schema_missing": false,
+    "json_extractor_used": "first_json_object",
+    "cost_usd": 0.022555000000000002,
+    "attempt_count": 1,
+    "visible_output_tokens": 356
+  }
+}

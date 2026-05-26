@@ -1,0 +1,50 @@
+{
+  "attempts": [
+    {
+      "attempt": 1,
+      "response_format_used": "json_schema",
+      "parse_success": true,
+      "parse_error": "",
+      "empty_output": false,
+      "schema_missing": false,
+      "elapsed_s": 19.714,
+      "cost_usd": 0.00353725
+    }
+  ],
+  "final": {
+    "content": "{\"claim_verdict\":\"refuted\",\"confidence\":0.95,\"clean_supporting_evidence\":[],\"refuting_evidence\":[\"doc_002\"],\"rejected_or_contaminated_evidence\":[\"doc_004\"],\"diagnostic_evidence\":[\"doc_001\",\"doc_003\"],\"selected_doc_ids\":[\"doc_002\",\"doc_004\",\"doc_001\"],\"actions\":[{\"action\":\"trace_source\",\"target\":\"doc_004\",\"rationale\":\"Investigate doc_004 for contamination since it cites a document from the future (doc_001).\"}],\"evidence_notes\":\"The document supporting the claim of 211 checks (doc_004) is contaminated because it cites doc_001, which is dated one day later. The authentic ledger (doc_002) lists 184 checks, refuting the claim.\",\"answer\":\"The claim is refuted. The actual month-close ledger for the Northline service bay (doc_002) lists 184 completed checks for Atlas valve checks in March 2025, not 211. The document stating the count reached 211 (doc_004) is unreliable and shows signs of contamination, as it cites a memo (doc_001) that was created after its own timestamp.\"}",
+    "usage": {
+      "completion_tokens": 1609,
+      "prompt_tokens": 1277,
+      "total_tokens": 2886,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": null,
+        "audio_tokens": 0,
+        "reasoning_tokens": 1316,
+        "rejected_prediction_tokens": null,
+        "text_tokens": 293,
+        "image_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cached_tokens": 0,
+        "text_tokens": 1277,
+        "image_tokens": 0
+      },
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "input_tokens_details": null,
+      "claude_cache_creation_5_m_tokens": 0,
+      "claude_cache_creation_1_h_tokens": 0
+    },
+    "response_format_used": "json_schema",
+    "parse_success": true,
+    "parse_error": "",
+    "empty_output": false,
+    "schema_missing": false,
+    "json_extractor_used": "first_json_object",
+    "cost_usd": 0.00353725,
+    "attempt_count": 1,
+    "visible_output_tokens": 245
+  }
+}

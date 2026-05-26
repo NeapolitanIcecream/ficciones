@@ -1,0 +1,52 @@
+{
+  "attempts": [
+    {
+      "attempt": 1,
+      "response_format_used": "json_schema",
+      "parse_success": true,
+      "parse_error": "",
+      "empty_output": false,
+      "schema_missing": false,
+      "elapsed_s": 27.302,
+      "cost_usd": 0.030824999999999998
+    }
+  ],
+  "final": {
+    "content": "{\"actions\":[{\"action\":\"trace_source\",\"rationale\":\"The only document asserting 211 cites doc_001, which contains chronology only and no count, weakening the 211 claim.\",\"target\":\"doc_004 -> doc_001\"},{\"action\":\"search_contradiction\",\"rationale\":\"A same-workstream month-close ledger entry directly lists a different completed-check total for March 2025.\",\"target\":\"doc_002\"}],\"answer\":\"No. The provided evidence does not cleanly support 211; the strongest direct ledger evidence says the Atlas valve checks total was 184, while the 211 assertion is unsupported by its cited source.\",\"claim_verdict\":\"refuted\",\"clean_supporting_evidence\":[],\"confidence\":0.78,\"diagnostic_evidence\":[\"doc_001\"],\"evidence_notes\":\"doc_002 directly states that the month-close ledger lists 184 completed checks for Atlas valve checks in March 2025, contradicting the claimed 211. doc_004 asserts 211 but is not clean support because it cites doc_001, and doc_001 contains no final count. doc_003 has no total and does not affect the count judgment.\",\"refuting_evidence\":[\"doc_002\"],\"rejected_or_contaminated_evidence\":[\"doc_004\"],\"selected_doc_ids\":[\"doc_002\",\"doc_004\",\"doc_001\"]}",
+    "usage": {
+      "completion_tokens": 809,
+      "prompt_tokens": 1311,
+      "total_tokens": 2120,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": 0,
+        "audio_tokens": 0,
+        "reasoning_tokens": 512,
+        "rejected_prediction_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cached_tokens": 0
+      },
+      "latency_checkpoint": {
+        "engine_tbt_ms": 31,
+        "engine_ttft_ms": 349,
+        "engine_ttlt_ms": 25544,
+        "pre_inference_ms": 106,
+        "service_tbt_ms": 31,
+        "service_ttft_ms": 769,
+        "service_ttlt_ms": 25894,
+        "total_duration_ms": 25795,
+        "user_visible_ttft_ms": 664
+      }
+    },
+    "response_format_used": "json_schema",
+    "parse_success": true,
+    "parse_error": "",
+    "empty_output": false,
+    "schema_missing": false,
+    "json_extractor_used": "first_json_object",
+    "cost_usd": 0.030824999999999998,
+    "attempt_count": 1,
+    "visible_output_tokens": 289
+  }
+}

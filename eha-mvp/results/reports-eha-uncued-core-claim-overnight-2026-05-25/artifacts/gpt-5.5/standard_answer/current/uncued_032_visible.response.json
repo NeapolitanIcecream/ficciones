@@ -1,0 +1,52 @@
+{
+  "attempts": [
+    {
+      "attempt": 1,
+      "response_format_used": "json_schema",
+      "parse_success": true,
+      "parse_error": "",
+      "empty_output": false,
+      "schema_missing": false,
+      "elapsed_s": 14.234,
+      "cost_usd": 0.02175
+    }
+  ],
+  "final": {
+    "content": "{\"actions\":[{\"action\":\"trace_source\",\"rationale\":\"The two documents asserting 124 cite each other or the same digest chain rather than an independent count sheet, indicating a weak/circular support path.\",\"target\":\"doc_003/doc_004\"},{\"action\":\"open\",\"rationale\":\"The closing ledger statement gives a direct final count for the same workstream and month and is the strongest available evidence.\",\"target\":\"doc_001\"}],\"answer\":\"No. The best available evidence is the closing ledger described in doc_001, which gives 97 closed tickets for Mira sensor recalibrations in May 2025. The documents stating 124 are secondary/circular summaries rather than independent final count records.\",\"claim_verdict\":\"refuted\",\"confidence\":0.84,\"evidence_environment_assessment\":\"The environment is polluted by repeated 124 claims in doc_003 and doc_004 that appear to form a citation loop or rely on the same non-primary digest path. doc_002 is not useful because it contains no final count. doc_001 is the most probative evidence because it describes the closing ledger row for the same site/workstream/month and gives a conflicting final count of 97.\",\"rejected_evidence\":[\"doc_003\",\"doc_004\",\"doc_002\"],\"selected_doc_ids\":[\"doc_001\",\"doc_003\",\"doc_004\"],\"supporting_evidence\":[\"doc_001\"]}",
+    "usage": {
+      "completion_tokens": 529,
+      "prompt_tokens": 1176,
+      "total_tokens": 1705,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": 0,
+        "audio_tokens": 0,
+        "reasoning_tokens": 225,
+        "rejected_prediction_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cached_tokens": 0
+      },
+      "latency_checkpoint": {
+        "engine_tbt_ms": 23,
+        "engine_ttft_ms": 333,
+        "engine_ttlt_ms": 12456,
+        "pre_inference_ms": 104,
+        "service_tbt_ms": 23,
+        "service_ttft_ms": 685,
+        "service_ttlt_ms": 12802,
+        "total_duration_ms": 12721,
+        "user_visible_ttft_ms": 581
+      }
+    },
+    "response_format_used": "json_schema",
+    "parse_success": true,
+    "parse_error": "",
+    "empty_output": false,
+    "schema_missing": false,
+    "json_extractor_used": "first_json_object",
+    "cost_usd": 0.02175,
+    "attempt_count": 1,
+    "visible_output_tokens": 318
+  }
+}

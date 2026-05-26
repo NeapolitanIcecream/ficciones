@@ -1,0 +1,50 @@
+{
+  "attempts": [
+    {
+      "attempt": 1,
+      "response_format_used": "json_schema",
+      "parse_success": true,
+      "parse_error": "",
+      "empty_output": false,
+      "schema_missing": false,
+      "elapsed_s": 26.961,
+      "cost_usd": 0.00479
+    }
+  ],
+  "final": {
+    "content": "{\"claim_verdict\": \"refuted\", \"confidence\": 0.95, \"clean_supporting_evidence\": [], \"refuting_evidence\": [\"doc_001\"], \"rejected_or_contaminated_evidence\": [\"doc_003\"], \"diagnostic_evidence\": [\"doc_002\", \"doc_004\"], \"selected_doc_ids\": [\"doc_001\", \"doc_003\", \"doc_004\"], \"actions\": [{\"action\": \"compare_versions\", \"target\": \"doc_003\", \"rationale\": \"Investigate the temporal inconsistency where doc_003 cites a future document.\"}, {\"action\": \"search_primary\", \"target\": \"Harbor Annex July 2025 ledger\", \"rationale\": \"Verify the true completion count against primary ledger data to confirm the 118 count.\"}], \"evidence_notes\": \"Document 001 refutes the claim by showing 118 completed refurbishments for July 2025. Document 003 supports the 139 count but is contaminated because it cites a document from the future (doc_004, dated May 15, while doc_003 is dated May 14). Documents 002 and 004 contain no totals but provide timeline context.\", \"answer\": \"The evidence refutes the claim that there were 139 completed Nova pump refurbishments in July 2025. The most reliable document (doc_001) indicates the actual count was 118. The document supporting the 139 count (doc_003) is temporally contaminated and unreliable, as it cites another document (doc_004) that was created after it.\"}",
+    "usage": {
+      "completion_tokens": 2235,
+      "prompt_tokens": 1280,
+      "total_tokens": 3515,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": null,
+        "audio_tokens": 0,
+        "reasoning_tokens": 1852,
+        "rejected_prediction_tokens": null,
+        "text_tokens": 383,
+        "image_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cached_tokens": 0,
+        "text_tokens": 1280,
+        "image_tokens": 0
+      },
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "input_tokens_details": null,
+      "claude_cache_creation_5_m_tokens": 0,
+      "claude_cache_creation_1_h_tokens": 0
+    },
+    "response_format_used": "json_schema",
+    "parse_success": true,
+    "parse_error": "",
+    "empty_output": false,
+    "schema_missing": false,
+    "json_extractor_used": "first_json_object",
+    "cost_usd": 0.00479,
+    "attempt_count": 1,
+    "visible_output_tokens": 319
+  }
+}

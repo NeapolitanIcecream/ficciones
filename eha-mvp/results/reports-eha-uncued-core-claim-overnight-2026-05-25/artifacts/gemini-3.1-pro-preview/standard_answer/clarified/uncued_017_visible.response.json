@@ -1,0 +1,50 @@
+{
+  "attempts": [
+    {
+      "attempt": 1,
+      "response_format_used": "json_schema",
+      "parse_success": true,
+      "parse_error": "",
+      "empty_output": false,
+      "schema_missing": false,
+      "elapsed_s": 27.581,
+      "cost_usd": 0.00425225
+    }
+  ],
+  "final": {
+    "content": "{\n  \"claim_verdict\": \"refuted\",\n  \"confidence\": 0.95,\n  \"clean_supporting_evidence\": [],\n  \"refuting_evidence\": [\n    \"doc_002\"\n  ],\n  \"rejected_or_contaminated_evidence\": [\n    \"doc_003\"\n  ],\n  \"diagnostic_evidence\": [\n    \"doc_001\",\n    \"doc_004\"\n  ],\n  \"selected_doc_ids\": [\n    \"doc_002\",\n    \"doc_003\",\n    \"doc_001\"\n  ],\n  \"actions\": [\n    {\n      \"action\": \"search_primary\",\n      \"target\": \"August 2025 Kestrel firmware checks ledger\",\n      \"rationale\": \"Retrieve the primary month-close ledger to verify the exact count of 76 approved checks and confirm the refutation.\"\n    },\n    {\n      \"action\": \"trace_source\",\n      \"target\": \"doc_003\",\n      \"rationale\": \"Investigate doc_003 to determine the origin of the 101 count and how it cited a document created after its own timestamp.\"\n    }\n  ],\n  \"evidence_notes\": \"The claim of 101 approved checks is refuted by doc_002, which lists 76 approved checks in the month-close ledger. Document doc_003 supports the 101 count but is contaminated because it was created on 2025-09-14 and cites doc_001, which was not created until 2025-09-15. Documents doc_001 and doc_004 provide timeline context but no final count.\",\n  \"answer\": \"No, the month-close ledger indicates there were 76 approved checks for Kestrel firmware checks in August 2025, not 101. The document claiming the total reached 101 is contaminated, as it cites another document that was created in the future.\"\n}",
+    "usage": {
+      "completion_tokens": 1966,
+      "prompt_tokens": 1281,
+      "total_tokens": 3247,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": null,
+        "audio_tokens": 0,
+        "reasoning_tokens": 1495,
+        "rejected_prediction_tokens": null,
+        "text_tokens": 471,
+        "image_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cached_tokens": 0,
+        "text_tokens": 1281,
+        "image_tokens": 0
+      },
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "input_tokens_details": null,
+      "claude_cache_creation_5_m_tokens": 0,
+      "claude_cache_creation_1_h_tokens": 0
+    },
+    "response_format_used": "json_schema",
+    "parse_success": true,
+    "parse_error": "",
+    "empty_output": false,
+    "schema_missing": false,
+    "json_extractor_used": "first_json_object",
+    "cost_usd": 0.00425225,
+    "attempt_count": 1,
+    "visible_output_tokens": 358
+  }
+}
