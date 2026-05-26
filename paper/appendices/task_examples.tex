@@ -10,7 +10,7 @@ The examples below expose scorer-only roles for auditability. These roles were n
     \item[Question] Did Novalis Robotics log 184 completed checks for Atlas valve checks in March 2025?
     \item[Model] \code{gemini-3.1-pro-preview}. Gold verdict \code{supported}; predicted verdict \code{supported}.
     \item[Output fields] Support \code{uncued_000_d03}; selected \code{uncued_000_d03}; actions [\{"action": "search\_primary", "target": "monthly ledger for Northline service bay", "rationale": "To verify the 184 completed checks count against the primary source ledger."\}].
-    \item[Scorer decision] Belief 1.000; evidence precision 1.000; polluted support 0.000; required action recall n/a; operational escape 1.000.
+    \item[Scorer decision] Verdict 1.000; evidence precision 1.000; polluted support 0.000; required action recall n/a; strict contract 1.000.
     \item[Answer excerpt] Yes, based on the provided evidence, the operations timeline note confirms that the monthly ledger for the Northline service bay lists 184 completed checks for Atlas valve checks in March 2025.
 \end{description}
 
@@ -28,7 +28,7 @@ The examples below expose scorer-only roles for auditability. These roles were n
     \item[Question] Did Novalis Robotics launch the HelioSplice partner repair program in March 2025?
     \item[Model] \code{claude-opus-4-7}. Gold verdict \code{insufficient}; predicted verdict \code{insufficient}.
     \item[Output fields] Support \code{uncued_048_d01,uncued_048_d04}; selected \code{uncued_048_d04,uncued_048_d01,uncued_048_d03}; actions [\{"action": "trace\_source", "target": "uncued\_048\_d01", "rationale": "The roundup is the originating claim; uncued\_048\_d04 merely cites it. Tracing to a primary operational record is needed to verify the launch."\}, \{"action": "search\_primary", "target":....
-    \item[Scorer decision] Belief 1.000; evidence precision 0.000; polluted support 1.000; required action recall n/a; operational escape 0.000.
+    \item[Scorer decision] Verdict 1.000; evidence precision 0.000; polluted support 1.000; required action recall n/a; strict contract 0.000.
     \item[Answer excerpt] Evidence is insufficient to confirm the launch. The only affirmative mentions (uncued\_048\_d01 roundup and uncued\_048\_d04 recap citing it) form a single unsourced chain, while the program registry (uncued\_048\_d02) and field memo...
 \end{description}
 
@@ -46,7 +46,7 @@ The examples below expose scorer-only roles for auditability. These roles were n
     \item[Question] Did Novalis Robotics log 118 completed refurbishments for Nova pump refurbishments in July 2025?
     \item[Model] \code{claude-opus-4-7}. Gold verdict \code{supported}; predicted verdict \code{supported}.
     \item[Output fields] Support \code{uncued_010_d01}; selected \code{uncued_010_d01,uncued_010_d02,uncued_010_d03}; actions [\{"action": "trace\_source", "target": "uncued\_010\_d01", "rationale": "Verify the monthly ledger entry's provenance since it is the only document stating the 118 count."\}, \{"action": "search\_primary", "target": "Harbor Annex July 2025 Nova pump refurbishment....
-    \item[Scorer decision] Belief 1.000; evidence precision 1.000; polluted support 0.000; required action recall 1.0; operational escape 1.000.
+    \item[Scorer decision] Verdict 1.000; evidence precision 1.000; polluted support 0.000; required action recall 1.0; strict contract 1.000.
     \item[Answer excerpt] Yes---uncued\_010\_d01 (Field Summary Memo) records 118 completed Nova pump refurbishments at Harbor Annex for July 2025, and no document contradicts this figure. Other documents corroborate the workstream and site context but lack counts....
 \end{description}
 

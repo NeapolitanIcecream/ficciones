@@ -1,8 +1,8 @@
 \section{Metrics And Scoring Contract}
 
-The scorer treats final-answer accuracy as one component, not the endpoint. The main row-level outcome is \code{operational_epistemic_escape}, one scorer contract that asks whether a model both outputs the gold-consistent verdict and preserves a machine-readable evidence/action contract. The full scoring pseudocode is in \Cref{app:operational-escape-spec}; this section gives the reader-facing contract.
+The scorer treats final-answer accuracy as one component, not the endpoint. The main row-level outcome is a strict evidence-contract success metric, named \code{operational_epistemic_escape} in the artifact for continuity. It asks whether a model both outputs the gold-consistent verdict and preserves a machine-readable evidence/action contract. The full scoring pseudocode is in \Cref{app:operational-escape-spec}; this section gives the reader-facing contract.
 
-For packet-judgment rows, operational escape requires parse success, correct belief, no polluted document in the support field, and disciplined uncertainty. For evidence-selection rows, it requires parse success, enough selected evidence value, duplicate avoidance, and no generated-lore selection. For active-verification rows, it requires parse success, correct belief, clean support, disciplined uncertainty, and the required action types for the task.
+For packet-judgment rows, strict contract success requires parse success, correct verdict, no polluted document in the support field, and disciplined uncertainty. For evidence-selection rows, it requires parse success, enough selected evidence value, duplicate avoidance, and no generated-lore selection. For active-verification rows, it requires parse success, correct verdict, clean support, disciplined uncertainty, and the required action types for the task.
 
 The main component metrics are:
 \begin{itemize}
@@ -13,11 +13,11 @@ The main component metrics are:
     \item \textbf{Rejected pollutant rate}: how often known pollutants are explicitly rejected.
     \item \textbf{Uncertainty discipline}: whether confidence and insufficiency behavior follow the gold state.
     \item \textbf{Verification action score}: whether active-verification actions use the required action type and an executable target.
-    \item \textbf{Operational epistemic escape}: the task-family-specific joint success criterion combining parse success, belief, evidence hygiene, uncertainty, and, where needed, action recall.
+    \item \textbf{Strict evidence-contract success}: the task-family-specific joint success criterion combining parse success, verdict correctness, evidence hygiene, uncertainty, and, where needed, action recall. The artifact field name is \code{operational_epistemic_escape}.
 \end{itemize}
 
-Operational escape is intentionally stricter than answer accuracy. A model that answers correctly while placing generated lore in \code{supporting_evidence} should not receive full credit for a structured evidence contract. Likewise, an active-verification answer can be correct while the next action is too vague to execute.
+The strict contract is intentionally stricter than answer accuracy. A model that answers correctly while placing generated lore in \code{supporting_evidence} should not receive full credit for a structured evidence contract. Likewise, an active-verification answer can be correct while the next action is too vague to execute.
 
-We decompose operational failures before interpreting aggregate gaps. Each failed row receives one primary component: dirty support, generated-lore selection, evidence value below threshold, duplicate or same-root failure, required action missing, empty support, belief incorrect, parse/schema failure, or other unclassified. This keeps aggregate belief-versus-operation summaries tied to named scorer components rather than treating the gap as a single latent ability.
+We decompose strict-contract failures before interpreting aggregate rates. Each failed row receives one primary component: dirty support, generated-lore selection, evidence value below threshold, duplicate or same-root failure, required action missing, empty support, verdict incorrect, parse/schema failure, or other unclassified. This keeps aggregate rates tied to named scorer components rather than treating any verdict-versus-contract contrast as a single latent ability.
 
 We also report a positive evidence-contract check. That check asks whether the output recovers clean support, avoids dirty support, rejects or diagnoses pollutants, selects high-value independent evidence where required, and satisfies active-verification action requirements. The table's action-label field is deliberately narrow: over all 480 pilot rows, it records whether the model emitted at least one action and whether every emitted action label belongs to the allowed executable-action vocabulary. It does not test whether the verification plan would succeed in a real external environment. The contract check is a diagnostic companion to \code{operational_epistemic_escape}, not a replacement metric.
