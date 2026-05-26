@@ -14,7 +14,7 @@
 
 \input{tables/condition_metrics_with_ci}
 
-\Cref{tab:condition-metrics-with-ci} reports the same condition-level operational rates with latent-task bootstrap intervals. Generated lore is the clearest stress case for source independence and pollutant allocation: the belief-to-operational diagnostic gap is 0.812 with a 95\% interval of [0.714, 0.906].
+\Cref{tab:condition-metrics-with-ci} reports the same condition-level operational rates with latent-task bootstrap intervals. Generated lore is the clearest stress case for strict support-field allocation and pollutant accounting; source-independence interpretation depends on the support-allocation sensitivity audit below. The belief-to-operational diagnostic gap is 0.812 with a 95\% interval of [0.714, 0.906].
 
 \input{tables/evidence_hygiene_vs_belief}
 
@@ -22,7 +22,7 @@
 
 \input{tables/failure_decomposition_summary}
 
-\Cref{tab:failure-decomposition-summary} decomposes operational-escape failures separately for the main pilot and the Phase 1.3 mini-suite. In the 480-row pilot, the largest primary components are generated-lore selection, evidence value below threshold, and belief incorrectness; dirty support is smaller but remains an important structured-field failure mode. The mini-suite shows a similar concentration in evidence value and generated-lore selection, but it is not treated as additional independent main-pilot evidence. The decomposition keeps the interpretation local to named scorer components.
+\Cref{tab:failure-decomposition-summary} decomposes operational-escape failures separately for the main pilot and the presentation-perturbation mini-suite. In the 480-row pilot, the largest primary components are generated-lore selection, evidence value below threshold, and belief incorrectness; dirty support is smaller but remains an important structured-field failure mode. The mini-suite shows a similar concentration in evidence value and generated-lore selection, but it is not treated as additional independent main-pilot evidence. The decomposition keeps the interpretation local to named scorer components.
 
 \input{tables/support_ambiguity_sensitivity}
 
@@ -30,11 +30,15 @@
 
 \input{tables/positive_evidence_contract}
 
-\Cref{tab:positive-evidence-contract} gives a positive contract view over 480 pilot rows. Final verdict correctness is much higher than either operational escape or the composite evidence-hygiene contract, showing why the paper reports provenance discipline, pollutant diagnosis, evidence-selection quality, and active-verification requirements separately. The executable-action row is a syntax/label sanity check for emitted actions, not a claim that every proposed verification path would succeed outside the synthetic packet.
+\Cref{tab:positive-evidence-contract} gives a positive contract view over 480 pilot rows. Final verdict correctness is much higher than either operational escape or the composite evidence-hygiene contract, showing why the paper reports provenance discipline, pollutant diagnosis, evidence-selection quality, and active-verification requirements separately. The action-label row is a syntax/label sanity check over all 480 rows, not a claim that every proposed verification path would succeed outside the synthetic packet.
 
 \input{tables/shortcut_boundary_summary}
 
 \Cref{tab:shortcut-boundary-summary} bounds the ecological-validity claim. Against row-wise best shortcut baselines, model operational escape is not reliably higher overall: the mean margin is 0.035 with a 95\% bootstrap interval of [-0.133, 0.200], and 361 of 480 rows are non-positive. The only condition/family cells clearly above shortcuts in the audit are packet-judgment cells for buried-primary, conflicting-evidence, and false-consensus conditions. Evidence-selection cells are tied or below shortcuts, and generated-lore evidence selection is below shortcuts.
+
+\input{tables/claim_boundary_summary}
+
+\Cref{tab:claim-boundary-summary} summarizes the claim boundary implied by these diagnostics.
 
 \input{tables/active_verification_action_exactness}
 
@@ -42,4 +46,4 @@
 
 \input{tables/robustness_paired_deltas}
 
-\Cref{tab:presentation-perturbation-deltas} reports a paired Phase 1.3 presentation-perturbation mini-suite over 20 frozen source tasks, two models, and five presentation variants. All 200 calls parsed, and all 40 task-model groups contained the \code{baseline_original} row plus every perturbation row. In this slice, operational deltas were non-negative for evidence-order randomization, source-type masking, prompt paraphrase, and citation masking. Generated-lore diagnostic gaps were also observed in this slice. Citation masking should be read as a stress test because visible dependency structure can be task-relevant evidence rather than neutral presentation metadata.
+\Cref{tab:presentation-perturbation-deltas} reports a paired presentation-perturbation mini-suite over 20 frozen source tasks, two models, and five presentation variants. All 200 calls parsed, and all 40 task-model groups contained the \code{baseline_original} row plus every perturbation row. In this slice, operational deltas were non-negative for evidence-order randomization, source-type masking, prompt paraphrase, and citation masking. Generated-lore diagnostic gaps were also observed in this slice. Citation masking should be read as a stress test because visible dependency structure can be task-relevant evidence rather than neutral presentation metadata.

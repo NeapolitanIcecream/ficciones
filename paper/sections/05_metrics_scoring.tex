@@ -1,12 +1,12 @@
 \section{Metrics And Scoring Contract}
 
-The scorer treats final-answer accuracy as one component, not the endpoint. The main row-level outcome is \code{operational_epistemic_escape}, one scorer contract that asks whether a model both reaches the right epistemic state and preserves a machine-readable evidence/action contract. The full scoring pseudocode is in \Cref{app:operational-escape-spec}; this section gives the reader-facing contract.
+The scorer treats final-answer accuracy as one component, not the endpoint. The main row-level outcome is \code{operational_epistemic_escape}, one scorer contract that asks whether a model both outputs the gold-consistent verdict and preserves a machine-readable evidence/action contract. The full scoring pseudocode is in \Cref{app:operational-escape-spec}; this section gives the reader-facing contract.
 
 For packet-judgment rows, operational escape requires parse success, correct belief, no polluted document in the support field, and disciplined uncertainty. For evidence-selection rows, it requires parse success, enough selected evidence value, duplicate avoidance, and no generated-lore selection. For active-verification rows, it requires parse success, correct belief, clean support, disciplined uncertainty, and the required action types for the task.
 
 The main component metrics are:
 \begin{itemize}
-    \item \textbf{Belief correctness}: whether the predicted verdict matches the gold verdict.
+    \item \textbf{Belief correctness}: whether the predicted verdict matches the gold verdict. This is an output-level verdict metric, not a claim about the model's internal mental state.
     \item \textbf{Evidence precision}: the share of non-empty support that is clean gold support.
     \item \textbf{Clean support recall}: whether available clean support is recovered.
     \item \textbf{Polluted support rate}: how often polluted evidence is used as support.
@@ -20,4 +20,4 @@ Operational escape is intentionally stricter than answer accuracy. A model that 
 
 We decompose operational failures before interpreting aggregate gaps. Each failed row receives one primary component: dirty support, generated-lore selection, evidence value below threshold, duplicate or same-root failure, required action missing, empty support, belief incorrect, parse/schema failure, or other unclassified. This keeps aggregate belief-versus-operation summaries tied to named scorer components rather than treating the gap as a single latent ability.
 
-We also report a positive evidence-contract check. That check asks whether the output recovers clean support, avoids dirty support, rejects or diagnoses pollutants, selects high-value independent evidence where required, and satisfies active-verification action requirements. The table's executable-action field is deliberately narrow: it records whether emitted action labels belong to the allowed executable action set, not whether the verification plan would succeed in a real external environment. The contract check is a diagnostic companion to \code{operational_epistemic_escape}, not a replacement metric.
+We also report a positive evidence-contract check. That check asks whether the output recovers clean support, avoids dirty support, rejects or diagnoses pollutants, selects high-value independent evidence where required, and satisfies active-verification action requirements. The table's action-label field is deliberately narrow: over all 480 pilot rows, it records whether the model emitted at least one action and whether every emitted action label belongs to the allowed executable-action vocabulary. It does not test whether the verification plan would succeed in a real external environment. The contract check is a diagnostic companion to \code{operational_epistemic_escape}, not a replacement metric.

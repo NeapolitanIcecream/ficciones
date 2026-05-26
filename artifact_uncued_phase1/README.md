@@ -16,3 +16,5 @@ uv run eha-verify-uncued-phase1 --artifact-dir ../artifact_uncued_phase1 --repor
 ```
 
 For a no-dependency smoke check, run `artifact_uncued_phase1/reproduce_minimal.sh`.
+
+Expected analysis counts used by the paper are 480 main-pilot rows, 200 presentation-perturbation mini-suite rows, 144 schema-rerun rows, and 72 schema-rerun paired comparisons. The mini-suite and schema-rerun outputs are follow-up diagnostics under `reports/` and `eha-mvp/results/`; they are not folded into this main pilot artifact.

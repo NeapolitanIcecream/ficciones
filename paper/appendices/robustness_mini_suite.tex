@@ -1,7 +1,7 @@
-\section{Phase 1.3 Presentation-Perturbation Mini-Suite}
+\section{Presentation-Perturbation Mini-Suite}
 \label{app:presentation-perturbation-mini-suite}
 
-The Phase 1.3 presentation-perturbation mini-suite froze 20 role-uncued source tasks from \code{eha-mvp/data/uncued-pilot-v1}: five each from \code{generated_lore}, \code{buried_primary}, \code{conflicting_evidence}, and \code{false_consensus}. Within each condition, the frozen slice used two \code{packet_judgment} tasks, two \code{evidence_selection} tasks, and one \code{active_verification} task where available. The suite used only the \code{neutral_metadata_visible} view and seed 20260525.
+The presentation-perturbation mini-suite froze 20 role-uncued source tasks from \code{eha-mvp/data/uncued-pilot-v1}: five each from \code{generated_lore}, \code{buried_primary}, \code{conflicting_evidence}, and \code{false_consensus}. Within each condition, the frozen slice used two \code{packet_judgment} tasks, two \code{evidence_selection} tasks, and one \code{active_verification} task where available. The suite used only the \code{neutral_metadata_visible} view and seed 20260525.
 
 The run compared \code{baseline_original} against four paired perturbations: \code{order_randomized}, \code{source_type_masked}, \code{prompt_paraphrase}, and \code{citation_masked}. The schema and scorer were held fixed to the Phase 1 interface. Pre-model gates checked that the selection manifest referenced only the role-uncued pilot data, that prompt parity changed only the intended field for each perturbation, that hidden labels and condition or family labels were absent from model-visible prompts, that projected cost stayed below the hard cap, and that every perturbation had a paired baseline row.
 

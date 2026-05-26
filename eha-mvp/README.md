@@ -1,5 +1,7 @@
 # eha-mvp
 
+For the current EHA-Uncued paper, begin at the repository root `README.md`, `paper/`, and `artifact_uncued_phase1/`. This `eha-mvp` README also documents older MVP experiments and should not be read as the artifact boundary for the EHA-Uncued paper.
+
 Epistemic Hygiene Arena MVP is a small, reproducible benchmark for testing
 agent behavior in polluted synthetic information ecosystems. It is derived from
 `epistemic-hygiene-arena-preprint.md` and the 2026-05-12 research memo.
